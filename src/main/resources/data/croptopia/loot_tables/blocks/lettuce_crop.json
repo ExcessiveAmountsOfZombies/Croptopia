@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "croptopia:corn"
+          "name": "croptopia:lettuce"
         }
       ]
     },
@@ -26,13 +26,13 @@
               }
             }
           ],
-          "name": "croptopia:corn"
+          "name": "croptopia:lettuce"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "croptopia:corn_crop",
+          "block": "croptopia:lettuce_crop",
           "properties": {
             "age": "7"
           }

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "croptopia:corn"
+          "name": "croptopia:garlic"
         }
       ]
     },
@@ -26,13 +26,13 @@
               }
             }
           ],
-          "name": "croptopia:corn"
+          "name": "croptopia:garlic"
         }
       ],
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "croptopia:corn_crop",
+          "block": "croptopia:garlic_crop",
           "properties": {
             "age": "7"
           }
