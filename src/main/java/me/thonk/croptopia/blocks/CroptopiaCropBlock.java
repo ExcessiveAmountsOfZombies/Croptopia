@@ -7,7 +7,7 @@ import net.minecraft.util.registry.Registry;
 
 public class CroptopiaCropBlock extends CropBlock {
 
-    private String seedName;
+    private final String seedName;
 
     protected CroptopiaCropBlock(Settings settings, String seedName) {
         super(settings);

@@ -1,11 +1,13 @@
 package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.Croptopia;
+import me.thonk.croptopia.FoodRegistry;
 import me.thonk.croptopia.blocks.BlockRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 
 import static me.thonk.croptopia.Croptopia.CROPTOPIA_ITEM_GROUP;
+import static me.thonk.croptopia.FoodRegistry.*;
 
 public class ItemRegistry {
 
@@ -37,17 +39,17 @@ public class ItemRegistry {
 
 
     public static void init() {
-        onion = registerItem("onion", new Item(createGroup()));
-        corn = registerItem("corn", new Item(createGroup()));
+        onion = registerItem("onion", new Item(createGroup().food(ONION_FOOD)));
+        corn = registerItem("corn", new Item(createGroup().food(CORN_FOOD)));
         hops = registerItem("hops", new Item(createGroup()));
-        rice = registerItem("rice", new Item(createGroup()));
-        lettuce = registerItem("lettuce", new Item(createGroup()));
-        cucumber = registerItem("cucumber", new Item(createGroup()));
-        grape = registerItem("grape", new Item(createGroup()));
-        strawberry = registerItem("strawberry", new Item(createGroup()));
-        tomato = registerItem("tomato", new Item(createGroup()));
-        garlic = registerItem("garlic", new Item(createGroup()));
-        peanut = registerItem("peanut", new Item(createGroup()));
+        rice = registerItem("rice", new Item(createGroup().food(RICE_FOOD)));
+        lettuce = registerItem("lettuce", new Item(createGroup().food(LETTUCE_FOOD)));
+        cucumber = registerItem("cucumber", new Item(createGroup().food(CUCUMBER_FOOD)));
+        grape = registerItem("grape", new Item(createGroup().food(GRAPE_FOOD)));
+        strawberry = registerItem("strawberry", new Item(createGroup().food(STRAWBERRY_FOOD)));
+        tomato = registerItem("tomato", new Item(createGroup().food(TOMATO_FOOD)));
+        garlic = registerItem("garlic", new Item(createGroup().food(GARLIC_FOOD)));
+        peanut = registerItem("peanut", new Item(createGroup().food(PEANUT_FOOD)));
 
 
 
