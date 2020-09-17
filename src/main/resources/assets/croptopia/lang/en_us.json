@@ -1,0 +1,30 @@
+{
+  "item.croptopia.onion": "Onion",
+  "item.croptopia.corn": "Corn",
+  "item.croptopia.hops": "Hops",
+  "item.croptopia.rice": "Rice",
+  "item.croptopia.lettuce": "Lettuce",
+  "item.croptopia.cucumber": "Cucumber",
+  "item.croptopia.grape": "Grape",
+  "item.croptopia.strawberry": "Strawberry",
+  "item.croptopia.tomato": "Tomato",
+  "item.croptopia.garlic": "Garlic",
+  "item.croptopia.peanut": "Peanut",
+
+  "item.croptopia.onion_seed": "Onion Seed",
+  "item.croptopia.corn_seed": "Corn Seed",
+  "item.croptopia.hops_seed": "Hops Seed",
+  "item.croptopia.rice_seed": "Rice Seed",
+  "item.croptopia.lettuce_seed": "Lettuce Seed",
+  "item.croptopia.cucumber_seed": "Cucumber Seed",
+  "item.croptopia.grape_seed": "Grape Seed",
+  "item.croptopia.strawberry_seed": "Strawberry Seed",
+  "item.croptopia.tomato_seed": "Tomato Seed",
+  "item.croptopia.garlic_seed": "Garlic Seed",
+  "item.croptopia.peanut_seed": "Peanut Seed",
+
+
+
+
+  "itemGroup.croptopia.croptopia": "Croptopia"
+}

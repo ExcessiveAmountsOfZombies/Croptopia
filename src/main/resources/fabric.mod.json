@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "croptopia",
+  "version": "${version}",
+  "name": "Croptopia",
+  "description": "Adds crops to the game",
+  "authors": [
+    "Thonk"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/croptopia/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.thonk.croptopia.client.CroptopiaClient"
+    ],
+    "main": [
+      "me.thonk.croptopia.Croptopia"
+    ]
+  },
+  "mixins": [
+    "Croptopia.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.9.3+build.207",
+    "fabric": "*",
+    "minecraft": "1.16.2"
+  }
+}

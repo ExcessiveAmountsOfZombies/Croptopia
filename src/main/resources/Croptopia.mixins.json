@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.thonk.croptopia.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "MixinTest"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "layer0": "croptopia:item/cucumber_crop_stage1"
+  }
+}
