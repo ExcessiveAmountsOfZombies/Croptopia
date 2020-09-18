@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "crop": "croptopia:block/onions_stage0"
+    "layer0": "croptopia:block/onion_crop_stage0"
   }
 }

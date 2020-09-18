@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "croptopia:block/broccoli_crop_stage0"
+    },
+    "age=1": {
+      "model": "croptopia:block/broccoli_crop_stage1"
+    },
+    "age=2": {
+      "model": "croptopia:block/broccoli_crop_stage1"
+    },
+    "age=3": {
+      "model": "croptopia:block/broccoli_crop_stage1"
+    },
+    "age=4": {
+      "model": "croptopia:block/broccoli_crop_stage2"
+    },
+    "age=5": {
+      "model": "croptopia:block/broccoli_crop_stage2"
+    },
+    "age=6": {
+      "model": "croptopia:block/broccoli_crop_stage2"
+    },
+    "age=7": {
+      "model": "croptopia:block/broccoli_crop_stage3"
+    }
+  }
+}

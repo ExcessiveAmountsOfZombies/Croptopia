@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "layer0": "croptopia:block/sweetpotato_crop_stage0"
+  }
+}

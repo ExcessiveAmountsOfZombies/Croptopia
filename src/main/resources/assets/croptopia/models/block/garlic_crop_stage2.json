@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "layer0": "croptopia:item/garlic_crop_stage2"
+    "layer0": "croptopia:block/garlic_crop_stage2"
   }
 }

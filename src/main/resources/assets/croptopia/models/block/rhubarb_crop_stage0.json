@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "layer0": "croptopia:block/rhubarb_crop_stage0"
+  }
+}

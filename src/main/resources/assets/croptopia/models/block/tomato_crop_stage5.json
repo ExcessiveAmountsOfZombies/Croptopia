@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "layer0": "croptopia:item/tomato_crop_stage5"
-  }
-}

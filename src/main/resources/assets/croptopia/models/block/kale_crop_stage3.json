@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "layer0": "croptopia:block/kale_crop_stage3"
+  }
+}
