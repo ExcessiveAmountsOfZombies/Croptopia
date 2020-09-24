@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "layer0": "croptopia:block/saguaro_crop_stage1"
+    "crop": "croptopia:block/saguaro_crop_stage1"
   }
 }

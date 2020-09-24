@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "croptopia:item/sqaush_seed"
+    "layer0": "croptopia:item/squash_seed"
   }
 }

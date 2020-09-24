@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/crop",
   "textures": {
-    "layer0": "croptopia:block/olive_crop_stage2"
+    "crop": "croptopia:block/olive_crop_stage2"
   }
 }
