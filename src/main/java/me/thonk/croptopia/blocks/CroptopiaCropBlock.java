@@ -4,10 +4,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -28,7 +26,6 @@ public class CroptopiaCropBlock extends CropBlock {
     protected CroptopiaCropBlock(Settings settings, Item seed) {
         super(settings);
         this.seed = seed;
-        ItemStack
     }
 
     @Override
