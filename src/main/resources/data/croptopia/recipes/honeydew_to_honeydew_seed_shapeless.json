@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:honeydew"
+    }
+  ],
+  "result": {
+    "item": "croptopia:honeydew_seed",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:blackbean"
+    }
+  ],
+  "result": {
+    "item": "croptopia:blackbean_seed",
+    "count": 1
+  }
+}

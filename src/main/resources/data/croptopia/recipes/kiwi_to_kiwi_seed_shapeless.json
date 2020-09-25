@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:kiwi"
+    }
+  ],
+  "result": {
+    "item": "croptopia:kiwi_seed",
+    "count": 1
+  }
+}

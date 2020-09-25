@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:elderberry"
+    }
+  ],
+  "result": {
+    "item": "croptopia:elderberry_seed",
+    "count": 1
+  }
+}

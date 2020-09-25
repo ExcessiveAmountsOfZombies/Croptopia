@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:blackberry"
+    }
+  ],
+  "result": {
+    "item": "croptopia:blackberry_seed",
+    "count": 1
+  }
+}

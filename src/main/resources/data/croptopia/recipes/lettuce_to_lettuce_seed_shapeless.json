@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:lettuce"
+    }
+  ],
+  "result": {
+    "item": "croptopia:lettuce_seed",
+    "count": 1
+  }
+}

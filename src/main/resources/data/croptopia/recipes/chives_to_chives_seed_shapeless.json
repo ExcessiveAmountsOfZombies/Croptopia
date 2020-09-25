@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:chives"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chives_seed",
+    "count": 1
+  }
+}

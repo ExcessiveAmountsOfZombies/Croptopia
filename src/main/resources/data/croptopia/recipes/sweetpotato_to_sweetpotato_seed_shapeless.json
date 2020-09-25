@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:sweetpotato"
+    }
+  ],
+  "result": {
+    "item": "croptopia:sweetpotato_seed",
+    "count": 1
+  }
+}

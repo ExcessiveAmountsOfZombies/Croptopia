@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:spinach"
+    }
+  ],
+  "result": {
+    "item": "croptopia:spinach_seed",
+    "count": 1
+  }
+}

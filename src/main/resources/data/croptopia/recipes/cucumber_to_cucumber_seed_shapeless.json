@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:cucumber"
+    }
+  ],
+  "result": {
+    "item": "croptopia:cucumber_seed",
+    "count": 1
+  }
+}

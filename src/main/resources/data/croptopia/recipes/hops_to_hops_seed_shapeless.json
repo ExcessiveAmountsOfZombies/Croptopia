@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:hops"
+    }
+  ],
+  "result": {
+    "item": "croptopia:hops_seed",
+    "count": 1
+  }
+}

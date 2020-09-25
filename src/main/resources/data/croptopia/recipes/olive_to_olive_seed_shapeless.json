@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:olive"
+    }
+  ],
+  "result": {
+    "item": "croptopia:olive_seed",
+    "count": 1
+  }
+}

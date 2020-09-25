@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:onion"
+    }
+  ],
+  "result": {
+    "item": "croptopia:onion_seed",
+    "count": 1
+  }
+}

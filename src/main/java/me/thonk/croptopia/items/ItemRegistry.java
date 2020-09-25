@@ -4,15 +4,22 @@ import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.BlockRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+
+import java.util.ArrayList;
 
 import static me.thonk.croptopia.Croptopia.CROPTOPIA_ITEM_GROUP;
 import static me.thonk.croptopia.FoodRegistry.*;
+import static net.minecraft.world.biome.Biome.Category.*;
 
 public class ItemRegistry {
+
+    private static ArrayList<Item> seeds = new ArrayList<>();
 
     // Fruits & Vegetables // cropitem
     public static Item artichoke;
     public static Item asparagus;
+    public static Item barley;
     public static Item bellPepper;
     public static Item blackBean;
     public static Item blackberry;
@@ -39,6 +46,7 @@ public class ItemRegistry {
     public static Item kiwi;
     public static Item leek;
     public static Item lettuce;
+    public static Item oat;
     public static Item olive;
     public static Item onion;
     public static Item peanut;
@@ -49,6 +57,7 @@ public class ItemRegistry {
     public static Item rice;
     public static Item rutabaga;
     public static Item saguaro;
+    public static Item soybean;
     public static Item spinach;
     public static Item squash;
     public static Item strawberry;
@@ -60,7 +69,7 @@ public class ItemRegistry {
     public static Item zucchini;
 
     // Trees
-    /*public static Item orange;
+    public static Item orange;
     public static Item banana;
     public static Item persimmon;
     public static Item plum;
@@ -80,7 +89,7 @@ public class ItemRegistry {
     public static Item apricot;
     public static Item pear;
     public static Item lime;
-    public static Item date;*/
+    public static Item date;
 
     // Spices
     public static Item mustard;
@@ -142,11 +151,34 @@ public class ItemRegistry {
     public static Item turnipSeed;
     public static Item yamSeed;
     public static Item zucchiniSeed;
+    public static Item mustardSeed;
+    public static Item paprikaSeed;
+    public static Item pepperSeed;
+    public static Item turmericSeed;
+    public static Item gingerSeed;
+    public static Item chivesSeed;
+    public static Item basilSeed;
+    public static Item oatSeed;
+    public static Item barleySeed;
+    public static Item soybeanSeed;
+
+
+    public static Item vanillaSeed;
+
+    // intermediary foods. These would be extra ingredients before making a big main food.
+    public static Item oliveOil;
+    public static Item cheese;
+    public static Item chocolate;
+    public static Item flour;
+    public static Item butter;
+    public static Item noodle;
+    public static Item tofu;
 
     public static void init() {
 
         artichoke = registerItem("artichoke", new Item(createGroup().food(EDIBLE_YUCK)));
         asparagus = registerItem("asparagus", new Item(createGroup().food(EDIBLE_OK)));
+        barley = registerItem("barley", new Item(createGroup().food(EDIBLE_YUCK)));
         bellPepper = registerItem("bellpepper", new Item(createGroup().food(EDIBLE_OK)));
         blackBean = registerItem("blackbean", new Item(createGroup().food(EDIBLE_OK)));
         blackberry = registerItem("blackberry", new Item(createGroup().food(EDIBLE_OK)));
@@ -192,61 +224,113 @@ public class ItemRegistry {
         turnip = registerItem("turnip", new Item(createGroup().food(EDIBLE_OK)));
         yam = registerItem("yam", new Item(createGroup().food(EDIBLE_OK)));
         zucchini = registerItem("zucchini", new Item(createGroup().food(EDIBLE_OK)));
+        oat = registerItem("oat", new Item(createGroup().food(EDIBLE_YUCK)));
+        soybean = registerItem("soybean", new Item(createGroup().food(EDIBLE_YUCK)));
 
-        artichokeSeed = registerItem("artichoke_seed", new CroptopiaItem(BlockRegistry.artichokeCropBlock, createGroup()));
-        asparagusSeed = registerItem("asparagus_seed", new CroptopiaItem(BlockRegistry.asparagusCropBlock, createGroup()));
-        bellPepperSeed = registerItem("bellpepper_seed", new CroptopiaItem(BlockRegistry.bellPepperCropBlock, createGroup()));
-        blackBeanSeed = registerItem("blackbean_seed", new CroptopiaItem(BlockRegistry.blackBeanCropBlock, createGroup()));
-        blackberrySeed = registerItem("blackberry_seed", new CroptopiaItem(BlockRegistry.blackberryCropBlock, createGroup()));
-        blueberrySeed = registerItem("blueberry_seed", new CroptopiaItem(BlockRegistry.blueberryCropBlock, createGroup()));
-        broccoliSeed = registerItem("broccoli_seed", new CroptopiaItem(BlockRegistry.broccoliCropBlock, createGroup()));
-        cabbageSeed = registerItem("cabbage_seed", new CroptopiaItem(BlockRegistry.cabbageCropBlock, createGroup()));
-        cantaloupeSeed = registerItem("cantaloupe_seed", new CroptopiaItem(BlockRegistry.cantaloupeCropBlock, createGroup()));
-        cauliflowerSeed = registerItem("cauliflower_seed", new CroptopiaItem(BlockRegistry.cauliflowerCropBlock, createGroup()));
-        celerySeed = registerItem("celery_seed", new CroptopiaItem(BlockRegistry.celeryCropBlock, createGroup()));
-        coffeeSeed = registerItem("coffee_seed", new CroptopiaItem(BlockRegistry.coffeeCropBlock, createGroup()));
-        cornSeed = registerItem("corn_seed", new CroptopiaItem(BlockRegistry.cornCropBlock, createGroup()));
-        cranberrySeed = registerItem("cranberry_seed", new CroptopiaItem(BlockRegistry.cranberryCropBlock, createGroup()));
-        cucumberSeed = registerItem("cucumber_seed", new CroptopiaItem(BlockRegistry.cucumberCropBlock, createGroup()));
-        currantSeed = registerItem("currant_seed", new CroptopiaItem(BlockRegistry.currantCropBlock, createGroup()));
-        eggplantSeed = registerItem("eggplant_seed", new CroptopiaItem(BlockRegistry.eggplantCropBlock, createGroup()));
-        elderberrySeed = registerItem("elderberry_seed", new CroptopiaItem(BlockRegistry.elderberryCropBlock, createGroup()));
-        garlicSeed = registerItem("garlic_seed", new CroptopiaItem(BlockRegistry.garlicCropBlock, createGroup()));
-        grapeSeed = registerItem("grape_seed", new CroptopiaItem(BlockRegistry.grapeCropBlock, createGroup()));
-        greenBeanSeed = registerItem("greenbean_seed", new CroptopiaItem(BlockRegistry.greenBeanCropBlock, createGroup()));
-        greenOnionSeed = registerItem("greenonion_seed", new CroptopiaItem(BlockRegistry.greenOnionCropBlock, createGroup()));
-        honeydewSeed = registerItem("honeydew_seed", new CroptopiaItem(BlockRegistry.honeydewCropBlock, createGroup()));
-        hopsSeed = registerItem("hops_seed", new CroptopiaItem(BlockRegistry.hopsCropBlock, createGroup()));
-        kaleSeed = registerItem("kale_seed", new CroptopiaItem(BlockRegistry.kaleCropBlock, createGroup()));
-        kiwiSeed = registerItem("kiwi_seed", new CroptopiaItem(BlockRegistry.kiwiCropBlock, createGroup()));
-        leekSeed = registerItem("leek_seed", new CroptopiaItem(BlockRegistry.leekCropBlock, createGroup()));
-        lettuceSeed = registerItem("lettuce_seed", new CroptopiaItem(BlockRegistry.lettuceCropBlock, createGroup()));
-        oliveSeed = registerItem("olive_seed", new CroptopiaItem(BlockRegistry.oliveCropBlock, createGroup()));
-        onionSeed = registerItem("onion_seed", new CroptopiaItem(BlockRegistry.onionCropBlock, createGroup()));
-        peanutSeed = registerItem("peanut_seed", new CroptopiaItem(BlockRegistry.peanutCropBlock, createGroup()));
-        pineappleSeed = registerItem("pineapple_seed", new CroptopiaItem(BlockRegistry.pineappleCropBlock, createGroup()));
-        radishSeed = registerItem("radish_seed", new CroptopiaItem(BlockRegistry.radishCropBlock, createGroup()));
-        raspberrySeed = registerItem("raspberry_seed", new CroptopiaItem(BlockRegistry.raspberryCropBlock, createGroup()));
-        rhubarbSeed = registerItem("rhubarb_seed", new CroptopiaItem(BlockRegistry.rhubarbCropBlock, createGroup()));
-        riceSeed = registerItem("rice_seed", new CroptopiaItem(BlockRegistry.riceCropBlock, createGroup()));
-        rutabagaSeed = registerItem("rutabaga_seed", new CroptopiaItem(BlockRegistry.rutabagaCropBlock, createGroup()));
-        saguaroSeed = registerItem("saguaro_seed", new CroptopiaItem(BlockRegistry.saguaroCropBlock, createGroup()));
-        spinachSeed = registerItem("spinach_seed", new CroptopiaItem(BlockRegistry.spinachCropBlock, createGroup()));
-        squashSeed = registerItem("sqaush_seed", new CroptopiaItem(BlockRegistry.squashCropBlock, createGroup()));
-        strawberrySeed = registerItem("strawberry_seed", new CroptopiaItem(BlockRegistry.strawberryCropBlock, createGroup()));
-        sweetPotatoSeed = registerItem("sweetpotato_seed", new CroptopiaItem(BlockRegistry.sweetPotatoCropBlock, createGroup()));
-        tomatilloSeed = registerItem("tomatillo_seed", new CroptopiaItem(BlockRegistry.tomatilloCropBlock, createGroup()));
-        tomatoSeed = registerItem("tomato_seed", new CroptopiaItem(BlockRegistry.tomatoCropBlock, createGroup()));
-        turnipSeed = registerItem("turnip_seed", new CroptopiaItem(BlockRegistry.turnipCropBlock, createGroup()));
-        yamSeed = registerItem("yam_seed", new CroptopiaItem(BlockRegistry.yamCropBlock, createGroup()));
-        zucchiniSeed = registerItem("zucchini_seed", new CroptopiaItem(BlockRegistry.zucchiniCropBlock, createGroup()));
+        orange = registerItem("orange", new Item(createGroup().food(EDIBLE_OK)));
+        banana = registerItem("banana", new Item(createGroup().food(EDIBLE_OK)));
+        persimmon = registerItem("persimmon", new Item(createGroup().food(EDIBLE_OK)));
+        plum = registerItem("plum", new Item(createGroup().food(EDIBLE_OK)));
+        cherry = registerItem("cherry", new Item(createGroup().food(EDIBLE_OK)));
+        lemon = registerItem("lemon", new Item(createGroup().food(EDIBLE_OK)));
+        grapefruit = registerItem("grapefruit", new Item(createGroup().food(EDIBLE_OK)));
+        kumquat = registerItem("kumquat", new Item(createGroup().food(EDIBLE_OK)));
+        peach = registerItem("peach", new Item(createGroup().food(EDIBLE_OK)));
+        coconut = registerItem("coconut", new Item(createGroup().food(EDIBLE_YUCK)));
+        nutmeg = registerItem("nutmeg", new Item(createGroup().food(EDIBLE_YUCK)));
+        fig = registerItem("fig", new Item(createGroup().food(EDIBLE_OK)));
+        nectarine = registerItem("necarine", new Item(createGroup().food(EDIBLE_OK)));
+        mango = registerItem("mango", new Item(createGroup().food(EDIBLE_OK)));
+        dragonFruit = registerItem("dragonfruit", new Item(createGroup().food(EDIBLE_OK)));
+        starFruit = registerItem("starfruit", new Item(createGroup().food(EDIBLE_OK)));
+        avocado = registerItem("avocado", new Item(createGroup().food(EDIBLE_OK)));
+        apricot = registerItem("apricot", new Item(createGroup().food(EDIBLE_OK)));
+        pear = registerItem("pear", new Item(createGroup().food(EDIBLE_OK)));
+        lime = registerItem("lime", new Item(createGroup().food(EDIBLE_OK)));
+        date = registerItem("date", new Item(createGroup().food(EDIBLE_OK)));
+
+        mustard = registerItem("mustard", new Item(createGroup()));
+        vanilla = registerItem("vanilla", new Item(createGroup()));
+        paprika = registerItem("paprika", new Item(createGroup()));
+        pepper = registerItem("pepper", new Item(createGroup()));
+        salt = registerItem("salt", new Item(createGroup()));
+        turmeric = registerItem("turmeric", new Item(createGroup()));
+        ginger = registerItem("ginger", new Item(createGroup()));
+        chives = registerItem("chives", new Item(createGroup().food(EDIBLE_YUCK)));
+        basil = registerItem("basil", new Item(createGroup().food(EDIBLE_YUCK)));
+
+        artichokeSeed = registerItem("artichoke_seed", new CroptopiaSeedItem(BlockRegistry.artichokeCropBlock, createGroup(), SWAMP));
+        asparagusSeed = registerItem("asparagus_seed", new CroptopiaSeedItem(BlockRegistry.asparagusCropBlock, createGroup(), SWAMP));
+        bellPepperSeed = registerItem("bellpepper_seed", new CroptopiaSeedItem(BlockRegistry.bellPepperCropBlock, createGroup(), PLAINS));
+        blackBeanSeed = registerItem("blackbean_seed", new CroptopiaSeedItem(BlockRegistry.blackBeanCropBlock, createGroup(), FOREST));
+        blackberrySeed = registerItem("blackberry_seed", new CroptopiaSeedItem(BlockRegistry.blackberryCropBlock, createGroup(), FOREST));
+        blueberrySeed = registerItem("blueberry_seed", new CroptopiaSeedItem(BlockRegistry.blueberryCropBlock, createGroup(), FOREST));
+        broccoliSeed = registerItem("broccoli_seed", new CroptopiaSeedItem(BlockRegistry.broccoliCropBlock, createGroup(), PLAINS));
+        cabbageSeed = registerItem("cabbage_seed", new CroptopiaSeedItem(BlockRegistry.cabbageCropBlock, createGroup(), PLAINS));
+        cantaloupeSeed = registerItem("cantaloupe_seed", new CroptopiaSeedItem(BlockRegistry.cantaloupeCropBlock, createGroup(), FOREST));
+        cauliflowerSeed = registerItem("cauliflower_seed", new CroptopiaSeedItem(BlockRegistry.cauliflowerCropBlock, createGroup(), FOREST));
+        celerySeed = registerItem("celery_seed", new CroptopiaSeedItem(BlockRegistry.celeryCropBlock, createGroup(), FOREST));
+        coffeeSeed = registerItem("coffee_seed", new CroptopiaSeedItem(BlockRegistry.coffeeCropBlock, createGroup(), JUNGLE));
+        cornSeed = registerItem("corn_seed", new CroptopiaSeedItem(BlockRegistry.cornCropBlock, createGroup(), PLAINS));
+        cranberrySeed = registerItem("cranberry_seed", new CroptopiaSeedItem(BlockRegistry.cranberryCropBlock, createGroup(), SWAMP));
+        cucumberSeed = registerItem("cucumber_seed", new CroptopiaSeedItem(BlockRegistry.cucumberCropBlock, createGroup(), PLAINS));
+        currantSeed = registerItem("currant_seed", new CroptopiaSeedItem(BlockRegistry.currantCropBlock, createGroup(), SWAMP));
+        eggplantSeed = registerItem("eggplant_seed", new CroptopiaSeedItem(BlockRegistry.eggplantCropBlock, createGroup(), JUNGLE));
+        elderberrySeed = registerItem("elderberry_seed", new CroptopiaSeedItem(BlockRegistry.elderberryCropBlock, createGroup(), FOREST));
+        garlicSeed = registerItem("garlic_seed", new CroptopiaSeedItem(BlockRegistry.garlicCropBlock, createGroup(), JUNGLE));
+        grapeSeed = registerItem("grape_seed", new CroptopiaSeedItem(BlockRegistry.grapeCropBlock, createGroup(), FOREST));
+        greenBeanSeed = registerItem("greenbean_seed", new CroptopiaSeedItem(BlockRegistry.greenBeanCropBlock, createGroup(), PLAINS));
+        greenOnionSeed = registerItem("greenonion_seed", new CroptopiaSeedItem(BlockRegistry.greenOnionCropBlock, createGroup(), JUNGLE));
+        honeydewSeed = registerItem("honeydew_seed", new CroptopiaSeedItem(BlockRegistry.honeydewCropBlock, createGroup(), JUNGLE));
+        hopsSeed = registerItem("hops_seed", new CroptopiaSeedItem(BlockRegistry.hopsCropBlock, createGroup(), SAVANNA));
+        kaleSeed = registerItem("kale_seed", new CroptopiaSeedItem(BlockRegistry.kaleCropBlock, createGroup(), PLAINS));
+        kiwiSeed = registerItem("kiwi_seed", new CroptopiaSeedItem(BlockRegistry.kiwiCropBlock, createGroup(), SAVANNA));
+        leekSeed = registerItem("leek_seed", new CroptopiaSeedItem(BlockRegistry.leekCropBlock, createGroup(), SAVANNA));
+        lettuceSeed = registerItem("lettuce_seed", new CroptopiaSeedItem(BlockRegistry.lettuceCropBlock, createGroup(), PLAINS));
+        oliveSeed = registerItem("olive_seed", new CroptopiaSeedItem(BlockRegistry.oliveCropBlock, createGroup(), SAVANNA));
+        onionSeed = registerItem("onion_seed", new CroptopiaSeedItem(BlockRegistry.onionCropBlock, createGroup(), JUNGLE));
+        peanutSeed = registerItem("peanut_seed", new CroptopiaSeedItem(BlockRegistry.peanutCropBlock, createGroup(), JUNGLE));
+        pineappleSeed = registerItem("pineapple_seed", new CroptopiaSeedItem(BlockRegistry.pineappleCropBlock, createGroup(), JUNGLE));
+        radishSeed = registerItem("radish_seed", new CroptopiaSeedItem(BlockRegistry.radishCropBlock, createGroup(), FOREST));
+        raspberrySeed = registerItem("raspberry_seed", new CroptopiaSeedItem(BlockRegistry.raspberryCropBlock, createGroup(), FOREST));
+        rhubarbSeed = registerItem("rhubarb_seed", new CroptopiaSeedItem(BlockRegistry.rhubarbCropBlock, createGroup(), JUNGLE));
+        riceSeed = registerItem("rice_seed", new CroptopiaSeedItem(BlockRegistry.riceCropBlock, createGroup(), JUNGLE));
+        rutabagaSeed = registerItem("rutabaga_seed", new CroptopiaSeedItem(BlockRegistry.rutabagaCropBlock, createGroup(), SAVANNA));
+        saguaroSeed = registerItem("saguaro_seed", new CroptopiaSeedItem(BlockRegistry.saguaroCropBlock, createGroup(), DESERT));
+        spinachSeed = registerItem("spinach_seed", new CroptopiaSeedItem(BlockRegistry.spinachCropBlock, createGroup(), FOREST));
+        squashSeed = registerItem("squash_seed", new CroptopiaSeedItem(BlockRegistry.squashCropBlock, createGroup(), SAVANNA));
+        strawberrySeed = registerItem("strawberry_seed", new CroptopiaSeedItem(BlockRegistry.strawberryCropBlock, createGroup(), FOREST));
+        sweetPotatoSeed = registerItem("sweetpotato_seed", new CroptopiaSeedItem(BlockRegistry.sweetPotatoCropBlock, createGroup(), PLAINS));
+        tomatilloSeed = registerItem("tomatillo_seed", new CroptopiaSeedItem(BlockRegistry.tomatilloCropBlock, createGroup(), FOREST));
+        tomatoSeed = registerItem("tomato_seed", new CroptopiaSeedItem(BlockRegistry.tomatoCropBlock, createGroup(), FOREST));
+        turnipSeed = registerItem("turnip_seed", new CroptopiaSeedItem(BlockRegistry.turnipCropBlock, createGroup(), JUNGLE));
+        yamSeed = registerItem("yam_seed", new CroptopiaSeedItem(BlockRegistry.yamCropBlock, createGroup(), SAVANNA));
+        zucchiniSeed = registerItem("zucchini_seed", new CroptopiaSeedItem(BlockRegistry.zucchiniCropBlock, createGroup(), SAVANNA));
+        oatSeed = registerItem("oat_seed", new CroptopiaSeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS));
+
+
+        mustardSeed = registerItem("mustard_seed", new CroptopiaSeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS));
+        paprikaSeed = registerItem("paprika_seed", new CroptopiaSeedItem(BlockRegistry.paprikaCropBlock, createGroup(), DESERT));
+        pepperSeed = registerItem("pepper_seed", new CroptopiaSeedItem(BlockRegistry.pepperCropBlock, createGroup(), PLAINS));
+        turmericSeed = registerItem("turmeric_seed", new CroptopiaSeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA));
+        gingerSeed = registerItem("ginger_seed", new CroptopiaSeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA));
+        chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
+        basilSeed = registerItem("basil_seed", new CroptopiaSeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE));
 
     }
 
 
     public static Item registerItem(String itemName, Item item) {
         Registry.register(Registry.ITEM, Croptopia.createIdentifier(itemName), item);
+        System.out.println( "\"" + itemName + "\",");
+        if (item instanceof CroptopiaSeedItem) {
+            seeds.add(item);
+        }
         return item;
+    }
+
+    public static ArrayList<Item> getSeeds() {
+        return seeds;
     }
 
     public static Item.Settings createGroup() {
