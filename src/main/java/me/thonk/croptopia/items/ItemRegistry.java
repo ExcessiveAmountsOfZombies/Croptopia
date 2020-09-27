@@ -322,7 +322,8 @@ public class ItemRegistry {
 
     public static Item registerItem(String itemName, Item item) {
         Registry.register(Registry.ITEM, Croptopia.createIdentifier(itemName), item);
-        System.out.println( "\"" + itemName + "\",");
+        // \bregisterItem\b..[A-Z]\w+",
+        //System.out.println( "\"" + itemName + "\",");
         if (item instanceof CroptopiaSeedItem) {
             seeds.add(item);
         }

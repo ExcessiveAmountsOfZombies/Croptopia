@@ -6,13 +6,11 @@ import me.thonk.croptopia.items.ItemRegistry;
 import me.thonk.croptopia.table.BiomeLootCondition;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
+import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
-import net.minecraft.loot.condition.LootConditionManager;
 import net.minecraft.loot.condition.LootConditionType;
-import net.minecraft.loot.condition.LootConditionTypes;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.registry.Registry;
@@ -32,6 +30,10 @@ public class Croptopia implements ModInitializer {
         BlockRegistry.init();
         ItemRegistry.init();
         CropLootTableModifier.init();
+
+        CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
+            SetupCommand.register(commandDispatcher);
+        });
     }
 
     public static Identifier createIdentifier(String name) {
