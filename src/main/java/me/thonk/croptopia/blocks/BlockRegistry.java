@@ -97,7 +97,7 @@ public class BlockRegistry {
         celeryCropBlock = registerBlock("celery_crop", new CroptopiaCropBlock(createBlockSettings(), celerySeed));
         chivesCropBlock = registerBlock("chives_crop", new CroptopiaCropBlock(createBlockSettings(), chivesSeed));
         coffeeCropBlock = registerBlock("coffee_crop", new CroptopiaCropBlock(createBlockSettings(), coffeeSeed));
-        cornCropBlock = registerBlock("corn_crop", new CroptopiaCropBlock(createBlockSettings(), cornSeed));
+        cornCropBlock = registerBlock("corn_crop", new CornCropBlock(createBlockSettings(), cornSeed));
         cranberryCropBlock = registerBlock("cranberry_crop", new CroptopiaCropBlock(createBlockSettings(), cranberrySeed));
         cucumberCropBlock = registerBlock("cucumber_crop", new CroptopiaCropBlock(createBlockSettings(), cucumberSeed));
         currantCropBlock = registerBlock("currant_crop", new CroptopiaCropBlock(createBlockSettings(), currantSeed));
