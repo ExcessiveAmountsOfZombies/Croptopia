@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "croptopia:block/crop_cross",
   "textures": {
-    "crop": "croptopia:block/cabbage_crop_stage0"
+    "cross": "croptopia:block/cabbage_crop_stage0"
   }
 }

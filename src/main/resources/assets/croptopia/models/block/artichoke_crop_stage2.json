@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "croptopia:block/crop_cross",
   "textures": {
-    "crop": "croptopia:block/artichoke_crop_stage2"
+    "cross": "croptopia:block/artichoke_crop_stage2"
   }
 }
