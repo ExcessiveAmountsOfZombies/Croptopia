@@ -1,6 +1,7 @@
 package me.thonk.croptopia.blocks;
 
 import me.thonk.croptopia.Croptopia;
+import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -81,74 +82,130 @@ public class BlockRegistry {
     public static Block salt;
 
 
+    public static Block appleSaplingBlock;
+    public static Block bananaSaplingBlock;
+    public static Block orangeSaplingBlock;
+    public static Block persimmonSaplingBlock;
+    public static Block plumSaplingBlock;
+    public static Block cherrySaplingBlock;
+    public static Block lemonSaplingBlock;
+    public static Block grapefruitSaplingBlock;
+    public static Block kumquatSaplingBlock;
+    public static Block peachSaplingBlock;
+    public static Block coconutSaplingBlock;
+    public static Block nutmegSaplingBlock;
+    public static Block figSaplingBlock;
+    public static Block nectarineSaplingBlock;
+    public static Block mangoSaplingBlock;
+    public static Block dragonFruitSaplingBlock;
+    public static Block starFruitSaplingBlock;
+    public static Block avocadoSaplingBlock;
+    public static Block apricotSaplingBlock;
+    public static Block pearSaplingBlock;
+    public static Block limeSaplingBlock;
+    public static Block dateSaplingBlock;
+
+
     public static void init() {
-        artichokeCropBlock = registerBlock("artichoke_crop", new CroptopiaCropBlock(createBlockSettings(), artichokeSeed));
-        asparagusCropBlock = registerBlock("asparagus_crop", new CroptopiaCropBlock(createBlockSettings(), asparagusSeed));
-        barleyCropBlock = registerBlock("barley_crop", new CroptopiaCropBlock(createBlockSettings(), barleySeed));
-        basilCropBlock = registerBlock("basil_crop", new CroptopiaCropBlock(createBlockSettings(), basilSeed));
-        bellPepperCropBlock = registerBlock("bellpepper_crop", new CroptopiaCropBlock(createBlockSettings(), bellPepperSeed));
-        blackBeanCropBlock = registerBlock("blackbean_crop", new CroptopiaCropBlock(createBlockSettings(), blackBeanSeed));
-        blackberryCropBlock = registerBlock("blackberry_crop", new CroptopiaCropBlock(createBlockSettings(), blackberrySeed));
-        blueberryCropBlock = registerBlock("blueberry_crop", new CroptopiaCropBlock(createBlockSettings(), blueberrySeed));
-        broccoliCropBlock = registerBlock("broccoli_crop", new CroptopiaCropBlock(createBlockSettings(), broccoliSeed));
-        cabbageCropBlock = registerBlock("cabbage_crop", new CroptopiaCropBlock(createBlockSettings(), cabbageSeed));
-        cantaloupeCropBlock = registerBlock("cantaloupe_crop", new CroptopiaCropBlock(createBlockSettings(), cantaloupeSeed));
-        cauliflowerCropBlock = registerBlock("cauliflower_crop", new CroptopiaCropBlock(createBlockSettings(), cauliflowerSeed));
-        celeryCropBlock = registerBlock("celery_crop", new CroptopiaCropBlock(createBlockSettings(), celerySeed));
-        chivesCropBlock = registerBlock("chives_crop", new CroptopiaCropBlock(createBlockSettings(), chivesSeed));
-        coffeeCropBlock = registerBlock("coffee_crop", new CroptopiaCropBlock(createBlockSettings(), coffeeSeed));
-        cornCropBlock = registerBlock("corn_crop", new CornCropBlock(createBlockSettings(), cornSeed));
-        cranberryCropBlock = registerBlock("cranberry_crop", new CroptopiaCropBlock(createBlockSettings(), cranberrySeed));
-        cucumberCropBlock = registerBlock("cucumber_crop", new CroptopiaCropBlock(createBlockSettings(), cucumberSeed));
-        currantCropBlock = registerBlock("currant_crop", new CroptopiaCropBlock(createBlockSettings(), currantSeed));
-        eggplantCropBlock = registerBlock("eggplant_crop", new CroptopiaCropBlock(createBlockSettings(), eggplantSeed));
-        elderberryCropBlock = registerBlock("elderberry_crop", new CroptopiaCropBlock(createBlockSettings(), elderberrySeed));
-        garlicCropBlock = registerBlock("garlic_crop", new CroptopiaCropBlock(createBlockSettings(), garlicSeed));
-        gingerCropBlock = registerBlock("ginger_crop", new CroptopiaCropBlock(createBlockSettings(), gingerSeed));
-        grapeCropBlock = registerBlock("grape_crop", new CroptopiaCropBlock(createBlockSettings(), grapeSeed));
-        greenBeanCropBlock = registerBlock("greenbean_crop", new CroptopiaCropBlock(createBlockSettings(), greenBeanSeed));
-        greenOnionCropBlock = registerBlock("greenonion_crop", new CroptopiaCropBlock(createBlockSettings(), greenOnionSeed));
-        honeydewCropBlock = registerBlock("honeydew_crop", new CroptopiaCropBlock(createBlockSettings(), honeydewSeed));
-        hopsCropBlock = registerBlock("hops_crop", new CroptopiaCropBlock(createBlockSettings(), hopsSeed));
-        kaleCropBlock = registerBlock("kale_crop", new CroptopiaCropBlock(createBlockSettings(), kaleSeed));
-        kiwiCropBlock = registerBlock("kiwi_crop", new CroptopiaCropBlock(createBlockSettings(), kiwiSeed));
-        leekCropBlock = registerBlock("leek_crop", new CroptopiaCropBlock(createBlockSettings(), leekSeed));
-        lettuceCropBlock = registerBlock("lettuce_crop", new CroptopiaCropBlock(createBlockSettings(), lettuceSeed));
-        mustardCropBlock = registerBlock("mustard_crop", new CroptopiaCropBlock(createBlockSettings(), mustardSeed));
-        oatCropBlock = registerBlock("oat_crop", new CroptopiaCropBlock(createBlockSettings(), oatSeed));
-        oliveCropBlock = registerBlock("olive_crop", new CroptopiaCropBlock(createBlockSettings(), oliveSeed));
-        onionCropBlock = registerBlock("onion_crop", new CroptopiaCropBlock(createBlockSettings(), onionSeed));
-        paprikaCropBlock = registerBlock("paprika_crop", new CroptopiaCropBlock(createBlockSettings(), paprikaSeed));
-        peanutCropBlock = registerBlock("peanut_crop", new CroptopiaCropBlock(createBlockSettings(), peanutSeed));
-        pepperCropBlock = registerBlock("pepper_crop", new CroptopiaCropBlock(createBlockSettings(), pepperSeed));
-        pineappleCropBlock = registerBlock("pineapple_crop", new CroptopiaCropBlock(createBlockSettings(), pineappleSeed));
-        radishCropBlock = registerBlock("radish_crop", new CroptopiaCropBlock(createBlockSettings(), radishSeed));
-        raspberryCropBlock = registerBlock("raspberry_crop", new CroptopiaCropBlock(createBlockSettings(), raspberrySeed));
-        rhubarbCropBlock = registerBlock("rhubarb_crop", new CroptopiaCropBlock(createBlockSettings(), rhubarbSeed));
-        riceCropBlock = registerBlock("rice_crop", new CroptopiaCropBlock(createBlockSettings(), riceSeed));
-        rutabagaCropBlock = registerBlock("rutabaga_crop", new CroptopiaCropBlock(createBlockSettings(), rutabagaSeed));
-        saguaroCropBlock = registerBlock("saguaro_crop", new CroptopiaCropBlock(createBlockSettings(), saguaroSeed));
-        soybeanCropBlock = registerBlock("soybean_crop", new CroptopiaCropBlock(createBlockSettings(), soybeanSeed));
-        spinachCropBlock = registerBlock("spinach_crop", new CroptopiaCropBlock(createBlockSettings(), spinachSeed));
-        squashCropBlock = registerBlock("squash_crop", new CroptopiaCropBlock(createBlockSettings(), squashSeed));
-        strawberryCropBlock = registerBlock("strawberry_crop", new CroptopiaCropBlock(createBlockSettings(), strawberrySeed));
-        sweetPotatoCropBlock = registerBlock("sweetpotato_crop", new CroptopiaCropBlock(createBlockSettings(), sweetPotatoSeed));
-        tomatilloCropBlock = registerBlock("tomatillo_crop", new CroptopiaCropBlock(createBlockSettings(), tomatilloSeed));
-        tomatoCropBlock = registerBlock("tomato_crop", new CroptopiaCropBlock(createBlockSettings(), tomatoSeed));
-        turmericCropBlock = registerBlock("turmeric_crop", new CroptopiaCropBlock(createBlockSettings(), turmericSeed));
-        turnipCropBlock = registerBlock("turnip_crop", new CroptopiaCropBlock(createBlockSettings(), turnipSeed));
-        yamCropBlock = registerBlock("yam_crop", new CroptopiaCropBlock(createBlockSettings(), yamSeed));
-        zucchiniCropBlock = registerBlock("zucchini_crop", new CroptopiaCropBlock(createBlockSettings(), zucchiniSeed));
+        appleSaplingBlock = registerBlock("apple_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        bananaSaplingBlock = registerBlock("banana_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        orangeSaplingBlock = registerBlock("orange_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        persimmonSaplingBlock = registerBlock("persimmon_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        plumSaplingBlock = registerBlock("plum_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        cherrySaplingBlock = registerBlock("cherry_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        lemonSaplingBlock = registerBlock("lemon_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        grapefruitSaplingBlock = registerBlock("grapefruit_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        kumquatSaplingBlock = registerBlock("kumquat_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        peachSaplingBlock = registerBlock("peach_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        coconutSaplingBlock = registerBlock("coconut_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        nutmegSaplingBlock = registerBlock("nutmeg_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        figSaplingBlock = registerBlock("fig_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        nectarineSaplingBlock = registerBlock("nectarine_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        mangoSaplingBlock = registerBlock("mango_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        dragonFruitSaplingBlock = registerBlock("dragonfruit_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        starFruitSaplingBlock = registerBlock("starfruit_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        avocadoSaplingBlock = registerBlock("avocado_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        apricotSaplingBlock = registerBlock("apricot_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        pearSaplingBlock = registerBlock("pear_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        limeSaplingBlock = registerBlock("lime_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+        dateSaplingBlock = registerBlock("date_sapling", new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(), createSaplingSettings()));
+
+
+
+
+        artichokeCropBlock = registerBlock("artichoke_crop", new CroptopiaCropBlock(createCropSettings(), artichokeSeed));
+        asparagusCropBlock = registerBlock("asparagus_crop", new CroptopiaCropBlock(createCropSettings(), asparagusSeed));
+        barleyCropBlock = registerBlock("barley_crop", new CroptopiaCropBlock(createCropSettings(), barleySeed));
+        basilCropBlock = registerBlock("basil_crop", new CroptopiaCropBlock(createCropSettings(), basilSeed));
+        bellPepperCropBlock = registerBlock("bellpepper_crop", new CroptopiaCropBlock(createCropSettings(), bellPepperSeed));
+        blackBeanCropBlock = registerBlock("blackbean_crop", new CroptopiaCropBlock(createCropSettings(), blackBeanSeed));
+        blackberryCropBlock = registerBlock("blackberry_crop", new CroptopiaCropBlock(createCropSettings(), blackberrySeed));
+        blueberryCropBlock = registerBlock("blueberry_crop", new CroptopiaCropBlock(createCropSettings(), blueberrySeed));
+        broccoliCropBlock = registerBlock("broccoli_crop", new CroptopiaCropBlock(createCropSettings(), broccoliSeed));
+        cabbageCropBlock = registerBlock("cabbage_crop", new CroptopiaCropBlock(createCropSettings(), cabbageSeed));
+        cantaloupeCropBlock = registerBlock("cantaloupe_crop", new CroptopiaCropBlock(createCropSettings(), cantaloupeSeed));
+        cauliflowerCropBlock = registerBlock("cauliflower_crop", new CroptopiaCropBlock(createCropSettings(), cauliflowerSeed));
+        celeryCropBlock = registerBlock("celery_crop", new CroptopiaCropBlock(createCropSettings(), celerySeed));
+        chivesCropBlock = registerBlock("chives_crop", new CroptopiaCropBlock(createCropSettings(), chivesSeed));
+        coffeeCropBlock = registerBlock("coffee_crop", new CroptopiaCropBlock(createCropSettings(), coffeeSeed));
+        cornCropBlock = registerBlock("corn_crop", new CornCropBlock(createCropSettings(), cornSeed));
+        cranberryCropBlock = registerBlock("cranberry_crop", new CroptopiaCropBlock(createCropSettings(), cranberrySeed));
+        cucumberCropBlock = registerBlock("cucumber_crop", new CroptopiaCropBlock(createCropSettings(), cucumberSeed));
+        currantCropBlock = registerBlock("currant_crop", new CroptopiaCropBlock(createCropSettings(), currantSeed));
+        eggplantCropBlock = registerBlock("eggplant_crop", new CroptopiaCropBlock(createCropSettings(), eggplantSeed));
+        elderberryCropBlock = registerBlock("elderberry_crop", new CroptopiaCropBlock(createCropSettings(), elderberrySeed));
+        garlicCropBlock = registerBlock("garlic_crop", new CroptopiaCropBlock(createCropSettings(), garlicSeed));
+        gingerCropBlock = registerBlock("ginger_crop", new CroptopiaCropBlock(createCropSettings(), gingerSeed));
+        grapeCropBlock = registerBlock("grape_crop", new CroptopiaCropBlock(createCropSettings(), grapeSeed));
+        greenBeanCropBlock = registerBlock("greenbean_crop", new CroptopiaCropBlock(createCropSettings(), greenBeanSeed));
+        greenOnionCropBlock = registerBlock("greenonion_crop", new CroptopiaCropBlock(createCropSettings(), greenOnionSeed));
+        honeydewCropBlock = registerBlock("honeydew_crop", new CroptopiaCropBlock(createCropSettings(), honeydewSeed));
+        hopsCropBlock = registerBlock("hops_crop", new CroptopiaCropBlock(createCropSettings(), hopsSeed));
+        kaleCropBlock = registerBlock("kale_crop", new CroptopiaCropBlock(createCropSettings(), kaleSeed));
+        kiwiCropBlock = registerBlock("kiwi_crop", new CroptopiaCropBlock(createCropSettings(), kiwiSeed));
+        leekCropBlock = registerBlock("leek_crop", new CroptopiaCropBlock(createCropSettings(), leekSeed));
+        lettuceCropBlock = registerBlock("lettuce_crop", new CroptopiaCropBlock(createCropSettings(), lettuceSeed));
+        mustardCropBlock = registerBlock("mustard_crop", new CroptopiaCropBlock(createCropSettings(), mustardSeed));
+        oatCropBlock = registerBlock("oat_crop", new CroptopiaCropBlock(createCropSettings(), oatSeed));
+        oliveCropBlock = registerBlock("olive_crop", new CroptopiaCropBlock(createCropSettings(), oliveSeed));
+        onionCropBlock = registerBlock("onion_crop", new CroptopiaCropBlock(createCropSettings(), onionSeed));
+        paprikaCropBlock = registerBlock("paprika_crop", new CroptopiaCropBlock(createCropSettings(), paprikaSeed));
+        peanutCropBlock = registerBlock("peanut_crop", new CroptopiaCropBlock(createCropSettings(), peanutSeed));
+        pepperCropBlock = registerBlock("pepper_crop", new CroptopiaCropBlock(createCropSettings(), pepperSeed));
+        pineappleCropBlock = registerBlock("pineapple_crop", new CroptopiaCropBlock(createCropSettings(), pineappleSeed));
+        radishCropBlock = registerBlock("radish_crop", new CroptopiaCropBlock(createCropSettings(), radishSeed));
+        raspberryCropBlock = registerBlock("raspberry_crop", new CroptopiaCropBlock(createCropSettings(), raspberrySeed));
+        rhubarbCropBlock = registerBlock("rhubarb_crop", new CroptopiaCropBlock(createCropSettings(), rhubarbSeed));
+        riceCropBlock = registerBlock("rice_crop", new CroptopiaCropBlock(createCropSettings(), riceSeed));
+        rutabagaCropBlock = registerBlock("rutabaga_crop", new CroptopiaCropBlock(createCropSettings(), rutabagaSeed));
+        saguaroCropBlock = registerBlock("saguaro_crop", new CroptopiaCropBlock(createCropSettings(), saguaroSeed));
+        soybeanCropBlock = registerBlock("soybean_crop", new CroptopiaCropBlock(createCropSettings(), soybeanSeed));
+        spinachCropBlock = registerBlock("spinach_crop", new CroptopiaCropBlock(createCropSettings(), spinachSeed));
+        squashCropBlock = registerBlock("squash_crop", new CroptopiaCropBlock(createCropSettings(), squashSeed));
+        strawberryCropBlock = registerBlock("strawberry_crop", new CroptopiaCropBlock(createCropSettings(), strawberrySeed));
+        sweetPotatoCropBlock = registerBlock("sweetpotato_crop", new CroptopiaCropBlock(createCropSettings(), sweetPotatoSeed));
+        tomatilloCropBlock = registerBlock("tomatillo_crop", new CroptopiaCropBlock(createCropSettings(), tomatilloSeed));
+        tomatoCropBlock = registerBlock("tomato_crop", new CroptopiaCropBlock(createCropSettings(), tomatoSeed));
+        turmericCropBlock = registerBlock("turmeric_crop", new CroptopiaCropBlock(createCropSettings(), turmericSeed));
+        turnipCropBlock = registerBlock("turnip_crop", new CroptopiaCropBlock(createCropSettings(), turnipSeed));
+        yamCropBlock = registerBlock("yam_crop", new CroptopiaCropBlock(createCropSettings(), yamSeed));
+        zucchiniCropBlock = registerBlock("zucchini_crop", new CroptopiaCropBlock(createCropSettings(), zucchiniSeed));
     }
 
-    public static Block registerBlock(String itemName, Block item) {
+    public static Block registerBlock(String blockName, Block item) {
         cropBlocks.add(item);
-        Registry.register(Registry.BLOCK, Croptopia.createIdentifier(itemName), item);
+        System.out.println("\"" + blockName + "\",");
+        Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
         return item;
     }
 
-    public static FabricBlockSettings createBlockSettings() {
+    public static FabricBlockSettings createCropSettings() {
         return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP);
     }
+
+    public static FabricBlockSettings createSaplingSettings() {
+        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS);
+    }
+
 
 }

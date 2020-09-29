@@ -2,6 +2,10 @@ package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.BlockRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ComposterBlock;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -163,6 +167,31 @@ public class ItemRegistry {
     public static Item soybeanSeed;
 
 
+
+    public static Item appleSapling;
+    public static Item bananaSapling;
+    public static Item orangeSapling;
+    public static Item persimmonSapling;
+    public static Item plumSapling;
+    public static Item cherrySapling;
+    public static Item lemonSapling;
+    public static Item grapefruitSapling;
+    public static Item kumquatSapling;
+    public static Item peachSapling;
+    public static Item coconutSapling;
+    public static Item nutmegSapling;
+    public static Item figSapling;
+    public static Item nectarineSapling;
+    public static Item mangoSapling;
+    public static Item dragonFruitSapling;
+    public static Item starFruitSapling;
+    public static Item avocadoSapling;
+    public static Item apricotSapling;
+    public static Item pearSapling;
+    public static Item limeSapling;
+    public static Item dateSapling;
+
+
     public static Item vanillaSeed;
 
     // intermediary foods. These would be extra ingredients before making a big main food.
@@ -239,7 +268,7 @@ public class ItemRegistry {
         coconut = registerItem("coconut", new Item(createGroup().food(EDIBLE_YUCK)));
         nutmeg = registerItem("nutmeg", new Item(createGroup().food(EDIBLE_YUCK)));
         fig = registerItem("fig", new Item(createGroup().food(EDIBLE_OK)));
-        nectarine = registerItem("necarine", new Item(createGroup().food(EDIBLE_OK)));
+        nectarine = registerItem("nectarine", new Item(createGroup().food(EDIBLE_OK)));
         mango = registerItem("mango", new Item(createGroup().food(EDIBLE_OK)));
         dragonFruit = registerItem("dragonfruit", new Item(createGroup().food(EDIBLE_OK)));
         starFruit = registerItem("starfruit", new Item(createGroup().food(EDIBLE_OK)));
@@ -316,6 +345,30 @@ public class ItemRegistry {
         gingerSeed = registerItem("ginger_seed", new CroptopiaSeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA));
         chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
         basilSeed = registerItem("basil_seed", new CroptopiaSeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE));
+
+
+        appleSapling = registerItem("apple_sapling", new AliasedBlockItem(BlockRegistry.appleSaplingBlock, createGroup()));
+        bananaSapling = registerItem("banana_sapling", new AliasedBlockItem(BlockRegistry.bananaSaplingBlock, createGroup()));
+        orangeSapling = registerItem("orange_sapling", new AliasedBlockItem(BlockRegistry.orangeSaplingBlock, createGroup()));
+        persimmonSapling = registerItem("persimmon_sapling", new AliasedBlockItem(BlockRegistry.persimmonSaplingBlock, createGroup()));
+        plumSapling = registerItem("plum_sapling", new AliasedBlockItem(BlockRegistry.plumSaplingBlock, createGroup()));
+        cherrySapling = registerItem("cherry_sapling", new AliasedBlockItem(BlockRegistry.cherrySaplingBlock, createGroup()));
+        lemonSapling = registerItem("lemon_sapling", new AliasedBlockItem(BlockRegistry.lemonSaplingBlock, createGroup()));
+        grapefruitSapling = registerItem("grapefruit_sapling", new AliasedBlockItem(BlockRegistry.grapefruitSaplingBlock, createGroup()));
+        kumquatSapling = registerItem("kumquat_sapling", new AliasedBlockItem(BlockRegistry.kumquatSaplingBlock, createGroup()));
+        peachSapling = registerItem("peach_sapling", new AliasedBlockItem(BlockRegistry.peachSaplingBlock, createGroup()));
+        coconutSapling = registerItem("coconut_sapling", new AliasedBlockItem(BlockRegistry.coconutSaplingBlock, createGroup()));
+        nutmegSapling = registerItem("nutmeg_sapling", new AliasedBlockItem(BlockRegistry.nutmegSaplingBlock, createGroup()));
+        figSapling = registerItem("fig_sapling", new AliasedBlockItem(BlockRegistry.figSaplingBlock, createGroup()));
+        nectarineSapling = registerItem("nectarine_sapling", new AliasedBlockItem(BlockRegistry.nectarineSaplingBlock, createGroup()));
+        mangoSapling = registerItem("mango_sapling", new AliasedBlockItem(BlockRegistry.mangoSaplingBlock, createGroup()));
+        dragonFruitSapling = registerItem("dragonfruit_sapling", new AliasedBlockItem(BlockRegistry.dragonFruitSaplingBlock, createGroup()));
+        starFruitSapling = registerItem("starfruit_sapling", new AliasedBlockItem(BlockRegistry.starFruitSaplingBlock, createGroup()));
+        avocadoSapling = registerItem("avocado_sapling", new AliasedBlockItem(BlockRegistry.avocadoSaplingBlock, createGroup()));
+        apricotSapling = registerItem("apricot_sapling", new AliasedBlockItem(BlockRegistry.apricotSaplingBlock, createGroup()));
+        pearSapling = registerItem("pear_sapling", new AliasedBlockItem(BlockRegistry.pearSaplingBlock, createGroup()));
+        limeSapling = registerItem("lime_sapling", new AliasedBlockItem(BlockRegistry.limeSaplingBlock, createGroup()));
+        dateSapling = registerItem("date_sapling", new AliasedBlockItem(BlockRegistry.dateSaplingBlock, createGroup()));
 
     }
 
