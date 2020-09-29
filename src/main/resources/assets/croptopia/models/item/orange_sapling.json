@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "croptopia:item/orange_sapling"
+    "layer0": "croptopia:block/orange_sapling"
   }
 }

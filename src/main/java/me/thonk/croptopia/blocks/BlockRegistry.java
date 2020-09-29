@@ -194,7 +194,8 @@ public class BlockRegistry {
 
     public static Block registerBlock(String blockName, Block item) {
         cropBlocks.add(item);
-        System.out.println("\"" + blockName + "\",");
+        // Debug sout for easy json writing.
+        //System.out.println("\"" + blockName + "\",");
         Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
         return item;
     }

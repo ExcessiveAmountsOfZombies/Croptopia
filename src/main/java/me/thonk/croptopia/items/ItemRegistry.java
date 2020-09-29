@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.item.AliasedBlockItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
@@ -375,6 +376,9 @@ public class ItemRegistry {
 
     public static Item registerItem(String itemName, Item item) {
         Registry.register(Registry.ITEM, Croptopia.createIdentifier(itemName), item);
+        if (item instanceof AliasedBlockItem) {
+            ((AliasedBlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
+        }
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
         if (item instanceof CroptopiaSeedItem) {
