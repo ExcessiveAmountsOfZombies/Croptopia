@@ -9,9 +9,14 @@ import java.util.Random;
 
 public class CroptopiaSaplingGenerator extends SaplingGenerator {
 
+    private final ConfiguredFeature<TreeFeatureConfig, ?> tree;
+
+    public CroptopiaSaplingGenerator(ConfiguredFeature<?, ?> tree) {
+        this.tree = (ConfiguredFeature<TreeFeatureConfig, ?>) tree;
+    }
 
     @Override
     protected @Nullable ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
-        return null;
+        return tree;
     }
 }

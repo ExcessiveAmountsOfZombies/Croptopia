@@ -29,9 +29,8 @@ public class CroptopiaCropBlock extends CropBlock {
 
     private Item seed;
 
-    protected CroptopiaCropBlock(Settings settings, Item seed) {
+    protected CroptopiaCropBlock(Settings settings) {
         super(settings);
-        this.seed = seed;
     }
 
     @Override
@@ -60,6 +59,9 @@ public class CroptopiaCropBlock extends CropBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
+        /*if (seedItem == null) {
+            seedItem = Registry.ITEM.get(Croptopia.createIdentifier(seed));
+        }*/
         return seed;
     }
 }

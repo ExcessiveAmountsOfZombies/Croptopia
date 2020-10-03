@@ -1,0 +1,19 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:kumquat"
+    },
+    {
+      "item": "croptopia:kumquat"
+    },
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "result": {
+    "item": "croptopia:kumquat_sapling",
+    "count": 1
+  }
+}

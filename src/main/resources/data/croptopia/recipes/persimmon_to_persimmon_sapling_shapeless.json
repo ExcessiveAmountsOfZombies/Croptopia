@@ -1,0 +1,19 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:persimmon"
+    },
+    {
+      "item": "croptopia:persimmon"
+    },
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "result": {
+    "item": "croptopia:persimmon_sapling",
+    "count": 1
+  }
+}

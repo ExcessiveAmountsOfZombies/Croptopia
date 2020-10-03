@@ -1,11 +1,13 @@
 package me.thonk.croptopia.items;
 
+import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.table.BiomeLootCondition;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.item.Item;
-import net.minecraft.loot.*;
+import net.minecraft.loot.LootManager;
+import net.minecraft.loot.UniformLootTableRange;
 import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.AlternativeEntry;
@@ -26,7 +28,7 @@ public class CropLootTableModifier {
 
                 builder.withCondition(new MatchToolLootCondition(ItemPredicate.Builder.create().tag(FabricToolTags.HOES).build()));
                 ArrayList<LootPoolEntry.Builder> builders = new ArrayList<>();
-                for (Item seed : ItemRegistry.getSeeds()) {
+                for (Item seed : Croptopia.getSeeds()) {
                     builders.add(ItemEntry.builder(seed)
                             .conditionally(() -> BiomeLootCondition.builder(Biome.Category.PLAINS).build())
                             .conditionally(() -> RandomChanceLootCondition.builder(0.0125f).build()));

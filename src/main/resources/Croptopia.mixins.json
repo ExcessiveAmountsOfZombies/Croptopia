@@ -4,9 +4,12 @@
   "package": "me.thonk.croptopia.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "DefaultBiomeFeaturesMixin"
   ],
   "client": [
     "MixinTest"
+  ],
+  "server": [
   ],
   "injectors": {
     "defaultRequire": 1

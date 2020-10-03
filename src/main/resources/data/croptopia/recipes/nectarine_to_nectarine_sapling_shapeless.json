@@ -1,0 +1,19 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:nectarine"
+    },
+    {
+      "item": "croptopia:nectarine"
+    },
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "result": {
+    "item": "croptopia:nectarine_sapling",
+    "count": 1
+  }
+}
