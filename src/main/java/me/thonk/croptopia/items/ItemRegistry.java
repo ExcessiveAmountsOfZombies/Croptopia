@@ -3,11 +3,11 @@ package me.thonk.croptopia.items;
 import me.thonk.croptopia.blocks.BlockRegistry;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.MilkBucketItem;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.Croptopia.registerItem;
-import static me.thonk.croptopia.FoodRegistry.EDIBLE_OK;
-import static me.thonk.croptopia.FoodRegistry.EDIBLE_YUCK;
+import static me.thonk.croptopia.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
 public class ItemRegistry {
@@ -15,79 +15,79 @@ public class ItemRegistry {
 
 
     // Fruits & Vegetables // cropitem
-    public static Item artichoke = registerItem("artichoke", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item asparagus = registerItem("asparagus", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item barley = registerItem("barley", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item bellPepper = registerItem("bellpepper", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item blackBean = registerItem("blackbean", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item blackberry = registerItem("blackberry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item blueberry = registerItem("blueberry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item broccoli = registerItem("broccoli", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item cabbage = registerItem("cabbage", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item cantaloupe = registerItem("cantaloupe", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item cauliflower = registerItem("cauliflower", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item celery = registerItem("celery", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item coffee = registerItem("coffee", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item corn = registerItem("corn", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item cranberry = registerItem("cranberry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item cucumber = registerItem("cucumber", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item currant = registerItem("currant", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item eggplant = registerItem("eggplant", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item elderberry = registerItem("elderberry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item garlic = registerItem("garlic", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item grape = registerItem("grape", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item greenBean = registerItem("greenbean", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item greenOnion = registerItem("greenonion", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item honeydew = registerItem("honeydew", new Item(createGroup().food(EDIBLE_OK)));
+    public static Item artichoke = registerItem("artichoke", new Item(createGroup().food(EDIBLE_1)));
+    public static Item asparagus = registerItem("asparagus", new Item(createGroup().food(EDIBLE_3)));
+    public static Item barley = registerItem("barley", new Item(createGroup().food(EDIBLE_1)));
+    public static Item bellPepper = registerItem("bellpepper", new Item(createGroup().food(EDIBLE_3)));
+    public static Item blackBean = registerItem("blackbean", new Item(createGroup().food(EDIBLE_3)));
+    public static Item blackberry = registerItem("blackberry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item blueberry = registerItem("blueberry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item broccoli = registerItem("broccoli", new Item(createGroup().food(EDIBLE_3)));
+    public static Item cabbage = registerItem("cabbage", new Item(createGroup().food(EDIBLE_1)));
+    public static Item cantaloupe = registerItem("cantaloupe", new Item(createGroup().food(EDIBLE_3)));
+    public static Item cauliflower = registerItem("cauliflower", new Item(createGroup().food(EDIBLE_3)));
+    public static Item celery = registerItem("celery", new Item(createGroup().food(EDIBLE_3)));
+    public static Item coffeeBeans = registerItem("coffee_beans", new Item(createGroup().food(EDIBLE_3)));
+    public static Item corn = registerItem("corn", new Item(createGroup().food(EDIBLE_3)));
+    public static Item cranberry = registerItem("cranberry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item cucumber = registerItem("cucumber", new Item(createGroup().food(EDIBLE_3)));
+    public static Item currant = registerItem("currant", new Item(createGroup().food(EDIBLE_3)));
+    public static Item eggplant = registerItem("eggplant", new Item(createGroup().food(EDIBLE_3)));
+    public static Item elderberry = registerItem("elderberry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item garlic = registerItem("garlic", new Item(createGroup().food(EDIBLE_1)));
+    public static Item grape = registerItem("grape", new Item(createGroup().food(EDIBLE_3)));
+    public static Item greenBean = registerItem("greenbean", new Item(createGroup().food(EDIBLE_3)));
+    public static Item greenOnion = registerItem("greenonion", new Item(createGroup().food(EDIBLE_1)));
+    public static Item honeydew = registerItem("honeydew", new Item(createGroup().food(EDIBLE_3)));
     public static Item hops = registerItem("hops", new Item(createGroup()));
-    public static Item kale = registerItem("kale", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item kiwi = registerItem("kiwi", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item leek = registerItem("leek", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item lettuce = registerItem("lettuce", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item oat = registerItem("oat", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item olive = registerItem("olive", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item onion = registerItem("onion", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item peanut = registerItem("peanut", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item pineapple = registerItem("pineapple", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item radish = registerItem("radish", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item raspberry = registerItem("raspberry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item rhubarb = registerItem("rhubarb", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item rice = registerItem("rice", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item rutabaga = registerItem("rutabaga", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item saguaro = registerItem("saguaro", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item soybean = registerItem("soybean", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item spinach = registerItem("spinach", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item squash = registerItem("squash", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item strawberry = registerItem("strawberry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item sweetPotato = registerItem("sweetpotato", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item tomatillo = registerItem("tomatillo", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item tomato = registerItem("tomato", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item turnip = registerItem("turnip", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item yam = registerItem("yam", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item zucchini = registerItem("zucchini", new Item(createGroup().food(EDIBLE_OK)));
+    public static Item kale = registerItem("kale", new Item(createGroup().food(EDIBLE_3)));
+    public static Item kiwi = registerItem("kiwi", new Item(createGroup().food(EDIBLE_3)));
+    public static Item leek = registerItem("leek", new Item(createGroup().food(EDIBLE_3)));
+    public static Item lettuce = registerItem("lettuce", new Item(createGroup().food(EDIBLE_3)));
+    public static Item oat = registerItem("oat", new Item(createGroup().food(EDIBLE_1)));
+    public static Item olive = registerItem("olive", new Item(createGroup().food(EDIBLE_3)));
+    public static Item onion = registerItem("onion", new Item(createGroup().food(EDIBLE_3)));
+    public static Item peanut = registerItem("peanut", new Item(createGroup().food(EDIBLE_1)));
+    public static Item pineapple = registerItem("pineapple", new Item(createGroup().food(EDIBLE_3)));
+    public static Item radish = registerItem("radish", new Item(createGroup().food(EDIBLE_3)));
+    public static Item raspberry = registerItem("raspberry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item rhubarb = registerItem("rhubarb", new Item(createGroup().food(EDIBLE_3)));
+    public static Item rice = registerItem("rice", new Item(createGroup().food(EDIBLE_1)));
+    public static Item rutabaga = registerItem("rutabaga", new Item(createGroup().food(EDIBLE_3)));
+    public static Item saguaro = registerItem("saguaro", new Item(createGroup().food(EDIBLE_3)));
+    public static Item soybean = registerItem("soybean", new Item(createGroup().food(EDIBLE_1)));
+    public static Item spinach = registerItem("spinach", new Item(createGroup().food(EDIBLE_3)));
+    public static Item squash = registerItem("squash", new Item(createGroup().food(EDIBLE_3)));
+    public static Item strawberry = registerItem("strawberry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item sweetPotato = registerItem("sweetpotato", new Item(createGroup().food(EDIBLE_3)));
+    public static Item tomatillo = registerItem("tomatillo", new Item(createGroup().food(EDIBLE_3)));
+    public static Item tomato = registerItem("tomato", new Item(createGroup().food(EDIBLE_3)));
+    public static Item turnip = registerItem("turnip", new Item(createGroup().food(EDIBLE_3)));
+    public static Item yam = registerItem("yam", new Item(createGroup().food(EDIBLE_3)));
+    public static Item zucchini = registerItem("zucchini", new Item(createGroup().food(EDIBLE_3)));
 
     // Trees
-    public static Item orange = registerItem("orange", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item banana = registerItem("banana", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item persimmon = registerItem("persimmon", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item plum = registerItem("plum", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item cherry = registerItem("cherry", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item lemon = registerItem("lemon", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item grapefruit = registerItem("grapefruit", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item kumquat = registerItem("kumquat", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item peach = registerItem("peach", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item coconut = registerItem("coconut", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item nutmeg = registerItem("nutmeg", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item fig = registerItem("fig", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item nectarine = registerItem("nectarine", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item mango = registerItem("mango", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item dragonFruit = registerItem("dragonfruit", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item starFruit = registerItem("starfruit", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item avocado = registerItem("avocado", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item apricot = registerItem("apricot", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item pear = registerItem("pear", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item lime = registerItem("lime", new Item(createGroup().food(EDIBLE_OK)));
-    public static Item date = registerItem("date", new Item(createGroup().food(EDIBLE_OK)));
+    public static Item orange = registerItem("orange", new Item(createGroup().food(EDIBLE_3)));
+    public static Item banana = registerItem("banana", new Item(createGroup().food(EDIBLE_3)));
+    public static Item persimmon = registerItem("persimmon", new Item(createGroup().food(EDIBLE_3)));
+    public static Item plum = registerItem("plum", new Item(createGroup().food(EDIBLE_3)));
+    public static Item cherry = registerItem("cherry", new Item(createGroup().food(EDIBLE_3)));
+    public static Item lemon = registerItem("lemon", new Item(createGroup().food(EDIBLE_3)));
+    public static Item grapefruit = registerItem("grapefruit", new Item(createGroup().food(EDIBLE_3)));
+    public static Item kumquat = registerItem("kumquat", new Item(createGroup().food(EDIBLE_3)));
+    public static Item peach = registerItem("peach", new Item(createGroup().food(EDIBLE_3)));
+    public static Item coconut = registerItem("coconut", new Item(createGroup().food(EDIBLE_1)));
+    public static Item nutmeg = registerItem("nutmeg", new Item(createGroup().food(EDIBLE_1)));
+    public static Item fig = registerItem("fig", new Item(createGroup().food(EDIBLE_3)));
+    public static Item nectarine = registerItem("nectarine", new Item(createGroup().food(EDIBLE_3)));
+    public static Item mango = registerItem("mango", new Item(createGroup().food(EDIBLE_3)));
+    public static Item dragonFruit = registerItem("dragonfruit", new Item(createGroup().food(EDIBLE_3)));
+    public static Item starFruit = registerItem("starfruit", new Item(createGroup().food(EDIBLE_3)));
+    public static Item avocado = registerItem("avocado", new Item(createGroup().food(EDIBLE_3)));
+    public static Item apricot = registerItem("apricot", new Item(createGroup().food(EDIBLE_3)));
+    public static Item pear = registerItem("pear", new Item(createGroup().food(EDIBLE_3)));
+    public static Item lime = registerItem("lime", new Item(createGroup().food(EDIBLE_3)));
+    public static Item date = registerItem("date", new Item(createGroup().food(EDIBLE_3)));
 
     // Spices
     public static Item mustard = registerItem("mustard", new Item(createGroup()));
@@ -98,8 +98,8 @@ public class ItemRegistry {
     public static Item turmeric = registerItem("turmeric", new Item(createGroup()));
     public static Item ginger = registerItem("ginger", new Item(createGroup()));
     // Herbs
-    public static Item chives = registerItem("chives", new Item(createGroup().food(EDIBLE_YUCK)));
-    public static Item basil = registerItem("basil", new Item(createGroup().food(EDIBLE_YUCK)));
+    public static Item chives = registerItem("chives", new Item(createGroup().food(EDIBLE_1)));
+    public static Item basil = registerItem("basil", new Item(createGroup().food(EDIBLE_1)));
 
 
     public static Item artichokeSeed = registerItem("artichoke_seed", new CroptopiaSeedItem(BlockRegistry.artichokeCropBlock, createGroup(), SWAMP));
@@ -157,8 +157,8 @@ public class ItemRegistry {
     public static Item chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
     public static Item basilSeed = registerItem("basil_seed", new CroptopiaSeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE));
     public static Item oatSeed = registerItem("oat_seed", new CroptopiaSeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS));
-    public static Item barleySeed;
-    public static Item soybeanSeed;
+    public static Item barleySeed = registerItem("barley_seed", new CroptopiaSeedItem(BlockRegistry.barleyCropBlock, createGroup(), PLAINS));
+    public static Item soybeanSeed = registerItem("soybean_seed", new CroptopiaSeedItem(BlockRegistry.soybeanCropBlock, createGroup(), PLAINS));
 
 
 
@@ -188,14 +188,264 @@ public class ItemRegistry {
 
     public static Item vanillaSeed;
 
-    // intermediary foods. These would be extra ingredients before making a big main food.
-    public static Item oliveOil;
-    public static Item cheese;
-    public static Item chocolate;
-    public static Item flour;
-    public static Item butter;
-    public static Item noodle;
-    public static Item tofu;
+    // secondary ingredients?
+    public static Item oliveOil = new Item(createGroup());
+    public static Item cheese = new Item(createGroup().food(EDIBLE_5));
+    public static Item flour = new Item(createGroup());
+    public static Item butter = new Item(createGroup().food(EDIBLE_3));
+    public static Item noodle = new Item(createGroup());
+    public static Item tofu = new Item(createGroup().food(EDIBLE_5));
+    public static Item molasses = new Item(createGroup());
+    public static Item caramel = new Item(createGroup());
+    public static Item chocolate = new Item(createGroup().food(EDIBLE_5));
+    public static Item tortilla = new Item(createGroup().food(EDIBLE_3));
+    public static Item soySauce = new Item(createGroup());
+    public static Item dumpling = new Item(createGroup());
+    public static Item ravioli = new Item(createGroup());
+    public static Item salsa = new Item(createGroup().food(EDIBLE_3));
+    public static Item artichokeDip = new Item(createGroup().food(EDIBLE_3));
+    public static Item pepperoni = new Item(createGroup().food(EDIBLE_5));
 
-    public static void init() {}
+    // drinks
+    public static Item grapeJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item orangeJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item appleJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item cranberryJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item saguaroJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item tomatoJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item melonJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item pineappleJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item coffee = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item lemonade = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item limeade = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item soyMilk = new MilkBucketItem(createGroup().food(EDIBLE_5));
+    //public static Item tea;
+
+    public static Item strawberrySmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item bananaSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item kaleSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item fruitSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+
+    public static Item chocolateMilkshake = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+
+    public static Item beer = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item wine = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item mead = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item rum = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item pumpkinSpiceLatte = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+
+    // jams
+    public static Item grapeJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item strawberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item peachJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item apricotJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item blackberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item blueberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item cherryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item elderberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item raspberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+
+    // snacks?
+    public static Item beefJerky = new Item(createGroup().food(EDIBLE_5));
+    public static Item porkJerky = new Item(createGroup().food(EDIBLE_5));
+    public static Item kaleChips = new Item(createGroup().food(EDIBLE_5));
+    public static Item potatoChips = new Item(createGroup().food(EDIBLE_5));
+    public static Item steamedRice = new Item(createGroup().food(EDIBLE_5));
+    public static Item eggRoll = new Item(createGroup().food(EDIBLE_5));
+    public static Item frenchFries = new Item(createGroup().food(EDIBLE_5));
+    public static Item sweetPotatoFries = new Item(createGroup().food(EDIBLE_5));
+    public static Item onionRings = new Item(createGroup().food(EDIBLE_5));
+    public static Item raisins = new Item(createGroup().food(EDIBLE_3));
+    public static Item donut = new Item(createGroup().food(EDIBLE_5));
+    public static Item popcorn = new Item(createGroup().food(EDIBLE_3));
+    public static Item bakedBeans = new Item(createGroup().food(EDIBLE_5));
+    public static Item toast = new Item(createGroup().food(EDIBLE_7));
+    public static Item cucumberSalad = new Item(createGroup().food(EDIBLE_10));
+    public static Item caesarSalad = new Item(createGroup().food(EDIBLE_10));
+    public static Item leafySalad = new Item(createGroup().food(EDIBLE_10));
+    public static Item fruitSalad = new Item(createGroup().food(EDIBLE_10));
+    public static Item veggieSalad = new Item(createGroup().food(EDIBLE_10));
+    public static Item porkAndBeans = new Item(createGroup().food(EDIBLE_10));
+    public static Item oatmeal = new Item(createGroup().food(EDIBLE_7));
+    public static Item leekSoup = new Item(createGroup().food(EDIBLE_7));
+    public static Item yoghurt = new Item(createGroup().food(EDIBLE_5));
+    public static Item saucyChips = new Item(createGroup().food(EDIBLE_7));
+
+
+
+
+
+    // breakfast
+    public static Item scrambledEggs = new Item(createGroup().food(EDIBLE_7));
+    public static Item butteredToast = new Item(createGroup().food(EDIBLE_7));
+    public static Item toastWithJam = new Item(createGroup().food(EDIBLE_7));
+
+
+    // meals
+    public static Item hamSandwich = new Item(createGroup().food(EDIBLE_10));
+    public static Item peanutButterAndJam = new Item(createGroup().food(EDIBLE_10));
+    public static Item BLT = new Item(createGroup().food(EDIBLE_10));
+    public static Item grilledCheese = new Item(createGroup().food(EDIBLE_7));
+    public static Item tunaSandwich = new Item(createGroup().food(EDIBLE_10));
+    public static Item cheeseburger = new Item(createGroup().food(EDIBLE_10));
+    public static Item hamburger = new Item(createGroup().food(EDIBLE_10));
+    public static Item tofuBurger = new Item(createGroup().food(EDIBLE_10));
+    public static Item pizza = new Item(createGroup().food(EDIBLE_14));
+    public static Item supremePizza = new Item(createGroup().food(EDIBLE_18));
+    public static Item cheesePizza = new Item(createGroup().food(EDIBLE_14));
+    public static Item pineapplePepperoniPizza = new Item(createGroup().food(EDIBLE_18));
+    public static Item lemonChicken = new Item(createGroup().food(EDIBLE_10));
+    public static Item friedChicken = new Item(createGroup().food(EDIBLE_10));
+    public static Item chickenAndNoodles = new Item(createGroup().food(EDIBLE_10));
+    public static Item chickenAndDumplings = new Item(createGroup().food(EDIBLE_10));
+    public static Item tofuAndDumplings = new Item(createGroup().food(EDIBLE_14));
+    public static Item spaghettiSquash = new Item(createGroup().food(EDIBLE_10));
+    public static Item chickenAndRice = new Item(createGroup().food(EDIBLE_10));
+    public static Item taco = new Item(createGroup().food(EDIBLE_10));
+    public static Item sushi = new Item(createGroup().food(EDIBLE_10));
+
+    // desert block?
+    public static Item coffeeCake;
+    public static Item chocolateCake;
+    public static Item fruitCake;
+    public static Item strawberryShortCake;
+    public static Item carrotCake;
+
+    // desert item
+    public static Item applePie = new Item(createGroup().food(EDIBLE_14));
+    public static Item yamJam = new Item(createGroup().food(EDIBLE_14));
+    public static Item bananaCreamPie = new Item(createGroup().food(EDIBLE_14));
+    public static Item candyCorn = new Item(createGroup().food(EDIBLE_5));
+    public static Item vanillaIceCream = new Item(createGroup().food(EDIBLE_10));
+    public static Item strawberryIceCream = new Item(createGroup().food(EDIBLE_10));
+    public static Item mangoIceCream = new Item(createGroup().food(EDIBLE_10));
+    public static Item rumRaisinIceCream = new Item(createGroup().food(EDIBLE_14));
+    public static Item cherryPie = new Item(createGroup().food(EDIBLE_14));
+    public static Item cheeseCake = new Item(createGroup().food(EDIBLE_14));
+    public static Item brownies = new Item(createGroup().food(EDIBLE_10));
+    public static Item snickerDoodle = new Item(createGroup().food(EDIBLE_7));
+    public static Item bananaNutBread = new Item(createGroup().food(EDIBLE_10));
+
+    // cooking utensils?
+    public static Item foodPress = new Item(createGroup());
+    public static Item fryingPan = new Item(createGroup());
+    public static Item pot = new Item(createGroup());
+
+
+    public static void init() {
+        registerItem("olive_oil", oliveOil);
+        registerItem("cheese", cheese);
+        registerItem("flour", flour);
+        registerItem("butter", butter);
+        registerItem("noodle", noodle);
+        registerItem("tofu", tofu);
+        registerItem("molasses", molasses);
+        registerItem("caramel", caramel);
+        registerItem("chocolate", chocolate);
+        registerItem("tortilla", tortilla);
+        registerItem("soy_sauce", soySauce);
+        registerItem("dumpling", dumpling);
+        registerItem("ravioli", ravioli);
+        registerItem("salsa", salsa);
+        registerItem("artichoke_dip", artichokeDip);
+        registerItem("pepperoni", pepperoni);
+
+        registerItem("grape_juice", grapeJuice);
+        registerItem("orange_juice", orangeJuice);
+        registerItem("apple_juice", appleJuice);
+        registerItem("cranberry_juice", cranberryJuice);
+        registerItem("saguaro_juice", saguaroJuice);
+        registerItem("tomato_juice", tomatoJuice);
+        registerItem("melon_juice", melonJuice);
+        registerItem("pineapple_juice", pineappleJuice);
+        registerItem("coffee", coffee);
+        registerItem("lemonade", lemonade);
+        registerItem("limeade", limeade);
+        registerItem("soy_milk", soyMilk);
+        registerItem("strawberry_smoothie", strawberrySmoothie);
+        registerItem("banana_smoothie", bananaSmoothie);
+        registerItem("kale_smoothie", kaleSmoothie);
+        registerItem("fruit_smoothie", fruitSmoothie);
+        registerItem("chocolate_milkshake", chocolateMilkshake);
+        registerItem("beer", beer);
+        registerItem("wine", wine);
+        registerItem("mead", mead);
+        registerItem("rum", rum);
+        registerItem("pumpkin_spice_latte", pumpkinSpiceLatte);
+
+        registerItem("grape_jam", grapeJam);
+        registerItem("strawberry_jam", strawberryJam);
+        registerItem("peach_jam", peachJam);
+        registerItem("apricot_jam", apricotJam);
+        registerItem("blackberry_jam", blackberryJam);
+        registerItem("blueberry_jam", blueberryJam);
+        registerItem("cherry_jam", cherryJam);
+        registerItem("elderberry_jam", elderberryJam);
+        registerItem("raspberry_jam", raspberryJam);
+
+        registerItem("beef_jerky", beefJerky);
+        registerItem("pork_jerky", porkJerky);
+        registerItem("kale_chips", kaleChips);
+        registerItem("potato_chips", potatoChips);
+        registerItem("steamed_rice", steamedRice);
+        registerItem("egg_roll", eggRoll);
+        registerItem("french_fries", frenchFries);
+        registerItem("sweet_potato_fries", sweetPotatoFries);
+        registerItem("onion_rings", onionRings);
+        registerItem("raisins", raisins);
+        registerItem("donut", donut);
+        registerItem("popcorn", popcorn);
+        registerItem("baked_beans", bakedBeans);
+        registerItem("toast", toast);
+        registerItem("cucumber_salad", cucumberSalad);
+        registerItem("caesar_salad", caesarSalad);
+        registerItem("leafy_salad", leafySalad);
+        registerItem("fruit_salad", fruitSalad);
+        registerItem("veggie_salad", veggieSalad);
+        registerItem("pork_and_beans", porkAndBeans);
+        registerItem("oatmeal", oatmeal);
+        registerItem("leek_soup", leekSoup);
+        registerItem("yoghurt", yoghurt);
+        registerItem("saucy_chips", saucyChips);
+
+        registerItem("scrambled_eggs", scrambledEggs);
+        registerItem("buttered_toast", butteredToast);
+        registerItem("toast_with_jam", toastWithJam);
+
+        registerItem("ham_sandwich", hamSandwich);
+        registerItem("peanut_butter_and_jam", peanutButterAndJam);
+        registerItem("blt", BLT);
+        registerItem("grilled_cheese", grilledCheese);
+        registerItem("tuna_sandwich", tunaSandwich);
+        registerItem("cheeseburger", cheeseburger);
+        registerItem("hamburger", hamburger);
+        registerItem("tofuburger", tofuBurger);
+        registerItem("pizza", pizza);
+        registerItem("supreme_pizza", supremePizza);
+        registerItem("cheese_pizza", cheesePizza);
+        registerItem("pineapple_pepperoni_pizza", pineapplePepperoniPizza);
+        registerItem("lemon_chicken", lemonChicken);
+        registerItem("fried_chicken", friedChicken);
+        registerItem("chicken_and_noodles", chickenAndNoodles);
+        registerItem("chicken_and_dumplings", chickenAndDumplings);
+        registerItem("tofu_and_dumplings", tofuAndDumplings);
+        registerItem("spaghetti_squash", spaghettiSquash);
+        registerItem("chicken_and_rice", chickenAndRice);
+        registerItem("taco", taco);
+        registerItem("sushi", sushi);
+
+        registerItem("apple_pie", applePie);
+        registerItem("yam_jam", yamJam);
+        registerItem("banana_cream_pie", bananaCreamPie);
+        registerItem("candy_corn", candyCorn);
+        registerItem("vanilla_ice_cream", vanillaIceCream);
+        registerItem("strawberry_ice_cream", strawberryIceCream);
+        registerItem("mango_ice_cream", mangoIceCream);
+        registerItem("rum_raisin_ice_cream", rumRaisinIceCream);
+        registerItem("cherry_pie", cherryPie);
+        registerItem("cheese_cake", cheeseCake);
+        registerItem("brownies", brownies);
+        registerItem("snicker_doodle", snickerDoodle);
+        registerItem("banana_nut_bread", bananaNutBread);
+    }
 }

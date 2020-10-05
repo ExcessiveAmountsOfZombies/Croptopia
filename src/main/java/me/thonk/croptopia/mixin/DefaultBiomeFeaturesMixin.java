@@ -15,55 +15,61 @@ public class DefaultBiomeFeaturesMixin {
     @Inject(method = "addPlainsFeatures", at = @At("TAIL"))
     private static void addPlainsFeatures(GenerationSettings.Builder builder, CallbackInfo info) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.APPLE_TREE);
+                TreeGeneratorRegistry.APPLE_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.ORANGE_TREE);
+                TreeGeneratorRegistry.ORANGE_TREE_CONFIGURED);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                TreeGeneratorRegistry.PEACH_TREE_CONFIGURED);
     }
 
     @Inject(method = "addJungleTrees", at = @At("TAIL"))
     private static void addJungleTrees(GenerationSettings.Builder builder, CallbackInfo info) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.DATE_TREE);
+                TreeGeneratorRegistry.DATE_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.DRAGON_FRUIT_TREE);
+                TreeGeneratorRegistry.DRAGON_FRUIT_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.MANGO_TREE);
+                TreeGeneratorRegistry.MANGO_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.NUTMEG_TREE);
+                TreeGeneratorRegistry.NUTMEG_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.COCONUT_TREE);
+                TreeGeneratorRegistry.COCONUT_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.KUMQUAT_TREE);
+                TreeGeneratorRegistry.KUMQUAT_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.GRAPEFRUIT_TREE);
+                TreeGeneratorRegistry.GRAPEFRUIT_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.BANANA_TREE);
+                TreeGeneratorRegistry.BANANA_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.GRAPEFRUIT_TREE);
+                TreeGeneratorRegistry.GRAPEFRUIT_TREE_CONFIGURED);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                TreeGeneratorRegistry.FIG_TREE_CONFIGURED);
 
     }
 
     @Inject(method = "addForestTrees", at = @At("TAIL"))
     private static void addForestTrees(GenerationSettings.Builder builder, CallbackInfo info) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.LIME_TREE);
+                TreeGeneratorRegistry.LIME_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.PEAR_TREE);
+                TreeGeneratorRegistry.PEAR_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.APRICOT_TREE);
+                TreeGeneratorRegistry.APRICOT_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.AVOCADO_TREE);
+                TreeGeneratorRegistry.AVOCADO_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.STAR_FRUIT_TREE);
+                TreeGeneratorRegistry.STAR_FRUIT_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.LEMON_TREE);
+                TreeGeneratorRegistry.LEMON_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.CHERRY_TREE);
+                TreeGeneratorRegistry.CHERRY_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.PLUM_TREE);
+                TreeGeneratorRegistry.PLUM_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.PERSIMMON_TREE);
+                TreeGeneratorRegistry.PERSIMMON_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
-                TreeGeneratorRegistry.ORANGE_TREE);
+                TreeGeneratorRegistry.ORANGE_TREE_CONFIGURED);
+        builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
+                TreeGeneratorRegistry.NECTARINE_TREE_CONFIGURED);
     }
 }

@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/oak_leaves",
+  "parent": "croptopia:block/croptopia_leaves",
   "textures": {
-    "layer0": "croptopia:item/apricot"
+    "all": "minecraft:block/oak_leaves",
+    "crop": "croptopia:item/apricot"
   }
 }

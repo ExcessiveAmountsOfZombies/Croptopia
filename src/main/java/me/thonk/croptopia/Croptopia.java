@@ -76,9 +76,10 @@ public class Croptopia implements ModInitializer {
             CroptopiaCropBlock block = (CroptopiaCropBlock) ((CroptopiaSeedItem) item).getBlock();
             block.setSeedsItem(item);
         }
+        System.out.println("\"" + item.getTranslationKey() + "\":");
 
         // \bregisterItem\b..[A-Z]\w+",
-        System.out.println( "\"" + itemName + "\",");
+        //System.out.println( "\"" + itemName + "\",");
         if (item instanceof CroptopiaSeedItem) {
             seeds.add(item);
         }

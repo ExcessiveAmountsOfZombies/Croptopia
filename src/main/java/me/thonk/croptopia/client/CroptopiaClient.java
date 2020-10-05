@@ -24,15 +24,16 @@ public class CroptopiaClient implements ClientModInitializer {
 
     public void registerCropBlockLayer(Block block) {
         if (block instanceof CroptopiaLeafBlock) {
-            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getTranslucent());
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutoutMipped());
             return;
         }
         BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutoutMipped());
     }
 
     public void registerColorProvider() {
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> {
-            return world != null && pos != null ? BiomeColors.getFoliageColor(world, pos) + 100 : FoliageColors.getDefaultColor();
-        }, leafBlocks.toArray(new Block[]{}));
+        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
+                world != null && pos != null
+                        ? BiomeColors.getFoliageColor(world, pos)
+                        : FoliageColors.getDefaultColor(), leafBlocks.toArray(new Block[]{}));
     }
 }
