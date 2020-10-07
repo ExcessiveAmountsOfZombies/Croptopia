@@ -2,6 +2,6 @@
   "parent": "croptopia:block/croptopia_leaves",
   "textures": {
     "all": "minecraft:block/jungle_leaves",
-    "crop": "croptopia:item/nutmeg_unripe"
+    "crop": "croptopia:block/white_tree_flower"
   }
 }

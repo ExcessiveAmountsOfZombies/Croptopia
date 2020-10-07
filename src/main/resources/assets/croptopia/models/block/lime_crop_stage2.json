@@ -2,6 +2,6 @@
   "parent": "croptopia:block/croptopia_leaves",
   "textures": {
     "all": "minecraft:block/oak_leaves",
-    "crop": "croptopia:item/lime_unripe"
+    "crop": "croptopia:block/lime_unripe"
   }
 }
