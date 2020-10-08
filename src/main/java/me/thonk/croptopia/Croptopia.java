@@ -7,6 +7,7 @@ import me.thonk.croptopia.blocks.LeavesRegistry;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.CroptopiaSeedItem;
 import me.thonk.croptopia.items.ItemRegistry;
+import me.thonk.croptopia.recipe.DamageDurabilitySerializer;
 import me.thonk.croptopia.table.BiomeLootCondition;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -22,6 +23,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonSerializer;
@@ -43,6 +46,8 @@ public class Croptopia implements ModInitializer {
             .icon(() -> new ItemStack(ItemRegistry.onion))
             .build();
     public static final LootConditionType BIOME_CHECK =  registerLootCondition("biome_check", new BiomeLootCondition.Serializer());
+    public static final DamageDurabilitySerializer DAMAGE_DURABILITY =
+            registerSerializer("crafting_damage_durability", new DamageDurabilitySerializer());
 
 
     @Override
@@ -59,11 +64,16 @@ public class Croptopia implements ModInitializer {
     }
 
     public static Identifier createIdentifier(String name) {
+        //System.out.println("\"" + MOD_ID + ":" + name + "\",");
         return new Identifier(MOD_ID, name);
     }
 
     public static LootConditionType registerLootCondition(String id, JsonSerializer<? extends LootCondition> serializer) {
         return Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(id), new LootConditionType(serializer));
+    }
+
+    public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
+        return Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, id), serializer);
     }
 
     public static Item registerItem(String itemName, Item item) {
@@ -76,7 +86,6 @@ public class Croptopia implements ModInitializer {
             CroptopiaCropBlock block = (CroptopiaCropBlock) ((CroptopiaSeedItem) item).getBlock();
             block.setSeedsItem(item);
         }
-        System.out.println("\"" + item.getTranslationKey() + "\":");
 
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");

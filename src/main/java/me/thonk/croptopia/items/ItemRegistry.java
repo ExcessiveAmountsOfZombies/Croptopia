@@ -327,12 +327,13 @@ public class ItemRegistry {
     public static Item bananaNutBread = new Item(createGroup().food(EDIBLE_10));
 
     // cooking utensils?
-    public static Item foodPress = new Item(createGroup());
-    public static Item fryingPan = new Item(createGroup());
-    public static Item pot = new Item(createGroup());
+    public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item pot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
 
 
     public static void init() {
+
         registerItem("olive_oil", oliveOil);
         registerItem("cheese", cheese);
         registerItem("flour", flour);
@@ -447,5 +448,7 @@ public class ItemRegistry {
         registerItem("brownies", brownies);
         registerItem("snicker_doodle", snickerDoodle);
         registerItem("banana_nut_bread", bananaNutBread);
+
+        registerItem("food_press", foodPress);
     }
 }
