@@ -50,6 +50,8 @@ public class Croptopia implements ModInitializer {
             registerSerializer("crafting_damage_durability", new DamageDurabilitySerializer());
 
 
+    // TODO MAKE SALT ORE
+
     @Override
     public void onInitialize() {
         LeavesRegistry.init();
@@ -106,7 +108,7 @@ public class Croptopia implements ModInitializer {
             leafBlocks.add(item);
         }
         // Debug sout for easy json writing.
-        //System.out.println("\"" + blockName + "\",");
+        System.out.println("\"" + blockName + "\",");
         Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
         return item;
     }

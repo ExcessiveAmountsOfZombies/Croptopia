@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:pot"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "croptopia:soybeans"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tofu",
+    "count": 1
+  }
+}

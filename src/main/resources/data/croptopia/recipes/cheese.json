@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:pot"
+    },
+    {
+      "item": "croptopia:milk_bucket"
+    },
+    {
+      "item": "croptopia:salt"
+    }
+  ],
+  "result": {
+    "item": "croptopia:cheese",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mincraft:glass_bottle"
+    },
+    {
+      "item": "croptopia:soybeans"
+    },
+    {
+      "item": "croptopia:food_press"
+    }
+  ],
+  "result": {
+    "item": "croptopia:soy_milk",
+    "count": 1
+  }
+}

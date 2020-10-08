@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mincraft:glass_bottle"
+    },
+    {
+      "item": "croptopia:grape"
+    },
+    {
+      "item": "croptopia:food_press"
+    }
+  ],
+  "result": {
+    "item": "croptopia:grape_juice",
+    "count": 1
+  }
+}

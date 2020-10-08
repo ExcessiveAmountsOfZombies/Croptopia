@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "tag": "croptopia:food_press"
+    }
+  ],
+  "result": {
+    "item": "croptopia:mead",
+    "count": 1
+  }
+}

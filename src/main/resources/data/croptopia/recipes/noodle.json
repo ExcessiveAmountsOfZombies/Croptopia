@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:pot"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "item": "croptopia:flour"
+    }
+  ],
+  "result": {
+    "item": "croptopia:noodle",
+    "count": 1
+  }
+}

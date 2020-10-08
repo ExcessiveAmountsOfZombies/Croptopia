@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mincraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "croptopia:paprika"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "croptopia:coffee"
+    }
+  ],
+  "result": {
+    "item": "croptopia:pumpkin_spice_latte",
+    "count": 1
+  }
+}

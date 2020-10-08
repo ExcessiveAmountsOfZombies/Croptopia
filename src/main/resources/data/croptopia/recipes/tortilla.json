@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tortilla",
+    "count": 2
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:pot"
+    },
+    {
+      "item": "croptopia:water_bucket"
+    },
+    {
+      "item": "croptopia:flour"
+    }
+  ],
+  "result": {
+    "item": "croptopia:dough",
+    "count": 1
+  }
+}

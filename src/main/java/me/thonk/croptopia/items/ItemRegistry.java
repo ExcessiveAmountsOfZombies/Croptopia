@@ -93,7 +93,7 @@ public class ItemRegistry {
     public static Item mustard = registerItem("mustard", new Item(createGroup()));
     public static Item vanilla = registerItem("vanilla", new Item(createGroup()));
     public static Item paprika = registerItem("paprika", new Item(createGroup()));
-    public static Item pepper = registerItem("pepper", new Item(createGroup()));
+    public static Item chilePepper = registerItem("chile_pepper", new Item(createGroup()));
     public static Item salt = registerItem("salt", new Item(createGroup()));
     public static Item turmeric = registerItem("turmeric", new Item(createGroup()));
     public static Item ginger = registerItem("ginger", new Item(createGroup()));
@@ -200,7 +200,7 @@ public class ItemRegistry {
     public static Item chocolate = new Item(createGroup().food(EDIBLE_5));
     public static Item tortilla = new Item(createGroup().food(EDIBLE_3));
     public static Item soySauce = new Item(createGroup());
-    public static Item dumpling = new Item(createGroup());
+    public static Item dough = new Item(createGroup());
     public static Item ravioli = new Item(createGroup());
     public static Item salsa = new Item(createGroup().food(EDIBLE_3));
     public static Item artichokeDip = new Item(createGroup().food(EDIBLE_3));
@@ -223,7 +223,7 @@ public class ItemRegistry {
 
     public static Item strawberrySmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
     public static Item bananaSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item kaleSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item kaleSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_14));
     public static Item fruitSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
 
     public static Item chocolateMilkshake = new CroptopiaDrink(createGroup().food(EDIBLE_7));
@@ -232,7 +232,7 @@ public class ItemRegistry {
     public static Item wine = new CroptopiaDrink(createGroup().food(EDIBLE_7));
     public static Item mead = new CroptopiaDrink(createGroup().food(EDIBLE_7));
     public static Item rum = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item pumpkinSpiceLatte = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item pumpkinSpiceLatte = new CroptopiaDrink(createGroup().food(EDIBLE_14));
 
     // jams
     public static Item grapeJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
@@ -345,7 +345,7 @@ public class ItemRegistry {
         registerItem("chocolate", chocolate);
         registerItem("tortilla", tortilla);
         registerItem("soy_sauce", soySauce);
-        registerItem("dumpling", dumpling);
+        registerItem("dough", dough);
         registerItem("ravioli", ravioli);
         registerItem("salsa", salsa);
         registerItem("artichoke_dip", artichokeDip);

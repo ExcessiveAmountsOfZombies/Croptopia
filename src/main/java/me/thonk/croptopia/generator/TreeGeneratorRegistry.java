@@ -145,7 +145,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.dragonFruitCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 7, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> STAR_FRUIT_TREE = registerTree(createIdentifier("star_fruit_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
@@ -153,7 +153,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.starFruitCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> AVOCADO_TREE = registerTree(createIdentifier("avocado_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
@@ -161,7 +161,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.avocadoCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> APRICOT_TREE = registerTree(createIdentifier("apricot_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
@@ -169,7 +169,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.apricotCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> PEAR_TREE = registerTree(createIdentifier("pear_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
@@ -177,7 +177,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.pearCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> LIME_TREE = registerTree(createIdentifier("lime_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
@@ -185,7 +185,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.limeCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> DATE_TREE = registerTree(createIdentifier("date_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
@@ -193,7 +193,7 @@ public class TreeGeneratorRegistry {
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.dateCrop.getDefaultState(), 5),
                     new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
                     new StraightTrunkPlacer(5, 8, 0),
-                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()).decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
+                    new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
     public static final ConfiguredFeature<?, ?> APPLE_TREE_CONFIGURED = registerTree(createIdentifier("apple_tree_configured"),
             APPLE_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
