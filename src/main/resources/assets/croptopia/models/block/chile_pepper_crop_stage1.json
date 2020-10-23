@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "croptopia:block/chile_pepper_crop_stage1"
+  }
+}

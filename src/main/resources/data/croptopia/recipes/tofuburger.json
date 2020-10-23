@@ -1,0 +1,24 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "croptopia:lettuce"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    },
+    {
+      "item": "croptopia:tofu"
+    },
+    {
+      "item": "croptopia:onion"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tofuburger",
+    "count": 1
+  }
+}

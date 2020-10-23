@@ -1,0 +1,27 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "tag": "croptopia:milks"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:brownies",
+    "count": 1
+  }
+}

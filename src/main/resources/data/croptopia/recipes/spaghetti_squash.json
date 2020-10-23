@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:squash"
+    },
+    {
+      "item": "croptopia:chile_pepper"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:spaghetti_squash",
+    "count": 1
+  }
+}

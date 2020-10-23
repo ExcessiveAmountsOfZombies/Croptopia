@@ -1,0 +1,18 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:grape"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "croptopia:grape_jam",
+    "count": 1
+  }
+}

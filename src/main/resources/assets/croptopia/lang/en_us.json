@@ -95,12 +95,13 @@
   "item.croptopia.zucchini_seed": "Zucchini Seed",
   "item.croptopia.oat_seed": "Oats Seed",
   "item.croptopia.mustard_seed": "Mustard Seed",
-  "item.croptopia.paprika_seed": "Paprika Seed",
   "item.croptopia.pepper_seed": "Pepper Seed",
   "item.croptopia.turmeric_seed": "Turmeric Seed",
   "item.croptopia.ginger_seed": "Ginger Seed",
-  "item.croptopia.chives_seed": "Chives Seed",
   "item.croptopia.basil_seed": "Basil Seed",
+  "item.croptopia.chile_pepper_seed": "Chile Pepper Seed",
+  "item.croptopia.barley_seed": "Barley Seed",
+  "item.croptopia.soybean_seed": "Soybean Seed",
   "item.croptopia.barley": "Barley",
   "item.croptopia.oat": "Oats",
   "item.croptopia.soybean": "Soybeans",
@@ -132,8 +133,8 @@
   "item.croptopia.salt": "Salt",
   "item.croptopia.turmeric": "Turmeric",
   "item.croptopia.ginger": "Ginger",
-  "item.croptopia.chives": "Chives",
   "item.croptopia.basil": "Basil",
+  "item.croptopia.chile_pepper": "Chile Pepper",
 
 
   "item.croptopia.apple_sapling": "Apple Sapling",
@@ -157,10 +158,13 @@
   "item.croptopia.pear_sapling": "Pear Sapling",
   "item.croptopia.lime_sapling": "Lime Sapling",
   "item.croptopia.date_sapling": "Date Sapling",
+  "item.croptopia.nectarine_sapling": "Nectarine Sapling",
 
   "item.croptopia.olive_oil": "Olive Oil",
   "item.croptopia.cheese": "Cheese",
   "item.croptopia.flour": "Flour",
+  "item.croptopia.dough": "Dough",
+  "item.croptopia.pepperoni": "Pepperoni",
   "item.croptopia.butter": "Butter",
   "item.croptopia.noodle": "Noodle",
   "item.croptopia.tofu": "Tofu",
@@ -214,7 +218,7 @@
   "item.croptopia.sweet_potato_fries": "Sweet Potato Fries",
   "item.croptopia.onion_rings": "Onion Rings",
   "item.croptopia.raisins": "Raisins",
-  "item.croptopia.donut": "Donut",
+  "item.croptopia.doughnut": "Doughnut",
   "item.croptopia.popcorn": "Popcorn",
   "item.croptopia.baked_beans": "Baked Beans",
   "item.croptopia.toast": "Toast",
@@ -260,11 +264,18 @@
   "item.croptopia.strawberry_ice_cream": "Strawberry Ice Cream",
   "item.croptopia.mango_ice_cream": "Mango Ice Cream",
   "item.croptopia.rum_raisin_ice_cream": "Rum Raisin Ice Cream",
-  "item.croptopia.cherry_pie": "Cherry PIe",
+  "item.croptopia.cherry_pie": "Cherry Pie",
   "item.croptopia.cheese_cake": "Cheese Cake",
   "item.croptopia.brownies": "Brownies",
   "item.croptopia.snicker_doodle": "Snicker Doodle",
   "item.croptopia.banana_nut_bread": "Banana Nut Bread",
+
+  "item.croptopia.food_press": "All Purpose Food Press",
+  "item.croptopia.frying_pan": "Frying Pan",
+  "item.croptopia.cooking_pot": "Cooking Pot",
+  "item.croptopia.mortar_and_pestle": "Mortar and Pestle",
+
+  "item.croptopia.salt_ore": "Salt Ore",
 
 
   "itemGroup.croptopia.croptopia": "Croptopia"

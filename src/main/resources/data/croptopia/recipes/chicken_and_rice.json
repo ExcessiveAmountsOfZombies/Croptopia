@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:rice"
+    },
+    {
+      "item": "croptopia:chile_pepper"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    },
+    {
+      "tag": "croptopia:chicken_replacements"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chicken_and_rice",
+    "count": 1
+  }
+}

@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:pot"
+      "item": "croptopia:cooking_pot"
     },
     {
-      "item": "croptopia:milk_bucket"
+      "tag": "croptopia:milks"
     },
     {
       "item": "croptopia:salt"

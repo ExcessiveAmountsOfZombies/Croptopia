@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:pepper"
+      "item": "croptopia:chile_pepper"
     }
   ],
   "result": {
-    "item": "croptopia:pepper_seed",
+    "item": "croptopia:chile_pepper_seed",
     "count": 1
   }
 }

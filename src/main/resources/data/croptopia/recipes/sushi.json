@@ -1,0 +1,18 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "minecraft:seagrass"
+    },
+    {
+      "tag": "croptopia:fishes"
+    },
+    {
+      "item": "croptopia:rice"
+    }
+  ],
+  "result": {
+    "item": "croptopia:sushi",
+    "count": 1
+  }
+}

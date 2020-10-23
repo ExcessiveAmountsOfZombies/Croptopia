@@ -1,0 +1,15 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "tag": "croptopia:peppers"
+    },
+    {
+      "item": "croptopia:mortar_and_pestle"
+    }
+  ],
+  "result": {
+    "item": "croptopia:paprika",
+    "count": 1
+  }
+}

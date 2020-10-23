@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "croptopia:block/basil_crop_stage3"
+  }
+}

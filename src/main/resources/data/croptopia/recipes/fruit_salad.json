@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "croptopia:strawberry"
+    },
+    {
+      "item": "croptopia:banana"
+    },
+    {
+      "item": "croptopia:grape"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "item": "croptopia:fruit_salad",
+    "count": 1
+  }
+}

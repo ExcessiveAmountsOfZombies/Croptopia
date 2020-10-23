@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:dough"
+    },
+    {
+      "item": "croptopia:chile_pepper"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chicken_and_dumplings",
+    "count": 1
+  }
+}

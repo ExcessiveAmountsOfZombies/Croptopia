@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "croptopia:block/ginger_crop_stage1"
+  }
+}

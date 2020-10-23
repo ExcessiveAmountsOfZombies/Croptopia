@@ -7,7 +7,6 @@
     "DefaultBiomeFeaturesMixin"
   ],
   "client": [
-    "MixinTest"
   ],
   "server": [
   ],

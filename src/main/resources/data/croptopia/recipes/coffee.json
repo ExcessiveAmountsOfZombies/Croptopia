@@ -1,8 +1,8 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "mincraft:glass_bottle"
+      "item": "minecraft:glass_bottle"
     },
     {
       "item": "croptopia:coffee_beans"

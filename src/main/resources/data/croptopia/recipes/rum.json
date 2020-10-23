@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "mincraft:glass_bottle"
+      "item": "minecraft:glass_bottle"
     },
     {
       "item": "croptopia:molasses"
     },
     {
-      "item": "minceraft:water_bucket"
+      "item": "minecraft:water_bucket"
     }
   ],
   "result": {

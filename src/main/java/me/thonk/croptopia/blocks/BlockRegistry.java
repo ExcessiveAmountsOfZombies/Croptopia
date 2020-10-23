@@ -1,8 +1,11 @@
 package me.thonk.croptopia.blocks;
 
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
-import me.thonk.croptopia.generator.TreeGeneratorRegistry;
+import me.thonk.croptopia.generator.GeneratorRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.sound.BlockSoundGroup;
 
 import static me.thonk.croptopia.Croptopia.*;
 
@@ -20,7 +23,7 @@ public class BlockRegistry {
     public static Block cantaloupeCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block cauliflowerCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block celeryCropBlock = new CroptopiaCropBlock(createCropSettings());
-    public static Block chivesCropBlock = new CroptopiaCropBlock(createCropSettings());
+    //public static Block chivesCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block coffeeCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block cornCropBlock = new CornCropBlock(createCropSettings());
     public static Block cranberryCropBlock = new CroptopiaCropBlock(createCropSettings());
@@ -43,9 +46,9 @@ public class BlockRegistry {
     public static Block oatCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block oliveCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block onionCropBlock = new CroptopiaCropBlock(createCropSettings());
-    public static Block paprikaCropBlock = new CroptopiaCropBlock(createCropSettings());
+    //public static Block paprikaCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block peanutCropBlock = new CroptopiaCropBlock(createCropSettings());
-    public static Block pepperCropBlock = new CroptopiaCropBlock(createCropSettings());
+    public static Block chilePepperCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block pineappleCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block radishCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block raspberryCropBlock = new CroptopiaCropBlock(createCropSettings());
@@ -70,33 +73,35 @@ public class BlockRegistry {
     // tree
     public static Block vanillaCropBlock;
     // real block
-    public static Block salt;
+    public static Block salt = new Block(FabricBlockSettings.of(Material.AGGREGATE).strength(0.5F).sounds(BlockSoundGroup.SAND));
 
 
-    public static Block appleSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.APPLE_TREE), createSaplingSettings());
-    public static Block bananaSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.BANANA_TREE), createSaplingSettings());
-    public static Block orangeSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.ORANGE_TREE), createSaplingSettings());
-    public static Block persimmonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.PERSIMMON_TREE), createSaplingSettings());
-    public static Block plumSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.PLUM_TREE), createSaplingSettings());
-    public static Block cherrySaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.CHERRY_TREE), createSaplingSettings());
-    public static Block lemonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.LEMON_TREE), createSaplingSettings());
-    public static Block grapefruitSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.GRAPEFRUIT_TREE), createSaplingSettings());
-    public static Block kumquatSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.KUMQUAT_TREE), createSaplingSettings());
-    public static Block peachSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.PEACH_TREE), createSaplingSettings());
-    public static Block coconutSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.COCONUT_TREE), createSaplingSettings());
-    public static Block nutmegSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.NUTMEG_TREE), createSaplingSettings());
-    public static Block figSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.FIG_TREE), createSaplingSettings());
-    public static Block nectarineSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.NECTARINE_TREE), createSaplingSettings());
-    public static Block mangoSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.MANGO_TREE), createSaplingSettings());
-    public static Block dragonFruitSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.DRAGON_FRUIT_TREE), createSaplingSettings());
-    public static Block starFruitSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.STAR_FRUIT_TREE), createSaplingSettings());
-    public static Block avocadoSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.AVOCADO_TREE), createSaplingSettings());
-    public static Block apricotSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.APRICOT_TREE), createSaplingSettings());
-    public static Block pearSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.PEAR_TREE), createSaplingSettings());
-    public static Block limeSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.LIME_TREE), createSaplingSettings());
-    public static Block dateSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(TreeGeneratorRegistry.DATE_TREE), createSaplingSettings());
+    public static Block appleSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.APPLE_TREE), createSaplingSettings());
+    public static Block bananaSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.BANANA_TREE), createSaplingSettings());
+    public static Block orangeSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.ORANGE_TREE), createSaplingSettings());
+    public static Block persimmonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PERSIMMON_TREE), createSaplingSettings());
+    public static Block plumSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PLUM_TREE), createSaplingSettings());
+    public static Block cherrySaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.CHERRY_TREE), createSaplingSettings());
+    public static Block lemonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.LEMON_TREE), createSaplingSettings());
+    public static Block grapefruitSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.GRAPEFRUIT_TREE), createSaplingSettings());
+    public static Block kumquatSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.KUMQUAT_TREE), createSaplingSettings());
+    public static Block peachSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PEACH_TREE), createSaplingSettings());
+    public static Block coconutSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.COCONUT_TREE), createSaplingSettings());
+    public static Block nutmegSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.NUTMEG_TREE), createSaplingSettings());
+    public static Block figSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.FIG_TREE), createSaplingSettings());
+    public static Block nectarineSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.NECTARINE_TREE), createSaplingSettings());
+    public static Block mangoSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.MANGO_TREE), createSaplingSettings());
+    public static Block dragonFruitSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.DRAGON_FRUIT_TREE), createSaplingSettings());
+    public static Block starFruitSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.STAR_FRUIT_TREE), createSaplingSettings());
+    public static Block avocadoSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.AVOCADO_TREE), createSaplingSettings());
+    public static Block apricotSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.APRICOT_TREE), createSaplingSettings());
+    public static Block pearSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PEAR_TREE), createSaplingSettings());
+    public static Block limeSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.LIME_TREE), createSaplingSettings());
+    public static Block dateSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.DATE_TREE), createSaplingSettings());
 
     public static void init() {
+        registerBlock("salt_ore", salt);
+
         registerBlock("artichoke_crop", artichokeCropBlock);
         registerBlock("asparagus_crop", asparagusCropBlock);
         registerBlock("barley_crop", barleyCropBlock);
@@ -110,7 +115,7 @@ public class BlockRegistry {
         registerBlock("cantaloupe_crop",cantaloupeCropBlock);
         registerBlock("cauliflower_crop", cauliflowerCropBlock);
         registerBlock("celery_crop", celeryCropBlock);
-        registerBlock("chives_crop", chivesCropBlock);
+        //registerBlock("chives_crop", chivesCropBlock);
         registerBlock("coffee_crop", coffeeCropBlock);
         registerBlock("corn_crop", cornCropBlock);
         registerBlock("cranberry_crop", cranberryCropBlock);
@@ -133,9 +138,9 @@ public class BlockRegistry {
         registerBlock("oat_crop", oatCropBlock);
         registerBlock("olive_crop", oliveCropBlock);
         registerBlock("onion_crop", onionCropBlock);
-        registerBlock("paprika_crop", paprikaCropBlock);
+        //registerBlock("paprika_crop", paprikaCropBlock);
         registerBlock("peanut_crop", peanutCropBlock);
-        registerBlock("pepper_crop", pepperCropBlock);
+        registerBlock("chile_pepper_crop", chilePepperCropBlock);
         registerBlock("pineapple_crop", pineappleCropBlock);
         registerBlock("radish_crop", radishCropBlock);
         registerBlock("raspberry_crop", raspberryCropBlock);

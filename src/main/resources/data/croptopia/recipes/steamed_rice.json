@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:rice"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "croptopia:steamed_rice",
+    "count": 1
+  }
+}

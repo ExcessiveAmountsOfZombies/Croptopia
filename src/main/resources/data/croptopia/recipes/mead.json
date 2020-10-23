@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
       "item": "minecraft:honey_bottle"
@@ -8,7 +8,7 @@
       "item": "minecraft:water_bucket"
     },
     {
-      "tag": "croptopia:food_press"
+      "item": "croptopia:food_press"
     }
   ],
   "result": {

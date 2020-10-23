@@ -1,9 +1,7 @@
 package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.blocks.BlockRegistry;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.MilkBucketItem;
+import net.minecraft.item.*;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.Croptopia.registerItem;
@@ -92,13 +90,13 @@ public class ItemRegistry {
     // Spices
     public static Item mustard = registerItem("mustard", new Item(createGroup()));
     public static Item vanilla = registerItem("vanilla", new Item(createGroup()));
-    public static Item paprika = registerItem("paprika", new Item(createGroup()));
+    public static Item paprika = registerItem("paprika", new Item(createGroup())); // TODO need recipe to make paprika in future update
     public static Item chilePepper = registerItem("chile_pepper", new Item(createGroup()));
     public static Item salt = registerItem("salt", new Item(createGroup()));
     public static Item turmeric = registerItem("turmeric", new Item(createGroup()));
     public static Item ginger = registerItem("ginger", new Item(createGroup()));
     // Herbs
-    public static Item chives = registerItem("chives", new Item(createGroup().food(EDIBLE_1)));
+    //public static Item chives = registerItem("chives", new Item(createGroup().food(EDIBLE_1))); it's just a weaker green onion?
     public static Item basil = registerItem("basil", new Item(createGroup().food(EDIBLE_1)));
 
 
@@ -150,11 +148,11 @@ public class ItemRegistry {
     public static Item yamSeed = registerItem("yam_seed", new CroptopiaSeedItem(BlockRegistry.yamCropBlock, createGroup(), SAVANNA));
     public static Item zucchiniSeed = registerItem("zucchini_seed", new CroptopiaSeedItem(BlockRegistry.zucchiniCropBlock, createGroup(), SAVANNA));
     public static Item mustardSeed = registerItem("mustard_seed", new CroptopiaSeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS));
-    public static Item paprikaSeed = registerItem("paprika_seed", new CroptopiaSeedItem(BlockRegistry.paprikaCropBlock, createGroup(), DESERT));
-    public static Item pepperSeed = registerItem("pepper_seed", new CroptopiaSeedItem(BlockRegistry.pepperCropBlock, createGroup(), PLAINS));
+    //public static Item paprikaSeed = registerItem("paprika_seed", new CroptopiaSeedItem(BlockRegistry.paprikaCropBlock, createGroup(), DESERT));
+    public static Item pepperSeed = registerItem("chile_pepper_seed", new CroptopiaSeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS));
     public static Item turmericSeed = registerItem("turmeric_seed", new CroptopiaSeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA));
     public static Item gingerSeed = registerItem("ginger_seed", new CroptopiaSeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA));
-    public static Item chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
+    //public static Item chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
     public static Item basilSeed = registerItem("basil_seed", new CroptopiaSeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE));
     public static Item oatSeed = registerItem("oat_seed", new CroptopiaSeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS));
     public static Item barleySeed = registerItem("barley_seed", new CroptopiaSeedItem(BlockRegistry.barleyCropBlock, createGroup(), PLAINS));
@@ -251,12 +249,11 @@ public class ItemRegistry {
     public static Item kaleChips = new Item(createGroup().food(EDIBLE_5));
     public static Item potatoChips = new Item(createGroup().food(EDIBLE_5));
     public static Item steamedRice = new Item(createGroup().food(EDIBLE_5));
-    public static Item eggRoll = new Item(createGroup().food(EDIBLE_5));
     public static Item frenchFries = new Item(createGroup().food(EDIBLE_5));
     public static Item sweetPotatoFries = new Item(createGroup().food(EDIBLE_5));
     public static Item onionRings = new Item(createGroup().food(EDIBLE_5));
     public static Item raisins = new Item(createGroup().food(EDIBLE_3));
-    public static Item donut = new Item(createGroup().food(EDIBLE_5));
+    public static Item doughnut = new Item(createGroup().food(EDIBLE_5));
     public static Item popcorn = new Item(createGroup().food(EDIBLE_3));
     public static Item bakedBeans = new Item(createGroup().food(EDIBLE_5));
     public static Item toast = new Item(createGroup().food(EDIBLE_7));
@@ -290,7 +287,7 @@ public class ItemRegistry {
     public static Item cheeseburger = new Item(createGroup().food(EDIBLE_10));
     public static Item hamburger = new Item(createGroup().food(EDIBLE_10));
     public static Item tofuBurger = new Item(createGroup().food(EDIBLE_10));
-    public static Item pizza = new Item(createGroup().food(EDIBLE_14));
+    public static Item pizza = new Item(createGroup().food(EDIBLE_10));
     public static Item supremePizza = new Item(createGroup().food(EDIBLE_18));
     public static Item cheesePizza = new Item(createGroup().food(EDIBLE_14));
     public static Item pineapplePepperoniPizza = new Item(createGroup().food(EDIBLE_18));
@@ -303,6 +300,7 @@ public class ItemRegistry {
     public static Item chickenAndRice = new Item(createGroup().food(EDIBLE_10));
     public static Item taco = new Item(createGroup().food(EDIBLE_10));
     public static Item sushi = new Item(createGroup().food(EDIBLE_10));
+    public static Item eggRoll = new Item(createGroup().food(EDIBLE_10));
 
     // desert block?
     public static Item coffeeCake;
@@ -328,8 +326,11 @@ public class ItemRegistry {
 
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item pot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 3, 1f, createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
+
+    public static Item saltOre = new AliasedBlockItem(BlockRegistry.salt, createGroup());
 
 
     public static void init() {
@@ -384,17 +385,16 @@ public class ItemRegistry {
         registerItem("elderberry_jam", elderberryJam);
         registerItem("raspberry_jam", raspberryJam);
 
-        registerItem("beef_jerky", beefJerky);
-        registerItem("pork_jerky", porkJerky);
+        registerItem("beef_jerky", beefJerky); // todo no recipe
+        registerItem("pork_jerky", porkJerky); // todo no recipe
         registerItem("kale_chips", kaleChips);
         registerItem("potato_chips", potatoChips);
         registerItem("steamed_rice", steamedRice);
-        registerItem("egg_roll", eggRoll);
         registerItem("french_fries", frenchFries);
         registerItem("sweet_potato_fries", sweetPotatoFries);
         registerItem("onion_rings", onionRings);
         registerItem("raisins", raisins);
-        registerItem("donut", donut);
+        registerItem("doughnut", doughnut);
         registerItem("popcorn", popcorn);
         registerItem("baked_beans", bakedBeans);
         registerItem("toast", toast);
@@ -417,7 +417,7 @@ public class ItemRegistry {
         registerItem("peanut_butter_and_jam", peanutButterAndJam);
         registerItem("blt", BLT);
         registerItem("grilled_cheese", grilledCheese);
-        registerItem("tuna_sandwich", tunaSandwich);
+        registerItem("tuna_sandwich", tunaSandwich); // todo no recipe
         registerItem("cheeseburger", cheeseburger);
         registerItem("hamburger", hamburger);
         registerItem("tofuburger", tofuBurger);
@@ -434,6 +434,7 @@ public class ItemRegistry {
         registerItem("chicken_and_rice", chickenAndRice);
         registerItem("taco", taco);
         registerItem("sushi", sushi);
+        registerItem("egg_roll", eggRoll);
 
         registerItem("apple_pie", applePie);
         registerItem("yam_jam", yamJam);
@@ -446,9 +447,14 @@ public class ItemRegistry {
         registerItem("cherry_pie", cherryPie);
         registerItem("cheese_cake", cheeseCake);
         registerItem("brownies", brownies);
-        registerItem("snicker_doodle", snickerDoodle);
-        registerItem("banana_nut_bread", bananaNutBread);
+        registerItem("snicker_doodle", snickerDoodle); // todo no recipe
+        registerItem("banana_nut_bread", bananaNutBread); // todo no recipe no nuts
 
         registerItem("food_press", foodPress);
+        registerItem("frying_pan", fryingPan);
+        registerItem("cooking_pot", cookingPot);
+        registerItem("mortar_and_pestle", mortarAndPestle);
+
+        registerItem("salt_ore", saltOre);
     }
 }

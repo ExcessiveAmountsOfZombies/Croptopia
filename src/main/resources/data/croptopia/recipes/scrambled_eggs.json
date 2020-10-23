@@ -1,0 +1,18 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:frying_pan"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "croptopia:cheese"
+    }
+  ],
+  "result": {
+    "item": "croptopia:scrambled_eggs",
+    "count": 1
+  }
+}

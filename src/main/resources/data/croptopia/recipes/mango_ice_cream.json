@@ -1,0 +1,24 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "croptopia:mango"
+    },
+    {
+      "tag": "croptopia:milks"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:mango_ice_cream",
+    "count": 1
+  }
+}

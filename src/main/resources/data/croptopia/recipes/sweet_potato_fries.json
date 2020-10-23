@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:sweetpotato"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "item": "croptopia:olive_oil"
+    }
+  ],
+  "result": {
+    "item": "croptopia:sweet_potato_fries",
+    "count": 1
+  }
+}

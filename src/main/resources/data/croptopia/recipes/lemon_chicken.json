@@ -1,0 +1,24 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:lemon"
+    },
+    {
+      "item": "croptopia:chile_pepper"
+    },
+    {
+      "item": "croptopia:tomato"
+    },
+    {
+      "tag": "croptopia:chicken_replacements"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:lemon_chicken",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:yam"
+    },
+    {
+      "item": "croptopia:vanilla"
+    },
+    {
+      "tag": "croptopia:milks"
+    },
+    {
+      "tag": "croptopia:milks"
+    }
+  ],
+  "result": {
+    "item": "croptopia:yam_jam",
+    "count": 1
+  }
+}
