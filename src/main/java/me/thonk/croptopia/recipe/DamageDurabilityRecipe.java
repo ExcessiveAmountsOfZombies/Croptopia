@@ -3,15 +3,17 @@ package me.thonk.croptopia.recipe;
 import me.thonk.croptopia.Croptopia;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.ShapelessRecipe;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 
 public class DamageDurabilityRecipe extends ShapelessRecipe {
 
 
-    public DamageDurabilityRecipe(ShapelessRecipe shapeless) {
-        super(shapeless.getId(), shapeless.getGroup(), shapeless.getOutput(), shapeless.getPreviewInputs());
+    public DamageDurabilityRecipe(Identifier id, String group, ItemStack output, DefaultedList<Ingredient> list) {
+        super(id, group, output, list);
     }
 
     @Override
