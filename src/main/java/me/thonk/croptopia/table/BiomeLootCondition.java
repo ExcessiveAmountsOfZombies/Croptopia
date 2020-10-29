@@ -31,6 +31,9 @@ public class BiomeLootCondition implements LootCondition {
 
     @Override
     public boolean test(LootContext lootContext) {
+        if (biomeCategory == Biome.Category.NONE) {
+            return true;
+        }
         Vec3d vec3d = lootContext.get(LootContextParameters.ORIGIN);
         if (vec3d != null) {
             //BuiltinRegistries.BIOME.get("key");

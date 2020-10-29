@@ -5,7 +5,6 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaLeafBlock;
 import me.thonk.croptopia.blocks.LeavesRegistry;
 import me.thonk.croptopia.config.ConfigurableSeed;
-import me.thonk.croptopia.config.Options;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.CroptopiaSeedItem;
 import me.thonk.croptopia.items.ItemRegistry;
@@ -38,15 +37,17 @@ import net.minecraft.world.biome.Biome;
 import java.util.ArrayList;
 import java.util.List;
 
+import static me.thonk.croptopia.Constants.MOD_ID;
+import static me.thonk.croptopia.Constants.OPTIONS;
+
 
 public class Croptopia implements ModInitializer {
 
-    private static Options options;
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
-    public static final String MOD_ID = "croptopia";
+
     public static final ItemGroup CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(MOD_ID, "croptopia"))
             .icon(() -> new ItemStack(ItemRegistry.onion))
             .build();
@@ -59,15 +60,15 @@ public class Croptopia implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        options = new Options(MOD_ID);
+        OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
 
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
 
-        options.addSeedDefaults(seeds, options.getOptionsFile());
+
         seeds.clear();
-        seeds = options.readConfiguredSeeds(options.getOptionsFile());
+        seeds = OPTIONS.readConfiguredSeeds(OPTIONS.getOptionsFile());
         CropLootTableModifier.init();
 
 
@@ -146,10 +147,6 @@ public class Croptopia implements ModInitializer {
         return false;
     }
 
-
-    public static Options getOptions() {
-        return options;
-    }
 
     public static List<ConfigurableSeed> getSeeds() {
         return seeds;

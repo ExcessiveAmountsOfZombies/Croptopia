@@ -86,6 +86,10 @@ public class ItemRegistry {
     public static Item pear = registerItem("pear", new Item(createGroup().food(EDIBLE_3)));
     public static Item lime = registerItem("lime", new Item(createGroup().food(EDIBLE_3)));
     public static Item date = registerItem("date", new Item(createGroup().food(EDIBLE_3)));
+    /*public static Item almond = new Item(createGroup().food(EDIBLE_3));
+    public static Item cashew = new Item(createGroup().food(EDIBLE_1));
+    public static Item pecan = new Item(createGroup().food(EDIBLE_3));
+    public static Item walnut = new Item(createGroup().food(EDIBLE_3));*/
 
     // Spices
     public static Item mustard = registerItem("mustard", new Item(createGroup()));
@@ -182,6 +186,7 @@ public class ItemRegistry {
     public static Item pearSapling = registerItem("pear_sapling", new AliasedBlockItem(BlockRegistry.pearSaplingBlock, createGroup()));
     public static Item limeSapling = registerItem("lime_sapling", new AliasedBlockItem(BlockRegistry.limeSaplingBlock, createGroup()));
     public static Item dateSapling = registerItem("date_sapling", new AliasedBlockItem(BlockRegistry.dateSaplingBlock, createGroup()));
+    //public static Item almondSapling = new AliasedBlockItem()
 
 
     public static Item vanillaSeed;

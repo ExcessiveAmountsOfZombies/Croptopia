@@ -72,11 +72,4 @@ public class DefaultBiomeFeaturesMixin {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 GeneratorRegistry.NECTARINE_TREE_CONFIGURED);
     }
-
-
-    @Inject(method = "addDefaultDisks", at = @At("TAIL"))
-    private static void addDefaultDisks(GenerationSettings.Builder builder, CallbackInfo info) {
-        builder.feature(GenerationStep.Feature.UNDERGROUND_ORES,
-                GeneratorRegistry.DISK_SALT_CONFIGURED);
-    }
 }

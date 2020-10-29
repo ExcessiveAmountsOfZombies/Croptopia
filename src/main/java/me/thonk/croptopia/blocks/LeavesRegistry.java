@@ -30,6 +30,10 @@ public class LeavesRegistry {
     public static Block pearCrop = createLeavesBlock();
     public static Block limeCrop = createLeavesBlock();
     public static Block dateCrop = createLeavesBlock();
+    /*public static Block almondCrop = createLeavesBlock();
+    public static Block cashewCrop = createLeavesBlock();
+    public static Block pecanCrop = createLeavesBlock();
+    public static Block walnutCrop = createLeavesBlock();*/
 
     public static void init() {
         registerBlock("apple_crop", appleCrop);
@@ -54,6 +58,10 @@ public class LeavesRegistry {
         registerBlock("pear_crop", pearCrop);
         registerBlock("lime_crop", limeCrop);
         registerBlock("date_crop", dateCrop);
+        /*registerBlock("almond_crop", almondCrop);
+        registerBlock("cashew_crop", cashewCrop);
+        registerBlock("pecan_crop", pecanCrop);
+        registerBlock("walnut_crop", walnutCrop);*/
     }
 
 }

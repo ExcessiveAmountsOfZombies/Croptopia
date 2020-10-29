@@ -19,6 +19,7 @@ public class Options {
 
 
     public boolean useHoeToCollectSeeds = true;
+    public boolean disableSaltOre = false;
 
     public Options(String modID) {
         File configDirectory = new File(FabricLoader.getInstance().getConfigDir().toFile(), modID);
@@ -47,10 +48,18 @@ public class Options {
 
             JsonObject options = new JsonObject();
             if (!mainObject.has("options")) {
-                mainObject.add("options", options);
                 options.add("_comment", new JsonPrimitive("Set this to false if you want to get seeds anytime you break tall grass."));
                 options.add("use-hoe-to-collect-seeds", new JsonPrimitive(true));
+            } else {
+                options = mainObject.getAsJsonObject("options");
             }
+
+            // Added in 1.0.3
+            if (!options.has("disable-salt-ore")) {
+                options.add("disable-salt-ore", new JsonPrimitive(false));
+            }
+
+            mainObject.add("options", options);
 
             try (Writer writer = new FileWriter(file)) {
                 GSON.toJson(mainObject, writer);
@@ -129,6 +138,7 @@ public class Options {
             JsonObject mainObject = GSON.fromJson(reader, JsonObject.class);
             JsonObject options = mainObject.getAsJsonObject("options");
             useHoeToCollectSeeds = options.getAsJsonPrimitive("use-hoe-to-collect-seeds").getAsBoolean();
+            disableSaltOre = options.getAsJsonPrimitive("disable-salt-ore").getAsBoolean();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -136,6 +146,10 @@ public class Options {
 
     public boolean useHoeToCollectSeeds() {
         return useHoeToCollectSeeds;
+    }
+
+    public boolean disableSaltOre() {
+        return disableSaltOre;
     }
 
     public File getOptionsFile() {

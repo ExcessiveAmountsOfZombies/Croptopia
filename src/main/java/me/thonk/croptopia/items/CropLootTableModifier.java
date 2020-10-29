@@ -1,5 +1,6 @@
 package me.thonk.croptopia.items;
 
+import me.thonk.croptopia.Constants;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.table.BiomeLootCondition;
@@ -24,7 +25,7 @@ public class CropLootTableModifier {
                 FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
                 builder.rolls(UniformLootTableRange.between(0, 1));
 
-                if (Croptopia.getOptions().useHoeToCollectSeeds()) {
+                if (Constants.OPTIONS.useHoeToCollectSeeds()) {
                     builder.withCondition(new MatchToolLootCondition(ItemPredicate.Builder.create().tag(FabricToolTags.HOES).build()));
                 }
                 ArrayList<LootPoolEntry.Builder> builders = new ArrayList<>();
