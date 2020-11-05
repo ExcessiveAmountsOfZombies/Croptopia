@@ -5,6 +5,7 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaLeafBlock;
 import me.thonk.croptopia.blocks.LeavesRegistry;
 import me.thonk.croptopia.config.ConfigurableSeed;
+import me.thonk.croptopia.generator.FeaturePlacement;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.CroptopiaSeedItem;
 import me.thonk.croptopia.items.ItemRegistry;
@@ -32,7 +33,6 @@ import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.biome.Biome;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,15 +60,15 @@ public class Croptopia implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
-
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
+        OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
 
 
         seeds.clear();
         seeds = OPTIONS.readConfiguredSeeds(OPTIONS.getOptionsFile());
+        FeaturePlacement.init();
         CropLootTableModifier.init();
 
 
@@ -104,7 +104,7 @@ public class Croptopia implements ModInitializer {
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
         if (item instanceof CroptopiaSeedItem) {
-            seeds.add(new ConfigurableSeed(itemName, item, Biome.Category.PLAINS, 0.0125f));
+            seeds.add(new ConfigurableSeed(itemName, item, ((CroptopiaSeedItem) item).getCategory(), 0.0125f));
         }
         return item;
     }

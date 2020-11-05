@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
       "item": "croptopia:cooking_pot"

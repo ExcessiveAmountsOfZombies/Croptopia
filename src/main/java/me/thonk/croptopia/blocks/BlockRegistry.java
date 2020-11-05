@@ -98,6 +98,10 @@ public class BlockRegistry {
     public static Block pearSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PEAR_TREE), createSaplingSettings());
     public static Block limeSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.LIME_TREE), createSaplingSettings());
     public static Block dateSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.DATE_TREE), createSaplingSettings());
+    public static Block almondSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.ALMOND_TREE), createSaplingSettings());
+    public static Block cashewSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.CASHEW_TREE), createSaplingSettings());
+    public static Block pecanSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PECAN_TREE), createSaplingSettings());
+    public static Block walnutSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.WALNUT_TREE), createSaplingSettings());
 
     public static void init() {
         registerBlock("salt_ore", salt);
@@ -182,6 +186,10 @@ public class BlockRegistry {
         registerBlock("pear_sapling", pearSaplingBlock);
         registerBlock("lime_sapling", limeSaplingBlock);
         registerBlock("date_sapling", dateSaplingBlock);
+        registerBlock("almond_sapling", almondSaplingBlock);
+        registerBlock("cashew_sapling", cashewSaplingBlock);
+        registerBlock("pecan_sapling", pecanSaplingBlock);
+        registerBlock("walnut_sapling", walnutSaplingBlock);
 
     }
 }

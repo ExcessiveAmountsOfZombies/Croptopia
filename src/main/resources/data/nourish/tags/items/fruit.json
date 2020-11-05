@@ -66,6 +66,10 @@
 		"croptopia:mango_ice_cream",
 		"croptopia:rum_raisin_ice_cream",
 		"croptopia:cherry_pie",
-		"croptopia:banana_nut_bread"
+		"croptopia:banana_nut_bread",
+		"croptopia:almond",
+		"croptopia:cashew",
+		"croptopia:pecan",
+		"croptopia:walnut"
 	]
 }

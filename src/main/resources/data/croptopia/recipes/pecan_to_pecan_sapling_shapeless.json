@@ -1,0 +1,19 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:pecan"
+    },
+    {
+      "item": "croptopia:pecan"
+    },
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "result": {
+    "item": "croptopia:pecan_sapling",
+    "count": 1
+  }
+}

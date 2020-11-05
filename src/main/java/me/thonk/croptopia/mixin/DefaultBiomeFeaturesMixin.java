@@ -1,17 +1,11 @@
 package me.thonk.croptopia.mixin;
 
-import me.thonk.croptopia.generator.GeneratorRegistry;
-import net.minecraft.world.biome.GenerationSettings;
-import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(DefaultBiomeFeatures.class)
 public class DefaultBiomeFeaturesMixin {
-
+/*
     @Inject(method = "addPlainsFeatures", at = @At("TAIL"))
     private static void addPlainsFeatures(GenerationSettings.Builder builder, CallbackInfo info) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
@@ -20,9 +14,9 @@ public class DefaultBiomeFeaturesMixin {
                 GeneratorRegistry.ORANGE_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 GeneratorRegistry.PEACH_TREE_CONFIGURED);
-    }
+    }*/
 
-    @Inject(method = "addJungleTrees", at = @At("TAIL"))
+   /* @Inject(method = "addJungleTrees", at = @At("TAIL"))
     private static void addJungleTrees(GenerationSettings.Builder builder, CallbackInfo info) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 GeneratorRegistry.DATE_TREE_CONFIGURED);
@@ -46,8 +40,8 @@ public class DefaultBiomeFeaturesMixin {
                 GeneratorRegistry.FIG_TREE_CONFIGURED);
 
     }
-
-    @Inject(method = "addForestTrees", at = @At("TAIL"))
+*/
+    /*@Inject(method = "addForestTrees", at = @At("TAIL"))
     private static void addForestTrees(GenerationSettings.Builder builder, CallbackInfo info) {
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 GeneratorRegistry.LIME_TREE_CONFIGURED);
@@ -71,5 +65,5 @@ public class DefaultBiomeFeaturesMixin {
                 GeneratorRegistry.ORANGE_TREE_CONFIGURED);
         builder.feature(GenerationStep.Feature.VEGETAL_DECORATION,
                 GeneratorRegistry.NECTARINE_TREE_CONFIGURED);
-    }
+    }*/
 }

@@ -83,12 +83,14 @@ public class Options {
                         "will drop in and the chance to drop. "  +
                         "Acceptable biome categories are: taiga, extreme_hills, jungle, mesa, plains, savanna, icy, the_end, " +
                         "beach, forest, ocean, desert, river, swamp, mushroom, nether"));
+                seedCategory.add("__comment", new JsonPrimitive("Set this to none if you want them to drop from any biome category."));
             } else {
                 seedCategory = (JsonObject) mainObject.get("seeds");
             }
-            JsonObject seed = new JsonObject();
+
             for (ConfigurableSeed configurableSeed : seeds) {
                 if (!seedCategory.has(configurableSeed.getSeed())) {
+                    JsonObject seed = new JsonObject();
                     seed.add("biome-category", new JsonPrimitive(configurableSeed.getBiomeCategory().asString()));
                     seed.add("drop-chance", new JsonPrimitive(configurableSeed.getChanceToDrop()));
                     seedCategory.add(configurableSeed.getSeed(), seed);
@@ -113,7 +115,7 @@ public class Options {
             JsonObject mainObject = GSON.fromJson(reader, JsonObject.class);
             JsonObject seedsCategory = mainObject.getAsJsonObject("seeds");
             for (Map.Entry<String, JsonElement> entry : seedsCategory.entrySet()) {
-                if (entry.getKey().equalsIgnoreCase("_comment")) {
+                if (entry.getKey().contains("comment")) {
                     continue;
                 }
                 JsonObject seedObject = (JsonObject) entry.getValue();

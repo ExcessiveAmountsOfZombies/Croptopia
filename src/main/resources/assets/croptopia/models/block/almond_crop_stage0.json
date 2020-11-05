@@ -1,0 +1,7 @@
+{
+  "parent": "croptopia:block/croptopia_leaves",
+  "textures": {
+    "all": "minecraft:block/dark_oak_leaves",
+    "crop": "croptopia:block/white_tree_bud"
+  }
+}

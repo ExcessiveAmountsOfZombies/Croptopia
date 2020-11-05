@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.gen.UniformIntDistribution;
 import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
 import net.minecraft.world.gen.decorator.CountExtraDecoratorConfig;
@@ -19,9 +20,16 @@ import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.ForkingTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static me.thonk.croptopia.Croptopia.createIdentifier;
 
 public class GeneratorRegistry {
+
+    private static Map<String, RegistryKey<ConfiguredFeature<?, ?>>> keyMap = new HashMap<>();
+    private static Map<RegistryKey<ConfiguredFeature<?, ?>>, ConfiguredFeature<?, ?>> featureMap = new HashMap<>();
+
     public static final ConfiguredFeature<?, ?> APPLE_TREE = register(createIdentifier("apple_tree"),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
@@ -198,6 +206,38 @@ public class GeneratorRegistry {
                     new StraightTrunkPlacer(5, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
+    public static final ConfiguredFeature<?, ?> ALMOND_TREE = register(createIdentifier("almond_tree"),
+            Feature.TREE.configure((new TreeFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
+                    new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.almondCrop.getDefaultState(), 5),
+                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new StraightTrunkPlacer(4, 3, 0),
+                    new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
+
+    public static final ConfiguredFeature<?, ?> CASHEW_TREE = register(createIdentifier("cashew_tree"),
+            Feature.TREE.configure((new TreeFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
+                    new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.cashewCrop.getDefaultState(), 5),
+                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new StraightTrunkPlacer(4, 3, 0),
+                    new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
+
+    public static final ConfiguredFeature<?, ?> PECAN_TREE = register(createIdentifier("pecan_tree"),
+            Feature.TREE.configure((new TreeFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
+                    new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.pecanCrop.getDefaultState(), 5),
+                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new StraightTrunkPlacer(4, 3, 0),
+                    new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
+
+    public static final ConfiguredFeature<?, ?> WALNUT_TREE = register(createIdentifier("walnut_tree"),
+            Feature.TREE.configure((new TreeFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
+                    new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.walnutCrop.getDefaultState(), 5),
+                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new StraightTrunkPlacer(4, 3, 0),
+                    new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
+
     public static final ConfiguredFeature<?, ?> APPLE_TREE_CONFIGURED = register(createIdentifier("apple_tree_configured"),
             APPLE_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
 
@@ -264,6 +304,19 @@ public class GeneratorRegistry {
     public static final ConfiguredFeature<?, ?> DATE_TREE_CONFIGURED = register(createIdentifier("date_tree_configured"),
             DATE_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
 
+    public static final ConfiguredFeature<?, ?> ALMOND_TREE_CONFIGURED = register(createIdentifier("almond_tree_configured"),
+            ALMOND_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.25F, 5)))));
+
+    public static final ConfiguredFeature<?, ?> CASHEW_TREE_CONFIGURED = register(createIdentifier("cashew_tree_configured"),
+            CASHEW_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.25F, 5)))));
+
+    public static final ConfiguredFeature<?, ?> PECAN_TREE_CONFIGURED = register(createIdentifier("pecan_tree_configured"),
+            PECAN_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.25F, 5)))));
+
+    public static final ConfiguredFeature<?, ?> WALNUT_TREE_CONFIGURED = register(createIdentifier("walnut_tree_configured"),
+            WALNUT_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.25F, 5)))));
+
+
     public static final ConfiguredFeature<?, ?> DISK_SALT = register(createIdentifier("disk_salt"),
             Feature.DISK.configure((new DiskFeatureConfig(BlockRegistry.salt.getDefaultState(),
                     UniformIntDistribution.of(2, 4), 2,
@@ -275,7 +328,22 @@ public class GeneratorRegistry {
 
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(Identifier id, ConfiguredFeature<FC, ?> configuredFeature) {
-        return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);
+        ConfiguredFeature<FC, ?> feature = Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, id, configuredFeature);
+        RegistryKey<ConfiguredFeature<?, ?>> key = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, id);
+        keyMap.put(id.getPath(), key);
+        featureMap.put(key, feature);
+        return feature;
     }
 
+    public static Map<RegistryKey<ConfiguredFeature<?, ?>>, ConfiguredFeature<?, ?>> getFeatureMap() {
+        return featureMap;
+    }
+
+    public static Map<String, RegistryKey<ConfiguredFeature<?, ?>>> getKeyMap() {
+        return keyMap;
+    }
+
+    public static RegistryKey<ConfiguredFeature<?, ?>> getFeatureKey(String key) {
+        return keyMap.get(key);
+    }
 }

@@ -1,0 +1,19 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:cashew"
+    },
+    {
+      "item": "croptopia:cashew"
+    },
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "result": {
+    "item": "croptopia:cashew_sapling",
+    "count": 1
+  }
+}
