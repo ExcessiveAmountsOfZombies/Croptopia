@@ -29,7 +29,7 @@ public class CroptopiaCropBlock extends CropBlock {
 
     private Item seed;
 
-    protected CroptopiaCropBlock(Settings settings) {
+    public CroptopiaCropBlock(Settings settings) {
         super(settings);
     }
 

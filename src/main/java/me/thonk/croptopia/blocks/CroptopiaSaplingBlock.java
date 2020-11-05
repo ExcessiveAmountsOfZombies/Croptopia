@@ -6,7 +6,7 @@ import net.minecraft.block.sapling.SaplingGenerator;
 public class CroptopiaSaplingBlock extends SaplingBlock {
 
 
-    protected CroptopiaSaplingBlock(SaplingGenerator generator, Settings settings) {
+    public CroptopiaSaplingBlock(SaplingGenerator generator, Settings settings) {
         super(generator, settings);
     }
 }

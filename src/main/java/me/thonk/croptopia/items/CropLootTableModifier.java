@@ -3,7 +3,7 @@ package me.thonk.croptopia.items;
 import me.thonk.croptopia.Constants;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.config.ConfigurableSeed;
-import me.thonk.croptopia.table.BiomeLootCondition;
+import me.thonk.croptopia.loottables.BiomeLootCondition;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;

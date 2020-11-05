@@ -1,6 +1,6 @@
 package me.thonk.croptopia.mixin;
 
-import me.thonk.croptopia.generator.GeneratorRegistry;
+import me.thonk.croptopia.registry.GeneratorRegistry;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;

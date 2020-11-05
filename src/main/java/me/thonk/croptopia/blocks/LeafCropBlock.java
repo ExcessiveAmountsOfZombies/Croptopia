@@ -13,10 +13,10 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 
-public class CroptopiaLeafBlock extends CroptopiaCropBlock {
+public class LeafCropBlock extends CroptopiaCropBlock {
     public static final IntProperty AGE = Properties.AGE_3;
 
-    public CroptopiaLeafBlock(Settings settings) {
+    public LeafCropBlock(Settings settings) {
         super(settings);
     }
 

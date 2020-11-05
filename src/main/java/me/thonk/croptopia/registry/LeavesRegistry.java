@@ -1,4 +1,4 @@
-package me.thonk.croptopia.blocks;
+package me.thonk.croptopia.registry;
 
 import net.minecraft.block.Block;
 

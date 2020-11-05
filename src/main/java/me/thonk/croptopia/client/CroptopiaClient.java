@@ -1,6 +1,6 @@
 package me.thonk.croptopia.client;
 
-import me.thonk.croptopia.blocks.CroptopiaLeafBlock;
+import me.thonk.croptopia.blocks.LeafCropBlock;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -23,7 +23,7 @@ public class CroptopiaClient implements ClientModInitializer {
     }
 
     public void registerCropBlockLayer(Block block) {
-        if (block instanceof CroptopiaLeafBlock) {
+        if (block instanceof LeafCropBlock) {
             BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutoutMipped());
             return;
         }

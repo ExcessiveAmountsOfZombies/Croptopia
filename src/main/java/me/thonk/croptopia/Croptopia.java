@@ -1,16 +1,16 @@
 package me.thonk.croptopia;
 
-import me.thonk.croptopia.blocks.BlockRegistry;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
-import me.thonk.croptopia.blocks.CroptopiaLeafBlock;
-import me.thonk.croptopia.blocks.LeavesRegistry;
+import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.generator.FeaturePlacement;
 import me.thonk.croptopia.items.CropLootTableModifier;
-import me.thonk.croptopia.items.CroptopiaSeedItem;
-import me.thonk.croptopia.items.ItemRegistry;
+import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.recipe.DamageDurabilitySerializer;
-import me.thonk.croptopia.table.BiomeLootCondition;
+import me.thonk.croptopia.registry.BlockRegistry;
+import me.thonk.croptopia.registry.ItemRegistry;
+import me.thonk.croptopia.registry.LeavesRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
@@ -96,15 +96,15 @@ public class Croptopia implements ModInitializer {
             ((AliasedBlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
 
-        if (item instanceof CroptopiaSeedItem) {
-            CroptopiaCropBlock block = (CroptopiaCropBlock) ((CroptopiaSeedItem) item).getBlock();
+        if (item instanceof SeedItem) {
+            CroptopiaCropBlock block = (CroptopiaCropBlock) ((SeedItem) item).getBlock();
             block.setSeedsItem(item);
         }
 
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
-        if (item instanceof CroptopiaSeedItem) {
-            seeds.add(new ConfigurableSeed(itemName, item, ((CroptopiaSeedItem) item).getCategory(), 0.0125f));
+        if (item instanceof SeedItem) {
+            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
         }
         return item;
     }
@@ -116,13 +116,12 @@ public class Croptopia implements ModInitializer {
     public static Block registerBlock(String blockName, Block item) {
         cropBlocks.add(item);
 
-        if (item instanceof CroptopiaLeafBlock) {
+        if (item instanceof LeafCropBlock) {
             leafBlocks.add(item);
-            //System.out.println("\"" + blockName + "\",");
+            System.out.println("\"" + blockName + "\",");
         } else {
-            //System.out.println("\"" + blockName + "\",");
+            System.out.println("\"" + blockName + "\",");
         }
-        // Debug sout for easy json writing.
         Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
         return item;
     }
@@ -135,8 +134,8 @@ public class Croptopia implements ModInitializer {
         return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS);
     }
 
-    public static CroptopiaLeafBlock createLeavesBlock() {
-        return new CroptopiaLeafBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
+    public static LeafCropBlock createLeavesBlock() {
+        return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
     }
 
     private static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {

@@ -1,7 +1,9 @@
-package me.thonk.croptopia.blocks;
+package me.thonk.croptopia.registry;
 
+import me.thonk.croptopia.blocks.CroptopiaCropBlock;
+import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
+import me.thonk.croptopia.blocks.TallCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
-import me.thonk.croptopia.generator.GeneratorRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -25,7 +27,7 @@ public class BlockRegistry {
     public static Block celeryCropBlock = new CroptopiaCropBlock(createCropSettings());
     //public static Block chivesCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block coffeeCropBlock = new CroptopiaCropBlock(createCropSettings());
-    public static Block cornCropBlock = new CornCropBlock(createCropSettings());
+    public static Block cornCropBlock = new TallCropBlock(createCropSettings());
     public static Block cranberryCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block cucumberCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block currantCropBlock = new CroptopiaCropBlock(createCropSettings());

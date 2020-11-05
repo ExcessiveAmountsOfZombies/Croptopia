@@ -1,11 +1,12 @@
-package me.thonk.croptopia.items;
+package me.thonk.croptopia.registry;
 
-import me.thonk.croptopia.blocks.BlockRegistry;
+import me.thonk.croptopia.items.Drink;
+import me.thonk.croptopia.items.SeedItem;
 import net.minecraft.item.*;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.Croptopia.registerItem;
-import static me.thonk.croptopia.FoodRegistry.*;
+import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
 public class ItemRegistry {
@@ -14,6 +15,10 @@ public class ItemRegistry {
 
     // Fruits & Vegetables // cropitem
     public static Item artichoke = registerItem("artichoke", new Item(createGroup().food(EDIBLE_1)));
+
+    public static void nonk() {
+
+    }
     public static Item asparagus = registerItem("asparagus", new Item(createGroup().food(EDIBLE_3)));
     public static Item barley = registerItem("barley", new Item(createGroup().food(EDIBLE_1)));
     public static Item bellPepper = registerItem("bellpepper", new Item(createGroup().food(EDIBLE_3)));
@@ -104,63 +109,63 @@ public class ItemRegistry {
     public static Item basil = registerItem("basil", new Item(createGroup().food(EDIBLE_1)));
 
 
-    public static Item artichokeSeed = registerItem("artichoke_seed", new CroptopiaSeedItem(BlockRegistry.artichokeCropBlock, createGroup(), SWAMP));
-    public static Item asparagusSeed = registerItem("asparagus_seed", new CroptopiaSeedItem(BlockRegistry.asparagusCropBlock, createGroup(), SWAMP));
-    public static Item bellPepperSeed = registerItem("bellpepper_seed", new CroptopiaSeedItem(BlockRegistry.bellPepperCropBlock, createGroup(), PLAINS));
-    public static Item blackBeanSeed = registerItem("blackbean_seed", new CroptopiaSeedItem(BlockRegistry.blackBeanCropBlock, createGroup(), FOREST));
-    public static Item blackberrySeed = registerItem("blackberry_seed", new CroptopiaSeedItem(BlockRegistry.blackberryCropBlock, createGroup(), FOREST));
-    public static Item blueberrySeed = registerItem("blueberry_seed", new CroptopiaSeedItem(BlockRegistry.blueberryCropBlock, createGroup(), FOREST));
-    public static Item broccoliSeed = registerItem("broccoli_seed", new CroptopiaSeedItem(BlockRegistry.broccoliCropBlock, createGroup(), PLAINS));
-    public static Item cabbageSeed = registerItem("cabbage_seed", new CroptopiaSeedItem(BlockRegistry.cabbageCropBlock, createGroup(), PLAINS));
-    public static Item cantaloupeSeed = registerItem("cantaloupe_seed", new CroptopiaSeedItem(BlockRegistry.cantaloupeCropBlock, createGroup(), FOREST));
-    public static Item cauliflowerSeed = registerItem("cauliflower_seed", new CroptopiaSeedItem(BlockRegistry.cauliflowerCropBlock, createGroup(), FOREST));
-    public static Item celerySeed = registerItem("celery_seed", new CroptopiaSeedItem(BlockRegistry.celeryCropBlock, createGroup(), FOREST));
-    public static Item coffeeSeed = registerItem("coffee_seed", new CroptopiaSeedItem(BlockRegistry.coffeeCropBlock, createGroup(), JUNGLE));
-    public static Item cornSeed = registerItem("corn_seed", new CroptopiaSeedItem(BlockRegistry.cornCropBlock, createGroup(), PLAINS));
-    public static Item cranberrySeed = registerItem("cranberry_seed", new CroptopiaSeedItem(BlockRegistry.cranberryCropBlock, createGroup(), SWAMP));
-    public static Item cucumberSeed = registerItem("cucumber_seed", new CroptopiaSeedItem(BlockRegistry.cucumberCropBlock, createGroup(), PLAINS));
-    public static Item currantSeed = registerItem("currant_seed", new CroptopiaSeedItem(BlockRegistry.currantCropBlock, createGroup(), SWAMP));
-    public static Item eggplantSeed = registerItem("eggplant_seed", new CroptopiaSeedItem(BlockRegistry.eggplantCropBlock, createGroup(), JUNGLE));
-    public static Item elderberrySeed = registerItem("elderberry_seed", new CroptopiaSeedItem(BlockRegistry.elderberryCropBlock, createGroup(), FOREST));
-    public static Item garlicSeed = registerItem("garlic_seed", new CroptopiaSeedItem(BlockRegistry.garlicCropBlock, createGroup(), JUNGLE));
-    public static Item grapeSeed = registerItem("grape_seed", new CroptopiaSeedItem(BlockRegistry.grapeCropBlock, createGroup(), FOREST));
-    public static Item greenBeanSeed = registerItem("greenbean_seed", new CroptopiaSeedItem(BlockRegistry.greenBeanCropBlock, createGroup(), PLAINS));
-    public static Item greenOnionSeed = registerItem("greenonion_seed", new CroptopiaSeedItem(BlockRegistry.greenOnionCropBlock, createGroup(), JUNGLE));
-    public static Item honeydewSeed = registerItem("honeydew_seed", new CroptopiaSeedItem(BlockRegistry.honeydewCropBlock, createGroup(), JUNGLE));
-    public static Item hopsSeed = registerItem("hops_seed", new CroptopiaSeedItem(BlockRegistry.hopsCropBlock, createGroup(), SAVANNA));
-    public static Item kaleSeed = registerItem("kale_seed", new CroptopiaSeedItem(BlockRegistry.kaleCropBlock, createGroup(), PLAINS));
-    public static Item kiwiSeed = registerItem("kiwi_seed", new CroptopiaSeedItem(BlockRegistry.kiwiCropBlock, createGroup(), SAVANNA));
-    public static Item leekSeed = registerItem("leek_seed", new CroptopiaSeedItem(BlockRegistry.leekCropBlock, createGroup(), SAVANNA));
-    public static Item lettuceSeed = registerItem("lettuce_seed", new CroptopiaSeedItem(BlockRegistry.lettuceCropBlock, createGroup(), PLAINS));
-    public static Item oliveSeed = registerItem("olive_seed", new CroptopiaSeedItem(BlockRegistry.oliveCropBlock, createGroup(), SAVANNA));
-    public static Item onionSeed = registerItem("onion_seed", new CroptopiaSeedItem(BlockRegistry.onionCropBlock, createGroup(), JUNGLE));
-    public static Item peanutSeed = registerItem("peanut_seed", new CroptopiaSeedItem(BlockRegistry.peanutCropBlock, createGroup(), JUNGLE));
-    public static Item pineappleSeed = registerItem("pineapple_seed", new CroptopiaSeedItem(BlockRegistry.pineappleCropBlock, createGroup(), JUNGLE));
-    public static Item radishSeed = registerItem("radish_seed", new CroptopiaSeedItem(BlockRegistry.radishCropBlock, createGroup(), FOREST));
-    public static Item raspberrySeed = registerItem("raspberry_seed", new CroptopiaSeedItem(BlockRegistry.raspberryCropBlock, createGroup(), FOREST));
-    public static Item rhubarbSeed = registerItem("rhubarb_seed", new CroptopiaSeedItem(BlockRegistry.rhubarbCropBlock, createGroup(), JUNGLE));
-    public static Item riceSeed = registerItem("rice_seed", new CroptopiaSeedItem(BlockRegistry.riceCropBlock, createGroup(), JUNGLE));
-    public static Item rutabagaSeed = registerItem("rutabaga_seed", new CroptopiaSeedItem(BlockRegistry.rutabagaCropBlock, createGroup(), SAVANNA));
-    public static Item saguaroSeed = registerItem("saguaro_seed", new CroptopiaSeedItem(BlockRegistry.saguaroCropBlock, createGroup(), DESERT));
-    public static Item spinachSeed = registerItem("spinach_seed", new CroptopiaSeedItem(BlockRegistry.spinachCropBlock, createGroup(), FOREST));
-    public static Item squashSeed = registerItem("squash_seed", new CroptopiaSeedItem(BlockRegistry.squashCropBlock, createGroup(), SAVANNA));
-    public static Item strawberrySeed = registerItem("strawberry_seed", new CroptopiaSeedItem(BlockRegistry.strawberryCropBlock, createGroup(), FOREST));
-    public static Item sweetPotatoSeed = registerItem("sweetpotato_seed", new CroptopiaSeedItem(BlockRegistry.sweetPotatoCropBlock, createGroup(), PLAINS));
-    public static Item tomatilloSeed = registerItem("tomatillo_seed", new CroptopiaSeedItem(BlockRegistry.tomatilloCropBlock, createGroup(), FOREST));
-    public static Item tomatoSeed = registerItem("tomato_seed", new CroptopiaSeedItem(BlockRegistry.tomatoCropBlock, createGroup(), FOREST));
-    public static Item turnipSeed = registerItem("turnip_seed", new CroptopiaSeedItem(BlockRegistry.turnipCropBlock, createGroup(), JUNGLE));
-    public static Item yamSeed = registerItem("yam_seed", new CroptopiaSeedItem(BlockRegistry.yamCropBlock, createGroup(), SAVANNA));
-    public static Item zucchiniSeed = registerItem("zucchini_seed", new CroptopiaSeedItem(BlockRegistry.zucchiniCropBlock, createGroup(), SAVANNA));
-    public static Item mustardSeed = registerItem("mustard_seed", new CroptopiaSeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS));
+    public static Item artichokeSeed = registerItem("artichoke_seed", new SeedItem(BlockRegistry.artichokeCropBlock, createGroup(), SWAMP));
+    public static Item asparagusSeed = registerItem("asparagus_seed", new SeedItem(BlockRegistry.asparagusCropBlock, createGroup(), SWAMP));
+    public static Item bellPepperSeed = registerItem("bellpepper_seed", new SeedItem(BlockRegistry.bellPepperCropBlock, createGroup(), PLAINS));
+    public static Item blackBeanSeed = registerItem("blackbean_seed", new SeedItem(BlockRegistry.blackBeanCropBlock, createGroup(), FOREST));
+    public static Item blackberrySeed = registerItem("blackberry_seed", new SeedItem(BlockRegistry.blackberryCropBlock, createGroup(), FOREST));
+    public static Item blueberrySeed = registerItem("blueberry_seed", new SeedItem(BlockRegistry.blueberryCropBlock, createGroup(), FOREST));
+    public static Item broccoliSeed = registerItem("broccoli_seed", new SeedItem(BlockRegistry.broccoliCropBlock, createGroup(), PLAINS));
+    public static Item cabbageSeed = registerItem("cabbage_seed", new SeedItem(BlockRegistry.cabbageCropBlock, createGroup(), PLAINS));
+    public static Item cantaloupeSeed = registerItem("cantaloupe_seed", new SeedItem(BlockRegistry.cantaloupeCropBlock, createGroup(), FOREST));
+    public static Item cauliflowerSeed = registerItem("cauliflower_seed", new SeedItem(BlockRegistry.cauliflowerCropBlock, createGroup(), FOREST));
+    public static Item celerySeed = registerItem("celery_seed", new SeedItem(BlockRegistry.celeryCropBlock, createGroup(), FOREST));
+    public static Item coffeeSeed = registerItem("coffee_seed", new SeedItem(BlockRegistry.coffeeCropBlock, createGroup(), JUNGLE));
+    public static Item cornSeed = registerItem("corn_seed", new SeedItem(BlockRegistry.cornCropBlock, createGroup(), PLAINS));
+    public static Item cranberrySeed = registerItem("cranberry_seed", new SeedItem(BlockRegistry.cranberryCropBlock, createGroup(), SWAMP));
+    public static Item cucumberSeed = registerItem("cucumber_seed", new SeedItem(BlockRegistry.cucumberCropBlock, createGroup(), PLAINS));
+    public static Item currantSeed = registerItem("currant_seed", new SeedItem(BlockRegistry.currantCropBlock, createGroup(), SWAMP));
+    public static Item eggplantSeed = registerItem("eggplant_seed", new SeedItem(BlockRegistry.eggplantCropBlock, createGroup(), JUNGLE));
+    public static Item elderberrySeed = registerItem("elderberry_seed", new SeedItem(BlockRegistry.elderberryCropBlock, createGroup(), FOREST));
+    public static Item garlicSeed = registerItem("garlic_seed", new SeedItem(BlockRegistry.garlicCropBlock, createGroup(), JUNGLE));
+    public static Item grapeSeed = registerItem("grape_seed", new SeedItem(BlockRegistry.grapeCropBlock, createGroup(), FOREST));
+    public static Item greenBeanSeed = registerItem("greenbean_seed", new SeedItem(BlockRegistry.greenBeanCropBlock, createGroup(), PLAINS));
+    public static Item greenOnionSeed = registerItem("greenonion_seed", new SeedItem(BlockRegistry.greenOnionCropBlock, createGroup(), JUNGLE));
+    public static Item honeydewSeed = registerItem("honeydew_seed", new SeedItem(BlockRegistry.honeydewCropBlock, createGroup(), JUNGLE));
+    public static Item hopsSeed = registerItem("hops_seed", new SeedItem(BlockRegistry.hopsCropBlock, createGroup(), SAVANNA));
+    public static Item kaleSeed = registerItem("kale_seed", new SeedItem(BlockRegistry.kaleCropBlock, createGroup(), PLAINS));
+    public static Item kiwiSeed = registerItem("kiwi_seed", new SeedItem(BlockRegistry.kiwiCropBlock, createGroup(), SAVANNA));
+    public static Item leekSeed = registerItem("leek_seed", new SeedItem(BlockRegistry.leekCropBlock, createGroup(), SAVANNA));
+    public static Item lettuceSeed = registerItem("lettuce_seed", new SeedItem(BlockRegistry.lettuceCropBlock, createGroup(), PLAINS));
+    public static Item oliveSeed = registerItem("olive_seed", new SeedItem(BlockRegistry.oliveCropBlock, createGroup(), SAVANNA));
+    public static Item onionSeed = registerItem("onion_seed", new SeedItem(BlockRegistry.onionCropBlock, createGroup(), JUNGLE));
+    public static Item peanutSeed = registerItem("peanut_seed", new SeedItem(BlockRegistry.peanutCropBlock, createGroup(), JUNGLE));
+    public static Item pineappleSeed = registerItem("pineapple_seed", new SeedItem(BlockRegistry.pineappleCropBlock, createGroup(), JUNGLE));
+    public static Item radishSeed = registerItem("radish_seed", new SeedItem(BlockRegistry.radishCropBlock, createGroup(), FOREST));
+    public static Item raspberrySeed = registerItem("raspberry_seed", new SeedItem(BlockRegistry.raspberryCropBlock, createGroup(), FOREST));
+    public static Item rhubarbSeed = registerItem("rhubarb_seed", new SeedItem(BlockRegistry.rhubarbCropBlock, createGroup(), JUNGLE));
+    public static Item riceSeed = registerItem("rice_seed", new SeedItem(BlockRegistry.riceCropBlock, createGroup(), JUNGLE));
+    public static Item rutabagaSeed = registerItem("rutabaga_seed", new SeedItem(BlockRegistry.rutabagaCropBlock, createGroup(), SAVANNA));
+    public static Item saguaroSeed = registerItem("saguaro_seed", new SeedItem(BlockRegistry.saguaroCropBlock, createGroup(), DESERT));
+    public static Item spinachSeed = registerItem("spinach_seed", new SeedItem(BlockRegistry.spinachCropBlock, createGroup(), FOREST));
+    public static Item squashSeed = registerItem("squash_seed", new SeedItem(BlockRegistry.squashCropBlock, createGroup(), SAVANNA));
+    public static Item strawberrySeed = registerItem("strawberry_seed", new SeedItem(BlockRegistry.strawberryCropBlock, createGroup(), FOREST));
+    public static Item sweetPotatoSeed = registerItem("sweetpotato_seed", new SeedItem(BlockRegistry.sweetPotatoCropBlock, createGroup(), PLAINS));
+    public static Item tomatilloSeed = registerItem("tomatillo_seed", new SeedItem(BlockRegistry.tomatilloCropBlock, createGroup(), FOREST));
+    public static Item tomatoSeed = registerItem("tomato_seed", new SeedItem(BlockRegistry.tomatoCropBlock, createGroup(), FOREST));
+    public static Item turnipSeed = registerItem("turnip_seed", new SeedItem(BlockRegistry.turnipCropBlock, createGroup(), JUNGLE));
+    public static Item yamSeed = registerItem("yam_seed", new SeedItem(BlockRegistry.yamCropBlock, createGroup(), SAVANNA));
+    public static Item zucchiniSeed = registerItem("zucchini_seed", new SeedItem(BlockRegistry.zucchiniCropBlock, createGroup(), SAVANNA));
+    public static Item mustardSeed = registerItem("mustard_seed", new SeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS));
     //public static Item paprikaSeed = registerItem("paprika_seed", new CroptopiaSeedItem(BlockRegistry.paprikaCropBlock, createGroup(), DESERT));
-    public static Item pepperSeed = registerItem("chile_pepper_seed", new CroptopiaSeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS));
-    public static Item turmericSeed = registerItem("turmeric_seed", new CroptopiaSeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA));
-    public static Item gingerSeed = registerItem("ginger_seed", new CroptopiaSeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA));
+    public static Item pepperSeed = registerItem("chile_pepper_seed", new SeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS));
+    public static Item turmericSeed = registerItem("turmeric_seed", new SeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA));
+    public static Item gingerSeed = registerItem("ginger_seed", new SeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA));
     //public static Item chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
-    public static Item basilSeed = registerItem("basil_seed", new CroptopiaSeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE));
-    public static Item oatSeed = registerItem("oat_seed", new CroptopiaSeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS));
-    public static Item barleySeed = registerItem("barley_seed", new CroptopiaSeedItem(BlockRegistry.barleyCropBlock, createGroup(), PLAINS));
-    public static Item soybeanSeed = registerItem("soybean_seed", new CroptopiaSeedItem(BlockRegistry.soybeanCropBlock, createGroup(), PLAINS));
+    public static Item basilSeed = registerItem("basil_seed", new SeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE));
+    public static Item oatSeed = registerItem("oat_seed", new SeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS));
+    public static Item barleySeed = registerItem("barley_seed", new SeedItem(BlockRegistry.barleyCropBlock, createGroup(), PLAINS));
+    public static Item soybeanSeed = registerItem("soybean_seed", new SeedItem(BlockRegistry.soybeanCropBlock, createGroup(), PLAINS));
 
 
 
@@ -213,43 +218,43 @@ public class ItemRegistry {
     public static Item pepperoni = new Item(createGroup().food(EDIBLE_5));
 
     // drinks
-    public static Item grapeJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item orangeJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item appleJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item cranberryJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item saguaroJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item tomatoJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item melonJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item pineappleJuice = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item coffee = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item lemonade = new CroptopiaDrink(createGroup().food(EDIBLE_5));
-    public static Item limeade = new CroptopiaDrink(createGroup().food(EDIBLE_5));
+    public static Item grapeJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item orangeJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item appleJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item cranberryJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item saguaroJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item tomatoJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item melonJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item pineappleJuice = new Drink(createGroup().food(EDIBLE_5));
+    public static Item coffee = new Drink(createGroup().food(EDIBLE_5));
+    public static Item lemonade = new Drink(createGroup().food(EDIBLE_5));
+    public static Item limeade = new Drink(createGroup().food(EDIBLE_5));
     public static Item soyMilk = new MilkBucketItem(createGroup().food(EDIBLE_5));
     //public static Item tea;
 
-    public static Item strawberrySmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item bananaSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item kaleSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_14));
-    public static Item fruitSmoothie = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item strawberrySmoothie = new Drink(createGroup().food(EDIBLE_7));
+    public static Item bananaSmoothie = new Drink(createGroup().food(EDIBLE_7));
+    public static Item kaleSmoothie = new Drink(createGroup().food(EDIBLE_14));
+    public static Item fruitSmoothie = new Drink(createGroup().food(EDIBLE_7));
 
-    public static Item chocolateMilkshake = new CroptopiaDrink(createGroup().food(EDIBLE_7));
+    public static Item chocolateMilkshake = new Drink(createGroup().food(EDIBLE_7));
 
-    public static Item beer = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item wine = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item mead = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item rum = new CroptopiaDrink(createGroup().food(EDIBLE_7));
-    public static Item pumpkinSpiceLatte = new CroptopiaDrink(createGroup().food(EDIBLE_14));
+    public static Item beer = new Drink(createGroup().food(EDIBLE_7));
+    public static Item wine = new Drink(createGroup().food(EDIBLE_7));
+    public static Item mead = new Drink(createGroup().food(EDIBLE_7));
+    public static Item rum = new Drink(createGroup().food(EDIBLE_7));
+    public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14));
 
     // jams
-    public static Item grapeJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item strawberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item peachJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item apricotJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item blackberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item blueberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item cherryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item elderberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
-    public static Item raspberryJam = new CroptopiaDrink(createGroup().food(EDIBLE_3));
+    public static Item grapeJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item strawberryJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item peachJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item apricotJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item blackberryJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item blueberryJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item cherryJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item elderberryJam = new Drink(createGroup().food(EDIBLE_3));
+    public static Item raspberryJam = new Drink(createGroup().food(EDIBLE_3));
 
     // snacks?
     public static Item beefJerky = new Item(createGroup().food(EDIBLE_5));

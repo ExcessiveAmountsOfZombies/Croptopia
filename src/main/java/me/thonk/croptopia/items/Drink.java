@@ -5,10 +5,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.UseAction;
 
-public class CroptopiaDrink extends Item {
+public class Drink extends Item {
 
 
-    public CroptopiaDrink(Settings settings) {
+    public Drink(Settings settings) {
         super(settings);
     }
 

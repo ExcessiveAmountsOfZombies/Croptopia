@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "croptopia",
-  "version": "${mod_version}",
+  "version": "${version}",
   "name": "Croptopia",
   "description": "Adds crops to the game",
   "authors": [

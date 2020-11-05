@@ -1,4 +1,4 @@
-package me.thonk.croptopia.table;
+package me.thonk.croptopia.loottables;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;

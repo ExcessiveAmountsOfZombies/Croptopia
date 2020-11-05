@@ -1,8 +1,6 @@
-package me.thonk.croptopia.generator;
+package me.thonk.croptopia.registry;
 
 import com.google.common.collect.ImmutableList;
-import me.thonk.croptopia.blocks.BlockRegistry;
-import me.thonk.croptopia.blocks.LeavesRegistry;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;

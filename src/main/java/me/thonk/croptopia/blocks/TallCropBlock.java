@@ -7,7 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class CornCropBlock extends CroptopiaCropBlock {
+public class TallCropBlock extends CroptopiaCropBlock {
 
     protected static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
@@ -19,7 +19,7 @@ public class CornCropBlock extends CroptopiaCropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 31.0D, 16.0D)};
 
-    protected CornCropBlock(Settings settings) {
+    public TallCropBlock(Settings settings) {
         super(settings);
     }
 
