@@ -118,9 +118,9 @@ public class Croptopia implements ModInitializer {
 
         if (item instanceof LeafCropBlock) {
             leafBlocks.add(item);
-            System.out.println("\"" + blockName + "\",");
+            //System.out.println("\"" + blockName + "\",");
         } else {
-            System.out.println("\"" + blockName + "\",");
+            //System.out.println("\"" + blockName + "\",");
         }
         Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
         return item;

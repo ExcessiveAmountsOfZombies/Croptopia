@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "croptopia:coffee"
+          "name": "croptopia:coffee_beans"
         }
       ]
     },
@@ -26,7 +26,7 @@
               }
             }
           ],
-          "name": "croptopia:coffee"
+          "name": "croptopia:coffee_beans"
         }
       ],
       "conditions": [

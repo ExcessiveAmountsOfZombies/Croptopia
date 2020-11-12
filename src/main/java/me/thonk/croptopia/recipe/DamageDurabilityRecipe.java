@@ -30,6 +30,9 @@ public class DamageDurabilityRecipe extends ShapelessRecipe {
                     defaultedList.set(i, itemStack);
                 }
             }
+            if (itemStack.getItem().hasRecipeRemainder()) {
+                defaultedList.set(i, new ItemStack(itemStack.getItem().getRecipeRemainder()));
+            }
         }
 
         return defaultedList;
