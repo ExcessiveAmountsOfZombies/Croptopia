@@ -149,15 +149,14 @@ public class ItemRegistry {
     public static Item yamSeed = new SeedItem(BlockRegistry.yamCropBlock, createGroup(), SAVANNA);
     public static Item zucchiniSeed = new SeedItem(BlockRegistry.zucchiniCropBlock, createGroup(), SAVANNA);
     public static Item mustardSeed = new SeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS);
-    //public static Item paprikaSeed = registerItem("paprika_seed", new CroptopiaSeedItem(BlockRegistry.paprikaCropBlock, createGroup(), DESERT));
     public static Item pepperSeed = new SeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS);
     public static Item turmericSeed = new SeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA);
     public static Item gingerSeed = new SeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA);
-    //public static Item chivesSeed = registerItem("chives_seed", new CroptopiaSeedItem(BlockRegistry.chivesCropBlock, createGroup(), JUNGLE));
     public static Item basilSeed = new SeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE);
     public static Item oatSeed = new SeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS);
     public static Item barleySeed = new SeedItem(BlockRegistry.barleyCropBlock, createGroup(), PLAINS);
     public static Item soybeanSeed = new SeedItem(BlockRegistry.soybeanCropBlock, createGroup(), PLAINS);
+    public static Item vanillaSeed;
 
 
 
@@ -187,9 +186,6 @@ public class ItemRegistry {
     public static Item cashewSapling = new AliasedBlockItem(BlockRegistry.cashewSaplingBlock, createGroup());
     public static Item pecanSapling = new AliasedBlockItem(BlockRegistry.pecanSaplingBlock, createGroup());
     public static Item walnutSapling = new AliasedBlockItem(BlockRegistry.walnutSaplingBlock, createGroup());
-
-
-    public static Item vanillaSeed;
 
     // secondary ingredients?
     public static Item oliveOil = new Item(createGroup());
@@ -272,10 +268,10 @@ public class ItemRegistry {
     public static Item leekSoup = new Item(createGroup().food(EDIBLE_7));
     public static Item yoghurt = new Item(createGroup().food(EDIBLE_5));
     public static Item saucyChips = new Item(createGroup().food(EDIBLE_7));
-    /*public static Item roastedNuts = new Item(createGroup().food(EDIBLE_5));
+    public static Item roastedNuts = new Item(createGroup().food(EDIBLE_5));
     public static Item trailMix = new Item(createGroup().food(EDIBLE_10));
     public static Item proteinBar = new Item(createGroup().food(EDIBLE_10));
-    public static Item nougat = new Item(createGroup().food(EDIBLE_7));*/
+    public static Item nougat = new Item(createGroup().food(EDIBLE_7));
 
     // breakfast
     public static Item scrambledEggs = new Item(createGroup().food(EDIBLE_7));
@@ -306,7 +302,7 @@ public class ItemRegistry {
     public static Item taco = new Item(createGroup().food(EDIBLE_10));
     public static Item sushi = new Item(createGroup().food(EDIBLE_10));
     public static Item eggRoll = new Item(createGroup().food(EDIBLE_10));
-    //public static Item cashewChicken = new Item(createGroup().food(EDIBLE_14));
+    public static Item cashewChicken = new Item(createGroup().food(EDIBLE_14));
 
     // desert block?
     public static Item coffeeCake;
@@ -314,7 +310,7 @@ public class ItemRegistry {
     public static Item fruitCake;
     public static Item strawberryShortCake;
     public static Item carrotCake;
-    //public static Item turtleCake;
+    public static Item turtleCake;
 
     // desert item
     public static Item applePie = new Item(createGroup().food(EDIBLE_14));
@@ -325,22 +321,22 @@ public class ItemRegistry {
     public static Item strawberryIceCream = new Item(createGroup().food(EDIBLE_10));
     public static Item mangoIceCream = new Item(createGroup().food(EDIBLE_10));
     public static Item rumRaisinIceCream = new Item(createGroup().food(EDIBLE_14));
-    //public static Item pecanIceCream = new Item(createGroup().food(EDIBLE_10));
+    public static Item pecanIceCream = new Item(createGroup().food(EDIBLE_10));
     public static Item cherryPie = new Item(createGroup().food(EDIBLE_14));
     public static Item cheeseCake = new Item(createGroup().food(EDIBLE_14));
     public static Item brownies = new Item(createGroup().food(EDIBLE_10));
     public static Item snickerDoodle = new Item(createGroup().food(EDIBLE_7));
     public static Item bananaNutBread = new Item(createGroup().food(EDIBLE_10));
-    /*public static Item pecanPie = new Item(createGroup().food(EDIBLE_14));
+    public static Item pecanPie = new Item(createGroup().food(EDIBLE_14));
     public static Item candiedNuts = new Item(createGroup().food(EDIBLE_5));
     public static Item almondBrittle = new Item(createGroup().food(EDIBLE_7));
     public static Item oatmealCookie = new Item(createGroup().food(EDIBLE_5));
     public static Item nuttyCookie = new Item(createGroup().food(EDIBLE_5));
-    public static Item praline = new Item(createGroup().food(EDIBLE_5));*/
+    public static Item praline = new Item(createGroup().food(EDIBLE_5));
 
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 3, 1f, createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -1.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
 
@@ -571,10 +567,10 @@ public class ItemRegistry {
         registerItem("leek_soup", leekSoup);
         registerItem("yoghurt", yoghurt);
         registerItem("saucy_chips", saucyChips);
-        /*registerItem("roasted_nuts", roastedNuts);
+        registerItem("roasted_nuts", roastedNuts);
         registerItem("trail_mix", trailMix);
         registerItem("protein_bar", proteinBar);
-        registerItem("nougat", nougat);*/
+        registerItem("nougat", nougat);
 
         registerItem("scrambled_eggs", scrambledEggs);
         registerItem("buttered_toast", butteredToast);
@@ -602,7 +598,7 @@ public class ItemRegistry {
         registerItem("taco", taco);
         registerItem("sushi", sushi);
         registerItem("egg_roll", eggRoll);
-        //registerItem("cashew_chicken", cashewChicken);
+        registerItem("cashew_chicken", cashewChicken);
 
         registerItem("apple_pie", applePie);
         registerItem("yam_jam", yamJam);
@@ -612,17 +608,17 @@ public class ItemRegistry {
         registerItem("strawberry_ice_cream", strawberryIceCream);
         registerItem("mango_ice_cream", mangoIceCream);
         registerItem("rum_raisin_ice_cream", rumRaisinIceCream);
-        //registerItem("pecan_ice_cream", pecanIceCream);
+        registerItem("pecan_ice_cream", pecanIceCream);
         registerItem("cherry_pie", cherryPie);
         registerItem("cheese_cake", cheeseCake);
         registerItem("brownies", brownies);
         registerItem("snicker_doodle", snickerDoodle); // todo no recipe
         registerItem("banana_nut_bread", bananaNutBread); // todo no recipe no nuts
-        /*registerItem("pecan_pie", pecanPie);
+        registerItem("pecan_pie", pecanPie);
         registerItem("candied_nuts", candiedNuts);
         registerItem("almond_brittle", almondBrittle);
-        registerItem("oatmeal_cookie", oatmealCookie);
-        registerItem("nutty_cookie", nuttyCookie);*/
+        registerItem("raisin_oatmeal_cookie", oatmealCookie);
+        registerItem("nutty_cookie", nuttyCookie);
 
         registerItem("food_press", foodPress);
         registerItem("frying_pan", fryingPan);

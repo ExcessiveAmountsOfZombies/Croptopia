@@ -1,0 +1,27 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "tag": "croptopia:nuts"
+    },
+    {
+      "tag": "croptopia:nuts"
+    },
+    {
+      "tag": "croptopia:nuts"
+    },
+    {
+      "item": "croptopia:raisins"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "item": "croptopia:chocolate"
+    }
+  ],
+  "result": {
+    "item": "croptopia:trail_mix",
+    "count": 4
+  }
+}

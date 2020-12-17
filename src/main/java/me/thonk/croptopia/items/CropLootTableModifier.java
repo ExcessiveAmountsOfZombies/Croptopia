@@ -21,7 +21,10 @@ public class CropLootTableModifier {
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, fabricLootSupplierBuilder, lootTableSetter) -> {
-            if (identifier.getPath().equalsIgnoreCase("blocks/grass")) {
+            if (identifier.getPath().equalsIgnoreCase("blocks/grass") ||
+                    identifier.getPath().equalsIgnoreCase("blocks/tall_grass") ||
+                    identifier.getPath().equalsIgnoreCase("blocks/fern") ||
+                    identifier.getPath().equalsIgnoreCase("blocks/large_fern")) {
                 FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
                 builder.rolls(UniformLootTableRange.between(0, 1));
 

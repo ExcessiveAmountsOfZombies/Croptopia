@@ -1,0 +1,21 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:butter"
+    },
+    {
+      "item": "croptopia:almond"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "croptopia:almond_brittle",
+    "count": 2
+  }
+}

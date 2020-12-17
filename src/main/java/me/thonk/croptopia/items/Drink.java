@@ -41,7 +41,8 @@ public class Drink extends Item {
         if (playerEntity != null) {
             playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
             if (!playerEntity.abilities.creativeMode) {
-                stack.decrement(1);
+                if (isFood())
+                    user.eatFood(world, stack);
             }
         }
 

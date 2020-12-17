@@ -2,26 +2,20 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:dough"
+      "tag": "croptopia:nuts"
     },
     {
-      "item": "croptopia:cherry"
-    },
-    {
-      "item": "minecraft:egg"
+      "tag": "croptopia:nuts"
     },
     {
       "item": "minecraft:sugar"
     },
     {
       "item": "croptopia:flour"
-    },
-    {
-      "item": "croptopia:frying_pan"
     }
   ],
   "result": {
-    "item": "croptopia:cherry_pie",
-    "count": 1
+    "item": "croptopia:nutty_cookie",
+    "count": 4
   }
 }

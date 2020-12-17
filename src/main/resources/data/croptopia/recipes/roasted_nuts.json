@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "croptopia:nuts"
+  },
+  "result": "croptopia:roasted_nuts",
+  "experience": 0.1,
+  "cookingtime": 200
+}

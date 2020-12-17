@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "croptopia:nuts"
+    },
+    {
+      "tag": "croptopia:nuts"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "croptopia:caramel"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:salt"
+    }
+  ],
+  "result": {
+    "item": "croptopia:protein_bar",
+    "count": 8
+  }
+}

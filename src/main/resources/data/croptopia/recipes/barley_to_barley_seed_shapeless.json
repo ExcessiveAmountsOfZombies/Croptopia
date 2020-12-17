@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:barley"
+    }
+  ],
+  "result": {
+    "item": "croptopia:barley_seed",
+    "count": 1
+  }
+}

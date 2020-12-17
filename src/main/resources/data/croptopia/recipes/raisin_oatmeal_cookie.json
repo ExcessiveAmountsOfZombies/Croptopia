@@ -2,26 +2,20 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:dough"
+      "item": "croptopia:raisins"
     },
     {
-      "item": "croptopia:cherry"
-    },
-    {
-      "item": "minecraft:egg"
+      "item": "croptopia:oatmeal"
     },
     {
       "item": "minecraft:sugar"
     },
     {
       "item": "croptopia:flour"
-    },
-    {
-      "item": "croptopia:frying_pan"
     }
   ],
   "result": {
-    "item": "croptopia:cherry_pie",
-    "count": 1
+    "item": "croptopia:raisin_oatmeal_cookie",
+    "count": 4
   }
 }
