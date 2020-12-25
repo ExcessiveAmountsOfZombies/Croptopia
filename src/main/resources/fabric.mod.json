@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "croptopia",
-  "version": "${version}",
+  "version": "1.0.7",
   "name": "Croptopia",
   "description": "Adds crops to the game",
   "authors": [
@@ -27,5 +27,8 @@
     "fabric": "*",
     "fabric-biome-api-v1": ">=3.0.0",
     "minecraft": ">=1.16.3"
+  },
+  "suggests": {
+    "dehydration": ">=1.0.8"
   }
 }

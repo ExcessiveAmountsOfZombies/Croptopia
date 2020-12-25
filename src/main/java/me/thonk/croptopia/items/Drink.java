@@ -1,5 +1,6 @@
 package me.thonk.croptopia.items;
 
+import me.thonk.croptopia.Croptopia;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -41,8 +42,10 @@ public class Drink extends Item {
         if (playerEntity != null) {
             playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
             if (!playerEntity.abilities.creativeMode) {
-                if (isFood())
+                if (isFood()) {
                     user.eatFood(world, stack);
+                    Croptopia.dehydration.onUse(stack, playerEntity);
+                }
             }
         }
 

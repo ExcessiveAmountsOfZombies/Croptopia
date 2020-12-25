@@ -206,43 +206,43 @@ public class ItemRegistry {
     public static Item pepperoni = new Item(createGroup().food(EDIBLE_5));
 
     // drinks
-    public static Item grapeJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item orangeJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item appleJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item cranberryJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item saguaroJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item tomatoJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item melonJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item pineappleJuice = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item coffee = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item lemonade = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item limeade = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item soyMilk = new Drink(createGroup().food(EDIBLE_5).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item grapeJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item orangeJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item appleJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item cranberryJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item saguaroJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item tomatoJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item melonJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item pineappleJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item coffee = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item lemonade = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item limeade = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item soyMilk = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     //public static Item tea;
 
-    public static Item strawberrySmoothie = new Drink(createGroup().food(EDIBLE_7));
-    public static Item bananaSmoothie = new Drink(createGroup().food(EDIBLE_7));
-    public static Item kaleSmoothie = new Drink(createGroup().food(EDIBLE_14));
-    public static Item fruitSmoothie = new Drink(createGroup().food(EDIBLE_7));
+    public static Item strawberrySmoothie = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item bananaSmoothie = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item kaleSmoothie = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
+    public static Item fruitSmoothie = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
 
-    public static Item chocolateMilkshake = new Drink(createGroup().food(EDIBLE_7));
+    public static Item chocolateMilkshake = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
 
-    public static Item beer = new Drink(createGroup().food(EDIBLE_7));
-    public static Item wine = new Drink(createGroup().food(EDIBLE_7));
-    public static Item mead = new Drink(createGroup().food(EDIBLE_7));
-    public static Item rum = new Drink(createGroup().food(EDIBLE_7));
-    public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14));
+    public static Item beer = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item wine = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item mead = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item rum = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
 
     // jams
-    public static Item grapeJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item strawberryJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item peachJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item apricotJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item blackberryJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item blueberryJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item cherryJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item elderberryJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item raspberryJam = new Drink(createGroup().food(EDIBLE_3).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item grapeJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item strawberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item peachJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item apricotJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item blackberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item blueberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item cherryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item elderberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item raspberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
 
     // snacks?
     public static Item beefJerky = new Item(createGroup().food(EDIBLE_5));

@@ -3,7 +3,8 @@ package me.thonk.croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
-import me.thonk.croptopia.generator.FeaturePlacement;
+import me.thonk.croptopia.dependencies.Dehydration;
+import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
@@ -55,11 +56,11 @@ public class Croptopia implements ModInitializer {
     public static final DamageDurabilitySerializer DAMAGE_DURABILITY =
             registerSerializer("crafting_damage_durability", new DamageDurabilitySerializer());
 
-
-    // TODO MAKE SALT ORE
+    public static Dehydration dehydration;
 
     @Override
     public void onInitialize() {
+        dehydration = new Dehydration();
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
@@ -68,7 +69,7 @@ public class Croptopia implements ModInitializer {
 
         seeds.clear();
         seeds = OPTIONS.readConfiguredSeeds(OPTIONS.getOptionsFile());
-        FeaturePlacement.init();
+        BiomeModifiers.init();
         CropLootTableModifier.init();
 
 

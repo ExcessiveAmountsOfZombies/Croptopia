@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:coffee",
+    "croptopia:lemonade",
+    "croptopia:limeade",
+    "croptopia:soy_milk",
+    "croptopia:strawberry_smoothie",
+    "croptopia:banana_smoothie",
+    "croptopia:kale_smoothie",
+    "croptopia:fruit_smoothie",
+    "croptopia:chocolate_milkshake",
+    "croptopia:beer",
+    "croptopia:wine",
+    "croptopia:mead",
+    "croptopia:rum",
+    "croptopia:pumpkin_spice_latte"
+  ]
+}

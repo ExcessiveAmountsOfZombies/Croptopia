@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '0.5.24'
+    id 'fabric-loom' version '0.6.11'
     id 'maven-publish'
 }
 
@@ -19,16 +19,38 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+
+    modImplementation ( "net.dehydration:dehydration:${project.dehydration_version}") {
+        // gradle, bruther. I have to include all this i guess to make it compile
+        modApi("me.shedaniel.cloth:config-2:${project.cloth_config_version}") {
+            exclude(group: "net.fabricmc.fabric-api")
+        }
+        include("me.shedaniel.cloth:config-2:${project.cloth_config_version}") {
+            exclude(group: "net.fabricmc.fabric-api")
+        }
+        modApi("me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}") {
+            exclude(group: "net.fabricmc.fabric-api")
+        }
+        include("me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}") {
+            exclude(group: "net.fabricmc.fabric-api")
+        }
+    }
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
 }
 
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
+
 processResources {
-    inputs.property "version", project.version
+    inputs.property "mod_version", project.version
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
-        expand "version": project.version
+        expand "mod_version": project.version
     }
 
     from(sourceSets.main.resources.srcDirs) {

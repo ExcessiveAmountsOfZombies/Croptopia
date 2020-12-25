@@ -11,7 +11,7 @@ import net.minecraft.world.gen.GenerationStep;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class FeaturePlacement {
+public class BiomeModifiers {
 
 
     public static void init() {
@@ -83,6 +83,10 @@ public class FeaturePlacement {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(darkForestKeys),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("walnut_tree_configured"));
 
+        Collection<RegistryKey<Biome>> riverKeys = Arrays.asList(BiomeKeys.RIVER, BiomeKeys.FROZEN_RIVER);
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(riverKeys),
+                GenerationStep.Feature.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
 
     }
 }
