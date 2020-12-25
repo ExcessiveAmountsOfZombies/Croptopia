@@ -5,11 +5,17 @@
   "name": "Croptopia",
   "description": "Adds crops to the game",
   "authors": [
-    "Thonk"
+    "Thonk",
+    "Rainbowcraft2"
+  ],
+  "contributors": [
+    "qsefthuopq",
+    "Motschen",
+    "emilyalexandra"
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/croptopia/icon.png",
+  "icon": "assets/croptopia/croptopia.png",
   "environment": "*",
   "entrypoints": {
     "client": [
@@ -17,6 +23,9 @@
     ],
     "main": [
       "me.thonk.croptopia.Croptopia"
+    ],
+    "modmenu": [
+      "me.thonk.croptopia.dependencies.ModMenu"
     ]
   },
   "mixins": [
