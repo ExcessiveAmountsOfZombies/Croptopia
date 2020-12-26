@@ -5,8 +5,6 @@
   "plugin": "me.thonk.croptopia.plugin.MixinConfig",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "DefaultBiomeFeaturesMixin",
-    "DiskMixin"
   ],
   "client": [
   ],
