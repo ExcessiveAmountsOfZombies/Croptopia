@@ -10,6 +10,7 @@ import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.recipe.DamageDurabilitySerializer;
 import me.thonk.croptopia.registry.BlockRegistry;
+import me.thonk.croptopia.registry.Composter;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
 import net.fabricmc.api.ModInitializer;
@@ -72,7 +73,7 @@ public class Croptopia implements ModInitializer {
         BiomeModifiers.init();
         CropLootTableModifier.init();
 
-
+        Composter.init();
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
             SetupCommand.register(commandDispatcher);
         });
