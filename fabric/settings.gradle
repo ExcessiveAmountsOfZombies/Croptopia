@@ -8,9 +8,3 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-
-rootProject.name = 'croptopia'
-
-include 'common'
-include 'fabric'
-include 'forge'
