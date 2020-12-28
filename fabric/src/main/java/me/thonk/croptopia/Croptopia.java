@@ -1,5 +1,6 @@
 package me.thonk.croptopia;
 
+import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
@@ -39,7 +40,6 @@ import net.minecraft.world.BlockView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static me.thonk.croptopia.Constants.MOD_ID;
 import static me.thonk.croptopia.Constants.OPTIONS;
 
 
@@ -50,12 +50,12 @@ public class Croptopia implements ModInitializer {
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
 
-    public static final ItemGroup CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(MOD_ID, "croptopia"))
+    public static final ItemGroup CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(MiscNames.MOD_ID, "croptopia"))
             .icon(() -> new ItemStack(ItemRegistry.onion))
             .build();
-    public static final LootConditionType BIOME_CHECK =  registerLootCondition("biome_check", new BiomeLootCondition.Serializer());
+    public static final LootConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     public static final DamageDurabilitySerializer DAMAGE_DURABILITY =
-            registerSerializer("crafting_damage_durability", new DamageDurabilitySerializer());
+            registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilitySerializer());
 
     public static Dehydration dehydration;
 
@@ -80,9 +80,8 @@ public class Croptopia implements ModInitializer {
     }
 
     public static Identifier createIdentifier(String name) {
-        System.out.println("public static final String " + name.toUpperCase() + " = \"" + name + "\";");
         //System.out.println("\"" + MOD_ID + ":" + name + "\",");
-        return new Identifier(MOD_ID, name);
+        return new Identifier(MiscNames.MOD_ID, name);
     }
 
     public static LootConditionType registerLootCondition(String id, JsonSerializer<? extends LootCondition> serializer) {
@@ -90,7 +89,7 @@ public class Croptopia implements ModInitializer {
     }
 
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
-        return Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MOD_ID, id), serializer);
+        return Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MiscNames.MOD_ID, id), serializer);
     }
 
     public static Item registerItem(String itemName, Item item) {

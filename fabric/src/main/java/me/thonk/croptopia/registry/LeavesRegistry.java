@@ -1,5 +1,6 @@
 package me.thonk.croptopia.registry;
 
+import me.thonk.common.BlockNames;
 import net.minecraft.block.Block;
 
 import static me.thonk.croptopia.Croptopia.createLeavesBlock;
@@ -36,32 +37,32 @@ public class LeavesRegistry {
     public static Block walnutCrop = createLeavesBlock();
 
     public static void init() {
-        registerBlock("apple_crop", appleCrop);
-        registerBlock("banana_crop", bananaCrop);
-        registerBlock("orange_crop", orangeCrop);
-        registerBlock("persimmon_crop", persimmonCrop);
-        registerBlock("plum_crop", plumCrop);
-        registerBlock("cherry_crop", cherryCrop);
-        registerBlock("lemon_crop", lemonCrop);
-        registerBlock("grapefruit_crop", grapefruitCrop);
-        registerBlock("kumquat_crop", kumquatCrop);
-        registerBlock("peach_crop", peachCrop);
-        registerBlock("coconut_crop", coconutCrop);
-        registerBlock("nutmeg_crop", nutmegCrop);
-        registerBlock("fig_crop", figCrop);
-        registerBlock("nectarine_crop", nectarineCrop);
-        registerBlock("mango_crop", mangoCrop);
-        registerBlock("dragonfruit_crop", dragonFruitCrop);
-        registerBlock("starfruit_crop", starFruitCrop);
-        registerBlock("avocado_crop", avocadoCrop);
-        registerBlock("apricot_crop", apricotCrop);
-        registerBlock("pear_crop", pearCrop);
-        registerBlock("lime_crop", limeCrop);
-        registerBlock("date_crop", dateCrop);
-        registerBlock("almond_crop", almondCrop);
-        registerBlock("cashew_crop", cashewCrop);
-        registerBlock("pecan_crop", pecanCrop);
-        registerBlock("walnut_crop", walnutCrop);
+        registerBlock(BlockNames.APPLE_CROP, appleCrop);
+        registerBlock(BlockNames.BANANA_CROP, bananaCrop);
+        registerBlock(BlockNames.ORANGE_CROP, orangeCrop);
+        registerBlock(BlockNames.PERSIMMON_CROP, persimmonCrop);
+        registerBlock(BlockNames.PLUM_CROP, plumCrop);
+        registerBlock(BlockNames.CHERRY_CROP, cherryCrop);
+        registerBlock(BlockNames.LEMON_CROP, lemonCrop);
+        registerBlock(BlockNames.GRAPEFRUIT_CROP, grapefruitCrop);
+        registerBlock(BlockNames.KUMQUAT_CROP, kumquatCrop);
+        registerBlock(BlockNames.PEACH_CROP, peachCrop);
+        registerBlock(BlockNames.COCONUT_CROP, coconutCrop);
+        registerBlock(BlockNames.NUTMEG_CROP, nutmegCrop);
+        registerBlock(BlockNames.FIG_CROP, figCrop);
+        registerBlock(BlockNames.NECTARINE_CROP, nectarineCrop);
+        registerBlock(BlockNames.MANGO_CROP, mangoCrop);
+        registerBlock(BlockNames.DRAGONFRUIT_CROP, dragonFruitCrop);
+        registerBlock(BlockNames.STARFRUIT_CROP, starFruitCrop);
+        registerBlock(BlockNames.AVOCADO_CROP, avocadoCrop);
+        registerBlock(BlockNames.APRICOT_CROP, apricotCrop);
+        registerBlock(BlockNames.PEAR_CROP, pearCrop);
+        registerBlock(BlockNames.LIME_CROP, limeCrop);
+        registerBlock(BlockNames.DATE_CROP, dateCrop);
+        registerBlock(BlockNames.ALMOND_CROP, almondCrop);
+        registerBlock(BlockNames.CASHEW_CROP, cashewCrop);
+        registerBlock(BlockNames.PECAN_CROP, pecanCrop);
+        registerBlock(BlockNames.WALNUT_CROP, walnutCrop);
     }
 
 }
