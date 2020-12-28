@@ -80,6 +80,7 @@ public class Croptopia implements ModInitializer {
     }
 
     public static Identifier createIdentifier(String name) {
+        System.out.println("public static final String " + name.toUpperCase() + " = \"" + name + "\";");
         //System.out.println("\"" + MOD_ID + ":" + name + "\",");
         return new Identifier(MOD_ID, name);
     }
