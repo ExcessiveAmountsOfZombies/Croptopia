@@ -1,46 +1,64 @@
-plugins {
-    id 'fabric-loom' version '0.6.11'
-    id 'maven-publish'
+import net.fabricmc.loom.task.RemapJarTask
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        gradlePluginPortal()
+        maven {
+            name = "Fabric"
+            url = uri("https://maven.fabricmc.net/")
+        }
+    }
+    dependencies {
+        classpath("net.fabricmc:fabric-loom:0.5.43")
+        classpath("com.github.jengelman.gradle.plugins:shadow:4.0.4")
+    }
 }
+apply plugin: 'java'
+apply plugin: 'fabric-loom'
+apply plugin: 'maven-publish'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = project.archives_base_name
-version = project.mod_version + "-${project.minecraft_version}-FABRIC"
-group = project.maven_group
+archivesBaseName = rootProject.archives_base_name + "-${project.minecraft_version}-FABRIC"
+version = rootProject.mod_version
+group = rootProject.maven_group
+
+// https://github.com/johnrengelman/shadow/issues/31#issuecomment-523614593
+// https://github.com/DaemonicLabs/fabric-example-mod-kotlin/blob/master/build.gradle.kts
+configurations {
+    dev
+    compileOnly.extendsFrom shade
+    compileOnly.extendsFrom shadeSource
+    modCompileOnly.extendsFrom modShade
+}
 
 dependencies {
     //to change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
 
     // Fabric API. This is technically optional, but you probably want it anyway.
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
 
 
-    modImplementation ( "net.dehydration:dehydration:${project.dehydration_version}") {
+    modImplementation ("net.dehydration:dehydration:${rootProject.dehydration_version}") {
         // gradle, bruther. I have to include all this i guess to make it compile
-        modApi("me.shedaniel.cloth:config-2:${project.cloth_config_version}") {
+        modApi("me.shedaniel.cloth:config-2:${rootProject.cloth_config_version}") {
             exclude(group: "net.fabricmc.fabric-api")
         }
-        include("me.shedaniel.cloth:config-2:${project.cloth_config_version}") {
-            exclude(group: "net.fabricmc.fabric-api")
-        }
-        modApi("me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}") {
-            exclude(group: "net.fabricmc.fabric-api")
-        }
-        include("me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}") {
+        modApi("me.sargunvohra.mcmods:autoconfig1u:${rootProject.auto_config_version}") {
             exclude(group: "net.fabricmc.fabric-api")
         }
     }
+    compile(project(":common"))
+    shade(project(":common"))
 
-    compile(project(":common")) {
-        transitive = false
-    }
-
-    modCompile "io.github.prospector:modmenu:${project.modmenu_version}",{
+    modCompile "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
@@ -48,11 +66,11 @@ dependencies {
 }
 
 processResources {
-    inputs.property "mod_version", project.version
+    inputs.property "mod_version", rootProject.version
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
-        expand "mod_version": project.version
+        expand "mod_version": rootProject.version
     }
 
     from(sourceSets.main.resources.srcDirs) {
@@ -78,6 +96,23 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 jar {
     from "LICENSE"
 }
+
+shadowJar {
+    enabled = true
+    configurations = [project.configurations.shade, project.configurations.modShade]
+    classifier = "dev"
+}
+
+
+task remapShadowJar(type: RemapJarTask, dependsOn: shadowJar) {
+    afterEvaluate {
+        input = file("${project.buildDir}/libs/${archivesBaseName}-${rootProject.version}-dev.jar")
+        addNestedDependencies = true
+        remapAccessWidener = true
+    }
+}
+
+build.dependsOn(shadowJar, remapShadowJar, sourcesJar, remapSourcesJar)
 
 // configure the maven publication
 publishing {

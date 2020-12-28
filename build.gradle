@@ -1,22 +1,14 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
-    }
-}
-
 plugins {
     id 'java'
+    id 'fabric-loom' version "0.5.42" apply false
+    id "com.github.johnrengelman.shadow" version "4.0.4"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-group = 'me.thonk'
-version = '1.1.0'
+version = rootProject.mod_version
+group = rootProject.maven_group
 
 subprojects {
     apply plugin: 'java'
@@ -25,8 +17,10 @@ subprojects {
     group = project.group
     version = project.version
 
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    buildDir = new File("${rootProject.projectDir}/build/libs", "${project.name}")
 
     repositories {
         mavenCentral()

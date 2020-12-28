@@ -6,14 +6,22 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
     }
 }
 
+apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
 
-archivesBaseName = 'croptopia-forge'
+archivesBaseName = rootProject.archives_base_name + "-${project.minecraft_version}-FORGE-${rootProject.version}"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+
+configurations {
+    dev
+    compileOnly.extendsFrom shade
+    compileOnly.extendsFrom shadeSource
+}
 
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -91,7 +99,7 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.15'
 
-    compile project(":common")
+    shade project(":common")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -112,8 +120,12 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
-// Example for how to get properties into the manifest for reading by the runtime..
-jar {
+shadowJar {
+    enabled = true
+    configurations = [project.configurations.shade]
+    classifier = ""
 }
+
+build.dependsOn(shadowJar)
 
 jar.finalizedBy('reobfJar')
