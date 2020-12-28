@@ -20,7 +20,7 @@ subprojects {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 
-    buildDir = new File("${rootProject.projectDir}/build/libs", "${project.name}")
+    project.buildDir = new File("${rootProject.projectDir}/build/jars")
 
     repositories {
         mavenCentral()
