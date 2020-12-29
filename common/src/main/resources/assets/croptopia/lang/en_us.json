@@ -406,5 +406,6 @@
   "block.croptopia.walnut_sapling": "Walnut Sapling",
 
 
-  "itemGroup.croptopia.croptopia": "Croptopia"
+  "itemGroup.croptopia.croptopia": "Croptopia",
+  "itemGroup.croptopia": "Croptopia"
 }
