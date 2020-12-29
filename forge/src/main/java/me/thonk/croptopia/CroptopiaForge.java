@@ -4,22 +4,20 @@ import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
+import me.thonk.croptopia.registry.LeavesRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
-import net.minecraft.data.loot.BlockLootTables;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootTableManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -68,7 +66,6 @@ public class CroptopiaForge {
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         LOGGER.info("Registering Croptopia Items/Blocks");
-        ItemRegistry.init();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -113,6 +110,13 @@ public class CroptopiaForge {
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
             LOGGER.info("HELLO from Register Block");
+            LeavesRegistry.init();
+            BlockRegistry.init();
+        }
+
+        @SubscribeEvent
+        public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
+            ItemRegistry.init();
         }
     }
 

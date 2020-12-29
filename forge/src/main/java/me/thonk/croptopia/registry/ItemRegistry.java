@@ -1,6 +1,7 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
+import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.SeedItem;
 import net.minecraft.item.*;
 

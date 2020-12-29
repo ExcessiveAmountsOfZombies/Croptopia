@@ -4,6 +4,7 @@ import me.thonk.common.BlockNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
 import me.thonk.croptopia.blocks.TallCropBlock;
+import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
