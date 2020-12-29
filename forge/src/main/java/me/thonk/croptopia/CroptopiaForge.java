@@ -3,12 +3,16 @@ package me.thonk.croptopia;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
+import me.thonk.croptopia.generator.BiomeModification;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
@@ -16,11 +20,14 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.biome.BiomeColors;
+import net.minecraft.world.level.ColorResolver;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -32,8 +39,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.swing.text.html.BlockView;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("croptopia")
@@ -41,6 +48,9 @@ public class CroptopiaForge {
 
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+
+    public static ArrayList<Block> cropBlocks = new ArrayList<>();
+    public static ArrayList<Block> leafBlocks = new ArrayList<>();
 
     public static final ItemGroup CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
         @Override
@@ -59,33 +69,36 @@ public class CroptopiaForge {
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
+        MinecraftForge.EVENT_BUS.register(new BiomeModification());
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
-        LOGGER.info("Registering Croptopia Items/Blocks");
+
+
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+        cropBlocks.forEach(block -> {
+            RenderTypeLookup.setRenderLayer(block, RenderType.getCutoutMipped());
+        });
+        BlockColors colors = event.getMinecraftSupplier().get().getBlockColors();
+        colors.register((state, world, pos, tintIndex) ->
+                world != null && pos != null
+                        ? BiomeColors.getFoliageColor(world, pos)
+                        : FoliageColors.getDefault(), leafBlocks.toArray(new Block[]{}));
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
         // some example code to dispatch IMC to another mod
-        InterModComms.sendTo("croptopia", "helloworld", () -> {
-            LOGGER.info("Hello world from the MDK");
-            return "Hello world";
-        });
     }
 
     private void processIMC(final InterModProcessEvent event) {
         // some example code to receive and process InterModComms from other mods
-        LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m -> m.getMessageSupplier().get()).
-                collect(Collectors.toList()));
     }
 
 
@@ -99,7 +112,6 @@ public class CroptopiaForge {
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
-        LOGGER.info("HELLO from server starting");
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -109,7 +121,6 @@ public class CroptopiaForge {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
-            LOGGER.info("HELLO from Register Block");
             LeavesRegistry.init();
             BlockRegistry.init();
         }
@@ -147,10 +158,10 @@ public class CroptopiaForge {
     }
 
     public static Block registerBlock(String blockName, Block block) {
-        //cropBlocks.add(item);
+        cropBlocks.add(block);
 
         if (block instanceof LeafCropBlock) {
-            //leafBlocks.add(item);
+            leafBlocks.add(block);
             //System.out.println("\"" + blockName + "\",");
         } else {
             //System.out.println("\"" + blockName + "\",");
