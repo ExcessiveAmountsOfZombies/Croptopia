@@ -3,7 +3,8 @@ package me.thonk.croptopia;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
-import me.thonk.croptopia.generator.BiomeModification;
+import me.thonk.croptopia.events.BiomeModification;
+import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
@@ -18,13 +19,15 @@ import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.loot.ILootSerializer;
+import net.minecraft.loot.LootConditionType;
+import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.FoliageColors;
-import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.BiomeColors;
-import net.minecraft.world.level.ColorResolver;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -51,6 +54,11 @@ public class CroptopiaForge {
 
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
+    public static ArrayList<SeedItem> seeds = new ArrayList<>();
+
+    // todo: there might be a different way i'm supposed to do this in forge.
+    public static final LootConditionType BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
+
 
     public static final ItemGroup CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
         @Override
@@ -70,6 +78,7 @@ public class CroptopiaForge {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         MinecraftForge.EVENT_BUS.register(new BiomeModification());
+        MinecraftForge.EVENT_BUS.register(new LootTableModification());
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -151,9 +160,9 @@ public class CroptopiaForge {
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
         // TODO: maybe
-        /*if (item instanceof SeedItem) {
-            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
-        }*/
+        if (item instanceof SeedItem) {
+            seeds.add((SeedItem) item);
+        }
         return item;
     }
 
@@ -169,6 +178,10 @@ public class CroptopiaForge {
         block.setRegistryName(createIdentifier(blockName));
         ForgeRegistries.BLOCKS.register(block);
         return block;
+    }
+
+    public static LootConditionType registerLootCondition(String id, ILootSerializer<? extends ILootCondition> serializer) {
+        return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootConditionType(serializer));
     }
 
     public static AbstractBlock.Properties createCropSettings() {

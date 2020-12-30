@@ -1,7 +1,6 @@
 package me.thonk.croptopia.generator;
 
 import net.minecraft.block.trees.Tree;
-import net.minecraft.item.Items;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 

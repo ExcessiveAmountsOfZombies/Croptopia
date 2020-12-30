@@ -1,4 +1,4 @@
-package me.thonk.croptopia.generator;
+package me.thonk.croptopia.events;
 
 
 import net.minecraft.world.biome.Biome;

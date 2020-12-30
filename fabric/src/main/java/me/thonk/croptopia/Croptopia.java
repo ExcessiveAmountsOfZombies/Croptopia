@@ -85,7 +85,7 @@ public class Croptopia implements ModInitializer {
     }
 
     public static LootConditionType registerLootCondition(String id, JsonSerializer<? extends LootCondition> serializer) {
-        return Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(id), new LootConditionType(serializer));
+        return Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(MiscNames.MOD_ID, id), new LootConditionType(serializer));
     }
 
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
