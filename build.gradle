@@ -22,6 +22,16 @@ subprojects {
 
     project.buildDir = new File("${rootProject.projectDir}/build/jars")
 
+    build {
+        doLast {
+            project.delete(files("${project.buildDir}/classes"))
+            project.delete(files("${project.buildDir}/resources"))
+            project.delete(files{"${project.buildDir}/generated"})
+            project.delete(files{"${project.buildDir}/poms"})
+            project.delete(files{"${project.buildDir}/tmp"})
+        }
+    }
+
     repositories {
         mavenCentral()
     }
