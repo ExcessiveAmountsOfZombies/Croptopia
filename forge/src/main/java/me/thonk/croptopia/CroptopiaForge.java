@@ -90,8 +90,7 @@ public class CroptopiaForge {
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
-
-
+        Composter.init();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
