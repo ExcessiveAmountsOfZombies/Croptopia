@@ -19,6 +19,8 @@ import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.loot.ILootSerializer;
 import net.minecraft.loot.LootConditionType;
 import net.minecraft.loot.conditions.ILootCondition;
@@ -58,6 +60,8 @@ public class CroptopiaForge {
 
     // todo: there might be a different way i'm supposed to do this in forge.
     public static final LootConditionType BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
+    public static final DamageDurabilityRecipe.DamageDurabilitySerializer DAMAGE_DURABILITY =
+            registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilityRecipe.DamageDurabilitySerializer());
 
 
     public static final ItemGroup CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
@@ -182,6 +186,12 @@ public class CroptopiaForge {
 
     public static LootConditionType registerLootCondition(String id, ILootSerializer<? extends ILootCondition> serializer) {
         return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootConditionType(serializer));
+    }
+
+    public static <S extends IRecipeSerializer<T>, T extends IRecipe<?>> S registerSerializer(String id, S serializer) {
+        serializer.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, id));
+        ForgeRegistries.RECIPE_SERIALIZERS.register(serializer);
+        return serializer;
     }
 
     public static AbstractBlock.Properties createCropSettings() {
