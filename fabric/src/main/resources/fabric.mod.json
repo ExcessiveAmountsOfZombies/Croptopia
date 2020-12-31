@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "croptopia",
+  "version": "${mod_version}",
+  "name": "Croptopia",
+  "description": "Adds crops to the game",
+  "authors": [
+    "Thonk",
+    "Rainbowcraft2"
+  ],
+  "contributors": [
+    "qsefthuopq",
+    "Motschen",
+    "emilyalexandra"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/croptopia/croptopia.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.thonk.croptopia.client.CroptopiaClient"
+    ],
+    "main": [
+      "me.thonk.croptopia.Croptopia"
+    ],
+    "modmenu": [
+      "me.thonk.croptopia.dependencies.ModMenu"
+    ]
+  },
+  "mixins": [
+    "Croptopia.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.10.6+build.214",
+    "fabric": "*",
+    "fabric-biome-api-v1": ">=3.0.0",
+    "minecraft": ">=1.16.3"
+  },
+  "suggests": {
+    "dehydration": ">=1.0.8"
+  }
+}
