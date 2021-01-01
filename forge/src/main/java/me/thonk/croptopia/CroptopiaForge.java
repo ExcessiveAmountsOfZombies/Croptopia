@@ -56,9 +56,8 @@ public class CroptopiaForge {
     public static ArrayList<SeedItem> seeds = new ArrayList<>();
 
     // todo: there might be a different way i'm supposed to do this in forge.
-    public static final LootConditionType BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
-    public static final DamageDurabilityRecipe.DamageDurabilitySerializer DAMAGE_DURABILITY =
-            registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilityRecipe.DamageDurabilitySerializer());
+    public static LootConditionType BIOME_CHECK;
+    public static DamageDurabilityRecipe.DamageDurabilitySerializer DAMAGE_DURABILITY;
 
 
     public static final ItemGroup CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
@@ -88,6 +87,7 @@ public class CroptopiaForge {
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         Composter.init();
+        BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -136,7 +136,14 @@ public class CroptopiaForge {
 
         @SubscribeEvent
         public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
-            ItemRegistry.init();
+            ItemRegistry.init(itemRegister);
+        }
+
+        @SubscribeEvent
+        public static void recipeRegister(final RegistryEvent.Register<IRecipeSerializer<?>> register) {
+            DAMAGE_DURABILITY = new DamageDurabilityRecipe.DamageDurabilitySerializer();
+            DAMAGE_DURABILITY.setRegistryName(MiscNames.MOD_ID, MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY);
+            register.getRegistry().register(DAMAGE_DURABILITY);
         }
     }
 
@@ -145,9 +152,9 @@ public class CroptopiaForge {
         return new ResourceLocation(MiscNames.MOD_ID, name);
     }
 
-    public static Item registerItem(String itemName, Item item) {
+    public static Item registerItem(RegistryEvent.Register<Item> itemRegister, String itemName, Item item) {
         item.setRegistryName(createIdentifier(itemName));
-        ForgeRegistries.ITEMS.register(item);
+        itemRegister.getRegistry().register(item);
         if (item instanceof BlockNamedItem) {
             ((BlockNamedItem) item).addToBlockToItemMap(Item.BLOCK_TO_ITEM, item);
         }
