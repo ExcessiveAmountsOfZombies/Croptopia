@@ -6,8 +6,7 @@ import me.thonk.croptopia.items.SeedItem;
 import net.minecraft.item.*;
 import net.minecraftforge.event.RegistryEvent;
 
-import static me.thonk.croptopia.CroptopiaForge.createGroup;
-import static me.thonk.croptopia.CroptopiaForge.registerItem;
+import static me.thonk.croptopia.CroptopiaForge.*;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
@@ -648,5 +647,9 @@ public class ItemRegistry {
         mortarAndPestle = registerItem(itemRegister, ItemNames.MORTAR_AND_PESTLE, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
 
         saltOre = registerItem(itemRegister, ItemNames.SALT_ORE, new BlockNamedItem(BlockRegistry.salt, createGroup()));
+    }
+
+    public static Item.Properties createGroup() {
+        return new Item.Properties().group(CROPTOPIA_ITEM_GROUP);
     }
 }

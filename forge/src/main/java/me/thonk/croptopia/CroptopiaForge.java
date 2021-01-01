@@ -60,12 +60,7 @@ public class CroptopiaForge {
     public static DamageDurabilityRecipe.DamageDurabilitySerializer DAMAGE_DURABILITY;
 
 
-    public static final ItemGroup CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
-        @Override
-        public ItemStack createIcon() {
-            return new ItemStack(ItemRegistry.onion);
-        }
-    };
+    public static ItemGroup CROPTOPIA_ITEM_GROUP;
 
     public CroptopiaForge() {
         // Register the setup method for modloading
@@ -82,6 +77,12 @@ public class CroptopiaForge {
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
+            @Override
+            public ItemStack createIcon() {
+                return new ItemStack(ItemRegistry.onion);
+            }
+        };
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -108,12 +109,6 @@ public class CroptopiaForge {
 
     private void processIMC(final InterModProcessEvent event) {
         // some example code to receive and process InterModComms from other mods
-    }
-
-
-
-    public static Item.Properties createGroup() {
-        return new Item.Properties().group(CROPTOPIA_ITEM_GROUP);
     }
 
 

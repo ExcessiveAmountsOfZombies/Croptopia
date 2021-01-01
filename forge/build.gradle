@@ -127,6 +127,5 @@ shadowJar {
     classifier = ""
 }
 
-build.dependsOn(shadowJar)
 
 jar.finalizedBy('reobfJar')
