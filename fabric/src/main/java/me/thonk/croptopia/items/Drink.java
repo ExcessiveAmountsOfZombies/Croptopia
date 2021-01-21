@@ -43,8 +43,8 @@ public class Drink extends Item {
             playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
             if (!playerEntity.abilities.creativeMode) {
                 if (isFood()) {
-                    user.eatFood(world, stack);
                     Croptopia.dehydration.onUse(stack, playerEntity);
+                    user.eatFood(world, stack);
                 }
             }
         }

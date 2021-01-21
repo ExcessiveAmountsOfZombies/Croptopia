@@ -15,6 +15,13 @@ buildscript {
         classpath("com.github.jengelman.gradle.plugins:shadow:4.0.4")
     }
 }
+
+repositories {
+    maven {
+        url = 'https://maven.blamejared.com'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'fabric-loom'
 apply plugin: 'maven-publish'
@@ -26,6 +33,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 archivesBaseName = rootProject.archives_base_name + "-${project.minecraft_version}-FABRIC"
 version = rootProject.mod_version
 group = rootProject.maven_group
+rootProject.platform_tag_key = "c"
 
 // https://github.com/johnrengelman/shadow/issues/31#issuecomment-523614593
 // https://github.com/DaemonicLabs/fabric-example-mod-kotlin/blob/master/build.gradle.kts
@@ -57,6 +65,8 @@ dependencies {
     }
     compile(project(":common"))
     shade(project(":common"))
+
+    modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
 
     modCompile "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")

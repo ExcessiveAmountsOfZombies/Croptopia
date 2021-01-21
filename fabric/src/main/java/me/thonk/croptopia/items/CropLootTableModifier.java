@@ -39,7 +39,7 @@ public class CropLootTableModifier {
                 }
                 builder.with(AlternativeEntry.builder(builders.toArray(builders.toArray(new LootPoolEntry.Builder[0]))));
                 fabricLootSupplierBuilder.withPool(builder.build());
-               // System.out.println(LootManager.toJson(fabricLootSupplierBuilder.build()));
+                //System.out.println(LootManager.toJson(fabricLootSupplierBuilder.build()));
             }
         });
     }

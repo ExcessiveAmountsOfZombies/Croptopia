@@ -12,6 +12,21 @@ repositories {
     mavenCentral()
 }
 
+processResources {
+    Set<File> sources = new HashSet<>(sourceSets.main.resources.srcDirs)
+    sources.add(file("dependants"))
+
+    from(sources) {
+        eachFile {
+            it.path = it.path.replace("platform", "data/$rootProject.platform_tag_key")
+            if (it.path.contains("platform")) {
+                delete(file(it))
+            }
+        }
+    }
+
+}
+
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

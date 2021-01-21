@@ -235,15 +235,15 @@ public class ItemRegistry {
     public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
 
     // jams
-    public static Item grapeJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item strawberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item peachJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item apricotJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item blackberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item blueberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item cherryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item elderberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item raspberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static Item grapeJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item strawberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item peachJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item apricotJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item blackberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item blueberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item cherryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item elderberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+    public static Item raspberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
 
     // snacks?
     public static Item beefJerky = new Item(createGroup().food(EDIBLE_5));
@@ -337,7 +337,7 @@ public class ItemRegistry {
 
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -1.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -2.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
 

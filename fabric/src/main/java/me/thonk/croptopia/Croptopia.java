@@ -4,6 +4,7 @@ import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
+import me.thonk.croptopia.data.Runner;
 import me.thonk.croptopia.dependencies.Dehydration;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
@@ -59,8 +60,13 @@ public class Croptopia implements ModInitializer {
 
     public static Dehydration dehydration;
 
+
+    private static Runner runner;
+
     @Override
     public void onInitialize() {
+        runner = new Runner();
+
         dehydration = new Dehydration();
         LeavesRegistry.init();
         BlockRegistry.init();
@@ -77,6 +83,7 @@ public class Croptopia implements ModInitializer {
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
             SetupCommand.register(commandDispatcher);
         });
+        runner.init();
     }
 
     public static Identifier createIdentifier(String name) {
@@ -108,6 +115,10 @@ public class Croptopia implements ModInitializer {
         if (item instanceof SeedItem) {
             seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
         }
+
+        // data generation
+        //runner.getTagger().addTag(item, Croptopia.createIdentifier(itemName));
+
         return item;
     }
 

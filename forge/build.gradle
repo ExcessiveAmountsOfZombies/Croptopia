@@ -17,6 +17,7 @@ apply plugin: 'net.minecraftforge.gradle'
 archivesBaseName = rootProject.archives_base_name + "-${project.minecraft_version}-FORGE-${rootProject.version}"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
+rootProject.platform_tag_key = "forge"
 
 configurations {
     dev
@@ -125,6 +126,17 @@ shadowJar {
     enabled = true
     configurations = [project.configurations.shade]
     classifier = ""
+}
+
+
+build {
+    doLast {
+        project.delete(files("${project.buildDir}/classes"))
+        project.delete(files("${project.buildDir}/resources"))
+        project.delete(files{"${project.buildDir}/generated"})
+        project.delete(files{"${project.buildDir}/poms"})
+        project.delete(files{"${project.buildDir}/tmp"})
+    }
 }
 
 
