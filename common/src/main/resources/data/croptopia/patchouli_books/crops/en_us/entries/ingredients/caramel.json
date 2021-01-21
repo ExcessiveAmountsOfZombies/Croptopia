@@ -1,0 +1,12 @@
+{
+  "name": "Caramel",
+  "icon": "croptopia:caramel",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "smelting",
+      "recipe": "croptopia:caramel",
+      "text": "Recipe for caramel."
+    }
+  ]
+}

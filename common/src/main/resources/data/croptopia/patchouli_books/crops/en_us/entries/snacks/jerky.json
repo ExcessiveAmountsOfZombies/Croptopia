@@ -1,0 +1,16 @@
+{
+  "name": "Jerky",
+  "icon": "croptopia:beef_jerky",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "crafting",
+      "recipe": "croptopia:beef_jerky",
+      "recipe2": "croptopia:pork_jerky"
+    },
+    {
+      "type": "text",
+      "text": "Recipes for making different types of jerky. (WIP)"
+    }
+  ]
+}

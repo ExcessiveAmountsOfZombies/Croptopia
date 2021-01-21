@@ -1,0 +1,12 @@
+{
+  "name": "Baked Beans",
+  "icon": "croptopia:baked_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "smelting",
+      "recipe": "croptopia:baked_beans",
+      "text": "Recipe for making baked beans."
+    }
+  ]
+}

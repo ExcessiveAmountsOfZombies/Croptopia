@@ -1,0 +1,12 @@
+{
+  "name": "Raisins",
+  "icon": "croptopia:raisins",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "smelting",
+      "recipe": "croptopia:raisins",
+      "text": "Recipe for making raisins."
+    }
+  ]
+}

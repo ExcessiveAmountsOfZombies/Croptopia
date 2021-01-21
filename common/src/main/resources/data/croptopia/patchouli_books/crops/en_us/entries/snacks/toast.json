@@ -1,0 +1,12 @@
+{
+  "name": "Toast",
+  "icon": "croptopia:toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "smelting",
+      "recipe": "croptopia:toast",
+      "text": "Recipe for making toast."
+    }
+  ]
+}
