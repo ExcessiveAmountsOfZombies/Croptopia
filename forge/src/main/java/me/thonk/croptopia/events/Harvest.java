@@ -16,15 +16,16 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (!event.getPlayer().getHeldItemMainhand().isEmpty()) {
-            event.setCanceled(true);
-        }
+
 
         if (!event.getWorld().isRemote) {
             World world = event.getWorld();
             BlockPos pos = event.getPos();
             BlockState blockClicked = event.getWorld().getBlockState(pos);
             if (blockClicked.getBlock() instanceof CropsBlock) {
+                if (!event.getPlayer().getHeldItemMainhand().isEmpty()) {
+                    event.setCanceled(true);
+                }
                 CropsBlock block = (CropsBlock) blockClicked.getBlock();
                 IntegerProperty property = block.getAgeProperty();
                 int age = blockClicked.get(block.getAgeProperty());

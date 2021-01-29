@@ -337,6 +337,22 @@ public class ItemRegistry {
     public static Item nuttyCookie = new Item(createGroup().food(EDIBLE_5));
     public static Item praline = new Item(createGroup().food(EDIBLE_5));
 
+    public static Item burrito = new Item(createGroup().food(EDIBLE_10));
+    public static Item tostada = new Item(createGroup().food(EDIBLE_10));
+    public static Item horchata = new Item(createGroup().food(EDIBLE_10));
+    public static Item carnitas = new Item(createGroup().food(EDIBLE_10));
+    public static Item fajitas = new Item(createGroup().food(EDIBLE_10));
+    public static Item enchilada = new Item(createGroup().food(EDIBLE_10));
+    public static Item churros = new Item(createGroup().food(EDIBLE_5));
+    public static Item tamales = new Item(createGroup().food(EDIBLE_14));
+    public static Item tresLecheCake = new Item(createGroup().food(EDIBLE_18));
+    public static Item stuffedPoblanos = new Item(createGroup().food(EDIBLE_14));
+    public static Item chiliRelleno = new Item(createGroup().food(EDIBLE_14));
+    public static Item crema = new Item(createGroup().food(EDIBLE_3));
+    public static Item refriedBeans = new Item(createGroup().food(EDIBLE_7));
+    public static Item chimichanga = new Item(createGroup().food(EDIBLE_14));
+    public static Item quesadilla = new Item(createGroup().food(EDIBLE_10));
+
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -2.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
@@ -625,6 +641,22 @@ public class ItemRegistry {
         registerItem(ItemNames.ALMOND_BRITTLE, almondBrittle);
         registerItem(ItemNames.RAISIN_OATMEAL_COOKIE, oatmealCookie);
         registerItem(ItemNames.NUTTY_COOKIE, nuttyCookie);
+
+        registerItem(ItemNames.BURRITO, burrito);
+        registerItem(ItemNames.TOSTADA, tostada);
+        registerItem(ItemNames.HORCHATA, horchata);
+        registerItem(ItemNames.CARNITAS, carnitas);
+        registerItem(ItemNames.FAJITAS, fajitas);
+        registerItem(ItemNames.ENCHILADA, enchilada);
+        registerItem(ItemNames.CHURROS, churros);
+        registerItem(ItemNames.TAMALES, tamales);
+        registerItem(ItemNames.TRES_LECHE_CAKE, tresLecheCake);
+        registerItem(ItemNames.STUFFED_POBLANOS, stuffedPoblanos);
+        registerItem(ItemNames.CHILI_RELLENO, chiliRelleno);
+        registerItem(ItemNames.CREMA, crema);
+        registerItem(ItemNames.REFRIED_BEANS, refriedBeans);
+        registerItem(ItemNames.CHIMICHANGA, chimichanga);
+        registerItem(ItemNames.QUESADILLA, quesadilla);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);

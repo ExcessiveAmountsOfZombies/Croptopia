@@ -336,6 +336,22 @@ public class ItemRegistry {
     public static Item nuttyCookie;
     public static Item praline;
 
+    public static Item burrito;
+    public static Item tostada;
+    public static Item horchata;
+    public static Item carnitas;
+    public static Item fajitas;
+    public static Item enchilada;
+    public static Item churros;
+    public static Item tamales;
+    public static Item tresLecheCake;
+    public static Item stuffedPoblanos;
+    public static Item chiliRelleno;
+    public static Item crema;
+    public static Item refriedBeans;
+    public static Item chimichanga;
+    public static Item quesadilla;
+
     // cooking utensils?
     public static Item foodPress;
     public static Item fryingPan;
@@ -646,6 +662,23 @@ public class ItemRegistry {
         oatmealCookie = registerItem(itemRegister, ItemNames.RAISIN_OATMEAL_COOKIE, new Item(createGroup().food(EDIBLE_5)));
         nuttyCookie = registerItem(itemRegister, ItemNames.NUTTY_COOKIE, new Item(createGroup().food(EDIBLE_5)));
         //praline = registerItem(itemRegister, ItemNames.PRA)
+
+        burrito = registerItem(itemRegister, ItemNames.BURRITO, new Item(createGroup().food(EDIBLE_10)));
+        tostada = registerItem(itemRegister, ItemNames.TOSTADA, new Item(createGroup().food(EDIBLE_10)));
+        horchata = registerItem(itemRegister, ItemNames.HORCHATA, new Item(createGroup().food(EDIBLE_10)));
+        carnitas = registerItem(itemRegister, ItemNames.CARNITAS, new Item(createGroup().food(EDIBLE_10)));
+        fajitas = registerItem(itemRegister, ItemNames.FAJITAS, new Item(createGroup().food(EDIBLE_10)));
+        enchilada = registerItem(itemRegister, ItemNames.ENCHILADA, new Item(createGroup().food(EDIBLE_10)));
+        churros = registerItem(itemRegister, ItemNames.CHURROS, new Item(createGroup().food(EDIBLE_5)));
+        tamales = registerItem(itemRegister, ItemNames.TAMALES, new Item(createGroup().food(EDIBLE_14)));
+        tresLecheCake = registerItem(itemRegister, ItemNames.TRES_LECHE_CAKE, new Item(createGroup().food(EDIBLE_18)));
+        stuffedPoblanos = registerItem(itemRegister, ItemNames.STUFFED_POBLANOS, new Item(createGroup().food(EDIBLE_14)));
+        chiliRelleno = registerItem(itemRegister, ItemNames.CHILI_RELLENO, new Item(createGroup().food(EDIBLE_14)));
+        crema = registerItem(itemRegister, ItemNames.CREMA, new Item(createGroup().food(EDIBLE_3)));
+        refriedBeans = registerItem(itemRegister, ItemNames.REFRIED_BEANS, new Item(createGroup().food(EDIBLE_7)));
+        chimichanga = registerItem(itemRegister, ItemNames.CHIMICHANGA, new Item(createGroup().food(EDIBLE_14)));
+        quesadilla = registerItem(itemRegister, ItemNames.QUESADILLA, new Item(createGroup().food(EDIBLE_10)));
+
 
         foodPress = registerItem(itemRegister, ItemNames.FOOD_PRESS, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
         fryingPan = registerItem(itemRegister, ItemNames.FRYING_PAN, new SwordItem(ItemTier.IRON, 5, -2.0F, createGroup().maxStackSize(1).defaultMaxDamage(500)));

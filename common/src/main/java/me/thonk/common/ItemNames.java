@@ -292,5 +292,25 @@ public class ItemNames {
     public static final String COOKING_POT = "cooking_pot";
     public static final String MORTAR_AND_PESTLE = "mortar_and_pestle";
     public static final String SALT_ORE = "salt_ore";
+
+    public static final String BURRITO = "burrito";
+    public static final String TOSTADA = "tostada";
+    public static final String HORCHATA = "horchata";
+    public static final String CARNITAS = "carnitas";
+    public static final String FAJITAS = "fajitas";
+    public static final String ENCHILADA = "enchilada";
+    public static final String CHURROS = "churros";
+    public static final String TAMALES = "tamales";
+    public static final String TRES_LECHE_CAKE = "tres_leche_cake";
+    public static final String STUFFED_POBLANOS = "stuffed_poblanos";
+    public static final String CHILI_RELLENO = "chili_relleno";
+    // crema is like sour cream, but the mexican version. tastes slightly different.
+    public static final String CREMA = "crema";
+    public static final String REFRIED_BEANS = "refried_beans";
+    public static final String CHIMICHANGA = "chimichanga";
+    public static final String QUESADILLA = "quesadilla";
+
+
+
 }
 
