@@ -2,8 +2,10 @@ package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
 import me.thonk.croptopia.items.Drink;
+import me.thonk.croptopia.items.GuideBookItem;
 import me.thonk.croptopia.items.SeedItem;
 import net.minecraft.item.*;
+import vazkii.patchouli.api.PatchouliAPI;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.Croptopia.registerItem;
@@ -343,8 +345,11 @@ public class ItemRegistry {
 
     public static Item saltOre = new AliasedBlockItem(BlockRegistry.salt, createGroup());
 
+    public static Item guide = new GuideBookItem(createGroup());
+
 
     public static void init() {
+        registerItem(ItemNames.GUIDE, guide);
         registerItem(ItemNames.ARTICHOKE, artichoke);
         registerItem(ItemNames.ASPARAGUS, asparagus);
         registerItem(ItemNames.BARLEY, barley);

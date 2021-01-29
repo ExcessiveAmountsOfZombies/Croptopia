@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import net.minecraft.loot.*;
 import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.loot.conditions.LootConditionManager;
 import net.minecraft.util.JSONUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;

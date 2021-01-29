@@ -4,6 +4,8 @@ import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.events.BiomeModification;
+import me.thonk.croptopia.events.BlockBreakEvent;
+import me.thonk.croptopia.events.Harvest;
 import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.registry.BlockRegistry;
@@ -29,6 +31,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -74,9 +78,11 @@ public class CroptopiaForge {
 
         MinecraftForge.EVENT_BUS.register(new BiomeModification());
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
+        MinecraftForge.EVENT_BUS.register(new Harvest());
+        MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
+        EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
         CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
             @Override
             public ItemStack createIcon() {
@@ -201,7 +207,7 @@ public class CroptopiaForge {
     }
 
     public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.GROUND).doesNotBlockMovement()
+        return new LeafCropBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
                 .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
     }
 

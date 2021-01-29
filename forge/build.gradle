@@ -10,6 +10,12 @@ buildscript {
     }
 }
 
+repositories {
+    maven {
+        url = 'https://maven.blamejared.com'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
@@ -46,7 +52,7 @@ minecraft {
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
             // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
+            //property 'forge.logging.console.level', 'debug'
 
             mods {
                 croptopia {
@@ -102,6 +108,9 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
 
     shade project(":common")
+
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
+    //runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

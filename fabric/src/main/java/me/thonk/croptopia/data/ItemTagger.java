@@ -36,6 +36,11 @@ public class ItemTagger<T> extends ItemTagsProvider {
         super(dataGenerator, blockTagsProvider);
     }
 
+    public void addSeedTag(Item item, Identifier itemName) {
+        Tag.Identified<Item> identifier = REQUIRED_TAGS.add(new Identifier("croptopia", "seeds").toString());
+        createTag(identifier, item);
+    }
+
 
     public void addTag(Item item, Identifier itemName) {
         Identifier pluralID = new Identifier(itemName.getNamespace(), itemName.getPath() + "s");
@@ -43,10 +48,17 @@ public class ItemTagger<T> extends ItemTagsProvider {
         createTag(identifier, item);
     }
 
+
     protected void createTag(Tag.Identified<Item> identified, Item item) {
         this.tagBuilders.computeIfAbsent(identified.getId(), (identifier) -> {
             return new Tag.Builder();
         }).add(registry.getId(item), "");
+    }
+
+    protected void createTaggedItem(Tag.Identified<Item> identified, Item item) {
+        this.tagBuilders.computeIfAbsent(identified.getId(), (identifier) -> {
+            return new Tag.Builder();
+        }).addTag(registry.getId(item), "");
     }
 
     @Override

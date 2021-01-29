@@ -2,6 +2,7 @@
   "name": "Croptopia",
   "landing_text": "Recipes & more.",
   "book_texture": "patchouli:textures/gui/book_blue.png",
+  "custom_book_item": "croptopia:guide",
   "model": "patchouli:book_blue",
   "use_blocky_font": true,
   "version": 1

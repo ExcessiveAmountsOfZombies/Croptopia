@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "#forge:almonds",
+    "#forge:apricots",
+    "#forge:artichokes",
+    "#forge:asparagus",
+    "#forge:avocados",
+    "#forge:bananas",
+    "#forge:barley",
+    "#forge:basil",
+    "#forge:bellpeppers",
+    "#forge:blackbeans",
+    "#forge:blackberries",
+    "#forge:blueberries",
+    "#forge:broccoli",
+    "#forge:cabbage",
+    "#forge:cantaloupe",
+    "#forge:cashews",
+    "#forge:cauliflowers"
+  ]
+}

@@ -2,6 +2,8 @@
 package me.thonk.common;
 
 public class ItemNames {
+    public static final String GUIDE = "guide";
+
     public static final String APPLE_SAPLING = "apple_sapling";
     public static final String BANANA_SAPLING = "banana_sapling";
     public static final String ORANGE_SAPLING = "orange_sapling";

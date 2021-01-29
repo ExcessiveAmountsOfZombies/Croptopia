@@ -43,16 +43,6 @@ public class CroptopiaCropBlock extends CropsBlock {
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if (getAge(state) == getMaxAge()) {
-            worldIn.setBlockState(pos, this.withAge(0), 2);
-            spawnDrops(state, worldIn, pos);
-            return ActionResultType.CONSUME;
-        }
-        return ActionResultType.PASS;
-    }
-
-    @Override
     protected IItemProvider getSeedsItem() {
         return seed;
     }
