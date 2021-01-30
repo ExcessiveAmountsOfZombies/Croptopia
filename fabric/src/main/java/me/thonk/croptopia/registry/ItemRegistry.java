@@ -4,6 +4,7 @@ import me.thonk.common.ItemNames;
 import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.GuideBookItem;
 import me.thonk.croptopia.items.SeedItem;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import vazkii.patchouli.api.PatchouliAPI;
 
@@ -353,6 +354,18 @@ public class ItemRegistry {
     public static Item chimichanga = new Item(createGroup().food(EDIBLE_14));
     public static Item quesadilla = new Item(createGroup().food(EDIBLE_10));
 
+    public static Item cinnamon = new Item(createGroup());
+    public static Item cornHusk = new Item(createGroup());
+    public static Item whippingCream = new Item(createGroup());
+    public static Item pepper = new Item(createGroup());
+    public static Item vanillaSeeds = new Item(createGroup());
+
+    public static Item cinnamonSapling = new AliasedBlockItem(BlockRegistry.cinnamonSaplingBlock, createGroup());
+    public static Item cinnamonLog = new AliasedBlockItem(BlockRegistry.cinnamonLog, createGroup());
+    public static Item strippedCinnamonLog = new AliasedBlockItem(BlockRegistry.strippedCinnamonLog, createGroup());
+    public static Item cinnamonWood = new AliasedBlockItem(BlockRegistry.cinnamonWood, createGroup());
+    public static Item strippedCinnamonWood = new AliasedBlockItem(BlockRegistry.strippedCinnamonWood, createGroup());
+
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -2.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
@@ -657,6 +670,18 @@ public class ItemRegistry {
         registerItem(ItemNames.REFRIED_BEANS, refriedBeans);
         registerItem(ItemNames.CHIMICHANGA, chimichanga);
         registerItem(ItemNames.QUESADILLA, quesadilla);
+
+        registerItem(ItemNames.CINNAMON, cinnamon);
+        registerItem(ItemNames.CORN_HUSK, cornHusk);
+        registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
+        registerItem(ItemNames.PEPPER, pepper);
+        registerItem(ItemNames.VANILLA_SEEDS, vanillaSeeds);
+
+        registerItem(ItemNames.CINNAMON_SAPLING, cinnamonSapling);
+        registerItem(ItemNames.CINNAMON_LOG, cinnamonLog);
+        registerItem(ItemNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
+        registerItem(ItemNames.CINNAMON_WOOD, cinnamonWood);
+        registerItem(ItemNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);

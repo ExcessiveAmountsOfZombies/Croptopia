@@ -102,7 +102,6 @@ public class ItemNames {
     public static final String PECAN = "pecan";
     public static final String WALNUT = "walnut";
     public static final String MUSTARD = "mustard";
-    public static final String VANILLA = "vanilla";
     public static final String PAPRIKA = "paprika";
     public static final String CHILE_PEPPER = "chile_pepper";
     public static final String SALT = "salt";
@@ -310,6 +309,18 @@ public class ItemNames {
     public static final String CHIMICHANGA = "chimichanga";
     public static final String QUESADILLA = "quesadilla";
 
+    public static final String VANILLA = "vanilla";
+    public static final String CINNAMON = "cinnamon";
+    public static final String CORN_HUSK = "corn_husk";
+    public static final String WHIPPING_CREAM = "whipping_cream";
+    public static final String PEPPER = "pepper";
+    public static final String VANILLA_SEEDS = "vanilla_seeds";
+
+    public static final String CINNAMON_SAPLING = "cinnamon_sapling";
+    public static final String CINNAMON_LOG = "cinnamon_log";
+    public static final String STRIPPED_CINNAMON_LOG = "stripped_cinnamon_log";
+    public static final String CINNAMON_WOOD = "cinnamon_wood";
+    public static final String STRIPPED_CINNAMON_WOOD = "stripped_cinnamon_wood";
 
 
 }

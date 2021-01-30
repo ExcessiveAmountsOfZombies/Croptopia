@@ -111,4 +111,12 @@ public class BlockNames {
     public static final String CASHEW_SAPLING = "cashew_sapling";
     public static final String PECAN_SAPLING = "pecan_sapling";
     public static final String WALNUT_SAPLING = "walnut_sapling";
+
+
+    public static final String CINNAMON_SAPLING = "cinnamon_sapling";
+    public static final String VANILLA_CROP = "vanilla_crop";
+    public static final String CINNAMON_LOG = "cinnamon_log";
+    public static final String STRIPPED_CINNAMON_LOG = "stripped_cinnamon_log";
+    public static final String CINNAMON_WOOD = "cinnamon_wood";
+    public static final String STRIPPED_CINNAMON_WOOD = "stripped_cinnamon_wood";
 }

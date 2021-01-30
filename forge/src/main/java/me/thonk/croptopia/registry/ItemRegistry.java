@@ -352,6 +352,18 @@ public class ItemRegistry {
     public static Item chimichanga;
     public static Item quesadilla;
 
+    public static Item cinnamon;
+    public static Item cornHusk;
+    public static Item whippingCream;
+    public static Item pepper;
+    public static Item vanillaSeeds;
+
+    public static Item cinnamonSapling;
+    public static Item cinnamonLog;
+    public static Item strippedCinnamonLog;
+    public static Item cinnamonWood;
+    public static Item strippedCinnamonWood;
+
     // cooking utensils?
     public static Item foodPress;
     public static Item fryingPan;
@@ -679,6 +691,17 @@ public class ItemRegistry {
         chimichanga = registerItem(itemRegister, ItemNames.CHIMICHANGA, new Item(createGroup().food(EDIBLE_14)));
         quesadilla = registerItem(itemRegister, ItemNames.QUESADILLA, new Item(createGroup().food(EDIBLE_10)));
 
+        cinnamon = registerItem(itemRegister, ItemNames.CINNAMON, new Item(createGroup()));
+        cornHusk = registerItem(itemRegister, ItemNames.CORN_HUSK, new Item(createGroup()));
+        whippingCream = registerItem(itemRegister, ItemNames.WHIPPING_CREAM, new Item(createGroup()));
+        pepper = registerItem(itemRegister, ItemNames.PEPPER, new Item(createGroup()));
+        vanillaSeeds = registerItem(itemRegister, ItemNames.VANILLA_SEEDS, new Item(createGroup()));
+
+        cinnamonSapling = registerItem(itemRegister, ItemNames.CINNAMON_SAPLING, new BlockNamedItem(BlockRegistry.cinnamonSaplingBlock, createGroup()));
+        cinnamonLog = registerItem(itemRegister, ItemNames.CINNAMON_LOG, new BlockNamedItem(BlockRegistry.cinnamonLog, createGroup()));
+        strippedCinnamonLog = registerItem(itemRegister, ItemNames.STRIPPED_CINNAMON_LOG, new BlockNamedItem(BlockRegistry.strippedCinnamonLog, createGroup()));
+        cinnamonWood = registerItem(itemRegister, ItemNames.CINNAMON_WOOD, new BlockNamedItem(BlockRegistry.cinnamonWood, createGroup()));
+        strippedCinnamonWood = registerItem(itemRegister, ItemNames.STRIPPED_CINNAMON_WOOD, new BlockNamedItem(BlockRegistry.strippedCinnamonWood, createGroup()));
 
         foodPress = registerItem(itemRegister, ItemNames.FOOD_PRESS, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
         fryingPan = registerItem(itemRegister, ItemNames.FRYING_PAN, new SwordItem(ItemTier.IRON, 5, -2.0F, createGroup().maxStackSize(1).defaultMaxDamage(500)));
