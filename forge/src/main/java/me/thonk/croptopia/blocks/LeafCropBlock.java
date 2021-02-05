@@ -62,6 +62,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        super.randomTick(state, world, pos, random);
         Direction[] directions = Direction.values();
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         boolean dropBlock = true;
@@ -77,6 +78,5 @@ public class LeafCropBlock extends CroptopiaCropBlock {
             spawnDrops(state, world, pos);
             world.removeBlock(pos, false);
         }
-
     }
 }
