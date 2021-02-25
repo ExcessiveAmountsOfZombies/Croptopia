@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "minecraft:block/stripped_cinnamon_log_top",
-    "side": "minecraft:block/stripped_cinnamon_log"
+    "end": "croptopia:block/stripped_cinnamon_log_top",
+    "side": "croptopia:block/stripped_cinnamon_log"
   }
 }

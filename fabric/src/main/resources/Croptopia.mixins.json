@@ -1,5 +1,5 @@
 {
-  "required": true,
+  "required": false,
   "minVersion": "0.8",
   "package": "me.thonk.croptopia.mixin",
   "plugin": "me.thonk.croptopia.plugin.MixinConfig",

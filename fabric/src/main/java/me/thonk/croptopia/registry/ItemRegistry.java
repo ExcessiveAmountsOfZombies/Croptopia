@@ -1,6 +1,7 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
+import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.GuideBookItem;
 import me.thonk.croptopia.items.SeedItem;
@@ -368,7 +369,7 @@ public class ItemRegistry {
 
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -2.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 3, -2.4F, createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
 

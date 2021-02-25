@@ -6,6 +6,7 @@ import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.data.Runner;
 import me.thonk.croptopia.dependencies.Dehydration;
+import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.SeedItem;
@@ -60,6 +61,7 @@ public class Croptopia implements ModInitializer {
             registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilitySerializer());
 
     public static Dehydration dehydration;
+    public static Patchouli patchouli;
 
 
     private static Runner runner;
@@ -69,6 +71,7 @@ public class Croptopia implements ModInitializer {
         runner = new Runner();
 
         dehydration = new Dehydration();
+        patchouli = new Patchouli();
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
