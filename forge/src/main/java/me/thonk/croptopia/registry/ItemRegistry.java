@@ -5,6 +5,7 @@ import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.GuideBookItem;
 import me.thonk.croptopia.items.SeedItem;
 import net.minecraft.item.*;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.RegistryEvent;
 
 import static me.thonk.croptopia.CroptopiaForge.*;
@@ -586,7 +587,7 @@ public class ItemRegistry {
         beer = registerItem(itemRegister, ItemNames.BEER, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
         wine = registerItem(itemRegister, ItemNames.WINE, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
         mead = registerItem(itemRegister, ItemNames.MEAD, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        rum = registerItem(itemRegister, ItemNames.RUM, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
+        rum = registerItem(itemRegister, ItemNames.RUM, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
         pumpkinSpiceLatte = registerItem(itemRegister, ItemNames.PUMPKIN_SPICE_LATTE, new Drink(createGroup().food(EDIBLE_14_BUILDER.setAlwaysEdible().build())));
         grapeJam = registerItem(itemRegister, ItemNames.GRAPE_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
         strawberryJam = registerItem(itemRegister, ItemNames.STRAWBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
@@ -611,24 +612,24 @@ public class ItemRegistry {
         popcorn = registerItem(itemRegister, ItemNames.POPCORN, new Item(createGroup().food(EDIBLE_3)));
         bakedBeans = registerItem(itemRegister, ItemNames.BAKED_BEANS, new Item(createGroup().food(EDIBLE_5)));
         toast = registerItem(itemRegister, ItemNames.TOAST, new Item(createGroup().food(EDIBLE_7)));
-        cucumberSalad = registerItem(itemRegister, ItemNames.CUCUMBER_SALAD, new Item(createGroup().food(EDIBLE_10)));
-        caesarSalad = registerItem(itemRegister, ItemNames.CAESAR_SALAD, new Item(createGroup().food(EDIBLE_10)));
-        leafySalad = registerItem(itemRegister, ItemNames.LEAFY_SALAD, new Item(createGroup().food(EDIBLE_10)));
-        fruitSalad = registerItem(itemRegister, ItemNames.FRUIT_SALAD, new Item(createGroup().food(EDIBLE_10)));
-        veggieSalad = registerItem(itemRegister, ItemNames.VEGGIE_SALAD, new Item(createGroup().food(EDIBLE_10)));
-        porkAndBeans = registerItem(itemRegister, ItemNames.PORK_AND_BEANS, new Item(createGroup().food(EDIBLE_10)));
-        oatmeal = registerItem(itemRegister, ItemNames.OATMEAL, new Item(createGroup().food(EDIBLE_7)));
-        leekSoup = registerItem(itemRegister, ItemNames.LEEK_SOUP, new Item(createGroup().food(EDIBLE_7)));
-        yoghurt = registerItem(itemRegister, ItemNames.YOGHURT, new Item(createGroup().food(EDIBLE_5)));
-        saucyChips = registerItem(itemRegister, ItemNames.SAUCY_CHIPS, new Item(createGroup().food(EDIBLE_7)));
+        cucumberSalad = registerItem(itemRegister, ItemNames.CUCUMBER_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
+        caesarSalad = registerItem(itemRegister, ItemNames.CAESAR_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
+        leafySalad = registerItem(itemRegister, ItemNames.LEAFY_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
+        fruitSalad = registerItem(itemRegister, ItemNames.FRUIT_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
+        veggieSalad = registerItem(itemRegister, ItemNames.VEGGIE_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
+        porkAndBeans = registerItem(itemRegister, ItemNames.PORK_AND_BEANS, new SoupItem(createGroup().food(EDIBLE_10)));
+        oatmeal = registerItem(itemRegister, ItemNames.OATMEAL, new SoupItem(createGroup().food(EDIBLE_7)));
+        leekSoup = registerItem(itemRegister, ItemNames.LEEK_SOUP, new SoupItem(createGroup().food(EDIBLE_7)));
+        yoghurt = registerItem(itemRegister, ItemNames.YOGHURT, new SoupItem(createGroup().food(EDIBLE_5)));
+        saucyChips = registerItem(itemRegister, ItemNames.SAUCY_CHIPS, new SoupItem(createGroup().food(EDIBLE_7)));
         roastedNuts = registerItem(itemRegister, ItemNames.ROASTED_NUTS, new Item(createGroup().food(EDIBLE_5)));
         trailMix = registerItem(itemRegister, ItemNames.TRAIL_MIX, new Item(createGroup().food(EDIBLE_10)));
         proteinBar = registerItem(itemRegister, ItemNames.PROTEIN_BAR, new Item(createGroup().food(EDIBLE_10)));
         nougat = registerItem(itemRegister, ItemNames.NOUGAT, new Item(createGroup().food(EDIBLE_7)));
 
         scrambledEggs = registerItem(itemRegister, ItemNames.SCRAMBLED_EGGS, new Item(createGroup().food(EDIBLE_7)));
-        butteredToast = registerItem(itemRegister, ItemNames.BUTTERED_TOAST, new Item(createGroup().food(EDIBLE_7)));
-        toastWithJam = registerItem(itemRegister, ItemNames.TOAST_WITH_JAM, new Item(createGroup().food(EDIBLE_7)));
+        butteredToast = registerItem(itemRegister, ItemNames.BUTTERED_TOAST, new Item(createGroup().food(EDIBLE_9)));
+        toastWithJam = registerItem(itemRegister, ItemNames.TOAST_WITH_JAM, new Item(createGroup().food(EDIBLE_9)));
 
         hamSandwich = registerItem(itemRegister, ItemNames.HAM_SANDWICH, new Item(createGroup().food(EDIBLE_10)));
         peanutButterAndJam = registerItem(itemRegister, ItemNames.PEANUT_BUTTER_AND_JAM, new Item(createGroup().food(EDIBLE_10)));
@@ -695,7 +696,7 @@ public class ItemRegistry {
         cornHusk = registerItem(itemRegister, ItemNames.CORN_HUSK, new Item(createGroup()));
         whippingCream = registerItem(itemRegister, ItemNames.WHIPPING_CREAM, new Item(createGroup()));
         pepper = registerItem(itemRegister, ItemNames.PEPPER, new Item(createGroup()));
-        vanillaSeeds = registerItem(itemRegister, ItemNames.VANILLA_SEEDS, new Item(createGroup()));
+        vanillaSeeds = registerItem(itemRegister, ItemNames.VANILLA_SEEDS, new SeedItem(BlockRegistry.vanillaCropBlock, createGroup(), JUNGLE));
 
         cinnamonSapling = registerItem(itemRegister, ItemNames.CINNAMON_SAPLING, new BlockNamedItem(BlockRegistry.cinnamonSaplingBlock, createGroup()));
         cinnamonLog = registerItem(itemRegister, ItemNames.CINNAMON_LOG, new BlockNamedItem(BlockRegistry.cinnamonLog, createGroup()));

@@ -22,6 +22,7 @@ import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.AliasedBlockItem;
@@ -134,7 +135,7 @@ public class Croptopia implements ModInitializer {
     public static Block registerBlock(String blockName, Block item) {
         cropBlocks.add(item);
 
-        if (item instanceof LeafCropBlock) {
+        if (item instanceof LeafCropBlock || item instanceof LeavesBlock) {
             leafBlocks.add(item);
             //System.out.println("\"" + blockName + "\",");
         } else {
@@ -154,6 +155,10 @@ public class Croptopia implements ModInitializer {
 
     public static LeafCropBlock createLeavesBlock() {
         return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
+    }
+
+    public static LeavesBlock createRegularLeavesBlock() {
+        return new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
     }
 
     private static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {

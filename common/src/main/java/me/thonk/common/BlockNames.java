@@ -27,6 +27,7 @@ public class BlockNames {
     public static final String CASHEW_CROP = "cashew_crop";
     public static final String PECAN_CROP = "pecan_crop";
     public static final String WALNUT_CROP = "walnut_crop";
+    public static final String CINNAMON_LEAVES = "cinnamon_leaves";
     public static final String SALT_ORE = "salt_ore";
     public static final String ARTICHOKE_CROP = "artichoke_crop";
     public static final String ASPARAGUS_CROP = "asparagus_crop";

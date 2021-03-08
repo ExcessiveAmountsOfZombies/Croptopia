@@ -186,7 +186,7 @@ public class CroptopiaForge {
     public static Block registerBlock(String blockName, Block block) {
         cropBlocks.add(block);
 
-        if (block instanceof LeafCropBlock) {
+        if (block instanceof LeafCropBlock || block instanceof LeavesBlock) {
             leafBlocks.add(block);
             //System.out.println("\"" + blockName + "\",");
         } else {
@@ -217,6 +217,11 @@ public class CroptopiaForge {
 
     public static LeafCropBlock createLeavesBlock() {
         return new LeafCropBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
+                .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
+    }
+
+    public static LeavesBlock createRegularLeavesBlock() {
+        return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
                 .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
     }
 

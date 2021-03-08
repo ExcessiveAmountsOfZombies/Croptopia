@@ -235,7 +235,7 @@ public class ItemRegistry {
     public static Item beer = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
     public static Item wine = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
     public static Item mead = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
-    public static Item rum = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item rum = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
 
     // jams
@@ -263,16 +263,16 @@ public class ItemRegistry {
     public static Item popcorn = new Item(createGroup().food(EDIBLE_3));
     public static Item bakedBeans = new Item(createGroup().food(EDIBLE_5));
     public static Item toast = new Item(createGroup().food(EDIBLE_7));
-    public static Item cucumberSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item caesarSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item leafySalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item fruitSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item veggieSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item porkAndBeans = new Item(createGroup().food(EDIBLE_10));
-    public static Item oatmeal = new Item(createGroup().food(EDIBLE_7));
-    public static Item leekSoup = new Item(createGroup().food(EDIBLE_7));
-    public static Item yoghurt = new Item(createGroup().food(EDIBLE_5));
-    public static Item saucyChips = new Item(createGroup().food(EDIBLE_7));
+    public static Item cucumberSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item caesarSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item leafySalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item fruitSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item veggieSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item porkAndBeans = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item oatmeal = new MushroomStewItem(createGroup().food(EDIBLE_7));
+    public static Item leekSoup = new MushroomStewItem(createGroup().food(EDIBLE_7));
+    public static Item yoghurt = new MushroomStewItem(createGroup().food(EDIBLE_5));
+    public static Item saucyChips = new MushroomStewItem(createGroup().food(EDIBLE_7));
     public static Item roastedNuts = new Item(createGroup().food(EDIBLE_5));
     public static Item trailMix = new Item(createGroup().food(EDIBLE_10));
     public static Item proteinBar = new Item(createGroup().food(EDIBLE_10));
@@ -280,8 +280,8 @@ public class ItemRegistry {
 
     // breakfast
     public static Item scrambledEggs = new Item(createGroup().food(EDIBLE_7));
-    public static Item butteredToast = new Item(createGroup().food(EDIBLE_7));
-    public static Item toastWithJam = new Item(createGroup().food(EDIBLE_7));
+    public static Item butteredToast = new Item(createGroup().food(EDIBLE_9));
+    public static Item toastWithJam = new Item(createGroup().food(EDIBLE_9));
 
 
     // meals
@@ -359,7 +359,7 @@ public class ItemRegistry {
     public static Item cornHusk = new Item(createGroup());
     public static Item whippingCream = new Item(createGroup());
     public static Item pepper = new Item(createGroup());
-    public static Item vanillaSeeds = new Item(createGroup());
+    public static Item vanillaSeeds = new SeedItem(BlockRegistry.vanillaCropBlock, createGroup(), JUNGLE);
 
     public static Item cinnamonSapling = new AliasedBlockItem(BlockRegistry.cinnamonSaplingBlock, createGroup());
     public static Item cinnamonLog = new AliasedBlockItem(BlockRegistry.cinnamonLog, createGroup());

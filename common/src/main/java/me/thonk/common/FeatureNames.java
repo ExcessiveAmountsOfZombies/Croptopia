@@ -27,6 +27,7 @@ public class FeatureNames {
     public static final String CASHEW_TREE = "cashew_tree";
     public static final String PECAN_TREE = "pecan_tree";
     public static final String WALNUT_TREE = "walnut_tree";
+    public static final String CINNAMON_TREE = "cinnamon_tree";
     public static final String APPLE_TREE_CONFIGURED = "apple_tree_configured";
     public static final String BANANA_TREE_CONFIGURED = "banana_tree_configured";
     public static final String ORANGE_TREE_CONFIGURED = "orange_tree_configured";
@@ -53,6 +54,7 @@ public class FeatureNames {
     public static final String CASHEW_TREE_CONFIGURED = "cashew_tree_configured";
     public static final String PECAN_TREE_CONFIGURED = "pecan_tree_configured";
     public static final String WALNUT_TREE_CONFIGURED = "walnut_tree_configured";
+    public static final String CINNAMON_TREE_CONFIGURED = "cinnamon_tree_configured";
     public static final String DISK_SALT = "disk_salt";
     public static final String DISK_SALT_CONFIGURED = "disk_salt_configured";
 }

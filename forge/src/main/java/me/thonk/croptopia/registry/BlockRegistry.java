@@ -7,6 +7,7 @@ import me.thonk.croptopia.blocks.TallCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 
 import static me.thonk.croptopia.CroptopiaForge.*;
 
@@ -74,10 +75,10 @@ public class BlockRegistry {
     // real block
     public static Block salt = new Block(AbstractBlock.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.5F).sound(SoundType.SAND));
 
-    public static Block cinnamonLog = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(0.5F));
-    public static Block strippedCinnamonLog = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(0.5F));
-    public static Block cinnamonWood = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(0.5F));
-    public static Block strippedCinnamonWood = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD).hardnessAndResistance(0.5F));
+    public static Block cinnamonLog = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
+    public static Block strippedCinnamonLog = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
+    public static Block cinnamonWood = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
+    public static Block strippedCinnamonWood = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
 
     public static Block appleSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.APPLE_TREE), createSaplingSettings());
     public static Block bananaSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.BANANA_TREE), createSaplingSettings());
@@ -105,8 +106,7 @@ public class BlockRegistry {
     public static Block cashewSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.CASHEW_TREE), createSaplingSettings());
     public static Block pecanSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PECAN_TREE), createSaplingSettings());
     public static Block walnutSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.WALNUT_TREE), createSaplingSettings());
-    // TODO: this null
-    public static Block cinnamonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(null), createSaplingSettings());
+    public static Block cinnamonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.CINNAMON_TREE), createSaplingSettings());
 
     public static void init() {
         registerBlock(BlockNames.SALT_ORE, salt);
