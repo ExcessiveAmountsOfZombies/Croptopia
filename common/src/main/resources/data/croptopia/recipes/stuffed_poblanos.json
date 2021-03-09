@@ -1,0 +1,30 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "tag": "croptopia:beef_replacements"
+    },
+    {
+      "item": "croptopia:pepper"
+    },
+    {
+      "item": "croptopia:blackbean"
+    },
+    {
+      "item": "croptopia:corn"
+    },
+    {
+      "item": "croptopia:cheese"
+    },
+    {
+      "item": "croptopia:rice"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:stuffed_poblanos",
+    "count": 1
+  }
+}

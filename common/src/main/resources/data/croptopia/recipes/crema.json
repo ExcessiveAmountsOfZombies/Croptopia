@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "croptopia:lime"
+    },
+    {
+      "item": "croptopia:salt"
+    }
+  ],
+  "result": {
+    "item": "croptopia:crema",
+    "count": 4
+  }
+}

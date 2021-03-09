@@ -5,10 +5,9 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
 import me.thonk.croptopia.blocks.TallCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 
 import static me.thonk.croptopia.CroptopiaForge.*;
 
@@ -70,14 +69,16 @@ public class BlockRegistry {
     public static Block turnipCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block yamCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block zucchiniCropBlock = new CroptopiaCropBlock(createCropSettings());
+    public static Block vanillaCropBlock = new CroptopiaCropBlock(createCropSettings());
 
 
-
-    // tree
-    public static Block vanillaCropBlock;
     // real block
     public static Block salt = new Block(AbstractBlock.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.5F).sound(SoundType.SAND));
 
+    public static Block cinnamonLog = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
+    public static Block strippedCinnamonLog = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
+    public static Block cinnamonWood = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
+    public static Block strippedCinnamonWood = new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F));
 
     public static Block appleSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.APPLE_TREE), createSaplingSettings());
     public static Block bananaSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.BANANA_TREE), createSaplingSettings());
@@ -105,9 +106,14 @@ public class BlockRegistry {
     public static Block cashewSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.CASHEW_TREE), createSaplingSettings());
     public static Block pecanSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.PECAN_TREE), createSaplingSettings());
     public static Block walnutSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.WALNUT_TREE), createSaplingSettings());
+    public static Block cinnamonSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.CINNAMON_TREE), createSaplingSettings());
 
     public static void init() {
         registerBlock(BlockNames.SALT_ORE, salt);
+        registerBlock(BlockNames.CINNAMON_LOG, cinnamonLog);
+        registerBlock(BlockNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
+        registerBlock(BlockNames.CINNAMON_WOOD, cinnamonWood);
+        registerBlock(BlockNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
 
         registerBlock(BlockNames.ARTICHOKE_CROP, artichokeCropBlock);
         registerBlock(BlockNames.ASPARAGUS_CROP, asparagusCropBlock);
@@ -166,6 +172,7 @@ public class BlockRegistry {
         registerBlock(BlockNames.TURNIP_CROP, turnipCropBlock);
         registerBlock(BlockNames.YAM_CROP, yamCropBlock);
         registerBlock(BlockNames.ZUCCHINI_CROP, zucchiniCropBlock);
+        registerBlock(BlockNames.VANILLA_CROP, vanillaCropBlock);
 
         registerBlock(BlockNames.APPLE_SAPLING, appleSaplingBlock);
         registerBlock(BlockNames.BANANA_SAPLING, bananaSaplingBlock);
@@ -193,6 +200,7 @@ public class BlockRegistry {
         registerBlock(BlockNames.CASHEW_SAPLING, cashewSaplingBlock);
         registerBlock(BlockNames.PECAN_SAPLING, pecanSaplingBlock);
         registerBlock(BlockNames.WALNUT_SAPLING, walnutSaplingBlock);
+        registerBlock(BlockNames.CINNAMON_SAPLING, cinnamonSaplingBlock);
 
     }
 }

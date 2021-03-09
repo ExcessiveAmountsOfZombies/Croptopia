@@ -3,6 +3,7 @@ package me.thonk.croptopia;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
+import me.thonk.croptopia.config.Config;
 import me.thonk.croptopia.events.BiomeModification;
 import me.thonk.croptopia.events.BlockBreakEvent;
 import me.thonk.croptopia.events.Harvest;
@@ -34,7 +35,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -63,10 +66,13 @@ public class CroptopiaForge {
     public static LootConditionType BIOME_CHECK;
     public static DamageDurabilityRecipe.DamageDurabilitySerializer DAMAGE_DURABILITY;
 
+    public static Config config;
+
 
     public static ItemGroup CROPTOPIA_ITEM_GROUP;
 
     public CroptopiaForge() {
+        config = new Config();
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -76,10 +82,13 @@ public class CroptopiaForge {
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(config::initConfig);
+
         MinecraftForge.EVENT_BUS.register(new BiomeModification());
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
         MinecraftForge.EVENT_BUS.register(new Harvest());
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
@@ -177,7 +186,7 @@ public class CroptopiaForge {
     public static Block registerBlock(String blockName, Block block) {
         cropBlocks.add(block);
 
-        if (block instanceof LeafCropBlock) {
+        if (block instanceof LeafCropBlock || block instanceof LeavesBlock) {
             leafBlocks.add(block);
             //System.out.println("\"" + blockName + "\",");
         } else {
@@ -208,6 +217,11 @@ public class CroptopiaForge {
 
     public static LeafCropBlock createLeavesBlock() {
         return new LeafCropBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
+                .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
+    }
+
+    public static LeavesBlock createRegularLeavesBlock() {
+        return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
                 .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
     }
 

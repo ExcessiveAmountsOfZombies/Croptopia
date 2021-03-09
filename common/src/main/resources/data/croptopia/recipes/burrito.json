@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:blackbean"
+    },
+    {
+      "item": "croptopia:rice"
+    },
+    {
+      "item": "croptopia:tomato"
+    },
+    {
+      "item": "croptopia:tortilla"
+    }
+  ],
+  "result": {
+    "item": "croptopia:burrito",
+    "count": 1
+  }
+}

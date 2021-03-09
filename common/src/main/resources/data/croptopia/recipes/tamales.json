@@ -1,0 +1,30 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "croptopia:onion"
+    },
+    {
+      "item": "croptopia:corn_husk"
+    },
+    {
+      "item": "croptopia:flour"
+    },
+    {
+      "item": "croptopia:salt"
+    },
+    {
+      "item": "croptopia:pepper"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tamales",
+    "count": 2
+  }
+}

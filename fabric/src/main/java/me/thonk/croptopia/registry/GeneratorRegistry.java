@@ -237,6 +237,14 @@ public class GeneratorRegistry {
                     new StraightTrunkPlacer(4, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
+    public static final ConfiguredFeature<?, ?> CINNAMON_TREE = register(createIdentifier(FeatureNames.CINNAMON_TREE),
+            Feature.TREE.configure((new TreeFeatureConfig.Builder(
+                    new SimpleBlockStateProvider(BlockRegistry.cinnamonLog.getDefaultState()),
+                    new WeightedBlockStateProvider().addState(LeavesRegistry.cinnamonLeaves.getDefaultState(), 95),
+                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new StraightTrunkPlacer(4, 3, 0),
+                    new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
+
     public static final ConfiguredFeature<?, ?> APPLE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.APPLE_TREE_CONFIGURED),
             APPLE_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.1F, 1)))));
 
@@ -314,6 +322,9 @@ public class GeneratorRegistry {
 
     public static final ConfiguredFeature<?, ?> WALNUT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.WALNUT_TREE_CONFIGURED),
             WALNUT_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.25F, 5)))));
+
+    public static final ConfiguredFeature<?, ?> CINNAMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CINNAMON_TREE_CONFIGURED),
+            CINNAMON_TREE.decorate(ConfiguredFeatures.Decorators.SQUARE_HEIGHTMAP.decorate(Decorator.COUNT_EXTRA.configure(new CountExtraDecoratorConfig(0, 0.25F, 5)))));
 
 
     public static final ConfiguredFeature<?, ?> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),

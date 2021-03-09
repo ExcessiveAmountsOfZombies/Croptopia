@@ -1,9 +1,11 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
+import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.GuideBookItem;
 import me.thonk.croptopia.items.SeedItem;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import vazkii.patchouli.api.PatchouliAPI;
 
@@ -233,7 +235,7 @@ public class ItemRegistry {
     public static Item beer = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
     public static Item wine = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
     public static Item mead = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
-    public static Item rum = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+    public static Item rum = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
 
     // jams
@@ -261,16 +263,16 @@ public class ItemRegistry {
     public static Item popcorn = new Item(createGroup().food(EDIBLE_3));
     public static Item bakedBeans = new Item(createGroup().food(EDIBLE_5));
     public static Item toast = new Item(createGroup().food(EDIBLE_7));
-    public static Item cucumberSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item caesarSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item leafySalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item fruitSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item veggieSalad = new Item(createGroup().food(EDIBLE_10));
-    public static Item porkAndBeans = new Item(createGroup().food(EDIBLE_10));
-    public static Item oatmeal = new Item(createGroup().food(EDIBLE_7));
-    public static Item leekSoup = new Item(createGroup().food(EDIBLE_7));
-    public static Item yoghurt = new Item(createGroup().food(EDIBLE_5));
-    public static Item saucyChips = new Item(createGroup().food(EDIBLE_7));
+    public static Item cucumberSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item caesarSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item leafySalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item fruitSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item veggieSalad = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item porkAndBeans = new MushroomStewItem(createGroup().food(EDIBLE_10));
+    public static Item oatmeal = new MushroomStewItem(createGroup().food(EDIBLE_7));
+    public static Item leekSoup = new MushroomStewItem(createGroup().food(EDIBLE_7));
+    public static Item yoghurt = new MushroomStewItem(createGroup().food(EDIBLE_5));
+    public static Item saucyChips = new MushroomStewItem(createGroup().food(EDIBLE_7));
     public static Item roastedNuts = new Item(createGroup().food(EDIBLE_5));
     public static Item trailMix = new Item(createGroup().food(EDIBLE_10));
     public static Item proteinBar = new Item(createGroup().food(EDIBLE_10));
@@ -278,8 +280,8 @@ public class ItemRegistry {
 
     // breakfast
     public static Item scrambledEggs = new Item(createGroup().food(EDIBLE_7));
-    public static Item butteredToast = new Item(createGroup().food(EDIBLE_7));
-    public static Item toastWithJam = new Item(createGroup().food(EDIBLE_7));
+    public static Item butteredToast = new Item(createGroup().food(EDIBLE_9));
+    public static Item toastWithJam = new Item(createGroup().food(EDIBLE_9));
 
 
     // meals
@@ -337,9 +339,37 @@ public class ItemRegistry {
     public static Item nuttyCookie = new Item(createGroup().food(EDIBLE_5));
     public static Item praline = new Item(createGroup().food(EDIBLE_5));
 
+    public static Item burrito = new Item(createGroup().food(EDIBLE_10));
+    public static Item tostada = new Item(createGroup().food(EDIBLE_10));
+    public static Item horchata = new Item(createGroup().food(EDIBLE_10));
+    public static Item carnitas = new Item(createGroup().food(EDIBLE_10));
+    public static Item fajitas = new Item(createGroup().food(EDIBLE_10));
+    public static Item enchilada = new Item(createGroup().food(EDIBLE_10));
+    public static Item churros = new Item(createGroup().food(EDIBLE_5));
+    public static Item tamales = new Item(createGroup().food(EDIBLE_14));
+    public static Item tresLecheCake = new Item(createGroup().food(EDIBLE_18));
+    public static Item stuffedPoblanos = new Item(createGroup().food(EDIBLE_14));
+    public static Item chiliRelleno = new Item(createGroup().food(EDIBLE_14));
+    public static Item crema = new Item(createGroup().food(EDIBLE_3));
+    public static Item refriedBeans = new Item(createGroup().food(EDIBLE_7));
+    public static Item chimichanga = new Item(createGroup().food(EDIBLE_14));
+    public static Item quesadilla = new Item(createGroup().food(EDIBLE_10));
+
+    public static Item cinnamon = new Item(createGroup());
+    public static Item cornHusk = new Item(createGroup());
+    public static Item whippingCream = new Item(createGroup());
+    public static Item pepper = new Item(createGroup());
+    public static Item vanillaSeeds = new SeedItem(BlockRegistry.vanillaCropBlock, createGroup(), JUNGLE);
+
+    public static Item cinnamonSapling = new AliasedBlockItem(BlockRegistry.cinnamonSaplingBlock, createGroup());
+    public static Item cinnamonLog = new AliasedBlockItem(BlockRegistry.cinnamonLog, createGroup());
+    public static Item strippedCinnamonLog = new AliasedBlockItem(BlockRegistry.strippedCinnamonLog, createGroup());
+    public static Item cinnamonWood = new AliasedBlockItem(BlockRegistry.cinnamonWood, createGroup());
+    public static Item strippedCinnamonWood = new AliasedBlockItem(BlockRegistry.strippedCinnamonWood, createGroup());
+
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 5, -2.0F, createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 3, -2.4F, createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
 
@@ -625,6 +655,34 @@ public class ItemRegistry {
         registerItem(ItemNames.ALMOND_BRITTLE, almondBrittle);
         registerItem(ItemNames.RAISIN_OATMEAL_COOKIE, oatmealCookie);
         registerItem(ItemNames.NUTTY_COOKIE, nuttyCookie);
+
+        registerItem(ItemNames.BURRITO, burrito);
+        registerItem(ItemNames.TOSTADA, tostada);
+        registerItem(ItemNames.HORCHATA, horchata);
+        registerItem(ItemNames.CARNITAS, carnitas);
+        registerItem(ItemNames.FAJITAS, fajitas);
+        registerItem(ItemNames.ENCHILADA, enchilada);
+        registerItem(ItemNames.CHURROS, churros);
+        registerItem(ItemNames.TAMALES, tamales);
+        registerItem(ItemNames.TRES_LECHE_CAKE, tresLecheCake);
+        registerItem(ItemNames.STUFFED_POBLANOS, stuffedPoblanos);
+        registerItem(ItemNames.CHILI_RELLENO, chiliRelleno);
+        registerItem(ItemNames.CREMA, crema);
+        registerItem(ItemNames.REFRIED_BEANS, refriedBeans);
+        registerItem(ItemNames.CHIMICHANGA, chimichanga);
+        registerItem(ItemNames.QUESADILLA, quesadilla);
+
+        registerItem(ItemNames.CINNAMON, cinnamon);
+        registerItem(ItemNames.CORN_HUSK, cornHusk);
+        registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
+        registerItem(ItemNames.PEPPER, pepper);
+        registerItem(ItemNames.VANILLA_SEEDS, vanillaSeeds);
+
+        registerItem(ItemNames.CINNAMON_SAPLING, cinnamonSapling);
+        registerItem(ItemNames.CINNAMON_LOG, cinnamonLog);
+        registerItem(ItemNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
+        registerItem(ItemNames.CINNAMON_WOOD, cinnamonWood);
+        registerItem(ItemNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);

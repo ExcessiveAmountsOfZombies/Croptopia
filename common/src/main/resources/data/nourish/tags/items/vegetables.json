@@ -48,6 +48,15 @@
 		"croptopia:blt",
 		"croptopia:tofuburger",
 		"croptopia:spaghetti_squash",
-		"croptopia:taco"
+		"croptopia:taco",
+		"croptopia:burrito",
+		"croptopia:tostada",
+		"croptopia:carnitas",
+		"croptopia:fajitas",
+		"croptopia:enchilada",
+		"croptopia:tamales",
+		"croptopia:stuffed_poblanos",
+		"croptopia:chili_relleno",
+		"croptopia:refried_beans"
 	]
 }

@@ -1,0 +1,27 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "tag": "croptopia:meat_replacements"
+    },
+    {
+      "item": "croptopia:bellpepper"
+    },
+    {
+      "item": "croptopia:onion"
+    },
+    {
+      "item": "croptopia:tomato"
+    },
+    {
+      "item": "croptopia:cheese"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:fajitas",
+    "count": 2
+  }
+}
