@@ -1,38 +1,17 @@
-plugins {
-    id 'java'
-    id 'fabric-loom' version "0.5.42" apply false
-    id "com.github.johnrengelman.shadow" version "4.0.4"
+allprojects {
+    version = mod_version
+    group = maven_group
+
+    configurations {
+        compileClasspath
+    }
 }
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
-
-version = rootProject.mod_version
-group = rootProject.maven_group
 
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
-
-    group = project.group
-    version = project.version
+    apply plugin: 'idea'
 
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
-
-    project.buildDir = new File("${rootProject.projectDir}/build/jars")
-
-    build {
-        doLast {
-            project.delete(files("${project.buildDir}/classes"))
-            project.delete(files("${project.buildDir}/resources"))
-            project.delete(files{"${project.buildDir}/generated"})
-            project.delete(files{"${project.buildDir}/poms"})
-            project.delete(files{"${project.buildDir}/tmp"})
-        }
-    }
-
-    repositories {
-        mavenCentral()
-    }
 }
