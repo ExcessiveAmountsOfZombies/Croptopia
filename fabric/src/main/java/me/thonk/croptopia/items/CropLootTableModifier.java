@@ -43,4 +43,12 @@ public class CropLootTableModifier {
             }
         });
     }
+
+    public static void addToBonusChest() {
+        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, fabricLootSupplierBuilder, lootTableSetter) -> {
+            if (identifier.getPath().equalsIgnoreCase("")) {
+
+            }
+        });
+    }
 }

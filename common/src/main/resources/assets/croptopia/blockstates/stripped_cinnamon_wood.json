@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "croptopia:block/stripped_cinnamon_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "croptopia:block/stripped_cinnamon_wood"
+    },
+    "axis=z": {
+      "model": "croptopia:block/stripped_cinnamon_wood",
+      "x": 90
+    }
+  }
+}

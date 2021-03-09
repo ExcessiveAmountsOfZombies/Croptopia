@@ -1,12 +1,14 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
         classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
@@ -19,6 +21,7 @@ repositories {
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
 
 archivesBaseName = rootProject.archives_base_name + "-${project.minecraft_version}-FORGE-${rootProject.version}"
 
@@ -29,6 +32,10 @@ configurations {
     dev
     compileOnly.extendsFrom shade
     compileOnly.extendsFrom shadeSource
+}
+
+mixin {
+    add sourceSets.main, "croptopia.refmap.json"
 }
 
 minecraft {
@@ -47,6 +54,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+            arg "-mixin.config=croptopia.mixins.json"
 
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
@@ -145,6 +153,14 @@ build {
         project.delete(files{"${project.buildDir}/generated"})
         project.delete(files{"${project.buildDir}/poms"})
         project.delete(files{"${project.buildDir}/tmp"})
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+                "MixinConfigs": "croptopia.mixins.json"
+        ])
     }
 }
 

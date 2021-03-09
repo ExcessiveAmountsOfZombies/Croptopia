@@ -6,6 +6,7 @@ import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.data.Runner;
 import me.thonk.croptopia.dependencies.Dehydration;
+import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.SeedItem;
@@ -21,12 +22,14 @@ import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.recipe.Recipe;
@@ -59,6 +62,7 @@ public class Croptopia implements ModInitializer {
             registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilitySerializer());
 
     public static Dehydration dehydration;
+    public static Patchouli patchouli;
 
 
     private static Runner runner;
@@ -68,6 +72,7 @@ public class Croptopia implements ModInitializer {
         runner = new Runner();
 
         dehydration = new Dehydration();
+        patchouli = new Patchouli();
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
@@ -130,7 +135,7 @@ public class Croptopia implements ModInitializer {
     public static Block registerBlock(String blockName, Block item) {
         cropBlocks.add(item);
 
-        if (item instanceof LeafCropBlock) {
+        if (item instanceof LeafCropBlock || item instanceof LeavesBlock) {
             leafBlocks.add(item);
             //System.out.println("\"" + blockName + "\",");
         } else {
@@ -150,6 +155,10 @@ public class Croptopia implements ModInitializer {
 
     public static LeafCropBlock createLeavesBlock() {
         return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
+    }
+
+    public static LeavesBlock createRegularLeavesBlock() {
+        return new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
     }
 
     private static Boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {

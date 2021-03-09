@@ -1,8 +1,10 @@
 package me.thonk.croptopia.events;
 
+import me.thonk.croptopia.config.Config;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -16,22 +18,25 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (!event.getPlayer().getHeldItemMainhand().isEmpty()) {
-            event.setCanceled(true);
-        }
-
-        if (!event.getWorld().isRemote) {
-            World world = event.getWorld();
-            BlockPos pos = event.getPos();
-            BlockState blockClicked = event.getWorld().getBlockState(pos);
-            if (blockClicked.getBlock() instanceof CropsBlock) {
-                CropsBlock block = (CropsBlock) blockClicked.getBlock();
-                IntegerProperty property = block.getAgeProperty();
-                int age = blockClicked.get(block.getAgeProperty());
-                if (age == block.getMaxAge()) {
-                    world.setBlockState(pos, withAge(blockClicked, property, 0), 2);
-                    Block.spawnDrops(blockClicked, world, event.getPos());
-                    event.setResult(Event.Result.ALLOW);
+        if (Config.canRightClickHarvest) {
+            if (!(event.getPlayer().getHeldItemMainhand().getItem() instanceof BoneMealItem)) {
+                if (!event.getWorld().isRemote) {
+                    World world = event.getWorld();
+                    BlockPos pos = event.getPos();
+                    BlockState blockClicked = event.getWorld().getBlockState(pos);
+                    if (blockClicked.getBlock() instanceof CropsBlock) {
+                        if (!event.getPlayer().getHeldItemMainhand().isEmpty()) {
+                            event.setCanceled(true);
+                        }
+                        CropsBlock block = (CropsBlock) blockClicked.getBlock();
+                        IntegerProperty property = block.getAgeProperty();
+                        int age = blockClicked.get(block.getAgeProperty());
+                        if (age == block.getMaxAge()) {
+                            world.setBlockState(pos, withAge(blockClicked, property, 0), 2);
+                            Block.spawnDrops(blockClicked, world, event.getPos());
+                            event.setResult(Event.Result.ALLOW);
+                        }
+                    }
                 }
             }
         }

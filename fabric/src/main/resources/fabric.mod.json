@@ -13,7 +13,11 @@
     "Motschen",
     "emilyalexandra"
   ],
-  "contact": {},
+  "contact": {
+    "sources": "https://github.com/ExcessiveAmountsOfZombies/Croptopia",
+    "issues": "https://github.com/ExcessiveAmountsOfZombies/Croptopia/issues",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/croptopia-fabric"
+  },
   "license": "MIT",
   "icon": "assets/croptopia/croptopia.png",
   "environment": "*",

@@ -3,8 +3,7 @@ package me.thonk.croptopia.registry;
 import me.thonk.common.BlockNames;
 import net.minecraft.block.Block;
 
-import static me.thonk.croptopia.CroptopiaForge.createLeavesBlock;
-import static me.thonk.croptopia.CroptopiaForge.registerBlock;
+import static me.thonk.croptopia.CroptopiaForge.*;
 
 
 public class LeavesRegistry {
@@ -35,6 +34,7 @@ public class LeavesRegistry {
     public static Block cashewCrop = createLeavesBlock();
     public static Block pecanCrop = createLeavesBlock();
     public static Block walnutCrop = createLeavesBlock();
+    public static Block cinnamonLeaves = createRegularLeavesBlock();
 
     public static void init() {
         registerBlock(BlockNames.APPLE_CROP, appleCrop);
@@ -63,6 +63,7 @@ public class LeavesRegistry {
         registerBlock(BlockNames.CASHEW_CROP, cashewCrop);
         registerBlock(BlockNames.PECAN_CROP, pecanCrop);
         registerBlock(BlockNames.WALNUT_CROP, walnutCrop);
+        registerBlock(BlockNames.CINNAMON_LEAVES, cinnamonLeaves);
     }
 
 }

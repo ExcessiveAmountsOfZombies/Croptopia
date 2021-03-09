@@ -1,0 +1,27 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:tortilla"
+    },
+    {
+      "item": "croptopia:tortilla"
+    },
+    {
+      "item": "croptopia:cheese"
+    },
+    {
+      "item": "croptopia:avocado"
+    },
+    {
+      "tag": "croptopia:chicken_replacements"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:quesadilla",
+    "count": 2
+  }
+}

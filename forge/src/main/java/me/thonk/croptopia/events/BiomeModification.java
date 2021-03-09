@@ -51,6 +51,7 @@ public class BiomeModification {
             settings.withFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
             settings.withFeature(VEGETAL_DECORATION, BANANA_TREE_CONFIGURED);
             settings.withFeature(VEGETAL_DECORATION, FIG_TREE_CONFIGURED);
+            settings.withFeature(VEGETAL_DECORATION, CINNAMON_TREE_CONFIGURED);
         } else if (event.getCategory() == Biome.Category.PLAINS) {
             settings.withFeature(VEGETAL_DECORATION, APPLE_TREE_CONFIGURED);
             settings.withFeature(VEGETAL_DECORATION, ORANGE_TREE_CONFIGURED);

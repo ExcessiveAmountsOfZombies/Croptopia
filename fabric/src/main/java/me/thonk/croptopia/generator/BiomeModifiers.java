@@ -1,5 +1,6 @@
 package me.thonk.croptopia.generator;
 
+import me.thonk.common.FeatureNames;
 import me.thonk.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -61,6 +62,8 @@ public class BiomeModifiers {
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("banana_tree_configured"));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(jungleBiomes),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("fig_tree_configured"));
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(jungleBiomes),
+                GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(FeatureNames.CINNAMON_TREE_CONFIGURED));
 
         Collection<RegistryKey<Biome>> plainsKeys = Arrays.asList(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS);
 

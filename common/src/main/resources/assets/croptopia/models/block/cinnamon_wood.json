@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "croptopia:block/cinnamon_log",
+    "side": "croptopia:block/cinnamon_log"
+  }
+}
