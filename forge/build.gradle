@@ -30,11 +30,14 @@ configurations {
     compileOnly.extendsFrom shadeSource
 }
 
-mixin {
-    add sourceSets.main, "croptopia.refmap.json"
-}
+/*sourceSets {
+    main {
+        ext.refMap = "croptopia.refmap.json"
+    }
+}*/
 
 minecraft {
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     mappings channel: 'snapshot', version: '20201028-1.16.3'
     runs {
         client {
@@ -86,13 +89,15 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
     shade project(":common")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
+    //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 shadowJar {
     enabled = true
     configurations = [project.configurations.shade]
-    classifier = ""
     archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
+    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
+    relocate 'dependants/platform', 'data/forge'
 }
 
 artifacts {
@@ -101,11 +106,20 @@ artifacts {
 }
 
 jar {
+    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
+    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     manifest {
         attributes([
-                "MixinConfigs": "croptopia.mixins.json"
+                "Specification-Title": "croptopia",
+                "Specification-Vendor": "thonk",
+                "Specification-Version": "1",
+                "Implementation-Title": "${archives_base_name}",
+                "Implementation-Version": "${mod_version}",
+                "Implementation-Vendor" :"me thonk",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                //"MixinConfigs": "croptopia.mixins.json"
         ])
     }
 }
 
-jar.finalizedBy('reobfJar')
+shadowJar.finalizedBy('reobfJar')

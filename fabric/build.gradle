@@ -2,7 +2,7 @@ import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
     id 'fabric-loom' version '0.6-SNAPSHOT'
-    id 'com.github.johnrengelman.shadow' version '4.0.4'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
     id 'maven-publish'
 }
 
@@ -13,7 +13,7 @@ repositories {
     }
 }
 
-rootProject.platform_tag_key = "c"
+
 
 configurations {
     shade
@@ -39,6 +39,7 @@ dependencies {
 }
 
 processResources {
+    rootProject.platform_tag_key = "c"
     inputs.property "mod_version", rootProject.version
 
     from(sourceSets.main.resources.srcDirs) {
@@ -58,12 +59,14 @@ tasks.withType(JavaCompile) {
 shadowJar {
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-dev.jar"
     configurations = [project.configurations.shade]
+    relocate 'dependants/platform', 'data/c'
 }
 
 task remappedShadowJar(type: RemapJarTask) {
     dependsOn tasks.shadowJar
     input = tasks.shadowJar.archiveFile
     addNestedDependencies = true
+    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
 }
 
