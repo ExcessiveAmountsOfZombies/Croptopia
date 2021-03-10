@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.+', changing: true
-        classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.4'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
@@ -24,6 +24,11 @@ repositories {
 
 rootProject.platform_tag_key = "forge"
 
+configurations {
+    dev
+    compileOnly.extendsFrom shade
+    compileOnly.extendsFrom shadeSource
+}
 
 mixin {
     add sourceSets.main, "croptopia.refmap.json"
@@ -77,24 +82,17 @@ minecraft {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
-configurations {
-    dev
-    shade
-    compileOnly.extendsFrom shade
-    compileOnly.extendsFrom shadeSource
-}
-
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
     shade project(":common")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
 }
 
-
 shadowJar {
     enabled = true
-    archiveName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
     configurations = [project.configurations.shade]
+    classifier = ""
+    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
 }
 
 artifacts {
