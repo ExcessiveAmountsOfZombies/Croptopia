@@ -1,81 +1,45 @@
 import net.fabricmc.loom.task.RemapJarTask
 
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-        gradlePluginPortal()
-        maven {
-            name = "Fabric"
-            url = uri("https://maven.fabricmc.net/")
-        }
-    }
-    dependencies {
-        classpath("net.fabricmc:fabric-loom:0.5.43")
-        classpath("com.github.jengelman.gradle.plugins:shadow:4.0.4")
-    }
+plugins {
+    id 'fabric-loom' version '0.6-SNAPSHOT'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'maven-publish'
 }
 
 repositories {
+    mavenCentral()
     maven {
         url = 'https://maven.blamejared.com'
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'fabric-loom'
-apply plugin: 'maven-publish'
-apply plugin: 'com.github.johnrengelman.shadow'
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = rootProject.archives_base_name + "-${project.minecraft_version}-FABRIC"
-version = rootProject.mod_version
-group = rootProject.maven_group
-rootProject.platform_tag_key = "c"
-
-// https://github.com/johnrengelman/shadow/issues/31#issuecomment-523614593
-// https://github.com/DaemonicLabs/fabric-example-mod-kotlin/blob/master/build.gradle.kts
 configurations {
-    dev
-    compileOnly.extendsFrom shade
-    compileOnly.extendsFrom shadeSource
-    modCompileOnly.extendsFrom modShade
+    shade
+    compile.extendsFrom shade
 }
 
 dependencies {
-    //to change the versions see the gradle.properties file
-    minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+    minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
     mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
-
-    // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-
-
-    modImplementation ("net.dehydration:dehydration:${rootProject.dehydration_version}") {
-        // gradle, bruther. I have to include all this i guess to make it compile
-        modApi("me.shedaniel.cloth:config-2:${rootProject.cloth_config_version}") {
-            exclude(group: "net.fabricmc.fabric-api")
-        }
-        modApi("me.sargunvohra.mcmods:autoconfig1u:${rootProject.auto_config_version}") {
-            exclude(group: "net.fabricmc.fabric-api")
-        }
-    }
-    compile(project(":common"))
-    shade(project(":common"))
-
     modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
 
+    modImplementation ("net.dehydration:dehydration:${rootProject.dehydration_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
     modCompile "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
-    // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-    // You may need to force-disable transitiveness on them.
+
+
+    shade project(":common")
 }
 
 processResources {
+    rootProject.platform_tag_key = "c"
     inputs.property "mod_version", rootProject.version
 
     from(sourceSets.main.resources.srcDirs) {
@@ -88,59 +52,27 @@ processResources {
     }
 }
 
-// ensure that the encoding is set to UTF-8, no matter what the system default is
-// this fixes some edge cases with special characters not displaying correctly
-// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
-// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-// if it is present.
-// If you remove this task, sources will not be generated.
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = "sources"
-    from project.sourceSets.main.allSource
-}
-
-jar {
-    from "LICENSE"
-}
-
 shadowJar {
-    enabled = true
-    configurations = [project.configurations.shade, project.configurations.modShade]
-    classifier = "dev"
+    archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-dev.jar"
+    configurations = [project.configurations.shade]
+    relocate 'dependants/platform', 'data/c'
 }
 
-
-task remapShadowJar(type: RemapJarTask, dependsOn: shadowJar) {
-    afterEvaluate {
-        input = file("${project.buildDir}/libs/${archivesBaseName}-${rootProject.version}-dev.jar")
-        addNestedDependencies = true
-        remapAccessWidener = true
-    }
+task remappedShadowJar(type: RemapJarTask) {
+    dependsOn tasks.shadowJar
+    input = tasks.shadowJar.archiveFile
+    addNestedDependencies = true
+    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
+    archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
 }
 
-build.dependsOn(shadowJar, remapShadowJar, sourcesJar, remapSourcesJar)
+tasks.assemble.dependsOn tasks.remappedShadowJar
 
-// configure the maven publication
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            // add all the jars that should be included when publishing to maven
-            artifact(remapJar) {
-                builtBy remapJar
-            }
-            artifact(sourcesJar) {
-                builtBy remapSourcesJar
-            }
-        }
-    }
-
-    // select the repositories you want to publish to
-    repositories {
-        // uncomment to publish to the local maven
-        // mavenLocal()
-    }
+artifacts {
+    archives remappedShadowJar
+    shadow shadowJar
 }

@@ -49,6 +49,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -142,6 +144,11 @@ public class CroptopiaForge {
             // register a new block here
             LeavesRegistry.init();
             BlockRegistry.init();
+
+            Map<Block, Block> stripMap = new HashMap<>(AxeItem.BLOCK_STRIPPING_MAP);
+            stripMap.put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog);
+            stripMap.put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood);
+            AxeItem.BLOCK_STRIPPING_MAP = stripMap;
         }
 
         @SubscribeEvent
