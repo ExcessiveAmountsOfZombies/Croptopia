@@ -369,7 +369,7 @@ public class ItemRegistry {
 
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new SwordItem(ToolMaterials.IRON, 3, -2.4F, createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item fryingPan = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
 

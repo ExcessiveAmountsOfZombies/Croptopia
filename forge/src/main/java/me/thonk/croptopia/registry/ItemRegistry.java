@@ -705,7 +705,7 @@ public class ItemRegistry {
         strippedCinnamonWood = registerItem(itemRegister, ItemNames.STRIPPED_CINNAMON_WOOD, new BlockNamedItem(BlockRegistry.strippedCinnamonWood, createGroup()));
 
         foodPress = registerItem(itemRegister, ItemNames.FOOD_PRESS, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
-        fryingPan = registerItem(itemRegister, ItemNames.FRYING_PAN, new SwordItem(ItemTier.IRON, 5, -2.0F, createGroup().maxStackSize(1).defaultMaxDamage(500)));
+        fryingPan = registerItem(itemRegister, ItemNames.FRYING_PAN, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
         cookingPot = registerItem(itemRegister, ItemNames.COOKING_POT, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
         mortarAndPestle = registerItem(itemRegister, ItemNames.MORTAR_AND_PESTLE, new Item(createGroup().maxStackSize(1).defaultMaxDamage(500)));
 
