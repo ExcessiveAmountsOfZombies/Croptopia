@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:rice"
+      "tag": "${dependant}:rice"
     },
     {
-      "item": "croptopia:almond"
+      "tag": "${dependant}:almonds"
     },
     {
-      "item": "croptopia:lime"
+      "tag": "${dependant}:limes"
     },
     {
       "item": "minecraft:water_bucket"

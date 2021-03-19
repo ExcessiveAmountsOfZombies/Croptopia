@@ -2,13 +2,13 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:squash"
+      "tag": "${dependant}:squash"
     },
     {
-      "item": "croptopia:chile_pepper"
+      "tag": "${dependant}:chile_peppers"
     },
     {
-      "item": "croptopia:olive_oil"
+      "tag": "${dependant}:olive_oils"
     },
     {
       "item": "croptopia:frying_pan"

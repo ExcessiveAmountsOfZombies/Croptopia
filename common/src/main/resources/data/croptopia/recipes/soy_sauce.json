@@ -5,7 +5,7 @@
       "item": "croptopia:food_press"
     },
     {
-      "item": "croptopia:soybean"
+      "tag": "${dependant}:soybeans"
     },
     {
       "item": "minecraft:water_bucket"

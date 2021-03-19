@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:nectarine"
+      "tag": "${dependant}:nectarines"
     },
     {
-      "item": "croptopia:nectarine"
+      "tag": "${dependant}:nectarines"
     },
     {
       "tag": "minecraft:saplings"

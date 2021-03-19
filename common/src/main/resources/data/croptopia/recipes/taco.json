@@ -5,7 +5,7 @@
       "tag": "${dependant}:tortillas"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
       "tag": "${dependant}:lettuce"

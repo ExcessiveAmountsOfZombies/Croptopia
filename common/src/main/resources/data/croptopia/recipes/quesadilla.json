@@ -8,10 +8,10 @@
       "tag": "${dependant}:tortillas"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
-      "item": "croptopia:avocado"
+      "tag": "${dependant}:avocados"
     },
     {
       "tag": "croptopia:chicken_replacements"

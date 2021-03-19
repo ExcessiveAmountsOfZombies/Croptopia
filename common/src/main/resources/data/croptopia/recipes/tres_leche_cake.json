@@ -11,13 +11,13 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     },
     {
-      "item": "croptopia:vanilla"
+      "tag": "${dependant}:vanilla"
     },
     {
-      "item": "croptopia:rum"
+      "tag": "${dependant}:rums"
     },
     {
       "item": "croptopia:whipping_cream"

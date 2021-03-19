@@ -8,16 +8,16 @@
       "item": "croptopia:pepper"
     },
     {
-      "item": "croptopia:blackbean"
+      "tag": "${dependant}:blackbeans"
     },
     {
       "tag": "${dependant}:corn"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
-      "item": "croptopia:rice"
+      "tag": "${dependant}:rice"
     },
     {
       "item": "croptopia:cooking_pot"

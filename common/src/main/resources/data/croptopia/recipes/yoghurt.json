@@ -8,7 +8,7 @@
       "tag": "croptopia:milks"
     },
     {
-      "item": "croptopia:strawberry"
+      "tag": "${dependant}:strawberries"
     }
   ],
   "result": {

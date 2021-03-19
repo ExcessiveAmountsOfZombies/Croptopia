@@ -5,7 +5,7 @@
       "tag": "${dependant}:doughs"
     },
     {
-      "item": "croptopia:pecan"
+      "tag": "${dependant}:pecans"
     },
     {
       "item": "minecraft:egg"
@@ -14,7 +14,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     },
     {
       "item": "croptopia:frying_pan"

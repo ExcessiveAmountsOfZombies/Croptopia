@@ -8,7 +8,7 @@
       "item": "minecraft:egg"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     }
   ],
   "result": {

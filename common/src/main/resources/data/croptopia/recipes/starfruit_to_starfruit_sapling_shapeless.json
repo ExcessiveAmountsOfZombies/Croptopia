@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:starfruit"
+      "tag": "${dependant}:starfruits"
     },
     {
-      "item": "croptopia:starfruit"
+      "tag": "${dependant}:starfruits"
     },
     {
       "tag": "minecraft:saplings"

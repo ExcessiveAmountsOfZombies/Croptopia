@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:blackbean"
+      "tag": "${dependant}:blackbeans"
     },
     {
-      "item": "croptopia:blackbean"
+      "tag": "${dependant}:blackbeans"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
       "tag": "${dependant}:lettuce"

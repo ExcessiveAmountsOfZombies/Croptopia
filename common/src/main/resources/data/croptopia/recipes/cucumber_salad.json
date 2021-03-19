@@ -5,13 +5,13 @@
       "item": "minecraft:bowl"
     },
     {
-      "item": "croptopia:cucumber"
+      "tag": "${dependant}:cucumbers"
     },
     {
       "tag": "${dependant}:lettuce"
     },
     {
-      "item": "croptopia:spinach"
+      "tag": "${dependant}:spinach"
     }
   ],
   "result": {

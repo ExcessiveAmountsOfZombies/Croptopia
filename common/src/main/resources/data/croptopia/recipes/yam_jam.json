@@ -2,10 +2,10 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:yam"
+      "tag": "${dependant}:yams"
     },
     {
-      "item": "croptopia:vanilla"
+      "tag": "${dependant}:vanilla"
     },
     {
       "tag": "croptopia:milks"

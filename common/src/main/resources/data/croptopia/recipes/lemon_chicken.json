@@ -2,13 +2,13 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:lemon"
+      "tag": "${dependant}:lemons"
     },
     {
-      "item": "croptopia:chile_pepper"
+      "tag": "${dependant}:chile_peppers"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
       "tag": "croptopia:chicken_replacements"

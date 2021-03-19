@@ -8,10 +8,10 @@
       "item": "croptopia:pepper"
     },
     {
-      "item": "croptopia:olive_oil"
+      "tag": "${dependant}:olive_oils"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     },
     {
       "tag": "${dependant}:salts"

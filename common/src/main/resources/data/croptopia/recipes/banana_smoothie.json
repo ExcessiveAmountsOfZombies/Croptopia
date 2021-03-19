@@ -8,7 +8,7 @@
       "tag": "${dependant}:bananas"
     },
     {
-      "tag": "minecraft:ice"
+      "item": "minecraft:ice"
     },
     {
       "tag": "croptopia:milks"

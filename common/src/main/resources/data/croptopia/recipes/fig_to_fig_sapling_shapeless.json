@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:fig"
+      "tag": "${dependant}:figs"
     },
     {
-      "item": "croptopia:fig"
+      "tag": "${dependant}:figs"
     },
     {
       "tag": "minecraft:saplings"

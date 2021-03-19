@@ -5,10 +5,10 @@
       "tag": "croptopia:meat_replacements"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
       "tag": "${dependant}:tortillas"

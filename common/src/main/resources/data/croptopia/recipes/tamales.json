@@ -11,7 +11,7 @@
       "item": "croptopia:corn_husk"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     },
     {
       "tag": "${dependant}:salts"

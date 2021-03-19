@@ -5,7 +5,7 @@
       "tag": "${dependant}:doughs"
     },
     {
-      "item": "croptopia:chile_pepper"
+      "tag": "${dependant}:chile_peppers"
     },
     {
       "item": "minecraft:chicken"

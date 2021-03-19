@@ -8,7 +8,7 @@
       "tag": "croptopia:fishes"
     },
     {
-      "item": "croptopia:rice"
+      "tag": "${dependant}:rice"
     }
   ],
   "result": {

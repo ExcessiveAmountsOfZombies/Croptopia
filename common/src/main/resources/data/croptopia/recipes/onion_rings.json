@@ -11,10 +11,10 @@
       "tag": "${dependant}:salts"
     },
     {
-      "item": "croptopia:olive_oil"
+      "tag": "${dependant}:olive_oils"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     }
   ],
   "result": {

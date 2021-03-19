@@ -5,7 +5,7 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "item": "croptopia:lime"
+      "tag": "${dependant}:limes"
     },
     {
       "tag": "${dependant}:salts"

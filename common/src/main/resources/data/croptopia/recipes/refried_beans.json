@@ -2,16 +2,16 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:blackbean"
+      "tag": "${dependant}:blackbeans"
     },
     {
-      "item": "croptopia:blackbean"
+      "tag": "${dependant}:blackbeans"
     },
     {
       "item": "croptopia:pepper"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
       "item": "croptopia:frying_pan"

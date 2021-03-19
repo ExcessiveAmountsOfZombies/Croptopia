@@ -5,10 +5,10 @@
       "tag": "${dependant}:doughs"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
       "item": "croptopia:frying_pan"

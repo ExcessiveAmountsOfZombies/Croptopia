@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:pecan"
+      "tag": "${dependant}:pecans"
     },
     {
-      "item": "croptopia:pecan"
+      "tag": "${dependant}:pecans"
     },
     {
       "tag": "minecraft:saplings"

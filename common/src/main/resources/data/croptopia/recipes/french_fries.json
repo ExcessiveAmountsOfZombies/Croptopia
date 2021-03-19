@@ -11,7 +11,7 @@
       "tag": "${dependant}:salts"
     },
     {
-      "item": "croptopia:olive_oil"
+      "tag": "${dependant}:olive_oils"
     }
   ],
   "result": {

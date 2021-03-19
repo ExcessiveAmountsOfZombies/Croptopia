@@ -5,7 +5,7 @@
       "tag": "${dependant}:artichokes"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     }
   ],
   "result": {

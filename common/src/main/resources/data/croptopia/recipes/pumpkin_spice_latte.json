@@ -8,7 +8,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:paprika"
+      "tag": "${dependant}:paprika"
     },
     {
       "tag": "croptopia:milks"

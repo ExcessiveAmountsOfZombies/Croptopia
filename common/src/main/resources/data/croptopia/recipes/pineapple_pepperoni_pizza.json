@@ -5,19 +5,19 @@
       "tag": "${dependant}:doughs"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
-      "item": "croptopia:pineapple"
+      "tag": "${dependant}:pineapples"
     },
     {
-      "item": "croptopia:pepperoni"
+      "tag": "${dependant}:pepperoni"
     },
     {
-      "item": "croptopia:pineapple"
+      "tag": "${dependant}:pineapples"
     },
     {
       "item": "croptopia:frying_pan"

@@ -8,10 +8,10 @@
       "tag": "${dependant}:lettuce"
     },
     {
-      "item": "croptopia:spinach"
+      "tag": "${dependant}:spinach"
     },
     {
-      "item": "croptopia:kale"
+      "tag": "${dependant}:kale"
     }
   ],
   "result": {

@@ -11,7 +11,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     }
   ],
   "result": {

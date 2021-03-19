@@ -5,16 +5,16 @@
       "tag": "croptopia:meat_replacements"
     },
     {
-      "item": "croptopia:bellpepper"
+      "tag": "${dependant}:bellpeppers"
     },
     {
       "tag": "${dependant}:onions"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
-      "item": "croptopia:cheese"
+      "tag": "${dependant}:cheeses"
     },
     {
       "item": "croptopia:frying_pan"

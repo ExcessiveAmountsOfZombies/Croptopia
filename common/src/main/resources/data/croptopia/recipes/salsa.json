@@ -2,19 +2,19 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     },
     {
-      "item": "croptopia:chile_pepper"
+      "tag": "${dependant}:chile_peppers"
     },
     {
       "tag": "${dependant}:salts"
     },
     {
-      "item": "croptopia:lime"
+      "tag": "${dependant}:limes"
     },
     {
-      "item": "croptopia:tomatillo"
+      "tag": "${dependant}:tomatillos"
     }
   ],
   "result": {

@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:vanilla"
+      "tag": "${dependant}:vanilla"
     }
   ],
   "result": {
-    "item": "croptopia:vanilla_seed",
+    "item": "croptopia:vanilla_seeds",
     "count": 1
   }
 }

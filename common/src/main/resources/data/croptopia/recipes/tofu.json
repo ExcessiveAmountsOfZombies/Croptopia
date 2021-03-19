@@ -8,7 +8,7 @@
       "item": "minecraft:water_bucket"
     },
     {
-      "item": "croptopia:soybean"
+      "tag": "${dependant}:soybeans"
     }
   ],
   "result": {

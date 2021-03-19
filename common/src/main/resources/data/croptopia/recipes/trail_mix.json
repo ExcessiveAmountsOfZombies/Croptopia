@@ -11,11 +11,13 @@
       "tag": "croptopia:nuts"
     },
     {
-      "item": "croptopia:raisins"
+      "tag": "${dependant}:raisins"
     },
-"tag": "${dependant}:celeries",
     {
-      "item": "croptopia:chocolate"
+      "tag": "${dependant}:salts"
+    },
+    {
+      "tag": "${dependant}:chocolates"
     }
   ],
   "result": {

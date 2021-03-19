@@ -8,7 +8,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:vanilla"
+      "tag": "${dependant}:vanilla"
     }
   ],
   "result": {

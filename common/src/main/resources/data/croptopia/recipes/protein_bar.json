@@ -11,10 +11,10 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:caramel"
+      "tag": "${dependant}:caramel"
     },
     {
-      "item": "croptopia:chocolate"
+      "tag": "${dependant}:chocolates"
     },
     {
       "tag": "${dependant}:salts"
