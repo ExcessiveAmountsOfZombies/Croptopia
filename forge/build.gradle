@@ -22,7 +22,7 @@ repositories {
     }
 }
 
-rootProject.platform_tag_key = "forge"
+rootProject.ext.set("platform_tag", "forge")
 
 configurations {
     dev

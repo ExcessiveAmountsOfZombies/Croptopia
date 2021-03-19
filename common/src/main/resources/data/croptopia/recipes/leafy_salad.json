@@ -5,7 +5,7 @@
       "item": "minecraft:bowl"
     },
     {
-      "item": "croptopia:lettuce"
+      "tag": "${dependant}:lettuce"
     },
     {
       "item": "croptopia:spinach"

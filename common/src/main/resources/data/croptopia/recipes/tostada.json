@@ -11,10 +11,10 @@
       "item": "croptopia:tomato"
     },
     {
-      "item": "croptopia:lettuce"
+      "tag": "${dependant}:lettuce"
     },
     {
-      "item": "croptopia:tortilla"
+      "tag": "${dependant}:tortillas"
     }
   ],
   "result": {

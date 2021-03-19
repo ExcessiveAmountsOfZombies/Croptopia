@@ -2,7 +2,7 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:blueberry"
+      "tag": "${dependant}:blueberries"
     },
     {
       "item": "croptopia:cooking_pot"

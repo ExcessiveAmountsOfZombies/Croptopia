@@ -8,7 +8,7 @@
       "item": "croptopia:cucumber"
     },
     {
-      "item": "croptopia:lettuce"
+      "tag": "${dependant}:lettuce"
     },
     {
       "item": "croptopia:spinach"

@@ -5,7 +5,6 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.data.Runner;
-import me.thonk.croptopia.dependencies.Dehydration;
 import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
@@ -25,11 +24,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.boss.dragon.EnderDragonEntity;
+import net.minecraft.entity.boss.dragon.EnderDragonFight;
+import net.minecraft.entity.boss.dragon.EnderDragonSpawnState;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.recipe.Recipe;
@@ -60,8 +61,6 @@ public class Croptopia implements ModInitializer {
     public static final LootConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     public static final DamageDurabilitySerializer DAMAGE_DURABILITY =
             registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilitySerializer());
-
-    public static Dehydration dehydration;
     public static Patchouli patchouli;
 
 
@@ -70,8 +69,6 @@ public class Croptopia implements ModInitializer {
     @Override
     public void onInitialize() {
         runner = new Runner();
-
-        dehydration = new Dehydration();
         patchouli = new Patchouli();
         LeavesRegistry.init();
         BlockRegistry.init();

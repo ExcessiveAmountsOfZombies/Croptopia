@@ -14,7 +14,7 @@
       "item": "croptopia:flour"
     },
     {
-      "item": "croptopia:salt"
+      "tag": "${dependant}:salts"
     },
     {
       "item": "croptopia:cooking_pot"

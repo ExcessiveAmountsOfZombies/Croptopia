@@ -11,7 +11,7 @@
       "item": "minecraft:carrot"
     },
     {
-      "item": "croptopia:corn"
+      "tag": "${dependant}:corn"
     }
   ],
   "result": {

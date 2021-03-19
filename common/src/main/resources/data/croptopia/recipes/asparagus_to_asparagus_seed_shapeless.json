@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:asparagus"
+      "tag": "${dependant}:asparagus"
     }
   ],
   "result": {

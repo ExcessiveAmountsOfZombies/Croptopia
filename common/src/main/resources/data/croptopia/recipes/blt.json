@@ -8,10 +8,10 @@
       "item": "minecraft:porkchop"
     },
     {
-      "item": "croptopia:lettuce"
+      "tag": "${dependant}:lettuce"
     },
     {
-      "item": "croptopia:tomato"
+      "tag": "${dependant}:tomatos"
     }
   ],
   "result": {

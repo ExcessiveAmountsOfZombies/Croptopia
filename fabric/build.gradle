@@ -13,7 +13,7 @@ repositories {
     }
 }
 
-
+rootProject.ext { build_modifier = "c" }
 
 configurations {
     shade
@@ -27,30 +27,33 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
     modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
 
-    modImplementation ("net.dehydration:dehydration:${rootProject.dehydration_version}") {
-        exclude(group: "net.fabricmc.fabric-api")
-    }
     modCompile "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
 
 
+    compile project(":common")
     shade project(":common")
 }
 
 processResources {
-    rootProject.platform_tag_key = "c"
-    inputs.property "mod_version", rootProject.version
+    inputs.property "mc_version", rootProject.version
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
-        expand "mod_version": rootProject.version
+        expand "mc_version": rootProject.version
     }
 
     from(sourceSets.main.resources.srcDirs) {
         exclude "fabric.mod.json"
     }
+
+    from(project(":common").sourceSets.main.resources.srcDirs) {
+        include('**/data/croptopia/recipes/**')
+        expand "dependant": "c"
+    }
 }
+tasks.processResources.dependsOn(project(":common").tasks.processResources)
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

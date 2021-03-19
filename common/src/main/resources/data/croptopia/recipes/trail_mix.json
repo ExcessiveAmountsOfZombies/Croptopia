@@ -13,9 +13,7 @@
     {
       "item": "croptopia:raisins"
     },
-    {
-      "item": "croptopia:salt"
-    },
+"tag": "${dependant}:celeries",
     {
       "item": "croptopia:chocolate"
     }

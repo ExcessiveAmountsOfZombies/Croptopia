@@ -5,7 +5,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     },
     {
       "tag": "croptopia:milks"
@@ -14,7 +14,7 @@
       "item": "minecraft:egg"
     },
     {
-      "item": "croptopia:chocolate"
+      "tag": "${dependant}:chocolates"
     },
     {
       "item": "croptopia:frying_pan"

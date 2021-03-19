@@ -11,7 +11,7 @@
       "item": "croptopia:blackbean"
     },
     {
-      "item": "croptopia:corn"
+      "tag": "${dependant}:corn"
     },
     {
       "item": "croptopia:cheese"

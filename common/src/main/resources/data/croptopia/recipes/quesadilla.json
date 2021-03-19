@@ -2,10 +2,10 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:tortilla"
+      "tag": "${dependant}:tortillas"
     },
     {
-      "item": "croptopia:tortilla"
+      "tag": "${dependant}:tortillas"
     },
     {
       "item": "croptopia:cheese"

@@ -2,7 +2,7 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:dough"
+      "tag": "${dependant}:doughs"
     },
     {
       "item": "minecraft:apple"
@@ -14,7 +14,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "croptopia:flour"
+      "tag": "${dependant}:flours"
     },
     {
       "item": "croptopia:frying_pan"

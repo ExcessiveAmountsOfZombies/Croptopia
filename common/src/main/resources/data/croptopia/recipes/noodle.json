@@ -8,7 +8,7 @@
       "item": "minecraft:water_bucket"
     },
     {
-      "item": "croptopia:salt"
+      "tag": "${dependant}:salts"
     },
     {
       "item": "croptopia:flour"

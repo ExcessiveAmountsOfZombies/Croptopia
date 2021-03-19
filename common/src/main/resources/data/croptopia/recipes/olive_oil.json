@@ -2,10 +2,10 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:olive"
+      "tag": "${dependant}:olives"
     },
     {
-      "item": "croptopia:olive"
+      "tag": "${dependant}:olives"
     },
     {
       "item": "croptopia:food_press"

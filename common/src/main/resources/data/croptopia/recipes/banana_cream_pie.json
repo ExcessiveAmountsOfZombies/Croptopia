@@ -2,10 +2,10 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:banana"
+      "tag": "${dependant}:bananas"
     },
     {
-      "item": "croptopia:vanilla"
+      "tag": "${dependant}:vanillas"
     },
     {
       "item": "minecraft:sugar"

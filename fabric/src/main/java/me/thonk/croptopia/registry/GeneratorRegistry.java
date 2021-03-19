@@ -334,7 +334,7 @@ public class GeneratorRegistry {
 
     public static final ConfiguredFeature<?, ?> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
             DISK_SALT.decorate(ConfiguredFeatures.Decorators.SQUARE_TOP_SOLID_HEIGHTMAP
-                    .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(25)))).repeat(2));
+                    .decorate(Decorator.CHANCE.configure(new ChanceDecoratorConfig(25)))).repeat(5));
 
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(Identifier id, ConfiguredFeature<FC, ?> configuredFeature) {

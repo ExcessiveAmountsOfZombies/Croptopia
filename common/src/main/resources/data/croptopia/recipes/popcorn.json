@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "item": "croptopia:corn"
+    "tag": "${dependant}:corn"
   },
   "result": "croptopia:popcorn",
   "experience": 0.1,

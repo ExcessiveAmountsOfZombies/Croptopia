@@ -2,7 +2,7 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:dough"
+      "tag": "${dependant}:doughs"
     },
     {
       "item": "croptopia:cheese"
@@ -14,7 +14,7 @@
       "item": "croptopia:bellpepper"
     },
     {
-      "item": "croptopia:olive"
+      "tag": "${dependant}:olives"
     },
     {
       "tag": "croptopia:meat_replacements"

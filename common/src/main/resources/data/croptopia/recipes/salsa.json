@@ -8,7 +8,7 @@
       "item": "croptopia:chile_pepper"
     },
     {
-      "item": "croptopia:salt"
+      "tag": "${dependant}:salts"
     },
     {
       "item": "croptopia:lime"

@@ -8,7 +8,7 @@
       "item": "croptopia:lime"
     },
     {
-      "item": "croptopia:salt"
+      "tag": "${dependant}:salts"
     }
   ],
   "result": {

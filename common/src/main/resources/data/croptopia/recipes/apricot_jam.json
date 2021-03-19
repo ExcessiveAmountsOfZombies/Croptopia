@@ -2,7 +2,7 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:apricot"
+      "tag": "${dependant}:apricots"
     },
     {
       "item": "croptopia:cooking_pot"

@@ -2,10 +2,10 @@
   "type": "croptopia:crafting_damage_durability",
   "ingredients": [
     {
-      "item": "croptopia:dough"
+      "tag": "${dependant}:doughs"
     },
     {
-      "item": "croptopia:lettuce"
+      "tag": "${dependant}:lettuce"
     },
     {
       "item": "minecraft:egg"

@@ -1,12 +1,11 @@
-
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:banana"
+      "tag": "${dependant}:bananas"
     },
     {
-      "item": "croptopia:banana"
+      "tag": "${dependant}:bananas"
     },
     {
       "tag": "minecraft:saplings"

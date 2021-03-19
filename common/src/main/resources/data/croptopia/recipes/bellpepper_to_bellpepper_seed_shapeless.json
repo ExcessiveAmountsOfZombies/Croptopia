@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "croptopia:bellpepper"
+      "tag": "${dependant}:bellpeppers"
     }
   ],
   "result": {
