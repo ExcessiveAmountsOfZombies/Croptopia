@@ -1,5 +1,6 @@
 package me.thonk.croptopia;
 
+import com.google.common.collect.ImmutableMap;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -10,6 +11,8 @@ import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
+import me.thonk.croptopia.mixin.AxeAccess;
+import me.thonk.croptopia.mixin.AxeMixin;
 import me.thonk.croptopia.recipe.DamageDurabilitySerializer;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Composter;
@@ -24,13 +27,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.boss.dragon.EnderDragonEntity;
-import net.minecraft.entity.boss.dragon.EnderDragonFight;
-import net.minecraft.entity.boss.dragon.EnderDragonSpawnState;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.recipe.Recipe;
@@ -44,6 +41,7 @@ import net.minecraft.world.BlockView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static me.thonk.croptopia.Constants.OPTIONS;
 
@@ -85,6 +83,14 @@ public class Croptopia implements ModInitializer {
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
             SetupCommand.register(commandDispatcher);
         });
+
+        Map<Block, Block> immutableBlocks = AxeAccess.getStrippedBlocks();
+        AxeAccess.setStrippedBlocks(new ImmutableMap.Builder<Block, Block>()
+                .putAll(immutableBlocks)
+                .put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog)
+                .put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood)
+                .build());
+
         runner.init();
     }
 

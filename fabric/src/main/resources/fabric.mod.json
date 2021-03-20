@@ -4,6 +4,7 @@
   "version": "${mod_version}",
   "name": "Croptopia",
   "description": "Adds crops to the game",
+  "accessWidener": "croptopia.accesswidener",
   "authors": [
     "Thonk",
     "Rainbowcraft2"
