@@ -10,6 +10,7 @@ import me.thonk.croptopia.data.Runner;
 import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
+import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
@@ -28,7 +29,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -51,6 +51,7 @@ import static me.thonk.croptopia.Constants.OPTIONS;
 public class Croptopia implements ModInitializer {
 
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
+    public static ArrayList<Item> cropItems = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
@@ -86,17 +87,11 @@ public class Croptopia implements ModInitializer {
             SetupCommand.register(commandDispatcher);
         });
 
-        ImmutableSet.Builder<Item> builder = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
-        seeds.forEach(configurableSeed -> builder.add(configurableSeed.getSeedItem()));
-        VillagerAccess.setGatherableItems(builder.build());
 
+        modifyVillagerFoodItems();
+        modifyVillagerGatherables();
+        modifyAxeBlockStripping();
 
-        Map<Block, Block> immutableBlocks = AxeAccess.getStrippedBlocks();
-        AxeAccess.setStrippedBlocks(new ImmutableMap.Builder<Block, Block>()
-                .putAll(immutableBlocks)
-                .put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog)
-                .put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood)
-                .build());
 
         runner.init();
     }
@@ -118,6 +113,10 @@ public class Croptopia implements ModInitializer {
         Registry.register(Registry.ITEM, Croptopia.createIdentifier(itemName), item);
         if (item instanceof AliasedBlockItem) {
             ((AliasedBlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
+        }
+
+        if (item instanceof CropItem) {
+            cropItems.add(item);
         }
 
         if (item instanceof SeedItem) {
@@ -182,5 +181,29 @@ public class Croptopia implements ModInitializer {
 
     public static List<ConfigurableSeed> getSeeds() {
         return seeds;
+    }
+
+
+    private void modifyVillagerFoodItems() {
+        ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
+                .putAll(VillagerAccess.getItemFoodValues());
+        cropItems.forEach(item -> villagerFoodItems.put(item, item.getFoodComponent().getHunger()));
+        VillagerAccess.setItemFoodValues(villagerFoodItems.build());
+    }
+
+    private void modifyVillagerGatherables() {
+        ImmutableSet.Builder<Item> villagerGatherables = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
+        seeds.forEach(configurableSeed -> villagerGatherables.add(configurableSeed.getSeedItem()));
+        cropItems.forEach(villagerGatherables::add);
+        VillagerAccess.setGatherableItems(villagerGatherables.build());
+    }
+
+    private void modifyAxeBlockStripping() {
+        Map<Block, Block> immutableBlocks = AxeAccess.getStrippedBlocks();
+        AxeAccess.setStrippedBlocks(new ImmutableMap.Builder<Block, Block>()
+                .putAll(immutableBlocks)
+                .put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog)
+                .put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood)
+                .build());
     }
 }
