@@ -20,10 +20,6 @@ configurations {
     compile.extendsFrom shade
 }
 
-minecraft {
-    accessWidener =  file("src/main/resources/croptopia.accesswidener")
-}
-
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
     mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
