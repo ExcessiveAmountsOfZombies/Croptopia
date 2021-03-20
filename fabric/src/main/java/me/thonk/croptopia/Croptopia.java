@@ -1,6 +1,7 @@
 package me.thonk.croptopia;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -12,7 +13,7 @@ import me.thonk.croptopia.items.CropLootTableModifier;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
-import me.thonk.croptopia.mixin.AxeMixin;
+import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.recipe.DamageDurabilitySerializer;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Composter;
@@ -27,6 +28,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.Material;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -83,6 +85,11 @@ public class Croptopia implements ModInitializer {
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
             SetupCommand.register(commandDispatcher);
         });
+
+        ImmutableSet.Builder<Item> builder = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
+        seeds.forEach(configurableSeed -> builder.add(configurableSeed.getSeedItem()));
+        VillagerAccess.setGatherableItems(builder.build());
+
 
         Map<Block, Block> immutableBlocks = AxeAccess.getStrippedBlocks();
         AxeAccess.setStrippedBlocks(new ImmutableMap.Builder<Block, Block>()
