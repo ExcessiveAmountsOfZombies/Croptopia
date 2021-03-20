@@ -8,6 +8,12 @@
       "tag": "croptopia:fruits"
     },
     {
+      "tag": "croptopia:fruits"
+    },
+    {
+      "tag": "croptopia:fruits"
+    },
+    {
       "item": "minecraft:ice"
     },
     {
@@ -16,6 +22,6 @@
   ],
   "result": {
     "item": "croptopia:fruit_smoothie",
-    "count": 1
+    "count": 2
   }
 }

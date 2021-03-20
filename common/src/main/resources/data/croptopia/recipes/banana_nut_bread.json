@@ -1,0 +1,24 @@
+{
+  "type": "croptopia:crafting_damage_durability",
+  "ingredients": [
+    {
+      "item": "croptopia:cinnamon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "${dependant}:flours"
+    },
+    {
+      "tag": "${dependant}:bananas"
+    },
+    {
+      "tag": "croptopia:nuts"
+    }
+  ],
+  "result": {
+    "item": "croptopia:banana_nut_bread",
+    "count": 2
+  }
+}

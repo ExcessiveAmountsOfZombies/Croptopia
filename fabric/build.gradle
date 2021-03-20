@@ -37,15 +37,10 @@ dependencies {
 }
 
 processResources {
-    inputs.property "mc_version", rootProject.version
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
-        expand "mc_version": rootProject.version
-    }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude "fabric.mod.json"
+        expand "mod_version": rootProject.version
     }
 
     from(project(":common").sourceSets.main.resources.srcDirs) {

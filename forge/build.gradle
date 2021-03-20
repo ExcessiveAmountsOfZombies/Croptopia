@@ -83,6 +83,14 @@ minecraft {
     }
 }
 
+processResources {
+
+    from(project(":common").sourceSets.main.resources.srcDirs) {
+        include('**/data/croptopia/recipes/**')
+        expand "dependant": "forge"
+    }
+}
+
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {

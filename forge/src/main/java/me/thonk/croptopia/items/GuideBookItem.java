@@ -1,5 +1,6 @@
 package me.thonk.croptopia.items;
 
+import me.thonk.croptopia.CroptopiaForge;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
@@ -23,7 +24,7 @@ public class GuideBookItem extends Item {
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getHeldItem(hand);
 
-        if (user instanceof ServerPlayerEntity) {
+        if (user instanceof ServerPlayerEntity && CroptopiaForge.patchouli.isLoaded()) {
             ServerPlayerEntity player = (ServerPlayerEntity) user;
             PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
         }

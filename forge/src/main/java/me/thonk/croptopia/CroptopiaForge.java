@@ -4,6 +4,7 @@ import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.Config;
+import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.events.BiomeModification;
 import me.thonk.croptopia.events.BlockBreakEvent;
 import me.thonk.croptopia.events.Harvest;
@@ -71,6 +72,8 @@ public class CroptopiaForge {
     public static Config config;
 
 
+    public static Patchouli patchouli;
+
     public static ItemGroup CROPTOPIA_ITEM_GROUP;
 
     public CroptopiaForge() {
@@ -106,6 +109,7 @@ public class CroptopiaForge {
         // some preinit code
         Composter.init();
         BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
+        patchouli = new Patchouli();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
