@@ -8,6 +8,9 @@ import static net.minecraft.block.ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE;
 public class Composter {
 
     public static void init() {
+        Croptopia.cropItems.forEach(cropItem -> {
+            registerCompostableItem(0.65F, cropItem);
+        });
         Croptopia.getSeeds().forEach(configurableSeed -> {
             registerCompostableItem(0.3F, configurableSeed.getSeedItem());
         });
