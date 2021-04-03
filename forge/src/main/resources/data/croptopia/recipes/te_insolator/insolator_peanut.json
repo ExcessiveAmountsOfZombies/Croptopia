@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:peanut_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:peanut",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:peanut_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

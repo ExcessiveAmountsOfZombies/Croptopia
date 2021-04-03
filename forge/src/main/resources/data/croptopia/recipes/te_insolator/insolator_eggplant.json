@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:eggplant_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:eggplant",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:eggplant_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

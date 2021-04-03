@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:radish_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:radish",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:radish_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

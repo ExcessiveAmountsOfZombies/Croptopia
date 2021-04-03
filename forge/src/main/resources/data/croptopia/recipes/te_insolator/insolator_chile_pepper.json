@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:chile_pepper_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:chile_pepper",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:chile_pepper_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

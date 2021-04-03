@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:leek_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:leek",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:leek_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

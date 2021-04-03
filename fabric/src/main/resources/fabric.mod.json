@@ -42,6 +42,7 @@
     "minecraft": ">=1.16.3"
   },
   "suggests": {
+    "patchouli": "*",
     "dehydration": ">=1.0.10"
   }
 }

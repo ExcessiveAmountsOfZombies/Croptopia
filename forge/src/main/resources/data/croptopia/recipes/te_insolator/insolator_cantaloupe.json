@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:cantaloupe_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:cantaloupe",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:cantaloupe_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

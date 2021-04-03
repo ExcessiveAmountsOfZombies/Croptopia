@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:vanilla_seeds"
+  },
+  "result": [
+    {
+      "item": "croptopia:vanilla",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:vanilla_seeds",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

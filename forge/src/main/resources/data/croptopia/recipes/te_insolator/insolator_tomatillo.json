@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:tomatillo_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:tomatillo",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:tomatillo_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}

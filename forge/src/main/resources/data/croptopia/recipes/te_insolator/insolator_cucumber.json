@@ -1,0 +1,17 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:cucumber_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:cucumber",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:cucumber_seed",
+      "chance": 1.1
+    }
+  ],
+  "water_mod": 0.5
+}
