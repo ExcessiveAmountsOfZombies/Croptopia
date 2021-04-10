@@ -6,10 +6,16 @@
     },
     {
       "tag": "${dependant}:corn"
+    },
+    {
+      "tag": "${dependant}:corn"
+    },
+    {
+      "tag": "${dependant}:corn"
     }
   ],
   "result": {
     "item": "croptopia:corn_husk",
-    "count": 4
+    "count": 8
   }
 }

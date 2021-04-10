@@ -5,7 +5,7 @@
       "tag": "${dependant}:bananas"
     },
     {
-      "tag": "${dependant}:vanillas"
+      "tag": "${dependant}:vanilla"
     },
     {
       "item": "minecraft:sugar"
