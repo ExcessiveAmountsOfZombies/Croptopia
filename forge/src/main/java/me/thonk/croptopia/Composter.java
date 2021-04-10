@@ -8,6 +8,9 @@ import static net.minecraft.block.ComposterBlock.CHANCES;
 public class Composter {
 
     public static void init() {
+        CroptopiaForge.cropItems.forEach(item -> {
+            registerCompostableItem(0.65F, item);
+        });
         CroptopiaForge.seeds.forEach(seed -> {
             registerCompostableItem(0.3F, seed);
         });

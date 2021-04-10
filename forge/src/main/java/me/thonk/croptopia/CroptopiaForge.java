@@ -1,5 +1,7 @@
 package me.thonk.croptopia;
 
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -9,7 +11,9 @@ import me.thonk.croptopia.events.BiomeModification;
 import me.thonk.croptopia.events.BlockBreakEvent;
 import me.thonk.croptopia.events.Harvest;
 import me.thonk.croptopia.events.LootTableModification;
+import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
@@ -19,6 +23,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -34,6 +39,7 @@ import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -64,6 +70,7 @@ public class CroptopiaForge {
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
     public static ArrayList<SeedItem> seeds = new ArrayList<>();
+    public static ArrayList<Item> cropItems = new ArrayList<>();
 
     // todo: there might be a different way i'm supposed to do this in forge.
     public static LootConditionType BIOME_CHECK;
@@ -89,6 +96,7 @@ public class CroptopiaForge {
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(config::initConfig);
 
+        MinecraftForge.EVENT_BUS.addListener(CroptopiaForge::onWorldLoad);
         MinecraftForge.EVENT_BUS.register(new BiomeModification());
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
         MinecraftForge.EVENT_BUS.register(new Harvest());
@@ -180,6 +188,11 @@ public class CroptopiaForge {
             ((BlockNamedItem) item).addToBlockToItemMap(Item.BLOCK_TO_ITEM, item);
         }
 
+        if (item instanceof CropItem) {
+            cropItems.add(item);
+            System.out.println("heop");
+        }
+
         if (item instanceof SeedItem) {
             CroptopiaCropBlock block = (CroptopiaCropBlock) ((SeedItem) item).getBlock();
             block.setSeed(item);
@@ -242,5 +255,24 @@ public class CroptopiaForge {
 
     private static boolean never(BlockState state, IBlockReader world, BlockPos pos) {
         return false;
+    }
+
+    private static void modifyVillagerFoodItems() {
+        ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
+                .putAll(VillagerAccess.getItemFoodValues());
+        cropItems.forEach(item -> villagerFoodItems.put(item, item.getFood().getHealing()));
+        VillagerAccess.setItemFoodValues(villagerFoodItems.build());
+    }
+
+    private static void modifyVillagerGatherables() {
+        ImmutableSet.Builder<Item> villagerGatherables = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
+        seeds.forEach(villagerGatherables::add);
+        cropItems.forEach(villagerGatherables::add);
+        VillagerAccess.setGatherableItems(villagerGatherables.build());
+    }
+
+    public static void onWorldLoad(WorldEvent.Load event) {
+        modifyVillagerFoodItems();
+        modifyVillagerGatherables();
     }
 }

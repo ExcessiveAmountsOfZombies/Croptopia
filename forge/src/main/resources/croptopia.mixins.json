@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "me.thonk.croptopia.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "croptopia.refmap.json",
+  "mixins": [
+    "VillagerAccess",
+    "VillagerMixin"
+  ],
+  "minVersion": "0.8"
+}

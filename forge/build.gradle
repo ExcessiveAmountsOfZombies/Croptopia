@@ -8,13 +8,13 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.+', changing: true
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
-        //classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
-//apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.spongepowered.mixin'
 
 repositories {
     maven {
@@ -25,16 +25,21 @@ repositories {
 rootProject.ext.set("platform_tag", "forge")
 
 configurations {
-    dev
+    shade
     compileOnly.extendsFrom shade
     compileOnly.extendsFrom shadeSource
 }
 
-/*sourceSets {
+
+mixin {
+    add sourceSets.main, "croptopia.refmap.json"
+}
+
+sourceSets {
     main {
         ext.refMap = "croptopia.refmap.json"
     }
-}*/
+}
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -97,7 +102,7 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
     shade project(":common")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
-    //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
+    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 shadowJar {
@@ -124,10 +129,13 @@ jar {
                 "Implementation-Title": "${archives_base_name}",
                 "Implementation-Version": "${mod_version}",
                 "Implementation-Vendor" :"me thonk",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-                //"MixinConfigs": "croptopia.mixins.json"
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "croptopia.mixins.json"
         ])
     }
 }
 
 shadowJar.finalizedBy('reobfJar')
+println(tasks.getAsMap())
+
+//tasks.getByName("addRefMapToShadowJar").mustRunAfter(task("shadowJar"))
