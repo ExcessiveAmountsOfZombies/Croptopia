@@ -1,0 +1,11 @@
+{
+  "name": "Pepperoni",
+  "icon": "croptopia:salt",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Salt generates uncommonly in river and ice_river biomes. They look like a whiter version of sand."
+    }
+  ]
+}
