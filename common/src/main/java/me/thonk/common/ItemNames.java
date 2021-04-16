@@ -322,6 +322,21 @@ public class ItemNames {
     public static final String CINNAMON_WOOD = "cinnamon_wood";
     public static final String STRIPPED_CINNAMON_WOOD = "stripped_cinnamon_wood";
 
+    // 1.4.0
+    public static final String PEPPER_SEED = "pepper_seed";
+    public static final String MILK_BOTTLE = "milk_bottle";
+    public static final String WATER_BOTTLE = "water_bottle";
+    public static final String SHEPHERDS_PIE = "shepherds_pie";
+    public static final String BEEF_WELLINGTON = "beef_wellington";
+    public static final String FISH_AND_CHIPS = "fish_and_chips";
+    public static final String ETON_MESS = "eton_mess";
+    public static final String TEA = "tea";
+    public static final String CORNISH_PASTY = "cornish_pasty";
+    public static final String SCONES = "scones";
+    public static final String FIGGY_PUDDING = "figgy_pudding";
+    public static final String TREACLE_TART = "treacle_tart";
+    public static final String STICKY_TOFFEE_PUDDING = "sticky_toffee_pudding";
+    public static final String TRIFLE = "trifle";
 
 }
 

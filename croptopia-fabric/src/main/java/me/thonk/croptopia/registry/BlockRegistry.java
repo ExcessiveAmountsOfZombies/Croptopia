@@ -71,6 +71,7 @@ public class BlockRegistry {
     public static Block yamCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block zucchiniCropBlock = new CroptopiaCropBlock(createCropSettings());
     public static Block vanillaCropBlock = new CroptopiaCropBlock(createCropSettings());
+    public static Block pepperCropBlock = new CroptopiaCropBlock(createCropSettings());
 
 
     // real block
@@ -175,6 +176,7 @@ public class BlockRegistry {
         registerBlock(BlockNames.YAM_CROP, yamCropBlock);
         registerBlock(BlockNames.ZUCCHINI_CROP, zucchiniCropBlock);
         registerBlock(BlockNames.VANILLA_CROP, vanillaCropBlock);
+        registerBlock(BlockNames.PEPPER_CROP, pepperCropBlock);
 
         registerBlock(BlockNames.APPLE_SAPLING, appleSaplingBlock);
         registerBlock(BlockNames.BANANA_SAPLING, bananaSaplingBlock);

@@ -152,7 +152,7 @@ public class ItemRegistry {
     public static Item yamSeed = new SeedItem(BlockRegistry.yamCropBlock, createGroup(), SAVANNA);
     public static Item zucchiniSeed = new SeedItem(BlockRegistry.zucchiniCropBlock, createGroup(), SAVANNA);
     public static Item mustardSeed = new SeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS);
-    public static Item pepperSeed = new SeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS);
+    public static Item chilePepperSeed = new SeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS);
     public static Item turmericSeed = new SeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA);
     public static Item gingerSeed = new SeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA);
     public static Item basilSeed = new SeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE);
@@ -365,6 +365,22 @@ public class ItemRegistry {
     public static Item cinnamonWood = new AliasedBlockItem(BlockRegistry.cinnamonWood, createGroup());
     public static Item strippedCinnamonWood = new AliasedBlockItem(BlockRegistry.strippedCinnamonWood, createGroup());
 
+    // 1.4.0
+    public static Item shepherdsPie = new Item(createGroup());
+    public static Item beefWellington = new Item(createGroup());
+    public static Item fishAndChips = new Item(createGroup());
+    public static Item etonMess = new Item(createGroup());
+    public static Item tea = new Item(createGroup());
+    public static Item cornishPasty = new Item(createGroup());
+    public static Item scones = new Item(createGroup());
+    public static Item figgyPudding = new Item(createGroup());
+    public static Item treacleTart = new Item(createGroup());
+    public static Item stickyToffeePudding = new Item(createGroup());
+    public static Item trifle = new Item(createGroup());
+    public static Item pepperSeed = new SeedItem(BlockRegistry.pepperCropBlock, createGroup(), PLAINS);
+    public static Item waterBottle = new Item(createGroup());
+    public static Item milkBottle = new Item(createGroup());
+
     // cooking utensils?
     public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
     public static Item fryingPan = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
@@ -512,7 +528,7 @@ public class ItemRegistry {
         registerItem(ItemNames.YAM_SEED, yamSeed);
         registerItem(ItemNames.ZUCCHINI_SEED, zucchiniSeed);
         registerItem(ItemNames.MUSTARD_SEED, mustardSeed);
-        registerItem(ItemNames.CHILE_PEPPER_SEED, pepperSeed);
+        registerItem(ItemNames.CHILE_PEPPER_SEED, chilePepperSeed);
         registerItem(ItemNames.TURMERIC_SEED, turmericSeed);
         registerItem(ItemNames.GINGER_SEED, gingerSeed);
         registerItem(ItemNames.BASIL_SEED, basilSeed);
@@ -646,8 +662,8 @@ public class ItemRegistry {
         registerItem(ItemNames.CHERRY_PIE, cherryPie);
         registerItem(ItemNames.CHEESE_CAKE, cheeseCake);
         registerItem(ItemNames.BROWNIES, brownies);
-        registerItem(ItemNames.SNICKER_DOODLE, snickerDoodle); // todo no recipe
-        registerItem(ItemNames.BANANA_NUT_BREAD, bananaNutBread); // todo no recipe no nuts
+        registerItem(ItemNames.SNICKER_DOODLE, snickerDoodle);
+        registerItem(ItemNames.BANANA_NUT_BREAD, bananaNutBread);
         registerItem(ItemNames.PECAN_PIE, pecanPie);
         registerItem(ItemNames.CANDIED_NUTS, candiedNuts);
         registerItem(ItemNames.ALMOND_BRITTLE, almondBrittle);
@@ -681,6 +697,21 @@ public class ItemRegistry {
         registerItem(ItemNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
         registerItem(ItemNames.CINNAMON_WOOD, cinnamonWood);
         registerItem(ItemNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
+
+        registerItem(ItemNames.SHEPHERDS_PIE, shepherdsPie);
+        registerItem(ItemNames.BEEF_WELLINGTON, beefWellington);
+        registerItem(ItemNames.FISH_AND_CHIPS, fishAndChips);
+        registerItem(ItemNames.ETON_MESS, etonMess);
+        registerItem(ItemNames.TEA, tea);
+        registerItem(ItemNames.CORNISH_PASTY, cornishPasty);
+        registerItem(ItemNames.SCONES, scones);
+        registerItem(ItemNames.FIGGY_PUDDING, figgyPudding);
+        registerItem(ItemNames.TREACLE_TART, treacleTart);
+        registerItem(ItemNames.STICKY_TOFFEE_PUDDING, stickyToffeePudding);
+        registerItem(ItemNames.TRIFLE, trifle);
+        registerItem(ItemNames.PEPPER_SEED, pepperSeed);
+        registerItem(ItemNames.WATER_BOTTLE, waterBottle);
+        registerItem(ItemNames.MILK_BOTTLE, milkBottle);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);
