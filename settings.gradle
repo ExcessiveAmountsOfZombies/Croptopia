@@ -12,6 +12,6 @@ pluginManagement {
 rootProject.name = 'croptopia'
 
 include 'common'
-include 'fabric'
+include 'croptopia-fabric'
 include 'forge'
 

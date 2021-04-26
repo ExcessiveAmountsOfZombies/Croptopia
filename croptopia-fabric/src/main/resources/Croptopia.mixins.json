@@ -4,6 +4,7 @@
   "package": "me.thonk.croptopia.mixin",
   "plugin": "me.thonk.croptopia.plugin.MixinConfig",
   "compatibilityLevel": "JAVA_8",
+  "refmap": "croptopia-fabric-refmap.json",
   "mixins": [
     "AxeAccess",
     "AxeMixin",
