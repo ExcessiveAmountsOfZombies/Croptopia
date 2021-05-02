@@ -332,7 +332,7 @@ public class GeneratorRegistry {
 
     public static final ConfiguredFeature<?, ?> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
             DISK_SALT.withPlacement(Features.Placements.PATCH_PLACEMENT
-                    .withPlacement(Placement.CHANCE.configure(new ChanceConfig(25)))).func_242731_b(2));
+                    .withPlacement(Placement.CHANCE.configure(new ChanceConfig(40)))).func_242731_b(5));
 
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(ResourceLocation id, ConfiguredFeature<FC, ?> withConfigurationdFeature) {
