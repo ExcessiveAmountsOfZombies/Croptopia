@@ -2,6 +2,7 @@ package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.Croptopia;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

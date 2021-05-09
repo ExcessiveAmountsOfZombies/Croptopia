@@ -13,7 +13,8 @@ repositories {
     }
 }
 
-rootProject.ext { build_modifier = "c" }
+archivesBaseName = archives_base_name
+buildDir = rootProject.buildDir
 
 configurations {
     shade
@@ -43,7 +44,7 @@ processResources {
         expand "mod_version": rootProject.version
     }
 
-    from(project(":common").sourceSets.main.resources.srcDirs) {
+    from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
         expand "dependant": "c"
     }
@@ -64,7 +65,7 @@ task remappedShadowJar(type: RemapJarTask) {
     dependsOn tasks.shadowJar
     input = tasks.shadowJar.archiveFile
     addNestedDependencies = true
-    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
+    //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
 }
 

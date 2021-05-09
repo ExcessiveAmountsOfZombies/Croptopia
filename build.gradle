@@ -8,7 +8,8 @@ allprojects {
 }
 
 ext {
-    build_modifier = "nothing"
+    launch_mod = ''
+    build_modifier = ""
 }
 
 subprojects {
@@ -24,5 +25,6 @@ subprojects {
     task launch {
         //project.buildDir = new File("${rootProject.projectDir}/build/jars")
     }
-    launch.dependsOn(build, processResources)
+
+    launch.dependsOn(processResources, compileJava)
 }

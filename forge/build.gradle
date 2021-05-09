@@ -6,7 +6,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1+', changing: true
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
@@ -22,7 +22,8 @@ repositories {
     }
 }
 
-rootProject.ext.set("platform_tag", "forge")
+archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
+buildDir = rootProject.buildDir
 
 configurations {
     shade
@@ -33,12 +34,6 @@ configurations {
 
 mixin {
     add sourceSets.main, "croptopia.refmap.json"
-}
-
-sourceSets {
-    main {
-        ext.refMap = "croptopia.refmap.json"
-    }
 }
 
 minecraft {
@@ -89,12 +84,13 @@ minecraft {
 }
 
 processResources {
-
-    from(project(":common").sourceSets.main.resources.srcDirs) {
+    from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
         expand "dependant": "forge"
     }
 }
+
+tasks.processResources.dependsOn(project(":common").tasks.processResources)
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
@@ -108,8 +104,8 @@ dependencies {
 shadowJar {
     enabled = true
     configurations = [project.configurations.shade]
-    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
-    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
+    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
+    //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     relocate 'dependants/platform', 'data/forge'
 }
 
@@ -119,8 +115,8 @@ artifacts {
 }
 
 jar {
-    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
-    destinationDirectory = new File("${rootProject.projectDir}/build/jars")
+    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
+    //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     manifest {
         attributes([
                 "Specification-Title": "croptopia",
@@ -136,6 +132,5 @@ jar {
 }
 
 shadowJar.finalizedBy('reobfJar')
-println(tasks.getAsMap())
 
 //tasks.getByName("addRefMapToShadowJar").mustRunAfter(task("shadowJar"))

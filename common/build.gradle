@@ -1,0 +1,23 @@
+buildDir = rootProject.buildDir
+
+tasks.withType(JavaCompile) {
+    doLast {
+        if (project.property("launch_mod").toString().length() > 0) {
+            copy {
+                from "src/main/resources/dependants/platform"
+                include "**/**/*.json"
+                into "${buildDir}/resources/main/data/" + project.property("launch_mod").toString() + "/"
+            }
+        }
+    }
+}
+
+tasks.withType(ProcessResources) {
+    if (project.property("launch_mod").toString().length() > 0) {
+        from(sourceSets.main.resources.srcDirs) {
+            include('**/data/croptopia/recipes/**')
+            expand "dependant": "c"
+        }
+    }
+}
+
