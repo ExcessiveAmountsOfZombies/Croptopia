@@ -5,8 +5,26 @@
       "rolls": 1.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "croptopia:broccoli"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "croptopia:broccoli_crop",
+                  "properties": {
+                    "age": "7"
+                  }
+                }
+              ],
+              "name": "croptopia:broccoli"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croptopia:broccoli_seed"
+            }
+          ]
         }
       ]
     },
@@ -26,7 +44,7 @@
               }
             }
           ],
-          "name": "croptopia:broccoli"
+          "name": "croptopia:broccoli_seed"
         }
       ],
       "conditions": [

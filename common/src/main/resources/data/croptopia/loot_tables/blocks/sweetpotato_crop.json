@@ -5,8 +5,26 @@
       "rolls": 1.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "croptopia:sweetpotato"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "croptopia:sweetpotato_crop",
+                  "properties": {
+                    "age": "7"
+                  }
+                }
+              ],
+              "name": "croptopia:sweetpotato"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croptopia:sweetpotato_seed"
+            }
+          ]
         }
       ]
     },
@@ -22,11 +40,11 @@
               "formula": "minecraft:binomial_with_bonus_count",
               "parameters": {
                 "extra": 1,
-                "probability": 0.2714286
+                "probability": 0.5714286
               }
             }
           ],
-          "name": "croptopia:sweetpotato"
+          "name": "croptopia:sweetpotato_seed"
         }
       ],
       "conditions": [
