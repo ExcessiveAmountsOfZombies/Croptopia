@@ -10,7 +10,7 @@
       "item": "croptopia:frying_pan"
     },
     "2": {
-      "tag": "croptopia:flourable"
+      "tag": "${dependant}:flour"
     },
     "3": {
       "tag": "${dependant}:salts"

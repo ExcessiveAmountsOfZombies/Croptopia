@@ -1,5 +1,5 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "croptopia:cooking_pot"
@@ -8,7 +8,7 @@
       "item": "minecraft:water_bucket"
     },
     {
-      "tag": "${dependant}:flours"
+      "tag": "${dependant}:flour"
     }
   ],
   "result": {

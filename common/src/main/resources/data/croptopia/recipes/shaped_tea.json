@@ -10,7 +10,7 @@
       "tag": "${dependant}:water_bottles"
     },
     "2": {
-      "tag": "croptopia:flourable"
+      "tag": "${dependant}:tea_leaves"
     }
   },
   "result": {

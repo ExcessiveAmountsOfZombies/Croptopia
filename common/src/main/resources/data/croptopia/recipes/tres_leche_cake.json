@@ -11,7 +11,7 @@
       "item": "minecraft:milk_bucket"
     },
     {
-      "tag": "${dependant}:flours"
+      "tag": "${dependant}:flour"
     },
     {
       "tag": "${dependant}:vanilla"

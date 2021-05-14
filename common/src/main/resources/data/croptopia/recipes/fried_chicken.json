@@ -1,8 +1,8 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:flours"
+      "tag": "${dependant}:flour"
     },
     {
       "tag": "${dependant}:chile_peppers"
