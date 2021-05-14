@@ -41,7 +41,7 @@ public class Drink extends Item {
 
         if (playerEntity != null) {
             playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-            if (!playerEntity.abilities.creativeMode) {
+            if (!playerEntity.getAbilities().creativeMode) {
                 if (isFood()) {
                     DrinkEvent.DRINK.invoker().onDrink(stack, playerEntity);
                     user.eatFood(world, stack);
@@ -49,13 +49,13 @@ public class Drink extends Item {
             }
         }
 
-        if (playerEntity == null || !playerEntity.abilities.creativeMode) {
+        if (playerEntity == null || !playerEntity.getAbilities().creativeMode) {
             if (stack.isEmpty()) {
                 return new ItemStack(Items.GLASS_BOTTLE);
             }
 
             if (playerEntity != null) {
-                playerEntity.inventory.insertStack(new ItemStack(Items.GLASS_BOTTLE));
+                playerEntity.getInventory().insertStack(new ItemStack(Items.GLASS_BOTTLE));
             }
         }
 

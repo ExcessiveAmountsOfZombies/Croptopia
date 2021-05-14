@@ -37,6 +37,10 @@ dependencies {
     shade project(":common")
 }
 
+minecraft {
+    accessWidener = file("src/main/resources/croptopia.accesswidener")
+}
+
 processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 

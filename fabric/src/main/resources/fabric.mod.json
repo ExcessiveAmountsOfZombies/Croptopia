@@ -21,6 +21,7 @@
   "license": "MIT",
   "icon": "assets/croptopia/croptopia.png",
   "environment": "*",
+  "accessWidener": "croptopia.accesswidener",
   "entrypoints": {
     "client": [
       "me.thonk.croptopia.client.CroptopiaClient"

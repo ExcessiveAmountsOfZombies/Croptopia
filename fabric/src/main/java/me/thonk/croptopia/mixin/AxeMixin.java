@@ -45,7 +45,7 @@ public class AxeMixin {
     public void blockUse(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
         BlockPos pos = context.getBlockPos();
         BlockState state = context.getWorld().getBlockState(pos);
-        if (state.getBlock().is(BlockRegistry.cinnamonLog) && !context.getWorld().isClient) {
+        if (state.getBlock().equals(BlockRegistry.cinnamonLog) && !context.getWorld().isClient) {
             Block.dropStack(context.getWorld(), pos, new ItemStack(ItemRegistry.cinnamon));
         }
     }

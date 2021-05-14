@@ -78,10 +78,10 @@ public class BlockRegistry {
     // real block
     public static Block salt = new Block(FabricBlockSettings.of(Material.AGGREGATE).strength(0.5F).sounds(BlockSoundGroup.SAND));
 
-    public static Block cinnamonLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0F));
-    public static Block strippedCinnamonLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0F));
-    public static Block cinnamonWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0F));
-    public static Block strippedCinnamonWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.WOOD).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+    public static Block cinnamonLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+    public static Block strippedCinnamonLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+    public static Block cinnamonWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+    public static Block strippedCinnamonWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
 
 
     public static Block appleSaplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(GeneratorRegistry.APPLE_TREE), createSaplingSettings());
