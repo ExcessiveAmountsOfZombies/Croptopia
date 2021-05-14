@@ -17,7 +17,7 @@ tasks.withType(ProcessResources) {
         from(sourceSets.main.resources.srcDirs) {
             include('**/data/croptopia/recipes/**')
             expand "dependant": project.property("launch_mod").toString()
-            duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
         }
     }
 }

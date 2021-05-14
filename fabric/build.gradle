@@ -33,7 +33,7 @@ dependencies {
     }
 
 
-    modApi(project(":common"))
+    implementation(project(":common"))
     shade project(":common")
 }
 
@@ -69,6 +69,7 @@ shadowJar {
 task remappedShadowJar(type: RemapJarTask) {
     dependsOn tasks.shadowJar
     input = tasks.shadowJar.archiveFile
+    remapAccessWidener = true
     addNestedDependencies = true
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
