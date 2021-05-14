@@ -1,0 +1,6 @@
+{
+  "parent": "croptopia:block/crop_cross",
+  "textures": {
+    "cross": "croptopia:block/tea_crop_stage0"
+  }
+}

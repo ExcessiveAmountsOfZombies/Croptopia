@@ -1,0 +1,23 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "me.thonk.croptopia.mixin",
+  "plugin": "me.thonk.croptopia.plugin.MixinConfig",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "Croptopia-refmap.json",
+  "mixins": [
+    "AxeAccess",
+    "AxeMixin",
+    "FarmerVillagerTaskMixin",
+    "ItemMixin"
+    "VillagerAccess",
+    "VillagerMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "7 8",
+    "456",
+    "123"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:egg"
+    },
+    "2": {
+      "tag": "${dependant}:water_bottles"
+    },
+    "3": {
+      "tag": "${dependant}:vanilla"
+    },
+    "4": {
+      "item": "croptopia:whipping_cream"
+    },
+    "5": {
+      "item": "minecraft:sugar"
+    },
+    "6": {
+      "tag": "${dependant}:butters"
+    },
+    "7": {
+      "tag": "${dependant}:dates"
+    },
+    "8": {
+      "tag": "${dependant}:salts"
+    }
+  },
+  "result": {
+    "item": "croptopia:sticky_toffee_pudding",
+    "count": 1
+  }
+}

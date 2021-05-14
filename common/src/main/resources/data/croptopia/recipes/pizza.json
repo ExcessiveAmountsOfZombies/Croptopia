@@ -1,5 +1,5 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "tag": "${dependant}:doughs"
@@ -8,7 +8,7 @@
       "tag": "${dependant}:cheeses"
     },
     {
-      "tag": "${dependant}:tomatos"
+      "tag": "${dependant}:tomatoes"
     },
     {
       "item": "croptopia:frying_pan"

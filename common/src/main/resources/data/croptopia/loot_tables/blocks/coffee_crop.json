@@ -5,8 +5,26 @@
       "rolls": 1.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "croptopia:coffee_beans"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "croptopia:coffee_crop",
+                  "properties": {
+                    "age": "7"
+                  }
+                }
+              ],
+              "name": "croptopia:coffee"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croptopia:coffee_seed"
+            }
+          ]
         }
       ]
     },
@@ -22,11 +40,11 @@
               "formula": "minecraft:binomial_with_bonus_count",
               "parameters": {
                 "extra": 1,
-                "probability": 0.2714286
+                "probability": 0.5714286
               }
             }
           ],
-          "name": "croptopia:coffee_beans"
+          "name": "croptopia:coffee_seed"
         }
       ],
       "conditions": [

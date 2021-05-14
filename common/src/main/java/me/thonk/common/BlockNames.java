@@ -120,4 +120,8 @@ public class BlockNames {
     public static final String STRIPPED_CINNAMON_LOG = "stripped_cinnamon_log";
     public static final String CINNAMON_WOOD = "cinnamon_wood";
     public static final String STRIPPED_CINNAMON_WOOD = "stripped_cinnamon_wood";
+
+    // 1.4.0
+    public static final String PEPPER_CROP = "pepper_crop";
+    public static final String TEA_CROP = "tea_crop";
 }

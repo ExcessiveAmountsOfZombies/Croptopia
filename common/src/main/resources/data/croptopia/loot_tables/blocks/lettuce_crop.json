@@ -5,8 +5,26 @@
       "rolls": 1.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "croptopia:lettuce"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "croptopia:lettuce_crop",
+                  "properties": {
+                    "age": "7"
+                  }
+                }
+              ],
+              "name": "croptopia:lettuce"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croptopia:lettuce_seed"
+            }
+          ]
         }
       ]
     },
@@ -22,11 +40,11 @@
               "formula": "minecraft:binomial_with_bonus_count",
               "parameters": {
                 "extra": 1,
-                "probability": 0.2714286
+                "probability": 0.5714286
               }
             }
           ],
-          "name": "croptopia:lettuce"
+          "name": "croptopia:lettuce_seed"
         }
       ],
       "conditions": [

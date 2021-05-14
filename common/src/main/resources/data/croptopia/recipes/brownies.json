@@ -1,11 +1,11 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flours"
+      "tag": "${dependant}:flour"
     },
     {
       "tag": "croptopia:milks"

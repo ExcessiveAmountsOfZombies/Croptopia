@@ -77,6 +77,8 @@
     "croptopia:turmeric_crop",
     "croptopia:turnip_crop",
     "croptopia:yam_crop",
-    "croptopia:zucchini_crop"
+    "croptopia:zucchini_crop",
+    "croptopia:tea_crop",
+    "croptopia:pepper_crop"
   ]
 }

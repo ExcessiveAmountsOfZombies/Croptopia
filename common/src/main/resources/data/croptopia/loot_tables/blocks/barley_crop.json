@@ -5,8 +5,26 @@
       "rolls": 1.0,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "croptopia:barley"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "croptopia:barley_crop",
+                  "properties": {
+                    "age": "7"
+                  }
+                }
+              ],
+              "name": "croptopia:barley_seed"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "croptopia:barley_seed"
+            }
+          ]
         }
       ]
     },

@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "croptopia.refmap.json",
   "mixins": [
+    "FarmTaskMixin",
     "VillagerAccess",
     "VillagerMixin"
   ],

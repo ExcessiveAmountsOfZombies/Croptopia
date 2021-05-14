@@ -14,6 +14,9 @@
     "croptopia:wine",
     "croptopia:mead",
     "croptopia:rum",
-    "croptopia:pumpkin_spice_latte"
+    "croptopia:pumpkin_spice_latte",
+    "croptopia:water_bottle",
+    "croptopia:milk_bottle",
+    "croptopia:tea"
   ]
 }

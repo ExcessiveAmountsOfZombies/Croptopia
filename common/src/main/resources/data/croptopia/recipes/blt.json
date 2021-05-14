@@ -11,7 +11,7 @@
       "tag": "${dependant}:lettuce"
     },
     {
-      "tag": "${dependant}:tomatos"
+      "tag": "${dependant}:tomatoes"
     }
   ],
   "result": {

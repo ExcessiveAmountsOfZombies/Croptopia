@@ -1,11 +1,11 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:glass_bottle"
     },
     {
-      "tag": "${dependant}:tomatos"
+      "tag": "${dependant}:tomatoes"
     },
     {
       "item": "croptopia:food_press"

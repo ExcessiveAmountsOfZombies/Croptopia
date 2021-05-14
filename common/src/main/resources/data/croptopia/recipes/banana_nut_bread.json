@@ -1,5 +1,5 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "croptopia:cinnamon"
@@ -8,7 +8,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flours"
+      "tag": "${dependant}:flour"
     },
     {
       "tag": "${dependant}:bananas"

@@ -1,5 +1,5 @@
 {
-  "type": "croptopia:crafting_damage_durability",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "tag": "${dependant}:onions"
@@ -14,7 +14,7 @@
       "tag": "${dependant}:olive_oils"
     },
     {
-      "tag": "${dependant}:flours"
+      "tag": "${dependant}:flour"
     }
   ],
   "result": {

@@ -20,7 +20,7 @@
       "tag": "${dependant}:yoghurts"
     },
     {
-      "tag": "${dependant}:tomatos"
+      "tag": "${dependant}:tomatoes"
     }
   ],
   "result": {

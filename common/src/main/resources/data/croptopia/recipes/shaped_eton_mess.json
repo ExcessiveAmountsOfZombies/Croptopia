@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "343",
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:egg"
+    },
+    "2": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "tag": "${dependant}:strawberries"
+    },
+    "4": {
+      "item": "croptopia:whipping_cream"
+    }
+  },
+  "result": {
+    "item": "croptopia:eton_mess",
+    "count": 1
+  }
+}
