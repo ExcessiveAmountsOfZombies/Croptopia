@@ -1,9 +1,13 @@
 package me.thonk.croptopia.registry;
 
 import com.google.common.collect.ImmutableList;
+import io.github.fablabsmc.fablabs.api.fiber.v1.exception.FiberQueryException;
 import me.thonk.common.FeatureNames;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -33,7 +37,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.appleCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -41,15 +45,16 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.bananaCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
+    WeightedBlockStateProvider weightedBlockStateProvider = new WeightedBlockStateProvider(new DataPool.Builder<BlockState>().add(Blocks.OAK_LEAVES.getDefaultState(), 95).add(LeavesRegistry.orangeCrop.getDefaultState(), 5));
     public static final ConfiguredFeature<?, ?> ORANGE_TREE = register(createIdentifier(FeatureNames.ORANGE_TREE),
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.orangeCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 4, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -57,7 +62,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.persimmonCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -65,7 +70,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.plumCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -73,7 +78,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.cherryCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -81,7 +86,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.lemonCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -89,7 +94,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.grapefruitCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -97,7 +102,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.kumquatCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -105,7 +110,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.peachCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -113,7 +118,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.coconutCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 1),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 1),
                     new ForkingTrunkPlacer(5, 2, 3),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
@@ -121,7 +126,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.nutmegCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -129,7 +134,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.figCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -137,7 +142,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.nectarineCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 4, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -145,7 +150,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.mangoCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -153,7 +158,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.dragonFruitCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 7, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -161,7 +166,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.starFruitCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -169,7 +174,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.SPRUCE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.avocadoCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -177,7 +182,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.apricotCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -185,7 +190,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.pearCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -193,7 +198,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.limeCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 2, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -201,7 +206,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.JUNGLE_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.JUNGLE_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.dateCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(5, 8, 0),
                     new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
@@ -209,7 +214,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.almondCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
@@ -217,7 +222,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.cashewCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
@@ -225,7 +230,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.pecanCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
@@ -233,7 +238,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(Blocks.DARK_OAK_LOG.getDefaultState()),
                     new WeightedBlockStateProvider().addState(Blocks.DARK_OAK_LEAVES.getDefaultState(), 95).addState(LeavesRegistry.walnutCrop.getDefaultState(), 5),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
@@ -241,7 +246,7 @@ public class GeneratorRegistry {
             Feature.TREE.configure((new TreeFeatureConfig.Builder(
                     new SimpleBlockStateProvider(BlockRegistry.cinnamonLog.getDefaultState()),
                     new WeightedBlockStateProvider().addState(LeavesRegistry.cinnamonLeaves.getDefaultState(), 95),
-                    new BlobFoliagePlacer(UniformIntDistribution.of(2), UniformIntDistribution.of(0), 3),
+                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new StraightTrunkPlacer(4, 3, 0),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
@@ -329,7 +334,7 @@ public class GeneratorRegistry {
 
     public static final ConfiguredFeature<?, ?> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
             Feature.DISK.configure((new DiskFeatureConfig(BlockRegistry.salt.getDefaultState(),
-                    UniformIntDistribution.of(2, 4), 2,
+                    ConstantIntProvider.create(2, 4), 2,
                     ImmutableList.of(Blocks.DIRT.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState())))));
 
     public static final ConfiguredFeature<?, ?> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
