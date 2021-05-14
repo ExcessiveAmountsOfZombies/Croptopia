@@ -337,6 +337,8 @@ public class ItemNames {
     public static final String TREACLE_TART = "treacle_tart";
     public static final String STICKY_TOFFEE_PUDDING = "sticky_toffee_pudding";
     public static final String TRIFLE = "trifle";
+    public static final String TEA_LEAVES = "tea_leaves";
+    public static final String TEA_SEED = "tea_seed";
 
 }
 

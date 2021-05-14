@@ -22,7 +22,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "croptopia:vanilla_seed"
+              "name": "croptopia:vanilla_seeds"
             }
           ]
         }
@@ -44,7 +44,7 @@
               }
             }
           ],
-          "name": "croptopia:vanilla_seed"
+          "name": "croptopia:vanilla_seeds"
         }
       ],
       "conditions": [

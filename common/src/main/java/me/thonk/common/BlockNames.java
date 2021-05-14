@@ -123,4 +123,5 @@ public class BlockNames {
 
     // 1.4.0
     public static final String PEPPER_CROP = "pepper_crop";
+    public static final String TEA_CROP = "tea_crop";
 }

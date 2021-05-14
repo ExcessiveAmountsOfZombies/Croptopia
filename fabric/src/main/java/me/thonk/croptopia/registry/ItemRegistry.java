@@ -1,10 +1,7 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
-import me.thonk.croptopia.items.Drink;
-import me.thonk.croptopia.items.CropItem;
-import me.thonk.croptopia.items.GuideBookItem;
-import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.items.*;
 import net.minecraft.item.*;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
@@ -366,26 +363,28 @@ public class ItemRegistry {
     public static Item strippedCinnamonWood = new AliasedBlockItem(BlockRegistry.strippedCinnamonWood, createGroup());
 
     // 1.4.0
-    public static Item shepherdsPie = new Item(createGroup());
-    public static Item beefWellington = new Item(createGroup());
-    public static Item fishAndChips = new Item(createGroup());
-    public static Item etonMess = new Item(createGroup());
-    public static Item tea = new Item(createGroup());
-    public static Item cornishPasty = new Item(createGroup());
-    public static Item scones = new Item(createGroup());
-    public static Item figgyPudding = new Item(createGroup());
-    public static Item treacleTart = new Item(createGroup());
-    public static Item stickyToffeePudding = new Item(createGroup());
-    public static Item trifle = new Item(createGroup());
+    public static Item shepherdsPie = new Item(createGroup().food(EDIBLE_18));
+    public static Item beefWellington = new Item(createGroup().food(EDIBLE_18));
+    public static Item fishAndChips = new Item(createGroup().food(EDIBLE_10));
+    public static Item etonMess = new Item(createGroup().food(EDIBLE_10));
+    public static Item tea = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()));
+    public static Item cornishPasty = new Item(createGroup().food(EDIBLE_10));
+    public static Item scones = new Item(createGroup().food(EDIBLE_10));
+    public static Item figgyPudding = new Item(createGroup().food(EDIBLE_10));
+    public static Item treacleTart = new Item(createGroup().food(EDIBLE_10));
+    public static Item stickyToffeePudding = new Item(createGroup().food(EDIBLE_14));
+    public static Item trifle = new Item(createGroup().food(EDIBLE_14));
     public static Item pepperSeed = new SeedItem(BlockRegistry.pepperCropBlock, createGroup(), PLAINS);
     public static Item waterBottle = new Item(createGroup());
     public static Item milkBottle = new Item(createGroup());
+    public static Item teaLeaves = new Item(createGroup());
+    public static Item teaSeed = new SeedItem(BlockRegistry.teaCropBlock, createGroup(), FOREST);
 
     // cooking utensils?
-    public static Item foodPress = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item fryingPan = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item cookingPot = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
-    public static Item mortarAndPestle = new Item(createGroup().maxCount(1).maxDamageIfAbsent(500));
+    public static Item foodPress = new CookingUtensil(createGroup().maxCount(1));
+    public static Item fryingPan = new CookingUtensil(createGroup().maxCount(1));
+    public static Item cookingPot = new CookingUtensil(createGroup().maxCount(1));
+    public static Item mortarAndPestle = new CookingUtensil(createGroup().maxCount(1));
 
     public static Item saltOre = new AliasedBlockItem(BlockRegistry.salt, createGroup());
 
@@ -712,6 +711,8 @@ public class ItemRegistry {
         registerItem(ItemNames.PEPPER_SEED, pepperSeed);
         registerItem(ItemNames.WATER_BOTTLE, waterBottle);
         registerItem(ItemNames.MILK_BOTTLE, milkBottle);
+        registerItem(ItemNames.TEA_LEAVES, teaLeaves);
+        registerItem(ItemNames.TEA_SEED, teaSeed);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " 2 ",
+    " 1 "
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependant}:water_bottles"
+    },
+    "2": {
+      "tag": "croptopia:flourable"
+    }
+  },
+  "result": {
+    "item": "croptopia:tea",
+    "count": 1
+  }
+}
