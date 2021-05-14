@@ -9,7 +9,7 @@
     "AxeAccess",
     "AxeMixin",
     "FarmerVillagerTaskMixin",
-    "ItemMixin"
+    "ItemMixin",
     "VillagerAccess",
     "VillagerMixin"
   ],
