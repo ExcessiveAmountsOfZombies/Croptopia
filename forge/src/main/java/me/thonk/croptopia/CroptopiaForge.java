@@ -190,7 +190,6 @@ public class CroptopiaForge {
 
         if (item instanceof CropItem) {
             cropItems.add(item);
-            System.out.println("heop");
         }
 
         if (item instanceof SeedItem) {
