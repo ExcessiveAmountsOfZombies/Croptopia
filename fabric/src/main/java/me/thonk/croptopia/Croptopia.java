@@ -15,7 +15,6 @@ import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
 import me.thonk.croptopia.mixin.VillagerAccess;
-import me.thonk.croptopia.recipe.DamageDurabilitySerializer;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Composter;
 import me.thonk.croptopia.registry.ItemRegistry;
@@ -23,7 +22,6 @@ import me.thonk.croptopia.registry.LeavesRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
@@ -39,7 +37,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -59,8 +56,6 @@ public class Croptopia implements ModInitializer {
             .icon(() -> new ItemStack(ItemRegistry.onion))
             .build();
     public static final LootConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
-    public static final DamageDurabilitySerializer DAMAGE_DURABILITY =
-            registerSerializer(MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY, new DamageDurabilitySerializer());
     public static Patchouli patchouli;
 
 
