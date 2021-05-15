@@ -7,7 +7,7 @@
   ],
   "key": {
     "1": {
-      "item": "minecraft:milk_bucket"
+      "tag": "${dependant}:milk_bottles"
     },
     "2": {
       "item": "minecraft:glass"

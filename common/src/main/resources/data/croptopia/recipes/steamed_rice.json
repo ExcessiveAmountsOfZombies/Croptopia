@@ -11,7 +11,7 @@
       "tag": "${dependant}:salts"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "${dependant}:water_bottles"
     }
   ],
   "result": {
