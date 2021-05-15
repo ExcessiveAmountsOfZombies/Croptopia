@@ -23,7 +23,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -206,9 +205,6 @@ public class CroptopiaForge {
             block.setSeed(item);
         }
 
-        // \bregisterItem\b..[A-Z]\w+",
-        //System.out.println( "\"" + itemName + "\",");
-        // TODO: maybe
         if (item instanceof SeedItem) {
             seeds.add((SeedItem) item);
         }
