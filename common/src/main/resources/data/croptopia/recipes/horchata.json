@@ -11,7 +11,7 @@
       "tag": "${dependant}:limes"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "${dependant}:water_bottles"
     },
     {
       "item": "minecraft:sugar"

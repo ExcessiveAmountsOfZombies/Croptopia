@@ -8,7 +8,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:milk_bucket"
+      "tag": "${dependant}:milk_bottles"
     },
     {
       "tag": "${dependant}:flour"
