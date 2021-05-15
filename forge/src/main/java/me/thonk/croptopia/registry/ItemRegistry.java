@@ -420,7 +420,7 @@ public class ItemRegistry {
         greenBean = registerItem(itemRegister, GREENBEAN, new CropItem(createGroup().food(EDIBLE_3)));
         greenOnion = registerItem(itemRegister, GREENONION, new CropItem(createGroup().food(EDIBLE_1)));
         honeydew = registerItem(itemRegister, HONEYDEW, new CropItem(createGroup().food(EDIBLE_3)));
-        hops = registerItem(itemRegister, HOPS, new CropItem(createGroup()));
+        hops = registerItem(itemRegister, HOPS, new Item(createGroup()));
         kale = registerItem(itemRegister, KALE, new CropItem(createGroup().food(EDIBLE_3)));
         kiwi = registerItem(itemRegister, KIWI, new CropItem(createGroup().food(EDIBLE_3)));
         leek = registerItem(itemRegister, LEEK, new CropItem(createGroup().food(EDIBLE_3)));
