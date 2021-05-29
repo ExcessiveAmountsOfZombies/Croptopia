@@ -5,22 +5,22 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "tag": "${dependant}:kale"
+      "tag": "${dependant}:vegetables/kale"
     },
     {
       "item": "minecraft:ice"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
-      "tag": "${dependant}:mangos"
+      "tag": "${dependant}:fruits/mangos"
     },
     {
       "tag": "${dependant}:yoghurts"
     },
     {
-      "tag": "${dependant}:tomatoes"
+      "tag": "${dependant}:vegetables/tomatoes"
     }
   ],
   "result": {

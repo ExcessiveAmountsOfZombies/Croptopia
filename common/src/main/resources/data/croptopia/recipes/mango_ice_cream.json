@@ -5,10 +5,10 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:mangos"
+      "tag": "${dependant}:fruits/mangos"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
       "item": "minecraft:egg"

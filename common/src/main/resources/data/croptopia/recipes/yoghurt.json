@@ -5,10 +5,10 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
-      "tag": "${dependant}:strawberries"
+      "tag": "${dependant}:fruits/strawberries"
     }
   ],
   "result": {

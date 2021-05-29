@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:gingers"
+      "tag": "${dependant}:vegetables/ginger"
     }
   ],
   "result": {

@@ -8,7 +8,7 @@
       "tag": "${dependant}:water_bottles"
     },
     {
-      "tag": "${dependant}:soybeans"
+      "tag": "${dependant}:vegetables/soybeans"
     }
   ],
   "result": {

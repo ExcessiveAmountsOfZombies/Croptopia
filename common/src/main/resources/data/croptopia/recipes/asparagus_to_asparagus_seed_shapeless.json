@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:asparagus"
+      "tag": "${dependant}:vegetables/asparagus"
     }
   ],
   "result": {

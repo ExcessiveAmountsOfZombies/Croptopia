@@ -8,13 +8,13 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:milk_bottles"
+      "tag": "${dependant}:milks"
     },
     {
       "tag": "${dependant}:flour"
     },
     {
-      "tag": "${dependant}:vanilla"
+      "tag": "${dependant}:crops/vanilla"
     },
     {
       "tag": "${dependant}:rums"

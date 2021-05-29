@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:apricots"
+      "tag": "${dependant}:fruits/apricots"
     },
     {
-      "tag": "${dependant}:apricots"
+      "tag": "${dependant}:fruits/apricots"
     },
     {
       "tag": "minecraft:saplings"

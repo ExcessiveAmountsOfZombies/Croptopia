@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:cashews"
+      "tag": "${dependant}:fruits/cashews"
     },
     {
       "item": "minecraft:cooked_chicken"
@@ -11,7 +11,7 @@
       "tag": "${dependant}:soy_sauces"
     },
     {
-      "tag": "${dependant}:cabbage"
+      "tag": "${dependant}:vegetables/cabbage"
     },
     {
       "item": "minecraft:carrot"

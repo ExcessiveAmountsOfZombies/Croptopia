@@ -13,13 +13,13 @@
       "item": "minecraft:beef"
     },
     "2": {
-      "tag": "${dependant}:mustard"
+      "tag": "${dependant}:vegetables/mustard"
     },
     "3": {
       "item": "croptopia:pepper"
     },
     "4": {
-      "tag": "${dependant}:onions"
+      "tag": "${dependant}:vegetables/onion"
     },
     "5": {
       "item": "minecraft:egg"

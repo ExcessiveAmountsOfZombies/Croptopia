@@ -8,10 +8,10 @@
       "tag": "${dependant}:tortillas"
     },
     {
-      "tag": "${dependant}:cabbage"
+      "tag": "${dependant}:vegetables/cabbage"
     },
     {
-      "tag": "${dependant}:onions"
+      "tag": "${dependant}:vegetables/onion"
     },
     {
       "item": "croptopia:frying_pan"

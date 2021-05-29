@@ -5,13 +5,13 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "tag": "${dependant}:bananas"
+      "tag": "${dependant}:fruits/bananas"
     },
     {
       "item": "minecraft:ice"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     }
   ],
   "result": {

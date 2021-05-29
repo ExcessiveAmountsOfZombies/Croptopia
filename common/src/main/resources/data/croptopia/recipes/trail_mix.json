@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "croptopia:nuts"
+      "tag": "${dependant}:nuts"
     },
     {
-      "tag": "croptopia:nuts"
+      "tag": "${dependant}:nuts"
     },
     {
-      "tag": "croptopia:nuts"
+      "tag": "${dependant}:nuts"
     },
     {
       "tag": "${dependant}:raisins"
