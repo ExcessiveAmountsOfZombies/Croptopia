@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#${dependant}:jams"
+    "#${dependant}:jam"
   ]
 }

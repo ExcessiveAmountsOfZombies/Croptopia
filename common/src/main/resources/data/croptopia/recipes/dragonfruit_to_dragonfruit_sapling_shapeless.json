@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:dragonfruits"
+      "tag": "${dependant}:fruits/dragonfruits"
     },
     {
-      "tag": "${dependant}:dragonfruits"
+      "tag": "${dependant}:fruits/dragonfruits"
     },
     {
       "tag": "minecraft:saplings"

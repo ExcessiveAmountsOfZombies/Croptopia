@@ -13,7 +13,7 @@
       "tag": "${dependant}:water_bottles"
     },
     "3": {
-      "tag": "${dependant}:vanilla"
+      "tag": "${dependant}:crops/vanilla"
     },
     "4": {
       "item": "croptopia:whipping_cream"
@@ -25,7 +25,7 @@
       "tag": "${dependant}:butters"
     },
     "7": {
-      "tag": "${dependant}:dates"
+      "tag": "${dependant}:fruits/dates"
     },
     "8": {
       "tag": "${dependant}:salts"

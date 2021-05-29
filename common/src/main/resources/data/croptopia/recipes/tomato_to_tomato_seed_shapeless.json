@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:tomatoes"
+      "tag": "${dependant}:vegetables/tomatoes"
     }
   ],
   "result": {

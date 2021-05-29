@@ -5,7 +5,7 @@
       "item": "minecraft:bread"
     },
     {
-      "tag": "${dependant}:lettuce"
+      "tag": "${dependant}:vegetables/lettuce"
     },
     {
       "item": "croptopia:frying_pan"
@@ -14,7 +14,7 @@
       "tag": "${dependant}:tofu"
     },
     {
-      "tag": "${dependant}:onions"
+      "tag": "${dependant}:vegetables/onion"
     }
   ],
   "result": {

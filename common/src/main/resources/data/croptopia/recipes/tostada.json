@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:blackbeans"
+      "tag": "${dependant}:crops/blackbeans"
     },
     {
-      "tag": "${dependant}:blackbeans"
+      "tag": "${dependant}:crops/blackbeans"
     },
     {
-      "tag": "${dependant}:tomatoes"
+      "tag": "${dependant}:vegetables/tomatoes"
     },
     {
-      "tag": "${dependant}:lettuce"
+      "tag": "${dependant}:vegetables/lettuce"
     },
     {
       "tag": "${dependant}:tortillas"

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:chile_peppers"
+      "tag": "${dependant}:crops/chile_peppers"
     },
     {
       "item": "croptopia:mortar_and_pestle"

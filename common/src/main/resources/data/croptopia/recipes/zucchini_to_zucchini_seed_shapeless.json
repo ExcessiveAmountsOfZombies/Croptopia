@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:zucchinis"
+      "tag": "${dependant}:vegetables/zucchini"
     }
   ],
   "result": {

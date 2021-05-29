@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "#${dependant}:jams/apple_jam",
-    "#${dependant}:jams/cranberry_jam",
+    "#${dependant}:jams/apricot_jam",
+    "#${dependant}:jams/blackberry_jam",
+    "#${dependant}:jams/blueberry_jam",
+    "#${dependant}:jams/cherry_jam",
+    "#${dependant}:jams/elderberry_jam",
     "#${dependant}:jams/grape_jam",
-    "#${dependant}:jams/melon_jam",
-    "#${dependant}:jams/orange_jam",
-    "#${dependant}:jams/pineapple_jam",
-    "#${dependant}:jams/saguaro_jam",
-    "#${dependant}:jams/tomato_jam"
+    "#${dependant}:jams/peach_jam",
+    "#${dependant}:jams/strawberry_jam"
   ]
 }

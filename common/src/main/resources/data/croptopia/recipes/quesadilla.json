@@ -11,7 +11,7 @@
       "tag": "${dependant}:cheeses"
     },
     {
-      "tag": "${dependant}:avocados"
+      "tag": "${dependant}:fruits/avocados"
     },
     {
       "tag": "croptopia:chicken_replacements"

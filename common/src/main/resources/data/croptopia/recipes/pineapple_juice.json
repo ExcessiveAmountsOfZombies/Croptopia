@@ -5,7 +5,7 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "tag": "${dependant}:pineapples"
+      "tag": "${dependant}:fruits/pineapples"
     },
     {
       "item": "croptopia:food_press"

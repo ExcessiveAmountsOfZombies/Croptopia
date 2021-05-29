@@ -11,10 +11,10 @@
       "tag": "${dependant}:flour"
     },
     {
-      "tag": "${dependant}:bananas"
+      "tag": "${dependant}:fruits/bananas"
     },
     {
-      "tag": "croptopia:nuts"
+      "tag": "${dependant}:nuts"
     }
   ],
   "result": {

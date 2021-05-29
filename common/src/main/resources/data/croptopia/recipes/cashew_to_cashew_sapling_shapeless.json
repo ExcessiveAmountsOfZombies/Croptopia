@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:cashews"
+      "tag": "${dependant}:fruits/cashews"
     },
     {
-      "tag": "${dependant}:cashews"
+      "tag": "${dependant}:fruits/cashews"
     },
     {
       "tag": "minecraft:saplings"

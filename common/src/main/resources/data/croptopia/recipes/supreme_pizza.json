@@ -8,13 +8,13 @@
       "tag": "${dependant}:cheeses"
     },
     {
-      "tag": "${dependant}:tomatoes"
+      "tag": "${dependant}:vegetables/tomatoes"
     },
     {
-      "tag": "${dependant}:bellpeppers"
+      "tag": "${dependant}:fruits/bellpeppers"
     },
     {
-      "tag": "${dependant}:olives"
+      "tag": "${dependant}:fruits/olives"
     },
     {
       "tag": "croptopia:meat_replacements"

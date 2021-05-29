@@ -11,7 +11,7 @@
       "tag": "${dependant}:rums"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
       "item": "minecraft:egg"

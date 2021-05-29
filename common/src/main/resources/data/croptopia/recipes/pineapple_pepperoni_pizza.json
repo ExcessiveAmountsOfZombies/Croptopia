@@ -8,16 +8,16 @@
       "tag": "${dependant}:cheeses"
     },
     {
-      "tag": "${dependant}:tomatoes"
+      "tag": "${dependant}:vegetables/tomatoes"
     },
     {
-      "tag": "${dependant}:pineapples"
+      "tag": "${dependant}:fruits/pineapples"
     },
     {
       "tag": "${dependant}:pepperoni"
     },
     {
-      "tag": "${dependant}:pineapples"
+      "tag": "${dependant}:fruits/pineapples"
     },
     {
       "item": "croptopia:frying_pan"
