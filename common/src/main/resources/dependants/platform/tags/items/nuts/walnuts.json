@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#${dependant}:saplings"
+    "croptopia:walnut"
   ]
 }
