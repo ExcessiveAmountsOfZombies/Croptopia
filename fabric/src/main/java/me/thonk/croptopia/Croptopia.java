@@ -65,7 +65,6 @@ public class Croptopia implements ModInitializer {
     public static Patchouli patchouli;
 
     private static final String TECH_REBORN_MOD_ID = "techreborn";
-    private Logger logger = LogManager.getLogger();
 
     @Override
     public void onInitialize() {
