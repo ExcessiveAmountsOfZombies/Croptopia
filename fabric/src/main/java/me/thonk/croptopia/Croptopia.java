@@ -40,6 +40,8 @@ import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,12 +65,13 @@ public class Croptopia implements ModInitializer {
     public static Patchouli patchouli;
 
     private static final String TECH_REBORN_MOD_ID = "techreborn";
+    private Logger logger = LogManager.getLogger();
 
     @Override
     public void onInitialize() {
         FabricLoader.getInstance().getModContainer(TECH_REBORN_MOD_ID)
                 .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("croptopia", "treborn"),  modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
-                .filter(success -> !success).ifPresent(success -> System.out.println("no dice"));
+                .filter(success -> !success);
 
         patchouli = new Patchouli();
         LeavesRegistry.init();
