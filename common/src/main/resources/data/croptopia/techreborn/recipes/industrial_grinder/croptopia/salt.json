@@ -1,0 +1,22 @@
+{
+  "type": "techreborn:industrial_grinder",
+  "power": 120,
+  "time": 90,
+  "tank": {
+	"fluid": "minecraft:water",
+	"amount": 2000
+  },
+  "ingredients": [
+	{
+	  "item": "techreborn:basalt_dust",
+	  "count": 4
+	}
+  ],
+  "results": [
+	{
+	  "item": "croptopia:salt"
+	},	{
+	  "item": "croptopia:salt"
+	}
+  ]
+}
