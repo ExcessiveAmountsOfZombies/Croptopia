@@ -22,7 +22,12 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
@@ -57,8 +62,14 @@ public class Croptopia implements ModInitializer {
     public static final LootConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     public static Patchouli patchouli;
 
+    private static final String TECH_REBORN_MOD_ID = "techreborn";
+
     @Override
     public void onInitialize() {
+        FabricLoader.getInstance().getModContainer(TECH_REBORN_MOD_ID)
+                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("croptopia", "treborn"),  modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
+                .filter(success -> !success).ifPresent(success -> System.out.println("no dice"));
+
         patchouli = new Patchouli();
         LeavesRegistry.init();
         BlockRegistry.init();
