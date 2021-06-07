@@ -8,8 +8,10 @@
   "mixins": [
     "AxeAccess",
     "AxeMixin",
+    "ChickenAccess",
     "FarmerVillagerTaskMixin",
     "ItemMixin",
+    "ParrotAccess",
     "VillagerAccess",
     "VillagerMixin"
   ],

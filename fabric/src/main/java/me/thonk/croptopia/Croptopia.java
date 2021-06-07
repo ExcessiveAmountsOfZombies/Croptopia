@@ -2,6 +2,7 @@ package me.thonk.croptopia;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -13,6 +14,8 @@ import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
+import me.thonk.croptopia.mixin.ChickenAccess;
+import me.thonk.croptopia.mixin.ParrotAccess;
 import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Composter;
@@ -29,9 +32,12 @@ import net.minecraft.block.*;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.entity.passive.ParrotEntity;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.sound.BlockSoundGroup;
@@ -46,6 +52,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static me.thonk.croptopia.Constants.OPTIONS;
 
@@ -93,6 +101,8 @@ public class Croptopia implements ModInitializer {
         modifyVillagerFoodItems();
         modifyVillagerGatherables();
         modifyAxeBlockStripping();
+        modifyChickenBreeds();
+        modifyParrotBreeds();
     }
 
     public static Identifier createIdentifier(String name) {
@@ -204,5 +214,23 @@ public class Croptopia implements ModInitializer {
                 .put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog)
                 .put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood)
                 .build());
+    }
+
+    private void modifyChickenBreeds() {
+        ItemStack[] stacks = ChickenAccess.getBreedingIngredients().getMatchingStacksClient();
+        List<Item> baseItems = new ArrayList<>();
+
+        for (ItemStack stack : stacks) {
+            baseItems.add(stack.getItem());
+        }
+        baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        ChickenAccess.setBreedingIngredients(Ingredient.ofItems(baseItems.toArray(new Item[0])));
+    }
+
+    private void modifyParrotBreeds() {
+        Set<Item> baseItems = ParrotAccess.getTamingIngredients();
+        Set<Item> newItems = Sets.newHashSet(baseItems);
+        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        ParrotAccess.setTamingIngredients(newItems);
     }
 }

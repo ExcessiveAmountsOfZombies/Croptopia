@@ -64,31 +64,31 @@ public class ItemRegistry {
     public static Item zucchini = new CropItem(createGroup().food(EDIBLE_3));
 
     // Trees
-    public static Item orange = new Item(createGroup().food(EDIBLE_3));
-    public static Item banana = new Item(createGroup().food(EDIBLE_3));
-    public static Item persimmon = new Item(createGroup().food(EDIBLE_3));
-    public static Item plum = new Item(createGroup().food(EDIBLE_3));
-    public static Item cherry = new Item(createGroup().food(EDIBLE_3));
-    public static Item lemon = new Item(createGroup().food(EDIBLE_3));
-    public static Item grapefruit = new Item(createGroup().food(EDIBLE_3));
-    public static Item kumquat = new Item(createGroup().food(EDIBLE_3));
-    public static Item peach = new Item(createGroup().food(EDIBLE_3));
-    public static Item coconut = new Item(createGroup().food(EDIBLE_1));
-    public static Item nutmeg = new Item(createGroup().food(EDIBLE_1));
-    public static Item fig = new Item(createGroup().food(EDIBLE_3));
-    public static Item nectarine = new Item(createGroup().food(EDIBLE_3));
-    public static Item mango = new Item(createGroup().food(EDIBLE_3));
-    public static Item dragonFruit = new Item(createGroup().food(EDIBLE_3));
-    public static Item starFruit = new Item(createGroup().food(EDIBLE_3));
-    public static Item avocado = new Item(createGroup().food(EDIBLE_3));
-    public static Item apricot = new Item(createGroup().food(EDIBLE_3));
-    public static Item pear = new Item(createGroup().food(EDIBLE_3));
-    public static Item lime = new Item(createGroup().food(EDIBLE_3));
-    public static Item date = new Item(createGroup().food(EDIBLE_3));
-    public static Item almond = new Item(createGroup().food(EDIBLE_3));
-    public static Item cashew = new Item(createGroup().food(EDIBLE_1));
-    public static Item pecan = new Item(createGroup().food(EDIBLE_3));
-    public static Item walnut = new Item(createGroup().food(EDIBLE_3));
+    public static Item orange = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item banana = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item persimmon = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item plum = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item cherry = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item lemon = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item grapefruit = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item kumquat = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item peach = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item coconut = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item nutmeg = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item fig = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item nectarine = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item mango = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item dragonFruit = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item starFruit = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item avocado = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item apricot = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item pear = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item lime = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item date = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item almond = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item cashew = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item pecan = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item walnut = new CropItem(createGroup().food(EDIBLE_3));
 
     // Spices
     public static Item mustard = new Item(createGroup());
@@ -99,7 +99,7 @@ public class ItemRegistry {
     public static Item turmeric = new Item(createGroup());
     public static Item ginger = new Item(createGroup());
     // Herbs
-    public static Item basil = new Item(createGroup().food(EDIBLE_1));
+    public static Item basil = new CropItem(createGroup().food(EDIBLE_1));
 
 
     public static Item artichokeSeed = new SeedItem(BlockRegistry.artichokeCropBlock, createGroup(), SWAMP);
