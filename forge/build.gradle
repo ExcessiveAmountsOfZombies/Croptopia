@@ -83,20 +83,13 @@ minecraft {
     }
 }
 
-processResources {
-    from(sourceSets.main.resources.srcDirs) {
-        include('**/data/croptopia/recipes/**')
-        expand "dependant": "forge"
-    }
-}
-
 tasks.processResources.dependsOn(project(":common").tasks.processResources)
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
-    shade project(":common")
+    implementation project(":common")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
