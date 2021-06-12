@@ -7,12 +7,16 @@ import me.thonk.croptopia.loottables.BiomeLootCondition;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.minecraft.loot.UniformLootTableRange;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.AlternativeEntry;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.LootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.item.ItemPredicate;
 
 import java.util.ArrayList;
@@ -26,7 +30,8 @@ public class CropLootTableModifier {
                     identifier.getPath().equalsIgnoreCase("blocks/fern") ||
                     identifier.getPath().equalsIgnoreCase("blocks/large_fern")) {
                 FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                builder.rolls(UniformLootTableRange.between(0, 1));
+                builder.rolls(UniformLootNumberProvider.create(0, 1));
+                builder.withFunction(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE).build());
 
                 if (Constants.OPTIONS.useHoeToCollectSeeds()) {
                     builder.withCondition(new MatchToolLootCondition(ItemPredicate.Builder.create().tag(FabricToolTags.HOES).build()));

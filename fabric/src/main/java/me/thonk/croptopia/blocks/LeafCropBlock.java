@@ -15,12 +15,14 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
 import java.util.Random;
 
 public class LeafCropBlock extends CroptopiaCropBlock {
     public static final IntProperty AGE = Properties.AGE_3;
+    public static final IntProperty DISTANCE = Properties.DISTANCE_1_7;
 
     public LeafCropBlock(Settings settings) {
         super(settings);
@@ -47,6 +49,16 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     }
 
     @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        int distance = getDistanceFromLog(neighborState) + 1;
+        if (distance != 1 || state.get(DISTANCE) != distance) {
+            world.getBlockTickScheduler().schedule(pos, this, 1);
+        }
+
+        return state;
+    }
+
+    @Override
     public int getMaxAge() {
         return 3;
     }
@@ -58,27 +70,53 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(AGE);
+        builder.add(AGE, DISTANCE);
+    }
+
+    @Override
+    public boolean hasRandomTicks(BlockState state) {
+        return state.get(DISTANCE) == 7;
     }
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        super.randomTick(state, world, pos, random);
+        if (state.get(DISTANCE) == 7) {
+            dropStacks(state, world, pos);
+            world.removeBlock(pos, false);
+        }
+    }
+
+    @Override
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        world.setBlockState(pos, updateDistanceFromLogs(state, world, pos), Block.NOTIFY_ALL);
+    }
+
+    @Override
+    public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
+        return 1;
+    }
+
+    private static BlockState updateDistanceFromLogs(BlockState state, WorldAccess world, BlockPos pos) {
+        int distance = 7;
+        BlockPos.Mutable mutablePos = new BlockPos.Mutable();
         Direction[] directions = Direction.values();
-        BlockPos.Mutable mutable = new BlockPos.Mutable();
-        boolean dropBlock = true;
+
         for (Direction direction : directions) {
-            mutable.set(pos, direction);
-            if (world.getBlockState(mutable).isIn(BlockTags.LEAVES)) {
-                dropBlock = false;
+            mutablePos.set(pos, direction);
+            distance = Math.min(distance, getDistanceFromLog(world.getBlockState(mutablePos)) + 1);
+            if (distance == 1) {
                 break;
             }
         }
 
-        if (dropBlock) {
-            dropStacks(state, world, pos);
-            world.removeBlock(pos, false);
-        }
+        return state.with(DISTANCE, distance);
+    }
 
+    private static int getDistanceFromLog(BlockState state) {
+        if (state.isIn(BlockTags.LOGS)) {
+            return 0;
+        } else {
+            return state.getBlock() instanceof LeafCropBlock || state.getBlock() instanceof LeavesBlock ? state.get(DISTANCE) : 7;
+        }
     }
 }

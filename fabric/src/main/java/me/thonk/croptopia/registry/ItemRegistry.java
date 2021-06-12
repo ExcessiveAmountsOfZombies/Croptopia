@@ -2,6 +2,7 @@ package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
 import me.thonk.croptopia.items.*;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
@@ -63,31 +64,31 @@ public class ItemRegistry {
     public static Item zucchini = new CropItem(createGroup().food(EDIBLE_3));
 
     // Trees
-    public static Item orange = new Item(createGroup().food(EDIBLE_3));
-    public static Item banana = new Item(createGroup().food(EDIBLE_3));
-    public static Item persimmon = new Item(createGroup().food(EDIBLE_3));
-    public static Item plum = new Item(createGroup().food(EDIBLE_3));
-    public static Item cherry = new Item(createGroup().food(EDIBLE_3));
-    public static Item lemon = new Item(createGroup().food(EDIBLE_3));
-    public static Item grapefruit = new Item(createGroup().food(EDIBLE_3));
-    public static Item kumquat = new Item(createGroup().food(EDIBLE_3));
-    public static Item peach = new Item(createGroup().food(EDIBLE_3));
-    public static Item coconut = new Item(createGroup().food(EDIBLE_1));
-    public static Item nutmeg = new Item(createGroup().food(EDIBLE_1));
-    public static Item fig = new Item(createGroup().food(EDIBLE_3));
-    public static Item nectarine = new Item(createGroup().food(EDIBLE_3));
-    public static Item mango = new Item(createGroup().food(EDIBLE_3));
-    public static Item dragonFruit = new Item(createGroup().food(EDIBLE_3));
-    public static Item starFruit = new Item(createGroup().food(EDIBLE_3));
-    public static Item avocado = new Item(createGroup().food(EDIBLE_3));
-    public static Item apricot = new Item(createGroup().food(EDIBLE_3));
-    public static Item pear = new Item(createGroup().food(EDIBLE_3));
-    public static Item lime = new Item(createGroup().food(EDIBLE_3));
-    public static Item date = new Item(createGroup().food(EDIBLE_3));
-    public static Item almond = new Item(createGroup().food(EDIBLE_3));
-    public static Item cashew = new Item(createGroup().food(EDIBLE_1));
-    public static Item pecan = new Item(createGroup().food(EDIBLE_3));
-    public static Item walnut = new Item(createGroup().food(EDIBLE_3));
+    public static Item orange = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item banana = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item persimmon = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item plum = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item cherry = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item lemon = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item grapefruit = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item kumquat = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item peach = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item coconut = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item nutmeg = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item fig = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item nectarine = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item mango = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item dragonFruit = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item starFruit = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item avocado = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item apricot = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item pear = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item lime = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item date = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item almond = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item cashew = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item pecan = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item walnut = new CropItem(createGroup().food(EDIBLE_3));
 
     // Spices
     public static Item mustard = new Item(createGroup());
@@ -98,7 +99,7 @@ public class ItemRegistry {
     public static Item turmeric = new Item(createGroup());
     public static Item ginger = new Item(createGroup());
     // Herbs
-    public static Item basil = new Item(createGroup().food(EDIBLE_1));
+    public static Item basil = new CropItem(createGroup().food(EDIBLE_1));
 
 
     public static Item artichokeSeed = new SeedItem(BlockRegistry.artichokeCropBlock, createGroup(), SWAMP);
@@ -160,32 +161,32 @@ public class ItemRegistry {
 
 
 
-    public static Item appleSapling = registerItem(ItemNames.APPLE_SAPLING, new AliasedBlockItem(BlockRegistry.appleSaplingBlock, createGroup()));
-    public static Item bananaSapling = registerItem(ItemNames.BANANA_SAPLING, new AliasedBlockItem(BlockRegistry.bananaSaplingBlock, createGroup()));
-    public static Item orangeSapling = registerItem(ItemNames.ORANGE_SAPLING, new AliasedBlockItem(BlockRegistry.orangeSaplingBlock, createGroup()));
-    public static Item persimmonSapling = registerItem(ItemNames.PERSIMMON_SAPLING, new AliasedBlockItem(BlockRegistry.persimmonSaplingBlock, createGroup()));
-    public static Item plumSapling = registerItem(ItemNames.PLUM_SAPLING, new AliasedBlockItem(BlockRegistry.plumSaplingBlock, createGroup()));
-    public static Item cherrySapling = registerItem(ItemNames.CHERRY_SAPLING, new AliasedBlockItem(BlockRegistry.cherrySaplingBlock, createGroup()));
-    public static Item lemonSapling = registerItem(ItemNames.LEMON_SAPLING, new AliasedBlockItem(BlockRegistry.lemonSaplingBlock, createGroup()));
-    public static Item grapefruitSapling = registerItem(ItemNames.GRAPEFRUIT_SAPLING, new AliasedBlockItem(BlockRegistry.grapefruitSaplingBlock, createGroup()));
-    public static Item kumquatSapling = registerItem(ItemNames.KUMQUAT_SAPLING, new AliasedBlockItem(BlockRegistry.kumquatSaplingBlock, createGroup()));
-    public static Item peachSapling = registerItem(ItemNames.PEACH_SAPLING, new AliasedBlockItem(BlockRegistry.peachSaplingBlock, createGroup()));
-    public static Item coconutSapling = registerItem(ItemNames.COCONUT_SAPLING, new AliasedBlockItem(BlockRegistry.coconutSaplingBlock, createGroup()));
-    public static Item nutmegSapling = registerItem(ItemNames.NUTMEG_SAPLING, new AliasedBlockItem(BlockRegistry.nutmegSaplingBlock, createGroup()));
-    public static Item figSapling = registerItem(ItemNames.FIG_SAPLING, new AliasedBlockItem(BlockRegistry.figSaplingBlock, createGroup()));
-    public static Item nectarineSapling = registerItem(ItemNames.NECTARINE_SAPLING, new AliasedBlockItem(BlockRegistry.nectarineSaplingBlock, createGroup()));
-    public static Item mangoSapling = registerItem(ItemNames.MANGO_SAPLING, new AliasedBlockItem(BlockRegistry.mangoSaplingBlock, createGroup()));
-    public static Item dragonFruitSapling = registerItem(ItemNames.DRAGONFRUIT_SAPLING, new AliasedBlockItem(BlockRegistry.dragonFruitSaplingBlock, createGroup()));
-    public static Item starFruitSapling = registerItem(ItemNames.STARFRUIT_SAPLING, new AliasedBlockItem(BlockRegistry.starFruitSaplingBlock, createGroup()));
-    public static Item avocadoSapling = registerItem(ItemNames.AVOCADO_SAPLING, new AliasedBlockItem(BlockRegistry.avocadoSaplingBlock, createGroup()));
-    public static Item apricotSapling = registerItem(ItemNames.APRICOT_SAPLING, new AliasedBlockItem(BlockRegistry.apricotSaplingBlock, createGroup()));
-    public static Item pearSapling = registerItem(ItemNames.PEAR_SAPLING, new AliasedBlockItem(BlockRegistry.pearSaplingBlock, createGroup()));
-    public static Item limeSapling = registerItem(ItemNames.LIME_SAPLING, new AliasedBlockItem(BlockRegistry.limeSaplingBlock, createGroup()));
-    public static Item dateSapling = registerItem(ItemNames.DATE_SAPLING, new AliasedBlockItem(BlockRegistry.dateSaplingBlock, createGroup()));
-    public static Item almondSapling = new AliasedBlockItem(BlockRegistry.almondSaplingBlock, createGroup());
-    public static Item cashewSapling = new AliasedBlockItem(BlockRegistry.cashewSaplingBlock, createGroup());
-    public static Item pecanSapling = new AliasedBlockItem(BlockRegistry.pecanSaplingBlock, createGroup());
-    public static Item walnutSapling = new AliasedBlockItem(BlockRegistry.walnutSaplingBlock, createGroup());
+    public static Item appleSapling = registerItem(ItemNames.APPLE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.appleSaplingBlock, LeavesRegistry.appleCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item bananaSapling = registerItem(ItemNames.BANANA_SAPLING, new CroptopiaSaplingItem(BlockRegistry.bananaSaplingBlock, LeavesRegistry.bananaCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item orangeSapling = registerItem(ItemNames.ORANGE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.orangeSaplingBlock, LeavesRegistry.orangeCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item persimmonSapling = registerItem(ItemNames.PERSIMMON_SAPLING, new CroptopiaSaplingItem(BlockRegistry.persimmonSaplingBlock, LeavesRegistry.persimmonCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item plumSapling = registerItem(ItemNames.PLUM_SAPLING, new CroptopiaSaplingItem(BlockRegistry.plumSaplingBlock, LeavesRegistry.plumCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item cherrySapling = registerItem(ItemNames.CHERRY_SAPLING, new CroptopiaSaplingItem(BlockRegistry.cherrySaplingBlock, LeavesRegistry.cherryCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item lemonSapling = registerItem(ItemNames.LEMON_SAPLING, new CroptopiaSaplingItem(BlockRegistry.lemonSaplingBlock, LeavesRegistry.lemonCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item grapefruitSapling = registerItem(ItemNames.GRAPEFRUIT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.grapefruitSaplingBlock, LeavesRegistry.grapefruitCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item kumquatSapling = registerItem(ItemNames.KUMQUAT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.kumquatSaplingBlock, LeavesRegistry.kumquatCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item peachSapling = registerItem(ItemNames.PEACH_SAPLING, new CroptopiaSaplingItem(BlockRegistry.peachSaplingBlock, LeavesRegistry.peachCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item coconutSapling = registerItem(ItemNames.COCONUT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.coconutSaplingBlock, LeavesRegistry.coconutCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item nutmegSapling = registerItem(ItemNames.NUTMEG_SAPLING, new CroptopiaSaplingItem(BlockRegistry.nutmegSaplingBlock, LeavesRegistry.nutmegCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item figSapling = registerItem(ItemNames.FIG_SAPLING, new CroptopiaSaplingItem(BlockRegistry.figSaplingBlock, LeavesRegistry.figCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item nectarineSapling = registerItem(ItemNames.NECTARINE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.nectarineSaplingBlock, LeavesRegistry.nectarineCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item mangoSapling = registerItem(ItemNames.MANGO_SAPLING, new CroptopiaSaplingItem(BlockRegistry.mangoSaplingBlock, LeavesRegistry.mangoCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item dragonFruitSapling = registerItem(ItemNames.DRAGONFRUIT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.dragonFruitSaplingBlock, LeavesRegistry.dragonFruitCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item starFruitSapling = registerItem(ItemNames.STARFRUIT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.starFruitSaplingBlock, LeavesRegistry.starFruitCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item avocadoSapling = registerItem(ItemNames.AVOCADO_SAPLING, new CroptopiaSaplingItem(BlockRegistry.avocadoSaplingBlock, LeavesRegistry.avocadoCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item apricotSapling = registerItem(ItemNames.APRICOT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.apricotSaplingBlock, LeavesRegistry.apricotCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item pearSapling = registerItem(ItemNames.PEAR_SAPLING, new CroptopiaSaplingItem(BlockRegistry.pearSaplingBlock, LeavesRegistry.pearCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item limeSapling = registerItem(ItemNames.LIME_SAPLING, new CroptopiaSaplingItem(BlockRegistry.limeSaplingBlock, LeavesRegistry.limeCrop, Blocks.OAK_LEAVES, createGroup()));
+    public static Item dateSapling = registerItem(ItemNames.DATE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.dateSaplingBlock, LeavesRegistry.dateCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item almondSapling = new CroptopiaSaplingItem(BlockRegistry.almondSaplingBlock, LeavesRegistry.almondCrop, Blocks.DARK_OAK_LEAVES, createGroup());
+    public static Item cashewSapling = new CroptopiaSaplingItem(BlockRegistry.cashewSaplingBlock, LeavesRegistry.cashewCrop, Blocks.DARK_OAK_LEAVES, createGroup());
+    public static Item pecanSapling = new CroptopiaSaplingItem(BlockRegistry.pecanSaplingBlock, LeavesRegistry.pecanCrop, Blocks.DARK_OAK_LEAVES, createGroup());
+    public static Item walnutSapling = new CroptopiaSaplingItem(BlockRegistry.walnutSaplingBlock, LeavesRegistry.walnutCrop, Blocks.DARK_OAK_LEAVES, createGroup());
 
     // secondary ingredients?
     public static Item oliveOil = new Item(createGroup());

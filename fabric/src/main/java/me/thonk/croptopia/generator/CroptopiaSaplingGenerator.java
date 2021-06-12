@@ -6,17 +6,18 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class CroptopiaSaplingGenerator extends SaplingGenerator {
 
-    private final ConfiguredFeature<TreeFeatureConfig, ?> tree;
+    private final Supplier<ConfiguredFeature<TreeFeatureConfig, ?>> tree;
 
-    public CroptopiaSaplingGenerator(ConfiguredFeature<?, ?> tree) {
-        this.tree = (ConfiguredFeature<TreeFeatureConfig, ?>) tree;
+    public CroptopiaSaplingGenerator(Supplier<ConfiguredFeature<TreeFeatureConfig, ?>> tree) {
+        this.tree = tree;
     }
 
     @Override
     protected @Nullable ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
-        return tree;
+        return tree.get();
     }
 }

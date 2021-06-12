@@ -15,6 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.EndSpikeFeature;
 
 public class CroptopiaCropBlock extends CropBlock {
     protected static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
@@ -53,8 +54,8 @@ public class CroptopiaCropBlock extends CropBlock {
     }
 
     @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
-        super.onLandedUpon(world, pos, entity, distance);
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+        super.onLandedUpon(world, state, pos, entity, fallDistance);
     }
 
     @Override
