@@ -5,10 +5,10 @@
       "item": "croptopia:food_press"
     },
     {
-      "tag": "${dependant}:soybeans"
+      "tag": "${dependant}:vegetables/soybeans"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "${dependant}:water_bottles"
     }
   ],
   "result": {

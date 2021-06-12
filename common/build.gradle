@@ -15,8 +15,10 @@ tasks.withType(JavaCompile) {
 tasks.withType(ProcessResources) {
     if (project.property("launch_mod").toString().length() > 0) {
         from(sourceSets.main.resources.srcDirs) {
-            include('**/data/croptopia/recipes/**')
+            include('**/data/**')
+            include('**/dependants/**')
             expand "dependant": project.property("launch_mod").toString()
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
         }
     }
 }

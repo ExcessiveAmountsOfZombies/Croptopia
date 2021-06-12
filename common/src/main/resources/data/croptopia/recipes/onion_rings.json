@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:onions"
+      "tag": "${dependant}:vegetables/onion"
     },
     {
       "item": "croptopia:cooking_pot"

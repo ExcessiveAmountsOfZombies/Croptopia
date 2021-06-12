@@ -8,7 +8,7 @@
       "tag": "${dependant}:chocolates"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
       "item": "croptopia:vanilla_ice_cream"

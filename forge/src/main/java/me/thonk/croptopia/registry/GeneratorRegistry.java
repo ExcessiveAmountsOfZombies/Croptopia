@@ -331,8 +331,7 @@ public class GeneratorRegistry {
                     ImmutableList.of(Blocks.DIRT.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState())))));
 
     public static final ConfiguredFeature<?, ?> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
-            DISK_SALT.withPlacement(Features.Placements.PATCH_PLACEMENT
-                    .withPlacement(Placement.CHANCE.configure(new ChanceConfig(40)))).func_242731_b(5));
+            DISK_SALT.withPlacement(Features.Placements.SEAGRASS_DISK_PLACEMENT));
 
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(ResourceLocation id, ConfiguredFeature<FC, ?> withConfigurationdFeature) {

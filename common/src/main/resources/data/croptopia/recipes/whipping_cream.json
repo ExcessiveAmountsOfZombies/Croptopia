@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:milk_bucket"
+      "tag": "${dependant}:milks"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:vanilla"
+      "tag": "${dependant}:crops/vanilla"
     }
   ],
   "result": {

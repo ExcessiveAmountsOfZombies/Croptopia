@@ -1,8 +1,8 @@
 import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
-    id 'fabric-loom' version '0.6-SNAPSHOT'
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'fabric-loom' version '0.8.5'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
     id 'maven-publish'
 }
 
@@ -28,16 +28,21 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
     modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
 
-    modCompile "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
+    modApi "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
 
 
-    compile project(":common")
+    implementation(project(":common"))
     shade project(":common")
 }
 
+minecraft {
+    accessWidener = file("src/main/resources/croptopia.accesswidener")
+}
+
 processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
@@ -64,6 +69,7 @@ shadowJar {
 task remappedShadowJar(type: RemapJarTask) {
     dependsOn tasks.shadowJar
     input = tasks.shadowJar.archiveFile
+    remapAccessWidener = true
     addNestedDependencies = true
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"

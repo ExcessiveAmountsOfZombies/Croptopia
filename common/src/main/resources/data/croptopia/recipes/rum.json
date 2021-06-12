@@ -8,7 +8,7 @@
       "tag": "${dependant}:molasses"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "${dependant}:water_bottles"
     }
   ],
   "result": {

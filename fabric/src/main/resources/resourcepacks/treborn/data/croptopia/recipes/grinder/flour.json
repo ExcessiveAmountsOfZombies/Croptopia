@@ -1,0 +1,15 @@
+{
+  "type": "techreborn:grinder",
+  "power": 2,
+  "time": 200,
+  "ingredients": [
+    {
+      "tag": "croptopia:flourable"
+    }
+  ],
+  "results" : [
+    {
+      "item": "croptopia:flour"
+    }
+  ]
+}

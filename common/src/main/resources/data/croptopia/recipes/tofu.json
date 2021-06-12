@@ -5,10 +5,10 @@
       "item": "croptopia:cooking_pot"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "${dependant}:water_bottles"
     },
     {
-      "tag": "${dependant}:soybeans"
+      "tag": "${dependant}:vegetables/soybeans"
     }
   ],
   "result": {

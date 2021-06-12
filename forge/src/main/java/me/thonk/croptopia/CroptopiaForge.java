@@ -23,7 +23,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -42,6 +41,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -133,6 +133,14 @@ public class CroptopiaForge {
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.cookingPot));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.foodPress));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.fryingPan));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.mortarAndPestle));
+
+        InterModComms.sendTo("cookingforblockheads", "RegisterWaterItem", () -> new ItemStack(ItemRegistry.waterBottle));
+        InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(ItemRegistry.milkBottle));
+
         // some example code to dispatch IMC to another mod
     }
 
@@ -190,7 +198,6 @@ public class CroptopiaForge {
 
         if (item instanceof CropItem) {
             cropItems.add(item);
-            System.out.println("heop");
         }
 
         if (item instanceof SeedItem) {
@@ -198,9 +205,6 @@ public class CroptopiaForge {
             block.setSeed(item);
         }
 
-        // \bregisterItem\b..[A-Z]\w+",
-        //System.out.println( "\"" + itemName + "\",");
-        // TODO: maybe
         if (item instanceof SeedItem) {
             seeds.add((SeedItem) item);
         }
@@ -271,8 +275,13 @@ public class CroptopiaForge {
         VillagerAccess.setGatherableItems(villagerGatherables.build());
     }
 
+    private static boolean hasRun;
+
     public static void onWorldLoad(WorldEvent.Load event) {
-        modifyVillagerFoodItems();
-        modifyVillagerGatherables();
+        if (!hasRun) {
+            modifyVillagerFoodItems();
+            modifyVillagerGatherables();
+            hasRun = true;
+        }
     }
 }

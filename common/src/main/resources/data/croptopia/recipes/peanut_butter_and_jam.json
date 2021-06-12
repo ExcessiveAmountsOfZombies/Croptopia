@@ -5,10 +5,10 @@
       "item": "minecraft:bread"
     },
     {
-      "tag": "${dependant}:peanuts"
+      "tag": "${dependant}:crops/peanuts"
     },
     {
-      "tag": "croptopia:jams"
+      "tag": "${dependant}:jam"
     }
   ],
   "result": {

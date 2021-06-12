@@ -21,6 +21,7 @@
   "license": "MIT",
   "icon": "assets/croptopia/croptopia.png",
   "environment": "*",
+  "accessWidener": "croptopia.accesswidener",
   "entrypoints": {
     "client": [
       "me.thonk.croptopia.client.CroptopiaClient"
@@ -37,9 +38,9 @@
   ],
   "depends": {
     "fabricloader": ">=0.10.6+build.214",
-    "fabric": "*",
+    "fabric": ">=0.34.9",
     "fabric-biome-api-v1": ">=3.0.0",
-    "minecraft": ">=1.16.3"
+    "minecraft": ">=1.17-pre1"
   },
   "suggests": {
     "patchouli": "*",

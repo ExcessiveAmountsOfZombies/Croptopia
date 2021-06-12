@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:leeks"
+      "tag": "${dependant}:vegetables/leek"
     }
   ],
   "result": {

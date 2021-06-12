@@ -1,0 +1,7 @@
+accessWidener	v1	named
+accessible    class    net/minecraft/world/gen/feature/ConfiguredFeatures$Decorators
+mutable    field    net/minecraft/entity/passive/VillagerEntity    ITEM_FOOD_VALUES    Ljava/util/Map;
+mutable    field    net/minecraft/entity/passive/VillagerEntity    GATHERABLE_ITEMS    Ljava/util/Set;
+mutable    field    net/minecraft/item/AxeItem    STRIPPED_BLOCKS    Ljava/util/Map;
+mutable    field    net/minecraft/entity/passive/ParrotEntity    TAMING_INGREDIENTS    Ljava/util/Set;
+mutable    field    net/minecraft/entity/passive/ChickenEntity    BREEDING_INGREDIENT    Lnet/minecraft/recipe/Ingredient;

@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:yams"
+      "tag": "${dependant}:vegetables/yams"
     },
     {
-      "tag": "${dependant}:vanilla"
+      "tag": "${dependant}:crops/vanilla"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     }
   ],
   "result": {

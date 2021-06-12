@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "#${dependant}:saplings/almond",
+    "#${dependant}:saplings/apple",
+    "#${dependant}:saplings/apricot",
+    "#${dependant}:saplings/avocado",
+    "#${dependant}:saplings/banana",
+    "#${dependant}:saplings/cashew",
+    "#${dependant}:saplings/cherry",
+    "#${dependant}:saplings/coconut",
+    "#${dependant}:saplings/date",
+    "#${dependant}:saplings/dragonfruit",
+    "#${dependant}:saplings/fig",
+    "#${dependant}:saplings/grapefruit",
+    "#${dependant}:saplings/kumquat",
+    "#${dependant}:saplings/lemon",
+    "#${dependant}:saplings/lime",
+    "#${dependant}:saplings/mango",
+    "#${dependant}:saplings/nectarine",
+    "#${dependant}:saplings/nutmeg",
+    "#${dependant}:saplings/orange",
+    "#${dependant}:saplings/peach",
+    "#${dependant}:saplings/pear",
+    "#${dependant}:saplings/pecan",
+    "#${dependant}:saplings/persimmon",
+    "#${dependant}:saplings/plum",
+    "#${dependant}:saplings/starfruit",
+    "#${dependant}:saplings/walnut"
+  ]
+}

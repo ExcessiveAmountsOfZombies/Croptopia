@@ -8,7 +8,7 @@
       "item": "croptopia:frying_pan"
     },
     {
-      "item": "minecraft:water_bucket"
+      "tag": "${dependant}:water_bottles"
     }
   ],
   "result": {

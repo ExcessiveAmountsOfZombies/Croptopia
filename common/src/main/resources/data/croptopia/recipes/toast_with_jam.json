@@ -5,7 +5,7 @@
       "tag": "${dependant}:toasts"
     },
     {
-      "tag": "croptopia:jams"
+      "tag": "${dependant}:jam"
     }
   ],
   "result": {

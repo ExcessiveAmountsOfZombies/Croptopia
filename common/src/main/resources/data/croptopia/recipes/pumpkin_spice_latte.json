@@ -8,10 +8,10 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:paprika"
+      "tag": "${dependant}:crops/paprika"
     },
     {
-      "tag": "croptopia:milks"
+      "tag": "${dependant}:milks"
     },
     {
       "item": "minecraft:pumpkin"

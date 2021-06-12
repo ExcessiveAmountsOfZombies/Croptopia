@@ -8,7 +8,7 @@
       "tag": "${dependant}:cheeses"
     },
     {
-      "tag": "${dependant}:lettuce"
+      "tag": "${dependant}:vegetables/lettuce"
     },
     {
       "item": "croptopia:salsa"
