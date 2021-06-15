@@ -1,7 +1,7 @@
 import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
-    id 'fabric-loom' version '0.8.5'
+    id 'fabric-loom' version '0.8.17'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
     id 'maven-publish'
 }
