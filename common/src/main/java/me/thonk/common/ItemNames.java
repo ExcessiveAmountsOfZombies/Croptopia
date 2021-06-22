@@ -97,6 +97,7 @@ public class ItemNames {
     public static final String PEAR = "pear";
     public static final String LIME = "lime";
     public static final String DATE = "date";
+    public static final String CHIVES = "chives";
     public static final String ALMOND = "almond";
     public static final String CASHEW = "cashew";
     public static final String PECAN = "pecan";

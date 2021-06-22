@@ -62,6 +62,7 @@ public class ItemRegistry {
     public static Item turnip = new CropItem(createGroup().food(EDIBLE_3));
     public static Item yam = new CropItem(createGroup().food(EDIBLE_3));
     public static Item zucchini = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item chives = new CropItem(createGroup().food(EDIBLE_3));
 
     // Trees
     public static Item orange = new CropItem(createGroup().food(EDIBLE_3));
@@ -444,6 +445,7 @@ public class ItemRegistry {
         registerItem(ItemNames.TURNIP, turnip);
         registerItem(ItemNames.YAM, yam);
         registerItem(ItemNames.ZUCCHINI, zucchini);
+        registerItem(ItemNames.CHIVES, chives);
 
         registerItem(ItemNames.ORANGE, orange);
         registerItem(ItemNames.BANANA, banana);
