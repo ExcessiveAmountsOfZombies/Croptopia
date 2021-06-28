@@ -1,3 +1,4 @@
+/*
 package me.thonk.croptopia.dependencies;
 
 import io.github.prospector.modmenu.api.ModMenuApi;
@@ -19,3 +20,4 @@ public class ModMenu extends Dependency implements ModMenuApi {
 
 
 }
+*/

@@ -16,6 +16,13 @@ public class BiomeModifiers {
 
 
     public static void init() {
+
+        // generate in ALL biomes
+        BiomeModifications.addFeature(context -> {
+            Biome biome = context.getBiome();
+            return biome.getCategory() != Biome.Category.OCEAN;
+        }, GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
+
         Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
