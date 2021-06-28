@@ -1,7 +1,6 @@
-/*
 package me.thonk.croptopia.dependencies;
 
-import io.github.prospector.modmenu.api.ModMenuApi;
+import com.terraformersmc.modmenu.api.ModMenuApi;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
@@ -13,11 +12,5 @@ public class ModMenu extends Dependency implements ModMenuApi {
         super("modmenu");
     }
 
-    @Override
-    public String getModId() {
-        return "Croptopia";
-    }
-
 
 }
-*/
