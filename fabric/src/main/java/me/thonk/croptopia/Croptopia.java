@@ -29,11 +29,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.ChickenEntity;
-import net.minecraft.entity.passive.ParrotEntity;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -45,6 +41,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.BlockView;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -97,6 +94,7 @@ public class Croptopia implements ModInitializer {
             SetupCommand.register(commandDispatcher);
         });
 
+        CroptopiaVillagerTrades.init();
 
         modifyVillagerFoodItems();
         modifyVillagerGatherables();
