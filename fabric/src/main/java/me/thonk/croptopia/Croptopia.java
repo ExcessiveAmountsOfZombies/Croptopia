@@ -41,10 +41,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.BlockView;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,11 +78,11 @@ public class Croptopia implements ModInitializer {
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
+
         OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
-
-
         seeds.clear();
         seeds = OPTIONS.readConfiguredSeeds(OPTIONS.getOptionsFile());
+
         BiomeModifiers.init();
         CropLootTableModifier.init();
 

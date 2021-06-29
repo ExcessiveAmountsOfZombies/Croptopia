@@ -12,6 +12,7 @@
     "FarmerVillagerTaskMixin",
     "ItemMixin",
     "ParrotAccess",
+    "StructurePoolsMixin",
     "VillagerAccess",
     "VillagerMixin"
   ],
