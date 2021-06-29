@@ -1,6 +1,5 @@
 package me.thonk.croptopia.events;
 
-import com.mojang.math.Vector3d;
 import me.thonk.croptopia.CroptopiaForge;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.registry.BlockRegistry;
@@ -24,6 +23,15 @@ import java.util.Random;
 public class BlockBreakEvent {
 
     private static final Random random = new Random();
+
+
+    @SubscribeEvent
+    public void onInteractionWithTool(BlockEvent.BlockToolInteractEvent event) {
+        BlockState state = event.getState();
+        if (state.is(BlockRegistry.cinnamonLog)) {
+            Block.popResource(event.getPlayer().level, event.getPos(), new ItemStack(ItemRegistry.cinnamon));
+        }
+    }
 
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
