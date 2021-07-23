@@ -3,9 +3,9 @@ package me.thonk.croptopia.events;
 import me.thonk.croptopia.BiomeLootCondition;
 import me.thonk.croptopia.CroptopiaForge;
 import me.thonk.croptopia.items.SeedItem;
-import net.minecraft.loot.*;
-import net.minecraft.loot.conditions.RandomChance;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 

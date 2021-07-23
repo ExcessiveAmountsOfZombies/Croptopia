@@ -2,14 +2,13 @@ package me.thonk.croptopia.data;
 
 
 import com.google.common.collect.ImmutableList;
-import net.minecraft.block.Block;
-import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.ItemTagsProvider;
-import net.minecraft.item.Item;
-import net.minecraft.tags.ITag;
+import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -17,6 +16,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
+
 import java.util.List;
 
 import static me.thonk.croptopia.registry.BlockRegistry.*;

@@ -1,20 +1,20 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
-        jcenter()
+        //maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1+', changing: true
-        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
+        classpath 'gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0'
+        //classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
+//apply plugin: 'org.spongepowered.mixin'
 
 repositories {
     maven {
@@ -32,13 +32,13 @@ configurations {
 }
 
 
-mixin {
+/*mixin {
     add sourceSets.main, "croptopia.refmap.json"
-}
+}*/
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'snapshot', version: '20201028-1.16.3'
+    mappings channel: 'official', version: '1.17.1'
     runs {
         client {
             workingDirectory project.file('run')
@@ -95,10 +95,10 @@ tasks.processResources.dependsOn(project(":common").tasks.processResources)
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
     shade project(":common")
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
-    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
+    //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
+    //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 shadowJar {

@@ -5,9 +5,11 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
 import me.thonk.croptopia.blocks.TallCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 
 import static me.thonk.croptopia.CroptopiaForge.*;
 

@@ -3,13 +3,10 @@ package me.thonk.croptopia;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import net.minecraft.loot.*;
-import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.loot.conditions.LootConditionManager;
-import net.minecraft.util.JSONUtils;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.world.biome.Biome;
+import com.mojang.math.Vector3d;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.storage.loot.LootContext;
 
 
 public class BiomeLootCondition implements ILootCondition {

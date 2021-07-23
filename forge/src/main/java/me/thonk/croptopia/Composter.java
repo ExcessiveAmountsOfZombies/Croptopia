@@ -1,9 +1,6 @@
 package me.thonk.croptopia;
 
 import me.thonk.croptopia.registry.ItemRegistry;
-import net.minecraft.util.IItemProvider;
-
-import static net.minecraft.block.ComposterBlock.CHANCES;
 
 public class Composter {
 

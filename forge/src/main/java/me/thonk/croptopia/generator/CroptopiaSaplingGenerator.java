@@ -1,8 +1,7 @@
 package me.thonk.croptopia.generator;
 
-import net.minecraft.block.trees.Tree;
-import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
+
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 import java.util.Random;
 

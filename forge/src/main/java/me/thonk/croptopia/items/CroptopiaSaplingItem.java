@@ -1,10 +1,7 @@
 package me.thonk.croptopia.items;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.BlockNamedItem;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResultType;
+
+import net.minecraft.world.level.block.state.BlockState;
 
 public class CroptopiaSaplingItem extends BlockNamedItem {
 

@@ -1,7 +1,7 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.BlockNames;
-import net.minecraft.block.Block;
+import net.minecraft.world.level.block.Block;
 
 import static me.thonk.croptopia.CroptopiaForge.*;
 

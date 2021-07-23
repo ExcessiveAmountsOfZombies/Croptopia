@@ -17,24 +17,20 @@ import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
-import net.minecraft.block.*;
-import net.minecraft.block.material.Material;
+import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.client.renderer.color.BlockColors;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.*;
-import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.loot.ILootSerializer;
-import net.minecraft.loot.LootConditionType;
-import net.minecraft.loot.conditions.ILootCondition;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.FoliageColors;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.biome.BiomeColors;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -49,8 +45,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -193,7 +189,7 @@ public class CroptopiaForge {
         item.setRegistryName(createIdentifier(itemName));
         itemRegister.getRegistry().register(item);
         if (item instanceof BlockNamedItem) {
-            ((BlockNamedItem) item).addToBlockToItemMap(Item.BLOCK_TO_ITEM, item);
+            ((BlockNamedItem) item).addToBlockToItemMap(Item.BY_BLOCK, item);
         }
 
         if (item instanceof CropItem) {

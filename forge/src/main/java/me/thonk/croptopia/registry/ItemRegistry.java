@@ -2,14 +2,13 @@ package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
 import me.thonk.croptopia.items.*;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.RegistryEvent;
 
-import static me.thonk.common.ItemNames.*;
 import static me.thonk.croptopia.CroptopiaForge.*;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
-import static net.minecraft.world.biome.Biome.Category.*;
 
 public class ItemRegistry {
     // Fruits & Vegetables // cropitem

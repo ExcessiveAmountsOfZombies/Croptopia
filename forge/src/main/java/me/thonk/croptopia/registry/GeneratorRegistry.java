@@ -1,21 +1,14 @@
 package me.thonk.croptopia.registry;
 
 import com.google.common.collect.ImmutableList;
-import me.thonk.common.FeatureNames;
-import net.minecraft.block.Blocks;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.WorldGenRegistries;
-import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
-import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.placement.ChanceConfig;
-import net.minecraft.world.gen.placement.Placement;
-import net.minecraft.world.gen.trunkplacer.ForkyTrunkPlacer;
-import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
+import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.Features;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
 import java.util.HashMap;
 import java.util.Map;

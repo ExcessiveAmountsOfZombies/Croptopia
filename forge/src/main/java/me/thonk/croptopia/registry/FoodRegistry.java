@@ -1,6 +1,5 @@
 package me.thonk.croptopia.registry;
 
-import net.minecraft.item.Food;
 
 public class FoodRegistry {
 
