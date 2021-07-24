@@ -17,8 +17,7 @@ public class LootTableModification {
 
     @SubscribeEvent
     public void onLootTableLoad(LootTableLoadEvent event) {
-        ResourceLocation location = event.getName();
-        // terrible, doesn't work, give up. doesn't even know that blocks/grass exists. pathetic.
+        /*ResourceLocation location = event.getName();
         if (location != null) {
             if (location.getPath().equalsIgnoreCase("blocks/grass")) {
                 LootPool.Builder builder = LootPool.builder();
@@ -34,6 +33,6 @@ public class LootTableModification {
                 event.getTable().addPool(builder.name("croptopia_seeds").build());
                 LootTable.Builder lootTable = LootTable.builder().addLootPool(builder.name("croptopia_seeds"));
             }
-        }
+        }*/
     }
 }

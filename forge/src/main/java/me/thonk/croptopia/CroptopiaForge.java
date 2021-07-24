@@ -1,7 +1,5 @@
 package me.thonk.croptopia;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -13,26 +11,37 @@ import me.thonk.croptopia.events.Harvest;
 import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
-import me.thonk.croptopia.mixin.VillagerAccess;
+//import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.storage.loot.Serializer;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditions;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -71,15 +80,14 @@ public class CroptopiaForge {
     public static ArrayList<Item> cropItems = new ArrayList<>();
 
     // todo: there might be a different way i'm supposed to do this in forge.
-    public static LootConditionType BIOME_CHECK;
-    public static DamageDurabilityRecipe.DamageDurabilitySerializer DAMAGE_DURABILITY;
+    public static LootItemConditionType BIOME_CHECK;
 
     public static Config config;
 
 
     public static Patchouli patchouli;
 
-    public static ItemGroup CROPTOPIA_ITEM_GROUP;
+    public static CreativeModeTab CROPTOPIA_ITEM_GROUP;
 
     public CroptopiaForge() {
         config = new Config();
@@ -103,10 +111,10 @@ public class CroptopiaForge {
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
-        CROPTOPIA_ITEM_GROUP = new ItemGroup("croptopia") {
+        CROPTOPIA_ITEM_GROUP = new CreativeModeTab("croptopia") {
             @Override
-            public ItemStack createIcon() {
-                return new ItemStack(ItemRegistry.onion);
+            public ItemStack makeIcon() {
+                return new ItemStack(ItemRegistry.coffee);
             }
         };
     }
@@ -121,13 +129,14 @@ public class CroptopiaForge {
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         cropBlocks.forEach(block -> {
-            RenderTypeLookup.setRenderLayer(block, RenderType.getCutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped());
         });
-        BlockColors colors = event.getMinecraftSupplier().get().getBlockColors();
+
+        BlockColors colors = Minecraft.getInstance().getBlockColors();
         colors.register((state, world, pos, tintIndex) ->
                 world != null && pos != null
-                        ? BiomeColors.getFoliageColor(world, pos)
-                        : FoliageColors.getDefault(), leafBlocks.toArray(new Block[]{}));
+                        ? BiomeColors.getAverageFoliageColor(world, pos)
+                        : FoliageColor.getDefaultColor(), leafBlocks.toArray(new Block[]{}));
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -163,22 +172,16 @@ public class CroptopiaForge {
             LeavesRegistry.init();
             BlockRegistry.init();
 
-            Map<Block, Block> stripMap = new HashMap<>(AxeItem.BLOCK_STRIPPING_MAP);
+            // todo: implement again
+            /*Map<Block, Block> stripMap = new HashMap<>(AxeItem.BLOCK_STRIPPING_MAP);
             stripMap.put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog);
             stripMap.put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood);
-            AxeItem.BLOCK_STRIPPING_MAP = stripMap;
+            AxeItem.BLOCK_STRIPPING_MAP = stripMap;*/
         }
 
         @SubscribeEvent
         public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
             ItemRegistry.init(itemRegister);
-        }
-
-        @SubscribeEvent
-        public static void recipeRegister(final RegistryEvent.Register<IRecipeSerializer<?>> register) {
-            DAMAGE_DURABILITY = new DamageDurabilityRecipe.DamageDurabilitySerializer();
-            DAMAGE_DURABILITY.setRegistryName(MiscNames.MOD_ID, MiscNames.RECIPE_SERIALIZER_DAMAGE_DURABILITY);
-            register.getRegistry().register(DAMAGE_DURABILITY);
         }
     }
 
@@ -190,8 +193,8 @@ public class CroptopiaForge {
     public static Item registerItem(RegistryEvent.Register<Item> itemRegister, String itemName, Item item) {
         item.setRegistryName(createIdentifier(itemName));
         itemRegister.getRegistry().register(item);
-        if (item instanceof BlockNamedItem) {
-            ((BlockNamedItem) item).addToBlockToItemMap(Item.BY_BLOCK, item);
+        if (item instanceof ItemNameBlockItem) {
+            ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
         }
 
         if (item instanceof CropItem) {
@@ -223,14 +226,8 @@ public class CroptopiaForge {
         return block;
     }
 
-    public static LootConditionType registerLootCondition(String id, ILootSerializer<? extends ILootCondition> serializer) {
-        return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootConditionType(serializer));
-    }
-
-    public static <S extends IRecipeSerializer<T>, T extends IRecipe<?>> S registerSerializer(String id, S serializer) {
-        serializer.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, id));
-        ForgeRegistries.RECIPE_SERIALIZERS.register(serializer);
-        return serializer;
+    public static LootItemConditionType registerLootCondition(String id, Serializer<? extends LootItemCondition> serializer) {
+        return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootItemConditionType(serializer));
     }
 
     public static BlockBehaviour.Properties createCropSettings() {
@@ -260,17 +257,19 @@ public class CroptopiaForge {
     }
 
     private static void modifyVillagerFoodItems() {
-        ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
+        // todo: implement again
+        /*ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
                 .putAll(VillagerAccess.getItemFoodValues());
         cropItems.forEach(item -> villagerFoodItems.put(item, item.getFood().getHealing()));
-        VillagerAccess.setItemFoodValues(villagerFoodItems.build());
+        VillagerAccess.setItemFoodValues(villagerFoodItems.build());*/
     }
 
     private static void modifyVillagerGatherables() {
-        ImmutableSet.Builder<Item> villagerGatherables = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
+        // todo: implement again
+        /*ImmutableSet.Builder<Item> villagerGatherables = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
         seeds.forEach(villagerGatherables::add);
         cropItems.forEach(villagerGatherables::add);
-        VillagerAccess.setGatherableItems(villagerGatherables.build());
+        VillagerAccess.setGatherableItems(villagerGatherables.build());*/
     }
 
     private static boolean hasRun;

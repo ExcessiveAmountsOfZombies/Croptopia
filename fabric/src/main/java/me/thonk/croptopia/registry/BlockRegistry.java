@@ -7,6 +7,7 @@ import me.thonk.croptopia.blocks.TallCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.sound.BlockSoundGroup;
 

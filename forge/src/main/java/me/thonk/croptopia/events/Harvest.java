@@ -40,7 +40,6 @@ public class Harvest {
     }
 
     public BlockState withAge(BlockState state, IntegerProperty property, int age) {
-        // todo what ???
-        return state.getBlockState().with(property, Integer.valueOf(age));
+        return state.setValue(property, Integer.valueOf(age));
     }
 }

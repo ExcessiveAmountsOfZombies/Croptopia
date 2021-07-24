@@ -5,11 +5,17 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.mojang.math.Vector3d;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.Serializer;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
+import net.minecraft.world.phys.Vec3;
 
 
-public class BiomeLootCondition implements ILootCondition {
+public class BiomeLootCondition implements LootItemCondition {
 
     private final Biome.BiomeCategory biomeCategory;
 
@@ -19,7 +25,7 @@ public class BiomeLootCondition implements ILootCondition {
 
 
     @Override
-    public LootConditionType func_230419_b_() {
+    public LootItemConditionType getType() {
         return CroptopiaForge.BIOME_CHECK;
     }
 
@@ -28,47 +34,46 @@ public class BiomeLootCondition implements ILootCondition {
         if (biomeCategory == Biome.BiomeCategory.NONE) {
             return true;
         }
-        Vector3d vec3d = lootContext.get(LootParameters.field_237457_g_);
+        Vec3 vec3d = lootContext.getParam(LootContextParams.ORIGIN);
         if (vec3d != null) {
             //BuiltinRegistries.BIOME.get("key");
-            Biome biome = lootContext.getWorld().getBiome(new BlockPos(vec3d));
+            Biome biome = lootContext.getLevel().getBiome(new BlockPos(vec3d));
             return biome.getBiomeCategory() == biomeCategory;
         }
         return false;
     }
 
-    public static Builder builder(Biome.Category category) {
+    public static Builder builder(Biome.BiomeCategory category) {
         return new Builder(category);
     }
 
 
-
-    public static class Serializer implements ILootSerializer<BiomeLootCondition> {
+    public static class Serializer implements net.minecraft.world.level.storage.loot.Serializer<BiomeLootCondition> {
         public Serializer() {
 
         }
 
         @Override
         public void serialize(JsonObject json, BiomeLootCondition object, JsonSerializationContext context) {
-            json.addProperty("biome_category", object.biomeCategory.getString());
+            json.addProperty("biome_category", object.biomeCategory.getName());
         }
 
         @Override
         public BiomeLootCondition deserialize(JsonObject json, JsonDeserializationContext context) {
-            Biome.Category category = Biome.Category.byName(JSONUtils.getString(json, "biome_category"));
+            Biome.BiomeCategory category = Biome.BiomeCategory.byName(GsonHelper.convertToString(json, "biome_category"));
             return new BiomeLootCondition(category);
         }
     }
 
-    public static class Builder implements ILootCondition.IBuilder {
-        private final Biome.Category biomeCategory;
+    public static class Builder implements LootItemCondition.Builder {
+        private final Biome.BiomeCategory biomeCategory;
 
-        public Builder(Biome.Category biome) {
+        public Builder(Biome.BiomeCategory biome) {
             this.biomeCategory = biome;
         }
 
         @Override
-        public ILootCondition build() {
+        public LootItemCondition build() {
             return new BiomeLootCondition(biomeCategory);
         }
     }

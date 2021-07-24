@@ -2,8 +2,11 @@ package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
 import me.thonk.croptopia.items.*;
+import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SuspiciousStewItem;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -630,16 +633,16 @@ public class ItemRegistry {
         popcorn = registerItem(itemRegister, POPCORN, new Item(createGroup().food(EDIBLE_3)));
         bakedBeans = registerItem(itemRegister, BAKED_BEANS, new Item(createGroup().food(EDIBLE_5)));
         toast = registerItem(itemRegister, TOAST, new Item(createGroup().food(EDIBLE_7)));
-        cucumberSalad = registerItem(itemRegister, CUCUMBER_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
-        caesarSalad = registerItem(itemRegister, CAESAR_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
-        leafySalad = registerItem(itemRegister, LEAFY_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
-        fruitSalad = registerItem(itemRegister, FRUIT_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
-        veggieSalad = registerItem(itemRegister, VEGGIE_SALAD, new SoupItem(createGroup().food(EDIBLE_10)));
-        porkAndBeans = registerItem(itemRegister, PORK_AND_BEANS, new SoupItem(createGroup().food(EDIBLE_10)));
-        oatmeal = registerItem(itemRegister, OATMEAL, new SoupItem(createGroup().food(EDIBLE_7)));
-        leekSoup = registerItem(itemRegister, LEEK_SOUP, new SoupItem(createGroup().food(EDIBLE_7)));
-        yoghurt = registerItem(itemRegister, YOGHURT, new SoupItem(createGroup().food(EDIBLE_5)));
-        saucyChips = registerItem(itemRegister, SAUCY_CHIPS, new SoupItem(createGroup().food(EDIBLE_7)));
+        cucumberSalad = registerItem(itemRegister, CUCUMBER_SALAD, new BowlFoodItem(createGroup().food(EDIBLE_10)));
+        caesarSalad = registerItem(itemRegister, CAESAR_SALAD, new BowlFoodItem(createGroup().food(EDIBLE_10)));
+        leafySalad = registerItem(itemRegister, LEAFY_SALAD, new BowlFoodItem(createGroup().food(EDIBLE_10)));
+        fruitSalad = registerItem(itemRegister, FRUIT_SALAD, new BowlFoodItem(createGroup().food(EDIBLE_10)));
+        veggieSalad = registerItem(itemRegister, VEGGIE_SALAD, new BowlFoodItem(createGroup().food(EDIBLE_10)));
+        porkAndBeans = registerItem(itemRegister, PORK_AND_BEANS, new BowlFoodItem(createGroup().food(EDIBLE_10)));
+        oatmeal = registerItem(itemRegister, OATMEAL, new BowlFoodItem(createGroup().food(EDIBLE_7)));
+        leekSoup = registerItem(itemRegister, LEEK_SOUP, new BowlFoodItem(createGroup().food(EDIBLE_7)));
+        yoghurt = registerItem(itemRegister, YOGHURT, new BowlFoodItem(createGroup().food(EDIBLE_5)));
+        saucyChips = registerItem(itemRegister, SAUCY_CHIPS, new BowlFoodItem(createGroup().food(EDIBLE_7)));
         roastedNuts = registerItem(itemRegister, ROASTED_NUTS, new Item(createGroup().food(EDIBLE_5)));
         trailMix = registerItem(itemRegister, TRAIL_MIX, new Item(createGroup().food(EDIBLE_10)));
         proteinBar = registerItem(itemRegister, PROTEIN_BAR, new Item(createGroup().food(EDIBLE_10)));
@@ -716,11 +719,11 @@ public class ItemRegistry {
         pepper = registerItem(itemRegister, PEPPER, new Item(createGroup()));
         vanillaSeeds = registerItem(itemRegister, VANILLA_SEEDS, new SeedItem(BlockRegistry.vanillaCropBlock, createGroup(), JUNGLE));
 
-        cinnamonSapling = registerItem(itemRegister, CINNAMON_SAPLING, new BlockNamedItem(BlockRegistry.cinnamonSaplingBlock, createGroup()));
-        cinnamonLog = registerItem(itemRegister, CINNAMON_LOG, new BlockNamedItem(BlockRegistry.cinnamonLog, createGroup()));
-        strippedCinnamonLog = registerItem(itemRegister, STRIPPED_CINNAMON_LOG, new BlockNamedItem(BlockRegistry.strippedCinnamonLog, createGroup()));
-        cinnamonWood = registerItem(itemRegister, CINNAMON_WOOD, new BlockNamedItem(BlockRegistry.cinnamonWood, createGroup()));
-        strippedCinnamonWood = registerItem(itemRegister, STRIPPED_CINNAMON_WOOD, new BlockNamedItem(BlockRegistry.strippedCinnamonWood, createGroup()));
+        cinnamonSapling = registerItem(itemRegister, CINNAMON_SAPLING, new ItemNameBlockItem(BlockRegistry.cinnamonSaplingBlock, createGroup()));
+        cinnamonLog = registerItem(itemRegister, CINNAMON_LOG, new ItemNameBlockItem(BlockRegistry.cinnamonLog, createGroup()));
+        strippedCinnamonLog = registerItem(itemRegister, STRIPPED_CINNAMON_LOG, new ItemNameBlockItem(BlockRegistry.strippedCinnamonLog, createGroup()));
+        cinnamonWood = registerItem(itemRegister, CINNAMON_WOOD, new ItemNameBlockItem(BlockRegistry.cinnamonWood, createGroup()));
+        strippedCinnamonWood = registerItem(itemRegister, STRIPPED_CINNAMON_WOOD, new ItemNameBlockItem(BlockRegistry.strippedCinnamonWood, createGroup()));
 
         shepherdsPie = registerItem(itemRegister, SHEPHERDS_PIE, new Item(createGroup().food(EDIBLE_18)));
         beefWellington = registerItem(itemRegister, BEEF_WELLINGTON, new Item(createGroup().food(EDIBLE_18)));
@@ -740,15 +743,15 @@ public class ItemRegistry {
         teaSeed = registerItem(itemRegister, TEA_SEED, new SeedItem(BlockRegistry.teaCropBlock, createGroup(), FOREST));
 
         // the utensils override the getContainerItem in the CookingUtensil class
-        foodPress = registerItem(itemRegister, FOOD_PRESS, new CookingUtensil(createGroup().maxStackSize(1)));
-        fryingPan = registerItem(itemRegister, FRYING_PAN, new CookingUtensil(createGroup().maxStackSize(1)));
-        cookingPot = registerItem(itemRegister, COOKING_POT, new CookingUtensil(createGroup().maxStackSize(1)));
-        mortarAndPestle = registerItem(itemRegister, MORTAR_AND_PESTLE, new CookingUtensil(createGroup().maxStackSize(1)));
+        foodPress = registerItem(itemRegister, FOOD_PRESS, new CookingUtensil(createGroup().stacksTo(1)));
+        fryingPan = registerItem(itemRegister, FRYING_PAN, new CookingUtensil(createGroup().stacksTo(1)));
+        cookingPot = registerItem(itemRegister, COOKING_POT, new CookingUtensil(createGroup().stacksTo(1)));
+        mortarAndPestle = registerItem(itemRegister, MORTAR_AND_PESTLE, new CookingUtensil(createGroup().stacksTo(1)));
 
-        saltOre = registerItem(itemRegister, SALT_ORE, new BlockNamedItem(BlockRegistry.salt, createGroup()));
+        saltOre = registerItem(itemRegister, SALT_ORE, new ItemNameBlockItem(BlockRegistry.salt, createGroup()));
     }
 
     public static Item.Properties createGroup() {
-        return new Item.Properties().group(CROPTOPIA_ITEM_GROUP);
+        return new Item.Properties().tab(CROPTOPIA_ITEM_GROUP);
     }
 }

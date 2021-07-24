@@ -6,6 +6,7 @@ tasks.withType(JavaCompile) {
             copy {
                 from "src/main/resources/dependants/platform"
                 include "**/**/*.json"
+                expand "dependant": project.property("launch_mod").toString()
                 into "${buildDir}/resources/main/data/" + project.property("launch_mod").toString() + "/"
             }
         }

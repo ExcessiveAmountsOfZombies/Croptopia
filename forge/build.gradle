@@ -73,7 +73,7 @@ minecraft {
             // Recommended logging level for the console
             //property 'forge.logging.console.level', 'debug'
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            //args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":common").file('src/main/resources/')
+            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
                 croptopia {
                     source sourceSets.main
@@ -84,22 +84,21 @@ minecraft {
 }
 
 processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
         expand "dependant": "forge"
     }
 }
 
-//tasks.processResources.dependsOn(project(":common").tasks.processResources)
+tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
-    //api(project(":common"))
-    //compileOnly(project(":common"))
-    //implementation project(":common")
-    //shade project(":common")
+    implementation project(":shared")
+    shade project(":shared")
     //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
     //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
@@ -107,7 +106,7 @@ dependencies {
 shadowJar {
     enabled = true
     configurations = [project.configurations.shade]
-    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
+    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     relocate 'dependants/platform', 'data/forge'
 }
