@@ -7,8 +7,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.RegistryEvent;
 
+import static me.thonk.common.ItemNames.*;
 import static me.thonk.croptopia.CroptopiaForge.*;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
+import static net.minecraft.world.level.biome.Biome.BiomeCategory.*;
 
 public class ItemRegistry {
     // Fruits & Vegetables // cropitem
@@ -583,37 +585,37 @@ public class ItemRegistry {
         pepperoni = registerItem(itemRegister, PEPPERONI, new Item(createGroup().food(EDIBLE_5)));
 
 
-        grapeJuice = registerItem(itemRegister, GRAPE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        orangeJuice = registerItem(itemRegister, ORANGE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        appleJuice = registerItem(itemRegister, APPLE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        cranberryJuice = registerItem(itemRegister, CRANBERRY_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        saguaroJuice = registerItem(itemRegister, SAGUARO_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        tomatoJuice = registerItem(itemRegister, TOMATO_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        melonJuice = registerItem(itemRegister, MELON_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        pineappleJuice = registerItem(itemRegister, PINEAPPLE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        coffee = registerItem(itemRegister, COFFEE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        lemonade = registerItem(itemRegister, LEMONADE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        limeade = registerItem(itemRegister, LIMEADE, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        soyMilk = registerItem(itemRegister, SOY_MILK, new Drink(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        strawberrySmoothie = registerItem(itemRegister, STRAWBERRY_SMOOTHIE, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        bananaSmoothie = registerItem(itemRegister, BANANA_SMOOTHIE, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        kaleSmoothie = registerItem(itemRegister, KALE_SMOOTHIE, new Drink(createGroup().food(EDIBLE_14_BUILDER.setAlwaysEdible().build())));
-        fruitSmoothie = registerItem(itemRegister, FRUIT_SMOOTHIE, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        chocolateMilkshake = registerItem(itemRegister, CHOCOLATE_MILKSHAKE, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        beer = registerItem(itemRegister, BEER, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        wine = registerItem(itemRegister, WINE, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        mead = registerItem(itemRegister, MEAD, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build())));
-        rum = registerItem(itemRegister, RUM, new Drink(createGroup().food(EDIBLE_7_BUILDER.setAlwaysEdible().build()).containerItem(Items.GLASS_BOTTLE)));
-        pumpkinSpiceLatte = registerItem(itemRegister, PUMPKIN_SPICE_LATTE, new Drink(createGroup().food(EDIBLE_14_BUILDER.setAlwaysEdible().build())));
-        grapeJam = registerItem(itemRegister, GRAPE_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        strawberryJam = registerItem(itemRegister, STRAWBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        peachJam = registerItem(itemRegister, PEACH_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        apricotJam = registerItem(itemRegister, APRICOT_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        blackberryJam = registerItem(itemRegister, BLACKBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        blueberryJam = registerItem(itemRegister, BLUEBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        cherryJam = registerItem(itemRegister, CHERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        elderberryJam = registerItem(itemRegister, ELDERBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
-        raspberryJam = registerItem(itemRegister, RASPBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.setAlwaysEdible().build())));
+        grapeJuice = registerItem(itemRegister, GRAPE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        orangeJuice = registerItem(itemRegister, ORANGE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        appleJuice = registerItem(itemRegister, APPLE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        cranberryJuice = registerItem(itemRegister, CRANBERRY_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        saguaroJuice = registerItem(itemRegister, SAGUARO_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        tomatoJuice = registerItem(itemRegister, TOMATO_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        melonJuice = registerItem(itemRegister, MELON_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        pineappleJuice = registerItem(itemRegister, PINEAPPLE_JUICE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        coffee = registerItem(itemRegister, COFFEE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        lemonade = registerItem(itemRegister, LEMONADE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        limeade = registerItem(itemRegister, LIMEADE, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        soyMilk = registerItem(itemRegister, SOY_MILK, new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        strawberrySmoothie = registerItem(itemRegister, STRAWBERRY_SMOOTHIE, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        bananaSmoothie = registerItem(itemRegister, BANANA_SMOOTHIE, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        kaleSmoothie = registerItem(itemRegister, KALE_SMOOTHIE, new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEat().build())));
+        fruitSmoothie = registerItem(itemRegister, FRUIT_SMOOTHIE, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        chocolateMilkshake = registerItem(itemRegister, CHOCOLATE_MILKSHAKE, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        beer = registerItem(itemRegister, BEER, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        wine = registerItem(itemRegister, WINE, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        mead = registerItem(itemRegister, MEAD, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build())));
+        rum = registerItem(itemRegister, RUM, new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        pumpkinSpiceLatte = registerItem(itemRegister, PUMPKIN_SPICE_LATTE, new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEat().build())));
+        grapeJam = registerItem(itemRegister, GRAPE_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        strawberryJam = registerItem(itemRegister, STRAWBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        peachJam = registerItem(itemRegister, PEACH_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        apricotJam = registerItem(itemRegister, APRICOT_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        blackberryJam = registerItem(itemRegister, BLACKBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        blueberryJam = registerItem(itemRegister, BLUEBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        cherryJam = registerItem(itemRegister, CHERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        elderberryJam = registerItem(itemRegister, ELDERBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
+        raspberryJam = registerItem(itemRegister, RASPBERRY_JAM, new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEat().build())));
 
         beefJerky = registerItem(itemRegister, BEEF_JERKY, new Item(createGroup().food(EDIBLE_5)));
         porkJerky = registerItem(itemRegister, PORK_JERKY, new Item(createGroup().food(EDIBLE_5)));
@@ -724,7 +726,7 @@ public class ItemRegistry {
         beefWellington = registerItem(itemRegister, BEEF_WELLINGTON, new Item(createGroup().food(EDIBLE_18)));
         fishAndChips = registerItem(itemRegister, FISH_AND_CHIPS, new Item(createGroup().food(EDIBLE_10)));
         etonMess = registerItem(itemRegister, ETON_MESS, new Item(createGroup().food(EDIBLE_10)));
-        tea = registerItem(itemRegister, TEA, new Item(createGroup().food(EDIBLE_5_BUILDER.setAlwaysEdible().build())));
+        tea = registerItem(itemRegister, TEA, new Item(createGroup().food(EDIBLE_5_BUILDER.alwaysEat().build())));
         cornishPasty = registerItem(itemRegister, CORNISH_PASTY, new Item(createGroup().food(EDIBLE_10)));
         scones = registerItem(itemRegister, SCONES, new Item(createGroup().food(EDIBLE_10)));
         figgyPudding = registerItem(itemRegister, FIGGY_PUDDING, new Item(createGroup().food(EDIBLE_10)));

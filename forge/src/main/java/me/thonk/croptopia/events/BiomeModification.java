@@ -16,48 +16,48 @@ public class BiomeModification {
     @SubscribeEvent
     public void onBiomeLoad(BiomeLoadingEvent event) {
         BiomeGenerationSettingsBuilder settings = event.getGeneration();
-        if (event.getCategory() == Biome.Category.FOREST) {
+        if (event.getCategory() == Biome.BiomeCategory.FOREST) {
             if (event.getName() != null) {
                 // TODO: find a better way to do this, surely there is a cleaner way.
                 // this also isn't very compatible with modded biomes that might add their own dark oak forest esque biomes.
                 if (event.getName().compareTo(Biomes.DARK_FOREST.location()) == 0 ||
                     event.getName().compareTo(Biomes.DARK_FOREST_HILLS.location()) == 0) {
-                    settings.withFeature(VEGETAL_DECORATION, ALMOND_TREE_CONFIGURED);
-                    settings.withFeature(VEGETAL_DECORATION, CASHEW_TREE_CONFIGURED);
-                    settings.withFeature(VEGETAL_DECORATION, PECAN_TREE_CONFIGURED);
-                    settings.withFeature(VEGETAL_DECORATION, WALNUT_TREE_CONFIGURED);
+                    settings.addFeature(VEGETAL_DECORATION, ALMOND_TREE_CONFIGURED);
+                    settings.addFeature(VEGETAL_DECORATION, CASHEW_TREE_CONFIGURED);
+                    settings.addFeature(VEGETAL_DECORATION, PECAN_TREE_CONFIGURED);
+                    settings.addFeature(VEGETAL_DECORATION, WALNUT_TREE_CONFIGURED);
                 }
             }
 
-            settings.withFeature(VEGETAL_DECORATION, LIME_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, PEAR_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, APRICOT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, AVOCADO_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, STAR_FRUIT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, LEMON_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, CHERRY_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, PLUM_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, PERSIMMON_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, ORANGE_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, NECTARINE_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, LIME_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, PEAR_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, APRICOT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, AVOCADO_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, STAR_FRUIT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, LEMON_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, CHERRY_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, PLUM_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, PERSIMMON_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, ORANGE_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, NECTARINE_TREE_CONFIGURED);
         } else if (event.getCategory() == Biome.BiomeCategory.JUNGLE) {
-            settings.withFeature(VEGETAL_DECORATION, DATE_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, DRAGON_FRUIT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, MANGO_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, NUTMEG_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, COCONUT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, KUMQUAT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, BANANA_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, FIG_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, CINNAMON_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, DATE_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, DRAGON_FRUIT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, MANGO_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, NUTMEG_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, COCONUT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, KUMQUAT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, BANANA_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, FIG_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, CINNAMON_TREE_CONFIGURED);
         } else if (event.getCategory() == Biome.BiomeCategory.PLAINS) {
-            settings.withFeature(VEGETAL_DECORATION, APPLE_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, ORANGE_TREE_CONFIGURED);
-            settings.withFeature(VEGETAL_DECORATION, PEACH_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, APPLE_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, ORANGE_TREE_CONFIGURED);
+            settings.addFeature(VEGETAL_DECORATION, PEACH_TREE_CONFIGURED);
         } else if (event.getCategory() == Biome.BiomeCategory.RIVER) {
-            settings.withFeature(UNDERGROUND_ORES, DISK_SALT_CONFIGURED);
+            settings.addFeature(UNDERGROUND_ORES, DISK_SALT_CONFIGURED);
         }
     }
 

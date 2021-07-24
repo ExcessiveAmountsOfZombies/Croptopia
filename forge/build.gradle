@@ -96,6 +96,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
+    compileOnly(project(":common"))
+    implementation project(":common")
     shade project(":common")
     //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
     //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
