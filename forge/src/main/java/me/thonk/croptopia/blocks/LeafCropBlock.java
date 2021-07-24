@@ -1,11 +1,17 @@
 package me.thonk.croptopia.blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -27,26 +33,29 @@ public class LeafCropBlock extends CroptopiaCropBlock {
         return Shapes.block();
     }
 
+
     @Override
-    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(BlockGetter p_52254_, BlockPos p_52255_, BlockState p_52256_) {
         return new ItemStack(this);
     }
 
     @Override
-    protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+    protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
+        // TODO: UPDATE TO mATCH WITH FABRIC
         return true;
     }
 
     @Override
-    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
+        // TODO: UPDATE TO mATCH WITH FABRIC
         return true;
     }
 
     @Override
-    public BlockState updatePostPlacement(BlockState state, Direction direction, BlockState neighborState, IWorld world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
         int distance = getDistance(neighborState) + 1;
-        if (distance != 1 || state.get(DISTANCE) != distance) {
-            world.getPendingBlockTicks().scheduleTick(pos, this, 1);
+        if (distance != 1 || state.getValue(DISTANCE) != distance) {
+            world.getBlockTicks().scheduleTick(pos, this, 1);
         }
 
         return state;
@@ -63,49 +72,49 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     }
 
     @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(AGE, DISTANCE);
     }
 
     @Override
-    public boolean ticksRandomly(BlockState state) {
-        return state.get(DISTANCE) == 7;
+    public boolean isRandomlyTicking(BlockState state) {
+        // todo: might just be true
+        return state.getValue(DISTANCE) == 7;
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (state.get(DISTANCE) == 7) {
-            spawnDrops(state, world, pos);
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
+        if (state.getValue(DISTANCE) == 7) {
+            dropResources(state, world, pos);
             world.removeBlock(pos, false);
         }
     }
 
     @Override
-    public void tick(BlockState state, ServerWorld worldIn, BlockPos pos, Random rand) {
-        worldIn.setBlockState(pos, updateDistance(state, worldIn, pos), 3);
+    public void tick(BlockState state, ServerLevel worldIn, BlockPos pos, Random rand) {
+        worldIn.setBlock(pos, updateDistance(state, worldIn, pos), 3);
     }
 
-    private static BlockState updateDistance(BlockState state, IWorld world, BlockPos pos) {
+    private static BlockState updateDistance(BlockState state, LevelAccessor world, BlockPos pos) {
         int distance = 7;
-        BlockPos.Mutable mutablePos = new BlockPos.Mutable();
-        Direction[] directions = Direction.values();
+        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
 
-        for (Direction direction : directions) {
-            mutablePos.setAndMove(pos, direction);
+        for (Direction direction : Direction.values()) {
+            mutablePos.setWithOffset(pos, direction);
             distance = Math.min(distance, getDistance(world.getBlockState(mutablePos)) + 1);
             if (distance == 1) {
                 break;
             }
         }
 
-        return state.with(DISTANCE, distance);
+        return state.setValue(DISTANCE, distance);
     }
 
     private static int getDistance(BlockState state) {
-        if (state.isIn(BlockTags.LOGS)) {
+        if (state.is(BlockTags.LOGS)) {
             return 0;
         } else {
-            return state.getBlock() instanceof LeafCropBlock || state.getBlock() instanceof LeavesBlock ? state.get(DISTANCE) : 7;
+            return state.getBlock() instanceof LeafCropBlock || state.getBlock() instanceof LeavesBlock ? state.getValue(DISTANCE) : 7;
         }
     }
 }

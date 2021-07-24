@@ -27,8 +27,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
@@ -231,29 +233,29 @@ public class CroptopiaForge {
         return serializer;
     }
 
-    public static AbstractBlock.Properties createCropSettings() {
-        return AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP);
+    public static BlockBehaviour.Properties createCropSettings() {
+        return BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP);
     }
 
-    public static AbstractBlock.Properties createSaplingSettings() {
-        return AbstractBlock.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.PLANT);
+    public static BlockBehaviour.Properties createSaplingSettings() {
+        return BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS);
     }
 
     public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
-                .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
+        return new LeafCropBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.CROP).noOcclusion()
+                .isValidSpawn(CroptopiaForge::canSpawnOnLeaves).isSuffocating(CroptopiaForge::never).isViewBlocking(CroptopiaForge::never));
     }
 
     public static LeavesBlock createRegularLeavesBlock() {
-        return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.CROP).notSolid()
-                .setAllowsSpawn(CroptopiaForge::canSpawnOnLeaves).setSuffocates(CroptopiaForge::never).setBlocksVision(CroptopiaForge::never));
+        return new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.CROP).noOcclusion()
+                .isValidSpawn(CroptopiaForge::canSpawnOnLeaves).isSuffocating(CroptopiaForge::never).isViewBlocking(CroptopiaForge::never));
     }
 
-    private static Boolean canSpawnOnLeaves(BlockState state, IBlockReader world, BlockPos pos, EntityType<?> type) {
+    private static Boolean canSpawnOnLeaves(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
         return type == EntityType.OCELOT || type == EntityType.PARROT;
     }
 
-    private static boolean never(BlockState state, IBlockReader world, BlockPos pos) {
+    private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
         return false;
     }
 

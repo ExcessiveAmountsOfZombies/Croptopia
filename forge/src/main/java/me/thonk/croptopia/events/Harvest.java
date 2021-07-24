@@ -15,7 +15,7 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (Config.canRightClickHarvest) {
+        /*if (Config.canRightClickHarvest) {
             if (!(event.getPlayer().getHeldItemMainhand().getItem() instanceof BoneMealItem)) {
                 if (!event.getWorld().isRemote) {
                     World world = event.getWorld();
@@ -36,10 +36,11 @@ public class Harvest {
                     }
                 }
             }
-        }
+        }*/
     }
 
     public BlockState withAge(BlockState state, IntegerProperty property, int age) {
+        // todo what ???
         return state.getBlockState().with(property, Integer.valueOf(age));
     }
 }
