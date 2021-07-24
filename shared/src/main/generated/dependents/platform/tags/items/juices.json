@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "#${dependent}:apple_juices",
+    "#${dependent}:cranberry_juices",
+    "#${dependent}:grape_juices",
+    "#${dependent}:melon_juices",
+    "#${dependent}:orange_juices",
+    "#${dependent}:pineapple_juices",
+    "#${dependent}:saguaro_juices",
+    "#${dependent}:tomato_juices"
+  ]
+}

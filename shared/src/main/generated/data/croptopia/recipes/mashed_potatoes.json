@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "1 ",
+    "24",
+    "3 "
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:potatoes"
+    },
+    "2": {
+      "tag": "${dependent}:salts"
+    },
+    "3": {
+      "item": "croptopia:mortar_and_pestle"
+    },
+    "4": {
+      "tag": "${dependent}:milks"
+    }
+  },
+  "result": {
+    "item": "croptopia:mashed_potatoes"
+  }
+}

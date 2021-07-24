@@ -1,4 +1,4 @@
-package me.thonk.croptopia.dependencies;
+package com.epherical.croptopia.dependencies;
 
 
 import net.fabricmc.loader.api.FabricLoader;

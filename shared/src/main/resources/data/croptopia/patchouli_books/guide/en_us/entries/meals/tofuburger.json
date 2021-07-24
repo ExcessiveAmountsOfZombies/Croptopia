@@ -1,0 +1,12 @@
+{
+  "name": "Tofuburger",
+  "icon": "croptopia:tofuburger",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofuburger",
+      "text": "Recipe for a tofuburger."
+    }
+  ]
+}

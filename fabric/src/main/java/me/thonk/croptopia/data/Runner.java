@@ -1,4 +1,4 @@
-package me.thonk.croptopia.data;
+package com.epherical.croptopia.data;
 
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;

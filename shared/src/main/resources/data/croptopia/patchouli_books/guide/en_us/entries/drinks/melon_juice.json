@@ -1,0 +1,12 @@
+{
+  "name": "Melon Juice",
+  "icon": "croptopia:melon_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:melon_juice",
+      "text": "Recipe for melon juice."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:basil_seed"
+    ]
+  },
+  "criteria": {
+    "has_basil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:basil"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:basil_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_basil",
+      "has_the_recipe"
+    ]
+  ]
+}

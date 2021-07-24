@@ -1,0 +1,12 @@
+{
+  "name": "Сэндвич с арахисовым маслом и вареньем",
+  "icon": "croptopia:peanut_butter_and_jam",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:peanut_butter_and_jam",
+      "text": "Рецепт Сэндвича с арахисовым маслом и вареньем."
+    }
+  ]
+}

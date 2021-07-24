@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:rice"
+    },
+    {
+      "tag": "${dependent}:chile_peppers"
+    },
+    {
+      "tag": "${dependent}:olive_oils"
+    },
+    {
+      "tag": "croptopia:chicken_replacements"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chicken_and_rice",
+    "count": 1
+  }
+}

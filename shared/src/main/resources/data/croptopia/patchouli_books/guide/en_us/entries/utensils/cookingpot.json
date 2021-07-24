@@ -1,0 +1,12 @@
+{
+  "name": "Frying Pan",
+  "icon": "croptopia:frying_pan",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:frying_pan",
+      "text": "Recipe for a frying pan."
+    }
+  ]
+}

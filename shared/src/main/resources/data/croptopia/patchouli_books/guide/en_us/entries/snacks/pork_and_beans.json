@@ -1,0 +1,12 @@
+{
+  "name": "Pork and Beans",
+  "icon": "croptopia:pork_and_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pork_and_beans",
+      "text": "Recipe for making pork and beans."
+    }
+  ]
+}

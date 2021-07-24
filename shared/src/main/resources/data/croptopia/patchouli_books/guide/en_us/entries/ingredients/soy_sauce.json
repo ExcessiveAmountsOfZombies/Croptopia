@@ -1,0 +1,12 @@
+{
+  "name": "Soy Sauce",
+  "icon": "croptopia:soy_sauce",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:soy_sauce",
+      "text": "Recipe for soy sauce."
+    }
+  ]
+}

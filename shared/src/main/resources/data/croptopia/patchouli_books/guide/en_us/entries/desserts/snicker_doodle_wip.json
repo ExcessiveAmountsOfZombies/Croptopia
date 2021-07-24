@@ -1,0 +1,12 @@
+{
+  "name": "Snicker Doodle",
+  "icon": "croptopia:snicker_doodle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:snicker_doodle",
+      "text": "Recipe for snicker doodle cookies. (WIP)"
+    }
+  ]
+}

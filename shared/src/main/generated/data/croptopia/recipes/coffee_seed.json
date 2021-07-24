@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:coffee_beans"
+    }
+  ],
+  "result": {
+    "item": "croptopia:coffee_seed"
+  }
+}

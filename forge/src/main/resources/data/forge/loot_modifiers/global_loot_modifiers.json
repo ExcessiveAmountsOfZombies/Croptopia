@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "entries": [
+    "croptopia:spawn_loot",
+    "croptopia:cod_entity_modifier",
+    "croptopia:salmon_entity_modifier",
+    "croptopia:tropical_fish_entity_modifier",
+    "croptopia:glowing_squid_entity_modifier",
+    "croptopia:squid_entity_modifier",
+    "croptopia:fish_table_modifier"
+  ]
+}

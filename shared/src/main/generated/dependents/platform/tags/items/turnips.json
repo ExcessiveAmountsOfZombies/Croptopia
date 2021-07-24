@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:turnip",
+    "#${dependent}:vegetables/turnip",
+    "croptopia:turnip",
+    "#${dependent}:crops/turnip"
+  ]
+}

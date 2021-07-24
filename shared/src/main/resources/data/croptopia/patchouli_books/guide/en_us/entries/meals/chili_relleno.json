@@ -1,0 +1,12 @@
+{
+  "name": "Chili Relleno",
+  "icon": "croptopia:chili_relleno",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chili_relleno",
+      "text": "Recipe guide."
+    }
+  ]
+}

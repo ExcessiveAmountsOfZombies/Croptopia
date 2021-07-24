@@ -1,0 +1,12 @@
+{
+  "name": "Tofu and Dumplings",
+  "icon": "croptopia:tofu_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu_and_dumplings",
+      "text": "Recipe for tofu and dumplings."
+    }
+  ]
+}

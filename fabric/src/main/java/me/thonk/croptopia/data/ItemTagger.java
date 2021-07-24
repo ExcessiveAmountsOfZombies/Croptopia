@@ -1,4 +1,4 @@
-package me.thonk.croptopia.data;
+package com.epherical.croptopia.data;
 
 import com.google.common.collect.Maps;
 import com.google.gson.Gson;

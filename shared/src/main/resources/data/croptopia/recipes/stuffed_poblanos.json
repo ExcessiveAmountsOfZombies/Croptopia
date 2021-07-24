@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "croptopia:beef_replacements"
+    },
+    {
+      "tag": "${dependent}:chile_peppers"
+    },
+    {
+      "tag": "${dependent}:blackbeans"
+    },
+    {
+      "tag": "${dependent}:corn"
+    },
+    {
+      "tag": "${dependent}:cheeses"
+    },
+    {
+      "tag": "${dependent}:rice"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:stuffed_poblanos",
+    "count": 1
+  }
+}

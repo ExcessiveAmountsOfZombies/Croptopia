@@ -1,0 +1,12 @@
+{
+  "name": "Ravioli",
+  "icon": "croptopia:ravioli",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:ravioli",
+      "text": "Recipe for ravioli."
+    }
+  ]
+}

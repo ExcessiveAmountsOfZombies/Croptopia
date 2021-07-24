@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cashew_sapling"
+    ]
+  },
+  "criteria": {
+    "has_cashew": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:cashew"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cashew_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cashew",
+      "has_the_recipe"
+    ]
+  ]
+}

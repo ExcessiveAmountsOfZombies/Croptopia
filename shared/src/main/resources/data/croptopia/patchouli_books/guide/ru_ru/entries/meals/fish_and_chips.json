@@ -1,0 +1,12 @@
+{
+  "name": "Рыба с картошкой фри",
+  "icon": "croptopia:fish_and_chips",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_fish_and_chips",
+      "text": "Рецепт Рыбы с картошкой фри."
+    }
+  ]
+}

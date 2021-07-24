@@ -1,0 +1,12 @@
+{
+  "name": "Kale Smoothie",
+  "icon": "croptopia:kale_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_smoothie",
+      "text": "Recipe for kale smoothies."
+    }
+  ]
+}

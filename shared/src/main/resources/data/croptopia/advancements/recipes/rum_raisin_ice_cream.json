@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:rum_raisin_ice_cream"
+    ]
+  },
+  "criteria": {
+    "has_rum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:rums"
+          }
+        ]
+      }
+    },
+    "has_raisin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:raisins"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:rum_raisin_ice_cream"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rum",
+      "has_raisin",
+      "has_the_recipe"
+    ]
+  ]
+}

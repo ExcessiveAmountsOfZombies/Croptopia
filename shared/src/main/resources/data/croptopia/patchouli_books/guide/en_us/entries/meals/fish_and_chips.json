@@ -1,0 +1,12 @@
+{
+  "name": "Fish and Chips",
+  "icon": "croptopia:fish_and_chips",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_fish_and_chips",
+      "text": "Recipe for fish and chips."
+    }
+  ]
+}

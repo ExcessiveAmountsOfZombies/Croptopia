@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:eggplants"
+    }
+  ],
+  "result": {
+    "item": "croptopia:eggplant_seed"
+  }
+}

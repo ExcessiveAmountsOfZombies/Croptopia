@@ -1,0 +1,12 @@
+{
+  "name": "Crema",
+  "icon": "croptopia:crema",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:crema",
+      "text": "Recipe guide."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Figgy Pudding",
+  "icon": "croptopia:figgy_pudding",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_figgy_pudding",
+      "text": "Recipe for figgy pudding."
+    }
+  ]
+}

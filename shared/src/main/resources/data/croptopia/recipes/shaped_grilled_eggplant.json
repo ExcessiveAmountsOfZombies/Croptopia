@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "625",
+    "314"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:eggplants"
+    },
+    "2": {
+      "tag": "${dependent}:salts"
+    },
+    "3": {
+      "tag": "${dependent}:olive_oils"
+    },
+    "4": {
+      "tag": "${dependent}:garlic"
+    },
+    "5": {
+      "item": "croptopia:pepper"
+    },
+    "6": {
+      "tag": "${dependent}:paprika"
+    }
+  },
+  "result": {
+    "item": "croptopia:grilled_eggplant",
+    "count": 1
+  }
+}

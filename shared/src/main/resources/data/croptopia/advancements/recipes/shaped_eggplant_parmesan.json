@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_eggplant_parmesan"
+    ]
+  },
+  "criteria": {
+    "has_eggplant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:eggplants"
+          }
+        ]
+      }
+    },
+    "has_basil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:basil"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_eggplant_parmesan"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_eggplant",
+      "has_basil",
+      "has_the_recipe"
+    ]
+  ]
+}

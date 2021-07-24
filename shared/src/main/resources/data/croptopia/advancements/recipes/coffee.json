@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:coffee"
+    ]
+  },
+  "criteria": {
+    "has_coffee": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:coffee_beans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:coffee"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_coffee",
+      "has_the_recipe"
+    ]
+  ]
+}

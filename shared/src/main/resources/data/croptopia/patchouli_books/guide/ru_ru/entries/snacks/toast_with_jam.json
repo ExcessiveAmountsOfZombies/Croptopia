@@ -1,0 +1,12 @@
+{
+  "name": "Тост с вареньем",
+  "icon": "croptopia:toast_with_jam",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:toast_with_jam",
+      "text": "Рецепт Тоста с вареньем."
+    }
+  ]
+}

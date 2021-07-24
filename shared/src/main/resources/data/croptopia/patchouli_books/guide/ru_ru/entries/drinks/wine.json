@@ -1,0 +1,12 @@
+{
+  "name": "Вино",
+  "icon": "croptopia:wine",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:wine",
+      "text": "Рецепт Вина."
+    }
+  ]
+}

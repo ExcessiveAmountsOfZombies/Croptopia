@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_avocado_toast"
+    ]
+  },
+  "criteria": {
+    "has_avocado": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:avocados"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_avocado_toast"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_avocado",
+      "has_the_recipe"
+    ]
+  ]
+}

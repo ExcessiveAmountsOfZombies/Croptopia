@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:ham_sandwich"
+    ]
+  },
+  "criteria": {
+    "has_cooked_porkchop": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:cooked_porkchop"]
+          }
+        ]
+      }
+    },
+    "has_cheese": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:cheeses"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:ham_sandwich"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cooked_porkchop",
+      "has_cheese",
+      "has_the_recipe"
+    ]
+  ]
+}

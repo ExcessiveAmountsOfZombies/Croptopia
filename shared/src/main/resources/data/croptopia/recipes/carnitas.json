@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:porkchop"
+    },
+    {
+      "tag": "${dependent}:tortillas"
+    },
+    {
+      "tag": "${dependent}:cabbage"
+    },
+    {
+      "tag": "${dependent}:onions"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:carnitas",
+    "count": 1
+  }
+}

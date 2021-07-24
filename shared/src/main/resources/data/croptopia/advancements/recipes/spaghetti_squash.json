@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:spaghetti_squash"
+    ]
+  },
+  "criteria": {
+    "has_squash": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:squashes"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:spaghetti_squash"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_squash",
+      "has_the_recipe"
+    ]
+  ]
+}

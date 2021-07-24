@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT'
+    id 'maven-publish'
+}
+
+buildDir = rootProject.buildDir
+
+minecraft {
+    version(mc_ver)
+}
+
+dependencies {
+    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    "src/main/generated"
+            ]
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    doLast {
+        if (project.property("launch_mod").toString().length() > 0) {
+            copy {
+                from "src/main/resources/dependents/platform"
+                include "**/**/*.json"
+                expand "dependent": project.property("launch_mod").toString()
+                into "${buildDir}/resources/main/data/" + project.property("launch_mod").toString() + "/"
+            }
+        }
+    }
+}
+
+tasks.withType(ProcessResources) {
+    if (project.property("launch_mod").toString().length() > 0) {
+        from(sourceSets.main.resources.srcDirs) {
+            include('**/data/**')
+            include('**/dependents/**')
+            expand "dependent": project.property("launch_mod").toString()
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        }
+    }
+}
+

@@ -1,0 +1,12 @@
+{
+  "name": "Banana Nut Bread",
+  "icon": "croptopia:banana_nut_bread",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_nut_bread",
+      "text": "Recipe for banana nut bread (WIP)."
+    }
+  ]
+}

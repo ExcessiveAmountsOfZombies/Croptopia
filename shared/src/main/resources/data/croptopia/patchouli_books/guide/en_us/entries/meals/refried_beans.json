@@ -1,0 +1,12 @@
+{
+  "name": "Refried Beans",
+  "icon": "croptopia:refried_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:refried_beans",
+      "text": "Recipe guide."
+    }
+  ]
+}

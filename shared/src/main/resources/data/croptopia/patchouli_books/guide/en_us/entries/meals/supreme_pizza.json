@@ -1,0 +1,12 @@
+{
+  "name": "Supreme Pizza",
+  "icon": "croptopia:supreme_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:supreme_pizza",
+      "text": "Recipe for a supreme pizza."
+    }
+  ]
+}

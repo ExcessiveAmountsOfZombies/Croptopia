@@ -1,0 +1,12 @@
+{
+  "name": "Sticky Toffee Pudding",
+  "icon": "croptopia:sticky_toffee_pudding",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_sticky_toffee_pudding",
+      "text": "Recipe for a sticky toffee pudding."
+    }
+  ]
+}

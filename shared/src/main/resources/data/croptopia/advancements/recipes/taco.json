@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:taco"
+    ]
+  },
+  "criteria": {
+    "has_tortilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:tortillas"
+          }
+        ]
+      }
+    },
+    "has_salsa": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:salsa"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:taco"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tortilla",
+      "has_salsa",
+      "has_the_recipe"
+    ]
+  ]
+}

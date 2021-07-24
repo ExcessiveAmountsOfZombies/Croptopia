@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_lemon_coconut_bar"
+    ]
+  },
+  "criteria": {
+    "has_coconut": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:coconuts"
+          }
+        ]
+      }
+    },
+    "has_lemon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:lemons"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_lemon_coconut_bar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_coconut",
+      "has_lemon",
+      "has_the_recipe"
+    ]
+  ]
+}

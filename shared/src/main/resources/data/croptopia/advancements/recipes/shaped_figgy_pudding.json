@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_figgy_pudding"
+    ]
+  },
+  "criteria": {
+    "has_fig": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:figs"
+          }
+        ]
+      }
+    },
+    "has_date": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:dates"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_figgy_pudding"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fig",
+      "has_date",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Peanut Butter and Jam",
+  "icon": "croptopia:peanut_butter_and_jam",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:peanut_butter_and_jam",
+      "text": "Recipe for a sandwich with peanut butter and jam."
+    }
+  ]
+}

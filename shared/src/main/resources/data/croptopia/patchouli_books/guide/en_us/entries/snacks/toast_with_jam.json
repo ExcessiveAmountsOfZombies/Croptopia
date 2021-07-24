@@ -1,0 +1,12 @@
+{
+  "name": "Toast with Jam",
+  "icon": "croptopia:toast_with_jam",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:toast_with_jam",
+      "text": "Recipe for making toast with jam on it."
+    }
+  ]
+}

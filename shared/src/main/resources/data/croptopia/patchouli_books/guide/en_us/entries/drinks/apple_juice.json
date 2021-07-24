@@ -1,0 +1,12 @@
+{
+  "name": "Apple Juice",
+  "icon": "croptopia:apple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:apple_juice",
+      "text": "Recipe for apple juice."
+    }
+  ]
+}

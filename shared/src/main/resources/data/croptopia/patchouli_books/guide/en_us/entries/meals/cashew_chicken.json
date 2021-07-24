@@ -1,0 +1,12 @@
+{
+  "name": "Cashew Chicken",
+  "icon": "croptopia:cashew_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cashew_chicken",
+      "text": "Recipe for cashew chicken."
+    }
+  ]
+}

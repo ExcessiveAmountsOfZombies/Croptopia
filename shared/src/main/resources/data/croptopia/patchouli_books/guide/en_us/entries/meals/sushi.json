@@ -1,0 +1,12 @@
+{
+  "name": "Sushi",
+  "icon": "croptopia:sushi",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:sushi",
+      "text": "Recipe for sushi."
+    }
+  ]
+}

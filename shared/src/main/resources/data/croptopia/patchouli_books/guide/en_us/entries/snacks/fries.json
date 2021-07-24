@@ -1,0 +1,16 @@
+{
+  "name": "Fries",
+  "icon": "croptopia:french_fries",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:french_fries",
+      "recipe2": "croptopia:sweet_potato_fries"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Recipes for making different types of fries."
+    }
+  ]
+}

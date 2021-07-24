@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "314",
+    "526"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:broccoli"
+    },
+    "2": {
+      "tag": "${dependent}:olive_oils"
+    },
+    "3": {
+      "tag": "${dependent}:garlic"
+    },
+    "4": {
+      "tag": "${dependent}:greenonions"
+    },
+    "5": {
+      "tag": "${dependent}:bellpeppers"
+    },
+    "6": {
+      "item": "minecraft:carrot"
+    }
+  },
+  "result": {
+    "item": "croptopia:stir_fry",
+    "count": 1
+  }
+}

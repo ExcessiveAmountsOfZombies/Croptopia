@@ -1,0 +1,11 @@
+{
+  "name": "Деревья",
+  "icon": "croptopia:apple_sapling",
+  "category": "croptopia:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Помимо огородных растений, мод добавляет ещё и деревья. Собирать урожай можно нажава ПКМ по полностью выросшему дереву."
+    }
+  ]
+}

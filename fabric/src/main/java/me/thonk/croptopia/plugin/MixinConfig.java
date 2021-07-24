@@ -1,6 +1,6 @@
-package me.thonk.croptopia.plugin;
+package com.epherical.croptopia.plugin;
 
-import me.thonk.croptopia.Constants;
+import com.epherical.croptopia.Constants;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;

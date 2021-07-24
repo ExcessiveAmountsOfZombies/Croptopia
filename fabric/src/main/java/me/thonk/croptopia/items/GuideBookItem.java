@@ -1,6 +1,6 @@
-package me.thonk.croptopia.items;
+package com.epherical.croptopia.items;
 
-import me.thonk.croptopia.Croptopia;
+import com.epherical.croptopia.Croptopia;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;

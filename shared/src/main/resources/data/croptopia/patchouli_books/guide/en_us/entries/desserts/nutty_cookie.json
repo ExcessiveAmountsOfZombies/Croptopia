@@ -1,0 +1,12 @@
+{
+  "name": "Nutty Cookie",
+  "icon": "croptopia:nutty_cookie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:nutty_cookie",
+      "text": "Recipe for nutty cookies."
+    }
+  ]
+}

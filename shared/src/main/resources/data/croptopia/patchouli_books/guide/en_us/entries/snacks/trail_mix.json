@@ -1,0 +1,12 @@
+{
+  "name": "Trail Mix",
+  "icon": "croptopia:trail_mix",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:trail_mix",
+      "text": "Recipe for making trail mix."
+    }
+  ]
+}

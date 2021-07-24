@@ -1,0 +1,12 @@
+{
+  "name": "Dough",
+  "icon": "croptopia:dough",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:dough",
+      "text": "Recipe for dough."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:frying_pan"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "${dependent}:cheeses"
+    }
+  ],
+  "result": {
+    "item": "croptopia:scrambled_eggs",
+    "count": 1
+  }
+}

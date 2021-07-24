@@ -1,0 +1,12 @@
+{
+  "name": "Shepherd's Pie",
+  "icon": "croptopia:shepherds_pie",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_shepherds_pie",
+      "text": "Recipe for a Shepherd's Pie."
+    }
+  ]
+}

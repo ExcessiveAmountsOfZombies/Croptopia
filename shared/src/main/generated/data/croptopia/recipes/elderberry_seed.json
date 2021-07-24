@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:elderberries"
+    }
+  ],
+  "result": {
+    "item": "croptopia:elderberry_seed"
+  }
+}

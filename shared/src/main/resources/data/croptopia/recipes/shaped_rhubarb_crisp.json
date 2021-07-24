@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "456",
+    "123",
+    "7  "
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:rhubarb"
+    },
+    "2": {
+      "item": "minecraft:sugar"
+    },
+    "3": {
+      "tag": "${dependent}:cinnamon"
+    },
+    "4": {
+      "tag": "${dependent}:oats"
+    },
+    "5": {
+      "tag": "${dependent}:flour"
+    },
+    "6": {
+      "tag": "${dependent}:butters"
+    },
+    "7": {
+      "tag": "${dependent}:salts"
+    }
+  },
+  "result": {
+    "item": "croptopia:rhubarb_crisp",
+    "count": 1
+  }
+}

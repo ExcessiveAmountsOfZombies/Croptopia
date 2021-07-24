@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_fish_and_chips"
+    ]
+  },
+  "criteria": {
+    "has_frying_pan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:frying_pan"]
+          }
+        ]
+      }
+    },
+    "has_flour": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:flour"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_fish_and_chips"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_frying_pan",
+      "has_flour",
+      "has_the_recipe"
+    ]
+  ]
+}

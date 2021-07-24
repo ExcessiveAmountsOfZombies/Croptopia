@@ -1,7 +1,7 @@
-package me.thonk.croptopia.registry;
+package com.epherical.croptopia.registry;
 
 import com.google.common.collect.ImmutableList;
-import me.thonk.common.FeatureNames;
+import com.epherical.common.FeatureNames;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -22,7 +22,7 @@ import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import java.util.HashMap;
 import java.util.Map;
 
-import static me.thonk.croptopia.Croptopia.createIdentifier;
+import static com.epherical.croptopia.Croptopia.createIdentifier;
 
 public class GeneratorRegistry {
 

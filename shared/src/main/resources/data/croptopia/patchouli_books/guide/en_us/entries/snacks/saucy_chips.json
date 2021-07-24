@@ -1,0 +1,12 @@
+{
+  "name": "Saucy Chips",
+  "icon": "croptopia:saucy_chips",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saucy_chips",
+      "text": "Recipe for making chips with dip or sauce."
+    }
+  ]
+}

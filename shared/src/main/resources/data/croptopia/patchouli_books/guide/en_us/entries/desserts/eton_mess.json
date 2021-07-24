@@ -1,0 +1,12 @@
+{
+  "name": "Eton Mess",
+  "icon": "croptopia:eton_mess",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_eton_mess",
+      "text": "Recipe for eton mess."
+    }
+  ]
+}

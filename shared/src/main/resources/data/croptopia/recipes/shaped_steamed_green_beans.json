@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:greenbeans"
+    },
+    "2": {
+      "tag": "${dependent}:water_bottles"
+    }
+  },
+  "result": {
+    "item": "croptopia:steamed_green_beans",
+    "count": 2
+  }
+}

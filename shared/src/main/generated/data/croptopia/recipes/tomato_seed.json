@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:tomatoes"
+    }
+  ],
+  "result": {
+    "item": "croptopia:tomato_seed"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:doughs"
+    },
+    {
+      "tag": "${dependent}:cheeses"
+    },
+    {
+      "tag": "${dependent}:tomatoes"
+    },
+    {
+      "tag": "${dependent}:pineapples"
+    },
+    {
+      "tag": "${dependent}:pepperoni"
+    },
+    {
+      "tag": "${dependent}:pineapples"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:pineapple_pepperoni_pizza",
+    "count": 1
+  }
+}

@@ -1,7 +1,7 @@
-package me.thonk.croptopia.config;
+package com.epherical.croptopia.config;
 
 import com.google.gson.*;
-import me.thonk.croptopia.Croptopia;
+import com.epherical.croptopia.Croptopia;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;

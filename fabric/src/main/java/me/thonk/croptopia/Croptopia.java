@@ -1,24 +1,24 @@
-package me.thonk.croptopia;
+package com.epherical.croptopia;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import me.thonk.common.MiscNames;
-import me.thonk.croptopia.blocks.CroptopiaCropBlock;
-import me.thonk.croptopia.blocks.LeafCropBlock;
-import me.thonk.croptopia.config.ConfigurableSeed;
-import me.thonk.croptopia.data.Runner;
-import me.thonk.croptopia.dependencies.Patchouli;
-import me.thonk.croptopia.generator.BiomeModifiers;
-import me.thonk.croptopia.items.CropLootTableModifier;
-import me.thonk.croptopia.items.CropItem;
-import me.thonk.croptopia.items.SeedItem;
-import me.thonk.croptopia.loottables.BiomeLootCondition;
-import me.thonk.croptopia.mixin.AxeAccess;
-import me.thonk.croptopia.mixin.VillagerAccess;
-import me.thonk.croptopia.registry.BlockRegistry;
-import me.thonk.croptopia.registry.Composter;
-import me.thonk.croptopia.registry.ItemRegistry;
-import me.thonk.croptopia.registry.LeavesRegistry;
+import com.epherical.common.MiscNames;
+import com.epherical.croptopia.blocks.CroptopiaCropBlock;
+import com.epherical.croptopia.blocks.LeafCropBlock;
+import com.epherical.croptopia.config.ConfigurableSeed;
+import com.epherical.croptopia.data.Runner;
+import com.epherical.croptopia.dependencies.Patchouli;
+import com.epherical.croptopia.generator.BiomeModifiers;
+import com.epherical.croptopia.items.CropLootTableModifier;
+import com.epherical.croptopia.items.CropItem;
+import com.epherical.croptopia.items.SeedItem;
+import com.epherical.croptopia.loottables.BiomeLootCondition;
+import com.epherical.croptopia.mixin.AxeAccess;
+import com.epherical.croptopia.mixin.VillagerAccess;
+import com.epherical.croptopia.registry.BlockRegistry;
+import com.epherical.croptopia.registry.Composter;
+import com.epherical.croptopia.registry.ItemRegistry;
+import com.epherical.croptopia.registry.LeavesRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static me.thonk.croptopia.Constants.OPTIONS;
+import static com.epherical.croptopia.Constants.OPTIONS;
 
 
 public class Croptopia implements ModInitializer {

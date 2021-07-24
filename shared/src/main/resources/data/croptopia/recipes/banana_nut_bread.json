@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:cinnamon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "${dependent}:flour"
+    },
+    {
+      "tag": "${dependent}:bananas"
+    },
+    {
+      "tag": "${dependent}:nuts"
+    }
+  ],
+  "result": {
+    "item": "croptopia:banana_nut_bread",
+    "count": 2
+  }
+}

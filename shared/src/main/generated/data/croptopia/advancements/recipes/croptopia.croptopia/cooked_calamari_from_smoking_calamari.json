@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:cooked_calamari_from_smoking_calamari"
+    ]
+  },
+  "criteria": {
+    "has_calamari": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:calamari"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:cooked_calamari_from_smoking_calamari"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_calamari",
+      "has_the_recipe"
+    ]
+  ]
+}

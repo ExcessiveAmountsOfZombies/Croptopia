@@ -1,6 +1,6 @@
 ---
 name: Issue report
-about: Help me narrow your problem down with this template.
+about: Help com narrow your problem down with this template.
 title: ''
 labels: ''
 assignees: ''
@@ -24,7 +24,7 @@ How can I reproduce the issue?
 If applicable, add screenshots to help explain your problem.
 
 **Other Mods**
-What other mods are you using? Having a list might be helpful for me.
+What other mods are you using? Having a list might be helpful for com.
 
 **Additional context**
 Add any other context about the problem here.

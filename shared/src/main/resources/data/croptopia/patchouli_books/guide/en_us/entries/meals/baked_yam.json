@@ -1,0 +1,12 @@
+{
+  "name": "Baked Yam",
+  "icon": "croptopia:baked_yam",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_yam_from_yam",
+      "text": "Recipe"
+    }
+  ]
+}

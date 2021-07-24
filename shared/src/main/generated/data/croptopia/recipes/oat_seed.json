@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:oat"
+    }
+  ],
+  "result": {
+    "item": "croptopia:oat_seed"
+  }
+}

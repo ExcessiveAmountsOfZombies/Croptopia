@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:snicker_doodle"
+    ]
+  },
+  "criteria": {
+    "has_cinnamon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:cinnamon"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:snicker_doodle"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cinnamon",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Pecan Pie",
+  "icon": "croptopia:pecan_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pecan_pie",
+      "text": "Recipe for a pecan pie."
+    }
+  ]
+}

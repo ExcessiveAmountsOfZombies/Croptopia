@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:pumpkin_spice_latte"
+    ]
+  },
+  "criteria": {
+    "has_coffee": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:coffee"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:pumpkin_spice_latte"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_coffee",
+      "has_the_recipe"
+    ]
+  ]
+}

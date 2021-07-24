@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:raisin_oatmeal_cookie"
+    ]
+  },
+  "criteria": {
+    "has_raisins": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:raisins"
+          }
+        ]
+      }
+    },
+    "has_oatmeal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:raisin_oatmeal_cookie"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:raisin_oatmeal_cookie"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raisins",
+      "has_oatmeal",
+      "has_the_recipe"
+    ]
+  ]
+}

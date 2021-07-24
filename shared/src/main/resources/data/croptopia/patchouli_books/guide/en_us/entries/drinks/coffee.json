@@ -1,0 +1,12 @@
+{
+  "name": "Coffee",
+  "icon": "croptopia:coffee",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:coffee",
+      "text": "Recipe for coffee."
+    }
+  ]
+}

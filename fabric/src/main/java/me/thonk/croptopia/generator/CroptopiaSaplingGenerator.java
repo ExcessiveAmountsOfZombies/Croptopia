@@ -1,4 +1,4 @@
-package me.thonk.croptopia.generator;
+package com.epherical.croptopia.generator;
 
 import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;

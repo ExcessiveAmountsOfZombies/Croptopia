@@ -1,6 +1,6 @@
-package me.thonk.croptopia.client;
+package com.epherical.croptopia.client;
 
-import me.thonk.croptopia.blocks.LeafCropBlock;
+import com.epherical.croptopia.blocks.LeafCropBlock;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,8 +11,8 @@ import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
 
-import static me.thonk.croptopia.Croptopia.cropBlocks;
-import static me.thonk.croptopia.Croptopia.leafBlocks;
+import static com.epherical.croptopia.Croptopia.cropBlocks;
+import static com.epherical.croptopia.Croptopia.leafBlocks;
 
 @Environment(EnvType.CLIENT)
 public class CroptopiaClient implements ClientModInitializer {

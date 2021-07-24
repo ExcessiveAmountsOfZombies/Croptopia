@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_fruit_cake"
+    ]
+  },
+  "criteria": {
+    "has_cinnamon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:cinnamon"]
+          }
+        ]
+      }
+    },
+    "has_nutmeg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:nutmegs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_fruit_cake"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cinnamon",
+      "has_nutmeg",
+      "has_the_recipe"
+    ]
+  ]
+}

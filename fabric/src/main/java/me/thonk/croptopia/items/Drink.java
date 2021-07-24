@@ -1,6 +1,6 @@
-package me.thonk.croptopia.items;
+package com.epherical.croptopia.items;
 
-import me.thonk.croptopia.event.DrinkEvent;
+import com.epherical.croptopia.event.DrinkEvent;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

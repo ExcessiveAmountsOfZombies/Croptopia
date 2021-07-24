@@ -1,0 +1,12 @@
+{
+  "name": "Стир-фрай",
+  "icon": "croptopia:stir_fry",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_stir_fry",
+      "text": "Рецепт Стир-фрай."
+    }
+  ]
+}

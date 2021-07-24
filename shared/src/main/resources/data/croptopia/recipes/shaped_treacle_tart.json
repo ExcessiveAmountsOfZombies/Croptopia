@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "234",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:bread"
+    },
+    "2": {
+      "item": "minecraft:honey_bottle"
+    },
+    "3": {
+      "tag": "${dependent}:lemons"
+    },
+    "4": {
+      "item": "croptopia:whipping_cream"
+    }
+  },
+  "result": {
+    "item": "croptopia:treacle_tart",
+    "count": 3
+  }
+}

@@ -1,9 +1,9 @@
-package me.thonk.croptopia.items;
+package com.epherical.croptopia.items;
 
-import me.thonk.croptopia.Constants;
-import me.thonk.croptopia.Croptopia;
-import me.thonk.croptopia.config.ConfigurableSeed;
-import me.thonk.croptopia.loottables.BiomeLootCondition;
+import com.epherical.croptopia.Constants;
+import com.epherical.croptopia.Croptopia;
+import com.epherical.croptopia.config.ConfigurableSeed;
+import com.epherical.croptopia.loottables.BiomeLootCondition;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;

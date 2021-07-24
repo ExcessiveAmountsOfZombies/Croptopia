@@ -1,0 +1,12 @@
+{
+  "name": "Tres Leche Cake",
+  "icon": "croptopia:tres_leche_cake",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tres_leche_cake",
+      "text": "Recipe guide."
+    }
+  ]
+}

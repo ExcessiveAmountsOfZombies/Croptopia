@@ -1,0 +1,12 @@
+{
+  "name": "Nether Wart Stew",
+  "icon": "croptopia:nether_wart_stew",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_nether_wart_stew",
+      "text": "Recipe"
+    }
+  ]
+}

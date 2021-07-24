@@ -1,0 +1,12 @@
+{
+  "name": "Beef Wellington",
+  "icon": "croptopia:beef_wellington",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_wellington",
+      "text": "Recipe for beef wellington."
+    }
+  ]
+}

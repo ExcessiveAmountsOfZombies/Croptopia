@@ -1,4 +1,4 @@
-package me.thonk.croptopia.mixin;
+package com.epherical.croptopia.mixin;
 
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.Item;

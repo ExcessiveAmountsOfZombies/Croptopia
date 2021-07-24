@@ -1,16 +1,16 @@
-package me.thonk.croptopia.registry;
+package com.epherical.croptopia.registry;
 
-import me.thonk.common.BlockNames;
-import me.thonk.croptopia.blocks.CroptopiaCropBlock;
-import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
-import me.thonk.croptopia.blocks.TallCropBlock;
-import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
+import com.epherical.common.BlockNames;
+import com.epherical.croptopia.blocks.CroptopiaCropBlock;
+import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
+import com.epherical.croptopia.blocks.TallCropBlock;
+import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.AxeItem;
 import net.minecraft.sound.BlockSoundGroup;
 
-import static me.thonk.croptopia.Croptopia.*;
+import static com.epherical.croptopia.Croptopia.*;
 
 public class BlockRegistry {
     public static Block artichokeCropBlock = new CroptopiaCropBlock(createCropSettings());

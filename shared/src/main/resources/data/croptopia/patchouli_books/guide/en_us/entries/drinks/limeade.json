@@ -1,0 +1,12 @@
+{
+  "name": "Limeade",
+  "icon": "croptopia:limeade",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:limeade",
+      "text": "Recipe for limeade."
+    }
+  ]
+}

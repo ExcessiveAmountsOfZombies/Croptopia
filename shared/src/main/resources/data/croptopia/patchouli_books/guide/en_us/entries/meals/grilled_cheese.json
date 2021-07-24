@@ -1,0 +1,12 @@
+{
+  "name": "Grilled Cheese",
+  "icon": "croptopia:grilled_cheese",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:grilled_cheese",
+      "text": "Recipe for a grilled cheese sandwich."
+    }
+  ]
+}

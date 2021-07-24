@@ -1,0 +1,12 @@
+{
+  "name": "Chicken and Dumplings",
+  "icon": "croptopia:chicken_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_dumplings",
+      "text": "Recipe for chicken and dumplings."
+    }
+  ]
+}

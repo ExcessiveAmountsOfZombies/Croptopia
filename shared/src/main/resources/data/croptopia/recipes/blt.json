@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "croptopia:cooked_bacon"
+    },
+    {
+      "tag": "${dependent}:lettuce"
+    },
+    {
+      "tag": "${dependent}:tomatoes"
+    }
+  ],
+  "result": {
+    "item": "croptopia:blt",
+    "count": 1
+  }
+}

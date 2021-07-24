@@ -1,0 +1,12 @@
+{
+  "name": "Fajitas",
+  "icon": "croptopia:fajitas",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fajitas",
+      "text": "Recipe for fajitas."
+    }
+  ]
+}

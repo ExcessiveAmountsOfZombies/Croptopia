@@ -1,6 +1,6 @@
-package me.thonk.croptopia.registry;
+package com.epherical.croptopia.registry;
 
-import me.thonk.croptopia.Croptopia;
+import com.epherical.croptopia.Croptopia;
 import net.minecraft.item.ItemConvertible;
 
 import static net.minecraft.block.ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE;

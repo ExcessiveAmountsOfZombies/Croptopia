@@ -1,4 +1,4 @@
-package me.thonk.croptopia.registry;
+package com.epherical.croptopia.registry;
 
 import net.minecraft.item.FoodComponent;
 

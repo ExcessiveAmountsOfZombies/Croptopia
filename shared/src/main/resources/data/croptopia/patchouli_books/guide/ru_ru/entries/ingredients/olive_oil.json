@@ -1,0 +1,12 @@
+{
+  "name": "Оливковое масло",
+  "icon": "croptopia:olive_oil",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:olive_oil",
+      "text": "Рецепт Оливкового масла."
+    }
+  ]
+}

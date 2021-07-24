@@ -1,0 +1,12 @@
+{
+  "name": "Beef Stew",
+  "icon": "croptopia:beef_stew",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_stew",
+      "text": "Recipe"
+    }
+  ]
+}

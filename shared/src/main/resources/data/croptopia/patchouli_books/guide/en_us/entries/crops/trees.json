@@ -1,0 +1,11 @@
+{
+  "name": "Trees",
+  "icon": "croptopia:apple_sapling",
+  "category": "croptopia:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "In the world you can find various trees with custom crops growing on them. To harvest them you can right click them when they're fully grown."
+    }
+  ]
+}

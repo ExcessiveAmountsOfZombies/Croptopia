@@ -43,11 +43,12 @@ configurations {
 
 mixin {
     add sourceSets.main, "croptopia.refmap.json"
+    config "croptopia.mixins.json"
 }
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'parchment', version: '2021.10.17-1.16.5'
+    mappings channel: 'official', version: '1.16.5'
     runs {
         client {
             workingDirectory project.file('run')
@@ -55,9 +56,10 @@ minecraft {
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console //property 'forge.logging.console.level', 'debug'
+            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
                 croptopia {
-                    source sourceSets.main
+                    sources(sourceSets.main, project(":shared").sourceSets.main)
                 }
             }
         }
@@ -70,7 +72,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             mods {
                 croptopia {
-                    source sourceSets.main
+                    sources(sourceSets.main, project(":shared").sourceSets.main)
                 }
             }
         }
@@ -85,7 +87,7 @@ minecraft {
             args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
                 croptopia {
-                    source sourceSets.main
+                    sources(sourceSets.main, project(":shared").sourceSets.main)
                 }
             }
         }
@@ -99,11 +101,13 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.1.0'
     implementation project(":shared")
+    shade project(":shared")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 shadowJar {
+    archiveClassifier = ""
     enabled = true
     configurations = [project.configurations.shade]
     archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
@@ -133,6 +137,12 @@ jar {
     }
 }
 
-shadowJar.finalizedBy('reobfJar')
+tasks.build.dependsOn(tasks.shadowJar)
+
+reobf {
+    shadowJar {}
+}
+
+jar.finalizedBy('reobfJar')
 
 //tasks.getByName("addRefMapToShadowJar").mustRunAfter(task("shadowJar"))

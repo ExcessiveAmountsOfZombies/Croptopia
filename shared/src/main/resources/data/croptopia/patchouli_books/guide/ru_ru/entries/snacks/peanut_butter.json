@@ -1,0 +1,12 @@
+{
+  "name": "Арахисовое масло",
+  "icon": "croptopia:peanut_butter",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_peanut_butter",
+      "text": "Рецепт Арахисового масла."
+    }
+  ]
+}

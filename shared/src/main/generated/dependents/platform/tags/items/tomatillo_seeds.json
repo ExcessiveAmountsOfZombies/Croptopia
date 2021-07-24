@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:tomatillo_seed",
+    "#${dependent}:seeds/tomatillo"
+  ]
+}

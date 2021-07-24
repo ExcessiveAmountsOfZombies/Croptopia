@@ -1,4 +1,4 @@
-package me.thonk.croptopia.dependencies;
+package com.epherical.croptopia.dependencies;
 
 public class Patchouli extends Dependency {
 

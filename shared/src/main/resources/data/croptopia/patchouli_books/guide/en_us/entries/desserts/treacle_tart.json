@@ -1,0 +1,12 @@
+{
+  "name": "Treacle Tart",
+  "icon": "croptopia:treacle_tart",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_treacle_tart",
+      "text": "Recipe for a treacle tart."
+    }
+  ]
+}

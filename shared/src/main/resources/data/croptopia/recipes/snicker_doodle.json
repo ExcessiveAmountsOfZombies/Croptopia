@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:cinnamon"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "${dependent}:flour"
+    }
+  ],
+  "result": {
+    "item": "croptopia:snicker_doodle",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Lemon Coconut Bar",
+  "icon": "croptopia:lemon_coconut_bar",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_lemon_coconut_bar",
+      "text": "Recipe"
+    }
+  ]
+}

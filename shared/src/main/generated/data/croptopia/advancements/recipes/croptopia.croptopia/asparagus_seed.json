@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:asparagus_seed"
+    ]
+  },
+  "criteria": {
+    "has_asparagus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:asparagus"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:asparagus_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_asparagus",
+      "has_the_recipe"
+    ]
+  ]
+}

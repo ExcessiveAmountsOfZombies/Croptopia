@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:chicken_and_noodles"
+    ]
+  },
+  "criteria": {
+    "has_chicken": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "croptopia:chicken_replacements"
+          }
+        ]
+      }
+    },
+    "has_noodles": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:noodles"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:chicken_and_noodles"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chicken",
+      "has_noodles",
+      "has_the_recipe"
+    ]
+  ]
+}

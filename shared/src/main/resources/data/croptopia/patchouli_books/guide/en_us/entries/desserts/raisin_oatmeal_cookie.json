@@ -1,0 +1,12 @@
+{
+  "name": "Raisin Oatmeal Cookie",
+  "icon": "croptopia:raisin_oatmeal_cookie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:raisin_oatmeal_cookie",
+      "text": "Recipe for a raisin oatmeal cookie."
+    }
+  ]
+}

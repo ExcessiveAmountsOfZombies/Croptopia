@@ -1,4 +1,4 @@
-package me.thonk.croptopia.blocks;
+package com.epherical.croptopia.blocks;
 
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.sapling.SaplingGenerator;

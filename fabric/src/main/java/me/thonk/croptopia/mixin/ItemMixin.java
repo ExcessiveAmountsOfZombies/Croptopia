@@ -1,6 +1,6 @@
-package me.thonk.croptopia.mixin;
+package com.epherical.croptopia.mixin;
 
-import me.thonk.croptopia.items.CookingUtensil;
+import com.epherical.croptopia.items.CookingUtensil;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

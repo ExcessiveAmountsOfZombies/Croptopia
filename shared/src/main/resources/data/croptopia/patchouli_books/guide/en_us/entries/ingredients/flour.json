@@ -1,0 +1,12 @@
+{
+  "name": "Flour",
+  "icon": "croptopia:flour",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:flour",
+      "text": "Recipe for flour."
+    }
+  ]
+}

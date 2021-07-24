@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "234",
+    " 5 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:potato"
+    },
+    "2": {
+      "tag": "${dependent}:flour"
+    },
+    "3": {
+      "tag": "${dependent}:greenonions"
+    },
+    "4": {
+      "item": "croptopia:bacon"
+    },
+    "5": {
+      "tag": "${dependent}:water_bottles"
+    }
+  },
+  "result": {
+    "item": "croptopia:potato_soup",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Фахита",
+  "icon": "croptopia:fajitas",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fajitas",
+      "text": "Рецепт Фахиты."
+    }
+  ]
+}

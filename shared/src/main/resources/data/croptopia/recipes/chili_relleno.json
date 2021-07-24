@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "${dependent}:chile_peppers"
+    },
+    {
+      "tag": "${dependent}:olive_oils"
+    },
+    {
+      "tag": "${dependent}:flour"
+    },
+    {
+      "tag": "${dependent}:salts"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chili_relleno",
+    "count": 1
+  }
+}

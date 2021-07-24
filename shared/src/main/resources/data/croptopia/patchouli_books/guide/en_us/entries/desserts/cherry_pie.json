@@ -1,0 +1,12 @@
+{
+  "name": "Cherry Pie",
+  "icon": "croptopia:cherry_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cherry_pie",
+      "text": "Recipe for a cherry pie."
+    }
+  ]
+}

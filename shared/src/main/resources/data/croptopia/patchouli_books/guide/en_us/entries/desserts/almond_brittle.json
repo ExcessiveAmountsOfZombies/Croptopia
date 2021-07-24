@@ -1,0 +1,12 @@
+{
+  "name": "Almond Brittle",
+  "icon": "croptopia:almond_brittle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:almond_brittle",
+      "text": "Recipe for almond brittle."
+    }
+  ]
+}

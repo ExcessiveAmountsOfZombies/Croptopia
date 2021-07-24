@@ -1,8 +1,8 @@
-package me.thonk.croptopia.mixin;
+package com.epherical.croptopia.mixin;
 
 import com.google.common.collect.ImmutableSet;
-import me.thonk.croptopia.Croptopia;
-import me.thonk.croptopia.config.ConfigurableSeed;
+import com.epherical.croptopia.Croptopia;
+import com.epherical.croptopia.config.ConfigurableSeed;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Mixin;

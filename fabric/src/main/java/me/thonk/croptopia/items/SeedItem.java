@@ -1,6 +1,6 @@
-package me.thonk.croptopia.items;
+package com.epherical.croptopia.items;
 
-import me.thonk.croptopia.blocks.CroptopiaCropBlock;
+import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import net.minecraft.block.Block;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.AliasedBlockItem;

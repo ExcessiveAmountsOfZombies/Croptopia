@@ -1,0 +1,12 @@
+{
+  "name": "Rum",
+  "icon": "croptopia:rum",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:rum",
+      "text": "Recipe for rum."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Mead",
+  "icon": "croptopia:mead",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mead",
+      "text": "Recipe for mead."
+    }
+  ]
+}

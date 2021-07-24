@@ -1,0 +1,12 @@
+{
+  "name": "Chicken and Rice",
+  "icon": "croptopia:chicken_and_rice",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_rice",
+      "text": "Recipe for chicken and rice."
+    }
+  ]
+}

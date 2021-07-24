@@ -1,0 +1,12 @@
+{
+  "name": "Soy Milk",
+  "icon": "croptopia:soy_milk",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:soy_milk",
+      "text": "Recipe for soy milk."
+    }
+  ]
+}

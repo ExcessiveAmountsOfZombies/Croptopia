@@ -1,0 +1,12 @@
+{
+  "name": "Peanut Butter",
+  "icon": "croptopia:peanut_butter",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_peanut_butter",
+      "text": "Recipe"
+    }
+  ]
+}

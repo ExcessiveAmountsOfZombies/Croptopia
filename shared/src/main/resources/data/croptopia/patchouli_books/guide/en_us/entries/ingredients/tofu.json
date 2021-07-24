@@ -1,0 +1,12 @@
+{
+  "name": "Tofu",
+  "icon": "croptopia:tofu",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu",
+      "text": "Recipe for tofu."
+    }
+  ]
+}

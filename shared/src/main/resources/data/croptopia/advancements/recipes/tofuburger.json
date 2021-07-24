@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:tofuburger"
+    ]
+  },
+  "criteria": {
+    "has_tofu": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:tofu"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:tofuburger"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tofu",
+      "has_the_recipe"
+    ]
+  ]
+}

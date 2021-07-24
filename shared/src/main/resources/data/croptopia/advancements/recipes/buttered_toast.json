@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:buttered_toast"
+    ]
+  },
+  "criteria": {
+    "has_butter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:butters"
+          }
+        ]
+      }
+    },
+    "has_toast": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:toasts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:buttered_toast"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_butter",
+      "has_toast",
+      "has_the_recipe"
+    ]
+  ]
+}

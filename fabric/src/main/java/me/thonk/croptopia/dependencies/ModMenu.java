@@ -1,4 +1,4 @@
-package me.thonk.croptopia.dependencies;
+package com.epherical.croptopia.dependencies;
 
 import io.github.prospector.modmenu.api.ModMenuApi;
 import net.fabricmc.api.EnvType;

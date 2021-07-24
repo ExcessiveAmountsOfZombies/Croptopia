@@ -1,9 +1,9 @@
-package me.thonk.croptopia.registry;
+package com.epherical.croptopia.registry;
 
-import me.thonk.common.BlockNames;
+import com.epherical.common.BlockNames;
 import net.minecraft.block.Block;
 
-import static me.thonk.croptopia.Croptopia.*;
+import static com.epherical.croptopia.Croptopia.*;
 
 
 public class LeavesRegistry {

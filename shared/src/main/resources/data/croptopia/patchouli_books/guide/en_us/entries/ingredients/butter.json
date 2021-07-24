@@ -1,0 +1,12 @@
+{
+  "name": "Butter",
+  "icon": "croptopia:butter",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:butter",
+      "text": "Recipe for butter."
+    }
+  ]
+}

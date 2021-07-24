@@ -1,4 +1,4 @@
-package me.thonk.croptopia.config;
+package com.epherical.croptopia.config;
 
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.Biome;

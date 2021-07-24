@@ -1,0 +1,12 @@
+{
+  "name": "Nougat",
+  "icon": "croptopia:nougat",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:nougat",
+      "text": "Recipe for making nougat."
+    }
+  ]
+}

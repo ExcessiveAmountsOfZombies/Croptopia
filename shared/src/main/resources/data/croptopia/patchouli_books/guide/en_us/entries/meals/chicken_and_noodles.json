@@ -1,0 +1,12 @@
+{
+  "name": "Chicken and Noodles",
+  "icon": "croptopia:chicken_and_noodles",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_noodles",
+      "text": "Recipe for chicken and noodles."
+    }
+  ]
+}

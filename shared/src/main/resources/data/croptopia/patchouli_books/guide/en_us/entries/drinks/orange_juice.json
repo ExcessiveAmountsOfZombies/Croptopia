@@ -1,0 +1,12 @@
+{
+  "name": "Orange Juice",
+  "icon": "croptopia:orange_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:orange_juice",
+      "text": "Recipe for orange juice."
+    }
+  ]
+}

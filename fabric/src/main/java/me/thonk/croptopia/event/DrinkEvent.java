@@ -1,4 +1,4 @@
-package me.thonk.croptopia.event;
+package com.epherical.croptopia.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/salmon"
+    }
+  ],
+  "item": "croptopia:roe",
+  "weight": 1,
+  "min": 1,
+  "max": 2,
+  "type": "croptopia:entity_modifier"
+}

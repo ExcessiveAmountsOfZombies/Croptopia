@@ -1,0 +1,12 @@
+{
+  "name": "Pineapple Juice",
+  "icon": "croptopia:pineapple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_juice",
+      "text": "Recipe for pineapple juice."
+    }
+  ]
+}

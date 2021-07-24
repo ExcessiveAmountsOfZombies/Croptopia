@@ -1,6 +1,6 @@
-package me.thonk.croptopia.mixin;
+package com.epherical.croptopia.mixin;
 
-import me.thonk.croptopia.items.SeedItem;
+import com.epherical.croptopia.items.SeedItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.ai.brain.task.FarmerVillagerTask;

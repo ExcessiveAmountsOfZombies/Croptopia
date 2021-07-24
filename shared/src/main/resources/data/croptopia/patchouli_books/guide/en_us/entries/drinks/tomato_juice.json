@@ -1,0 +1,12 @@
+{
+  "name": "Tomato Juice",
+  "icon": "croptopia:tomato_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tomato_juice",
+      "text": "Recipe for tomato juice."
+    }
+  ]
+}

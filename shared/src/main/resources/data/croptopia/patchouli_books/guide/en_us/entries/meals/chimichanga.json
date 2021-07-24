@@ -1,0 +1,12 @@
+{
+  "name": "Chimichanga",
+  "icon": "croptopia:chimichanga",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chimichanga",
+      "text": "Recipe guide."
+    }
+  ]
+}

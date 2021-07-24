@@ -1,0 +1,12 @@
+{
+  "name": "Mortar and Pestle",
+  "icon": "croptopia:mortar_and_pestle",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mortar_and_pestle",
+      "text": "Recipe for a mortar and pestle."
+    }
+  ]
+}

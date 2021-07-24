@@ -1,0 +1,12 @@
+{
+  "name": "Saguaro Juice",
+  "icon": "croptopia:saguaro_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saguaro_juice",
+      "text": "Recipe for saguaro juice."
+    }
+  ]
+}

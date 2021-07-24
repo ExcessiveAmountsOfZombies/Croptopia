@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:pineapple_pepperoni_pizza"
+    ]
+  },
+  "criteria": {
+    "has_pineapple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:pineapples"
+          },
+          {
+            "tag": "${dependent}:pepperoni"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:pineapple_pepperoni_pizza"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pineapple",
+      "has_the_recipe"
+    ]
+  ]
+}

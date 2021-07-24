@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:steamed_rice"
+    ]
+  },
+  "criteria": {
+    "has_cooking_pot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:cooking_pot"]
+          }
+        ]
+      }
+    },
+    "has_rice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:rice"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:steamed_rice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cooking_pot",
+      "has_rice",
+      "has_the_recipe"
+    ]
+  ]
+}

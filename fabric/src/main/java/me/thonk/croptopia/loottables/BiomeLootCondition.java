@@ -1,9 +1,9 @@
-package me.thonk.croptopia.loottables;
+package com.epherical.croptopia.loottables;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import me.thonk.croptopia.Croptopia;
+import com.epherical.croptopia.Croptopia;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.context.LootContext;

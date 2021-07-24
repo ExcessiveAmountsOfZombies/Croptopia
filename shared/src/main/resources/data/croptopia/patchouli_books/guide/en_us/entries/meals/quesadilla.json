@@ -1,0 +1,12 @@
+{
+  "name": "Quesadilla",
+  "icon": "croptopia:quesadilla",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:quesadilla",
+      "text": "Recipe guide."
+    }
+  ]
+}

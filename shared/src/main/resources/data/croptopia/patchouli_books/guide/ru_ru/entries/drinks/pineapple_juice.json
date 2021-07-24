@@ -1,0 +1,12 @@
+{
+  "name": "Ананасовый сок",
+  "icon": "croptopia:pineapple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_juice",
+      "text": "Рецепт Ананасового сока."
+    }
+  ]
+}

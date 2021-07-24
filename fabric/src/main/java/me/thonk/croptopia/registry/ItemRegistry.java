@@ -1,12 +1,12 @@
-package me.thonk.croptopia.registry;
+package com.epherical.croptopia.registry;
 
-import me.thonk.common.ItemNames;
-import me.thonk.croptopia.items.*;
+import com.epherical.common.ItemNames;
+import com.epherical.croptopia.items.*;
 import net.minecraft.item.*;
 
-import static me.thonk.croptopia.Croptopia.createGroup;
-import static me.thonk.croptopia.Croptopia.registerItem;
-import static me.thonk.croptopia.registry.FoodRegistry.*;
+import static com.epherical.croptopia.Croptopia.createGroup;
+import static com.epherical.croptopia.Croptopia.registerItem;
+import static com.epherical.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
 public class ItemRegistry {

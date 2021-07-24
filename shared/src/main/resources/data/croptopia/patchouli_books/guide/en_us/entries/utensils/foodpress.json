@@ -1,0 +1,12 @@
+{
+  "name": "Food Press",
+  "icon": "croptopia:food_press",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:food_press",
+      "text": "Recipe for a food press."
+    }
+  ]
+}

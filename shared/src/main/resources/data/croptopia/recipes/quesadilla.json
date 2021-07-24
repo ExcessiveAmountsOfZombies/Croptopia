@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:tortillas"
+    },
+    {
+      "tag": "${dependent}:tortillas"
+    },
+    {
+      "tag": "${dependent}:cheeses"
+    },
+    {
+      "tag": "${dependent}:avocados"
+    },
+    {
+      "tag": "croptopia:chicken_replacements"
+    },
+    {
+      "item": "croptopia:frying_pan"
+    }
+  ],
+  "result": {
+    "item": "croptopia:quesadilla",
+    "count": 2
+  }
+}

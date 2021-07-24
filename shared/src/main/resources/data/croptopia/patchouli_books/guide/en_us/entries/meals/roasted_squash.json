@@ -1,0 +1,12 @@
+{
+  "name": "Roasted Squash",
+  "icon": "croptopia:roasted_squash",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_roasted_squash",
+      "text": "Recipe"
+    }
+  ]
+}

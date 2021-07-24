@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:raisins"
+    },
+    {
+      "item": "croptopia:oatmeal"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "${dependent}:flour"
+    }
+  ],
+  "result": {
+    "item": "croptopia:raisin_oatmeal_cookie",
+    "count": 4
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Салаты",
+  "icon": "croptopia:cucumber_salad",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cucumber_salad",
+      "text": "Рецепты разнообразных салатов."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:leafy_salad",
+      "recipe2": "croptopia:fruit_salad"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:veggie_salad",
+      "recipe2": "croptopia:caesar_salad"
+    }
+  ]
+}

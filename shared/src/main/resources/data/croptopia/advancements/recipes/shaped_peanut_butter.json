@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_peanut_butter"
+    ]
+  },
+  "criteria": {
+    "has_food_press": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:food_press"]
+          }
+        ]
+      }
+    },
+    "has_peanuts": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:peanuts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_peanut_butter"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_food_press",
+      "has_peanuts",
+      "has_the_recipe"
+    ]
+  ]
+}

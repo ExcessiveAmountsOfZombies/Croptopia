@@ -1,0 +1,12 @@
+{
+  "name": "Buttered Toast",
+  "icon": "croptopia:buttered_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:buttered_toast",
+      "text": "Recipe for making buttered toast."
+    }
+  ]
+}

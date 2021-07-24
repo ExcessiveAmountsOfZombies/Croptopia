@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cauliflower_seed"
+    ]
+  },
+  "criteria": {
+    "has_cauliflower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:cauliflower"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cauliflower_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cauliflower",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Fruit Smoothie",
+  "icon": "croptopia:fruit_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fruit_smoothie",
+      "text": "Recipe for a fruit smoothie."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Potato Soup",
+  "icon": "croptopia:potato_soup",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_potato_soup",
+      "text": "Recipe"
+    }
+  ]
+}

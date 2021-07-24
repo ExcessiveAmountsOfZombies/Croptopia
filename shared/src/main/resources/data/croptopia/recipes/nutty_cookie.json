@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:nuts"
+    },
+    {
+      "tag": "${dependent}:nuts"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "${dependent}:flour"
+    }
+  ],
+  "result": {
+    "item": "croptopia:nutty_cookie",
+    "count": 4
+  }
+}

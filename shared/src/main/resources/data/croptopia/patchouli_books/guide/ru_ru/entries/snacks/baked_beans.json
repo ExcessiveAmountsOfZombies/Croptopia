@@ -1,0 +1,12 @@
+{
+  "name": "Запечённая фасоль",
+  "icon": "croptopia:baked_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_beans_from_blackbean",
+      "text": "Рецепт Запечённой фасоли."
+    }
+  ]
+}

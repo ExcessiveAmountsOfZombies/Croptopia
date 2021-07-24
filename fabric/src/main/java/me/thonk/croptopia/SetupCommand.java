@@ -1,4 +1,4 @@
-package me.thonk.croptopia;
+package com.epherical.croptopia;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;

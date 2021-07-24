@@ -1,4 +1,4 @@
-package me.thonk.croptopia.items;
+package com.epherical.croptopia.items;
 
 import net.minecraft.item.Item;
 

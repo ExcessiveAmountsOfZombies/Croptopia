@@ -1,0 +1,12 @@
+{
+  "name": "Tostada",
+  "icon": "croptopia:tostada",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tostada",
+      "text": "Recipe for a tostada."
+    }
+  ]
+}
