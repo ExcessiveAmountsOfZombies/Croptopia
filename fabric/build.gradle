@@ -32,8 +32,8 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-    shade project(":common")
-    implementation(project(":common"))
+    shade project(":shared")
+    implementation(project(":shared"))
 }
 
 minecraft {
@@ -53,7 +53,7 @@ processResources {
         expand "dependant": "c"
     }
 }
-tasks.processResources.dependsOn(project(":common").tasks.processResources)
+tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

@@ -11,9 +11,9 @@ import net.minecraft.world.level.storage.loot.LootContext;
 
 public class BiomeLootCondition implements ILootCondition {
 
-    private final Biome.Category biomeCategory;
+    private final Biome.BiomeCategory biomeCategory;
 
-    private BiomeLootCondition(Biome.Category category) {
+    private BiomeLootCondition(Biome.BiomeCategory category) {
         this.biomeCategory = category;
     }
 
@@ -25,14 +25,14 @@ public class BiomeLootCondition implements ILootCondition {
 
     @Override
     public boolean test(LootContext lootContext) {
-        if (biomeCategory == Biome.Category.NONE) {
+        if (biomeCategory == Biome.BiomeCategory.NONE) {
             return true;
         }
         Vector3d vec3d = lootContext.get(LootParameters.field_237457_g_);
         if (vec3d != null) {
             //BuiltinRegistries.BIOME.get("key");
             Biome biome = lootContext.getWorld().getBiome(new BlockPos(vec3d));
-            return biome.getCategory() == biomeCategory;
+            return biome.getBiomeCategory() == biomeCategory;
         }
         return false;
     }
