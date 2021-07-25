@@ -12,6 +12,7 @@ import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
 //import me.thonk.croptopia.mixin.VillagerAccess;
+import me.thonk.croptopia.loot.SpawnChestModifier;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
@@ -40,6 +41,7 @@ import net.minecraft.world.level.storage.loot.Serializer;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.WorldEvent;
@@ -60,8 +62,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -78,6 +78,7 @@ public class CroptopiaForge {
 
     // todo: there might be a different way i'm supposed to do this in forge.
     public static LootItemConditionType BIOME_CHECK;
+    private static final SpawnChestModifier.Serializer SPAWN_CHEST_MODIFIER = new SpawnChestModifier.Serializer();
 
     public static Config config;
 
@@ -179,6 +180,12 @@ public class CroptopiaForge {
         @SubscribeEvent
         public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
             ItemRegistry.init(itemRegister);
+        }
+
+        @SubscribeEvent
+        public static void onLootRegister(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> register) {
+            SPAWN_CHEST_MODIFIER.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, "spawn_loot"));
+            register.getRegistry().register(SPAWN_CHEST_MODIFIER);
         }
     }
 

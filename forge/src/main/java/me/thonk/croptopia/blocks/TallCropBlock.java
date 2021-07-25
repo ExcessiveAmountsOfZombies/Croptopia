@@ -25,7 +25,7 @@ public class TallCropBlock extends CroptopiaCropBlock {
 
     @Override
     public VoxelShape getShape(BlockState p_52297_, BlockGetter p_52298_, BlockPos p_52299_, CollisionContext p_52300_) {
-        return SHAPE_BY_AGE[p_52297_.getValue(this.getAgeProperty())];
+        return AGE_TO_SHAPE[p_52297_.getValue(this.getAgeProperty())];
     }
 
     @Override

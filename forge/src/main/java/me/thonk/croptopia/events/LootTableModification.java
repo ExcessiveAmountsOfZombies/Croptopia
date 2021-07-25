@@ -17,7 +17,7 @@ public class LootTableModification {
 
     @SubscribeEvent
     public void onLootTableLoad(LootTableLoadEvent event) {
-        /*ResourceLocation location = event.getName();
+        /*
         if (location != null) {
             if (location.getPath().equalsIgnoreCase("blocks/grass")) {
                 LootPool.Builder builder = LootPool.builder();
