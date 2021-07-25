@@ -16,6 +16,10 @@ public class BiomeModification {
     @SubscribeEvent
     public void onBiomeLoad(BiomeLoadingEvent event) {
         BiomeGenerationSettingsBuilder settings = event.getGeneration();
+        if (event.getCategory() != Biome.BiomeCategory.OCEAN) {
+            settings.addFeature(VEGETAL_DECORATION, RANDOM_CROP);
+        }
+
         if (event.getCategory() == Biome.BiomeCategory.FOREST) {
             if (event.getName() != null) {
                 // TODO: find a better way to do this, surely there is a cleaner way.

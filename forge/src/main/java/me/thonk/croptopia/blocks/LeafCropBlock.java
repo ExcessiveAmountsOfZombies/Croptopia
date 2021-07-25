@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 
 import java.util.Random;
 
@@ -41,13 +42,11 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter worldIn, BlockPos pos) {
-        // TODO: UPDATE TO mATCH WITH FABRIC
         return true;
     }
 
     @Override
-    public boolean canSurvive(BlockState state, LevelReader worldIn, BlockPos pos) {
-        // TODO: UPDATE TO mATCH WITH FABRIC
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return true;
     }
 
@@ -78,12 +77,22 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
     @Override
     public boolean isRandomlyTicking(BlockState state) {
-        // todo: might just be true
-        return state.getValue(DISTANCE) == 7;
+        return true;
     }
 
     @Override
     public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
+        if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+        if (world.getRawBrightness(pos, 0) >= 9) {
+            int i = this.getAge(state);
+            if (i < this.getMaxAge()) {
+                if (ForgeHooks.onCropsGrowPre(world, pos, state, random.nextInt(100) % 20 == 0)) {
+                    world.setBlock(pos, this.getStateForAge(i + 1), 2);
+                    ForgeHooks.onCropsGrowPost(world, pos, state);
+                }
+            }
+        }
+
         if (state.getValue(DISTANCE) == 7) {
             dropResources(state, world, pos);
             world.removeBlock(pos, false);

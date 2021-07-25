@@ -117,7 +117,6 @@ artifacts {
 }
 
 jar {
-    dependsOn tasks.shadowJar
     //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     manifest {

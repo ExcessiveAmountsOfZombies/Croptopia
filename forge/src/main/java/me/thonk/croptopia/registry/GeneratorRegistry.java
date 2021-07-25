@@ -2,6 +2,7 @@ package me.thonk.croptopia.registry;
 
 import com.google.common.collect.ImmutableList;
 import me.thonk.common.FeatureNames;
+import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
@@ -15,8 +16,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.blockplacers.SimpleBlockPlacer;
 import net.minecraft.world.level.levelgen.feature.configurations.DiskConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -36,6 +39,72 @@ public class GeneratorRegistry {
 
     private static Map<String, ResourceKey<ConfiguredFeature<?, ?>>> keyMap = new HashMap<>();
     private static Map<ResourceKey<ConfiguredFeature<?, ?>>, ConfiguredFeature<?, ?>> featureMap = new HashMap<>();
+    
+    public static final RandomPatchConfiguration randomCrops = new RandomPatchConfiguration.GrassConfigurationBuilder(
+            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                    .add(BlockRegistry.artichokeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.asparagusCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.barleyCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.basilCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.bellPepperCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.blackBeanCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.blackberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.blueberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.broccoliCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.cabbageCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.cantaloupeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.cauliflowerCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.celeryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.coffeeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.cornCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.cranberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.cucumberCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.currantCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.eggplantCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.elderberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.garlicCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.gingerCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.grapeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.greenBeanCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.greenOnionCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.honeydewCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.hopsCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.kaleCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.kiwiCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.leekCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.lettuceCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.mustardCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.oatCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.oliveCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.onionCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.peanutCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.chilePepperCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.pineappleCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.radishCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.raspberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.rhubarbCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.riceCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.rutabagaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.saguaroCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.soybeanCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.spinachCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.squashCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.strawberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.sweetPotatoCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.tomatilloCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.tomatoCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.turmericCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.turnipCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.yamCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.zucchiniCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.vanillaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.pepperCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.teaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .build()),
+            SimpleBlockPlacer.INSTANCE).tries(24).build();
+
+    public static final ConfiguredFeature<?, ?> RANDOM_CROP = register(createIdentifier("random_crop"),
+            Feature.RANDOM_PATCH.configured(randomCrops).decorated(Features.Decorators.HEIGHTMAP_DOUBLE_SQUARE));
 
     public static final ConfiguredFeature<TreeConfiguration, ?> APPLE_TREE = register(createIdentifier(FeatureNames.APPLE_TREE),
             Feature.TREE.configured(new TreeConfiguration.TreeConfigurationBuilder(
