@@ -9,6 +9,7 @@ import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.events.BiomeModification;
 import me.thonk.croptopia.events.BlockBreakEvent;
 import me.thonk.croptopia.events.CroptopiaVillagerTrades;
+import me.thonk.croptopia.events.EntitySpawn;
 import me.thonk.croptopia.events.Harvest;
 import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.CropItem;
@@ -30,6 +31,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -70,11 +72,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -119,6 +118,7 @@ public class CroptopiaForge {
         MinecraftForge.EVENT_BUS.register(new Harvest());
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
         MinecraftForge.EVENT_BUS.register(new CroptopiaVillagerTrades());
+        MinecraftForge.EVENT_BUS.register(new EntitySpawn());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
@@ -184,12 +184,6 @@ public class CroptopiaForge {
             LeavesRegistry.init();
             BlockRegistry.init();
             GeneratorRegistry.init();
-
-            // todo: implement again
-            /*Map<Block, Block> stripMap = new HashMap<>(AxeItem.BLOCK_STRIPPING_MAP);
-            stripMap.put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog);
-            stripMap.put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood);
-            AxeItem.BLOCK_STRIPPING_MAP = stripMap;*/
         }
 
         @SubscribeEvent
@@ -201,6 +195,11 @@ public class CroptopiaForge {
             List<Item> parrotItems = new ArrayList<>(Parrot.TAME_FOOD);
             parrotItems.addAll(seeds);
             Parrot.TAME_FOOD = Sets.newHashSet(parrotItems);
+
+            List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(ItemRegistry.yam, ItemRegistry.sweetPotato));
+            pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
+            Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
+
         }
 
         @SubscribeEvent
