@@ -7,6 +7,7 @@ import me.thonk.croptopia.config.Config;
 import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.events.BiomeModification;
 import me.thonk.croptopia.events.BlockBreakEvent;
+import me.thonk.croptopia.events.CroptopiaVillagerTrades;
 import me.thonk.croptopia.events.Harvest;
 import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.CropItem;
@@ -106,6 +107,7 @@ public class CroptopiaForge {
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
         MinecraftForge.EVENT_BUS.register(new Harvest());
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
+        MinecraftForge.EVENT_BUS.register(new CroptopiaVillagerTrades());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
