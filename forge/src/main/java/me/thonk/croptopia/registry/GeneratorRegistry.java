@@ -452,6 +452,8 @@ public class GeneratorRegistry {
         return featureMap;
     }
 
+    public static void init() {}
+
     public static Map<String, ResourceKey<ConfiguredFeature<?, ?>>> getKeyMap() {
         return keyMap;
     }

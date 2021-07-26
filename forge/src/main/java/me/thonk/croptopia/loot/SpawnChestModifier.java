@@ -35,7 +35,7 @@ public class SpawnChestModifier extends LootModifier {
         builder.setBonusRolls(ConstantValue.exactly(0));
         for (SeedItem seed : CroptopiaForge.seeds) {
             builder.add(LootItem.lootTableItem(seed)
-                    .setWeight(5)
+                    .setWeight(2)
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false))
             );
         }

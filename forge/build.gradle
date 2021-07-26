@@ -42,7 +42,8 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=croptopia.mixins.json"
+            property 'legacyClassPath', '{minecraft_classpath}'
+            //arg "-mixin.config=croptopia.mixins.json"
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console //property 'forge.logging.console.level', 'debug'
@@ -68,10 +69,11 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
+            property 'legacyClassPath', '{minecraft_classpath}'
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console
-            //property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'debug'
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
@@ -96,7 +98,7 @@ tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.1'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.9'
     implementation project(":shared")
     shade project(":shared")
     //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")

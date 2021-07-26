@@ -14,6 +14,7 @@ import me.thonk.croptopia.items.SeedItem;
 //import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.loot.SpawnChestModifier;
 import me.thonk.croptopia.registry.BlockRegistry;
+import me.thonk.croptopia.registry.GeneratorRegistry;
 import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.registry.LeavesRegistry;
 import net.minecraft.client.Minecraft;
@@ -169,6 +170,7 @@ public class CroptopiaForge {
             // register a new block here
             LeavesRegistry.init();
             BlockRegistry.init();
+            GeneratorRegistry.init();
 
             // todo: implement again
             /*Map<Block, Block> stripMap = new HashMap<>(AxeItem.BLOCK_STRIPPING_MAP);

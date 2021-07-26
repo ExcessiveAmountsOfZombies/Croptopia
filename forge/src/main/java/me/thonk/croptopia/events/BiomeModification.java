@@ -13,6 +13,8 @@ import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.VEGET
 
 public class BiomeModification {
 
+    boolean loaded = false;
+
     @SubscribeEvent
     public void onBiomeLoad(BiomeLoadingEvent event) {
         BiomeGenerationSettingsBuilder settings = event.getGeneration();
@@ -63,6 +65,29 @@ public class BiomeModification {
         } else if (event.getCategory() == Biome.BiomeCategory.RIVER) {
             settings.addFeature(UNDERGROUND_ORES, DISK_SALT_CONFIGURED);
         }
+
+        /*if (!loaded) { LAZY WAY OF OUTPUTTING ALL MY CONFIGURED FEATURES TO JSON
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+            for (Map.Entry<ResourceKey<ConfiguredFeature<?, ?>>, ConfiguredFeature<?, ?>> resourceKeyConfiguredFeatureEntry : BuiltinRegistries.CONFIGURED_FEATURE.entrySet()) {
+                ResourceLocation location = resourceKeyConfiguredFeatureEntry.getKey().location();
+                if (location.getNamespace().equalsIgnoreCase("minecraft")) {
+                    continue;
+                }
+                JsonObject object = new JsonObject();
+                //BuiltinRegistries.CONFIGURED_FEATURE.encode(resourceKeyConfiguredFeatureEntry.getValue(), JsonOps.INSTANCE, object);
+                File file = new File("D:\\Programming\\FabricProjects\\croptopia2\\shared\\src\\main\\resources\\data", resourceKeyConfiguredFeatureEntry.getKey().location().getPath() + ".json");
+                try {
+                    Optional<JsonElement> element = ConfiguredFeature.CODEC.encode(resourceKeyConfiguredFeatureEntry::getValue, JsonOps.INSTANCE, object).result();
+                    JsonWriter writer = gson.newJsonWriter(new FileWriter(file));
+                    gson.toJson(element.get(), writer);
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            loaded = true;
+        }*/
     }
 
 }
