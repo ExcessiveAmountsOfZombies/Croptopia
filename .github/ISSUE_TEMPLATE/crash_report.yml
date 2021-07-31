@@ -1,0 +1,58 @@
+name: Crash Report
+description: File a crash report
+labels: crash
+body:
+  - type: checkboxes
+    id: unique
+    attributes:
+      label: Make sure you are not opening a duplicate.
+      options:
+        - label: "[I have searched the issue tracker](https://github.com/ExcessiveAmountsOfZombies/Croptopia/issues?q=) and did not find an issue describing my bug."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Are you using the latest version of the mod? If not, try updating to see if it resolves your issue. You can [find the latest versions here](https://www.curseforge.com/minecraft/mc-mods/croptopia-fabric/files/all)."
+  - type: dropdown
+    id: modloader
+    attributes:
+      label: Platform.
+      description: Which mod loader are you using Croptopia on?
+      multiple: false
+      options:
+      - Fabric
+      - Forge
+  - type: input
+    id: version-mc
+    attributes:
+      label: Minecraft version.
+      placeholder: ex. 1.17.1
+    validations:
+      required: true
+  - type: input
+    id: version-croptopia
+    attributes:
+      label: Croptopia version.
+      placeholder: ex. 1.5.0
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      placeholder: ex. I crafted a coffee and my game crashed.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant logs
+      description: Please upload your latest.log and crash report log (both files can be found inside theirs respective directories in your Minecraft root folder, like the mods one) to any pastebin service ex. gist.github.com, hastebin.com, pastebin.ubuntu.com, paste.ee or paste.gg
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+      description: Provide a list of any other mods you are using, along with their respective versions. If you have any screenshots, videos, or other information that you feel is necessary to explain the issue, feel free to attach them here.
+ 

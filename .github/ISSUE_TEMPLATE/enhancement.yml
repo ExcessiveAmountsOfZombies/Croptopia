@@ -1,0 +1,19 @@
+name: Feature request
+description: Suggestion
+labels: enhancement
+body:
+  - type: checkboxes
+    id: unique
+    attributes:
+      label: Make sure you are not opening a duplicate.
+      options:
+        - label: "[I have searched the issue tracker](https://github.com/ExcessiveAmountsOfZombies/Croptopia/issues?q=) and did not find an issue describing my bug."
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Are you using the latest version of the mod? If not, update and check if it isn't already added. You can [find the latest versions here](https://www.curseforge.com/minecraft/mc-mods/croptopia-fabric/files/all)."
+  - type: textarea
+    id: additional
+    attributes:
+      label: Description of your suggestion.
