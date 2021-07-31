@@ -1,12 +1,12 @@
 {
   "name": "Cooking Pot",
-  "icon": "croptopia:frying_pan",
+  "icon": "croptopia:cooking_pot",
   "category": "croptopia:utensils",
   "pages": [
     {
       "type": "crafting",
-      "recipe": "croptopia:frying_pan",
-      "text": "Recipe for a frying pan."
+      "recipe": "croptopia:cooking_pot",
+      "text": "Recipe for a cooking pot."
     }
   ]
 }
