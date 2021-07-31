@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:artichoke_crop",
+    "croptopia:asparagus_crop",
+    "croptopia:artichoke_crop",
+    "croptopia:asparagus_crop",
+    "croptopia:bellpepper_crop",
+    "croptopia:cabbage_crop",
+    "croptopia:celery_crop",
+    "croptopia:garlic_crop",
+    "croptopia:leek_crop",
+    "croptopia:lettuce_crop",
+    "croptopia:radish_crop",
+    "croptopia:spinach_crop",
+    "croptopia:tomato_crop",
+    "croptopia:chile_pepper_crop",
+    "croptopia:turnip_crop",
+    "croptopia:zucchini_crop",
+    "croptopia:oat_crop",
+    "croptopia:barley_crop",
+    "croptopia:soybean_crop",
+    "croptopia:mustard_crop",
+    "croptopia:turmeric_crop",
+    "croptopia:ginger_crop",
+    "croptopia:basil_crop",
+    "croptopia:blackberry_crop",
+    "croptopia:blueberry_crop",
+    "croptopia:cranberry_crop",
+    "croptopia:cantaloupe_crop",
+    "croptopia:elderberry_crop"
+  ]
+}

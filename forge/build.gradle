@@ -1,20 +1,20 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
-        jcenter()
+        //maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1+', changing: true
-        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
+        classpath 'gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0'
+        //classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
+//apply plugin: 'org.spongepowered.mixin'
 
 repositories {
     maven {
@@ -32,17 +32,18 @@ configurations {
 }
 
 
-mixin {
+/*mixin {
     add sourceSets.main, "croptopia.refmap.json"
-}
+}*/
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'snapshot', version: '20201028-1.16.3'
+    mappings channel: 'official', version: '1.17.1'
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=croptopia.mixins.json"
+            property 'legacyClassPath', '{minecraft_classpath}'
+            //arg "-mixin.config=croptopia.mixins.json"
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console //property 'forge.logging.console.level', 'debug'
@@ -68,12 +69,13 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
+            property 'legacyClassPath', '{minecraft_classpath}'
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console
-            //property 'forge.logging.console.level', 'debug'
+            property 'forge.logging.console.level', 'debug'
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":common").file('src/main/resources/')
+            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
                 croptopia {
                     source sourceSets.main
@@ -84,27 +86,29 @@ minecraft {
 }
 
 processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
         expand "dependant": "forge"
     }
 }
 
-tasks.processResources.dependsOn(project(":common").tasks.processResources)
+tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
-    shade project(":common")
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
-    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
+    minecraft 'net.minecraftforge:forge:1.17.1-37.0.9'
+    implementation project(":shared")
+    shade project(":shared")
+    //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
+    //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 shadowJar {
     enabled = true
     configurations = [project.configurations.shade]
-    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
+    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     relocate 'dependants/platform', 'data/forge'
 }

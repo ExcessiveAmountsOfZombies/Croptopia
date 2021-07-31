@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:rhubarb_crop",
+    "croptopia:rutabaga_crop",
+    "croptopia:squash_crop",
+    "croptopia:yam_crop",
+    "croptopia:turnip_crop"
+  ]
+}

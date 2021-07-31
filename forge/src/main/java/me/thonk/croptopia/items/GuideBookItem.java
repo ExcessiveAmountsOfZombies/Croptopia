@@ -1,26 +1,20 @@
 package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.CroptopiaForge;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
-import vazkii.patchouli.api.PatchouliAPI;
+//import vazkii.patchouli.api.PatchouliAPI;
 
 public class GuideBookItem extends Item {
 
 
-    public GuideBookItem(Properties properties) {
+    public GuideBookItem(Item.Properties properties) {
         super(properties);
     }
 
 
-    @Override
+    /*@Override
     public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getHeldItem(hand);
 
@@ -30,6 +24,6 @@ public class GuideBookItem extends Item {
         }
 
         return new ActionResult<>(ActionResultType.SUCCESS, stack);
-    }
+    }*/
 
 }

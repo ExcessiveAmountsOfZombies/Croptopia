@@ -75,11 +75,19 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
     @Override
     public boolean hasRandomTicks(BlockState state) {
-        return state.get(DISTANCE) == 7;
+        return true;
     }
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (world.getBaseLightLevel(pos, 0) >= 9) {
+            int i = this.getAge(state);
+            if (i < this.getMaxAge()) {
+                if (random.nextInt(100) % 20 == 0) {
+                    world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
+                }
+            }
+        }
         if (state.get(DISTANCE) == 7) {
             dropStacks(state, world, pos);
             world.removeBlock(pos, false);

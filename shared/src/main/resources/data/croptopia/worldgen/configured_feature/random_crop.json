@@ -1,0 +1,564 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "can_replace": false,
+        "project": true,
+        "need_water": false,
+        "xspread": 7,
+        "yspread": 3,
+        "zspread": 7,
+        "whitelist": [],
+        "blacklist": [],
+        "tries": 24,
+        "state_provider": {
+          "entries": [
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:artichoke_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:asparagus_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:barley_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:basil_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:bellpepper_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:blackbean_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:blackberry_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:blueberry_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:broccoli_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:cabbage_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:cantaloupe_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:cauliflower_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:celery_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:coffee_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:corn_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:cranberry_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:cucumber_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:currant_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:eggplant_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:elderberry_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:garlic_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:ginger_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:grape_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:greenbean_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:greenonion_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:honeydew_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:hops_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:kale_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:kiwi_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:leek_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:lettuce_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:mustard_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:oat_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:olive_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:onion_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:peanut_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:chile_pepper_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:pineapple_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:radish_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:raspberry_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:rhubarb_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:rice_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:rutabaga_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:saguaro_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:soybean_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:spinach_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:squash_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:strawberry_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:sweetpotato_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:tomatillo_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:tomato_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:turmeric_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:turnip_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:yam_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:zucchini_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:vanilla_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:pepper_crop"
+              },
+              "weight": 10
+            },
+            {
+              "data": {
+                "Properties": {
+                  "age": "7"
+                },
+                "Name": "croptopia:tea_crop"
+              },
+              "weight": 10
+            }
+          ],
+          "type": "minecraft:weighted_state_provider"
+        },
+        "block_placer": {
+          "type": "minecraft:simple_block_placer"
+        }
+      },
+      "type": "minecraft:random_patch"
+    },
+    "decorator": {
+      "config": {
+        "outer": {
+          "config": {},
+          "type": "minecraft:square"
+        },
+        "inner": {
+          "config": {
+            "heightmap": "MOTION_BLOCKING"
+          },
+          "type": "minecraft:heightmap_spread_double"
+        }
+      },
+      "type": "minecraft:decorated"
+    }
+  },
+  "type": "minecraft:decorated"
+}

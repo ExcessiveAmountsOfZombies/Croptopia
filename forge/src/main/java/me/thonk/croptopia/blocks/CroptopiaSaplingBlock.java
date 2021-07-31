@@ -1,11 +1,12 @@
 package me.thonk.croptopia.blocks;
 
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.trees.Tree;
+
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 
 public class CroptopiaSaplingBlock extends SaplingBlock {
 
-    public CroptopiaSaplingBlock(Tree treeIn, Properties properties) {
+    public CroptopiaSaplingBlock(AbstractTreeGrower treeIn, Properties properties) {
         super(treeIn, properties);
     }
 }

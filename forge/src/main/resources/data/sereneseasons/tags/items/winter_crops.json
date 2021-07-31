@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:rhubarb_seed",
+    "croptopia:rutabaga_seed",
+    "croptopia:squash_seed",
+    "croptopia:yam_seed",
+    "croptopia:turnip_seed"
+  ]
+}

@@ -1,13 +1,10 @@
 package me.thonk.croptopia.events;
 
 import me.thonk.croptopia.config.Config;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CropsBlock;
-import net.minecraft.item.BoneMealItem;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.BoneMealItem;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,7 +15,7 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (Config.canRightClickHarvest) {
+        /*if (Config.canRightClickHarvest) {
             if (!(event.getPlayer().getHeldItemMainhand().getItem() instanceof BoneMealItem)) {
                 if (!event.getWorld().isRemote) {
                     World world = event.getWorld();
@@ -39,10 +36,10 @@ public class Harvest {
                     }
                 }
             }
-        }
+        }*/
     }
 
     public BlockState withAge(BlockState state, IntegerProperty property, int age) {
-        return state.getBlockState().with(property, Integer.valueOf(age));
+        return state.setValue(property, Integer.valueOf(age));
     }
 }

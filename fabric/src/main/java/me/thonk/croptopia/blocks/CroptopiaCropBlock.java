@@ -1,12 +1,13 @@
 package me.thonk.croptopia.blocks;
 
+import me.thonk.croptopia.items.SeedItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -15,7 +16,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.EndSpikeFeature;
+import net.minecraft.world.WorldView;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkStatus;
 
 public class CroptopiaCropBlock extends CropBlock {
     protected static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
@@ -28,7 +31,7 @@ public class CroptopiaCropBlock extends CropBlock {
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
             Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)};
 
-    private Item seed;
+    private SeedItem seed;
 
     public CroptopiaCropBlock(Settings settings) {
         super(settings);
@@ -39,8 +42,27 @@ public class CroptopiaCropBlock extends CropBlock {
         return AGE_TO_SHAPE[state.get(this.getAgeProperty())];
     }
 
-    public void setSeedsItem(Item seed) {
+    public void setSeedsItem(SeedItem seed) {
         this.seed = seed;
+    }
+
+    @Override // JANK
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+        Biome.Category biomeCat = world.getBiome(pos).getCategory();
+        if (world.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
+            // ON WORLD GENERATION
+            if (biomeCat.equals(seed.getCategory())) {
+                return super.canPlaceAt(state, world, pos);
+            }
+        } else if (world.getChunk(pos).getStatus().getIndex() == ChunkStatus.FULL.getIndex()) {
+            // ON PLAYER PLACEMENT
+            return super.canPlaceAt(state, world, pos);
+        }
+        return false;
+    }
+
+    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+        return floor.isOf(Blocks.GRASS_BLOCK) || floor.isOf(Blocks.FARMLAND) || floor.isOf(Blocks.SAND) || floor.isOf(Blocks.RED_SAND);
     }
 
     @Override

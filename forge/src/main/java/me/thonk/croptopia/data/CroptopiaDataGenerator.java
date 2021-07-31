@@ -2,14 +2,13 @@ package me.thonk.croptopia.data;
 
 
 import com.google.common.collect.ImmutableList;
-import net.minecraft.block.Block;
-import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.ItemTagsProvider;
-import net.minecraft.item.Item;
-import net.minecraft.tags.ITag;
+import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -17,6 +16,7 @@ import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Nullable;
+
 import java.util.List;
 
 import static me.thonk.croptopia.registry.BlockRegistry.*;
@@ -64,7 +64,7 @@ public class CroptopiaDataGenerator {
         }
 
         @Override
-        protected void registerTags() {
+        protected void addTags() {
 
         }
 
@@ -76,14 +76,14 @@ public class CroptopiaDataGenerator {
 
     public static class ItemTagGenerator extends ItemTagsProvider {
 
-        private static final ITag.INamedTag<Item> CARBS = ItemTags.createOptional(new ResourceLocation("nourish", "carbohydrates"));
+        /*private static final ITag.INamedTag<Item> CARBS = ItemTags.createOptional(new ResourceLocation("nourish", "carbohydrates"));
         private static final ITag.INamedTag<Item> FATS = ItemTags.createOptional(new ResourceLocation("nourish", "fats"));
         private static final ITag.INamedTag<Item> FRUIT = ItemTags.createOptional(new ResourceLocation("nourish", "fruit"));
         private static final ITag.INamedTag<Item> PROTEIN = ItemTags.createOptional(new ResourceLocation("nourish", "protein"));
         private static final ITag.INamedTag<Item> SWEETS = ItemTags.createOptional(new ResourceLocation("nourish", "sweets"));
         private static final ITag.INamedTag<Item> VEGGIE = ItemTags.createOptional(new ResourceLocation("nourish", "vegetables"));
 
-        private static final ITag.INamedTag<Item> INDEPENDENT = ItemTags.createOptional(new ResourceLocation("dependants", "platform"));
+        private static final ITag.INamedTag<Item> INDEPENDENT = ItemTags.createOptional(new ResourceLocation("dependants", "platform"));*/
 
 
 
@@ -92,8 +92,8 @@ public class CroptopiaDataGenerator {
         }
 
         @Override
-        protected void registerTags() {
-            this.getOrCreateBuilder(CARBS).add(carbFoodsTag.toArray(new Item[]{}));
+        protected void addTags() {
+            /*this.getOrCreateBuilder(CARBS).add(carbFoodsTag.toArray(new Item[]{}));
             this.getOrCreateBuilder(FATS).add(fatsFoodTag.toArray(new Item[]{}));
             this.getOrCreateBuilder(FRUIT).add(fruitFoodTag.toArray(new Item[]{}));
             this.getOrCreateBuilder(PROTEIN).add(proteinFoodTag.toArray(new Item[]{}));
@@ -106,7 +106,7 @@ public class CroptopiaDataGenerator {
             }
             for (Item item : blockItemGeneratedModels) {
                 this.getOrCreateBuilder(ItemTags.createOptional(new ResourceLocation("dependants", item.getRegistryName().getPath()))).add(item);
-            }
+            }*/
 
 
         }

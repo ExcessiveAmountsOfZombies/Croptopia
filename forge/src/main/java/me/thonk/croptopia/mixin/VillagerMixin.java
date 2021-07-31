@@ -1,3 +1,4 @@
+/*
 package me.thonk.croptopia.mixin;
 
 import com.google.common.collect.ImmutableSet;
@@ -23,3 +24,4 @@ public class VillagerMixin {
     }
 
 }
+*/

@@ -1,6 +1,8 @@
 package me.thonk.croptopia.generator;
 
 import me.thonk.common.FeatureNames;
+import me.thonk.croptopia.Constants;
+import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -16,6 +18,13 @@ public class BiomeModifiers {
 
 
     public static void init() {
+
+        // generate in ALL biomes
+        BiomeModifications.addFeature(context -> {
+            Biome biome = context.getBiome();
+            return biome.getCategory() != Biome.Category.OCEAN;
+        }, GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
+
         Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST);
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
@@ -88,8 +97,10 @@ public class BiomeModifiers {
 
         Collection<RegistryKey<Biome>> riverKeys = Arrays.asList(BiomeKeys.RIVER, BiomeKeys.FROZEN_RIVER);
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(riverKeys),
-                GenerationStep.Feature.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
+        if (Constants.OPTIONS.disableSaltOre()) {
+            BiomeModifications.addFeature(BiomeSelectors.includeByKey(riverKeys),
+                    GenerationStep.Feature.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
+        }
 
     }
 }

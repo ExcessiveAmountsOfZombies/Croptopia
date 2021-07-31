@@ -2,7 +2,6 @@ package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.Croptopia;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,7 +15,6 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import vazkii.patchouli.api.PatchouliAPI;
 
-import java.util.Collections;
 import java.util.List;
 
 public class GuideBookItem extends Item {

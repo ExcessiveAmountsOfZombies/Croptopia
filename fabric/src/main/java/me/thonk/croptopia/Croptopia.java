@@ -29,11 +29,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.ChickenEntity;
-import net.minecraft.entity.passive.ParrotEntity;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -46,8 +42,6 @@ import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,11 +78,11 @@ public class Croptopia implements ModInitializer {
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
+
         OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
-
-
         seeds.clear();
         seeds = OPTIONS.readConfiguredSeeds(OPTIONS.getOptionsFile());
+
         BiomeModifiers.init();
         CropLootTableModifier.init();
 
@@ -97,6 +91,7 @@ public class Croptopia implements ModInitializer {
             SetupCommand.register(commandDispatcher);
         });
 
+        CroptopiaVillagerTrades.init();
 
         modifyVillagerFoodItems();
         modifyVillagerGatherables();
@@ -128,17 +123,14 @@ public class Croptopia implements ModInitializer {
             cropItems.add(item);
         }
 
-        if (item instanceof SeedItem) {
+        if (item instanceof SeedItem seedItem) {
             CroptopiaCropBlock block = (CroptopiaCropBlock) ((SeedItem) item).getBlock();
-            block.setSeedsItem(item);
+            block.setSeedsItem(seedItem);
             //runner.getTagger().addSeedTag(item, Croptopia.createIdentifier(itemName));
         }
 
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
-        if (item instanceof SeedItem) {
-            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
-        }
 
         // data generation
         //runner.getTagger().addTag(item, Croptopia.createIdentifier(itemName));

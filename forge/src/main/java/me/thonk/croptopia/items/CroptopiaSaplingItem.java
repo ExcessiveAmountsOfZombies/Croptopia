@@ -1,12 +1,13 @@
 package me.thonk.croptopia.items;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.BlockNamedItem;
-import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResultType;
 
-public class CroptopiaSaplingItem extends BlockNamedItem {
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+
+public class CroptopiaSaplingItem extends ItemNameBlockItem {
 
     private final Block saplingFruitLeafBlock;
     private final Block vanillaLeafBlock;
@@ -19,15 +20,15 @@ public class CroptopiaSaplingItem extends BlockNamedItem {
 
 
     @Override
-    public ActionResultType onItemUse(ItemUseContext context) {
-        BlockState atPos = context.getWorld().getBlockState(context.getPos());
+    public InteractionResult useOn(UseOnContext context) {
+        BlockState atPos = context.getLevel().getBlockState(context.getClickedPos());
         if (atPos.getBlock() == vanillaLeafBlock) {
             if (!context.getPlayer().isCreative()) {
-                context.getItem().shrink(1);
+                context.getItemInHand().shrink(1);
             }
-            context.getWorld().setBlockState(context.getPos(), saplingFruitLeafBlock.getDefaultState());
-            return ActionResultType.CONSUME;
+            context.getLevel().setBlockAndUpdate(context.getClickedPos(), saplingFruitLeafBlock.defaultBlockState());
+            return InteractionResult.CONSUME;
         }
-        return super.onItemUse(context);
+        return super.useOn(context);
     }
 }

@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:artichoke_seed",
+    "croptopia:asparagus_seed",
+    "croptopia:artichoke_seed",
+    "croptopia:asparagus_seed",
+    "croptopia:bellpepper_seed",
+    "croptopia:cabbage_seed",
+    "croptopia:celery_seed",
+    "croptopia:garlic_seed",
+    "croptopia:leek_seed",
+    "croptopia:lettuce_seed",
+    "croptopia:radish_seed",
+    "croptopia:spinach_seed",
+    "croptopia:tomato_seed",
+    "croptopia:chile_pepper_seed",
+    "croptopia:turnip_seed",
+    "croptopia:zucchini_seed",
+    "croptopia:oat_seed",
+    "croptopia:barley_seed",
+    "croptopia:soybean_seed",
+    "croptopia:mustard_seed",
+    "croptopia:turmeric_seed",
+    "croptopia:ginger_seed",
+    "croptopia:basil_seed",
+    "croptopia:blackberry_seed",
+    "croptopia:blueberry_seed",
+    "croptopia:cranberry_seed",
+    "croptopia:cantaloupe_seed",
+    "croptopia:elderberry_seed"
+  ]
+}

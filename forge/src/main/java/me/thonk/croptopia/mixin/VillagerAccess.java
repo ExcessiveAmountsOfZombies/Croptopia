@@ -1,3 +1,4 @@
+/*
 package me.thonk.croptopia.mixin;
 
 import net.minecraft.entity.merchant.villager.VillagerEntity;
@@ -34,3 +35,4 @@ public interface VillagerAccess {
     }
 
 }
+*/

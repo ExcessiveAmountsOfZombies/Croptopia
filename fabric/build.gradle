@@ -1,7 +1,7 @@
 import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
-    id 'fabric-loom' version '0.8.5'
+    id 'fabric-loom' version '0.8-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
     id 'maven-publish'
 }
@@ -26,15 +26,14 @@ dependencies {
     mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    modImplementation "vazkii.patchouli:Patchouli:1.16.4-48-FABRIC"
+    modImplementation "vazkii.patchouli:Patchouli:1.17-55-FABRIC-SNAPSHOT"
 
-    modApi "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
+    modImplementation "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-
-    implementation(project(":common"))
-    shade project(":common")
+    shade project(":shared")
+    implementation(project(":shared"))
 }
 
 minecraft {
@@ -42,7 +41,7 @@ minecraft {
 }
 
 processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
@@ -54,7 +53,7 @@ processResources {
         expand "dependant": "c"
     }
 }
-tasks.processResources.dependsOn(project(":common").tasks.processResources)
+tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"

@@ -11,7 +11,8 @@
   "contributors": [
     "qsefthuopq",
     "Motschen",
-    "emilyalexandra"
+    "emilyalexandra",
+    "didelphimorph"
   ],
   "contact": {
     "sources": "https://github.com/ExcessiveAmountsOfZombies/Croptopia",
@@ -38,7 +39,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.10.6+build.214",
-    "fabric": ">=0.34.9",
+    "fabric": ">=0.36.0",
     "fabric-biome-api-v1": ">=3.0.0",
     "minecraft": ">=1.17-pre1"
   },
