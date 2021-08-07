@@ -60,7 +60,6 @@ public class CropLootTableModifier {
                     );
                 }
                 fabricLootSupplierBuilder.pool(builder);
-                System.out.println(LootManager.toJson(fabricLootSupplierBuilder.build()));
             }
 
         });

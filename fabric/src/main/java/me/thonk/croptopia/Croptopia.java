@@ -78,6 +78,7 @@ public class Croptopia implements ModInitializer {
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
+        Composter.init();
 
         OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
         seeds.clear();
@@ -86,7 +87,6 @@ public class Croptopia implements ModInitializer {
         BiomeModifiers.init();
         CropLootTableModifier.init();
 
-        Composter.init();
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
             SetupCommand.register(commandDispatcher);
         });
@@ -131,6 +131,9 @@ public class Croptopia implements ModInitializer {
 
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
+        if (item instanceof SeedItem) {
+            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
+        }
 
         // data generation
         //runner.getTagger().addTag(item, Croptopia.createIdentifier(itemName));
