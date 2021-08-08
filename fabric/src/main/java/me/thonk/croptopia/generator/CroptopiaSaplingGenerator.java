@@ -16,8 +16,9 @@ public class CroptopiaSaplingGenerator extends SaplingGenerator {
         this.tree = tree;
     }
 
+    @Nullable
     @Override
-    protected @Nullable ConfiguredFeature<TreeFeatureConfig, ?> createTreeFeature(Random random, boolean bl) {
+    protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random random, boolean bees) {
         return tree.get();
     }
 }

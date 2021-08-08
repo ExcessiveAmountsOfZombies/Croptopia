@@ -3,6 +3,7 @@ package me.thonk.croptopia;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import it.unimi.dsi.fastutil.ints.IntList;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -33,6 +34,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
+import net.minecraft.network.packet.s2c.play.ChunkDeltaUpdateS2CPacket;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
@@ -212,11 +214,11 @@ public class Croptopia implements ModInitializer {
     }
 
     private void modifyChickenBreeds() {
-        ItemStack[] stacks = ChickenAccess.getBreedingIngredients().getMatchingStacksClient();
+        IntList stacks = ChickenAccess.getBreedingIngredients().getMatchingItemIds();
         List<Item> baseItems = new ArrayList<>();
 
-        for (ItemStack stack : stacks) {
-            baseItems.add(stack.getItem());
+        for (Integer stack : stacks) {
+            baseItems.add(Item.byRawId(stack));
         }
         baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
         ChickenAccess.setBreedingIngredients(Ingredient.ofItems(baseItems.toArray(new Item[0])));
