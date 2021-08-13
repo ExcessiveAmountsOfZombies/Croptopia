@@ -11,6 +11,9 @@ repositories {
     maven {
         url = 'https://maven.blamejared.com'
     }
+    maven {
+        url = "https://maven.terraformersmc.com/"
+    }
 }
 
 archivesBaseName = archives_base_name
@@ -28,7 +31,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
     modImplementation "vazkii.patchouli:Patchouli:1.17-55-FABRIC-SNAPSHOT"
 
-    modImplementation "io.github.prospector:modmenu:${rootProject.modmenu_version}",{
+    modImplementation "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
 
