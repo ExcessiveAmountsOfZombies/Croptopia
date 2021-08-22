@@ -2,6 +2,7 @@ package me.thonk.croptopia;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.ints.IntList;
 import me.thonk.common.MiscNames;
@@ -16,6 +17,7 @@ import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
 import me.thonk.croptopia.mixin.ChickenAccess;
+import me.thonk.croptopia.mixin.FarmerWorkTaskAccessor;
 import me.thonk.croptopia.mixin.ParrotAccess;
 import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.registry.BlockRegistry;
@@ -31,6 +33,7 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.brain.task.FarmerWorkTask;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -99,6 +102,7 @@ public class Croptopia implements ModInitializer {
         modifyAxeBlockStripping();
         modifyChickenBreeds();
         modifyParrotBreeds();
+        modifyVillagerFarmerTaskCompostables();
     }
 
     public static Identifier createIdentifier(String name) {
@@ -228,5 +232,12 @@ public class Croptopia implements ModInitializer {
         Set<Item> newItems = Sets.newHashSet(baseItems);
         newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
         ParrotAccess.setTamingIngredients(newItems);
+    }
+
+    private void modifyVillagerFarmerTaskCompostables() {
+        List<Item> baseItems = FarmerWorkTaskAccessor.getCompostables();
+        List<Item> newItems = Lists.newArrayList(baseItems);
+        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        FarmerWorkTaskAccessor.setCompostables(newItems);
     }
 }
