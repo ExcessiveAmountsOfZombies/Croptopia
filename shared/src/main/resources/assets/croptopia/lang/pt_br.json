@@ -22,7 +22,7 @@
   "item.croptopia.greenbean": "Vagem",
   "item.croptopia.greenonion": "Cebola verde",
   "item.croptopia.honeydew": "Melão honeydew",
-  "item.croptopia.hops": "Hops",*
+  "item.croptopia.hops": "Lúpulos",
   "item.croptopia.kale": "Couve",
   "item.croptopia.kiwi": "Kiwi",
   "item.croptopia.leek": "Alho-poró",
@@ -33,9 +33,9 @@
   "item.croptopia.pineapple": "Abacaxi",
   "item.croptopia.radish": "Rabanete",
   "item.croptopia.raspberry": "Framboesa",
-  "item.croptopia.rhubarb": "Rhubarb",*
+  "item.croptopia.rhubarb": "Ruibarbo",
   "item.croptopia.rice": "Arroz",
-  "item.croptopia.rutabaga": "Rutabaga",*
+  "item.croptopia.rutabaga": "Rutabaga",
   "item.croptopia.saguaro": "Fruta de saguaro",
   "item.croptopia.spinach": "Espinafre",
   "item.croptopia.squash": "Abobrinha amarela",
@@ -69,7 +69,7 @@
   "item.croptopia.greenbean_seed": "Sementes de vagem",
   "item.croptopia.greenonion_seed": "Sementes de cebola verde",
   "item.croptopia.honeydew_seed": "Sementes de melão honeydew",
-  "item.croptopia.hops_seed": "Hops Seeds",
+  "item.croptopia.hops_seed": "Sementes de lúpulo",
   "item.croptopia.kale_seed": "Sementes de couve",
   "item.croptopia.kiwi_seed": "Sementes de kiwi",
   "item.croptopia.leek_seed": "Sementes de alho-poró",
@@ -80,9 +80,9 @@
   "item.croptopia.pineapple_seed": "Sementes de abacaxi",
   "item.croptopia.radish_seed": "Sementes de rabanete",
   "item.croptopia.raspberry_seed": "Sementes de framboesa",
-  "item.croptopia.rhubarb_seed": "Rhubarb Seeds",*
+  "item.croptopia.rhubarb_seed": "Sementes de ruibarbo",
   "item.croptopia.rice_seed": "Sementes de arroz",
-  "item.croptopia.rutabaga_seed": "Rutabaga Seeds",*
+  "item.croptopia.rutabaga_seed": "Sementes de rutabaga",
   "item.croptopia.saguaro_seed": "Sementes de saguaro",
   "item.croptopia.spinach_seed": "Sementes de espinafre",
   "item.croptopia.squash_seed": "Sementes de abobrinha amarela",
@@ -96,17 +96,17 @@
   "item.croptopia.oat_seed": "Sementes de aveia",
   "item.croptopia.mustard_seed": "Sementes de mustarda",
   "item.croptopia.pepper_seed": "Sementes de pimenta",
-  "item.croptopia.turmeric_seed": "Turmeric Seeds",*
+  "item.croptopia.turmeric_seed": "Sementes de açafrão",
   "item.croptopia.ginger_seed": "Sementes de gengibre",
   "item.croptopia.basil_seed": "Sementes de manjericão",
-  "item.croptopia.chile_pepper_seed": "Chile Pepper Seeds",*
+  "item.croptopia.chile_pepper_seed": "Sementes de pimenta chili",
   "item.croptopia.barley_seed": "Sementes de cevada",
   "item.croptopia.soybean_seed": "Sementes de soja",
   "item.croptopia.barley": "Cevada",
   "item.croptopia.oat": "Grãos de aveia",
   "item.croptopia.soybean": "Grãos de soja",
   "item.croptopia.grapefruit": "Toranja",
-  "item.croptopia.kumquat": "Kumquat",*
+  "item.croptopia.kumquat": "Cunquate",
   "item.croptopia.orange": "Laranja",
   "item.croptopia.banana": "Banana",
   "item.croptopia.persimmon": "Caqui",
@@ -115,7 +115,7 @@
   "item.croptopia.lemon": "Limão",
   "item.croptopia.peach": "Pêssego",
   "item.croptopia.coconut": "Coco",
-  "item.croptopia.nutmeg": "Nutmeg",*
+  "item.croptopia.nutmeg": "Noz-moscada",
   "item.croptopia.fig": "Figo",
   "item.croptopia.nectarine": "Nectarina",
   "item.croptopia.mango": "Manga",
@@ -123,8 +123,8 @@
   "item.croptopia.starfruit": "Carambola",
   "item.croptopia.almond": "Amêndoa",
   "item.croptopia.cashew": "Castanhas de caju",
-  "item.croptopia.pecan": "Pecan",*
-  "item.croptopia.walnut": "Walnut",*
+  "item.croptopia.pecan": "Noz-pecã",
+  "item.croptopia.walnut": "Noz",
   "item.croptopia.avocado": "Abacate",
   "item.croptopia.apricot": "Damasco",
   "item.croptopia.pear": "Pera",
@@ -138,7 +138,7 @@
   "item.croptopia.turmeric": "Açafrão",
   "item.croptopia.ginger": "Gengibre",
   "item.croptopia.basil": "Manjericão",
-  "item.croptopia.chile_pepper": "Chile Pepper",*
+  "item.croptopia.chile_pepper": "Pimenta chili",
 
 
   "item.croptopia.apple_sapling": "Muda de macieira",
@@ -149,10 +149,10 @@
   "item.croptopia.cherry_sapling": "Muda de cerejeira",
   "item.croptopia.lemon_sapling": "Muda de limoeiro",
   "item.croptopia.grapefruit_sapling": "Muda de toranjeira",
-  "item.croptopia.kumquat_sapling": "Kumquat Sapling",*
+  "item.croptopia.kumquat_sapling": "Muda de pé de cunquate",
   "item.croptopia.peach_sapling": "Muda de pessegeiro",
   "item.croptopia.coconut_sapling": "Muda de pé de coco",
-  "item.croptopia.nutmeg_sapling": "Nutmeg Sapling",*
+  "item.croptopia.nutmeg_sapling": "Muda de moscadeira",
   "item.croptopia.fig_sapling": "Muda de figueira",
   "item.croptopia.mango_sapling": "Muda de pé de manga",
   "item.croptopia.dragonfruit_sapling": "Muda de pé de pitaia",
@@ -165,8 +165,8 @@
   "item.croptopia.nectarine_sapling": "Muda de pé de nectarina",
   "item.croptopia.almond_sapling": "Muda de amendoeira",
   "item.croptopia.cashew_sapling": "Muda de cajueiro",
-  "item.croptopia.pecan_sapling": "Pecan Sapling",*
-  "item.croptopia.walnut_sapling": "Walnut Sapling",*
+  "item.croptopia.pecan_sapling": "Muda de pecaneira",
+  "item.croptopia.walnut_sapling": "Muda de nogueira",
 
   "item.croptopia.olive_oil": "Azeite de oliva",
   "item.croptopia.cheese": "Queijo",
