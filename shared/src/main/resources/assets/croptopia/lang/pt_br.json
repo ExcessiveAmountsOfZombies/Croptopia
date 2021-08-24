@@ -226,7 +226,7 @@
   "item.croptopia.sweet_potato_fries": "Bata-doce frita",
   "item.croptopia.onion_rings": "Anéis de cebola",
   "item.croptopia.raisins": "Uvas passas",
-  "item.croptopia.doughnut": "Doughnut",
+  "item.croptopia.doughnut": "Donut",
   "item.croptopia.popcorn": "Pipoca",
   "item.croptopia.baked_beans": "Feijão assado",
   "item.croptopia.toast": "Torrada",
@@ -297,17 +297,17 @@
   "item.croptopia.enchilada": "Enchilada",
   "item.croptopia.churros": "Churros",
   "item.croptopia.tamales": "Tamales",
-  "item.croptopia.tres_leche_cake": "Tres Leche Cake",
-  "item.croptopia.stuffed_poblanos": "Stuffed Poblanos",
-  "item.croptopia.chili_relleno": "Chili Relleno",
+  "item.croptopia.tres_leche_cake": "Bolo tres leches",
+  "item.croptopia.stuffed_poblanos": "Poblanos recheados",
+  "item.croptopia.chili_relleno": "Chili relleno",
   "item.croptopia.crema": "Crema",
-  "item.croptopia.refried_beans": "Refried Beans",
+  "item.croptopia.refried_beans": "Refried Beans",*
   "item.croptopia.chimichanga": "Chimichanga",
   "item.croptopia.quesadilla": "Quesadilla",
 
   "item.croptopia.cinnamon": "Canela",
-  "item.croptopia.corn_husk": "Corn Husk",
-  "item.croptopia.whipping_cream": "Whipping Cream",
+  "item.croptopia.corn_husk": "Corn Husk",*
+  "item.croptopia.whipping_cream": "Whipping Cream",*
   "item.croptopia.vanilla_seeds": "Sementes de baunilha",
 
   "item.croptopia.cinnamon_sapling": "Muda de caneleira",
@@ -316,26 +316,26 @@
   "item.croptopia.cinnamon_wood": "Madeira de caneleira",
   "item.croptopia.stripped_cinnamon_wood": "Madeira de caneleira descascada",
 
-  "item.croptopia.shepherds_pie": "Shepherd's Pie",
-  "item.croptopia.beef_wellington": "Beef Wellington",
+  "item.croptopia.shepherds_pie": "Shepherd's Pie",*
+  "item.croptopia.beef_wellington": "Beef Wellington",*
   "item.croptopia.fish_and_chips": "Peixe com fritas",
-  "item.croptopia.eton_mess": "Eton Mess",
+  "item.croptopia.eton_mess": "Eton Mess",*
   "item.croptopia.tea": "Chá",
-  "item.croptopia.cornish_pasty": "Cornish Pasty",
-  "item.croptopia.scones": "Scones",
-  "item.croptopia.figgy_pudding": "Figgy Pudding",
-  "item.croptopia.treacle_tart": "Treacle Tart",
-  "item.croptopia.sticky_toffee_pudding": "Sticky Toffee Pudding",
-  "item.croptopia.trifle": "Trifle",
+  "item.croptopia.cornish_pasty": "Cornish Pasty",*
+  "item.croptopia.scones": "Scones",*
+  "item.croptopia.figgy_pudding": "Figgy Pudding",*
+  "item.croptopia.treacle_tart": "Treacle Tart",*
+  "item.croptopia.sticky_toffee_pudding": "Sticky Toffee Pudding",*
+  "item.croptopia.trifle": "Trifle",*
   "item.croptopia.water_bottle": "Garrafa d'água",
   "item.croptopia.milk_bottle": "Garrafa de leite",
   "item.croptopia.tea_leaves": "Folhas de chá",
   "item.croptopia.tea_seed": "Sementes de chá",
 
-  "item.croptopia.food_press": "All Purpose Food Press",
+  "item.croptopia.food_press": "All Purpose Food Press",*
   "item.croptopia.frying_pan": "Frigideira",
   "item.croptopia.cooking_pot": "Panela",
-  "item.croptopia.mortar_and_pestle": "Mortar and Pestle",
+  "item.croptopia.mortar_and_pestle": "Mortar and Pestle",*
   "item.croptopia.guide": "Croptopia",
 
   "item.croptopia.salt_ore": "Minério de sal",
@@ -462,5 +462,5 @@
   "itemGroup.croptopia.croptopia": "Croptopia",
   "itemGroup.croptopia": "Croptopia",
 
-  "info.croptopia.seed": "Esse tipo de semente pode ser obtida em biomas categorizados como:"
+  "info.croptopia.seed": "Esse tipo de semente pode ser obtido(a) em biomas categorizados como:"
 }
