@@ -207,19 +207,19 @@
   "item.croptopia.mead": "Hidromel",
   "item.croptopia.rum": "Rum",
   "item.croptopia.pumpkin_spice_latte": "Latte de abóbora com especiarias",
-  "item.croptopia.grape_jam": "Geléia de uva",
-  "item.croptopia.strawberry_jam": "Geléia de morango",
-  "item.croptopia.peach_jam": "Geléia de pêssego",
-  "item.croptopia.apricot_jam": "Geléia de damasco",
-  "item.croptopia.blackberry_jam": "Geléia de amora-preta",
-  "item.croptopia.blueberry_jam": "Geléia de mirtilos",
-  "item.croptopia.cherry_jam": "Geléia de cereja",
-  "item.croptopia.elderberry_jam": "Geléia de sabugueiro",
-  "item.croptopia.raspberry_jam": "Geléia de framboesa",
+  "item.croptopia.grape_jam": "Geleia de uva",
+  "item.croptopia.strawberry_jam": "Geleia de morango",
+  "item.croptopia.peach_jam": "Geleia de pêssego",
+  "item.croptopia.apricot_jam": "Geleia de damasco",
+  "item.croptopia.blackberry_jam": "Geleia de amora-preta",
+  "item.croptopia.blueberry_jam": "Geleia de mirtilos",
+  "item.croptopia.cherry_jam": "Geleia de cereja",
+  "item.croptopia.elderberry_jam": "Geleia de sabugueiro",
+  "item.croptopia.raspberry_jam": "Geleia de framboesa",
   "item.croptopia.beef_jerky": "Jerky de carne",
   "item.croptopia.pork_jerky": "Jerky de porco",
   "item.croptopia.kale_chips": "Chips de couve",
-  "item.croptopia.potato_chips": "Batata chips",
+  "item.croptopia.potato_chips": "Chips de batata",
   "item.croptopia.steamed_rice": "Arroz cozido",
   "item.croptopia.egg_roll": "Rolinhos de ovo",
   "item.croptopia.french_fries": "Batata frita",
@@ -301,13 +301,13 @@
   "item.croptopia.stuffed_poblanos": "Poblanos recheados",
   "item.croptopia.chili_relleno": "Chili relleno",
   "item.croptopia.crema": "Crema",
-  "item.croptopia.refried_beans": "Refried Beans",*
+  "item.croptopia.refried_beans": "Frijoles refritos",
   "item.croptopia.chimichanga": "Chimichanga",
   "item.croptopia.quesadilla": "Quesadilla",
 
   "item.croptopia.cinnamon": "Canela",
   "item.croptopia.corn_husk": "Corn Husk",*
-  "item.croptopia.whipping_cream": "Whipping Cream",*
+  "item.croptopia.whipping_cream": "Chantili",
   "item.croptopia.vanilla_seeds": "Sementes de baunilha",
 
   "item.croptopia.cinnamon_sapling": "Muda de caneleira",
@@ -316,7 +316,7 @@
   "item.croptopia.cinnamon_wood": "Madeira de caneleira",
   "item.croptopia.stripped_cinnamon_wood": "Madeira de caneleira descascada",
 
-  "item.croptopia.shepherds_pie": "Shepherd's Pie",*
+  "item.croptopia.shepherds_pie": "Torta de carne inglesa",
   "item.croptopia.beef_wellington": "Beef Wellington",*
   "item.croptopia.fish_and_chips": "Peixe com fritas",
   "item.croptopia.eton_mess": "Eton Mess",*
