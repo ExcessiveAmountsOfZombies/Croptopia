@@ -181,7 +181,7 @@
   "item.croptopia.chocolate": "Chocolate",
   "item.croptopia.tortilla": "Tortilla",
   "item.croptopia.soy_sauce": "Molho de soja",
-  "item.croptopia.dumpling": "Dumpling",
+  "item.croptopia.dumpling": "Dumpling",*
   "item.croptopia.ravioli": "Ravioli",
   "item.croptopia.salsa": "Salsa",
   "item.croptopia.artichoke_dip": "Molho dip de alcachofra",
@@ -228,7 +228,7 @@
   "item.croptopia.raisins": "Uvas passas",
   "item.croptopia.doughnut": "Donut",
   "item.croptopia.popcorn": "Pipoca",
-  "item.croptopia.baked_beans": "Feijão assado",
+  "item.croptopia.baked_beans": "Feijões assados",
   "item.croptopia.toast": "Torrada",
   "item.croptopia.cucumber_salad": "Salada de pepino",
   "item.croptopia.caesar_salad": "Salada Caesar",
@@ -295,7 +295,7 @@
   "item.croptopia.carnitas": "Carnitas",
   "item.croptopia.fajitas": "Fajitas",
   "item.croptopia.enchilada": "Enchilada",
-  "item.croptopia.churros": "Churros",
+  "item.croptopia.churros": "Churro",
   "item.croptopia.tamales": "Tamales",
   "item.croptopia.tres_leche_cake": "Bolo tres leches",
   "item.croptopia.stuffed_poblanos": "Poblanos recheados",
@@ -324,8 +324,8 @@
   "item.croptopia.cornish_pasty": "Pastel da Cornualha",
   "item.croptopia.scones": "Scones",
   "item.croptopia.figgy_pudding": "Figgy Pudding",*
-  "item.croptopia.treacle_tart": "Torta de melaço",*
-  "item.croptopia.sticky_toffee_pudding": "Bolo de tâmaras",*
+  "item.croptopia.treacle_tart": "Torta de melado",
+  "item.croptopia.sticky_toffee_pudding": "Bolo de tâmaras",
   "item.croptopia.trifle": "Trifle",
   "item.croptopia.water_bottle": "Garrafa d'água",
   "item.croptopia.milk_bottle": "Garrafa de leite",
@@ -335,7 +335,7 @@
   "item.croptopia.food_press": "All Purpose Food Press",*
   "item.croptopia.frying_pan": "Frigideira",
   "item.croptopia.cooking_pot": "Panela",
-  "item.croptopia.mortar_and_pestle": "Mortar and Pestle",*
+  "item.croptopia.mortar_and_pestle": "Pilão e almofariz",
   "item.croptopia.guide": "Croptopia",
 
   "item.croptopia.salt_ore": "Minério de sal",
