@@ -10,3 +10,6 @@ Mod can be built using the gradle command line
 `gradlew :forge:build -Plaunch_mod=forge`
 
 If you build fabric and then want to build forge, or the other way around, run `gradlew clean` to clear the cache out so the jar does not contain files meant for the other platform.
+
+Discord
+https://discord.gg/GZjtAn3F6W
