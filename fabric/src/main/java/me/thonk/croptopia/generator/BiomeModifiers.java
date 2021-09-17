@@ -95,10 +95,10 @@ public class BiomeModifiers {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(darkForestKeys),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("walnut_tree_configured"));
 
-        Collection<RegistryKey<Biome>> riverKeys = Arrays.asList(BiomeKeys.RIVER, BiomeKeys.FROZEN_RIVER);
+        Collection<RegistryKey<Biome>> exclusion = Arrays.asList(BiomeKeys.SWAMP, BiomeKeys.SWAMP_HILLS);
 
-        if (Constants.OPTIONS.disableSaltOre()) {
-            BiomeModifications.addFeature(BiomeSelectors.includeByKey(riverKeys),
+        if (!Constants.OPTIONS.disableSaltOre()) {
+            BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
                     GenerationStep.Feature.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
         }
 
