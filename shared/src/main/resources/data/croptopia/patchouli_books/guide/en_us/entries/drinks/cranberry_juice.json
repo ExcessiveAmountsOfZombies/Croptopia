@@ -4,7 +4,7 @@
   "category": "croptopia:drinks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:cranberry_juice",
       "text": "Recipe for orange juice."
     }

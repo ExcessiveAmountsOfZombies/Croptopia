@@ -340,5 +340,39 @@ public class ItemNames {
     public static final String TEA_LEAVES = "tea_leaves";
     public static final String TEA_SEED = "tea_seed";
 
+    public static final String AJVAR = "ajvar";
+    public static final String AJVAR_TOAST = "ajvar_toast";
+    public static final String AVOCADO_TOAST = "avocado_toast";
+    public static final String BAKED_SWEET_POTATO = "baked_sweet_potato";
+    public static final String BAKED_YAM = "baked_yam";
+    public static final String BEEF_STEW = "beef_stew";
+    public static final String BEEF_STIR_FRY = "beef_stir_fry";
+    public static final String BUTTERED_GREEN_BEANS = "buttered_green_beans";
+    public static final String CHEESY_ASPARAGUS = "cheesy_asparagus";
+    public static final String CHOCOLATE_ICE_CREAM = "chocolate_ice_cream";
+    public static final String COOKED_BACON = "cooked_bacon";
+    public static final String EGGPLANT_PARMESAN = "eggplant_parmesan";
+    public static final String FRUIT_CAKE = "fruit_cake";
+    public static final String GRILLED_EGGPLANT = "grilled_eggplant";
+    public static final String KIWI_SORBET = "kiwi_sorbet";
+    public static final String KNIFE = "knife";
+    public static final String LEMON_COCONUT_BAR = "lemon_coconut_bar";
+    public static final String NETHER_WART_STEW = "nether_wart_stew";
+    public static final String PEANUT_BUTTER = "peanut_butter";
+    public static final String PEANUT_BUTTER_W_CELERY = "peanut_butter_with_celery";
+    public static final String POTATO_SOUP = "potato_soup";
+    public static final String RATATOUILLE = "ratatouille";
+    public static final String RAW_BACON = "bacon";
+    public static final String RHUBARB_CRISP = "rhubarb_crisp";
+    public static final String ROASTED_ASPARAGUS = "roasted_asparagus";
+    public static final String ROASTED_RADISHES = "roasted_radishes";
+    public static final String ROASTED_SQUASH = "roasted_squash";
+    public static final String ROASTED_TURNIPS = "roasted_turnips";
+    public static final String STEAMED_BROCCOLI = "steamed_broccoli";
+    public static final String STEAMED_GREEN_BEANS = "steamed_green_beans";
+    public static final String STIR_FRY = "stir_fry";
+    public static final String STUFFED_ARTICHOKE = "stuffed_artichoke";
+    public static final String TOAST_SANDWICH = "toast_sandwich";
+
 }
 

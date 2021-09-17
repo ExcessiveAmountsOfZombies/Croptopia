@@ -13,6 +13,6 @@ public class StructurePoolsMixin {
 
     @Inject(method = "register", at = { @At("HEAD")}, cancellable = true)
     private static void register(StructurePool templatePool, CallbackInfoReturnable<StructurePool> cir) {
-        System.out.println(templatePool.getId());
+        //System.out.println(templatePool.getId());
     }
 }

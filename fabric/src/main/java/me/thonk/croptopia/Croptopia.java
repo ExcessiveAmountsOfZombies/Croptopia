@@ -2,7 +2,9 @@ package me.thonk.croptopia;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import it.unimi.dsi.fastutil.ints.IntList;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
@@ -15,6 +17,7 @@ import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
 import me.thonk.croptopia.mixin.ChickenAccess;
+import me.thonk.croptopia.mixin.FarmerWorkTaskAccessor;
 import me.thonk.croptopia.mixin.ParrotAccess;
 import me.thonk.croptopia.mixin.VillagerAccess;
 import me.thonk.croptopia.registry.BlockRegistry;
@@ -30,6 +33,7 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.brain.task.FarmerWorkTask;
 import net.minecraft.item.*;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -78,6 +82,7 @@ public class Croptopia implements ModInitializer {
         LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
+        Composter.init();
 
         OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
         seeds.clear();
@@ -86,7 +91,6 @@ public class Croptopia implements ModInitializer {
         BiomeModifiers.init();
         CropLootTableModifier.init();
 
-        Composter.init();
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
             SetupCommand.register(commandDispatcher);
         });
@@ -98,6 +102,7 @@ public class Croptopia implements ModInitializer {
         modifyAxeBlockStripping();
         modifyChickenBreeds();
         modifyParrotBreeds();
+        modifyVillagerFarmerTaskCompostables();
     }
 
     public static Identifier createIdentifier(String name) {
@@ -131,6 +136,9 @@ public class Croptopia implements ModInitializer {
 
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
+        if (item instanceof SeedItem) {
+            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
+        }
 
         // data generation
         //runner.getTagger().addTag(item, Croptopia.createIdentifier(itemName));
@@ -209,11 +217,11 @@ public class Croptopia implements ModInitializer {
     }
 
     private void modifyChickenBreeds() {
-        ItemStack[] stacks = ChickenAccess.getBreedingIngredients().getMatchingStacksClient();
+        IntList stacks = ChickenAccess.getBreedingIngredients().getMatchingItemIds();
         List<Item> baseItems = new ArrayList<>();
 
-        for (ItemStack stack : stacks) {
-            baseItems.add(stack.getItem());
+        for (Integer stack : stacks) {
+            baseItems.add(Item.byRawId(stack));
         }
         baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
         ChickenAccess.setBreedingIngredients(Ingredient.ofItems(baseItems.toArray(new Item[0])));
@@ -224,5 +232,12 @@ public class Croptopia implements ModInitializer {
         Set<Item> newItems = Sets.newHashSet(baseItems);
         newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
         ParrotAccess.setTamingIngredients(newItems);
+    }
+
+    private void modifyVillagerFarmerTaskCompostables() {
+        List<Item> baseItems = FarmerWorkTaskAccessor.getCompostables();
+        List<Item> newItems = Lists.newArrayList(baseItems);
+        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        FarmerWorkTaskAccessor.setCompostables(newItems);
     }
 }

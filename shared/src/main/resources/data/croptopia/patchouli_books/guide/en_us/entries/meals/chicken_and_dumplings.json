@@ -4,7 +4,7 @@
   "category": "croptopia:meals",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:chicken_and_dumplings",
       "text": "Recipe for chicken and dumplings."
     }

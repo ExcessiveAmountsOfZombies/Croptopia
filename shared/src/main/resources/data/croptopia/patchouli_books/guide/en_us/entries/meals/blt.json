@@ -4,7 +4,7 @@
   "category": "croptopia:meals",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:blt",
       "text": "Recipe for a BLT sandwich."
     }

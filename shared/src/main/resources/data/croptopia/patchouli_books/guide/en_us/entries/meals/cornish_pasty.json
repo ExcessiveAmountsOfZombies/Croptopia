@@ -4,7 +4,7 @@
   "category": "croptopia:meals",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:shaped_cornish_pasty",
       "text": "Recipe for a cornish pasty."
     }

@@ -4,7 +4,7 @@
   "category": "croptopia:drinks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:pumpkin_spice_latte",
       "text": "Recipe for a pumpkin spice latte."
     }

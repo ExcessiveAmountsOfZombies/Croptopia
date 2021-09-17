@@ -4,7 +4,7 @@
   "category": "croptopia:snacks",
   "pages": [
     {
-      "type": "smelting",
+      "type": "patchouli:smelting",
       "recipe": "croptopia:roasted_nuts",
       "text": "Recipe for making roasted nuts."
     }

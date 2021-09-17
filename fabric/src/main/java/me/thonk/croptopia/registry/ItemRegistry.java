@@ -18,8 +18,8 @@ public class ItemRegistry {
     public static Item bellPepper = new CropItem(createGroup().food(EDIBLE_3));
     public static Item blackBean = new CropItem(createGroup().food(EDIBLE_3));
     public static Item blackberry = new CropItem(createGroup().food(EDIBLE_3));
-    public static Item blueberry =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item broccoli =  new CropItem(createGroup().food(EDIBLE_3));
+    public static Item blueberry = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item broccoli = new CropItem(createGroup().food(EDIBLE_3));
     public static Item cabbage = new CropItem(createGroup().food(EDIBLE_1));
     public static Item cantaloupe = new CropItem(createGroup().food(EDIBLE_3));
     public static Item cauliflower = new CropItem(createGroup().food(EDIBLE_3));
@@ -28,19 +28,19 @@ public class ItemRegistry {
     public static Item corn = new CropItem(createGroup().food(EDIBLE_3));
     public static Item cranberry = new CropItem(createGroup().food(EDIBLE_3));
     public static Item cucumber = new CropItem(createGroup().food(EDIBLE_3));
-    public static Item currant =  new CropItem(createGroup().food(EDIBLE_3));
+    public static Item currant = new CropItem(createGroup().food(EDIBLE_3));
     public static Item eggplant = new CropItem(createGroup().food(EDIBLE_3));
-    public static Item elderberry =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item garlic =  new CropItem(createGroup().food(EDIBLE_1));
-    public static Item grape =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item greenBean =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item greenOnion =  new CropItem(createGroup().food(EDIBLE_1));
-    public static Item honeydew =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item hops =  new Item(createGroup());
-    public static Item kale =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item kiwi =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item leek =  new CropItem(createGroup().food(EDIBLE_3));
-    public static Item lettuce =  new CropItem(createGroup().food(EDIBLE_3));
+    public static Item elderberry = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item garlic = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item grape = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item greenBean = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item greenOnion = new CropItem(createGroup().food(EDIBLE_1));
+    public static Item honeydew = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item hops = new Item(createGroup());
+    public static Item kale = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item kiwi = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item leek = new CropItem(createGroup().food(EDIBLE_3));
+    public static Item lettuce = new CropItem(createGroup().food(EDIBLE_3));
     public static Item oat = new CropItem(createGroup().food(EDIBLE_1));
     public static Item olive = new CropItem(createGroup().food(EDIBLE_3));
     public static Item onion = new CropItem(createGroup().food(EDIBLE_3));
@@ -124,12 +124,12 @@ public class ItemRegistry {
     public static Item grapeSeed = new SeedItem(BlockRegistry.grapeCropBlock, createGroup(), FOREST);
     public static Item greenBeanSeed = new SeedItem(BlockRegistry.greenBeanCropBlock, createGroup(), PLAINS);
     public static Item greenOnionSeed = new SeedItem(BlockRegistry.greenOnionCropBlock, createGroup(), JUNGLE);
-    public static Item honeydewSeed =new SeedItem(BlockRegistry.honeydewCropBlock, createGroup(), JUNGLE);
+    public static Item honeydewSeed = new SeedItem(BlockRegistry.honeydewCropBlock, createGroup(), JUNGLE);
     public static Item hopsSeed = new SeedItem(BlockRegistry.hopsCropBlock, createGroup(), SAVANNA);
     public static Item kaleSeed = new SeedItem(BlockRegistry.kaleCropBlock, createGroup(), PLAINS);
     public static Item kiwiSeed = new SeedItem(BlockRegistry.kiwiCropBlock, createGroup(), SAVANNA);
     public static Item leekSeed = new SeedItem(BlockRegistry.leekCropBlock, createGroup(), SAVANNA);
-    public static Item lettuceSeed =new SeedItem(BlockRegistry.lettuceCropBlock, createGroup(), PLAINS);
+    public static Item lettuceSeed = new SeedItem(BlockRegistry.lettuceCropBlock, createGroup(), PLAINS);
     public static Item oliveSeed = new SeedItem(BlockRegistry.oliveCropBlock, createGroup(), SAVANNA);
     public static Item onionSeed = new SeedItem(BlockRegistry.onionCropBlock, createGroup(), JUNGLE);
     public static Item peanutSeed = new SeedItem(BlockRegistry.peanutCropBlock, createGroup(), JUNGLE);
@@ -160,29 +160,28 @@ public class ItemRegistry {
     public static Item vanillaSeed;
 
 
-
-    public static Item appleSapling = registerItem(ItemNames.APPLE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.appleSaplingBlock, LeavesRegistry.appleCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item bananaSapling = registerItem(ItemNames.BANANA_SAPLING, new CroptopiaSaplingItem(BlockRegistry.bananaSaplingBlock, LeavesRegistry.bananaCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item orangeSapling = registerItem(ItemNames.ORANGE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.orangeSaplingBlock, LeavesRegistry.orangeCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item persimmonSapling = registerItem(ItemNames.PERSIMMON_SAPLING, new CroptopiaSaplingItem(BlockRegistry.persimmonSaplingBlock, LeavesRegistry.persimmonCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item plumSapling = registerItem(ItemNames.PLUM_SAPLING, new CroptopiaSaplingItem(BlockRegistry.plumSaplingBlock, LeavesRegistry.plumCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item cherrySapling = registerItem(ItemNames.CHERRY_SAPLING, new CroptopiaSaplingItem(BlockRegistry.cherrySaplingBlock, LeavesRegistry.cherryCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item lemonSapling = registerItem(ItemNames.LEMON_SAPLING, new CroptopiaSaplingItem(BlockRegistry.lemonSaplingBlock, LeavesRegistry.lemonCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item grapefruitSapling = registerItem(ItemNames.GRAPEFRUIT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.grapefruitSaplingBlock, LeavesRegistry.grapefruitCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item kumquatSapling = registerItem(ItemNames.KUMQUAT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.kumquatSaplingBlock, LeavesRegistry.kumquatCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item peachSapling = registerItem(ItemNames.PEACH_SAPLING, new CroptopiaSaplingItem(BlockRegistry.peachSaplingBlock, LeavesRegistry.peachCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item coconutSapling = registerItem(ItemNames.COCONUT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.coconutSaplingBlock, LeavesRegistry.coconutCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item nutmegSapling = registerItem(ItemNames.NUTMEG_SAPLING, new CroptopiaSaplingItem(BlockRegistry.nutmegSaplingBlock, LeavesRegistry.nutmegCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item figSapling = registerItem(ItemNames.FIG_SAPLING, new CroptopiaSaplingItem(BlockRegistry.figSaplingBlock, LeavesRegistry.figCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item nectarineSapling = registerItem(ItemNames.NECTARINE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.nectarineSaplingBlock, LeavesRegistry.nectarineCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item mangoSapling = registerItem(ItemNames.MANGO_SAPLING, new CroptopiaSaplingItem(BlockRegistry.mangoSaplingBlock, LeavesRegistry.mangoCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item dragonFruitSapling = registerItem(ItemNames.DRAGONFRUIT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.dragonFruitSaplingBlock, LeavesRegistry.dragonFruitCrop, Blocks.JUNGLE_LEAVES, createGroup()));
-    public static Item starFruitSapling = registerItem(ItemNames.STARFRUIT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.starFruitSaplingBlock, LeavesRegistry.starFruitCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item avocadoSapling = registerItem(ItemNames.AVOCADO_SAPLING, new CroptopiaSaplingItem(BlockRegistry.avocadoSaplingBlock, LeavesRegistry.avocadoCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item apricotSapling = registerItem(ItemNames.APRICOT_SAPLING, new CroptopiaSaplingItem(BlockRegistry.apricotSaplingBlock, LeavesRegistry.apricotCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item pearSapling = registerItem(ItemNames.PEAR_SAPLING, new CroptopiaSaplingItem(BlockRegistry.pearSaplingBlock, LeavesRegistry.pearCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item limeSapling = registerItem(ItemNames.LIME_SAPLING, new CroptopiaSaplingItem(BlockRegistry.limeSaplingBlock, LeavesRegistry.limeCrop, Blocks.OAK_LEAVES, createGroup()));
-    public static Item dateSapling = registerItem(ItemNames.DATE_SAPLING, new CroptopiaSaplingItem(BlockRegistry.dateSaplingBlock, LeavesRegistry.dateCrop, Blocks.JUNGLE_LEAVES, createGroup()));
+    public static Item appleSapling = new CroptopiaSaplingItem(BlockRegistry.appleSaplingBlock, LeavesRegistry.appleCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item bananaSapling = new CroptopiaSaplingItem(BlockRegistry.bananaSaplingBlock, LeavesRegistry.bananaCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item orangeSapling = new CroptopiaSaplingItem(BlockRegistry.orangeSaplingBlock, LeavesRegistry.orangeCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item persimmonSapling = new CroptopiaSaplingItem(BlockRegistry.persimmonSaplingBlock, LeavesRegistry.persimmonCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item plumSapling = new CroptopiaSaplingItem(BlockRegistry.plumSaplingBlock, LeavesRegistry.plumCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item cherrySapling = new CroptopiaSaplingItem(BlockRegistry.cherrySaplingBlock, LeavesRegistry.cherryCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item lemonSapling = new CroptopiaSaplingItem(BlockRegistry.lemonSaplingBlock, LeavesRegistry.lemonCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item grapefruitSapling = new CroptopiaSaplingItem(BlockRegistry.grapefruitSaplingBlock, LeavesRegistry.grapefruitCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item kumquatSapling = new CroptopiaSaplingItem(BlockRegistry.kumquatSaplingBlock, LeavesRegistry.kumquatCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item peachSapling = new CroptopiaSaplingItem(BlockRegistry.peachSaplingBlock, LeavesRegistry.peachCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item coconutSapling = new CroptopiaSaplingItem(BlockRegistry.coconutSaplingBlock, LeavesRegistry.coconutCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item nutmegSapling = new CroptopiaSaplingItem(BlockRegistry.nutmegSaplingBlock, LeavesRegistry.nutmegCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item figSapling = new CroptopiaSaplingItem(BlockRegistry.figSaplingBlock, LeavesRegistry.figCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item nectarineSapling = new CroptopiaSaplingItem(BlockRegistry.nectarineSaplingBlock, LeavesRegistry.nectarineCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item mangoSapling = new CroptopiaSaplingItem(BlockRegistry.mangoSaplingBlock, LeavesRegistry.mangoCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item dragonFruitSapling = new CroptopiaSaplingItem(BlockRegistry.dragonFruitSaplingBlock, LeavesRegistry.dragonFruitCrop, Blocks.JUNGLE_LEAVES, createGroup());
+    public static Item starFruitSapling = new CroptopiaSaplingItem(BlockRegistry.starFruitSaplingBlock, LeavesRegistry.starFruitCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item avocadoSapling = new CroptopiaSaplingItem(BlockRegistry.avocadoSaplingBlock, LeavesRegistry.avocadoCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item apricotSapling = new CroptopiaSaplingItem(BlockRegistry.apricotSaplingBlock, LeavesRegistry.apricotCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item pearSapling = new CroptopiaSaplingItem(BlockRegistry.pearSaplingBlock, LeavesRegistry.pearCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item limeSapling = new CroptopiaSaplingItem(BlockRegistry.limeSaplingBlock, LeavesRegistry.limeCrop, Blocks.OAK_LEAVES, createGroup());
+    public static Item dateSapling = new CroptopiaSaplingItem(BlockRegistry.dateSaplingBlock, LeavesRegistry.dateCrop, Blocks.JUNGLE_LEAVES, createGroup());
     public static Item almondSapling = new CroptopiaSaplingItem(BlockRegistry.almondSaplingBlock, LeavesRegistry.almondCrop, Blocks.DARK_OAK_LEAVES, createGroup());
     public static Item cashewSapling = new CroptopiaSaplingItem(BlockRegistry.cashewSaplingBlock, LeavesRegistry.cashewCrop, Blocks.DARK_OAK_LEAVES, createGroup());
     public static Item pecanSapling = new CroptopiaSaplingItem(BlockRegistry.pecanSaplingBlock, LeavesRegistry.pecanCrop, Blocks.DARK_OAK_LEAVES, createGroup());
@@ -308,7 +307,6 @@ public class ItemRegistry {
     // desert block?
     public static Item coffeeCake;
     public static Item chocolateCake;
-    public static Item fruitCake;
     public static Item strawberryShortCake;
     public static Item carrotCake;
     public static Item turtleCake;
@@ -380,6 +378,41 @@ public class ItemRegistry {
     public static Item milkBottle = new Item(createGroup());
     public static Item teaLeaves = new Item(createGroup());
     public static Item teaSeed = new SeedItem(BlockRegistry.teaCropBlock, createGroup(), FOREST);
+
+    // 1.7.0
+    public static Item ajvar = new Item(createGroup().food(EDIBLE_7));
+    public static Item ajvarToast = new Item(createGroup().food(EDIBLE_14));
+    public static Item avocadoToast = new Item(createGroup().food(EDIBLE_10));
+    public static Item bakedSweetPotato = new Item(createGroup().food(EDIBLE_7));
+    public static Item bakedYam = new Item(createGroup().food(EDIBLE_7));
+    public static Item beefStew = new Item(createGroup().food(EDIBLE_14));
+    public static Item beefStirFry = new Item(createGroup().food(EDIBLE_14));
+    public static Item butteredGreenBeans = new Item(createGroup().food(EDIBLE_10));
+    public static Item cheesyAsparagus = new Item(createGroup().food(EDIBLE_10));
+    public static Item chocolateIceCream = new Item(createGroup().food(EDIBLE_14));
+    public static Item cookedBacon = new Item(createGroup().food(EDIBLE_7));
+    public static Item eggplantParmesan = new Item(createGroup().food(EDIBLE_18));
+    public static Item fruitCake = new Item(createGroup().food(EDIBLE_10));
+    public static Item grilledEggplant = new Item(createGroup().food(EDIBLE_10));
+    public static Item kiwiSorbet = new Item(createGroup().food(EDIBLE_7));
+    public static Item knife = new CookingUtensil(createGroup().maxCount(1));
+    public static Item lemonCoconutBar = new Item(createGroup().food(EDIBLE_7));
+    public static Item netherWartStew = new Item(createGroup().food(EDIBLE_7));
+    public static Item peanutButter = new Item(createGroup().food(EDIBLE_5));
+    public static Item peanutButterWCelery = new Item(createGroup().food(EDIBLE_7));
+    public static Item potatoSoup = new Item(createGroup().food(EDIBLE_10));
+    public static Item ratatouille = new Item(createGroup().food(EDIBLE_18));
+    public static Item rawBacon = new Item(createGroup().food(EDIBLE_1));
+    public static Item rhubarbCrisp = new Item(createGroup().food(EDIBLE_10));
+    public static Item roastedAsparagus = new Item(createGroup().food(EDIBLE_7));
+    public static Item roastedRadishes = new Item(createGroup().food(EDIBLE_7));
+    public static Item roastedSquash = new Item(createGroup().food(EDIBLE_7));
+    public static Item roastedTurnips = new Item(createGroup().food(EDIBLE_7));
+    public static Item steamedBroccoli = new Item(createGroup().food(EDIBLE_7));
+    public static Item steamedGreenBeans = new Item(createGroup().food(EDIBLE_7));
+    public static Item stirFry = new Item(createGroup().food(EDIBLE_18));
+    public static Item stuffedArtichoke = new Item(createGroup().food(EDIBLE_18));
+    public static Item toastSandwich = new Item(createGroup().food(EDIBLE_10));
 
     // cooking utensils?
     public static Item foodPress = new CookingUtensil(createGroup().maxCount(1));
@@ -535,13 +568,37 @@ public class ItemRegistry {
         registerItem(ItemNames.OAT_SEED, oatSeed);
         registerItem(ItemNames.BARLEY_SEED, barleySeed);
         registerItem(ItemNames.SOYBEAN_SEED, soybeanSeed);
+        registerItem(ItemNames.VANILLA_SEEDS, vanillaSeeds);
+        registerItem(ItemNames.TEA_SEED, teaSeed);
 
 
-
+        registerItem(ItemNames.APPLE_SAPLING, appleSapling);
+        registerItem(ItemNames.BANANA_SAPLING, bananaSapling);
+        registerItem(ItemNames.ORANGE_SAPLING, orangeSapling);
+        registerItem(ItemNames.PERSIMMON_SAPLING, persimmonSapling);
+        registerItem(ItemNames.PLUM_SAPLING, plumSapling);
+        registerItem(ItemNames.CHERRY_SAPLING, cherrySapling);
+        registerItem(ItemNames.LEMON_SAPLING, lemonSapling);
+        registerItem(ItemNames.GRAPEFRUIT_SAPLING, grapefruitSapling);
+        registerItem(ItemNames.KUMQUAT_SAPLING, kumquatSapling);
+        registerItem(ItemNames.PEACH_SAPLING, peachSapling);
+        registerItem(ItemNames.COCONUT_SAPLING, coconutSapling);
+        registerItem(ItemNames.NUTMEG_SAPLING, nutmegSapling);
+        registerItem(ItemNames.FIG_SAPLING, figSapling);
+        registerItem(ItemNames.NECTARINE_SAPLING, nectarineSapling);
+        registerItem(ItemNames.MANGO_SAPLING, mangoSapling);
+        registerItem(ItemNames.DRAGONFRUIT_SAPLING, dragonFruitSapling);
+        registerItem(ItemNames.STARFRUIT_SAPLING, starFruitSapling);
+        registerItem(ItemNames.AVOCADO_SAPLING, avocadoSapling);
+        registerItem(ItemNames.APRICOT_SAPLING, apricotSapling);
+        registerItem(ItemNames.PEAR_SAPLING, pearSapling);
+        registerItem(ItemNames.LIME_SAPLING, limeSapling);
+        registerItem(ItemNames.DATE_SAPLING, dateSapling);
         registerItem(ItemNames.ALMOND_SAPLING, almondSapling);
         registerItem(ItemNames.CASHEW_SAPLING, cashewSapling);
         registerItem(ItemNames.PECAN_SAPLING, pecanSapling);
         registerItem(ItemNames.WALNUT_SAPLING, walnutSapling);
+        registerItem(ItemNames.PEPPER_SEED, pepperSeed);
 
 
         registerItem(ItemNames.OLIVE_OIL, oliveOil);
@@ -686,17 +743,39 @@ public class ItemRegistry {
         registerItem(ItemNames.CHIMICHANGA, chimichanga);
         registerItem(ItemNames.QUESADILLA, quesadilla);
 
-        registerItem(ItemNames.CINNAMON, cinnamon);
-        registerItem(ItemNames.CORN_HUSK, cornHusk);
-        registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
-        registerItem(ItemNames.PEPPER, pepper);
-        registerItem(ItemNames.VANILLA_SEEDS, vanillaSeeds);
-
-        registerItem(ItemNames.CINNAMON_SAPLING, cinnamonSapling);
-        registerItem(ItemNames.CINNAMON_LOG, cinnamonLog);
-        registerItem(ItemNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
-        registerItem(ItemNames.CINNAMON_WOOD, cinnamonWood);
-        registerItem(ItemNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
+        registerItem(ItemNames.AJVAR, ajvar);
+        registerItem(ItemNames.AJVAR_TOAST, ajvarToast);
+        registerItem(ItemNames.AVOCADO_TOAST, avocadoToast);
+        registerItem(ItemNames.BAKED_SWEET_POTATO, bakedSweetPotato);
+        registerItem(ItemNames.BAKED_YAM, bakedYam);
+        registerItem(ItemNames.BEEF_STEW, beefStew);
+        registerItem(ItemNames.BEEF_STIR_FRY, beefStirFry);
+        registerItem(ItemNames.BUTTERED_GREEN_BEANS, butteredGreenBeans);
+        registerItem(ItemNames.CHEESY_ASPARAGUS, cheesyAsparagus);
+        registerItem(ItemNames.CHOCOLATE_ICE_CREAM, chocolateIceCream);
+        registerItem(ItemNames.COOKED_BACON, cookedBacon);
+        registerItem(ItemNames.EGGPLANT_PARMESAN, eggplantParmesan);
+        registerItem(ItemNames.FRUIT_CAKE, fruitCake);
+        registerItem(ItemNames.GRILLED_EGGPLANT, grilledEggplant);
+        registerItem(ItemNames.KIWI_SORBET, kiwiSorbet);
+        registerItem(ItemNames.KNIFE, knife);
+        registerItem(ItemNames.LEMON_COCONUT_BAR, lemonCoconutBar);
+        registerItem(ItemNames.NETHER_WART_STEW, netherWartStew);
+        registerItem(ItemNames.PEANUT_BUTTER, peanutButter);
+        registerItem(ItemNames.PEANUT_BUTTER_W_CELERY, peanutButterWCelery);
+        registerItem(ItemNames.POTATO_SOUP, potatoSoup);
+        registerItem(ItemNames.RATATOUILLE, ratatouille);
+        registerItem(ItemNames.RAW_BACON, rawBacon);
+        registerItem(ItemNames.RHUBARB_CRISP, rhubarbCrisp);
+        registerItem(ItemNames.ROASTED_ASPARAGUS, roastedAsparagus);
+        registerItem(ItemNames.ROASTED_RADISHES, roastedRadishes);
+        registerItem(ItemNames.ROASTED_SQUASH, roastedSquash);
+        registerItem(ItemNames.ROASTED_TURNIPS, roastedTurnips);
+        registerItem(ItemNames.STEAMED_BROCCOLI, steamedBroccoli);
+        registerItem(ItemNames.STEAMED_GREEN_BEANS, steamedGreenBeans);
+        registerItem(ItemNames.STIR_FRY, stirFry);
+        registerItem(ItemNames.STUFFED_ARTICHOKE, stuffedArtichoke);
+        registerItem(ItemNames.TOAST_SANDWICH, toastSandwich);
 
         registerItem(ItemNames.SHEPHERDS_PIE, shepherdsPie);
         registerItem(ItemNames.BEEF_WELLINGTON, beefWellington);
@@ -709,16 +788,25 @@ public class ItemRegistry {
         registerItem(ItemNames.TREACLE_TART, treacleTart);
         registerItem(ItemNames.STICKY_TOFFEE_PUDDING, stickyToffeePudding);
         registerItem(ItemNames.TRIFLE, trifle);
-        registerItem(ItemNames.PEPPER_SEED, pepperSeed);
         registerItem(ItemNames.WATER_BOTTLE, waterBottle);
         registerItem(ItemNames.MILK_BOTTLE, milkBottle);
         registerItem(ItemNames.TEA_LEAVES, teaLeaves);
-        registerItem(ItemNames.TEA_SEED, teaSeed);
+
+        registerItem(ItemNames.CINNAMON, cinnamon);
+        registerItem(ItemNames.CORN_HUSK, cornHusk);
+        registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
+        registerItem(ItemNames.PEPPER, pepper);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);
         registerItem(ItemNames.COOKING_POT, cookingPot);
         registerItem(ItemNames.MORTAR_AND_PESTLE, mortarAndPestle);
+
+        registerItem(ItemNames.CINNAMON_SAPLING, cinnamonSapling);
+        registerItem(ItemNames.CINNAMON_LOG, cinnamonLog);
+        registerItem(ItemNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
+        registerItem(ItemNames.CINNAMON_WOOD, cinnamonWood);
+        registerItem(ItemNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
 
         registerItem(ItemNames.SALT_ORE, saltOre);
     }

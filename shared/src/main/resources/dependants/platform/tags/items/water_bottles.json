@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "croptopia:water_bottle"
+    "croptopia:water_bottle",
+    "minecraft:water_bucket"
   ]
 }

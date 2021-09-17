@@ -4,7 +4,7 @@
   "category": "croptopia:utensils",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:mortar_and_pestle",
       "text": "Recipe for a mortar and pestle."
     }

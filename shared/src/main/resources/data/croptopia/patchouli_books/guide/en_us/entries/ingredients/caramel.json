@@ -4,7 +4,7 @@
   "category": "croptopia:ingredients",
   "pages": [
     {
-      "type": "smelting",
+      "type": "patchouli:smelting",
       "recipe": "croptopia:caramel",
       "text": "Recipe for caramel."
     }

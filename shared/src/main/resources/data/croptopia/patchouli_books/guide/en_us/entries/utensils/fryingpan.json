@@ -4,7 +4,7 @@
   "category": "croptopia:utensils",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:cooking_pot",
       "text": "Recipe for a cooking pot."
     }

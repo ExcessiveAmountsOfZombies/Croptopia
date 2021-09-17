@@ -5,3 +5,4 @@ mutable    field    net/minecraft/entity/passive/VillagerEntity    GATHERABLE_IT
 mutable    field    net/minecraft/item/AxeItem    STRIPPED_BLOCKS    Ljava/util/Map;
 mutable    field    net/minecraft/entity/passive/ParrotEntity    TAMING_INGREDIENTS    Ljava/util/Set;
 mutable    field    net/minecraft/entity/passive/ChickenEntity    BREEDING_INGREDIENT    Lnet/minecraft/recipe/Ingredient;
+mutable    field    net/minecraft/entity/ai/brain/task/FarmerWorkTask  COMPOSTABLES    Ljava/util/List;

@@ -4,7 +4,7 @@
   "category": "croptopia:meals",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:grilled_cheese",
       "text": "Recipe for a grilled cheese sandwich."
     }
