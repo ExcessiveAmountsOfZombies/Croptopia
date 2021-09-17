@@ -4,7 +4,7 @@
   "category": "croptopia:drinks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:chocolate_milkshake",
       "text": "Recipe for chocolate milkshakes."
     }

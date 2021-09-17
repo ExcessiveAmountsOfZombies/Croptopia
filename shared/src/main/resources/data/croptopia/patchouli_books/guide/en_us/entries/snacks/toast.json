@@ -4,7 +4,7 @@
   "category": "croptopia:snacks",
   "pages": [
     {
-      "type": "smelting",
+      "type": "patchouli:smelting",
       "recipe": "croptopia:toast",
       "text": "Recipe for making toast."
     }

@@ -4,7 +4,7 @@
   "category": "croptopia:ingredients",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:shaped_milk_bottle",
       "text": "Recipe for milk bottles."
     }

@@ -4,7 +4,7 @@
   "category": "croptopia:deserts",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:candy_corn",
       "text": "Recipe for candy corn."
     }

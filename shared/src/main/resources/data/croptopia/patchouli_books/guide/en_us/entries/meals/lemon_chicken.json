@@ -4,7 +4,7 @@
   "category": "croptopia:meals",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:lemon_chicken",
       "text": "Recipe for lemon chicken."
     }

@@ -4,7 +4,7 @@
   "category": "croptopia:snacks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:protein_bar",
       "text": "Recipe for making a protein bar."
     }

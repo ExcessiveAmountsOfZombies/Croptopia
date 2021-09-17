@@ -4,12 +4,12 @@
   "category": "croptopia:snacks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:kale_chips",
       "recipe2": "croptopia:potato_chips"
     },
     {
-      "type": "text",
+      "type": "patchouli:text",
       "text": "Recipes for making different types of chips."
     }
   ]

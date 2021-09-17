@@ -4,7 +4,7 @@
   "category": "croptopia:deserts",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:apple_pie",
       "text": "Recipe for an apple pie."
     }

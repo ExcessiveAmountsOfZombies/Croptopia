@@ -4,7 +4,7 @@
   "category": "croptopia:meals",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:enchilada",
       "text": "Recipe for an enchilada."
     }

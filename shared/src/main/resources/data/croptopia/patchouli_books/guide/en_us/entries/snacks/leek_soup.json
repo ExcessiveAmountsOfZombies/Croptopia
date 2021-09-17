@@ -4,7 +4,7 @@
   "category": "croptopia:snacks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:leek_soup",
       "text": "Recipe for making leek soup."
     }

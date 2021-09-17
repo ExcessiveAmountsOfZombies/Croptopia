@@ -4,7 +4,7 @@
   "category": "croptopia:ingredients",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:artichoke_dip",
       "text": "Recipe for artichoke dip."
     }

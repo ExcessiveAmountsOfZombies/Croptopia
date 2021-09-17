@@ -4,7 +4,7 @@
   "category": "croptopia:deserts",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:shaped_sticky_toffee_pudding",
       "text": "Recipe for a sticky toffee pudding."
     }

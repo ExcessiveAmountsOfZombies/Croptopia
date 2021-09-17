@@ -4,7 +4,7 @@
   "category": "croptopia:snacks",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:doughnut",
       "text": "The first 3D model you'll make in Blender."
     }

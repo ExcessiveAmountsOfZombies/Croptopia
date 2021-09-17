@@ -4,7 +4,7 @@
   "category": "croptopia:ingredients",
   "pages": [
     {
-      "type": "text",
+      "type": "patchouli:text",
       "text": "Salt generates uncommonly in River and Ice River biomes. They look like a whiter version of sand."
     }
   ]

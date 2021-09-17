@@ -4,7 +4,7 @@
   "category": "croptopia:deserts",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:shaped_treacle_tart",
       "text": "Recipe for a treacle tart."
     }

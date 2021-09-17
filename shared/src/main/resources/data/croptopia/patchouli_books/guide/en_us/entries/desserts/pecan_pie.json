@@ -4,7 +4,7 @@
   "category": "croptopia:deserts",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:pecan_pie",
       "text": "Recipe for a pecan pie."
     }

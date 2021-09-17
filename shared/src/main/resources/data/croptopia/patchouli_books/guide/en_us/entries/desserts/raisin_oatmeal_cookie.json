@@ -4,7 +4,7 @@
   "category": "croptopia:deserts",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:raisin_oatmeal_cookie",
       "text": "Recipe for a raisin oatmeal cookie."
     }

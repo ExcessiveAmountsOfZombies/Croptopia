@@ -4,7 +4,7 @@
   "category": "croptopia:utensils",
   "pages": [
     {
-      "type": "crafting",
+      "type": "patchouli:crafting",
       "recipe": "croptopia:food_press",
       "text": "Recipe for a food press."
     }
