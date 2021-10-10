@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:cheeseburger"
+    },
+    "title": {
+      "translate": "advancements.croptopia.eatbig.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.eatbig.description"
+    }
+  },
+  "parent": "croptopia:getseeds",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player",
+          "tag": "croptopia:food_crafted",
+          "nbt": "{foodExhaustionLevel:>10}"
+        }
+      }
+    }
+  }
+}

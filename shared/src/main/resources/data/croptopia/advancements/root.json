@@ -9,7 +9,7 @@
     },
     "show_toast": false,
     "announce_to_chat": false,
-    "background": "minecraft:textures/block/lime_wool.png"
+    "background": "croptopia:textures/block/salt_ore.png"
   },
   "criteria": {
     "has_hoe": {
