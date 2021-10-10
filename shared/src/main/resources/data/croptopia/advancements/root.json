@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:beer"
+    },
+    "title": "Croptopia",
+    "description": {
+      "translate": "advancements.croptopia.root.description"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/lime_wool.png"
+  },
+  "criteria": {
+    "has_hoe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "croptopia:hoe"
+          }
+        ]
+      }
+    }
+  }
+}

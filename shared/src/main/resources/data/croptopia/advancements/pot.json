@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:cooking_pot"
+    },
+    "title": {
+      "translate": "advancements.croptopia.pot.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.pot.description"
+    }
+  },
+  "parent": "croptopia:getseeds",
+  "criteria": {
+    "has_pot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "croptopia:cooking_pot"
+          }
+        ]
+      }
+    }
+  }
+}

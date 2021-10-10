@@ -492,6 +492,17 @@
   "block.croptopia.cinnamon_wood": "Cinnamon Wood",
   "block.croptopia.stripped_cinnamon_wood": "Stripped Cinnamon Wood",
 
+  "advancements.croptopia.comment":" \\TODO names with '*' aren't final",
+  "advancements.croptopia.getseed.description": "Break tall grass with a hoe to get seeds!",
+  "advancements.croptopia.getseed.title": "A Seedy basement*",
+  "advancements.croptopia.getsapling.title": "Sapling idk*",
+  "advancements.croptopia.getsapling.description": "Gather some fruit and make a tree from it.",
+  "advancements.croptopia.pot.title": "Potted",
+  "advancements.croptopia.pot.description": "Make a Cooking Pot",
+  "advancements.croptopia.pan.title": "panned*",
+  "advancements.croptopia.pan.description": "Make a Frying Pan",
+  "advancements.croptopia.press.title": "blendern't",
+  "advancements.croptopia.press.description": "Make a All Purpose Food Press",
 
   "itemGroup.croptopia.croptopia": "Croptopia",
   "itemGroup.croptopia": "Croptopia",

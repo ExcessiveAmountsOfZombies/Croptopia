@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:food_press"
+    },
+    "title": {
+      "translate": "advancements.croptopia.press.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.press.description"
+    }
+  },
+  "parent": "croptopia:getsapling",
+  "criteria": {
+    "has_pot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "croptopia:food_press"
+          }
+        ]
+      }
+    }
+  }
+}
