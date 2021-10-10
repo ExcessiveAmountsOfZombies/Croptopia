@@ -1,24 +1,23 @@
 {
   "display": {
     "icon": {
-      "item": "croptopia:lemon_chicken"
+      "item": "croptopia:tofuburger"
     },
     "title": {
-      "translate": "advancements.croptopia.eatbig.title"
+      "translate": "advancements.croptopia.eatcrafted.title"
     },
     "description": {
-      "translate": "advancements.croptopia.eatbig.description"
-    },
-    "frame": "task"
+      "translate": "advancements.croptopia.eatcrafted.description"
+    }
   },
-  "parent": "croptopia:eatcrafted",
+  "parent": "croptopia:getseeds",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "player": {
           "type": "minecraft:player",
-          "tag": "croptopia:food_big"
+          "tag": "croptopia:food_crafted"
         }
       }
     }
