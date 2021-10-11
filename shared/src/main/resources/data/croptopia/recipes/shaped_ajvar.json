@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "456",
+    "123"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependant}:fruits/bellpeppers"
+    },
+    "2": {
+      "tag": "${dependant}:vegetables/eggplant"
+    },
+    "3": {
+      "tag": "${dependant}:vegetables/garlic"
+    },
+    "4": {
+      "item": "croptopia:pepper"
+    },
+    "5": {
+      "tag": "${dependant}:olive_oils"
+    },
+    "6": {
+      "item": "${dependant}:salts"
+    }
+  },
+  "result": {
+    "item": "croptopia:ajvar",
+    "count": 1
+  }
+}

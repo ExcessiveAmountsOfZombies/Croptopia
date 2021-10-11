@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "${dependant}:vegetables/yams"
+  },
+  "result": "croptopia:baked_yam",
+  "experience": 0.1,
+  "cookingtime": 200
+}

@@ -62,6 +62,12 @@
 		"croptopia:cornish_pasty",
 		"croptopia:scones",
 		"croptopia:treacle_tart",
-		"croptopia:trifle"
+		"croptopia:trifle",
+		"croptopia:avocado_toast",
+		"croptopia:baked_sweet_potato",
+		"croptopia:baked_yam",
+		"croptopia:eggplant_parmesan",
+		"croptopia:potato_soup",
+		"croptopia:toast_sandwich"
 	]
 }

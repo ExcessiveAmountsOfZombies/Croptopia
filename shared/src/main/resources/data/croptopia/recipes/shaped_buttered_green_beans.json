@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "45",
+    "123"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependant}:butters"
+    },
+    "2": {
+      "tag": "${dependant}:vegetables/greenbeans"
+    },
+    "3": {
+      "tag": "${dependant}:vegetables/ginger"
+    },
+    "4": {
+      "tag": "${dependant}:salts"
+    },
+    "5": {
+      "item": "croptopia:pepper"
+    }
+  },
+  "result": {
+    "item": "croptopia:buttered_green_beans",
+    "count": 1
+  }
+}

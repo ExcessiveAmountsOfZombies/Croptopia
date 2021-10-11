@@ -45,6 +45,13 @@
 		"croptopia:quesadilla",
 		"croptopia:shepherds_pie",
 		"croptopia:beef_wellington",
-		"croptopia:fish_and_chips"
+		"croptopia:fish_and_chips",
+		"croptopia:cooked_bacon",
+		"croptopia:beef_stew",
+		"croptopia:beef_stir_fry",
+		"croptopia:eggplant_parmesan",
+		"croptopia:fruit_cake",
+		"croptopia:peanut_butter",
+		"croptopia:bacon"
 	]
 }

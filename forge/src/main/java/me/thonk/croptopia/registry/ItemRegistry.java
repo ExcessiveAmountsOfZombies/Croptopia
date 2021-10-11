@@ -313,7 +313,7 @@ public class ItemRegistry {
     // desert block?
     public static Item coffeeCake;
     public static Item chocolateCake;
-    public static Item fruitCake;
+    //public static Item fruitCake;
     public static Item strawberryShortCake;
     public static Item carrotCake;
     public static Item turtleCake;
@@ -385,6 +385,41 @@ public class ItemRegistry {
     public static Item milkBottle;
     public static Item teaLeaves;
     public static Item teaSeed;
+
+    // 1.7.0
+    public static Item ajvar;
+    public static Item ajvarToast;
+    public static Item avocadoToast;
+    public static Item bakedSweetPotato;
+    public static Item bakedYam;
+    public static Item beefStew;
+    public static Item beefStirFry;
+    public static Item butteredGreenBeans;
+    public static Item cheesyAsparagus;
+    public static Item chocolateIceCream;
+    public static Item cookedBacon;
+    public static Item eggplantParmesan;
+    public static Item fruitCake;
+    public static Item grilledEggplant;
+    public static Item kiwiSorbet;
+    public static Item knife;
+    public static Item lemonCoconutBar;
+    public static Item netherWartStew;
+    public static Item peanutButter;
+    public static Item peanutButterWCelery;
+    public static Item potatoSoup;
+    public static Item ratatouille;
+    public static Item rawBacon;
+    public static Item rhubarbCrisp;
+    public static Item roastedAsparagus;
+    public static Item roastedRadishes;
+    public static Item roastedSquash;
+    public static Item roastedTurnips;
+    public static Item steamedBroccoli;
+    public static Item steamedGreenBeans;
+    public static Item stirFry;
+    public static Item stuffedArtichoke;
+    public static Item toastSandwich;
 
     // cooking utensils?
     public static Item foodPress;
@@ -741,6 +776,40 @@ public class ItemRegistry {
         milkBottle = registerItem(itemRegister, MILK_BOTTLE, new Item(createGroup()));
         teaLeaves = registerItem(itemRegister, TEA_LEAVES, new Item(createGroup()));
         teaSeed = registerItem(itemRegister, TEA_SEED, new SeedItem(BlockRegistry.teaCropBlock, createGroup(), FOREST));
+
+        ajvar = registerItem(itemRegister, AJVAR, new Item(createGroup().food(EDIBLE_7)));
+        ajvarToast = registerItem(itemRegister, AJVAR_TOAST, new Item(createGroup().food(EDIBLE_14)));
+        avocadoToast = registerItem(itemRegister, AVOCADO_TOAST, new Item(createGroup().food(EDIBLE_10)));
+        bakedSweetPotato = registerItem(itemRegister, BAKED_SWEET_POTATO, new Item(createGroup().food(EDIBLE_7)));
+        bakedYam = registerItem(itemRegister, BAKED_YAM, new Item(createGroup().food(EDIBLE_7)));
+        beefStew = registerItem(itemRegister, BEEF_STEW, new Item(createGroup().food(EDIBLE_14)));
+        beefStirFry = registerItem(itemRegister, BEEF_STIR_FRY, new Item(createGroup().food(EDIBLE_14)));
+        butteredGreenBeans = registerItem(itemRegister, BUTTERED_GREEN_BEANS, new Item(createGroup().food(EDIBLE_10)));
+        cheesyAsparagus = registerItem(itemRegister, CHEESY_ASPARAGUS, new Item(createGroup().food(EDIBLE_10)));
+        chocolateIceCream = registerItem(itemRegister, CHOCOLATE_ICE_CREAM, new Item(createGroup().food(EDIBLE_14)));
+        cookedBacon = registerItem(itemRegister, COOKED_BACON, new Item(createGroup().food(EDIBLE_7)));
+        eggplantParmesan = registerItem(itemRegister, EGGPLANT_PARMESAN, new Item(createGroup().food(EDIBLE_18)));
+        fruitCake = registerItem(itemRegister, FRUIT_CAKE, new Item(createGroup().food(EDIBLE_10)));
+        grilledEggplant = registerItem(itemRegister, GRILLED_EGGPLANT, new Item(createGroup().food(EDIBLE_10)));
+        kiwiSorbet = registerItem(itemRegister, KIWI_SORBET, new Item(createGroup().food(EDIBLE_7)));
+        knife = registerItem(itemRegister, KNIFE, new CookingUtensil(createGroup().stacksTo(1)));
+        lemonCoconutBar = registerItem(itemRegister, LEMON_COCONUT_BAR, new Item(createGroup().food(EDIBLE_7)));
+        netherWartStew = registerItem(itemRegister, NETHER_WART_STEW, new Item(createGroup().food(EDIBLE_7)));
+        peanutButter = registerItem(itemRegister, PEANUT_BUTTER, new Item(createGroup().food(EDIBLE_5)));
+        peanutButterWCelery = registerItem(itemRegister, PEANUT_BUTTER_W_CELERY, new Item(createGroup().food(EDIBLE_7)));
+        potatoSoup = registerItem(itemRegister, POTATO_SOUP, new Item(createGroup().food(EDIBLE_10)));
+        ratatouille = registerItem(itemRegister, RATATOUILLE, new Item(createGroup().food(EDIBLE_18)));
+        rawBacon = registerItem(itemRegister, RAW_BACON, new Item(createGroup().food(EDIBLE_1)));
+        rhubarbCrisp = registerItem(itemRegister, RHUBARB_CRISP, new Item(createGroup().food(EDIBLE_10)));
+        roastedAsparagus = registerItem(itemRegister, ROASTED_ASPARAGUS, new Item(createGroup().food(EDIBLE_7)));
+        roastedRadishes = registerItem(itemRegister, ROASTED_RADISHES, new Item(createGroup().food(EDIBLE_7)));
+        roastedSquash = registerItem(itemRegister, ROASTED_SQUASH, new Item(createGroup().food(EDIBLE_7)));
+        roastedTurnips = registerItem(itemRegister, ROASTED_TURNIPS, new Item(createGroup().food(EDIBLE_7)));
+        steamedBroccoli = registerItem(itemRegister, STEAMED_BROCCOLI, new Item(createGroup().food(EDIBLE_7)));
+        steamedGreenBeans = registerItem(itemRegister, STEAMED_GREEN_BEANS, new Item(createGroup().food(EDIBLE_7)));
+        stirFry = registerItem(itemRegister, STIR_FRY, new Item(createGroup().food(EDIBLE_18)));
+        stuffedArtichoke = registerItem(itemRegister, STUFFED_ARTICHOKE, new Item(createGroup().food(EDIBLE_18)));
+        toastSandwich = registerItem(itemRegister, TOAST_SANDWICH, new Item(createGroup().food(EDIBLE_10)));
 
         // the utensils override the getContainerItem in the CookingUtensil class
         foodPress = registerItem(itemRegister, FOOD_PRESS, new CookingUtensil(createGroup().stacksTo(1)));
