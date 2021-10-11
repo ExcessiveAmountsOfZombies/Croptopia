@@ -4,23 +4,14 @@
       "item": "croptopia:food_press"
     },
     "title": {
-      "translate": "advancements.croptopia.press.title"
+      "translate": "advancements.croptopia.food_press.title"
     },
     "description": {
-      "translate": "advancements.croptopia.press.description"
+      "translate": "advancements.croptopia.food_press.description"
     }
   },
-  "parent": "croptopia:getsapling",
+  "parent": "croptopia:frying_pan",
   "criteria": {
-    "has_pot": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "croptopia:food_press"
-          }
-        ]
-      }
-    }
+    "food_press": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:food_press"] } ] } }
   }
 }

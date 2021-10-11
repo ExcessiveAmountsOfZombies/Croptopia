@@ -10,17 +10,8 @@
       "translate": "advancements.croptopia.pot.description"
     }
   },
-  "parent": "croptopia:getseeds",
+  "parent": "croptopia:mortar_and_pestle",
   "criteria": {
-    "has_pot": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "croptopia:cooking_pot"
-          }
-        ]
-      }
-    }
+    "cooking_pot": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cooking_pot"] } ] } }
   }
 }

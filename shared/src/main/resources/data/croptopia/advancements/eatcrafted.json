@@ -12,7 +12,7 @@
   },
   "parent": "croptopia:getseeds",
   "criteria": {
-    "requirement": {
+    "eat_crafted": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "player": {

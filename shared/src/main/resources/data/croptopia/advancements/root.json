@@ -12,7 +12,7 @@
     "background": "croptopia:textures/block/salt_ore.png"
   },
   "criteria": {
-    "has_hoe": {
+    "root": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

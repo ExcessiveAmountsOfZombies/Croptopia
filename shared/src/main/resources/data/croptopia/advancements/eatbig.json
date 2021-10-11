@@ -9,11 +9,11 @@
     "description": {
       "translate": "advancements.croptopia.eatbig.description"
     },
-    "frame": "task"
+    "frame": "goal"
   },
   "parent": "croptopia:eatcrafted",
   "criteria": {
-    "requirement": {
+    "eat_big": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "player": {
