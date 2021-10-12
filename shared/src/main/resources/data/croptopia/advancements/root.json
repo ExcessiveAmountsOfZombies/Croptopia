@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "croptopia:beer"
+      "item": "croptopia:coffee"
     },
     "title": "Croptopia",
     "description": {
@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "croptopia:hoe"
+            "tag": "croptopia:advancements_hoe"
           }
         ]
       }

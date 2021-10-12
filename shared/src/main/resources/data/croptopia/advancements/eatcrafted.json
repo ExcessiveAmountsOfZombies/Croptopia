@@ -15,9 +15,8 @@
     "eat_crafted": {
       "trigger": "minecraft:consume_item",
       "conditions": {
-        "player": {
-          "type": "minecraft:player",
-          "tag": "croptopia:food_crafted"
+        "item": {
+          "tag": "croptopia:advancements_food_crafted"
         }
       }
     }

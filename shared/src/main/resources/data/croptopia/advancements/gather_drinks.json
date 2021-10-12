@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:beer"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_drinks.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.gather_drinks.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "croptopia:getdrinks",
+  "criteria": {
+    "grape_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:grape_juice"] } } },
+    "orange_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:orange_juice"] } } },
+    "apple_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:apple_juice"] } } },
+    "cranberry_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:cranberry_juice"] } } },
+    "saguaro_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:saguaro_juice"] } } },
+    "tomato_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:tomato_juice"] } } },
+    "melon_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:melon_juice"] } } },
+    "pineapple_juice": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:pineapple_juice"] } } },
+    "wine": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:wine"] } } },
+    "coffee": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:coffee"] } } },
+    "lemonade": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:lemonade"] } } },
+    "limeade": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:limeade"] } } },
+    "soy_milk": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:soy_milk"] } } },
+    "strawberry_smoothie": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:strawberry_smoothie"] } } },
+    "banana_smoothie": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:banana_smoothie"] } } },
+    "kale_smoothie": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:kale_smoothie"] } } },
+    "rum": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:rum"] } } },
+    "pumpkin_spice_latte": { "trigger": "minecraft:consume_item","conditions": { "item": { "items": ["croptopia:pumpkin_spice_latte"] } } },
+    "tea": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:tea"] } } },
+    "fruit_smoothie": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:fruit_smoothie"] } } },
+    "mead": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:mead"] } } },
+    "beer": { "trigger": "minecraft:consume_item","conditions": { "item":  { "items": ["croptopia:beer"] } } }
+  }
+}

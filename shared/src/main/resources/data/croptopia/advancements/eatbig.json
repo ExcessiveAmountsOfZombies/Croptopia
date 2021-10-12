@@ -16,9 +16,8 @@
     "eat_big": {
       "trigger": "minecraft:consume_item",
       "conditions": {
-        "player": {
-          "type": "minecraft:player",
-          "tag": "croptopia:food_big"
+        "item": {
+          "tag": "croptopia:advancements_food_big"
         }
       }
     }
