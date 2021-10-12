@@ -63,7 +63,7 @@ public class CroptopiaCropBlock extends CropBlock {
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return super.canPlantOnTop(floor, world, pos) || floor.isOf(Blocks.GRASS_BLOCK) || floor.isOf(Blocks.SAND) || floor.isOf(Blocks.RED_SAND);
+        return super.canPlantOnTop(floor, world, pos) || floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.SAND);
     }
 
     @Override
