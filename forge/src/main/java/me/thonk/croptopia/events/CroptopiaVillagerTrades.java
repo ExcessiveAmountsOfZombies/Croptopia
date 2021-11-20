@@ -161,10 +161,10 @@ public class CroptopiaVillagerTrades {
     }
 
     private static void buyFromUser(List<VillagerTrades.ItemListing> factory, ItemLike item, int itemCount, int tradeXP, int maxTrades, float priceMultiplier) {
-        factory.add((entity, random) -> new MerchantOffer(new ItemStack(item, itemCount), new ItemStack(Items.EMERALD), maxTrades, tradeXP, priceMultiplier));
+        //factory.add((entity, random) -> new MerchantOffer(new ItemStack(item, itemCount), new ItemStack(Items.EMERALD), maxTrades, tradeXP, priceMultiplier));
     }
 
     private static void sellToUser(List<VillagerTrades.ItemListing> factory, ItemLike item, int itemCount, int purchaseAmount, int maxTrades, int tradeXP, float priceMultiplier) {
-        factory.add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, purchaseAmount), new ItemStack(item, itemCount), maxTrades, tradeXP, priceMultiplier));
+        //factory.add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, purchaseAmount), new ItemStack(item, itemCount), maxTrades, tradeXP, priceMultiplier));
     }
 }

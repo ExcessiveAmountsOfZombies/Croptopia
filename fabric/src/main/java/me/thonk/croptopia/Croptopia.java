@@ -95,7 +95,7 @@ public class Croptopia implements ModInitializer {
             SetupCommand.register(commandDispatcher);
         });
 
-        CroptopiaVillagerTrades.init();
+        //CroptopiaVillagerTrades.init();
 
         modifyVillagerFoodItems();
         modifyVillagerGatherables();
