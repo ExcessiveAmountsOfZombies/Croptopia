@@ -9,6 +9,7 @@ import me.thonk.common.MiscNames;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
+import me.thonk.croptopia.config.CroptopiaConfig;
 import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
@@ -46,6 +47,7 @@ import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
+import org.spongepowered.configurate.serialize.SerializationException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,16 +55,19 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static me.thonk.croptopia.Constants.OPTIONS;
 
 
 public class Croptopia implements ModInitializer {
+
+    private final boolean devEnvironment = Boolean.getBoolean("croptopia.dev");
 
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Item> cropItems = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
+
+    public CroptopiaConfig config;
 
     public static final ItemGroup CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(MiscNames.MOD_ID, "croptopia"))
             .icon(() -> new ItemStack(ItemRegistry.onion))
@@ -84,11 +89,16 @@ public class Croptopia implements ModInitializer {
         ItemRegistry.init();
         Composter.init();
 
-        OPTIONS.addSeedDefaults(seeds, OPTIONS.getOptionsFile());
-        seeds.clear();
-        seeds = OPTIONS.readConfiguredSeeds(OPTIONS.getOptionsFile());
+        this.config = new CroptopiaConfig(devEnvironment, "croptopia.conf");
+        config.addSerializer(ConfigurableSeed.class, ConfigurableSeed.Serializer.INSTANCE);
+        config.loadConfig();
+        try {
+            seeds = config.getRootNode().node("configuredSeeds").getList(ConfigurableSeed.class);
+        } catch (SerializationException e) {
+            e.printStackTrace();
+        }
 
-        BiomeModifiers.init();
+        BiomeModifiers.init(this);
         CropLootTableModifier.init();
 
         CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
@@ -137,7 +147,7 @@ public class Croptopia implements ModInitializer {
         // \bregisterItem\b..[A-Z]\w+",
         //System.out.println( "\"" + itemName + "\",");
         if (item instanceof SeedItem) {
-            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory(), 0.0125f));
+            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory()));
         }
 
         // data generation

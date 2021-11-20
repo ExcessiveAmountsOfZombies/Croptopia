@@ -1,6 +1,8 @@
 package me.thonk.croptopia.loottables;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import me.thonk.croptopia.Croptopia;
@@ -14,12 +16,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.biome.Biome;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 
 public class BiomeLootCondition implements LootCondition {
 
-    private final Biome.Category biomeCategory;
+    private final Collection<Biome.Category> biomeCategory;
 
-    private BiomeLootCondition(Biome.Category category) {
+    private BiomeLootCondition(Collection<Biome.Category> category) {
         this.biomeCategory = category;
     }
 
@@ -31,19 +37,19 @@ public class BiomeLootCondition implements LootCondition {
 
     @Override
     public boolean test(LootContext lootContext) {
-        if (biomeCategory == Biome.Category.NONE) {
+        if (biomeCategory.size() == 0) {
             return true;
         }
         Vec3d vec3d = lootContext.get(LootContextParameters.ORIGIN);
         if (vec3d != null) {
             //BuiltinRegistries.BIOME.get("key");
             Biome biome = lootContext.getWorld().getBiome(new BlockPos(vec3d));
-            return biome.getCategory() == biomeCategory;
+            return biomeCategory.contains(biome.getCategory());
         }
         return false;
     }
 
-    public static BiomeLootCondition.Builder builder(Biome.Category category) {
+    public static BiomeLootCondition.Builder builder(Collection<Biome.Category> category) {
         return new BiomeLootCondition.Builder(category);
     }
 
@@ -56,20 +62,28 @@ public class BiomeLootCondition implements LootCondition {
 
         @Override
         public void toJson(JsonObject json, BiomeLootCondition object, JsonSerializationContext context) {
-            json.addProperty("biome_category", object.biomeCategory.asString());
+            JsonArray array = new JsonArray();
+            for (Biome.Category category : object.biomeCategory) {
+                array.add(category.asString());
+            }
+            json.add("biome_category", array);
         }
 
         @Override
         public BiomeLootCondition fromJson(JsonObject json, JsonDeserializationContext context) {
-            Biome.Category category = Biome.Category.byName(JsonHelper.getString(json, "biome_category"));
-            return new BiomeLootCondition(category);
+            JsonArray array = JsonHelper.getArray(json, "biome_category");
+            Set<Biome.Category> categories = new HashSet<>();
+            for (JsonElement jsonElement : array) {
+                categories.add(Biome.Category.byName(json.getAsString()));
+            }
+            return new BiomeLootCondition(categories);
         }
     }
 
     public static class Builder implements LootCondition.Builder {
-        private final Biome.Category biomeCategory;
+        private final Collection<Biome.Category> biomeCategory;
 
-        public Builder(Biome.Category biome) {
+        public Builder(Collection<Biome.Category> biome) {
             this.biomeCategory = biome;
         }
 

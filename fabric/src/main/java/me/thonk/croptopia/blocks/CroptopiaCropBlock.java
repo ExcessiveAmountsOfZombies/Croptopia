@@ -51,7 +51,7 @@ public class CroptopiaCropBlock extends CropBlock {
         Biome.Category biomeCat = world.getBiome(pos).getCategory();
         if (world.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
-            if (biomeCat.equals(seed.getCategory())) {
+            if (seed.getCategory().contains(biomeCat)) {
                 return super.canPlaceAt(state, world, pos);
             }
         } else if (world.getChunk(pos).getStatus().getIndex() == ChunkStatus.FULL.getIndex()) {

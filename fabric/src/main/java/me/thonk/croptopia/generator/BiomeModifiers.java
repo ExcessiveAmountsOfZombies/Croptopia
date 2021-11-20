@@ -2,6 +2,7 @@ package me.thonk.croptopia.generator;
 
 import me.thonk.common.FeatureNames;
 import me.thonk.croptopia.Constants;
+import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -20,7 +21,7 @@ import java.util.Collection;
 public class BiomeModifiers {
 
 
-    public static void init() {
+    public static void init(Croptopia croptopia) {
 
 
         // generate in ALL biomes
@@ -99,7 +100,7 @@ public class BiomeModifiers {
 
         Collection<RegistryKey<Biome>> exclusion = Arrays.asList(BiomeKeys.SWAMP, BiomeKeys.SWAMP);
 
-        if (!Constants.OPTIONS.disableSaltOre()) {
+        if (croptopia.config.generateSaltInWorld()) {
             BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
                     GenerationStep.Feature.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
         }
