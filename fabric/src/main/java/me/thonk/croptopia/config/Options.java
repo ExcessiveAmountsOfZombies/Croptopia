@@ -30,16 +30,16 @@ public class Options {
 
         optionsFile = new File(configDirectory, "options.json");
 
-        if (!optionsFile.exists()) {
+        /*if (!optionsFile.exists()) { Using a config library now.
             try (Writer writer = new FileWriter(optionsFile)) {
                 GSON.toJson(new JsonObject(), writer);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
-        checkForDefaults(optionsFile);
-        readOptionsFile(optionsFile);
+        //checkForDefaults(optionsFile);
+        //readOptionsFile(optionsFile);
     }
 
     private void checkForDefaults(File file) {
@@ -72,7 +72,7 @@ public class Options {
         }
     }
 
-    public void addSeedDefaults(List<ConfigurableSeed> seeds, File file) {
+    /*public void addSeedDefaults(List<ConfigurableSeed> seeds, File file) {
         try (Reader reader = new FileReader(file)) {
             JsonObject mainObject = GSON.fromJson(reader, JsonObject.class);
 
@@ -91,7 +91,7 @@ public class Options {
             for (ConfigurableSeed configurableSeed : seeds) {
                 if (!seedCategory.has(configurableSeed.getSeed())) {
                     JsonObject seed = new JsonObject();
-                    seed.add("biome-category", new JsonPrimitive(configurableSeed.getBiomeCategory().asString()));
+                    seed.add("biome-category", new JsonPrimitive(configurableSeed.getBiomeCategory().get(0).asString()));
                     seed.add("drop-chance", new JsonPrimitive(configurableSeed.getChanceToDrop()));
                     seedCategory.add(configurableSeed.getSeed(), seed);
                 }
@@ -106,12 +106,11 @@ public class Options {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public List<ConfigurableSeed> readConfiguredSeeds(File file) {
         List<ConfigurableSeed> seeds = new ArrayList<>();
-        try {
-            FileReader reader = new FileReader(file);
+        try(FileReader reader = new FileReader(file)) {
             JsonObject mainObject = GSON.fromJson(reader, JsonObject.class);
             JsonObject seedsCategory = mainObject.getAsJsonObject("seeds");
             for (Map.Entry<String, JsonElement> entry : seedsCategory.entrySet()) {
@@ -126,22 +125,21 @@ public class Options {
                 if (biomeCategory == null) {
                     biomeCategory = Biome.Category.PLAINS;
                 }
-                seeds.add(new ConfigurableSeed(entry.getKey(), item, biomeCategory, chance));
+                seeds.add(new ConfigurableSeed(entry.getKey(), item, List.of(biomeCategory)));
             }
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return seeds;
     }
 
-    private void readOptionsFile(File file) {
-        try {
-            FileReader reader = new FileReader(file);
+    public void readOptionsFile(File file) {
+        try (FileReader reader = new FileReader(file)) {
             JsonObject mainObject = GSON.fromJson(reader, JsonObject.class);
             JsonObject options = mainObject.getAsJsonObject("options");
             useHoeToCollectSeeds = options.getAsJsonPrimitive("use-hoe-to-collect-seeds").getAsBoolean();
             disableSaltOre = options.getAsJsonPrimitive("disable-salt-ore").getAsBoolean();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

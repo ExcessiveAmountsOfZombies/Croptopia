@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.enchantment.Enchantments;
-import net.minecraft.loot.LootManager;
 import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.AlternativeEntry;
@@ -26,7 +25,7 @@ public class CropLootTableModifier {
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, fabricLootSupplierBuilder, lootTableSetter) -> {
-            if (id.getPath().equalsIgnoreCase("blocks/grass") ||
+            /*if (id.getPath().equalsIgnoreCase("blocks/grass") ||
                     id.getPath().equalsIgnoreCase("blocks/tall_grass") ||
                     id.getPath().equalsIgnoreCase("blocks/fern") ||
                     id.getPath().equalsIgnoreCase("blocks/large_fern")) {
@@ -40,13 +39,12 @@ public class CropLootTableModifier {
                 ArrayList<LootPoolEntry.Builder> builders = new ArrayList<>();
                 for (ConfigurableSeed seed : Croptopia.getSeeds()) {
                     builders.add(ItemEntry.builder(seed.getSeedItem())
-                            .conditionally(() -> BiomeLootCondition.builder(seed.getBiomeCategory()).build())
-                            .conditionally(() -> RandomChanceLootCondition.builder(seed.getChanceToDrop()).build()));
+                            .conditionally(() -> BiomeLootCondition.builder(seed.getBiomeCategory()).build()));
                 }
                 builder.with(AlternativeEntry.builder(builders.toArray(builders.toArray(new LootPoolEntry.Builder[0]))));
                 fabricLootSupplierBuilder.withPool(builder.build());
                 //System.out.println(LootManager.toJson(fabricLootSupplierBuilder.build()));
-            }
+            }*/
 
             if (id.getNamespace().equalsIgnoreCase("minecraft") && id.getPath().equalsIgnoreCase("chests/spawn_bonus_chest")) {
                 FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
