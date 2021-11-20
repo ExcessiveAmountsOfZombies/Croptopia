@@ -9,6 +9,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -62,7 +63,7 @@ public class CroptopiaCropBlock extends CropBlock {
     }
 
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isOf(Blocks.GRASS_BLOCK) || floor.isOf(Blocks.FARMLAND) || floor.isOf(Blocks.SAND) || floor.isOf(Blocks.RED_SAND);
+        return (super.canPlantOnTop(floor, world, pos) || floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.SAND)) && !floor.isOf(Blocks.DIRT);
     }
 
     @Override

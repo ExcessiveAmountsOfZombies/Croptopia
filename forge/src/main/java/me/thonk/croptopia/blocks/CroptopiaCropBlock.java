@@ -37,7 +37,7 @@ public class CroptopiaCropBlock extends CropBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState floor, BlockGetter getter, BlockPos pos) {
-        return super.mayPlaceOn(floor, getter, pos) || floor.is(BlockTags.DIRT) || floor.is(BlockTags.SAND);
+        return (super.mayPlaceOn(floor, getter, pos) || floor.is(BlockTags.DIRT) || floor.is(BlockTags.SAND)) && !floor.is(Blocks.DIRT);
     }
 
     @Override // JANK
