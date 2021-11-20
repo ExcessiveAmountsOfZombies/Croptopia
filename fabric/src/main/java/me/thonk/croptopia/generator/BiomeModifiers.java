@@ -22,25 +22,16 @@ public class BiomeModifiers {
 
     public static void init() {
 
-        BiomeModifications.create(new Identifier("croptopia:dahek"))
-                .add(ModificationPhase.ADDITIONS,
-                        context -> {
-                            Biome biome = context.getBiome();
-                            return biome.getCategory() != Biome.Category.OCEAN;
-                        }, context -> {
-                    context.getGenerationSettings().addFeature(GenerationStep.Feature.VEGETAL_DECORATION,
-                            GeneratorRegistry.getFeatureKey("random_crop"));
-                        });
 
         // generate in ALL biomes
-        /*BiomeModifications.addFeature(context -> {
+        BiomeModifications.addFeature(context -> {
             Biome biome = context.getBiome();
             return biome.getCategory() != Biome.Category.OCEAN;
-        }, GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));*/
+        }, GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
 
         Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.FLOWER_FOREST);
 
-        /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("lime_tree_configured"));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("pear_tree_configured"));
@@ -61,11 +52,11 @@ public class BiomeModifiers {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("orange_tree_configured"));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(forestBiomes),
-                GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("nectarine_tree_configured"));*/
+                GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("nectarine_tree_configured"));
 
         Collection<RegistryKey<Biome>> jungleBiomes = Arrays.asList(BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE);
 
-        /*BiomeModifications.addFeature(BiomeSelectors.includeByKey(jungleBiomes),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(jungleBiomes),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("date_tree_configured"));
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(jungleBiomes),
                 GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("dragon_fruit_tree_configured"));
@@ -115,7 +106,7 @@ public class BiomeModifiers {
 
         if (FabricLoader.getInstance().isModLoaded("traverse")) {
             addTraverseSupport();
-        }*/
+        }
 
     }
 
