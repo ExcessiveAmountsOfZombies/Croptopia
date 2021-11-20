@@ -4,10 +4,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.item.MushroomStewItem;
+import net.minecraft.item.StewItem;
 import net.minecraft.world.World;
 
-public class SoupItem extends MushroomStewItem {
+public class SoupItem extends StewItem {
 
 
     public SoupItem(Settings settings) {

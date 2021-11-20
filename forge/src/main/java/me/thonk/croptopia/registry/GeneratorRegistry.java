@@ -429,7 +429,7 @@ public class GeneratorRegistry {
             WALNUT_TREE.decorated(Features.Decorators.HEIGHTMAP_SQUARE.decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(0, 0.25F, 5)))));
 
     public static final ConfiguredFeature<?, ?> CINNAMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CINNAMON_TREE_CONFIGURED),
-            WALNUT_TREE.decorated(Features.Decorators.HEIGHTMAP_SQUARE.decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(0, 0.25F, 5)))));
+            CINNAMON_TREE.decorated(Features.Decorators.HEIGHTMAP_SQUARE.decorated(FeatureDecorator.COUNT_EXTRA.configured(new FrequencyWithExtraChanceDecoratorConfiguration(0, 0.25F, 5)))));
 
     public static final ConfiguredFeature<?, ?> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
             Feature.DISK.configured((new DiskConfiguration(BlockRegistry.salt.defaultBlockState(),

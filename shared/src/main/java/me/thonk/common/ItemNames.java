@@ -163,10 +163,10 @@ public class ItemNames {
     public static final String OAT_SEED = "oat_seed";
     public static final String BARLEY_SEED = "barley_seed";
     public static final String SOYBEAN_SEED = "soybean_seed";
-    public static final String ALMOND_SAPLING = "almond_sapling()";
-    public static final String CASHEW_SAPLING = "cashew_sapling()";
-    public static final String PECAN_SAPLING = "pecan_sapling()";
-    public static final String WALNUT_SAPLING = "walnut_sapling()";
+    public static final String ALMOND_SAPLING = "almond_sapling";
+    public static final String CASHEW_SAPLING = "cashew_sapling";
+    public static final String PECAN_SAPLING = "pecan_sapling";
+    public static final String WALNUT_SAPLING = "walnut_sapling";
     public static final String OLIVE_OIL = "olive_oil";
     public static final String CHEESE = "cheese";
     public static final String FLOUR = "flour";
@@ -364,6 +364,7 @@ public class ItemNames {
     public static final String RATATOUILLE = "ratatouille";
     public static final String RAW_BACON = "bacon";
     public static final String RHUBARB_CRISP = "rhubarb_crisp";
+    public static final String RHUBARB_PIE = "rhubarb_pie";
     public static final String ROASTED_ASPARAGUS = "roasted_asparagus";
     public static final String ROASTED_RADISHES = "roasted_radishes";
     public static final String ROASTED_SQUASH = "roasted_squash";

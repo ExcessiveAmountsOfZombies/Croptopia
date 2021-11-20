@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smoking",
   "ingredient": {
-    "item": "${dependant}:vegetables/sweetpotatos"
+    "tag": "${dependant}:vegetables/sweetpotatos"
   },
   "result": "croptopia:baked_sweet_potato",
   "experience": 0.1,

@@ -57,7 +57,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         int distance = getDistanceFromLog(neighborState) + 1;
         if (distance != 1 || state.get(DISTANCE) != distance) {
-            world.getBlockTickScheduler().schedule(pos, this, 1);
+            world.createAndScheduleBlockTick(pos, this, 1);
         }
 
         return state;

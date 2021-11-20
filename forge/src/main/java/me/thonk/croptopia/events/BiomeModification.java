@@ -54,7 +54,6 @@ public class BiomeModification {
             settings.addFeature(VEGETAL_DECORATION, COCONUT_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, KUMQUAT_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
-            settings.addFeature(VEGETAL_DECORATION, GRAPEFRUIT_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, BANANA_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, FIG_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, CINNAMON_TREE_CONFIGURED);
