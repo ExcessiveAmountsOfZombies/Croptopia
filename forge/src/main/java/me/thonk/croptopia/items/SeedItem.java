@@ -3,6 +3,7 @@ package me.thonk.croptopia.items;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -15,7 +16,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
@@ -37,7 +38,7 @@ public class SeedItem extends ItemNameBlockItem {
         BlockPos hitPos = context.getClickedPos();
         Level world = context.getLevel();
         BlockState state = world.getBlockState(hitPos);
-        if (state.is(Blocks.FARMLAND)) {
+        if (state.getBlock() instanceof FarmBlock && context.getClickedFace() == Direction.UP) {
             return super.useOn(context);
         }
         return InteractionResult.FAIL;
