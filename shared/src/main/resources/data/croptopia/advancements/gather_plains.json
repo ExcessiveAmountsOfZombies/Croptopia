@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:broccoli_seed"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_plains.title"},
+    "description": {
+      "translate": "advancements.croptopia.gather_plains.description"}},
+  "parent": "croptopia:getseeds",
+  "criteria": {
+    "bellpepper_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items":[ { "items": ["croptopia:bellpepper_seed"] } ] } },
+    "broccoli_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items":[ { "items": ["croptopia:broccoli_seed"] } ] } },
+    "cabbage_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cabbage_seed"] } ] } },
+    "corn_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:corn_seed"] } ] } },
+    "cucumber_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:cucumber_seed"]} ] } },
+    "greenbean_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:greenbean_seed"] } ] } },
+    "kale_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:kale_seed"] } ] } },
+    "lettuce_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:lettuce_seed"] } ] } },
+    "sweetpotato_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:sweetpotato_seed"] } ] } },
+    "mustard_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:mustard_seed"] } ] } },
+    "chile_pepper_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:chile_pepper_seed"] } ] } },
+    "oat_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:oat_seed"] } ] } },
+    "barley_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:barley_seed"] } ] } },
+    "soybean_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:soybean_seed"] } ] } },
+    "pepper_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:pepper_seed"] } ] } }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:apple_juice"
+    },
+    "title": {
+      "translate": "advancements.croptopia.getdrinks.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.getdrinks.description"
+    }
+  },
+  "parent": "croptopia:getsapling",
+  "criteria": {
+    "has_drink": { "trigger": "minecraft:consume_item", "conditions": {"item": {"tag": "croptopia:advancements_drinks"} } }
+  }
+}
