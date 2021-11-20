@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:grape_juice",
+    "croptopia:orange_juice",
+    "croptopia:apple_juice",
+    "croptopia:cranberry_juice",
+    "croptopia:saguaro_juice",
+    "croptopia:tomato_juice",
+    "croptopia:melon_juice",
+    "croptopia:pineapple_juice",
+    "croptopia:coffee",
+    "croptopia:lemonade",
+    "croptopia:limeade",
+    "croptopia:soy_milk",
+    "croptopia:strawberry_smoothie",
+    "croptopia:banana_smoothie",
+    "croptopia:kale_smoothie",
+    "croptopia:fruit_smoothie",
+    "croptopia:beer",
+    "croptopia:wine",
+    "croptopia:mead",
+    "croptopia:rum",
+    "croptopia:pumpkin_spice_latte",
+    "croptopia:tea"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:cranberry_seed"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_swamp.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.gather_swamp.description"
+    }
+  },
+  "parent": "croptopia:gather_jungle",
+  "criteria": {
+    "asparagus_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:asparagus_seed"] } ] } },
+    "artichoke_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:artichoke_seed"] } ] } },
+    "cranberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cranberry_seed"] } ] } },
+    "currant_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:currant_seed"] } ] } }
+  }
+}

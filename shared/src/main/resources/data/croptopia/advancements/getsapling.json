@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:mango_sapling"
+    },
+    "title": {
+      "translate": "advancements.croptopia.getsapling.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.getsapling.description"
+    }
+  },
+  "parent": "croptopia:root",
+  "criteria": {
+    "has_sapling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "croptopia:advancements_saplings"
+          }
+        ]
+      }
+    }
+  }
+}
