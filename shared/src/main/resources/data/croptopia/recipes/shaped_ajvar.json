@@ -21,7 +21,7 @@
       "tag": "${dependant}:olive_oils"
     },
     "6": {
-      "item": "${dependant}:salts"
+      "tag": "${dependant}:salts"
     }
   },
   "result": {
