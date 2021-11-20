@@ -16,6 +16,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome.Category;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +39,7 @@ public class SeedItem extends AliasedBlockItem {
         BlockPos hitPos = context.getBlockPos();
         World world = context.getWorld();
         BlockState state = world.getBlockState(hitPos);
-        if (state.isOf(Blocks.FARMLAND)) {
+        if (state.getBlock() instanceof FarmlandBlock && context.getSide() == Direction.UP) {
             return super.useOnBlock(context);
         }
         return ActionResult.FAIL;
