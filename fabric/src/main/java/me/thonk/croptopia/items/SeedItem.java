@@ -55,10 +55,12 @@ public class SeedItem extends AliasedBlockItem {
                 .append(" ").append(category.get(0).asString().toLowerCase(Locale.ROOT)));
     }
 
+    @Deprecated(forRemoval = true)
     public void setCategory(List<Category> category) {
         this.category = category;
     }
 
+    @Deprecated(forRemoval = true)
     public List<Category> getCategory() {
         return category;
     }
