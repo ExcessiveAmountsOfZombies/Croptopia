@@ -1,7 +1,7 @@
 {
   "name": "Treacle Tart",
   "icon": "croptopia:treacle_tart",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

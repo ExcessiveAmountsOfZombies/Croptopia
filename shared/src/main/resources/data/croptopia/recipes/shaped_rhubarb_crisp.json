@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "456",
+    "123",
+    "7 8"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependant}:vegetables/artichokes"
+    },
+    "2": {
+      "item": "croptopia:pepper"
+    },
+    "3": {
+      "tag": "${dependant}:fruits/lemons"
+    },
+    "4": {
+      "item": "minecraft:bread"
+    },
+    "5": {
+      "tag": "${dependant}:cheeses"
+    },
+    "6": {
+      "tag": "${dependant}:olive_oils"
+    },
+    "7": {
+      "tag": "${dependant}:salts"
+    },
+    "8": {
+      "item": "croptopia:frying_pan"
+    }
+  },
+  "result": {
+    "item": "croptopia:stuffed_artichoke",
+    "count": 1
+  }
+}

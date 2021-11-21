@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "234"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependant}:flour"
+    },
+    "2": {
+      "item": "minecraft:nether_wart"
+    },
+    "3": {
+      "item": "minecraft:crimson_fungus"
+    },
+    "4": {
+      "item": "minecraft:warped_fungus"
+    }
+  },
+  "result": {
+    "item": "croptopia:nether_wart_stew",
+    "count": 1
+  }
+}

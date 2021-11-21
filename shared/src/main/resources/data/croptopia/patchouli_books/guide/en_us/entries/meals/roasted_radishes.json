@@ -1,0 +1,12 @@
+{
+  "name": "Roasted Radishes",
+  "icon": "croptopia:roasted_radishes",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_roasted_radishes",
+      "text": "Recipe"
+    }
+  ]
+}

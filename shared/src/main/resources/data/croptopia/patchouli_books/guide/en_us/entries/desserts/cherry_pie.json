@@ -1,7 +1,7 @@
 {
   "name": "Cherry Pie",
   "icon": "croptopia:cherry_pie",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

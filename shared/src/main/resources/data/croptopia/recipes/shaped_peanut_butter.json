@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 2 ",
+    "212",
+    " 2 "
+  ],
+  "key": {
+    "1": {
+      "item": "croptopia:food_press"
+    },
+    "2": {
+      "tag": "${dependant}:crops/peanuts"
+    }
+  },
+  "result": {
+    "item": "croptopia:peanut_butter",
+    "count": 4
+  }
+}

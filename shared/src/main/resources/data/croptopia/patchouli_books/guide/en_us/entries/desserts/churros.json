@@ -1,7 +1,7 @@
 {
   "name": "Churros",
   "icon": "croptopia:churros",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

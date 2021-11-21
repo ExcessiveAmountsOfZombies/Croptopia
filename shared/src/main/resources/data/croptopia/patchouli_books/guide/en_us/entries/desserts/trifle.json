@@ -1,7 +1,7 @@
 {
   "name": "Trifle",
   "icon": "croptopia:trifle",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

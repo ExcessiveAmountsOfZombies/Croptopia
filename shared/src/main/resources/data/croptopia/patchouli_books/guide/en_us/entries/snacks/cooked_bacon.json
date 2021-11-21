@@ -1,0 +1,12 @@
+{
+  "name": "Cooked Bacon",
+  "icon": "croptopia:cooked_bacon",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:smelting_cooked_bacon",
+      "text": "Recipe"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "name": "Candy Corn",
   "icon": "croptopia:candy_corn",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

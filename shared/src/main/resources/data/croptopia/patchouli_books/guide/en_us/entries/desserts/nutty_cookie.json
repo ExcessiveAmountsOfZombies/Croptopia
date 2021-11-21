@@ -1,7 +1,7 @@
 {
   "name": "Nutty Cookie",
   "icon": "croptopia:nutty_cookie",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",
