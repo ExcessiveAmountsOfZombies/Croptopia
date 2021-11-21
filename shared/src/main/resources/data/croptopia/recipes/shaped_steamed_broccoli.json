@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependant}:vegetables/broccoli"
+    },
+    "2": {
+      "tag": "${dependant}:water_bottles"
+    }
+  },
+  "result": {
+    "item": "croptopia:steamed_broccoli",
+    "count": 1
+  }
+}

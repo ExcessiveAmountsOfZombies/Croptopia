@@ -1,0 +1,12 @@
+{
+  "name": "Avocado Toast",
+  "icon": "croptopia:avocado_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_avocado_toast",
+      "text": "Recipe for making avocado toast. (A favorite of Millennials everywhere!)"
+    }
+  ]
+}

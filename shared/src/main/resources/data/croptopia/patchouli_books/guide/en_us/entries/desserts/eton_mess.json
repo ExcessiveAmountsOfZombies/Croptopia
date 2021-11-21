@@ -1,7 +1,7 @@
 {
   "name": "Eton Mess",
   "icon": "croptopia:eton_mess",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

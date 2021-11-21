@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "364",
+    "512",
+    "789"
+  ],
+  "key": {
+    "1": {
+      "item": "croptopia:frying_pan"
+    },
+    "2": {
+      "tag": "${dependant}:vegetables/eggplant"
+    },
+    "3": {
+      "tag": "${dependant}:vegetables/tomatoes"
+    },
+    "4": {
+      "tag": "${dependant}:vegetables/squash"
+    },
+    "5": {
+      "tag": "${dependant}:vegetables/zucchini"
+    },
+    "6": {
+      "tag": "${dependant}:olive_oils"
+    },
+    "7": {
+      "tag": "${dependant}:vegetables/onion"
+    },
+    "8": {
+      "tag": "${dependant}:fruits/bellpeppers"
+    },
+    "9": {
+      "tag": "${dependant}:crops/basil"
+    }
+  },
+  "result": {
+    "item": "croptopia:ratatouille",
+    "count": 2
+  }
+}

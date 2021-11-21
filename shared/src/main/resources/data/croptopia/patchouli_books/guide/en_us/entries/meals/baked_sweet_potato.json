@@ -1,0 +1,12 @@
+{
+  "name": "Baked Sweet Potato",
+  "icon": "croptopia:baked_sweet_potato",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:smelting_baked_sweet_potato",
+      "text": "Recipe"
+    }
+  ]
+}

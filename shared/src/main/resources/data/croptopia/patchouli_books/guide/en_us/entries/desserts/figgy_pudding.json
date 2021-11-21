@@ -1,7 +1,7 @@
 {
   "name": "Figgy Pudding",
   "icon": "croptopia:figgy_pudding",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",

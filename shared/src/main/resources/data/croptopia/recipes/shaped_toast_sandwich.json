@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121"
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:bread"
+    },
+    "2": {
+      "item": "croptopia:buttered_toast"
+    }
+  },
+  "result": {
+    "item": "croptopia:toast_sandwich",
+    "count": 1
+  }
+}

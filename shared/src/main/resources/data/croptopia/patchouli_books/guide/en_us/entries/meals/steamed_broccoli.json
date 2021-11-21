@@ -1,0 +1,12 @@
+{
+  "name": "Steamed Broccoli",
+  "icon": "croptopia:steamed_broccoli",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_steamed_broccoli",
+      "text": "Recipe"
+    }
+  ]
+}

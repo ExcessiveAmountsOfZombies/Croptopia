@@ -1,7 +1,7 @@
 {
   "name": "Almond Brittle",
   "icon": "croptopia:almond_brittle",
-  "category": "croptopia:deserts",
+  "category": "croptopia:desserts",
   "pages": [
     {
       "type": "patchouli:crafting",
