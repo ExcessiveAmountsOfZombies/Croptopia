@@ -71,7 +71,7 @@ public class CroptopiaCropBlock extends CropBlock {
         if (getAge(state) == getMaxAge()) {
             world.setBlockState(pos, this.withAge(0), 2);
             dropStacks(state, world, pos);
-            return ActionResult.CONSUME;
+            return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;
     }

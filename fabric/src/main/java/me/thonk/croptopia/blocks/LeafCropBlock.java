@@ -22,6 +22,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
+import net.minecraft.world.event.GameEvent;
 
 import java.util.Random;
 
@@ -67,8 +68,14 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (getAge(state) == getMaxAge()) {
             world.setBlockState(pos, this.withAge(0), 2);
-            dropStacks(state, world, player.getBlockPos());
-            return ActionResult.CONSUME;
+            world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos);
+            if (world instanceof ServerWorld) {
+                for (ItemStack droppedStack : getDroppedStacks(state, (ServerWorld) world, pos, null)) {
+                    dropStack(world, pos, hit.getSide(), droppedStack);
+                }
+                return ActionResult.CONSUME;
+            }
+            return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;
     }
