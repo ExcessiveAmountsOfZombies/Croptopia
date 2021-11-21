@@ -2,7 +2,6 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.thonk.croptopia.mixin",
-  "plugin": "me.thonk.croptopia.plugin.MixinConfig",
   "compatibilityLevel": "JAVA_16",
   "refmap": "Croptopia-refmap.json",
   "mixins": [
