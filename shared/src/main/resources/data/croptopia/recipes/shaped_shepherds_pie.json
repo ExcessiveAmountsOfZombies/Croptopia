@@ -10,7 +10,7 @@
       "item": "croptopia:frying_pan"
     },
     "1": {
-      "item": "minecraft:beef"
+      "tag": "croptopia:beef_mutton"
     },
     "2": {
       "tag": "${dependant}:salts"
@@ -19,7 +19,7 @@
       "item": "croptopia:pepper"
     },
     "4": {
-      "tag": "${dependant}:flour"
+      "item": "minecraft:potato"
     },
     "5": {
       "tag": "${dependant}:vegetables/tomatoes"
