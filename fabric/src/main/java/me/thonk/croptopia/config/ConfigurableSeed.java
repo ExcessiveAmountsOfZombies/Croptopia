@@ -49,6 +49,7 @@ public class ConfigurableSeed {
 
         private final String KEY_SEED = "seed";
         private final String KEY_BIOME_CATEGORIES = "biomeCategories";
+        private final String KEY_BIOMES = "biomes";
         private final String KEY_DROP_CHANCE = "dropChance";
 
 

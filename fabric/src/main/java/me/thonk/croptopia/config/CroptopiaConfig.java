@@ -1,9 +1,16 @@
 package me.thonk.croptopia.config;
 
+import com.google.common.collect.HashMultimap;
+import me.thonk.common.FeatureNames;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Constants;
 import me.thonk.croptopia.Croptopia;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.configurate.ConfigurateException;
@@ -21,6 +28,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 public class CroptopiaConfig {
 
@@ -46,6 +58,11 @@ public class CroptopiaConfig {
     public <T, V extends TypeSerializer<T>> void addSerializer(Class<T> clazz, V instance) {
         serializers.register(clazz, instance);
     }
+
+    public void addSerializer(TypeSerializerCollection collection) {
+        serializers.registerAll(collection);
+    }
+
 
     public boolean loadConfig() {
         File configDirectory = new File(FabricLoader.getInstance().getConfigDir().toFile(), MiscNames.MOD_ID);
@@ -117,6 +134,7 @@ public class CroptopiaConfig {
                 }
                 LOGGER.info("Deleted old options json file");
             } else {
+                addTreeConfigIfDoesNotExist(node, "treeConfig");
                 if (!node.hasChild("configuredSeeds")) {
                     ConfigurationNode cropsNode = node.node("configuredSeeds");
                     try {
@@ -160,5 +178,115 @@ public class CroptopiaConfig {
 
     public boolean generateSaltInWorld() {
         return getRootNode().node("generateSaltInWorld").getBoolean();
+    }
+
+    private boolean addTreeConfigIfDoesNotExist(ConfigurationNode node, String nodeToAdd) {
+        if (!node.hasChild(nodeToAdd)) {
+            Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST);
+            Collection<RegistryKey<Biome>> jungleBiomes = Arrays.asList(BiomeKeys.JUNGLE, BiomeKeys.JUNGLE_EDGE, BiomeKeys.JUNGLE_HILLS,
+                    BiomeKeys.MODIFIED_JUNGLE, BiomeKeys.MODIFIED_JUNGLE_EDGE);
+            Collection<RegistryKey<Biome>> plainsKeys = Arrays.asList(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS);
+            Collection<RegistryKey<Biome>> darkForestKeys = Arrays.asList(BiomeKeys.DARK_FOREST, BiomeKeys.DARK_FOREST_HILLS);
+
+            HashMultimap<String, RegistryKey<Biome>> biomes = HashMultimap.create();
+
+            TreeConfiguration.createSameTreeConfigs(biomes, forestBiomes,
+                    "lime_tree_configured",
+                    "pear_tree_configured",
+                    "apricot_tree_configured",
+                    "avocado_tree_configured",
+                    "star_fruit_tree_configured",
+                    "lemon_tree_configured",
+                    "cherry_tree_configured",
+                    "plum_tree_configured",
+                    "persimmon_tree_configured",
+                    "orange_tree_configured",
+                    "nectarine_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, jungleBiomes,
+                    "date_tree_configured",
+                    "dragon_fruit_tree_configured",
+                    "mango_tree_configured",
+                    "nutmeg_tree_configured",
+                    "coconut_tree_configured",
+                    "kumquat_tree_configured",
+                    "grapefruit_tree_configured",
+                    "banana_tree_configured",
+                    "fig_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, plainsKeys,
+                    "apple_tree_configured",
+                    "orange_tree_configured",
+                    "peach_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, darkForestKeys,
+                    "almond_tree_configured",
+                    "cashew_tree_configured",
+                    "pecan_tree_configured",
+                    "walnut_tree_configured");
+
+            RegistryKey<Biome> woodlands = RegistryKey.of(Registry.BIOME_KEY, travID("woodlands"));
+            RegistryKey<Biome> wooded_plateau = RegistryKey.of(Registry.BIOME_KEY, travID("wooded_plateau"));
+            RegistryKey<Biome> wooded_island = RegistryKey.of(Registry.BIOME_KEY, travID("wooded_island"));
+            RegistryKey<Biome> autumnal_woods = RegistryKey.of(Registry.BIOME_KEY, travID("autumnal_woods"));
+            RegistryKey<Biome> autumnal_wooded_hills = RegistryKey.of(Registry.BIOME_KEY, travID("autumnal_wooded_hills"));
+            RegistryKey<Biome> lush_swamp = RegistryKey.of(Registry.BIOME_KEY, travID("lush_swamp"));
+            RegistryKey<Biome> mini_jungle = RegistryKey.of(Registry.BIOME_KEY, travID("mini_jungle"));
+
+            Collection<RegistryKey<Biome>> wooded = Arrays.asList(wooded_island, wooded_plateau, woodlands);
+            Collection<RegistryKey<Biome>> autumnal = Arrays.asList(autumnal_woods, autumnal_wooded_hills);
+            Collection<RegistryKey<Biome>> jungle = Arrays.asList(mini_jungle);
+            Collection<RegistryKey<Biome>> lush = Arrays.asList(lush_swamp);
+
+            TreeConfiguration.createSameTreeConfigs(biomes, wooded,
+                    "apple_tree_configured",
+                    "cherry_tree_configured",
+                    "plum_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, autumnal,
+                    "pear_tree_configured",
+                    "persimmon_tree_configured",
+                    "plum_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, jungle,
+                    "date_tree_configured",
+                    "dragon_fruit_tree_configured",
+                    "mango_tree_configured",
+                    "nutmeg_tree_configured",
+                    "coconut_tree_configured",
+                    "kumquat_tree_configured",
+                    "grapefruit_tree_configured",
+                    "banana_tree_configured",
+                    "fig_tree_configured",
+                    FeatureNames.CINNAMON_TREE_CONFIGURED);
+
+            TreeConfiguration.createSameTreeConfigs(biomes, lush,
+                    FeatureNames.CINNAMON_TREE_CONFIGURED);
+
+            List<TreeConfiguration> allTreeConfigs = new ArrayList<>();
+            for (Map.Entry<String, Collection<RegistryKey<Biome>>> entry : biomes.asMap().entrySet()) {
+                allTreeConfigs.add(new TreeConfiguration(entry.getKey(), entry.getValue()));
+            }
+
+            ConfigurationNode node1 = node.node(nodeToAdd);
+            try {
+                node1.setList(TreeConfiguration.class, allTreeConfigs);
+            } catch (SerializationException e) {
+                e.printStackTrace();
+            }
+            try {
+                loader.save(node);
+            } catch (ConfigurateException e) {
+                e.printStackTrace();
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private static Identifier travID(String name) {
+        return new Identifier("traverse", name);
     }
 }
