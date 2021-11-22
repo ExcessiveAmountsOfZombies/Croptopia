@@ -3,7 +3,9 @@ package me.thonk.croptopia.events;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.Config;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.BoneMealItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -35,7 +37,9 @@ public class Harvest {
                         if (age == block.getMaxAge()) {
                             world.setBlock(pos, withAge(blockClicked, property, 0), 2);
                             if (blockClicked.getBlock() instanceof LeafCropBlock) {
-                                Block.dropResources(blockClicked, world, event.getPlayer().getOnPos());
+                                for (ItemStack drop : Block.getDrops(blockClicked, (ServerLevel) world, pos, null)) {
+                                    Block.popResourceFromFace(world, pos, event.getFace(), drop);
+                                }
                             } else {
                                 Block.dropResources(blockClicked, world, event.getPos());
                             }

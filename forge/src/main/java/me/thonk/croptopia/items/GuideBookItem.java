@@ -1,10 +1,23 @@
 package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.CroptopiaForge;
+import net.minecraft.network.chat.BaseComponent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
-//import vazkii.patchouli.api.PatchouliAPI;
+import vazkii.patchouli.api.PatchouliAPI;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class GuideBookItem extends Item {
 
@@ -14,16 +27,21 @@ public class GuideBookItem extends Item {
     }
 
 
-    /*@Override
-    public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity user, Hand hand) {
-        ItemStack stack = user.getHeldItem(hand);
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
+        ItemStack stack = user.getItemInHand(hand);
 
-        if (user instanceof ServerPlayerEntity && CroptopiaForge.patchouli.isLoaded()) {
-            ServerPlayerEntity player = (ServerPlayerEntity) user;
+        if (user instanceof ServerPlayer player && CroptopiaForge.patchouli.isLoaded()) {
             PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
         }
 
-        return new ActionResult<>(ActionResultType.SUCCESS, stack);
-    }*/
+        return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
+    }
 
+    @Override
+    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> tooltip, TooltipFlag p_41424_) {
+        if (!CroptopiaForge.patchouli.isLoaded()) {
+            tooltip.add(Component.nullToEmpty("Patchouli is not installed."));
+        }
+    }
 }
