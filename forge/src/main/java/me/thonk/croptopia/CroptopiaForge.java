@@ -94,9 +94,6 @@ public class CroptopiaForge {
 
     public static Config config;
 
-
-    public static Patchouli patchouli;
-
     public static CreativeModeTab CROPTOPIA_ITEM_GROUP;
 
     public CroptopiaForge() {
@@ -135,7 +132,6 @@ public class CroptopiaForge {
         // some preinit code
         Composter.init();
         BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
-        patchouli = new Patchouli();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

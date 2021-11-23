@@ -1,9 +1,6 @@
 package me.thonk.croptopia.items;
 
-import me.thonk.croptopia.CroptopiaForge;
-import net.minecraft.network.chat.BaseComponent;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -13,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 import vazkii.patchouli.api.PatchouliAPI;
 
@@ -31,7 +29,7 @@ public class GuideBookItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
         ItemStack stack = user.getItemInHand(hand);
 
-        if (user instanceof ServerPlayer player && CroptopiaForge.patchouli.isLoaded()) {
+        if (user instanceof ServerPlayer player && ModList.get().isLoaded("patchouli")) {
             PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
         }
 
@@ -40,7 +38,7 @@ public class GuideBookItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> tooltip, TooltipFlag p_41424_) {
-        if (!CroptopiaForge.patchouli.isLoaded()) {
+        if (!ModList.get().isLoaded("patchouli")) {
             tooltip.add(Component.nullToEmpty("Patchouli is not installed."));
         }
     }
