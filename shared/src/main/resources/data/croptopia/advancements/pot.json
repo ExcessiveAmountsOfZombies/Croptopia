@@ -10,7 +10,7 @@
       "translate": "advancements.croptopia.pot.description"
     }
   },
-  "parent": "croptopia:mortar_and_pestle",
+  "parent": "croptopia:knife",
   "criteria": {
     "cooking_pot": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cooking_pot"] } ] } }
   }
