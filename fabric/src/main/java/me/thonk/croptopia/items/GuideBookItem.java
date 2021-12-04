@@ -13,7 +13,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-//import vazkii.patchouli.api.PatchouliAPI;
+import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class GuideBookItem extends Item {
 
         if (user instanceof ServerPlayerEntity && Croptopia.patchouli.isLoaded()) {
             ServerPlayerEntity player = (ServerPlayerEntity) user;
-            //PatchouliAPI.get().openBookGUI(player, Registry.ITEM.getId(this));
+            PatchouliAPI.get().openBookGUI(player, Registry.ITEM.getId(this));
         }
 
         return new TypedActionResult<>(ActionResult.SUCCESS, stack);

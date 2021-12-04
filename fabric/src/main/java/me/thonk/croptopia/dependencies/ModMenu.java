@@ -1,12 +1,12 @@
 package me.thonk.croptopia.dependencies;
 
-//import com.terraformersmc.modmenu.api.ModMenuApi;
+import com.terraformersmc.modmenu.api.ModMenuApi;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 
 @Environment(EnvType.CLIENT)
-public class ModMenu extends Dependency /*implements ModMenuApi*/ {
+public class ModMenu extends Dependency implements ModMenuApi {
 
     public ModMenu() {
         super("modmenu");
