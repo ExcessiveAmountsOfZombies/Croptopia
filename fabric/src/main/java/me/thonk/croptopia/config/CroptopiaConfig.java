@@ -211,7 +211,8 @@ public class CroptopiaConfig {
                     "kumquat_tree_configured",
                     "grapefruit_tree_configured",
                     "banana_tree_configured",
-                    "fig_tree_configured");
+                    "fig_tree_configured",
+                    FeatureNames.CINNAMON_TREE_CONFIGURED);
 
             TreeConfiguration.createSameTreeConfigs(biomes, plainsKeys,
                     "apple_tree_configured",

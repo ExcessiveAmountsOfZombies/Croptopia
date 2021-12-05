@@ -409,7 +409,7 @@ public class GeneratorRegistry {
                     ImmutableList.of(Blocks.DIRT.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState())))));
 
     public static final PlacedFeature DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
-            DISK_SALT.withPlacement(SquarePlacementModifier.of()));
+            DISK_SALT.withPlacement(PlacedFeatures.OCEAN_FLOOR_WG_HEIGHTMAP, BiomePlacementModifier.of(), SquarePlacementModifier.of()));
 
 
     private static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(Identifier id, ConfiguredFeature<FC, ?> configuredFeature) {
