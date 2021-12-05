@@ -26,8 +26,7 @@ public class BiomeModification {
             if (event.getName() != null) {
                 // TODO: find a better way to do this, surely there is a cleaner way.
                 // this also isn't very compatible with modded biomes that might add their own dark oak forest esque biomes.
-                if (event.getName().compareTo(Biomes.DARK_FOREST.location()) == 0 ||
-                    event.getName().compareTo(Biomes.DARK_FOREST_HILLS.location()) == 0) {
+                if (event.getName().compareTo(Biomes.DARK_FOREST.location()) == 0) {
                     settings.addFeature(VEGETAL_DECORATION, ALMOND_TREE_CONFIGURED);
                     settings.addFeature(VEGETAL_DECORATION, CASHEW_TREE_CONFIGURED);
                     settings.addFeature(VEGETAL_DECORATION, PECAN_TREE_CONFIGURED);

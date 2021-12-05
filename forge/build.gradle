@@ -38,7 +38,7 @@ configurations {
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'official', version: '1.17.1'
+    mappings channel: 'official', version: '1.18'
     runs {
         client {
             workingDirectory project.file('run')
@@ -98,10 +98,10 @@ tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.9'
+    minecraft 'net.minecraftforge:forge:1.18-38.0.15'
     implementation project(":shared")
     shade project(":shared")
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.17.1-57-SNAPSHOT")
+    //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.17.1-57-SNAPSHOT")
     //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 

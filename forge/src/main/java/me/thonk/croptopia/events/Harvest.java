@@ -28,9 +28,6 @@ public class Harvest {
                     BlockPos pos = event.getPos();
                     BlockState blockClicked = event.getWorld().getBlockState(pos);
                     if (blockClicked.getBlock() instanceof CropBlock) {
-                        if (!event.getPlayer().getMainHandItem().isEmpty()) {
-                            event.setCanceled(true);
-                        }
                         CropBlock block = (CropBlock) blockClicked.getBlock();
                         IntegerProperty property = block.getAgeProperty();
                         int age = blockClicked.getValue(block.getAgeProperty());
