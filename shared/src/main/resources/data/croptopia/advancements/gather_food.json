@@ -122,6 +122,41 @@
     "figgy_pudding": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:figgy_pudding"] } ] } },
     "treacle_tart": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:treacle_tart"] } ] } },
     "sticky_toffee_pudding": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:sticky_toffee_pudding"] } ] } },
-    "trifle": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:trifle"] } ] } }
+    "trifle": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:trifle"] } ] } },
+
+    "ajvar": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:ajvar"] } ] } },
+    "ajvar_toast": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:ajvar_toast"] } ] } },
+    "avocado_toast": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:avocado_toast"] } ] } },
+    "bacon": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:bacon"] } ] } },
+    "baked_sweet_potato": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:baked_sweet_potato"] } ] } },
+    "baked_yam": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:baked_yam"] } ] } },
+    "beef_stew": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:beef_stew"] } ] } },
+    "beef_stir_fry": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:beef_stir_fry"] } ] } },
+    "buttered_green_beans": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:buttered_green_beans"] } ] } },
+    "cheesy_asparagus": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cheesy_asparagus"] } ] } },
+    "chocolate_ice_cream": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:chocolate_ice_cream"] } ] } },
+    "cooked_bacon": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cooked_bacon"] } ] } },
+    "eggplant_parmesan": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:eggplant_parmesan"] } ] } },
+    "fruit_cake": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:fruit_cake"] } ] } },
+    "grilled_eggplant": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:grilled_eggplant"] } ] } },
+    "kiwi_sorbet": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:kiwi_sorbet"] } ] } },
+    "lemon_coconut_bar": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:lemon_coconut_bar"] } ] } },
+    "nether_wart_stew": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:nether_wart_stew"] } ] } },
+    "peanut_butter": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:peanut_butter"] } ] } },
+    "peanut_butter_with_celery": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:peanut_butter_with_celery"] } ] } },
+    "potato_soup": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:potato_soup"] } ] } },
+    "ratatouille": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:ratatouille"] } ] } },
+    "rhubarb_crisp": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:rhubarb_crisp"] } ] } },
+    "roasted_asparagus": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:roasted_asparagus"] } ] } },
+    "roasted_radishes": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:roasted_radishes"] } ] } },
+    "roasted_squash": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:roasted_squash"] } ] } },
+    "roasteroasted_turnipsd_squash": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:roasted_turnips"] } ] } },
+    "steamed_broccoli": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:steamed_broccoli"] } ] } },
+    "steamed_green_beans": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:steamed_green_beans"] } ] } },
+    "stir_fry": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:stir_fry"] } ] } },
+    "stuffed_artichoke": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:stuffed_artichoke"] } ] } },
+    "toast_sandwich": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:toast_sandwich"] } ] } }
+
+
   }
 }
