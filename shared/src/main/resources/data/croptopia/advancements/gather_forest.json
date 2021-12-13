@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:celery_seed"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_forest.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.gather_forest.description"
+    }
+  },
+  "parent": "croptopia:gather_desert",
+  "criteria": {
+    "blackbean_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:blackbean_seed"] } ] } },
+    "blackberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:blackberry_seed"] } ] } },
+    "blueberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:blueberry_seed"] } ] } },
+    "cantaloupe_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cantaloupe_seed"] } ] } },
+    "cauliflower_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cauliflower_seed"] } ] } },
+    "celery_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:celery_seed"] } ] } },
+    "elderberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:elderberry_seed"] } ] } },
+    "grape_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:grape_seed"] } ] } },
+    "raspberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:raspberry_seed"] } ] } },
+    "spinach_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:spinach_seed"] } ] } },
+    "strawberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:strawberry_seed"] } ] } },
+    "tomatillo_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:tomatillo_seed"] } ] } },
+    "tomato_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:tomato_seed"] } ] } },
+    "tea_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:tea_seed"] } ] } }
+  }
+}

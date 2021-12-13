@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:lemon_chicken"
+    },
+    "title": {
+      "translate": "advancements.croptopia.eatbig.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.eatbig.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "croptopia:eatcrafted",
+  "criteria": {
+    "eat_big": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "tag": "croptopia:advancements_food_big"
+        }
+      }
+    }
+  }
+}
