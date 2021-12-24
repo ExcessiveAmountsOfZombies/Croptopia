@@ -1,6 +1,5 @@
 pluginManagement {
     repositories {
-        jcenter()
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
@@ -12,6 +11,6 @@ pluginManagement {
 rootProject.name = 'croptopia'
 
 include 'common'
-include 'fabric'
+//include 'fabric'
 include 'forge'
 

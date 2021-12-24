@@ -1,20 +1,27 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
-        jcenter()
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url = "https://plugins.gradle.org/m2/" }
+        maven { url = 'https://maven.parchmentmc.org' }
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1+', changing: true
-        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
+        classpath 'gradle.plugin.com.github.johnrengelman:shadow:7.0.0'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+        classpath 'org.parchmentmc:librarian:1.+'
     }
+}
+
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.1.1"
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 repositories {
     maven {
@@ -24,6 +31,8 @@ repositories {
 
 archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
 buildDir = rootProject.buildDir
+
+sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
 configurations {
     shade
@@ -38,7 +47,7 @@ mixin {
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'snapshot', version: '20201028-1.16.3'
+    mappings channel: 'parchment', version: '2021.10.17-1.16.5'
     runs {
         client {
             workingDirectory project.file('run')
@@ -88,7 +97,7 @@ tasks.processResources.dependsOn(project(":common").tasks.processResources)
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.13'
+    minecraft 'net.minecraftforge:forge:1.16.5-36.1.0'
     implementation project(":common")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
