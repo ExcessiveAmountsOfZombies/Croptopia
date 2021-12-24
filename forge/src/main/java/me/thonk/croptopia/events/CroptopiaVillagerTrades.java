@@ -71,7 +71,7 @@ public class CroptopiaVillagerTrades {
             buyFromUser(crops, ItemRegistry.turnip, 26, 2, 16, 0.1f);
             buyFromUser(crops, ItemRegistry.yam, 26, 2, 16, 0.1f);
             buyFromUser(crops, ItemRegistry.zucchini, 26, 2, 16, 0.1f);
-            event.getTrades().put(1, crops);
+            //event.getTrades().put(1, crops);
             
             sellToUser(saplings, ItemRegistry.appleSapling, 1, 4, 12, 15, 0.1f);
             sellToUser(saplings, ItemRegistry.bananaSapling, 1, 4, 12, 15, 0.1f);
@@ -100,7 +100,7 @@ public class CroptopiaVillagerTrades {
             sellToUser(saplings, ItemRegistry.pecanSapling, 1, 4, 12, 15, 0.1f);
             sellToUser(saplings, ItemRegistry.walnutSapling, 1, 4, 12, 15, 0.1f);
             sellToUser(saplings, ItemRegistry.cinnamonSapling, 1, 4, 12, 15, 0.1f);
-            event.getTrades().put(4, crops);
+            //event.getTrades().put(4, crops);
             
         }
     }
@@ -157,7 +157,7 @@ public class CroptopiaVillagerTrades {
         sellToUser(seeds, ItemRegistry.mustardSeed, 4, 2, 16, 1, 0.5f);
         sellToUser(seeds, ItemRegistry.chilePepperSeed, 4, 2, 16, 1, 0.5f);
         sellToUser(seeds, ItemRegistry.turmericSeed, 4, 2, 16, 1, 0.5f);
-        event.getGenericTrades().addAll(seeds);
+        //event.getGenericTrades().addAll(seeds);
     }
 
     private static void buyFromUser(List<VillagerTrades.ItemListing> factory, ItemLike item, int itemCount, int tradeXP, int maxTrades, float priceMultiplier) {
