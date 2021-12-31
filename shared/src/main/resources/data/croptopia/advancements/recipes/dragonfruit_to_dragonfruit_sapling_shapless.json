@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:dragonfruit_to_dragonfruit_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_dragonfruit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/dragonfruits"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:dragonfruit_to_dragonfruit_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dragonfruit",
+      "has_the_recipe"
+    ]
+  ]
+}

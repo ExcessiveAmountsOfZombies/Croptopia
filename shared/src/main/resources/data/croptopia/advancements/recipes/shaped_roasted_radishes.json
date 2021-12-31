@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_roasted_radish"
+    ]
+  },
+  "criteria": {
+    "has_radish": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}vegetables/radishes"
+          }
+        ]
+      }
+    },
+    "has_olive_oil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}olive_oils"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_roasted_radish"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_radish",
+      "has_olive_oil",
+      "has_the_recipe"
+    ]
+  ]
+}

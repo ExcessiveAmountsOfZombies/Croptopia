@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_roasted_asparagus"
+    ]
+  },
+  "criteria": {
+    "has_asparagus": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}vegetables/asparagus"
+          }
+        ]
+      }
+    },
+    "has_olive_oil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}olive_oils"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_roasted_asparagus"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_asparagus",
+      "has_olive_oil",
+      "has_the_recipe"
+    ]
+  ]
+}

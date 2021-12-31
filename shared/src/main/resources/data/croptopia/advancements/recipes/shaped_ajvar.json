@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_ajvar"
+    ]
+  },
+  "criteria": {
+    "has_bellpepper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/bellpeppers"
+          }
+        ]
+      }
+    },
+    "has_eggplant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/eggplant"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_ajvar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bellpepper",
+      "has_eggplant",
+      "has_the_recipe"
+    ]
+  ]
+}

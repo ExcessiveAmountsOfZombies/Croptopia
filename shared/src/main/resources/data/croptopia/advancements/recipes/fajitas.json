@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:fajitas"
+    ]
+  },
+  "criteria": {
+    "has_bellpepper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/bellpeppers"
+          }
+        ]
+      }
+    },
+    "has_frying_pan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:frying_pan"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:fajitas"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bellpepper",
+      "has_frying_pan",
+      "has_the_recipe"
+    ]
+  ]
+}

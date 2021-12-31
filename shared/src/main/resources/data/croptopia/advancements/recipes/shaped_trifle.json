@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_trifle"
+    ]
+  },
+  "criteria": {
+    "has_strawberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/strawberries"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_trifle"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_strawberry",
+      "has_the_recipe"
+    ]
+  ]
+}

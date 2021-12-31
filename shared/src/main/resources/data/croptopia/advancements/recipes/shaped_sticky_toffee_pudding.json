@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_sticky_toffee_pudding"
+    ]
+  },
+  "criteria": {
+    "has_vanilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}crops/vanilla"
+          }
+        ]
+      }
+    },
+    "has_date": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}fruits/dates"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_sticky_toffee_pudding"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_vanilla",
+      "has_date",
+      "has_the_recipe"
+    ]
+  ]
+}

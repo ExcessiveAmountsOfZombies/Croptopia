@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:kale_to_kale_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_kale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/kales"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:kale_to_kale_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_kale",
+      "has_the_recipe"
+    ]
+  ]
+}

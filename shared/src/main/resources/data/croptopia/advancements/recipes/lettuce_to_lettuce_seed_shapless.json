@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:lettuce_to_lettuce_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_lettuce": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/lettuces"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:lettuce_to_lettuce_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lettuce",
+      "has_the_recipe"
+    ]
+  ]
+}

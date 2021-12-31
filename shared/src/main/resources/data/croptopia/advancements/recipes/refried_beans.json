@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:refried_beans"
+    ]
+  },
+  "criteria": {
+    "has_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:crops/blackbeans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:refried_beans"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beans",
+      "has_the_recipe"
+    ]
+  ]
+}

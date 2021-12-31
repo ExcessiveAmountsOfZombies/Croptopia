@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:barley_to_barley_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_barley": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:grains/barley"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:barley_to_barley_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_barley",
+      "has_the_recipe"
+    ]
+  ]
+}

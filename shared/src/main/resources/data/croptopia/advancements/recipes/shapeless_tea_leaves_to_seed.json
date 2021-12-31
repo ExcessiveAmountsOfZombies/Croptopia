@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shapeless_tea_leaves_to_seed"
+    ]
+  },
+  "criteria": {
+    "has_tea_seed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:tea_leaves"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shapeless_tea_leaves_to_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tea_seed",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:greenonion_to_greenonion_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_greenonion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/greenonions"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:greenonion_to_greenonion_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_greenonion",
+      "has_the_recipe"
+    ]
+  ]
+}

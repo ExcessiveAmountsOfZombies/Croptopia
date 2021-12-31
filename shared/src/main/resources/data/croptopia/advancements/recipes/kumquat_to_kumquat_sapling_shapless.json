@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:kumquat_to_kumquat_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_kumquat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/kumquats"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:kumquat_to_kumquat_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_kumquat",
+      "has_the_recipe"
+    ]
+  ]
+}

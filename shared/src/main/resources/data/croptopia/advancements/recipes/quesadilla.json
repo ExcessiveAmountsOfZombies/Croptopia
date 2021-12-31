@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:quesadilla"
+    ]
+  },
+  "criteria": {
+    "has_tortilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:tortillas"
+          }
+        ]
+      }
+    },
+    "has_avocado": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/avocados"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:quesadilla"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tortilla",
+      "has_avocado",
+      "has_the_recipe"
+    ]
+  ]
+}

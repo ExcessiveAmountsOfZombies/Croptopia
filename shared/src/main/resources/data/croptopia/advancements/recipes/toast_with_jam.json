@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:toast_with_jam"
+    ]
+  },
+  "criteria": {
+    "has_toast": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:toasts"
+          }
+        ]
+      }
+    },
+    "has_jam": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:jam"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:toast_with_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_toast",
+      "has_jam",
+      "has_the_recipe"
+    ]
+  ]
+}

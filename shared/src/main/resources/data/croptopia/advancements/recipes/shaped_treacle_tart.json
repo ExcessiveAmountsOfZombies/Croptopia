@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_treacle_tart"
+    ]
+  },
+  "criteria": {
+    "has_whipped_cream": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:whipped_cream"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_treacle_tart"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_whipped_cream",
+      "has_the_recipe"
+    ]
+  ]
+}

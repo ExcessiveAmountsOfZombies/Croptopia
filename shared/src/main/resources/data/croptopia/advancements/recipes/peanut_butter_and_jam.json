@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:peanut_butter_and_jam"
+    ]
+  },
+  "criteria": {
+    "has_peanut_butter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:peanut_butter"]
+          }
+        ]
+      }
+    },
+    "has_jam": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:jams"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:peanut_butter_and_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_peanut_butter",
+      "has_jam",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:leek_to_leek_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_leek": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/leeks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:leek_to_leek_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_leek",
+      "has_the_recipe"
+    ]
+  ]
+}

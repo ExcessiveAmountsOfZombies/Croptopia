@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:greenbean_to_greenbean_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_greenbean": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:crops/greenbeans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:greenbean_to_greenbean_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_greenbean",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:orange_juice"
+    ]
+  },
+  "criteria": {
+    "has_orange": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/oranges"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:orange_juice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_orange",
+      "has_the_recipe"
+    ]
+  ]
+}

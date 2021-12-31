@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:banana_nut_bread"
+    ]
+  },
+  "criteria": {
+    "has_banana": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/bananas"
+          }
+        ]
+      }
+    },
+    "has_cinnamon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:cinnamon"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:banana_nut_bread"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_banana",
+      "has_cinnamon",
+      "has_the_recipe"
+    ]
+  ]
+}

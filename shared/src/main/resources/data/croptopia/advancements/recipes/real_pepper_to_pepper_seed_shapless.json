@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:real_pepper_to_pepper_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_pepper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:pepper"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:real_pepper_to_pepper_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pepper",
+      "has_the_recipe"
+    ]
+  ]
+}
