@@ -46,7 +46,7 @@
   "requirements": [
     [
       "has_frying_pan",
-      "has_cheese",
+      "has_egg",
       "has_cheese",
       "has_the_recipe"
     ]

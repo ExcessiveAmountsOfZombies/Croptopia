@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}vegetables/eggplant"
+            "tag": "${dependant}:vegetables/eggplant"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}olive_oils"
+            "tag": "${dependant}:olive_oils"
           }
         ]
       }

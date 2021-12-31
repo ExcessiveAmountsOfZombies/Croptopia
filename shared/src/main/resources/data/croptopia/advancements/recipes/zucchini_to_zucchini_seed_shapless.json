@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "croptopia:zuccini_to_zuccini_seed_shapeless"
+      "croptopia:zucchini_to_zucchini_seed_shapeless"
     ]
   },
   "criteria": {
-    "has_zuccini": {
+    "has_zucchini": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/zuccinis"
+            "tag": "${dependant}:vegetables/zucchini"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "croptopia:zuccini_to_zuccini_seed_shapeless"
+        "recipe": "croptopia:zucchini_to_zucchini_seed_shapeless"
       }
     }
   },
   "requirements": [
     [
-      "has_zuccini",
+      "has_zucchini",
       "has_the_recipe"
     ]
   ]

@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/celerys"
+            "tag": "${dependant}:vegetables/celery"
           }
         ]
       }

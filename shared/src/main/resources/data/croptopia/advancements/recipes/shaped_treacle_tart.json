@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_whipped_cream": {
+    "has_whipping_cream": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["croptopia:whipped_cream"]
+            "items": ["croptopia:whipping_cream"]
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_whipped_cream",
+      "has_whipping_cream",
       "has_the_recipe"
     ]
   ]

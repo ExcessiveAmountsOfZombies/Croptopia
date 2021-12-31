@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:jams"
+            "tag": "${dependant}:jam"
           }
         ]
       }

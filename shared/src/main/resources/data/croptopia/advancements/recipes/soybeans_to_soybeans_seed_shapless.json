@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "croptopia:rhubarb_to_rhubarb_seed_shapeless"
+      "croptopia:soybeans_to_soybeans_seed_shapeless"
     ]
   },
   "criteria": {
-    "has_rhubarb": {
+    "has_soybeans": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/rhubarbs"
+            "tag": "${dependant}:vegetables/soybeans"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "croptopia:rhubarb_to_rhubarb_seed_shapeless"
+        "recipe": "croptopia:soybeans_to_soybeans_seed_shapeless"
       }
     }
   },
   "requirements": [
     [
-      "has_rhubarb",
+      "has_soybeans",
       "has_the_recipe"
     ]
   ]
