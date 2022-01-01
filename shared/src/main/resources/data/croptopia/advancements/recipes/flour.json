@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:flour"
+    ]
+  },
+  "criteria": {
+    "has_grain": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "croptopia:flourable"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:flour"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_grain",
+      "has_the_recipe"
+    ]
+  ]
+}

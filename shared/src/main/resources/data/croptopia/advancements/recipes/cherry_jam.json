@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cherry_jam"
+    ]
+  },
+  "criteria": {
+    "has_cherry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/cherries"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cherry_jam"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cherry",
+      "has_the_recipe"
+    ]
+  ]
+}

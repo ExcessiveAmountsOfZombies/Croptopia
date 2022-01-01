@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_steamed_green_beans"
+    ]
+  },
+  "criteria": {
+    "has_green_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/greenbeans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_steamed_green_beans"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_green_beans",
+      "has_the_recipe"
+    ]
+  ]
+}

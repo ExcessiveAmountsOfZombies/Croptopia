@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cantaloupe_to_cantaloupe_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_cantaloupe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/cantaloupes"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cantaloupe_to_cantaloupe_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cantaloupe",
+      "has_the_recipe"
+    ]
+  ]
+}

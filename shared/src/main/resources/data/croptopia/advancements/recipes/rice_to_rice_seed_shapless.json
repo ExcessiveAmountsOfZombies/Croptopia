@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:rice_to_rice_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_rice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:grains/rice"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:rice_to_rice_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rice",
+      "has_the_recipe"
+    ]
+  ]
+}

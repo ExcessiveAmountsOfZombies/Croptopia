@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_rhubarb_crisp"
+    ]
+  },
+  "criteria": {
+    "has_artichokes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/artichokes"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_rhubarb_crisp"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_artichokes",
+      "has_the_recipe"
+    ]
+  ]
+}

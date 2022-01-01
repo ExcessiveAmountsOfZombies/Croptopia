@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:lemon_chicken"
+    ]
+  },
+  "criteria": {
+    "has_lemon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/lemons"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:lemon_chicken"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lemon",
+      "has_the_recipe"
+    ]
+  ]
+}

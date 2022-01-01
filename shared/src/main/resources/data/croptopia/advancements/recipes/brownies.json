@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:brownies"
+    ]
+  },
+  "criteria": {
+    "has_chocolate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:chocolates"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:brownies"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chocolate",
+      "has_the_recipe"
+    ]
+  ]
+}

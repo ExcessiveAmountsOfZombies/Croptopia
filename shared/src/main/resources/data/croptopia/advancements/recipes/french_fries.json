@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:french_fries"
+    ]
+  },
+  "criteria": {
+    "has_potato": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:potato"]
+          }
+        ]
+      }
+    },
+    "has_cooking_pot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:cooking_pot"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:french_fries"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_potato",
+      "has_cooking_pot",
+      "has_the_recipe"
+    ]
+  ]
+}

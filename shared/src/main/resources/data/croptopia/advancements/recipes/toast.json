@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:toast"
+    ]
+  },
+  "criteria": {
+    "has_bread": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:bread"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:toast"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bread",
+      "has_the_recipe"
+    ]
+  ]
+}

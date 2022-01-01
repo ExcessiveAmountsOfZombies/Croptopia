@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:saguaro_juice"
+    ]
+  },
+  "criteria": {
+    "has_saguaro": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:saguaros"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:saguaro_juice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_saguaro",
+      "has_the_recipe"
+    ]
+  ]
+}

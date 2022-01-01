@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:fried_chicken"
+    ]
+  },
+  "criteria": {
+    "has_chicken": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "croptopia:chicken_replacements"
+          }
+        ]
+      }
+    },
+    "has_frying_pan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:frying_pan"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:fried_chicken"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chicken",
+      "has_frying_pan",
+      "has_the_recipe"
+    ]
+  ]
+}

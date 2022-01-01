@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:olive_oil"
+    ]
+  },
+  "criteria": {
+    "has_food_press": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:food_press"]
+          }
+        ]
+      }
+    },
+    "has_olives": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/olives"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:olive_oil"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_food_press",
+      "has_olives",
+      "has_the_recipe"
+    ]
+  ]
+}

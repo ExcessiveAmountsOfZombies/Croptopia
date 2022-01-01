@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cauliflower_to_cauliflower_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_cauliflower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/cauliflower"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cauliflower_to_cauliflower_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cauliflower",
+      "has_the_recipe"
+    ]
+  ]
+}

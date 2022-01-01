@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_potato_soup"
+    ]
+  },
+  "criteria": {
+    "has_greenonion": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/greenonions"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_potato_soup"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_greenonion",
+      "has_the_recipe"
+    ]
+  ]
+}

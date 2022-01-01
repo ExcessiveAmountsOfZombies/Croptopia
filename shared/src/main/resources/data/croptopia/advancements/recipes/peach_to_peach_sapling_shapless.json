@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:peach_to_peach_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_peach": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/peaches"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:peach_to_peach_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_peach",
+      "has_the_recipe"
+    ]
+  ]
+}

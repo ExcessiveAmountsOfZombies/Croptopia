@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:campfire_molasses"
+    ]
+  },
+  "criteria": {
+    "has_sugar_cane": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:sugar_cane"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:campfire_molasses"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sugar_cane",
+      "has_the_recipe"
+    ]
+  ]
+}

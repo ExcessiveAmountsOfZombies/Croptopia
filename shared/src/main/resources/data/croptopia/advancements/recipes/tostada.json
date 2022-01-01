@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:tostada"
+    ]
+  },
+  "criteria": {
+    "has_tortilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:tortillas"
+          }
+        ]
+      }
+    },
+    "has_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:crops/blackbeans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:tostada"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tortilla",
+      "has_beans",
+      "has_the_recipe"
+    ]
+  ]
+}

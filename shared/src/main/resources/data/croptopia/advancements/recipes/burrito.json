@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:burrito"
+    ]
+  },
+  "criteria": {
+    "has_tortilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:tortillas"
+          }
+        ]
+      }
+    },
+    "has_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:crops/blackbeans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:burrito"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tortilla",
+      "has_beans",
+      "has_the_recipe"
+    ]
+  ]
+}

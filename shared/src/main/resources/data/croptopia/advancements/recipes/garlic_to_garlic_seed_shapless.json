@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:garlic_to_garlic_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_garlic": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/garlic"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:garlic_to_garlic_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_garlic",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:scrambled_eggs"
+    ]
+  },
+  "criteria": {
+    "has_frying_pan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:frying_pan"]
+          }
+        ]
+      }
+    },
+    "has_egg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:egg"]
+          }
+        ]
+      }
+    },
+    "has_cheese": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:cheeses"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:scrambled_eggs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_frying_pan",
+      "has_egg",
+      "has_cheese",
+      "has_the_recipe"
+    ]
+  ]
+}

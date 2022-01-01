@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:surpreme_pizza"
+    ]
+  },
+  "criteria": {
+    "has_olive": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/olives"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:surpreme_pizza"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_olive",
+      "has_the_recipe"
+    ]
+  ]
+}

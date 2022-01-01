@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:roasted_nuts"
+    ]
+  },
+  "criteria": {
+    "has_nut": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:nuts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:roasted_nuts"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nut",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:apple_to_apple_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:apple"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:apple_to_apple_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_apple",
+      "has_the_recipe"
+    ]
+  ]
+}
