@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:spinach_to_spinach_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_spinach": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/spinach"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:spinach_to_spinach_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_spinach",
+      "has_the_recipe"
+    ]
+  ]
+}

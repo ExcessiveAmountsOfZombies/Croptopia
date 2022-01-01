@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:coconut_to_coconut_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_coconut": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/coconuts"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:coconut_to_coconut_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_coconut",
+      "has_the_recipe"
+    ]
+  ]
+}

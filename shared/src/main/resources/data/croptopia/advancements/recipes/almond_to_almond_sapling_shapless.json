@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:almond_to_almond_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_almond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:nuts/almonds"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:almond_to_almond_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_almond",
+      "has_the_recipe"
+    ]
+  ]
+}

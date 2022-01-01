@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:carnitas"
+    ]
+  },
+  "criteria": {
+    "has_tortilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:tortillas"
+          }
+        ]
+      }
+    },
+    "has_porkchop": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:porkchop"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:carnitas"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tortilla",
+      "has_porkchop",
+      "has_the_recipe"
+    ]
+  ]
+}

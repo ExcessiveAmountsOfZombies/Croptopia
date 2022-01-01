@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:date_to_date_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_date": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/dates"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:date_to_date_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_date",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:chocolate_milkshake"
+    ]
+  },
+  "criteria": {
+    "has_vanilla_ice_cream": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:vanilla_ice_cream"]
+          }
+        ]
+      }
+    },
+    "has_chocolate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:chocolates"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:chocolate_milkshake"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_vanilla_ice_cream",
+      "has_chocolate",
+      "has_the_recipe"
+    ]
+  ]
+}

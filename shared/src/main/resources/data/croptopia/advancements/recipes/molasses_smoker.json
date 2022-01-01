@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:molasses_smoker"
+    ]
+  },
+  "criteria": {
+    "has_sugar_cane": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:sugar_cane"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:molasses_smoker"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sugar_cane",
+      "has_the_recipe"
+    ]
+  ]
+}

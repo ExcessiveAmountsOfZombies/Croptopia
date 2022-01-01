@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:apple_pie"
+    ]
+  },
+  "criteria": {
+    "has_apple": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:apple"]
+          }
+        ]
+      }
+    },
+    "has_dough": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:doughs"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:apple_pie"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_apple",
+      "has_dough",
+      "has_the_recipe"
+    ]
+  ]
+}

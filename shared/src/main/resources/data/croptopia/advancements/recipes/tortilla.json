@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:tortilla"
+    ]
+  },
+  "criteria": {
+    "has_flour": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tags": "${dependant}:flour"
+          }
+        ]
+      }
+    },
+    "has_frying_pan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:frying_pan"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:tortilla"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_flour",
+      "has_frying_pan",
+      "has_the_recipe"
+    ]
+  ]
+}

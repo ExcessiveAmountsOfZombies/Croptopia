@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:trail_mix"
+    ]
+  },
+  "criteria": {
+    "has_nuts": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:nuts"
+          }
+        ]
+      }
+    },
+    "has_raisins": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:raisins"
+          }
+        ]
+      }
+    },
+    "has_chocolate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:chocolates"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:trail_mix"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nuts",
+      "has_raisins",
+      "has_chocolate",
+      "has_the_recipe"
+    ]
+  ]
+}

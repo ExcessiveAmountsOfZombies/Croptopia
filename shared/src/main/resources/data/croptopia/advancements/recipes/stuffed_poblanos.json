@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:burrito"
+    ]
+  },
+  "criteria": {
+    "has_beef": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "croptopia:beef_replacements"
+          }
+        ]
+      }
+    },
+    "has_corn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:grains/corn"
+          }
+        ]
+      }
+    },
+    "has_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:crops/blackbeans"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:burrito"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_beef",
+      "has_corn",
+      "has_beans",
+      "has_the_recipe"
+    ]
+  ]
+}

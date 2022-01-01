@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:fruit_smoothie"
+    ]
+  },
+  "criteria": {
+    "has_fruit": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits"
+          }
+        ]
+      }
+    },
+    "has_milk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:milks"
+          }
+        ]
+      }
+    },
+    "has_ice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:ice"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:fruit_smoothie"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fruit",
+      "has_milk",
+      "has_ice",
+      "has_the_recipe"
+    ]
+  ]
+}

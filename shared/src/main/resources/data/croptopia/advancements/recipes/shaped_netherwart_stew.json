@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:shaped_nether_wart_stew"
+    ]
+  },
+  "criteria": {
+    "has_nether_wart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:nether_wart"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:shaped_nether_wart_stew"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_wart",
+      "has_the_recipe"
+    ]
+  ]
+}

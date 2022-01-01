@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:leafy_salad"
+    ]
+  },
+  "criteria": {
+    "has_lettuce": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/lettuce"
+          }
+        ]
+      }
+    },
+    "has_spinach": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/spinach"
+          }
+        ]
+      }
+    },
+    "has_kale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/kale"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:leafy_salad"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lettuce",
+      "has_spinach",
+      "has_kale",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:banana_to_banana_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_banana": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/bananas"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:banana_to_banana_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_banana",
+      "has_the_recipe"
+    ]
+  ]
+}

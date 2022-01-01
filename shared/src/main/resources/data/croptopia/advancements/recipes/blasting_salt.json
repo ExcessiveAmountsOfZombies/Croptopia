@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:blasting_salt"
+    ]
+  },
+  "criteria": {
+    "has_water": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:water_bottle"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:blasting_salt"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_water",
+      "has_the_recipe"
+    ]
+  ]
+}

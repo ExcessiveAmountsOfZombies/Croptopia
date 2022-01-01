@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:chocolate"
+    ]
+  },
+  "criteria": {
+    "has_cocoa_beans": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:cocoa_beans"]
+          }
+        ]
+      }
+    },
+    "has_butter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:butters"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:chocolate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cocoa_beans",
+      "has_butter",
+      "has_the_recipe"
+    ]
+  ]
+}

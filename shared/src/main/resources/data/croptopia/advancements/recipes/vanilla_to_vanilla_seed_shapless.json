@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:vanilla_to_vanilla_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_vanilla": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:crops/vanillas"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:vanilla_to_vanilla_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_vanilla",
+      "has_the_recipe"
+    ]
+  ]
+}

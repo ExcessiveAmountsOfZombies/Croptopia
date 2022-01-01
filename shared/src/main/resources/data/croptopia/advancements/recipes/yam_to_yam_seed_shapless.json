@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:yam_to_yam_seed_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_yam": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:vegetables/yams"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:yam_to_yam_seed_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_yam",
+      "has_the_recipe"
+    ]
+  ]
+}

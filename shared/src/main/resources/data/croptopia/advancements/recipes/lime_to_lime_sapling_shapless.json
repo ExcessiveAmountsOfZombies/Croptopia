@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:lime_to_lime_sapling_shapeless"
+    ]
+  },
+  "criteria": {
+    "has_lime": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:fruits/limes"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:lime_to_lime_sapling_shapeless"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lime",
+      "has_the_recipe"
+    ]
+  ]
+}
