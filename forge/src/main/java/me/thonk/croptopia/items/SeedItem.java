@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.IPlantable;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -38,7 +40,7 @@ public class SeedItem extends ItemNameBlockItem {
         BlockPos hitPos = context.getClickedPos();
         Level world = context.getLevel();
         BlockState state = world.getBlockState(hitPos);
-        if (state.getBlock() instanceof FarmBlock && context.getClickedFace() == Direction.UP) {
+        if ((state.getBlock() instanceof FarmBlock && context.getClickedFace() == Direction.UP) || state.canSustainPlant(context.getLevel(), hitPos, context.getClickedFace(), (IPlantable) this.getBlock())) {
             return super.useOn(context);
         }
         return InteractionResult.FAIL;
