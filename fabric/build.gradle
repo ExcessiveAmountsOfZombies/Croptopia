@@ -37,8 +37,6 @@ dependencies {
 
     modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
 
-    modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
-
     modImplementation "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
