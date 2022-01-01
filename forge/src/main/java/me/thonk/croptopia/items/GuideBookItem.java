@@ -40,6 +40,8 @@ public class GuideBookItem extends Item {
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> tooltip, TooltipFlag p_41424_) {
         if (!ModList.get().isLoaded("patchouli")) {
             tooltip.add(Component.nullToEmpty("Patchouli is not installed."));
-        }
+        } /*else {
+            tooltip.add(Component.nullToEmpty("let me know patchouli is updated either in my discord or in a Github Issue!"));
+        }*/
     }
 }

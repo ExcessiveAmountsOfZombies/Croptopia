@@ -182,11 +182,10 @@ public class CroptopiaConfig {
 
     private boolean addTreeConfigIfDoesNotExist(ConfigurationNode node, String nodeToAdd) {
         if (!node.hasChild(nodeToAdd)) {
-            Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WOODED_HILLS, BiomeKeys.FLOWER_FOREST);
-            Collection<RegistryKey<Biome>> jungleBiomes = Arrays.asList(BiomeKeys.JUNGLE, BiomeKeys.JUNGLE_EDGE, BiomeKeys.JUNGLE_HILLS,
-                    BiomeKeys.MODIFIED_JUNGLE, BiomeKeys.MODIFIED_JUNGLE_EDGE);
+            Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.FLOWER_FOREST);
+            Collection<RegistryKey<Biome>> jungleBiomes = Arrays.asList(BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE);
             Collection<RegistryKey<Biome>> plainsKeys = Arrays.asList(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS);
-            Collection<RegistryKey<Biome>> darkForestKeys = Arrays.asList(BiomeKeys.DARK_FOREST, BiomeKeys.DARK_FOREST_HILLS);
+            Collection<RegistryKey<Biome>> darkForestKeys = Arrays.asList(BiomeKeys.DARK_FOREST);
 
             HashMultimap<String, RegistryKey<Biome>> biomes = HashMultimap.create();
 
@@ -212,7 +211,8 @@ public class CroptopiaConfig {
                     "kumquat_tree_configured",
                     "grapefruit_tree_configured",
                     "banana_tree_configured",
-                    "fig_tree_configured");
+                    "fig_tree_configured",
+                    FeatureNames.CINNAMON_TREE_CONFIGURED);
 
             TreeConfiguration.createSameTreeConfigs(biomes, plainsKeys,
                     "apple_tree_configured",

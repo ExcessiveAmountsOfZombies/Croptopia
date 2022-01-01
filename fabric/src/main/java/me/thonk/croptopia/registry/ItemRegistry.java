@@ -404,6 +404,7 @@ public class ItemRegistry {
     public static Item ratatouille = new Item(createGroup().food(EDIBLE_18));
     public static Item rawBacon = new Item(createGroup().food(EDIBLE_1));
     public static Item rhubarbCrisp = new Item(createGroup().food(EDIBLE_10));
+    public static Item rhubarbPie = new Item(createGroup().food(EDIBLE_10));
     public static Item roastedAsparagus = new Item(createGroup().food(EDIBLE_7));
     public static Item roastedRadishes = new Item(createGroup().food(EDIBLE_7));
     public static Item roastedSquash = new Item(createGroup().food(EDIBLE_7));
@@ -767,6 +768,7 @@ public class ItemRegistry {
         registerItem(ItemNames.RATATOUILLE, ratatouille);
         registerItem(ItemNames.RAW_BACON, rawBacon);
         registerItem(ItemNames.RHUBARB_CRISP, rhubarbCrisp);
+        registerItem(ItemNames.RHUBARB_PIE, rhubarbPie);
         registerItem(ItemNames.ROASTED_ASPARAGUS, roastedAsparagus);
         registerItem(ItemNames.ROASTED_RADISHES, roastedRadishes);
         registerItem(ItemNames.ROASTED_SQUASH, roastedSquash);

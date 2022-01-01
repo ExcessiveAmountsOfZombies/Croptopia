@@ -33,7 +33,9 @@ dependencies {
     mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    modImplementation "vazkii.patchouli:Patchouli:1.17-55-FABRIC-SNAPSHOT"
+    modImplementation "vazkii.patchouli:Patchouli:1.18-60-FABRIC-SNAPSHOT"
+
+    modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
 
     modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
 

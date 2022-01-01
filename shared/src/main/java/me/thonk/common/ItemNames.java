@@ -364,6 +364,7 @@ public class ItemNames {
     public static final String RATATOUILLE = "ratatouille";
     public static final String RAW_BACON = "bacon";
     public static final String RHUBARB_CRISP = "rhubarb_crisp";
+    public static final String RHUBARB_PIE = "rhubarb_pie";
     public static final String ROASTED_ASPARAGUS = "roasted_asparagus";
     public static final String ROASTED_RADISHES = "roasted_radishes";
     public static final String ROASTED_SQUASH = "roasted_squash";

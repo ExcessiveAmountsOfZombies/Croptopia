@@ -36,7 +36,7 @@ public class BiomeModifiers {
             e.printStackTrace();
         }
 
-        Collection<RegistryKey<Biome>> exclusion = Arrays.asList(BiomeKeys.SWAMP, BiomeKeys.SWAMP_HILLS);
+        Collection<RegistryKey<Biome>> exclusion = Arrays.asList(BiomeKeys.SWAMP, BiomeKeys.SWAMP);
 
         if (croptopia.config.generateSaltInWorld()) {
             BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
