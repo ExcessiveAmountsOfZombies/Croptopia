@@ -1,6 +1,5 @@
 package me.thonk.croptopia.config;
 
-import com.google.common.collect.HashMultimap;
 import com.google.common.collect.SetMultimap;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
