@@ -5,7 +5,7 @@
       "item": "minecraft:egg"
     },
     {
-      "item": "croptopia:pepper"
+      "item": "croptopia:chile_pepper"
     },
     {
       "tag": "${dependant}:olive_oils"
