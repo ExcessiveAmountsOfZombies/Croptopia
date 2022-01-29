@@ -1,0 +1,29 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "croptopia:corn_seed"
+  },
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "results": [
+    {
+      "item": "croptopia:corn",
+      "count": 2
+    },
+    {
+      "item": "croptopia:corn_seed"
+    }
+  ],
+  "time": 640,
+  "render": {
+    "type": "crop",
+    "block": "croptopia:corn_crop"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
+}

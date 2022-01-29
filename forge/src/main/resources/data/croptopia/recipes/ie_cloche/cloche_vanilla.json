@@ -1,0 +1,29 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "croptopia:vanilla_seeds"
+  },
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "results": [
+    {
+      "item": "croptopia:vanilla",
+      "count": 2
+    },
+    {
+      "item": "croptopia:vanilla_seeds"
+    }
+  ],
+  "time": 640,
+  "render": {
+    "type": "crop",
+    "block": "croptopia:vanilla_crop"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
+}

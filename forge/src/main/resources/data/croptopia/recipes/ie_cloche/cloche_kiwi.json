@@ -1,0 +1,29 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "croptopia:kiwi_seed"
+  },
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "results": [
+    {
+      "item": "croptopia:kiwi",
+      "count": 2
+    },
+    {
+      "item": "croptopia:kiwi_seed"
+    }
+  ],
+  "time": 640,
+  "render": {
+    "type": "crop",
+    "block": "croptopia:kiwi_crop"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
+}

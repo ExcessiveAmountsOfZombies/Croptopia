@@ -1,0 +1,29 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "croptopia:mustard_seed"
+  },
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "results": [
+    {
+      "item": "croptopia:mustard",
+      "count": 2
+    },
+    {
+      "item": "croptopia:mustard_seed"
+    }
+  ],
+  "time": 640,
+  "render": {
+    "type": "crop",
+    "block": "croptopia:mustard_crop"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
+}

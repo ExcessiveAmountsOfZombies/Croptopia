@@ -27,6 +27,6 @@
     "#${dependant}:saplings/plum",
     "#${dependant}:saplings/starfruit",
     "#${dependant}:saplings/walnut",
-    "#${dependant}:saplings/cinnamon_sapling"
+    "#${dependant}:saplings/cinnamon"
   ]
 }
