@@ -12,6 +12,15 @@
   },
   "parent": "croptopia:mortar_and_pestle",
   "criteria": {
-    "knife": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:knife"] } ] } }
+    "knife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependant}:tools/knives"
+          }
+        ]
+      }
+    }
   }
 }

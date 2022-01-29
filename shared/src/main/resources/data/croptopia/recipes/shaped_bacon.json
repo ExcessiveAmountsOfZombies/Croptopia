@@ -6,7 +6,7 @@
   ],
   "key": {
     "1": {
-      "item": "croptopia:knife"
+      "tag": "${dependant}:tools/knives"
     },
     "2": {
       "item": "minecraft:porkchop"
