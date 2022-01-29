@@ -5,7 +5,7 @@
       "tag": "${dependant}:crops/blackbeans"
     },
     {
-      "tag": "${dependant}:grains/rice"
+      "tag": "${dependant}:grain/rice"
     },
     {
       "tag": "${dependant}:vegetables/tomatoes"

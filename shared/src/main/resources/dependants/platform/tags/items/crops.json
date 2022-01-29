@@ -11,7 +11,7 @@
     "#${dependant}:crops/peanuts",
     "#${dependant}:crops/vanilla",
     "#${dependant}:fruits",
-    "#${dependant}:grains",
+    "#${dependant}:grain",
     "#${dependant}:nuts",
     "#${dependant}:vegetables"
   ]

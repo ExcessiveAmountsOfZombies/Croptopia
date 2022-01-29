@@ -11,7 +11,7 @@
       "item": "minecraft:carrot"
     },
     {
-      "tag": "${dependant}:grains/corn"
+      "tag": "${dependant}:grain/corn"
     }
   ],
   "result": {
