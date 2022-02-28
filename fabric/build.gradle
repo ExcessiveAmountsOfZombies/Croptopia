@@ -9,8 +9,7 @@ plugins {
 repositories {
     mavenCentral()
     maven {
-        url = "https://repo.stellardrift.ca/repository/snapshots/"
-        name = "stellardriftSnapshots"
+        url = "https://oss.sonatype.org/content/repositories/snapshots"
     }
     maven {
         url = 'https://maven.blamejared.com'
@@ -35,7 +34,11 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
     modImplementation "vazkii.patchouli:Patchouli:1.18-60-FABRIC-SNAPSHOT"
 
-    modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
+    modImplementation(include("org.spongepowered:configurate-hocon:4.1.2"))
+    modImplementation(include("org.spongepowered:configurate-core:4.1.2"))
+    include("com.typesafe:config:1.4.1")
+    include("io.leangen.geantyref:geantyref:1.3.11")
+    //modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
 
     modImplementation "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")

@@ -14,6 +14,7 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
 
 import java.util.Collection;
@@ -42,9 +43,9 @@ public class BiomeLootCondition implements LootCondition {
         }
         Vec3d vec3d = lootContext.get(LootContextParameters.ORIGIN);
         if (vec3d != null) {
-            //BuiltinRegistries.BIOME.get("key");
-            Biome biome = lootContext.getWorld().getBiome(new BlockPos(vec3d));
-            return biomeCategory.contains(biome.getCategory());
+            RegistryEntry<Biome> biome = lootContext.getWorld().getBiome(new BlockPos(vec3d));
+            // TODO: this is probably going to go away
+            return biomeCategory.contains(Biome.getCategory(biome));
         }
         return false;
     }

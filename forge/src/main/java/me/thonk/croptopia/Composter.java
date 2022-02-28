@@ -2,7 +2,6 @@ package me.thonk.croptopia;
 
 import me.thonk.croptopia.registry.ItemRegistry;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.ComposterBlock;
 
 import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
 

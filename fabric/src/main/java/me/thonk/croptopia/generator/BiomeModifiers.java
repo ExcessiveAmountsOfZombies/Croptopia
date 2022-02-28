@@ -5,6 +5,7 @@ import me.thonk.croptopia.config.TreeConfiguration;
 import me.thonk.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeKeys;
@@ -23,7 +24,7 @@ public class BiomeModifiers {
         // generate in ALL biomes
         BiomeModifications.addFeature(context -> {
             Biome biome = context.getBiome();
-            return biome.getCategory() != Biome.Category.OCEAN;
+            return Biome.getCategory(RegistryEntry.of(biome)) != Biome.Category.OCEAN;
         }, GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
 
         try {

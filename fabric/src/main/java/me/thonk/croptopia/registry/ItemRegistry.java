@@ -157,7 +157,7 @@ public class ItemRegistry {
     public static Item oatSeed = new SeedItem(BlockRegistry.oatCropBlock, createGroup(), PLAINS);
     public static Item barleySeed = new SeedItem(BlockRegistry.barleyCropBlock, createGroup(), PLAINS, TAIGA);
     public static Item soybeanSeed = new SeedItem(BlockRegistry.soybeanCropBlock, createGroup(), PLAINS);
-    public static Item vanillaSeed;
+    //public static Item vanillaSeed;
 
 
     public static Item appleSapling = new CroptopiaSaplingItem(BlockRegistry.appleSaplingBlock, LeavesRegistry.appleCrop, Blocks.OAK_LEAVES, createGroup());
@@ -305,11 +305,11 @@ public class ItemRegistry {
     public static Item cashewChicken = new Item(createGroup().food(EDIBLE_14));
 
     // desert block?
-    public static Item coffeeCake;
-    public static Item chocolateCake;
-    public static Item strawberryShortCake;
-    public static Item carrotCake;
-    public static Item turtleCake;
+    //public static Item coffeeCake;
+    //public static Item chocolateCake;
+    //public static Item strawberryShortCake;
+    //public static Item carrotCake;
+    //public static Item turtleCake;
 
     // desert item
     public static Item applePie = new Item(createGroup().food(EDIBLE_14));
@@ -331,7 +331,7 @@ public class ItemRegistry {
     public static Item almondBrittle = new Item(createGroup().food(EDIBLE_7));
     public static Item oatmealCookie = new Item(createGroup().food(EDIBLE_5));
     public static Item nuttyCookie = new Item(createGroup().food(EDIBLE_5));
-    public static Item praline = new Item(createGroup().food(EDIBLE_5));
+    //public static Item praline = new Item(createGroup().food(EDIBLE_5));
 
     public static Item burrito = new Item(createGroup().food(EDIBLE_10));
     public static Item tostada = new Item(createGroup().food(EDIBLE_10));

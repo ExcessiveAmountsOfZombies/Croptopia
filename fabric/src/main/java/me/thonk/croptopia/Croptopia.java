@@ -1,6 +1,5 @@
 package me.thonk.croptopia;
 
-import ca.stellardrift.confabricate.typeserializers.MinecraftSerializers;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
@@ -11,6 +10,7 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.config.CroptopiaConfig;
+import me.thonk.croptopia.config.IdentifierSerializer;
 import me.thonk.croptopia.config.TreeConfiguration;
 import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
@@ -94,7 +94,7 @@ public class Croptopia implements ModInitializer {
         this.config = new CroptopiaConfig(devEnvironment, "croptopia.conf");
         config.addSerializer(ConfigurableSeed.class, ConfigurableSeed.Serializer.INSTANCE);
         config.addSerializer(TreeConfiguration.class, TreeConfiguration.Serializer.INSTANCE);
-        config.addSerializer(MinecraftSerializers.collection());
+        config.addSerializer(Identifier.class, IdentifierSerializer.INSTANCE);
         config.loadConfig();
         try {
             seeds = config.getRootNode().node("configuredSeeds").getList(ConfigurableSeed.class);
@@ -156,7 +156,6 @@ public class Croptopia implements ModInitializer {
 
         // data generation
         //runner.getTagger().addTag(item, Croptopia.createIdentifier(itemName));
-
         return item;
     }
 

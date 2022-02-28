@@ -41,10 +41,10 @@
     "Croptopia.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.5+build.214",
-    "fabric": ">=0.42.0",
+    "fabricloader": ">=0.13.3",
+    "fabric": ">=0.47.5",
     "fabric-biome-api-v1": ">=3.0.0",
-    "minecraft": ">=1.18"
+    "minecraft": ">=1.18.2"
   },
   "suggests": {
     "patchouli": "*",
