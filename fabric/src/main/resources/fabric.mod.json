@@ -27,6 +27,9 @@
   "environment": "*",
   "accessWidener": "croptopia.accesswidener",
   "entrypoints": {
+    "fabric-datagen": [
+      "me.thonk.croptopia.datagen.CroptopiaDataGeneratorEntry"
+    ],
     "client": [
       "me.thonk.croptopia.client.CroptopiaClient"
     ],

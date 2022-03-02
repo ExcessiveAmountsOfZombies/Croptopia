@@ -1,4 +1,13 @@
 buildDir = rootProject.buildDir
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    "src/main/generated"
+            ]
+        }
+    }
+}
 
 tasks.withType(JavaCompile) {
     doLast {

@@ -375,5 +375,40 @@ public class ItemNames {
     public static final String STUFFED_ARTICHOKE = "stuffed_artichoke";
     public static final String TOAST_SANDWICH = "toast_sandwich";
 
+    public static final String ROASTED_PUMPKIN_SEEDS = "roasted_pumpkin_seeds";
+    public static final String ROASTED_SUNFLOWER_SEEDS = "roasted_sunflower_seeds";
+    public static final String PUMPKIN_BARS = "pumpkin_bars";
+    public static final String CORN_BREAD = "corn_bread";
+    public static final String PUMPKIN_SOUP = "pumpkin_soup";
+    public static final String MERINGUE = "meringue";
+    public static final String CABBAGE_ROLL = "cabbage_roll";
+    public static final String BORSCHT = "borscht";
+    public static final String GOULASH = "goulash";
+    public static final String BEETROOT_SALAD = "beetroot_salad";
+    public static final String CANDIED_KUMQUATS = "candied_kumquats";
+    public static final String SHRIMP = "shrimp";
+    public static final String TUNA = "tuna";
+    public static final String CALAMARI = "calamari";
+    public static final String CRAB = "crab";
+    public static final String ROE = "roe";
+    public static final String CLAM = "clam";
+    public static final String OYSTER = "oyster";
+    public static final String COOKED_SHRIMP = "cooked_shrimp";
+    public static final String COOKED_TUNA = "cooked_tuna";
+    public static final String COOKED_CALAMARI = "cooked_calamari";
+    public static final String STEAMED_CRAB = "steamed_crab";
+    public static final String GLOWING_CALAMARI = "glowing_calamari";
+    public static final String SEA_LETTUCE = "sea_lettuce";
+    public static final String DEEP_FRIED_SHRIMP = "deep_fried_shrimp";
+    public static final String TUNA_ROLL = "tuna_roll";
+    public static final String FRIED_CALAMARI = "fried_calamari";
+    public static final String CRAB_LEGS = "crab_legs";
+    public static final String STEAMED_CLAMS = "steamed_clams";
+    public static final String GRILLED_OYSTERS = "grilled_oysters";
+    public static final String ANCHOVY = "anchovy";
+    public static final String COOKED_ANCHOVY = "cooked_anchovy";
+    public static final String ANCHOVY_PIZZA = "anchovy_pizza";
+    public static final String MASHED_POTATOES = "mashed_potatoes";
+
 }
 

@@ -48,8 +48,18 @@ dependencies {
     implementation(project(":shared"))
 }
 
-minecraft {
-    accessWidener = file("src/main/resources/croptopia.accesswidener")
+loom {
+    accessWidenerPath = file("src/main/resources/croptopia.accesswidener")
+
+    runs {
+        datagen {
+            server()
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${project(":shared").file("src/main/generated")}"
+            runDir "build/datagen"
+        }
+    }
 }
 
 processResources {

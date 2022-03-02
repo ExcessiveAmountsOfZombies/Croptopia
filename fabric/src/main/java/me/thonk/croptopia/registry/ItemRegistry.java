@@ -1,9 +1,19 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
-import me.thonk.croptopia.items.*;
+import me.thonk.croptopia.items.CookingUtensil;
+import me.thonk.croptopia.items.CropItem;
+import me.thonk.croptopia.items.CroptopiaSaplingItem;
+import me.thonk.croptopia.items.Drink;
+import me.thonk.croptopia.items.GuideBookItem;
+import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.items.SoupItem;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.*;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.AliasedBlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 
 import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.Croptopia.registerItem;
@@ -415,6 +425,42 @@ public class ItemRegistry {
     public static Item stuffedArtichoke = new Item(createGroup().food(EDIBLE_18));
     public static Item toastSandwich = new Item(createGroup().food(EDIBLE_10));
 
+    // 1.9.0
+    public static Item roastedPumpkinSeeds = new Item(createGroup().food(EDIBLE_4));
+    public static Item roastedSunflowerSeeds = new Item(createGroup().food(EDIBLE_4));
+    public static Item pumpkinBars = new Item(createGroup().food(EDIBLE_6));
+    public static Item cornBread = new Item(createGroup().food(EDIBLE_5));
+    public static Item pumpkinSoup = new SoupItem(createGroup().food(EDIBLE_10));
+    public static Item meringue = new Item(createGroup().food(EDIBLE_6));
+    public static Item cabbageRoll = new Item(createGroup().food(EDIBLE_14));
+    public static Item borscht = new Item(createGroup().food(EDIBLE_12));
+    public static Item goulash = new Item(createGroup().food(EDIBLE_16));
+    public static Item beetrootSalad = new Item(createGroup().food(EDIBLE_10));
+    public static Item candiedKumquats = new Item(createGroup().food(EDIBLE_6));
+    public static Item shrimp = new Item(createGroup().food(EDIBLE_1));
+    public static Item tuna = new Item(createGroup().food(EDIBLE_3));
+    public static Item calamari = new Item(createGroup().food(EDIBLE_1));
+    public static Item crab = new Item(createGroup().food(EDIBLE_1));
+    public static Item roe = new Item(createGroup().food(EDIBLE_1));
+    public static Item clam = new Item(createGroup().food(EDIBLE_3));
+    public static Item oyster = new Item(createGroup().food(EDIBLE_3));
+    public static Item cookedShrimp = new Item(createGroup().food(EDIBLE_5));
+    public static Item cookedTuna = new Item(createGroup().food(EDIBLE_6));
+    public static Item cookedCalamari = new Item(createGroup().food(EDIBLE_5));
+    public static Item steamedCrab = new Item(createGroup().food(EDIBLE_6));
+    public static Item glowingCalamari = new Item(createGroup().food(EDIBLE_3_BUILDER.statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 4000, 1), 1.0F).build()));
+    public static Item seaLettuce = new Item(createGroup().food(EDIBLE_1));
+    public static Item deepFriedShrimp = new Item(createGroup().food(EDIBLE_10));
+    public static Item tunaRoll = new Item(createGroup().food(EDIBLE_10));
+    public static Item friedCalamari = new Item(createGroup().food(EDIBLE_10));
+    public static Item crabLegs = new Item(createGroup().food(EDIBLE_11));
+    public static Item steamedClams = new Item(createGroup().food(EDIBLE_11));
+    public static Item grilledOysters = new Item(createGroup().food(EDIBLE_6));
+    public static Item anchovy = new Item(createGroup().food(EDIBLE_1));
+    public static Item cookedAnchovy = new Item(createGroup().food(EDIBLE_4));
+    public static Item anchovyPizza = new Item(createGroup().food(EDIBLE_15));
+    public static Item mashedPotatoes = new Item(createGroup().food(EDIBLE_9));
+
     // cooking utensils?
     public static Item foodPress = new CookingUtensil(createGroup().maxCount(1));
     public static Item fryingPan = new CookingUtensil(createGroup().maxCount(1));
@@ -793,6 +839,41 @@ public class ItemRegistry {
         registerItem(ItemNames.WATER_BOTTLE, waterBottle);
         registerItem(ItemNames.MILK_BOTTLE, milkBottle);
         registerItem(ItemNames.TEA_LEAVES, teaLeaves);
+
+        registerItem(ItemNames.ROASTED_PUMPKIN_SEEDS, roastedPumpkinSeeds);
+        registerItem(ItemNames.ROASTED_SUNFLOWER_SEEDS, roastedSunflowerSeeds);
+        registerItem(ItemNames.PUMPKIN_BARS, pumpkinBars);
+        registerItem(ItemNames.CORN_BREAD, cornBread);
+        registerItem(ItemNames.PUMPKIN_SOUP, pumpkinSoup);
+        registerItem(ItemNames.MERINGUE, meringue);
+        registerItem(ItemNames.CABBAGE_ROLL, cabbageRoll);
+        registerItem(ItemNames.BORSCHT, borscht);
+        registerItem(ItemNames.GOULASH, goulash);
+        registerItem(ItemNames.BEETROOT_SALAD, beetrootSalad);
+        registerItem(ItemNames.CANDIED_KUMQUATS, candiedKumquats);
+        registerItem(ItemNames.SHRIMP, shrimp);
+        registerItem(ItemNames.TUNA, tuna);
+        registerItem(ItemNames.CALAMARI, calamari);
+        registerItem(ItemNames.CRAB, crab);
+        registerItem(ItemNames.ROE, roe);
+        registerItem(ItemNames.CLAM, clam);
+        registerItem(ItemNames.OYSTER, oyster);
+        registerItem(ItemNames.COOKED_SHRIMP, cookedShrimp);
+        registerItem(ItemNames.COOKED_TUNA, cookedTuna);
+        registerItem(ItemNames.COOKED_CALAMARI, cookedCalamari);
+        registerItem(ItemNames.STEAMED_CRAB, steamedCrab);
+        registerItem(ItemNames.GLOWING_CALAMARI, glowingCalamari);
+        registerItem(ItemNames.SEA_LETTUCE, seaLettuce);
+        registerItem(ItemNames.DEEP_FRIED_SHRIMP, deepFriedShrimp);
+        registerItem(ItemNames.TUNA_ROLL, tunaRoll);
+        registerItem(ItemNames.FRIED_CALAMARI, friedCalamari);
+        registerItem(ItemNames.CRAB_LEGS, crabLegs);
+        registerItem(ItemNames.STEAMED_CLAMS, steamedClams);
+        registerItem(ItemNames.GRILLED_OYSTERS, grilledOysters);
+        registerItem(ItemNames.ANCHOVY, anchovy);
+        registerItem(ItemNames.COOKED_ANCHOVY, cookedAnchovy);
+        registerItem(ItemNames.ANCHOVY_PIZZA, anchovyPizza);
+        registerItem(ItemNames.MASHED_POTATOES, mashedPotatoes);
 
         registerItem(ItemNames.CINNAMON, cinnamon);
         registerItem(ItemNames.CORN_HUSK, cornHusk);
