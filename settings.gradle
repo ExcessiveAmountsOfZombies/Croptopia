@@ -12,5 +12,5 @@ rootProject.name = 'croptopia'
 
 include 'shared'
 include 'fabric'
-//include 'forge'
+include 'forge'
 

@@ -42,7 +42,7 @@ public class CroptopiaCropBlock extends CropBlock {
 
     @Override // JANK
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        Biome.BiomeCategory category = level.getBiome(pos).getBiomeCategory();
+        Biome.BiomeCategory category = Biome.getBiomeCategory(level.getBiome(pos));;
         if (level.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
             if (category.equals(seed.getCategory())) {

@@ -19,7 +19,7 @@ public class BiomeModification {
     public void onBiomeLoad(BiomeLoadingEvent event) {
         BiomeGenerationSettingsBuilder settings = event.getGeneration();
         if (event.getCategory() != Biome.BiomeCategory.OCEAN) {
-            settings.addFeature(VEGETAL_DECORATION, RANDOM_CROP);
+            settings.addFeature(VEGETAL_DECORATION, RANDOM_CROP_PLACED);
         }
 
         if (event.getCategory() == Biome.BiomeCategory.FOREST) {
