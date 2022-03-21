@@ -3,13 +3,12 @@ package me.thonk.croptopia.items;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FarmlandBlock;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -51,8 +50,13 @@ public class SeedItem extends AliasedBlockItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(new TranslatableText("info.croptopia.seed").setStyle(Style.EMPTY.withColor(Formatting.GRAY))
-                .append(" ").append(category.get(0).asString().toLowerCase(Locale.ROOT)));
+        TranslatableText text = new TranslatableText("info.croptopia.seed");
+        String[] translated = text.getString().split("\n");
+        if (translated.length >= 2) {
+            tooltip.add(new LiteralText(translated[0]).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
+            tooltip.add(new LiteralText(translated[1]).setStyle(Style.EMPTY.withColor(Formatting.GRAY))
+                    .append(" ").append(category.get(0).asString().toLowerCase(Locale.ROOT)));
+        }
     }
 
     @Deprecated(forRemoval = true)

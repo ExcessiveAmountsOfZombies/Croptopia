@@ -45,13 +45,13 @@ public class GeneratorRegistry {
 
     private static Map<String, ResourceKey<PlacedFeature>> keyMap = new HashMap<>();
     private static Map<ResourceKey<ConfiguredFeature<?, ?>>, ConfiguredFeature<?, ?>> featureMap = new HashMap<>();
-    
+
     public static final ConfiguredFeature<?, ?> randomCrops = Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(
             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                     .add(BlockRegistry.artichokeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.asparagusCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.barleyCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.basilCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.basilCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.bellPepperCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.blackBeanCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.blackberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
@@ -61,19 +61,19 @@ public class GeneratorRegistry {
                     .add(BlockRegistry.cantaloupeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.cauliflowerCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.celeryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.coffeeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.coffeeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.cornCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.cranberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.cucumberCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.currantCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.eggplantCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.eggplantCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.elderberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.garlicCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.garlicCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.gingerCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.grapeCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.greenBeanCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.greenOnionCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.honeydewCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.greenOnionCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
+                    .add(BlockRegistry.honeydewCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.hopsCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.kaleCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.kiwiCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
@@ -82,14 +82,14 @@ public class GeneratorRegistry {
                     .add(BlockRegistry.mustardCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.oatCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.oliveCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.onionCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.peanutCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.onionCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
+                    .add(BlockRegistry.peanutCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.chilePepperCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.pineappleCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.pineappleCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.radishCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.raspberryCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.rhubarbCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.riceCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.rhubarbCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
+                    .add(BlockRegistry.riceCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.rutabagaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.saguaroCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.soybeanCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
@@ -100,10 +100,10 @@ public class GeneratorRegistry {
                     .add(BlockRegistry.tomatilloCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.tomatoCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.turmericCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.turnipCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.turnipCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.yamCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.zucchiniCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
-                    .add(BlockRegistry.vanillaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
+                    .add(BlockRegistry.vanillaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 20)
                     .add(BlockRegistry.pepperCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(BlockRegistry.teaCropBlock.defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .build())));
@@ -356,10 +356,10 @@ public class GeneratorRegistry {
             KUMQUAT_TREE.placed(InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome(), PlacementUtils.countExtra(0, 0.1F, 1)));
 
     public static final PlacedFeature PEACH_TREE_CONFIGURED = register(createIdentifier(FeatureNames.PEACH_TREE_CONFIGURED),
-            PEACH_TREE.placed(InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome(), PlacementUtils.countExtra(0, 0.1F, 1)));
+            PEACH_TREE.placed(InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome(), PlacementUtils.countExtra(0, 0.2F, 5)));
 
     public static final PlacedFeature COCONUT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.COCONUT_TREE_CONFIGURED),
-            COCONUT_TREE.placed(InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome(), PlacementUtils.countExtra(0, 0.1F, 1)));
+            COCONUT_TREE.placed(InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome(), PlacementUtils.countExtra(0, 0.2F, 5)));
 
     public static final PlacedFeature NUTMEG_TREE_CONFIGURED = register(createIdentifier(FeatureNames.NUTMEG_TREE_CONFIGURED),
             NUTMEG_TREE.placed(InSquarePlacement.spread(), VegetationPlacements.TREE_THRESHOLD, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome(), PlacementUtils.countExtra(0, 0.1F, 1)));

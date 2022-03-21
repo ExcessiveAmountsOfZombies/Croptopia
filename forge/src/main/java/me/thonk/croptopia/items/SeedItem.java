@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
@@ -48,7 +49,13 @@ public class SeedItem extends ItemNameBlockItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(new TranslatableComponent("info.croptopia.seed").setStyle(Style.EMPTY.applyFormat(ChatFormatting.GRAY)).append(" ").append(category.getName().toLowerCase(Locale.ROOT)));
+        TranslatableComponent text = new TranslatableComponent("info.croptopia.seed");
+        String[] translated = text.getString().split("\n");
+        if (translated.length >= 2) {
+            tooltip.add(new TextComponent(translated[0]).setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));
+            tooltip.add(new TextComponent(translated[1]).setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY))
+                    .append(" ").append(category.getName().toLowerCase(Locale.ROOT)));
+        }
     }
 
     public Biome.BiomeCategory getCategory() {
