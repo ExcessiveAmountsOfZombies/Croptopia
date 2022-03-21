@@ -8,7 +8,7 @@
       "tag": "${dependant}:crops/blackbeans"
     },
     {
-      "item": "croptopia:pepper"
+      "tag": "${dependant}:crops/chile_peppers"
     },
     {
       "tag": "${dependant}:cheeses"
