@@ -516,7 +516,7 @@ public class ItemRegistry {
         mustard = registerItem(itemRegister, MUSTARD, new Item(createGroup()));
         vanilla = registerItem(itemRegister, VANILLA, new Item(createGroup()));
         paprika = registerItem(itemRegister, PAPRIKA, new Item(createGroup())); // TODO need recipe to make paprika in future update
-        chilePepper = registerItem(itemRegister, CHILE_PEPPER, new Item(createGroup()));
+        chilePepper = registerItem(itemRegister, CHILE_PEPPER, new CropItem(createGroup().food(EDIBLE_3)));
         salt = registerItem(itemRegister, SALT, new Item(createGroup()));
         turmeric = registerItem(itemRegister, TURMERIC, new Item(createGroup()));
         ginger = registerItem(itemRegister, GINGER, new Item(createGroup()));
