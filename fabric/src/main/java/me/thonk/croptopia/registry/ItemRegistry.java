@@ -94,7 +94,7 @@ public class ItemRegistry {
     public static Item mustard = new Item(createGroup());
     public static Item vanilla = new Item(createGroup());
     public static Item paprika = new Item(createGroup()); // TODO need recipe to make paprika in future update
-    public static Item chilePepper = new Item(createGroup());
+    public static Item chilePepper = new CropItem(createGroup().food(EDIBLE_3));
     public static Item salt = new Item(createGroup());
     public static Item turmeric = new Item(createGroup());
     public static Item ginger = new Item(createGroup());
