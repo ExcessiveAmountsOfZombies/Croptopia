@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.mojang.math.Vector3d;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -37,8 +38,8 @@ public class BiomeLootCondition implements LootItemCondition {
         Vec3 vec3d = lootContext.getParam(LootContextParams.ORIGIN);
         if (vec3d != null) {
             //BuiltinRegistries.BIOME.get("key");
-            Biome biome = lootContext.getLevel().getBiome(new BlockPos(vec3d));
-            return biome.getBiomeCategory() == biomeCategory;
+            Holder<Biome> biome = lootContext.getLevel().getBiome(new BlockPos(vec3d));
+            return biomeCategory == Biome.getBiomeCategory(biome);
         }
         return false;
     }

@@ -44,7 +44,7 @@ public class GeneratorRegistry {
             .add(BlockRegistry.artichokeCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.asparagusCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.barleyCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.basilCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.basilCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.bellPepperCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.blackBeanCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.blackberryCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
@@ -54,19 +54,19 @@ public class GeneratorRegistry {
             .add(BlockRegistry.cantaloupeCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.cauliflowerCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.celeryCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.coffeeCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.coffeeCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.cornCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.cranberryCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.cucumberCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.currantCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.eggplantCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.eggplantCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.elderberryCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.garlicCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.garlicCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.gingerCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.grapeCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.greenBeanCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.greenOnionCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.honeydewCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.greenOnionCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
+            .add(BlockRegistry.honeydewCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.hopsCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.kaleCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.kiwiCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
@@ -75,14 +75,14 @@ public class GeneratorRegistry {
             .add(BlockRegistry.mustardCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.oatCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.oliveCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.onionCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.peanutCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.onionCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
+            .add(BlockRegistry.peanutCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.chilePepperCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.pineappleCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.pineappleCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.radishCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.raspberryCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.rhubarbCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.riceCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.rhubarbCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
+            .add(BlockRegistry.riceCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.rutabagaCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.saguaroCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.soybeanCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
@@ -93,16 +93,16 @@ public class GeneratorRegistry {
             .add(BlockRegistry.tomatilloCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.tomatoCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.turmericCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.turnipCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.turnipCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.yamCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.zucchiniCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.vanillaCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(BlockRegistry.vanillaCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(BlockRegistry.pepperCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(BlockRegistry.teaCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .build())));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RANDOM_CROP = register(createIdentifier("random_crop"), Feature.RANDOM_PATCH,
-            ConfiguredFeatures.createRandomPatchFeatureConfig(3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, config)));
+            ConfiguredFeatures.createRandomPatchFeatureConfig(6, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, config)));
 
     public static final RegistryEntry<PlacedFeature> RANDOM_CROP_PLACED = register(createIdentifier("random_crop"),
             RANDOM_CROP, CountPlacementModifier.of(3), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
@@ -355,7 +355,7 @@ public class GeneratorRegistry {
             PEACH_TREE, SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.1F, 1), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> COCONUT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.COCONUT_TREE_CONFIGURED),
-            COCONUT_TREE, SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.1F, 1), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
+            COCONUT_TREE, SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.2F, 5), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> NUTMEG_TREE_CONFIGURED = register(createIdentifier(FeatureNames.NUTMEG_TREE_CONFIGURED),
             NUTMEG_TREE, SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.1F, 1), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
