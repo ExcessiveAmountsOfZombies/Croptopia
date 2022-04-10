@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/lettuce"
+            "tag": "${dependent}:vegetables/lettuce"
           }
         ]
       }

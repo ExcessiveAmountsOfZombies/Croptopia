@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "tag": "${dependant}:vegetables/yams"
+    "tag": "${dependent}:vegetables/yams"
   },
   "result": "croptopia:baked_yam",
   "experience": 0.1,

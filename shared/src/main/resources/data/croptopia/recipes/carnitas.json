@@ -5,13 +5,13 @@
       "item": "minecraft:porkchop"
     },
     {
-      "tag": "${dependant}:tortillas"
+      "tag": "${dependent}:tortillas"
     },
     {
-      "tag": "${dependant}:vegetables/cabbage"
+      "tag": "${dependent}:vegetables/cabbage"
     },
     {
-      "tag": "${dependant}:vegetables/onion"
+      "tag": "${dependent}:vegetables/onion"
     },
     {
       "item": "croptopia:frying_pan"

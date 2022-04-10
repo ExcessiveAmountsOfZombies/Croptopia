@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:fruits/bellpeppers"
+      "tag": "${dependent}:fruits/bellpeppers"
     }
   ],
   "result": {

@@ -6,7 +6,7 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:tools/knives"
+      "tag": "${dependent}:tools/knives"
     },
     "2": {
       "item": "minecraft:porkchop"

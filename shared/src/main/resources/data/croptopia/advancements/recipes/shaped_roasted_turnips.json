@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/turnips"
+            "tag": "${dependent}:vegetables/turnips"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:olive_oils"
+            "tag": "${dependent}:olive_oils"
           }
         ]
       }

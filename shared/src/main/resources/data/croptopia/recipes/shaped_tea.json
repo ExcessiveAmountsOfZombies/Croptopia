@@ -7,10 +7,10 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:water_bottles"
+      "tag": "${dependent}:water_bottles"
     },
     "2": {
-      "tag": "${dependant}:tea_leaves"
+      "tag": "${dependent}:tea_leaves"
     }
   },
   "result": {

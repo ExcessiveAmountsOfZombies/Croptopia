@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "ingredient": {
-    "tag": "${dependant}:nuts"
+    "tag": "${dependent}:nuts"
   },
   "result": "croptopia:roasted_nuts",
   "experience": 0.1,

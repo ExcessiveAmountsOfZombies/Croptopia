@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:fruits/currants"
+      "tag": "${dependent}:fruits/currants"
     }
   ],
   "result": {

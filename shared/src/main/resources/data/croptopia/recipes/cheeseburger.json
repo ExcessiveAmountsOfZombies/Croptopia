@@ -5,7 +5,7 @@
       "item": "minecraft:bread"
     },
     {
-      "tag": "${dependant}:cheeses"
+      "tag": "${dependent}:cheeses"
     },
     {
       "item": "croptopia:frying_pan"

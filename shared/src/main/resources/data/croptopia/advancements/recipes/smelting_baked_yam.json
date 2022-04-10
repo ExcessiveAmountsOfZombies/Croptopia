@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/yams"
+            "tag": "${dependent}:vegetables/yams"
           }
         ]
       }

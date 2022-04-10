@@ -8,7 +8,7 @@
       "item": "croptopia:peanut_butter"
     },
     {
-      "tag": "${dependant}:jam"
+      "tag": "${dependent}:jam"
     }
   ],
   "result": {

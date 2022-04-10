@@ -5,10 +5,10 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:fruits/mangos"
+      "tag": "${dependent}:fruits/mangos"
     },
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
       "item": "minecraft:egg"

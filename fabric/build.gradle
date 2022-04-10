@@ -72,7 +72,7 @@ processResources {
 
     from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
-        expand "dependant": "c"
+        expand "dependent": "c"
     }
 }
 tasks.processResources.dependsOn(project(":shared").tasks.processResources)
@@ -84,7 +84,7 @@ tasks.withType(JavaCompile) {
 shadowJar {
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-dev.jar"
     configurations = [project.configurations.shade]
-    relocate 'dependants/platform', 'data/c'
+    relocate 'dependents/platform', 'data/c'
 }
 
 task remappedShadowJar(type: RemapJarTask) {

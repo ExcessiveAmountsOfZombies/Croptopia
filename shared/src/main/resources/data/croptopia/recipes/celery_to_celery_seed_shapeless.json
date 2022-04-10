@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:vegetables/celery"
+      "tag": "${dependent}:vegetables/celery"
     }
   ],
   "result": {

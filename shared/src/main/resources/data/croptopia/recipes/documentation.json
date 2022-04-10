@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:crops"
+      "tag": "${dependent}:crops"
     },
     {
-      "tag": "${dependant}:crops"
+      "tag": "${dependent}:crops"
     },
     {
-      "tag": "${dependant}:crops"
+      "tag": "${dependent}:crops"
     },
     {
       "item": "minecraft:book"

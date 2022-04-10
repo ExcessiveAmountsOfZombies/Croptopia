@@ -10,10 +10,10 @@
       "item": "croptopia:frying_pan"
     },
     "2": {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     "3": {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     "4": {
       "item": "minecraft:sugar"
@@ -22,10 +22,10 @@
       "item": "minecraft:egg"
     },
     "6": {
-      "tag": "${dependant}:crops/vanilla"
+      "tag": "${dependent}:crops/vanilla"
     },
     "7": {
-      "tag": "${dependant}:fruits/blueberries"
+      "tag": "${dependent}:fruits/blueberries"
     }
   },
   "result": {

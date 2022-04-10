@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/lettuce"
+            "tag": "${dependent}:vegetables/lettuce"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/spinach"
+            "tag": "${dependent}:vegetables/spinach"
           }
         ]
       }
@@ -31,7 +31,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/kale"
+            "tag": "${dependent}:vegetables/kale"
           }
         ]
       }

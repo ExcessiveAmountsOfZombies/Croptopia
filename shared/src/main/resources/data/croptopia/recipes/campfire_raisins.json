@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "ingredient": {
-    "tag": "${dependant}:fruits/grapes"
+    "tag": "${dependent}:fruits/grapes"
   },
   "result": "croptopia:raisins",
   "experience": 0.1,

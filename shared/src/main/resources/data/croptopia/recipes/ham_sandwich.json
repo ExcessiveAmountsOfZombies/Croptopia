@@ -8,7 +8,7 @@
       "item": "minecraft:cooked_porkchop"
     },
     {
-      "tag": "${dependant}:cheeses"
+      "tag": "${dependent}:cheeses"
     }
   ],
   "result": {

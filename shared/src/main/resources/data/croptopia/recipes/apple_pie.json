@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:doughs"
+      "tag": "${dependent}:doughs"
     },
     {
       "item": "minecraft:apple"
@@ -14,7 +14,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     {
       "item": "croptopia:frying_pan"

@@ -2,19 +2,19 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:doughs"
+      "tag": "${dependent}:doughs"
     },
     {
-      "tag": "${dependant}:cheeses"
+      "tag": "${dependent}:cheeses"
     },
     {
-      "tag": "${dependant}:vegetables/tomatoes"
+      "tag": "${dependent}:vegetables/tomato"
     },
     {
-      "tag": "${dependant}:fruits/bellpeppers"
+      "tag": "${dependent}:fruits/bellpeppers"
     },
     {
-      "tag": "${dependant}:fruits/olives"
+      "tag": "${dependent}:fruits/olives"
     },
     {
       "tag": "croptopia:meat_replacements"

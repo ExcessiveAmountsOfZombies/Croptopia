@@ -5,10 +5,10 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependant}:fruits/strawberries"
+      "tag": "${dependent}:fruits/strawberries"
     }
   ],
   "result": {

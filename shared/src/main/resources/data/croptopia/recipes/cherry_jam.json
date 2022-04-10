@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:fruits/cherries"
+      "tag": "${dependent}:fruits/cherries"
     },
     {
       "item": "croptopia:cooking_pot"

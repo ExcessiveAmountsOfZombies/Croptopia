@@ -13,9 +13,9 @@ tasks.withType(JavaCompile) {
     doLast {
         if (project.property("launch_mod").toString().length() > 0) {
             copy {
-                from "src/main/resources/dependants/platform"
+                from "src/main/resources/dependents/platform"
                 include "**/**/*.json"
-                expand "dependant": project.property("launch_mod").toString()
+                expand "dependent": project.property("launch_mod").toString()
                 into "${buildDir}/resources/main/data/" + project.property("launch_mod").toString() + "/"
             }
         }
@@ -26,8 +26,8 @@ tasks.withType(ProcessResources) {
     if (project.property("launch_mod").toString().length() > 0) {
         from(sourceSets.main.resources.srcDirs) {
             include('**/data/**')
-            include('**/dependants/**')
-            expand "dependant": project.property("launch_mod").toString()
+            include('**/dependents/**')
+            expand "dependent": project.property("launch_mod").toString()
             duplicatesStrategy = DuplicatesStrategy.INCLUDE
         }
     }

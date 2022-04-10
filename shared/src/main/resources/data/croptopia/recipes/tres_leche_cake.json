@@ -8,16 +8,16 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     {
-      "tag": "${dependant}:crops/vanilla"
+      "tag": "${dependent}:crops/vanilla"
     },
     {
-      "tag": "${dependant}:rums"
+      "tag": "${dependent}:rums"
     },
     {
       "item": "croptopia:whipping_cream"

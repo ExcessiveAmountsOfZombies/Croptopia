@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "ingredient": {
-    "tag": "${dependant}:vegetables/sweetpotatos"
+    "tag": "${dependent}:vegetables/sweetpotatos"
   },
   "result": "croptopia:baked_sweet_potato",
   "experience": 0.1,

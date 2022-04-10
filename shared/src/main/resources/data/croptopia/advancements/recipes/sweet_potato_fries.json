@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/sweetpotatos"
+            "tag": "${dependent}:vegetables/sweetpotatos"
           }
         ]
       }

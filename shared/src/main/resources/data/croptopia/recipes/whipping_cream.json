@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:crops/vanilla"
+      "tag": "${dependent}:crops/vanilla"
     }
   ],
   "result": {

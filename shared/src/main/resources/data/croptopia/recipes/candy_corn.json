@@ -5,7 +5,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:grain/corn"
+      "tag": "${dependent}:grain/corn"
     },
     {
       "item": "minecraft:sugar"

@@ -5,16 +5,16 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
       "item": "minecraft:egg"
     },
     {
-      "tag": "${dependant}:chocolates"
+      "tag": "${dependent}:chocolates"
     },
     {
       "item": "croptopia:frying_pan"

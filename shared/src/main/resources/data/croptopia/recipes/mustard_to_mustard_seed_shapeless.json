@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:vegetables/mustard"
+      "tag": "${dependent}:vegetables/mustard"
     }
   ],
   "result": {

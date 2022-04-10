@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:turmeric"
+            "tag": "${dependent}:turmeric"
           }
         ]
       }

@@ -15,7 +15,8 @@
     "ParrotAccess",
     "StructurePoolsMixin",
     "VillagerAccess",
-    "VillagerMixin"
+    "VillagerMixin",
+    "datagen.ObjectBuilderAccessor"
   ],
   "client": [
   ],

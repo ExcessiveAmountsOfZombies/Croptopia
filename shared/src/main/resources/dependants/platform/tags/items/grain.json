@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#${dependant}:grain/barley",
-    "#${dependant}:grain/corn",
-    "#${dependant}:grain/oats",
-    "#${dependant}:grain/rice"
-  ]
-}

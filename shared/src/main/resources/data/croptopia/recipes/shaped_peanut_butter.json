@@ -10,7 +10,7 @@
       "item": "croptopia:food_press"
     },
     "2": {
-      "tag": "${dependant}:crops/peanuts"
+      "tag": "${dependent}:crops/peanuts"
     }
   },
   "result": {

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:grain/rice"
+      "tag": "${dependent}:grain/rice"
     },
     {
-      "tag": "${dependant}:crops/chile_peppers"
+      "tag": "${dependent}:crops/chile_peppers"
     },
     {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     },
     {
       "tag": "croptopia:chicken_replacements"

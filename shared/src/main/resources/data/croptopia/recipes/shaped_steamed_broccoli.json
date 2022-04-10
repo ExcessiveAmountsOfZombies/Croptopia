@@ -5,10 +5,10 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:vegetables/broccoli"
+      "tag": "${dependent}:vegetables/broccoli"
     },
     "2": {
-      "tag": "${dependant}:water_bottles"
+      "tag": "${dependent}:water_bottles"
     }
   },
   "result": {

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:turmeric"
+      "tag": "${dependent}:turmeric"
     }
   ],
   "result": {

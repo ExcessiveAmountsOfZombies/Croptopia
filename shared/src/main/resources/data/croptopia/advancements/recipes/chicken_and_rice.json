@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:grain/rice"
+            "tag": "${dependent}:grain/rice"
           }
         ]
       }

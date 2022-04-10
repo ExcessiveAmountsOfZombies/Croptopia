@@ -22,7 +22,7 @@ subprojects {
     targetCompatibility = JavaVersion.VERSION_17
 
     // have to move the build dir here for when we launch the dev environment so the "common" module moves over.
-    // doesn't change the dependant tag though...
+    // doesn't change the dependent tag though...
     task launch {
         //project.buildDir = new File("${rootProject.projectDir}/build/jars")
     }

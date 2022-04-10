@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smoking",
   "ingredient": {
-    "tag": "${dependant}:grain/corn"
+    "tag": "${dependent}:grain/corn"
   },
   "result": "croptopia:popcorn",
   "experience": 0.1,

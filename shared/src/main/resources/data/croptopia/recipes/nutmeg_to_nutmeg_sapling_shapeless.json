@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:crops/nutmeg"
+      "tag": "${dependent}:crops/nutmeg"
     },
     {
-      "tag": "${dependant}:crops/nutmeg"
+      "tag": "${dependent}:crops/nutmeg"
     },
     {
       "tag": "minecraft:saplings"

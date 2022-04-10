@@ -8,7 +8,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     }
   ],
   "result": {

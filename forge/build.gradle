@@ -90,7 +90,7 @@ processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
-        expand "dependant": "forge"
+        expand "dependent": "forge"
     }
 }
 
@@ -111,7 +111,7 @@ shadowJar {
     configurations = [project.configurations.shade]
     //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
-    relocate 'dependants/platform', 'data/forge'
+    relocate 'dependents/platform', 'data/forge'
 }
 
 artifacts {

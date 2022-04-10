@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:vegetables/eggplant"
+      "tag": "${dependent}:vegetables/eggplant"
     }
   ],
   "result": {

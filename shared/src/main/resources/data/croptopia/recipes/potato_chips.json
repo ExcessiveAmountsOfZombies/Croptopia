@@ -8,10 +8,10 @@
       "item": "croptopia:frying_pan"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     }
   ],
   "result": {

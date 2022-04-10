@@ -2,22 +2,22 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:nuts"
+      "tag": "${dependent}:nuts"
     },
     {
-      "tag": "${dependant}:nuts"
+      "tag": "${dependent}:nuts"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:caramel"
+      "tag": "${dependent}:caramel"
     },
     {
-      "tag": "${dependant}:chocolates"
+      "tag": "${dependent}:chocolates"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     }
   ],
   "result": {

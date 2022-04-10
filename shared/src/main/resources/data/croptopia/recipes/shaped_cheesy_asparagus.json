@@ -6,13 +6,13 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:vegetables/asparagus"
+      "tag": "${dependent}:vegetables/asparagus"
     },
     "2": {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     },
     "3": {
-      "tag": "${dependant}:cheeses"
+      "tag": "${dependent}:cheeses"
     },
     "4": {
       "item": "croptopia:pepper"

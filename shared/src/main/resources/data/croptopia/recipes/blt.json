@@ -8,10 +8,10 @@
       "item": "croptopia:cooked_bacon"
     },
     {
-      "tag": "${dependant}:vegetables/lettuce"
+      "tag": "${dependent}:vegetables/lettuce"
     },
     {
-      "tag": "${dependant}:vegetables/tomatoes"
+      "tag": "${dependent}:vegetables/tomato"
     }
   ],
   "result": {

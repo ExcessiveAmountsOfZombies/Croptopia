@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:crops/peanuts"
+      "tag": "${dependent}:crops/peanuts"
     }
   ],
   "result": {

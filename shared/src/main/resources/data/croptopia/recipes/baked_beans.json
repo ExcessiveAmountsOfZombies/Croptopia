@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "tag": "${dependant}:crops/blackbeans"
+    "tag": "${dependent}:crops/blackbeans"
   },
   "result": "croptopia:baked_beans",
   "experience": 0.1,

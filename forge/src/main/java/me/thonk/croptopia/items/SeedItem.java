@@ -41,7 +41,7 @@ public class SeedItem extends ItemNameBlockItem {
         BlockPos hitPos = context.getClickedPos();
         Level world = context.getLevel();
         BlockState state = world.getBlockState(hitPos);
-        if ((state.getBlock() instanceof FarmBlock && context.getClickedFace() == Direction.UP) || state.canSustainPlant(context.getLevel(), hitPos, context.getClickedFace(), (IPlantable) this.getBlock())) {
+        if ((state.getBlock() instanceof FarmBlock && context.getClickedFace() == Direction.UP)) {
             return super.useOn(context);
         }
         return InteractionResult.FAIL;

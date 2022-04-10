@@ -5,10 +5,10 @@
       "item": "croptopia:cooking_pot"
     },
     {
-      "tag": "${dependant}:water_bottles"
+      "tag": "${dependent}:water_bottles"
     },
     {
-      "tag": "${dependant}:vegetables/soybeans"
+      "tag": "${dependent}:vegetables/soybeans"
     }
   ],
   "result": {

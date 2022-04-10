@@ -6,10 +6,10 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:fruits/lemons"
+      "tag": "${dependent}:fruits/lemons"
     },
     "2": {
-      "tag": "${dependant}:fruits/coconuts"
+      "tag": "${dependent}:fruits/coconuts"
     },
     "3": {
       "item": "minecraft:sugar"
@@ -18,10 +18,10 @@
       "item": "minecraft:egg"
     },
     "5": {
-      "tag": "${dependant}:butters"
+      "tag": "${dependent}:butters"
     },
     "6": {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     }
   },
   "result": {

@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:fruits/olives"
+      "tag": "${dependent}:fruits/olives"
     },
     {
-      "tag": "${dependant}:fruits/olives"
+      "tag": "${dependent}:fruits/olives"
     },
     {
       "item": "croptopia:food_press"

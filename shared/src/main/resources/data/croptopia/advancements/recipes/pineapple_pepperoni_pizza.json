@@ -11,10 +11,10 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:fruits/pineapples"
+            "tag": "${dependent}:fruits/pineapples"
           },
           {
-            "tag": "${dependant}:pepperoni"
+            "tag": "${dependent}:pepperoni"
           }
         ]
       }

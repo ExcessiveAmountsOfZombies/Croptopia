@@ -5,13 +5,13 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "${dependant}:vegetables/lettuce"
+      "tag": "${dependent}:vegetables/lettuce"
     },
     {
-      "tag": "${dependant}:vegetables/spinach"
+      "tag": "${dependent}:vegetables/spinach"
     },
     {
-      "tag": "${dependant}:vegetables/kale"
+      "tag": "${dependent}:vegetables/kale"
     }
   ],
   "result": {

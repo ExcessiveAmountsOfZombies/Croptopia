@@ -8,13 +8,13 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     {
-      "tag": "${dependant}:fruits/bananas"
+      "tag": "${dependent}:fruits/bananas"
     },
     {
-      "tag": "${dependant}:nuts"
+      "tag": "${dependent}:nuts"
     }
   ],
   "result": {

@@ -8,10 +8,10 @@
       "item": "croptopia:food_press"
     },
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     }
   ],
   "result": {

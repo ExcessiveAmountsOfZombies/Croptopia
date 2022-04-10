@@ -1,18 +1,18 @@
 {
   "replace": false,
   "values": [
-    "#${dependant}:crops/basil",
-    "#${dependant}:crops/blackbeans",
-    "#${dependant}:crops/chile_peppers",
-    "#${dependant}:crops/coffee_beans",
-    "#${dependant}:crops/hops",
-    "#${dependant}:crops/nutmeg",
-    "#${dependant}:crops/paprika",
-    "#${dependant}:crops/peanuts",
-    "#${dependant}:crops/vanilla",
-    "#${dependant}:fruits",
-    "#${dependant}:grain",
-    "#${dependant}:nuts",
-    "#${dependant}:vegetables"
+    "#${dependent}:crops/basil",
+    "#${dependent}:crops/blackbeans",
+    "#${dependent}:crops/chile_peppers",
+    "#${dependent}:crops/coffee_beans",
+    "#${dependent}:crops/hops",
+    "#${dependent}:crops/nutmeg",
+    "#${dependent}:crops/paprika",
+    "#${dependent}:crops/peanuts",
+    "#${dependent}:crops/vanilla",
+    "#${dependent}:fruits",
+    "#${dependent}:grain",
+    "#${dependent}:nuts",
+    "#${dependent}:vegetables"
   ]
 }

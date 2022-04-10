@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:vegetables/sweetpotatos"
+      "tag": "${dependent}:vegetables/sweetpotatos"
     }
   ],
   "result": {

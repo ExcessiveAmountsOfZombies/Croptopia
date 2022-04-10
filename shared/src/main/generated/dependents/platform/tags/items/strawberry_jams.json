@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:strawberry_jam",
+    "#${dependent}:jams/strawberry_jam"
+  ]
+}
