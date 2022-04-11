@@ -23,7 +23,7 @@ repositories {
 }
 
 archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
-buildDir = rootProject.buildDir
+/*buildDir = rootProject.buildDir*/
 
 configurations {
     shade
@@ -96,7 +96,6 @@ processResources {
 
 tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.0.15'
@@ -107,6 +106,7 @@ dependencies {
 }
 
 shadowJar {
+    archiveClassifier = ""
     enabled = true
     configurations = [project.configurations.shade]
     //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"

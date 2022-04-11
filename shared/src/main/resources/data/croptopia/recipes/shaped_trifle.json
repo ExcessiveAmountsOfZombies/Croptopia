@@ -19,7 +19,7 @@
       "tag": "${dependent}:wines"
     },
     "5": {
-      "tag": "${dependent}:fruits/strawberries"
+      "tag": "${dependent}:strawberries"
     },
     "6": {
       "item": "minecraft:bread"

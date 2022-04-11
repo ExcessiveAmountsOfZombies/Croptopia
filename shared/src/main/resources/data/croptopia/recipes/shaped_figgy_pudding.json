@@ -15,10 +15,10 @@
       "item": "croptopia:whipping_cream"
     },
     "4": {
-      "tag": "${dependent}:fruits/dates"
+      "tag": "${dependent}:dates"
     },
     "5": {
-      "tag": "${dependent}:fruits/figs"
+      "tag": "${dependent}:figs"
     },
     "6": {
       "item": "minecraft:sugar"

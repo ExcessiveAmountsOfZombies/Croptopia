@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependent}:grain/rice"
+      "tag": "${dependent}:rice"
     },
     {
-      "tag": "${dependent}:nuts/almonds"
+      "tag": "${dependent}:almonds"
     },
     {
-      "tag": "${dependent}:fruits/limes"
+      "tag": "${dependent}:limes"
     },
     {
       "tag": "${dependent}:water_bottles"

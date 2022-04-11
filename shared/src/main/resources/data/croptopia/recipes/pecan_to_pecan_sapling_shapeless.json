@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependent}:nuts/pecans"
+      "tag": "${dependent}:pecans"
     },
     {
-      "tag": "${dependent}:nuts/pecans"
+      "tag": "${dependent}:pecans"
     },
     {
       "tag": "minecraft:saplings"

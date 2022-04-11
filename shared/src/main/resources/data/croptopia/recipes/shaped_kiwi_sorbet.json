@@ -6,7 +6,7 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependent}:fruits/kiwis"
+      "tag": "${dependent}:kiwis"
     },
     "2": {
       "item": "minecraft:honey_bottle"

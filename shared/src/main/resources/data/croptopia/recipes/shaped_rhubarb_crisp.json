@@ -7,13 +7,13 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependent}:vegetables/artichokes"
+      "tag": "${dependent}:artichokes"
     },
     "2": {
       "item": "croptopia:pepper"
     },
     "3": {
-      "tag": "${dependent}:fruits/lemons"
+      "tag": "${dependent}:lemons"
     },
     "4": {
       "item": "minecraft:bread"

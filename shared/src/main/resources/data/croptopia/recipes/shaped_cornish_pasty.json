@@ -19,10 +19,10 @@
       "item": "minecraft:potato"
     },
     "5": {
-      "tag": "${dependent}:vegetables/onion"
+      "tag": "${dependent}:onion"
     },
     "6": {
-      "tag": "${dependent}:vegetables/rutabagas"
+      "tag": "${dependent}:rutabagas"
     },
     "7": {
       "item": "croptopia:pepper"

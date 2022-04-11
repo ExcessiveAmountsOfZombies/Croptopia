@@ -25,7 +25,7 @@
       "tag": "${dependent}:butters"
     },
     "7": {
-      "tag": "${dependent}:fruits/dates"
+      "tag": "${dependent}:dates"
     },
     "8": {
       "tag": "${dependent}:salts"

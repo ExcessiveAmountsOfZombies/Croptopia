@@ -7,13 +7,13 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependent}:vegetables/turnips"
+      "tag": "${dependent}:turnips"
     },
     "2": {
       "tag": "${dependent}:olive_oils"
     },
     "3": {
-      "tag": "${dependent}:vegetables/garlic"
+      "tag": "${dependent}:garlic"
     },
     "4": {
       "tag": "${dependent}:salts"

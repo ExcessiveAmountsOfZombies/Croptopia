@@ -10,7 +10,7 @@
       "item": "minecraft:egg"
     },
     "2": {
-      "tag": "${dependent}:vegetables/eggplant"
+      "tag": "${dependent}:eggplant"
     },
     "3": {
       "tag": "${dependent}:olive_oils"

@@ -11,13 +11,13 @@
       "tag": "${dependent}:crops/blackbeans"
     },
     {
-      "tag": "${dependent}:grain/corn"
+      "tag": "${dependent}:corn"
     },
     {
       "tag": "${dependent}:cheeses"
     },
     {
-      "tag": "${dependent}:grain/rice"
+      "tag": "${dependent}:rice"
     },
     {
       "item": "croptopia:cooking_pot"

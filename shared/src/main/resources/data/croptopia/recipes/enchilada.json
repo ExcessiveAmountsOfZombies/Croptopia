@@ -5,7 +5,7 @@
       "tag": "croptopia:meat_replacements"
     },
     {
-      "tag": "${dependent}:vegetables/tomato"
+      "tag": "${dependent}:tomato"
     },
     {
       "tag": "${dependent}:cheeses"

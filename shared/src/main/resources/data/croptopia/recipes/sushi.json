@@ -8,7 +8,7 @@
       "tag": "croptopia:fishes"
     },
     {
-      "tag": "${dependent}:grain/rice"
+      "tag": "${dependent}:rice"
     }
   ],
   "result": {

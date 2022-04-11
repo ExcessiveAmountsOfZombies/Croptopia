@@ -9,7 +9,7 @@
       "item": "croptopia:peanut_butter"
     },
     "2": {
-      "tag": "${dependent}:vegetables/celery"
+      "tag": "${dependent}:celery"
     }
   },
   "result": {

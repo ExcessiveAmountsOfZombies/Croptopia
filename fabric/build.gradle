@@ -20,7 +20,7 @@ repositories {
 }
 
 archivesBaseName = archives_base_name
-buildDir = rootProject.buildDir
+/*buildDir = rootProject.buildDir*/
 
 configurations {
     shade

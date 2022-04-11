@@ -8,7 +8,7 @@
       "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependent}:fruits/strawberries"
+      "tag": "${dependent}:strawberries"
     }
   ],
   "result": {

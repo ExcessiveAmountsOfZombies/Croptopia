@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependent}:fruits/lemons"
+      "tag": "${dependent}:lemons"
     },
     {
       "tag": "${dependent}:crops/chile_peppers"
     },
     {
-      "tag": "${dependent}:vegetables/tomato"
+      "tag": "${dependent}:tomato"
     },
     {
       "tag": "croptopia:chicken_replacements"

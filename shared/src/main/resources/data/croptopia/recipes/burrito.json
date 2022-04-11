@@ -5,10 +5,10 @@
       "tag": "${dependent}:crops/blackbeans"
     },
     {
-      "tag": "${dependent}:grain/rice"
+      "tag": "${dependent}:rice"
     },
     {
-      "tag": "${dependent}:vegetables/tomato"
+      "tag": "${dependent}:tomato"
     },
     {
       "tag": "${dependent}:tortillas"

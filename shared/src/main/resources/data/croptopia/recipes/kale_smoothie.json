@@ -5,7 +5,7 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "tag": "${dependent}:vegetables/kale"
+      "tag": "${dependent}:kale"
     },
     {
       "item": "minecraft:ice"
@@ -14,13 +14,13 @@
       "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependent}:fruits/mangos"
+      "tag": "${dependent}:mangos"
     },
     {
       "tag": "${dependent}:yoghurts"
     },
     {
-      "tag": "${dependent}:vegetables/tomato"
+      "tag": "${dependent}:tomato"
     }
   ],
   "result": {

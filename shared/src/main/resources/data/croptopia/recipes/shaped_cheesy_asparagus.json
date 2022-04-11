@@ -6,7 +6,7 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependent}:vegetables/asparagus"
+      "tag": "${dependent}:asparagus"
     },
     "2": {
       "tag": "${dependent}:olive_oils"

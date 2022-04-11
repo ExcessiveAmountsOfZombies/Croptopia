@@ -9,10 +9,10 @@
       "tag": "${dependent}:butters"
     },
     "2": {
-      "tag": "${dependent}:vegetables/greenbeans"
+      "tag": "${dependent}:greenbeans"
     },
     "3": {
-      "tag": "${dependent}:vegetables/ginger"
+      "tag": "${dependent}:ginger"
     },
     "4": {
       "tag": "${dependent}:salts"

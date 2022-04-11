@@ -5,7 +5,7 @@
       "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependent}:fruits/limes"
+      "tag": "${dependent}:limes"
     },
     {
       "tag": "${dependent}:salts"

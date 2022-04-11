@@ -244,7 +244,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("turmeric", ItemRegistry.turmeric);
         createGeneralTag("vanilla_ice_creams", ItemRegistry.vanillaIceCream);
         createGeneralTag("veggie_salads", ItemRegistry.veggieSalad);
-        createGeneralTag("water_bottles", ItemRegistry.waterBottle);
         createGeneralTag("wines", ItemRegistry.wine);
         createGeneralTag("yam_jam", ItemRegistry.yamJam);
         createGeneralTag("yoghurts", ItemRegistry.yoghurt);

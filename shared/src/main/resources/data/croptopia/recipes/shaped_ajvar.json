@@ -6,13 +6,13 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependent}:fruits/bellpeppers"
+      "tag": "${dependent}:bellpeppers"
     },
     "2": {
-      "tag": "${dependent}:vegetables/eggplant"
+      "tag": "${dependent}:eggplant"
     },
     "3": {
-      "tag": "${dependent}:vegetables/garlic"
+      "tag": "${dependent}:garlic"
     },
     "4": {
       "item": "croptopia:pepper"

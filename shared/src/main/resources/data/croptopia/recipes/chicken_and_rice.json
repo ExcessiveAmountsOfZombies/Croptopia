@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependent}:grain/rice"
+      "tag": "${dependent}:rice"
     },
     {
       "tag": "${dependent}:crops/chile_peppers"

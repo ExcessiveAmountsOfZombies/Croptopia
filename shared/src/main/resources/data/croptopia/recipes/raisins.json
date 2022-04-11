@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smelting",
   "ingredient": {
-    "tag": "${dependent}:fruits/grapes"
+    "tag": "${dependent}:grapes"
   },
   "result": "croptopia:raisins",
   "experience": 0.1,

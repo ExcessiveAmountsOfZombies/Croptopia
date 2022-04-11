@@ -22,16 +22,16 @@
       "item": "minecraft:potato"
     },
     "5": {
-      "tag": "${dependent}:vegetables/tomato"
+      "tag": "${dependent}:tomato"
     },
     "6": {
-      "tag": "${dependent}:grain/corn"
+      "tag": "${dependent}:corn"
     },
     "7": {
-      "tag": "${dependent}:vegetables/garlic"
+      "tag": "${dependent}:garlic"
     },
     "8": {
-      "tag": "${dependent}:vegetables/onion"
+      "tag": "${dependent}:onion"
     }
   },
   "result": {

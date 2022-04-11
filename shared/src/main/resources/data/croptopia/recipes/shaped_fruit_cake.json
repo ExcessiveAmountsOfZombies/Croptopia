@@ -13,10 +13,10 @@
       "item": "minecraft:sugar"
     },
     "3": {
-      "tag": "${dependent}:fruits/lemons"
+      "tag": "${dependent}:lemons"
     },
     "4": {
-      "tag": "${dependent}:nuts/pecans"
+      "tag": "${dependent}:pecans"
     },
     "5": {
       "item": "croptopia:cinnamon"

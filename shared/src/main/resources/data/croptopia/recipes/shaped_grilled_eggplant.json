@@ -6,7 +6,7 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependent}:vegetables/eggplant"
+      "tag": "${dependent}:eggplant"
     },
     "2": {
       "tag": "${dependent}:salts"
@@ -15,7 +15,7 @@
       "tag": "${dependent}:olive_oils"
     },
     "4": {
-      "tag": "${dependent}:vegetables/garlic"
+      "tag": "${dependent}:garlic"
     },
     "5": {
       "item": "croptopia:pepper"

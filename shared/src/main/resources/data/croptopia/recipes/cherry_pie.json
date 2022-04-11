@@ -5,7 +5,7 @@
       "tag": "${dependent}:doughs"
     },
     {
-      "tag": "${dependent}:fruits/cherries"
+      "tag": "${dependent}:cherries"
     },
     {
       "item": "minecraft:egg"

@@ -13,7 +13,7 @@
       "tag": "${dependent}:flour"
     },
     "3": {
-      "tag": "${dependent}:vegetables/greenonions"
+      "tag": "${dependent}:greenonions"
     },
     "4": {
       "item": "croptopia:bacon"
