@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependent}:vegetables/zucchini"
+            "tag": "${dependent}:zucchini"
           }
         ]
       }

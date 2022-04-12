@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependent}:fruits/strawberries"
+            "tag": "${dependent}:strawberries"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependent}:fruits/bananas"
+            "tag": "${dependent}:bananas"
           }
         ]
       }
@@ -31,7 +31,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependent}:fruits/grapes"
+            "tag": "${dependent}:grapes"
           }
         ]
       }
