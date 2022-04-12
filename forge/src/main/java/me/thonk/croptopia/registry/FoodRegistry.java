@@ -3,24 +3,33 @@ package me.thonk.croptopia.registry;
 
 import net.minecraft.world.food.FoodProperties;
 
-public class FoodRegistry {
+public record FoodRegistry(int hunger, float satMod) {
+    public static final FoodRegistry REG_1 = new FoodRegistry(1, 0.2F);
+    public static final FoodRegistry REG_2 = new FoodRegistry(2, 0.2F);
+    public static final FoodRegistry REG_3 = new FoodRegistry(3, 0.6F);
+    public static final FoodRegistry REG_4 = new FoodRegistry(4, 0.6F);
+    public static final FoodRegistry REG_5 = new FoodRegistry(5, 1.2F);
+    public static final FoodRegistry REG_6 = new FoodRegistry(6, 1.2F);
+    public static final FoodRegistry REG_7 = new FoodRegistry(7, 1.2F);
+    public static final FoodRegistry REG_8 = new FoodRegistry(8, 1.2F);
+    public static final FoodRegistry REG_9 = new FoodRegistry(9, 1.5F);
+    public static final FoodRegistry REG_10 = new FoodRegistry(10, 1.6F);
+    public static final FoodRegistry REG_11 = new FoodRegistry(11, 1.7F);
+    public static final FoodRegistry REG_12 = new FoodRegistry(12, 1.8F);
+    public static final FoodRegistry REG_13 = new FoodRegistry(13, 1.9F);
+    public static final FoodRegistry REG_14 = new FoodRegistry(14, 2.0F);
+    public static final FoodRegistry REG_15 = new FoodRegistry(15, 2.1F);
+    public static final FoodRegistry REG_16 = new FoodRegistry(16, 2.2F);
+    public static final FoodRegistry REG_17 = new FoodRegistry(17, 2.3F);
+    public static final FoodRegistry REG_18 = new FoodRegistry(18, 2.4F);
+    public static final FoodRegistry REG_19 = new FoodRegistry(19, 2.5F);
+    public static final FoodRegistry REG_20 = new FoodRegistry(20, 2.6F);
 
-    public static final FoodProperties.Builder EDIBLE_3_BUILDER = new FoodProperties.Builder().nutrition(3).saturationMod(0.4F);
-    public static final FoodProperties.Builder EDIBLE_1_BUILDER = new FoodProperties.Builder().nutrition(1).saturationMod(0.4F);
-    public static final FoodProperties.Builder EDIBLE_5_BUILDER = new FoodProperties.Builder().nutrition(5).saturationMod(0.5F);
-    public static final FoodProperties.Builder EDIBLE_7_BUILDER = new FoodProperties.Builder().nutrition(7).saturationMod(0.6F);
-    public static final FoodProperties.Builder EDIBLE_9_BUILDER = new FoodProperties.Builder().nutrition(9).saturationMod(0.6F);
-    public static final FoodProperties.Builder EDIBLE_10_BUILDER = new FoodProperties.Builder().nutrition(10).saturationMod(0.8F);
-    public static final FoodProperties.Builder EDIBLE_14_BUILDER = new FoodProperties.Builder().nutrition(14).saturationMod(1.0F);
-    public static final FoodProperties.Builder EDIBLE_18_BUILDER = new FoodProperties.Builder().nutrition(18).saturationMod(1.4F);
+    public static FoodProperties.Builder createBuilder(FoodRegistry reg) {
+        return new FoodProperties.Builder().nutrition(reg.hunger).saturationMod(reg.satMod);
+    }
 
-    public static final FoodProperties EDIBLE_3 = EDIBLE_3_BUILDER.build();
-    public static final FoodProperties EDIBLE_1 = EDIBLE_1_BUILDER.build();
-    public static final FoodProperties EDIBLE_5 = EDIBLE_5_BUILDER.build();
-    public static final FoodProperties EDIBLE_7 = EDIBLE_7_BUILDER.build();
-    public static final FoodProperties EDIBLE_9 = EDIBLE_9_BUILDER.build();
-    public static final FoodProperties EDIBLE_10 = EDIBLE_10_BUILDER.build();
-    public static final FoodProperties EDIBLE_14 = EDIBLE_14_BUILDER.build();
-    public static final FoodProperties EDIBLE_18 = EDIBLE_18_BUILDER.build();
-
+    public static FoodProperties createComponent(FoodRegistry reg) {
+        return createBuilder(reg).build();
+    }
 }
