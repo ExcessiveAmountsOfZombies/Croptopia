@@ -14,7 +14,7 @@
       "tag": "${dependent}:flour"
     },
     {
-      "tag": "${dependent}:crops/vanilla"
+      "tag": "${dependent}:vanilla"
     },
     {
       "tag": "${dependent}:rums"

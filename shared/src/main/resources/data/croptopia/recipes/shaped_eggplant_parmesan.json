@@ -22,7 +22,7 @@
       "tag": "${dependent}:cheeses"
     },
     "6": {
-      "tag": "${dependent}:crops/basil"
+      "tag": "${dependent}:basil"
     },
     "7": {
       "item": "minecraft:bread"

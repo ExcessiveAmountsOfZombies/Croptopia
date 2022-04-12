@@ -5,7 +5,7 @@
       "item": "minecraft:egg"
     },
     {
-      "tag": "${dependent}:crops/chile_peppers"
+      "tag": "${dependent}:chile_peppers"
     },
     {
       "tag": "${dependent}:olive_oils"

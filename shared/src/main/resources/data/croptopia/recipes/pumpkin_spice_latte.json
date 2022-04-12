@@ -5,7 +5,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependent}:crops/paprika"
+      "tag": "${dependent}:paprika"
     },
     {
       "tag": "${dependent}:milks"

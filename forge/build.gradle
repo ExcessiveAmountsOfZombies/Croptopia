@@ -23,7 +23,7 @@ repositories {
 }
 
 archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
-/*buildDir = rootProject.buildDir*/
+buildDir = rootProject.buildDir
 
 configurations {
     shade

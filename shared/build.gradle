@@ -1,4 +1,4 @@
-/*buildDir = rootProject.buildDir*/
+buildDir = rootProject.buildDir
 sourceSets {
     main {
         resources {

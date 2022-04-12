@@ -21,7 +21,7 @@
       "item": "croptopia:pepper"
     },
     "6": {
-      "tag": "${dependent}:crops/paprika"
+      "tag": "${dependent}:paprika"
     }
   },
   "result": {

@@ -22,7 +22,7 @@
       "item": "minecraft:egg"
     },
     "6": {
-      "tag": "${dependent}:crops/vanilla"
+      "tag": "${dependent}:vanilla"
     },
     "7": {
       "tag": "${dependent}:blueberries"

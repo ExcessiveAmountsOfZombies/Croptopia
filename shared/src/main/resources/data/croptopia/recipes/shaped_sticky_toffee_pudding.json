@@ -13,7 +13,7 @@
       "tag": "${dependent}:water_bottles"
     },
     "3": {
-      "tag": "${dependent}:crops/vanilla"
+      "tag": "${dependent}:vanilla"
     },
     "4": {
       "item": "croptopia:whipping_cream"

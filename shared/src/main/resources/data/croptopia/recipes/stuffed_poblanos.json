@@ -5,10 +5,10 @@
       "tag": "croptopia:beef_replacements"
     },
     {
-      "tag": "${dependent}:crops/chile_peppers"
+      "tag": "${dependent}:chile_peppers"
     },
     {
-      "tag": "${dependent}:crops/blackbeans"
+      "tag": "${dependent}:blackbeans"
     },
     {
       "tag": "${dependent}:corn"

@@ -13,7 +13,7 @@
       "tag": "${dependent}:milks"
     },
     "3": {
-      "tag": "${dependent}:crops/vanilla"
+      "tag": "${dependent}:vanilla"
     },
     "4": {
       "tag": "${dependent}:wines"

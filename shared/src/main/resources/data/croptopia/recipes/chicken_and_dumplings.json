@@ -5,7 +5,7 @@
       "tag": "${dependent}:doughs"
     },
     {
-      "tag": "${dependent}:crops/chile_peppers"
+      "tag": "${dependent}:chile_peppers"
     },
     {
       "item": "minecraft:chicken"

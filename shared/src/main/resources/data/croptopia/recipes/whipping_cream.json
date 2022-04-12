@@ -8,7 +8,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependent}:crops/vanilla"
+      "tag": "${dependent}:vanilla"
     }
   ],
   "result": {

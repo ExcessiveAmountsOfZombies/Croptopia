@@ -31,7 +31,7 @@
       "tag": "${dependent}:bellpeppers"
     },
     "9": {
-      "tag": "${dependent}:crops/basil"
+      "tag": "${dependent}:basil"
     }
   },
   "result": {

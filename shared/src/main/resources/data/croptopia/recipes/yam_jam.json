@@ -5,7 +5,7 @@
       "tag": "${dependent}:yams"
     },
     {
-      "tag": "${dependent}:crops/vanilla"
+      "tag": "${dependent}:vanilla"
     },
     {
       "tag": "${dependent}:milks"

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependent}:crops/blackbeans"
+      "tag": "${dependent}:blackbeans"
     },
     {
-      "tag": "${dependent}:crops/blackbeans"
+      "tag": "${dependent}:blackbeans"
     },
     {
-      "tag": "${dependent}:crops/chile_peppers"
+      "tag": "${dependent}:chile_peppers"
     },
     {
       "tag": "${dependent}:cheeses"
