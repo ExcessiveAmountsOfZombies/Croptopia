@@ -2,11 +2,12 @@ package me.thonk.croptopia.registry;
 
 import me.thonk.common.ItemNames;
 import me.thonk.croptopia.items.*;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SuspiciousStewItem;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.RegistryEvent;
 
@@ -421,6 +422,42 @@ public class ItemRegistry {
     public static Item stuffedArtichoke;
     public static Item toastSandwich;
 
+    //1.9.0
+    public static Item roastedPumpkinSeeds;
+    public static Item roastedSunflowerSeeds;
+    public static Item pumpkinBars;
+    public static Item cornBread;
+    public static Item pumpkinSoup;
+    public static Item meringue;
+    public static Item cabbageRoll;
+    public static Item borscht;
+    public static Item goulash;
+    public static Item beetrootSalad;
+    public static Item candiedKumquats;
+    public static Item shrimp;
+    public static Item tuna;
+    public static Item calamari;
+    public static Item crab;
+    public static Item roe;
+    public static Item clam;
+    public static Item oyster;
+    public static Item cookedShrimp;
+    public static Item cookedTuna;
+    public static Item cookedCalamari;
+    public static Item steamedCrab;
+    public static Item glowingCalamari;
+    public static Item seaLettuce;
+    public static Item deepFriedShrimp;
+    public static Item tunaRoll;
+    public static Item friedCalamari;
+    public static Item crabLegs;
+    public static Item steamedClams;
+    public static Item grilledOysters;
+    public static Item anchovy;
+    public static Item cookedAnchovy;
+    public static Item anchovyPizza;
+    public static Item mashedPotatoes;
+
     // cooking utensils?
     public static Item foodPress;
     public static Item fryingPan;
@@ -810,6 +847,41 @@ public class ItemRegistry {
         stirFry = registerItem(itemRegister, STIR_FRY, new Item(createGroup().food(FoodRegistry.createComponent(REG_18))));
         stuffedArtichoke = registerItem(itemRegister, STUFFED_ARTICHOKE, new Item(createGroup().food(FoodRegistry.createComponent(REG_18))));
         toastSandwich = registerItem(itemRegister, TOAST_SANDWICH, new Item(createGroup().food(FoodRegistry.createComponent(REG_10))));
+
+        roastedPumpkinSeeds = registerItem(itemRegister, ItemNames.ROASTED_PUMPKIN_SEEDS, new Item(createGroup().food(FoodRegistry.createComponent(REG_4))));
+        roastedSunflowerSeeds = registerItem(itemRegister, ItemNames.ROASTED_SUNFLOWER_SEEDS, new Item(createGroup().food(FoodRegistry.createComponent(REG_4))));
+        pumpkinBars = registerItem(itemRegister, ItemNames.PUMPKIN_BARS, new Item(createGroup().food(FoodRegistry.createComponent(REG_6))));
+        cornBread = registerItem(itemRegister, ItemNames.CORN_BREAD, new Item(createGroup().food(FoodRegistry.createComponent(REG_5))));
+        pumpkinSoup = registerItem(itemRegister, ItemNames.PUMPKIN_SOUP, new BowlFoodItem(createGroup().food(FoodRegistry.createComponent(REG_10))));
+        meringue = registerItem(itemRegister, ItemNames.MERINGUE, new Item(createGroup().food(FoodRegistry.createComponent(REG_6))));
+        cabbageRoll = registerItem(itemRegister, ItemNames.CABBAGE_ROLL, new Item(createGroup().food(FoodRegistry.createComponent(REG_14))));
+        borscht = registerItem(itemRegister, ItemNames.BORSCHT, new Item(createGroup().food(FoodRegistry.createComponent(REG_12))));
+        goulash = registerItem(itemRegister, ItemNames.GOULASH, new Item(createGroup().food(FoodRegistry.createComponent(REG_16))));
+        beetrootSalad = registerItem(itemRegister, ItemNames.BEETROOT_SALAD, new Item(createGroup().food(FoodRegistry.createComponent(REG_10))));
+        candiedKumquats = registerItem(itemRegister, ItemNames.CANDIED_KUMQUATS, new Item(createGroup().food(FoodRegistry.createComponent(REG_6))));
+        shrimp = registerItem(itemRegister, ItemNames.SHRIMP, new Item(createGroup().food(FoodRegistry.createComponent(REG_1))));
+        tuna = registerItem(itemRegister, ItemNames.TUNA, new Item(createGroup().food(FoodRegistry.createComponent(REG_3))));
+        calamari = registerItem(itemRegister, ItemNames.CALAMARI, new Item(createGroup().food(FoodRegistry.createComponent(REG_1))));
+        crab = registerItem(itemRegister, ItemNames.CRAB, new Item(createGroup().food(FoodRegistry.createComponent(REG_1))));
+        roe = registerItem(itemRegister, ItemNames.ROE, new Item(createGroup().food(FoodRegistry.createComponent(REG_1))));
+        clam = registerItem(itemRegister, ItemNames.CLAM, new Item(createGroup().food(FoodRegistry.createComponent(REG_3))));
+        oyster = registerItem(itemRegister, ItemNames.OYSTER, new Item(createGroup().food(FoodRegistry.createComponent(REG_3))));
+        cookedShrimp = registerItem(itemRegister, ItemNames.COOKED_SHRIMP, new Item(createGroup().food(FoodRegistry.createComponent(REG_5))));
+        cookedTuna = registerItem(itemRegister, ItemNames.COOKED_TUNA, new Item(createGroup().food(FoodRegistry.createComponent(REG_6))));
+        cookedCalamari = registerItem(itemRegister, ItemNames.COOKED_CALAMARI, new Item(createGroup().food(FoodRegistry.createComponent(REG_5))));
+        steamedCrab = registerItem(itemRegister, ItemNames.STEAMED_CRAB, new Item(createGroup().food(FoodRegistry.createComponent(REG_6))));
+        glowingCalamari = registerItem(itemRegister, ItemNames.GLOWING_CALAMARI, new Item(createGroup().food(FoodRegistry.createBuilder(REG_3).effect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1), 1.0F).build())));
+        seaLettuce = registerItem(itemRegister, ItemNames.SEA_LETTUCE, new Item(createGroup().food(FoodRegistry.createComponent(REG_1))));
+        deepFriedShrimp = registerItem(itemRegister, ItemNames.DEEP_FRIED_SHRIMP, new Item(createGroup().food(FoodRegistry.createComponent(REG_10))));
+        tunaRoll = registerItem(itemRegister, ItemNames.TUNA_ROLL, new Item(createGroup().food(FoodRegistry.createComponent(REG_10))));
+        friedCalamari = registerItem(itemRegister, ItemNames.FRIED_CALAMARI, new Item(createGroup().food(FoodRegistry.createComponent(REG_10))));
+        crabLegs = registerItem(itemRegister, ItemNames.CRAB_LEGS, new Item(createGroup().food(FoodRegistry.createComponent(REG_11))));
+        steamedClams = registerItem(itemRegister, ItemNames.STEAMED_CLAMS, new Item(createGroup().food(FoodRegistry.createComponent(REG_11))));
+        grilledOysters = registerItem(itemRegister, ItemNames.GRILLED_OYSTERS, new Item(createGroup().food(FoodRegistry.createComponent(REG_6))));
+        anchovy = registerItem(itemRegister, ItemNames.ANCHOVY, new Item(createGroup().food(FoodRegistry.createComponent(REG_1))));
+        cookedAnchovy = registerItem(itemRegister, ItemNames.COOKED_ANCHOVY, new Item(createGroup().food(FoodRegistry.createComponent(REG_4))));
+        anchovyPizza = registerItem(itemRegister, ItemNames.ANCHOVY_PIZZA, new Item(createGroup().food(FoodRegistry.createComponent(REG_15))));
+        mashedPotatoes = registerItem(itemRegister, ItemNames.MASHED_POTATOES, new Item(createGroup().food(FoodRegistry.createComponent(REG_9))));
 
         // the utensils override the getContainerItem in the CookingUtensil class
         foodPress = registerItem(itemRegister, FOOD_PRESS, new CookingUtensil(createGroup().stacksTo(1)));
