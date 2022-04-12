@@ -169,6 +169,33 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createSeedSaplingTag("seeds", "turnip", ItemRegistry.turnipSeed);
         createSeedSaplingTag("seeds", "yam", ItemRegistry.yamSeed);
         createSeedSaplingTag("seeds", "zucchini", ItemRegistry.zucchiniSeed);
+        createSeedSaplingTag("saplings", "almond", ItemRegistry.almondSapling);
+        createSeedSaplingTag("saplings", "apple", ItemRegistry.appleSapling);
+        createSeedSaplingTag("saplings", "apricot", ItemRegistry.apricotSapling);
+        createSeedSaplingTag("saplings", "avocado", ItemRegistry.avocadoSapling);
+        createSeedSaplingTag("saplings", "banana", ItemRegistry.bananaSapling);
+        createSeedSaplingTag("saplings", "cashew", ItemRegistry.cashewSapling);
+        createSeedSaplingTag("saplings", "cherry", ItemRegistry.cherrySapling);
+        createSeedSaplingTag("saplings", "coconut", ItemRegistry.coconutSapling);
+        createSeedSaplingTag("saplings", "date", ItemRegistry.dateSapling);
+        createSeedSaplingTag("saplings", "dragonfruit", ItemRegistry.dragonFruitSapling);
+        createSeedSaplingTag("saplings", "fig", ItemRegistry.figSapling);
+        createSeedSaplingTag("saplings", "grapefruit", ItemRegistry.grapefruitSapling);
+        createSeedSaplingTag("saplings", "kumquat", ItemRegistry.kumquatSapling);
+        createSeedSaplingTag("saplings", "lemon", ItemRegistry.lemonSapling);
+        createSeedSaplingTag("saplings", "lime", ItemRegistry.limeSapling);
+        createSeedSaplingTag("saplings", "mango", ItemRegistry.mangoSapling);
+        createSeedSaplingTag("saplings", "nectarine", ItemRegistry.nectarineSapling);
+        createSeedSaplingTag("saplings", "nutmeg", ItemRegistry.nutmegSapling);
+        createSeedSaplingTag("saplings", "orange", ItemRegistry.orangeSapling);
+        createSeedSaplingTag("saplings", "peach", ItemRegistry.peachSapling);
+        createSeedSaplingTag("saplings", "pear", ItemRegistry.pearSapling);
+        createSeedSaplingTag("saplings", "pecan", ItemRegistry.pecanSapling);
+        createSeedSaplingTag("saplings", "persimmon", ItemRegistry.persimmonSapling);
+        createSeedSaplingTag("saplings", "plum", ItemRegistry.plumSapling);
+        createSeedSaplingTag("saplings", "starfruit", ItemRegistry.starFruitSapling);
+        createSeedSaplingTag("saplings", "walnut", ItemRegistry.walnutSapling);
+        createSeedSaplingTag("saplings", "cinnamon", ItemRegistry.cinnamonSapling);
 
         createCategoryTag("fruits", "almonds", ItemRegistry.almond);
         createCategoryTag("fruits", "apricots", ItemRegistry.apricot);
@@ -392,7 +419,7 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("yoghurts", ItemRegistry.yoghurt);
 
         this.getOrCreateTagBuilder(register("water_bottles")).add(ItemRegistry.waterBottle).add(Items.WATER_BUCKET);
-
+        this.getOrCreateTagBuilder(register("milks")).add(ItemRegistry.milkBottle).add(ItemRegistry.soyMilk).add(Items.MILK_BUCKET);
     }
 
     @Override
@@ -431,6 +458,15 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         this.getOrCreateTagBuilder(pluralTag).add(item);
     }
 
+    /**
+     * Special method for forge/fabric differentiations.
+     * Forge conventions are sapling:"saplingName" without "sapling" appended ex: forge:saplings/apple
+     * In fabric we would just do c:apple_saplings
+     * This method creates the appropriate tags for both platforms
+     * Forge: forge:saplings/apple
+     * Fabric: c:apple_saplings
+     * Saplings.json -> references Fabric -> references forge
+     */
     private void createSeedSaplingTag(String category, String name, Item item) {
         String pluralSeedName = Registry.ITEM.getId(item).getPath() + "s";
         // Forge tags use seed/cropname, but not including seed name. artichoke good artichoke_seed bad.

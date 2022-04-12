@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:mango_sapling",
+    "#${dependent}:saplings/mango"
+  ]
+}
