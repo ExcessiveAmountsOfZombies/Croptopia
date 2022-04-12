@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:rice",
+    "#${dependent}:crops/rice",
+    "croptopia:rice",
     "#${dependent}:grain/rice"
   ]
 }

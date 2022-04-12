@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.data.DataCache;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.tag.Tag;
 import net.minecraft.tag.TagKey;
 import net.minecraft.tag.TagManagerLoader;
@@ -27,6 +28,148 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void generateTags() {
+        createCategoryTag("crops", "almonds", ItemRegistry.almond);
+        createCategoryTag("crops", "apricots", ItemRegistry.apricot);
+        createCategoryTag("crops", "avocados", ItemRegistry.avocado);
+        createCategoryTag("crops", "bananas", ItemRegistry.banana);
+        createCategoryTag("crops", "bellpeppers", ItemRegistry.bellPepper);
+        createCategoryTag("crops", "blackberries", ItemRegistry.blackberry);
+        createCategoryTag("crops", "blueberries", ItemRegistry.blueberry);
+        createCategoryTag("crops", "cantaloupes", ItemRegistry.cantaloupe);
+        createCategoryTag("crops", "cashews", ItemRegistry.cashew);
+        createCategoryTag("crops", "cherries", ItemRegistry.cherry);
+        createCategoryTag("crops", "coconuts", ItemRegistry.coconut);
+        createCategoryTag("crops", "cranberries", ItemRegistry.cranberry);
+        createCategoryTag("crops", "currants", ItemRegistry.currant);
+        createCategoryTag("crops", "dates", ItemRegistry.date);
+        createCategoryTag("crops", "dragonfruits", ItemRegistry.dragonFruit);
+        createCategoryTag("crops", "elderberries", ItemRegistry.elderberry);
+        createCategoryTag("crops", "figs", ItemRegistry.fig);
+        createCategoryTag("crops", "grapefruits", ItemRegistry.grapefruit);
+        createCategoryTag("crops", "grapes", ItemRegistry.grape);
+        createCategoryTag("crops", "honeydew", ItemRegistry.honeydew);
+        createCategoryTag("crops", "kiwis", ItemRegistry.kiwi);
+        createCategoryTag("crops", "kumquat", ItemRegistry.kumquat);
+        createCategoryTag("crops", "lemons", ItemRegistry.lemon);
+        createCategoryTag("crops", "limes", ItemRegistry.lime);
+        createCategoryTag("crops", "mangos", ItemRegistry.mango);
+        createCategoryTag("crops", "nectarines", ItemRegistry.nectarine);
+        createCategoryTag("crops", "olives", ItemRegistry.olive);
+        createCategoryTag("crops", "oranges", ItemRegistry.orange);
+        createCategoryTag("crops", "peaches", ItemRegistry.peach);
+        createCategoryTag("crops", "pears", ItemRegistry.pear);
+        createCategoryTag("crops", "pecans", ItemRegistry.pecan);
+        createCategoryTag("crops", "persimmons", ItemRegistry.persimmon);
+        createCategoryTag("crops", "pineapples", ItemRegistry.pineapple);
+        createCategoryTag("crops", "plums", ItemRegistry.plum);
+        createCategoryTag("crops", "raspberries", ItemRegistry.raspberry);
+        createCategoryTag("crops", "starfruits", ItemRegistry.starFruit);
+        createCategoryTag("crops", "strawberries", ItemRegistry.strawberry);
+        createCategoryTag("crops", "walnuts", ItemRegistry.walnut);
+
+        createCategoryTag("crops", "barley", ItemRegistry.barley);
+        createCategoryTag("crops", "corn", ItemRegistry.corn);
+        createCategoryTag("crops", "oats", ItemRegistry.oat);
+        createCategoryTag("crops", "rice", ItemRegistry.rice);
+
+        createCategoryTag("crops", "artichokes", ItemRegistry.artichoke);
+        createCategoryTag("crops", "asparagus", ItemRegistry.asparagus);
+        createCategoryTag("crops", "broccoli", ItemRegistry.broccoli);
+        createCategoryTag("crops", "cabbage", ItemRegistry.cabbage);
+        createCategoryTag("crops", "cauliflower", ItemRegistry.cauliflower);
+        createCategoryTag("crops", "celery", ItemRegistry.celery);
+        createCategoryTag("crops", "cucumbers", ItemRegistry.cucumber);
+        createCategoryTag("crops", "eggplants", ItemRegistry.eggplant);
+        createCategoryTag("crops", "garlic", ItemRegistry.garlic);
+        createCategoryTag("crops", "gingers", ItemRegistry.ginger);
+        createCategoryTag("crops", "greenbeans", ItemRegistry.greenBean);
+        createCategoryTag("crops", "greenonions", ItemRegistry.greenOnion);
+        createCategoryTag("crops", "kale", ItemRegistry.kale);
+        createCategoryTag("crops", "leek", ItemRegistry.leek);
+        createCategoryTag("crops", "lettuce", ItemRegistry.lettuce);
+        createCategoryTag("crops", "mustards", ItemRegistry.mustard);
+        createCategoryTag("crops", "onions", ItemRegistry.onion);
+        createCategoryTag("crops", "radishes", ItemRegistry.radish);
+        createCategoryTag("crops", "rhubarb", ItemRegistry.rhubarb);
+        createCategoryTag("crops", "rutabagas", ItemRegistry.rutabaga);
+        createCategoryTag("crops", "soybeans", ItemRegistry.soybean);
+        createCategoryTag("crops", "spinach", ItemRegistry.spinach);
+        createCategoryTag("crops", "squashes", ItemRegistry.squash);
+        createCategoryTag("crops", "sweetpotatos", ItemRegistry.sweetPotato);
+        createCategoryTag("crops", "tomatillos", ItemRegistry.tomatillo);
+        createCategoryTag("crops", "tomatoes", ItemRegistry.tomato);
+        createCategoryTag("crops", "turnips", ItemRegistry.turnip);
+        createCategoryTag("crops", "yams", ItemRegistry.yam);
+        createCategoryTag("crops", "zucchini", ItemRegistry.zucchini);
+        createCategoryTag("crops", "basil", ItemRegistry.basil);
+        createCategoryTag("crops", "blackbeans", ItemRegistry.blackBean);
+        createCategoryTag("crops", "chile_peppers", ItemRegistry.chilePepper);
+        createCategoryTag("crops", "coffee_beans", ItemRegistry.coffeeBeans);
+        createCategoryTag("crops", "hops", ItemRegistry.hops);
+        createCategoryTag("crops", "nutmeg", ItemRegistry.nutmeg);
+        createCategoryTag("crops", "paprika", ItemRegistry.paprika);
+        createCategoryTag("crops", "peanuts", ItemRegistry.peanut);
+        createCategoryTag("crops", "vanilla", ItemRegistry.vanilla);
+
+        // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
+        createSeedSaplingTag("seeds", "artichoke", ItemRegistry.artichokeSeed);
+        createSeedSaplingTag("seeds", "asparagus", ItemRegistry.asparagusSeed);
+        createSeedSaplingTag("seeds", "barley", ItemRegistry.barleySeed);
+        createSeedSaplingTag("seeds", "basil", ItemRegistry.basilSeed);
+        createSeedSaplingTag("seeds", "bellpepper", ItemRegistry.bellPepperSeed);
+        createSeedSaplingTag("seeds", "blackbean", ItemRegistry.blackBeanSeed);
+        createSeedSaplingTag("seeds", "blackberry", ItemRegistry.blackberrySeed);
+        createSeedSaplingTag("seeds", "blueberry", ItemRegistry.blueberrySeed);
+        createSeedSaplingTag("seeds", "broccoli", ItemRegistry.broccoliSeed);
+        createSeedSaplingTag("seeds", "cabbage", ItemRegistry.cabbageSeed);
+        createSeedSaplingTag("seeds", "cantaloupe", ItemRegistry.cantaloupeSeed);
+        createSeedSaplingTag("seeds", "cauliflower", ItemRegistry.cauliflowerSeed);
+        createSeedSaplingTag("seeds", "celery", ItemRegistry.celerySeed);
+        createSeedSaplingTag("seeds", "chilepepper", ItemRegistry.chilePepperSeed);
+        createSeedSaplingTag("seeds", "coffee", ItemRegistry.coffeeSeed);
+        createSeedSaplingTag("seeds", "corn", ItemRegistry.cornSeed);
+        createSeedSaplingTag("seeds", "cranberry", ItemRegistry.cranberrySeed);
+        createSeedSaplingTag("seeds", "cucumber", ItemRegistry.cucumberSeed);
+        createSeedSaplingTag("seeds", "currant", ItemRegistry.currantSeed);
+        createSeedSaplingTag("seeds", "eggplant", ItemRegistry.eggplantSeed);
+        createSeedSaplingTag("seeds", "elderberry", ItemRegistry.elderberrySeed);
+        createSeedSaplingTag("seeds", "garlic", ItemRegistry.garlicSeed);
+        createSeedSaplingTag("seeds", "ginger", ItemRegistry.gingerSeed);
+        createSeedSaplingTag("seeds", "grape", ItemRegistry.grapeSeed);
+        createSeedSaplingTag("seeds", "greenbean", ItemRegistry.greenBeanSeed);
+        createSeedSaplingTag("seeds", "greenonion", ItemRegistry.greenOnionSeed);
+        createSeedSaplingTag("seeds", "honeydew", ItemRegistry.honeydewSeed);
+        createSeedSaplingTag("seeds", "hops", ItemRegistry.hopsSeed);
+        createSeedSaplingTag("seeds", "kale", ItemRegistry.kaleSeed);
+        createSeedSaplingTag("seeds", "kiwi", ItemRegistry.kiwiSeed);
+        createSeedSaplingTag("seeds", "leek", ItemRegistry.leekSeed);
+        createSeedSaplingTag("seeds", "lettuce", ItemRegistry.lettuceSeed);
+        createSeedSaplingTag("seeds", "mustard", ItemRegistry.mustardSeed);
+        createSeedSaplingTag("seeds", "oat", ItemRegistry.oatSeed);
+        createSeedSaplingTag("seeds", "olive", ItemRegistry.oliveSeed);
+        createSeedSaplingTag("seeds", "onion", ItemRegistry.onionSeed);
+        createSeedSaplingTag("seeds", "peanut", ItemRegistry.peanutSeed);
+        createSeedSaplingTag("seeds", "pepper", ItemRegistry.pepperSeed);
+        createSeedSaplingTag("seeds", "pineapple", ItemRegistry.pineappleSeed);
+        createSeedSaplingTag("seeds", "radish", ItemRegistry.radishSeed);
+        createSeedSaplingTag("seeds", "raspberry", ItemRegistry.raspberrySeed);
+        createSeedSaplingTag("seeds", "rhubarb", ItemRegistry.rhubarbSeed);
+        createSeedSaplingTag("seeds", "rice", ItemRegistry.riceSeed);
+        createSeedSaplingTag("seeds", "rutabaga", ItemRegistry.rutabagaSeed);
+        createSeedSaplingTag("seeds", "saguaro", ItemRegistry.saguaroSeed);
+        createSeedSaplingTag("seeds", "soybean", ItemRegistry.soybeanSeed);
+        createSeedSaplingTag("seeds", "spinach", ItemRegistry.spinachSeed);
+        createSeedSaplingTag("seeds", "squash", ItemRegistry.squashSeed);
+        createSeedSaplingTag("seeds", "strawberry", ItemRegistry.strawberrySeed);
+        createSeedSaplingTag("seeds", "sweetpotato", ItemRegistry.sweetPotatoSeed);
+        createSeedSaplingTag("seeds", "tea", ItemRegistry.teaSeed);
+        createSeedSaplingTag("seeds", "tomatillo", ItemRegistry.tomatilloSeed);
+        createSeedSaplingTag("seeds", "tomato", ItemRegistry.tomatoSeed);
+        createSeedSaplingTag("seeds", "turmeric", ItemRegistry.turmericSeed);
+        createSeedSaplingTag("seeds", "turnip", ItemRegistry.turnipSeed);
+        createSeedSaplingTag("seeds", "yam", ItemRegistry.yamSeed);
+        createSeedSaplingTag("seeds", "zucchini", ItemRegistry.zucchiniSeed);
+
         createCategoryTag("fruits", "almonds", ItemRegistry.almond);
         createCategoryTag("fruits", "apricots", ItemRegistry.apricot);
         createCategoryTag("fruits", "avocados", ItemRegistry.avocado);
@@ -247,6 +390,9 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("wines", ItemRegistry.wine);
         createGeneralTag("yam_jam", ItemRegistry.yamJam);
         createGeneralTag("yoghurts", ItemRegistry.yoghurt);
+
+        this.getOrCreateTagBuilder(register("water_bottles")).add(ItemRegistry.waterBottle).add(Items.WATER_BUCKET);
+
     }
 
     @Override
@@ -268,18 +414,35 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
     private void createCategoryTag(String category, String name, Item item) {
         String path = Registry.ITEM.getId(item).getPath();
         TagKey<Item> forgeFriendlyTag = register(category + "/" + path);
+        IndependentEntry independentEntry = new IndependentEntry(category + "/" + path);
         this.getOrCreateTagBuilder(forgeFriendlyTag).add(item);
         ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(name)).add(item);
-        IndependentEntry independentEntry = new IndependentEntry(category + "/" + path);
         fabricGeneralTag.getBuilder().add(new Tag.TrackedEntry(independentEntry, fabricGeneralTag.getSource()));
 
+        // this is the group i.e vegetables.json encompassing all the vegetables in the mod. it should pull from zucchini.json and not vegetables/zucchini.json
         ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object)this.getOrCreateTagBuilder(register(category));
-        group.getBuilder().add(new Tag.TrackedEntry(independentEntry, group.getSource()));
+        // we need a new independentEntry
+        IndependentEntry entryForGroup = new IndependentEntry(name);
+        group.getBuilder().add(new Tag.TrackedEntry(entryForGroup, group.getSource()));
     }
 
     private void createGeneralTag(String name, Item item) {
         TagKey<Item> pluralTag = register(name);
         this.getOrCreateTagBuilder(pluralTag).add(item);
+    }
+
+    private void createSeedSaplingTag(String category, String name, Item item) {
+        String pluralSeedName = Registry.ITEM.getId(item).getPath() + "s";
+        // Forge tags use seed/cropname, but not including seed name. artichoke good artichoke_seed bad.
+        TagKey<Item> forgeFriendlyTag = register(category + "/" + name);
+        IndependentEntry independentEntry = new IndependentEntry(category + "/" + name);
+
+        this.getOrCreateTagBuilder(forgeFriendlyTag).add(item);
+        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object)this.getOrCreateTagBuilder(register(category));
+        group.getBuilder().add(new Tag.TrackedEntry(independentEntry, group.getSource()));
+
+        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(pluralSeedName)).add(item);
+        fabricGeneralTag.getBuilder().add(new Tag.TrackedEntry(independentEntry, fabricGeneralTag.getSource()));
     }
 
 }

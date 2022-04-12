@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:cabbage",
+    "#${dependent}:crops/cabbage",
+    "croptopia:cabbage",
     "#${dependent}:vegetables/cabbage"
   ]
 }

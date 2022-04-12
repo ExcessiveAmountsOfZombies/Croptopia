@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:date",
+    "#${dependent}:crops/date",
+    "croptopia:date",
     "#${dependent}:fruits/date"
   ]
 }

@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "#${dependent}:nuts/almond",
-    "#${dependent}:nuts/pecan",
-    "#${dependent}:nuts/walnut"
+    "#${dependent}:almonds",
+    "#${dependent}:pecans",
+    "#${dependent}:walnuts"
   ]
 }

@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:banana",
+    "#${dependent}:crops/banana",
+    "croptopia:banana",
     "#${dependent}:fruits/banana"
   ]
 }

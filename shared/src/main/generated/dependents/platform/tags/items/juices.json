@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-    "#${dependent}:juices/apple_juice",
-    "#${dependent}:juices/cranberry_juice",
-    "#${dependent}:juices/grape_juice",
-    "#${dependent}:juices/melon_juice",
-    "#${dependent}:juices/orange_juice",
-    "#${dependent}:juices/pineapple_juice",
-    "#${dependent}:juices/saguaro_juice",
-    "#${dependent}:juices/tomato_juice"
+    "#${dependent}:apple_juices",
+    "#${dependent}:cranberry_juices",
+    "#${dependent}:grape_juices",
+    "#${dependent}:melon_juices",
+    "#${dependent}:orange_juices",
+    "#${dependent}:pineapple_juices",
+    "#${dependent}:saguaro_juices",
+    "#${dependent}:tomato_juices"
   ]
 }

@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:rutabaga",
+    "#${dependent}:crops/rutabaga",
+    "croptopia:rutabaga",
     "#${dependent}:vegetables/rutabaga"
   ]
 }
