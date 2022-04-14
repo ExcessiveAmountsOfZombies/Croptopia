@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cabbage_roll"
+    ]
+  },
+  "criteria": {
+    "has_cabbage": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:cabbage"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cabbage_roll"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cabbage",
+      "has_the_recipe"
+    ]
+  ]
+}

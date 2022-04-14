@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "456",
+    "585"
+  ],
+  "key": {
+    "8": {
+      "item": "croptopia:frying_pan"
+    },
+    "1": {
+      "tag": "croptopia:beef_replacements"
+    },
+    "2": {
+      "tag": "${dependent}:onions"
+    },
+    "6": {
+      "tag": "${dependent}:rice"
+    },
+    "4": {
+      "tag": "${dependent}:salts"
+    },
+    "5": {
+      "tag": "${dependent}:cabbage"
+    }
+  },
+  "result": {
+    "item": "croptopia:cabbage_roll",
+    "count": 2
+  }
+}

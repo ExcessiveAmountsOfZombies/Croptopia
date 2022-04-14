@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:steamed_clams"
+    ]
+  },
+  "criteria": {
+    "has_clams": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:clam"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:steamed_clams"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_clams",
+      "has_the_recipe"
+    ]
+  ]
+}

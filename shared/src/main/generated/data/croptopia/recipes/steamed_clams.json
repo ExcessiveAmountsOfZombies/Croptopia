@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "123",
+    "455",
+    " 7 "
+  ],
+  "key": {
+    "5": {
+      "tag": "${dependent}:clams"
+    },
+    "1": {
+      "tag": "${dependent}:butters"
+    },
+    "2": {
+      "tag": "${dependent}:garlic"
+    },
+    "3": {
+      "tag": "${dependent}:salts"
+    },
+    "4": {
+      "item": "croptopia:pepper"
+    },
+    "7": {
+      "item": "croptopia:frying_pan"
+    }
+  },
+  "result": {
+    "item": "croptopia:steamed_clams",
+    "count": 2
+  }
+}

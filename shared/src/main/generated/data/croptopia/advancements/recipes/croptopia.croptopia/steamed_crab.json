@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:steamed_crab"
+    ]
+  },
+  "criteria": {
+    "has_crab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:crab"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:steamed_crab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crab",
+      "has_the_recipe"
+    ]
+  ]
+}

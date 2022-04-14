@@ -5,7 +5,7 @@
       "tag": "${dependent}:toasts"
     },
     {
-      "tag": "${dependent}:jam"
+      "tag": "${dependent}:jams"
     }
   ],
   "result": {

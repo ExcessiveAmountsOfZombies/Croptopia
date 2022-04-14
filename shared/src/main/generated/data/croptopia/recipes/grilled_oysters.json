@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "121",
+    "456",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:oysters"
+    },
+    "2": {
+      "tag": "${dependent}:cheeses"
+    },
+    "4": {
+      "tag": "${dependent}:lemons"
+    },
+    "5": {
+      "tag": "${dependent}:garlic"
+    },
+    "6": {
+      "tag": "${dependent}:salts"
+    },
+    "7": {
+      "item": "croptopia:frying_pan"
+    }
+  },
+  "result": {
+    "item": "croptopia:grilled_oysters",
+    "count": 2
+  }
+}

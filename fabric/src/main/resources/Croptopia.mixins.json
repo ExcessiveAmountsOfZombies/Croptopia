@@ -16,6 +16,7 @@
     "StructurePoolsMixin",
     "VillagerAccess",
     "VillagerMixin",
+    "datagen.IdentifierAccessor",
     "datagen.ObjectBuilderAccessor"
   ],
   "client": [

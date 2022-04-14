@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:grilled_oysters"
+    ]
+  },
+  "criteria": {
+    "has_oysters": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:grilled_oysters"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:grilled_oysters"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_oysters",
+      "has_the_recipe"
+    ]
+  ]
+}

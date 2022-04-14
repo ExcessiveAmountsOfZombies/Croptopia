@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "111",
+    "456"
+  ],
+  "key": {
+    "1": {
+      "tag": "${dependent}:shrimp"
+    },
+    "4": {
+      "item": "minecraft:egg"
+    },
+    "6": {
+      "item": "minecraft:bread"
+    },
+    "5": {
+      "item": "croptopia:frying_pan"
+    }
+  },
+  "result": {
+    "item": "croptopia:deep_fried_shrimp",
+    "count": 2
+  }
+}

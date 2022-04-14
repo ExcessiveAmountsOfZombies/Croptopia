@@ -207,12 +207,12 @@ public class ItemRegistry {
     public static Item molasses = new Item(createGroup());
     public static Item caramel = new Item(createGroup());
     public static Item chocolate = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item tortilla = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
+    public static Item tortilla = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item soySauce = new Item(createGroup());
     public static Item dough = new Item(createGroup());
     public static Item ravioli = new Item(createGroup());
-    public static Item salsa = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
-    public static Item artichokeDip = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
+    public static Item salsa = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static Item artichokeDip = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item pepperoni = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
 
     // drinks
@@ -244,15 +244,15 @@ public class ItemRegistry {
     public static Item pumpkinSpiceLatte = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEdible().build()));
 
     // jams
-    public static Item grapeJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item strawberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item peachJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item apricotJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item blackberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item blueberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item cherryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item elderberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
-    public static Item raspberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_3).alwaysEdible().build()));
+    public static Item grapeJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item strawberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item peachJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item apricotJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item blackberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item blueberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item cherryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item elderberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static Item raspberryJam = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
 
     // snacks?
     public static Item beefJerky = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
@@ -263,7 +263,7 @@ public class ItemRegistry {
     public static Item frenchFries = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item sweetPotatoFries = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item onionRings = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item raisins = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
+    public static Item raisins = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item doughnut = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item popcorn = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
     public static Item bakedBeans = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
@@ -455,7 +455,7 @@ public class ItemRegistry {
     public static Item friedCalamari = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item crabLegs = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
     public static Item steamedClams = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
-    public static Item grilledOysters = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
+    public static Item grilledOysters = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
     public static Item anchovy = new Item(createGroup().food(FoodRegistry.createComponent(REG_1)));
     public static Item cookedAnchovy = new Item(createGroup().food(FoodRegistry.createComponent(REG_4)));
     public static Item anchovyPizza = new Item(createGroup().food(FoodRegistry.createComponent(REG_15)));

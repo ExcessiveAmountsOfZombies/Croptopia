@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:roasted_pumpkin_seeds"
+    ]
+  },
+  "criteria": {
+    "has_pumpkin_seed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:pumpkin_seeds"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:roasted_pumpkin_seeds"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pumpkin_seed",
+      "has_the_recipe"
+    ]
+  ]
+}

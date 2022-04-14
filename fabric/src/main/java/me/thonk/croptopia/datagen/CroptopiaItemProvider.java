@@ -418,8 +418,44 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("yam_jam", ItemRegistry.yamJam);
         createGeneralTag("yoghurts", ItemRegistry.yoghurt);
 
+        createGeneralTag("roasted_pumpkin_seeds", ItemRegistry.roastedPumpkinSeeds);
+        createGeneralTag("roasted_sunflower_seeds", ItemRegistry.roastedSunflowerSeeds);
+        createGeneralTag("pumpkin_bars", ItemRegistry.pumpkinBars);
+        createGeneralTag("corn_breads", ItemRegistry.cornBread);
+        createGeneralTag("pumpkin_soups", ItemRegistry.pumpkinSoup);
+        createGeneralTag("meringue", ItemRegistry.meringue);
+        createGeneralTag("cabbage_rolls", ItemRegistry.cabbageRoll);
+        createGeneralTag("borscht", ItemRegistry.borscht);
+        createGeneralTag("goulashes", ItemRegistry.goulash);
+        createGeneralTag("beetroot_salads", ItemRegistry.beetrootSalad);
+        createGeneralTag("candied_kumquats", ItemRegistry.candiedKumquats);
+        createGeneralTag("shrimp", ItemRegistry.shrimp);
+        createGeneralTag("tuna", ItemRegistry.tuna);
+        createGeneralTag("calamari", ItemRegistry.calamari);
+        createGeneralTag("crabs", ItemRegistry.crab);
+        createGeneralTag("roe", ItemRegistry.roe);
+        createGeneralTag("clams", ItemRegistry.clam);
+        createGeneralTag("oysters", ItemRegistry.oyster);
+        createGeneralTag("cooked_shrimp", ItemRegistry.cookedShrimp);
+        createGeneralTag("cooked_tuna", ItemRegistry.cookedTuna);
+        createGeneralTag("cooked_calamari", ItemRegistry.cookedCalamari);
+        createGeneralTag("steamed_crabs", ItemRegistry.steamedCrab);
+        createGeneralTag("glowing_calamari", ItemRegistry.glowingCalamari);
+        createGeneralTag("sea_lettuce", ItemRegistry.seaLettuce);
+        createGeneralTag("deep_fried_shrimp", ItemRegistry.deepFriedShrimp);
+        createGeneralTag("tuna_rolls", ItemRegistry.tunaRoll);
+        createGeneralTag("fried_calamari", ItemRegistry.friedCalamari);
+        createGeneralTag("crab_legs", ItemRegistry.crabLegs);
+        createGeneralTag("steamed_clams", ItemRegistry.steamedClams);
+        createGeneralTag("grilled_oysters", ItemRegistry.grilledOysters);
+        createGeneralTag("anchovies", ItemRegistry.anchovy);
+        createGeneralTag("cooked_anchovies", ItemRegistry.cookedAnchovy);
+        createGeneralTag("anchovy_pizzas", ItemRegistry.anchovyPizza);
+        createGeneralTag("mashed_potatoes", ItemRegistry.mashedPotatoes);
+
         this.getOrCreateTagBuilder(register("water_bottles")).add(ItemRegistry.waterBottle).add(Items.WATER_BUCKET);
         this.getOrCreateTagBuilder(register("milks")).add(ItemRegistry.milkBottle).add(ItemRegistry.soyMilk).add(Items.MILK_BUCKET);
+        this.getOrCreateTagBuilder(register("potatoes")).add(Items.POTATO).add(ItemRegistry.sweetPotato);
     }
 
     @Override
@@ -447,7 +483,7 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         fabricGeneralTag.getBuilder().add(new Tag.TrackedEntry(independentEntry, fabricGeneralTag.getSource()));
 
         // this is the group i.e vegetables.json encompassing all the vegetables in the mod. it should pull from zucchini.json and not vegetables/zucchini.json
-        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object)this.getOrCreateTagBuilder(register(category));
+        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(category));
         // we need a new independentEntry
         IndependentEntry entryForGroup = new IndependentEntry(name);
         group.getBuilder().add(new Tag.TrackedEntry(entryForGroup, group.getSource()));
@@ -474,7 +510,7 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         IndependentEntry independentEntry = new IndependentEntry(category + "/" + name);
 
         this.getOrCreateTagBuilder(forgeFriendlyTag).add(item);
-        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object)this.getOrCreateTagBuilder(register(category));
+        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(category));
         group.getBuilder().add(new Tag.TrackedEntry(independentEntry, group.getSource()));
 
         ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(pluralSeedName)).add(item);

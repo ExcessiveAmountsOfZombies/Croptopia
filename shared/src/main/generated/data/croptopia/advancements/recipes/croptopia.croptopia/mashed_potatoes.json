@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:mashed_potatoes"
+    ]
+  },
+  "criteria": {
+    "has_milk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:milk_bucket"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:mashed_potatoes"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_milk",
+      "has_the_recipe"
+    ]
+  ]
+}
