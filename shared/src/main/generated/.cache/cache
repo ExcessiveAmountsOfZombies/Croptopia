@@ -84,6 +84,7 @@ fa1deeff0d7b7a1ec9623efbd86caaff546919c4 data\croptopia\recipes\corn_bread.json
 bb40495c9ef91cc06a32ff02f7ab73a868f89dfe dependents\platform\tags\items\crops\kiwi.json
 289b7abc6abbc907505bc85b65cdf9ecce37388a dependents\platform\tags\items\nuts\pecan.json
 55e2a4a38946400721aa6aa818defaeed240b1b6 dependents\platform\tags\items\hops.json
+49f31a4aaffd82209ad0e873cf8524329fbc7ba4 data\croptopia\advancements\recipes\croptopia.croptopia\cooked_anchovy_from_smoking.json
 3bcdad367f0fd33dd63d4ca0e72636bfcf896520 dependents\platform\tags\items\fruits\lime.json
 192d6ddda99bc5cc72e2e76c298fbceb129f11e3 dependents\platform\tags\items\fruits\elderberry.json
 867df0fd5030691dac7e642006cfccc41ec0ffd2 dependents\platform\tags\items\mango_ice_creams.json
@@ -139,6 +140,7 @@ d44c4824579b7d4bdd7766be346b4f91e993c8e2 dependents\platform\tags\items\crops\va
 133810ece6dfde37d2a1b412cb3f6fa2598d878e dependents\platform\tags\items\roasted_nuts.json
 82c763271ab20891d790fc1e7d4f4dd787543a12 dependents\platform\tags\items\salt_ores.json
 7f3424cc3bfebeb91e32ebb84741a8cda146e0f4 dependents\platform\tags\items\fruits\nectarine.json
+9ae30e587176312fc7808ee87537e483bf604738 data\croptopia\recipes\cooked_anchovy.json
 9533ef9965f4aa09ec1df88932f947ecacdc2fcd dependents\platform\tags\items\pineapple_juices.json
 cda542d8d72909465df6a61ad6b14c4c7aec6948 assets\croptopia\models\item\cooked_calamari.json
 3682cf309a0bc2fb67203e670befacc661366ace dependents\platform\tags\items\sweet_potato_friess.json
@@ -151,6 +153,7 @@ b6902793b66e4f105b849190debd970a6fd5cce5 data\croptopia\advancements\recipes\cro
 05c1e253dd5ff9f1c097c5ba0e6bc55fea8bcec1 dependents\platform\tags\items\cornish_pasty.json
 0fa35524e092f0edbe028149f43dfa6b2bc33648 dependents\platform\tags\items\deep_fried_shrimp.json
 a4ae48fa00b65d623d5bbcba3996eb30354390a5 data\croptopia\recipes\steamed_crab.json
+d39edbe4661e9550233c097c17037a64d2a503e8 data\croptopia\recipes\candied_kumquats.json
 7d1c60cc5ad861793146c5b8ec44183c45680ac7 dependents\platform\tags\items\seeds\eggplant.json
 b0cc02a004c9c03301171f0dcef1c20ae98a331a dependents\platform\tags\items\crops\blueberry.json
 0e6ab6998e2ce367d66c62eb5ef7764645df8d58 dependents\platform\tags\items\kale_seeds.json
@@ -350,6 +353,7 @@ cbed1be7f322d21e859471149bc72f58fced4a91 dependents\platform\tags\items\juices\a
 d5a9e5e26cb982db0093f4f5f36cb6f3727fe9e8 dependents\platform\tags\items\fruits\grape.json
 dd45cbd65f72af41833c1f5087e25650aa6074d9 dependents\platform\tags\items\doughnuts.json
 5bfd2bbeb926af17fbf011802c31505c4ba575db data\croptopia\advancements\recipes\croptopia.croptopia\pumpkin_bars.json
+083810f3777298daf6c1e92f325a51931ce4ddae data\croptopia\recipes\cooked_anchovy_from_smoking.json
 bebd4b29a56767a48059cf043d15f94265fce0fe dependents\platform\tags\items\potatoes.json
 1436d0a63c3c5462625ef764988b07d4738977bf dependents\platform\tags\items\toast_with_jam.json
 6a7410181ecf5a5c7ea9d099004d89afa67b5bf1 dependents\platform\tags\items\raspberry_jams.json
@@ -456,6 +460,7 @@ a3d44c160b88d1ca00471bd88251d8534a8644f6 data\croptopia\recipes\grilled_oysters.
 67e11462bcedd8e1524ed72e294f676ae359fa5d data\croptopia\recipes\cooked_shrimp.json
 f5bd07003831911c174c3d344a0d049093dc8f5a dependents\platform\tags\items\vegetables\tomatillo.json
 33960f2a8651f591bf11802f86d852d1c9263773 data\croptopia\recipes\tuna_roll.json
+45570d24d03750bf16f7ad0e0ac9e0d0080438e7 data\croptopia\advancements\recipes\croptopia.croptopia\candied_kumquats.json
 7e2bcd3fe33e5564d4b47f8c6c46dccf4fc7a9d7 data\croptopia\recipes\deep_fried_shrimp.json
 849ae5271a2f6b9cf46325cad0bf7f4f4bfa844e dependents\platform\tags\items\fig_saplings.json
 599dcede828c7a7eaefc22804b70b837e7977b4b dependents\platform\tags\items\crops\dragonfruit.json
@@ -621,6 +626,7 @@ a5e9f70c66427378b3c6e98c9d2c41c91ed93714 dependents\platform\tags\items\bananas.
 55cfcb3b9dace53506d2593d64de3eafe17b9a5e dependents\platform\tags\items\melon_juices.json
 3ea505b7ffe5ae801417b9376fbcbd71c373306c assets\croptopia\models\item\oyster.json
 74e3d8e4b29c774fe9f1e190b55de8b4c6604617 dependents\platform\tags\items\tofu.json
+a5e787e8005f2328b2c7a0c4ee568e9a8b6cc623 data\croptopia\advancements\recipes\croptopia.croptopia\cooked_anchovy.json
 1005bfab1d525708217d63abd6f03656fc412f51 dependents\platform\tags\items\vegetables\asparagus.json
 1e5c4be7d3662ccc6b0ca3c4257e454361e3c417 dependents\platform\tags\items\seeds\soybean.json
 fc871de62012167959b4907c124e796aec7cdee9 dependents\platform\tags\items\seeds\squash.json

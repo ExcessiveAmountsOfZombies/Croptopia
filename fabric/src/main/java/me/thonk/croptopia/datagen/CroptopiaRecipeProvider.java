@@ -148,7 +148,9 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input(tag("kumquat"))
                 .input(tag("kumquat"))
                 .input(tag("vanilla"))
-                .input(Items.HONEY_BOTTLE);
+                .input(Items.HONEY_BOTTLE)
+                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(ItemRegistry.kumquat))
+                .offerTo(exporter);
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.shrimp), ItemRegistry.cookedShrimp, 0.2f, 200)
                 .criterion("has_shrimp", RecipeProvider.conditionsFromItem(ItemRegistry.shrimp))
                 .offerTo(exporter);
@@ -158,9 +160,13 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.calamari), ItemRegistry.cookedCalamari, 0.2f, 200)
                 .criterion("has_calamari", RecipeProvider.conditionsFromItem(ItemRegistry.calamari))
                 .offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.anchovy), ItemRegistry.cookedAnchovy, 0.2f, 200)
+                .criterion("has_anchovy", RecipeProvider.conditionsFromItem(ItemRegistry.anchovy))
+                .offerTo(exporter);
         RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.shrimp, ItemRegistry.cookedShrimp, 0.2f);
         RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.tuna, ItemRegistry.cookedTuna, 0.2f);
         RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.calamari, ItemRegistry.cookedCalamari, 0.2f);
+        RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.anchovy, ItemRegistry.cookedAnchovy, 0.2f);
         ShapedRecipeJsonBuilder.create(ItemRegistry.steamedCrab)
                 .pattern("1")
                 .pattern("2")
