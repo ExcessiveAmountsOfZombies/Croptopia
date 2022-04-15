@@ -131,12 +131,13 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.beetrootSalad)
                 .pattern("111")
-                .pattern(" 45")
+                .pattern("745")
                 .pattern(" 6 ")
                 .input('1', Items.BEETROOT)
                 .input('4', tag("cheeses"))
                 .input('5', tag("lemons"))
                 .input('6', ItemRegistry.cookingPot)
+                .input('7', tag("lettuce"))
                 .criterion("has_beetroot", RecipeProvider.conditionsFromItem(Items.BEETROOT))
                 .offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(ItemRegistry.candiedKumquats, 7)
@@ -160,6 +161,9 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.calamari), ItemRegistry.cookedCalamari, 0.2f, 200)
                 .criterion("has_calamari", RecipeProvider.conditionsFromItem(ItemRegistry.calamari))
                 .offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.glowingCalamari), ItemRegistry.cookedCalamari, 0.2f, 200)
+                .criterion("has_glowing_calamari", RecipeProvider.conditionsFromItem(ItemRegistry.glowingCalamari))
+                .offerTo(exporter, RecipeProvider.getItemPath(ItemRegistry.cookedCalamari) + "_from_glowing_calamari");
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.anchovy), ItemRegistry.cookedAnchovy, 0.2f, 200)
                 .criterion("has_anchovy", RecipeProvider.conditionsFromItem(ItemRegistry.anchovy))
                 .offerTo(exporter);
@@ -167,6 +171,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.tuna, ItemRegistry.cookedTuna, 0.2f);
         RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.calamari, ItemRegistry.cookedCalamari, 0.2f);
         RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.anchovy, ItemRegistry.cookedAnchovy, 0.2f);
+        RecipeProvider.offerCookingRecipe(exporter, "glowing_calamri_smoking", RecipeSerializer.SMELTING, 100, ItemRegistry.glowingCalamari, ItemRegistry.cookedCalamari, 0.2f);
         ShapedRecipeJsonBuilder.create(ItemRegistry.steamedCrab)
                 .pattern("1")
                 .pattern("2")

@@ -431,7 +431,7 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("candied_kumquats", ItemRegistry.candiedKumquats);
         createGeneralTag("shrimp", ItemRegistry.shrimp);
         createGeneralTag("tuna", ItemRegistry.tuna);
-        createGeneralTag("calamari", ItemRegistry.calamari);
+        createGeneralTag("calamari", ItemRegistry.calamari).add(ItemRegistry.glowingCalamari);
         createGeneralTag("crabs", ItemRegistry.crab);
         createGeneralTag("roe", ItemRegistry.roe);
         createGeneralTag("clams", ItemRegistry.clam);
@@ -489,9 +489,9 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         group.getBuilder().add(new Tag.TrackedEntry(entryForGroup, group.getSource()));
     }
 
-    private void createGeneralTag(String name, Item item) {
+    private FabricTagProvider.FabricTagBuilder createGeneralTag(String name, Item item) {
         TagKey<Item> pluralTag = register(name);
-        this.getOrCreateTagBuilder(pluralTag).add(item);
+        return this.getOrCreateTagBuilder(pluralTag).add(item);
     }
 
     /**

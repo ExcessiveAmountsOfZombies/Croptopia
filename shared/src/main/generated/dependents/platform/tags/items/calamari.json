@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "croptopia:calamari"
+    "croptopia:calamari",
+    "croptopia:glowing_calamari"
   ]
 }

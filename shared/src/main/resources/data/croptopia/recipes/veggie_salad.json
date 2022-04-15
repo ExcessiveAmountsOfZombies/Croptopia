@@ -12,6 +12,9 @@
     },
     {
       "tag": "${dependent}:corn"
+    },
+    {
+      "tag": "${dependent}:lettuce"
     }
   ],
   "result": {
