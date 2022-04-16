@@ -47,6 +47,9 @@ import static net.minecraft.world.biome.Biome.Category.*;
  */
 public class Content {
 
+    /**
+     * Enum for all (Croptopia) farmland crops.
+     */
     public enum Farmland implements ItemConvertible {
         ARTICHOKE(EDIBLE_1, SWAMP),
         ASPARAGUS(EDIBLE_3, SWAMP),
@@ -152,6 +155,13 @@ public class Content {
         }
     }
 
+    /**
+     * Enum for all (Croptopia) tree crops.
+     * <p>
+     * Does include {@link Items#APPLE} as {@link Tree#APPLE} (access via {@link Tree#asItem()}.
+     * Does not include cinnamon.
+     * </p>
+     */
     public enum Tree implements ItemConvertible {
         ALMOND(Blocks.DARK_OAK_LEAVES, EDIBLE_3, 4, 3, 0),
         // coding for apple requires null here
