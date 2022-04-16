@@ -194,7 +194,8 @@ public class Croptopia implements ModInitializer {
     private void modifyVillagerFoodItems() {
         ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
                 .putAll(VillagerAccess.getItemFoodValues());
-        Content.createCropStream().forEach(item -> villagerFoodItems.put(item, item.getFoodComponent().getHunger()));
+        Content.createCropStream().filter(item -> item.getFoodComponent() != null)
+                .forEach(item -> villagerFoodItems.put(item, item.getFoodComponent().getHunger()));
         VillagerAccess.setItemFoodValues(villagerFoodItems.build());
     }
 
