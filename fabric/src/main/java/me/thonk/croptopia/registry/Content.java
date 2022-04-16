@@ -126,7 +126,7 @@ public class Content {
             }
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name), item);
             block = new CroptopiaCropBlock(createCropSettings());
-            Registry.register(Registry.BLOCK, Croptopia.createIdentifier((shortNameVariant != null ? shortNameVariant : name) + "_crop"), block);
+            Croptopia.registerBlock((shortNameVariant != null ? shortNameVariant : name) + "_crop", block);
             seed = new SeedItem(block, createGroup(), biomes);
             Croptopia.registerItem((shortNameVariant != null ? shortNameVariant : name) + "_seed", seed);
         }
@@ -209,10 +209,10 @@ public class Content {
                 Registry.register(Registry.ITEM, Croptopia.createIdentifier(name), item);
             }
             leaves = createLeavesBlock();
-            Registry.register(Registry.BLOCK, Croptopia.createIdentifier(name + "_crop"), leaves);
+            Croptopia.registerBlock(name + "_crop", leaves);
             treeGen = createTreeGen(name + "_tree", iTreeGen, jTreeGen, kTreeGen, leafType, leaves);
             saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> treeGen), createSaplingSettings());
-            Registry.register(Registry.BLOCK, Croptopia.createIdentifier(name + "_sapling"), saplingBlock);
+            Croptopia.registerBlock(name + "_sapling", saplingBlock);
             sapling = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name + "_sapling"), sapling);
         }
