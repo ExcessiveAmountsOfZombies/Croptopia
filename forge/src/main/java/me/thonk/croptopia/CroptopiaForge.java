@@ -15,6 +15,7 @@ import me.thonk.croptopia.events.LootTableModification;
 import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
 //import me.thonk.croptopia.mixin.VillagerAccess;
+import me.thonk.croptopia.loot.EntityModifier;
 import me.thonk.croptopia.loot.SpawnChestModifier;
 import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.GeneratorRegistry;
@@ -91,6 +92,7 @@ public class CroptopiaForge {
     // todo: there might be a different way i'm supposed to do this in forge.
     public static LootItemConditionType BIOME_CHECK;
     private static final SpawnChestModifier.Serializer SPAWN_CHEST_MODIFIER = new SpawnChestModifier.Serializer();
+    private static final EntityModifier.Serializer ENTITY_MODIFIER = new EntityModifier.Serializer();
 
     public static Config config;
 
@@ -200,8 +202,11 @@ public class CroptopiaForge {
 
         @SubscribeEvent
         public static void onLootRegister(final RegistryEvent.Register<GlobalLootModifierSerializer<?>> register) {
+            // lazy
             SPAWN_CHEST_MODIFIER.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, "spawn_loot"));
+            ENTITY_MODIFIER.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, "entity_modifier"));
             register.getRegistry().register(SPAWN_CHEST_MODIFIER);
+            register.getRegistry().register(ENTITY_MODIFIER);
         }
     }
 
