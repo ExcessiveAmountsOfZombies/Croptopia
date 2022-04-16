@@ -157,6 +157,7 @@ a4ae48fa00b65d623d5bbcba3996eb30354390a5 data\croptopia\recipes\steamed_crab.jso
 d39edbe4661e9550233c097c17037a64d2a503e8 data\croptopia\recipes\candied_kumquats.json
 7d1c60cc5ad861793146c5b8ec44183c45680ac7 dependents\platform\tags\items\seeds\eggplant.json
 b0cc02a004c9c03301171f0dcef1c20ae98a331a dependents\platform\tags\items\crops\blueberry.json
+c810a1d6adc4d51712c46048e62aba8beb8dce57 dependents\platform\tags\items\cinnamon.json
 0e6ab6998e2ce367d66c62eb5ef7764645df8d58 dependents\platform\tags\items\kale_seeds.json
 3264956ce017a2a447d0a99e180c861f11a2422f dependents\platform\tags\items\crops\greenonion.json
 11e87ddb71004c0f7af37aad8b2e364f03eaa697 assets\croptopia\models\item\roe.json

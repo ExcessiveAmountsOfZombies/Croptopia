@@ -452,6 +452,7 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("cooked_anchovies", ItemRegistry.cookedAnchovy);
         createGeneralTag("anchovy_pizzas", ItemRegistry.anchovyPizza);
         createGeneralTag("mashed_potatoes", ItemRegistry.mashedPotatoes);
+        createGeneralTag("cinnamon", ItemRegistry.cinnamon);
 
         this.getOrCreateTagBuilder(register("water_bottles")).add(ItemRegistry.waterBottle).add(Items.WATER_BUCKET);
         this.getOrCreateTagBuilder(register("milks")).add(ItemRegistry.milkBottle).add(ItemRegistry.soyMilk).add(Items.MILK_BUCKET);
