@@ -35,22 +35,12 @@ public class ItemRegistry {
     public static Item pepperoni = new Item(createGroup().food(EDIBLE_5));
 
     // drinks
-    public static Item grapeJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item orangeJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item appleJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item cranberryJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item saguaroJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item tomatoJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item melonJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static Item pineappleJuice = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item coffee = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item lemonade = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item limeade = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item soyMilk = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     //public static Item tea;
 
-    public static Item strawberrySmoothie = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
-    public static Item bananaSmoothie = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
     public static Item kaleSmoothie = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
     public static Item fruitSmoothie = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
 
@@ -61,17 +51,6 @@ public class ItemRegistry {
     public static Item mead = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
     public static Item rum = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
     public static Item pumpkinSpiceLatte = new Drink(createGroup().food(EDIBLE_14_BUILDER.alwaysEdible().build()));
-
-    // jams
-    public static Item grapeJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item strawberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item peachJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item apricotJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item blackberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item blueberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item cherryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item elderberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
-    public static Item raspberryJam = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
 
     // snacks?
     public static Item beefJerky = new Item(createGroup().food(EDIBLE_5));
@@ -145,11 +124,7 @@ public class ItemRegistry {
     public static Item yamJam = new Item(createGroup().food(EDIBLE_14));
     public static Item bananaCreamPie = new Item(createGroup().food(EDIBLE_14));
     public static Item candyCorn = new Item(createGroup().food(EDIBLE_5));
-    public static Item vanillaIceCream = new Item(createGroup().food(EDIBLE_10));
-    public static Item strawberryIceCream = new Item(createGroup().food(EDIBLE_10));
-    public static Item mangoIceCream = new Item(createGroup().food(EDIBLE_10));
     public static Item rumRaisinIceCream = new Item(createGroup().food(EDIBLE_14));
-    public static Item pecanIceCream = new Item(createGroup().food(EDIBLE_10));
     public static Item cherryPie = new Item(createGroup().food(EDIBLE_14));
     public static Item cheeseCake = new Item(createGroup().food(EDIBLE_14));
     public static Item brownies = new Item(createGroup().food(EDIBLE_10));
@@ -274,20 +249,10 @@ public class ItemRegistry {
         registerItem(ItemNames.ARTICHOKE_DIP, artichokeDip);
         registerItem(ItemNames.PEPPERONI, pepperoni);
 
-        registerItem(ItemNames.GRAPE_JUICE, grapeJuice);
-        registerItem(ItemNames.ORANGE_JUICE, orangeJuice);
-        registerItem(ItemNames.APPLE_JUICE, appleJuice);
-        registerItem(ItemNames.CRANBERRY_JUICE, cranberryJuice);
-        registerItem(ItemNames.SAGUARO_JUICE, saguaroJuice);
-        registerItem(ItemNames.TOMATO_JUICE, tomatoJuice);
-        registerItem(ItemNames.MELON_JUICE, melonJuice);
-        registerItem(ItemNames.PINEAPPLE_JUICE, pineappleJuice);
         registerItem(ItemNames.COFFEE, coffee);
         registerItem(ItemNames.LEMONADE, lemonade);
         registerItem(ItemNames.LIMEADE, limeade);
         registerItem(ItemNames.SOY_MILK, soyMilk);
-        registerItem(ItemNames.STRAWBERRY_SMOOTHIE, strawberrySmoothie);
-        registerItem(ItemNames.BANANA_SMOOTHIE, bananaSmoothie);
         registerItem(ItemNames.KALE_SMOOTHIE, kaleSmoothie);
         registerItem(ItemNames.FRUIT_SMOOTHIE, fruitSmoothie);
         registerItem(ItemNames.CHOCOLATE_MILKSHAKE, chocolateMilkshake);
@@ -296,16 +261,6 @@ public class ItemRegistry {
         registerItem(ItemNames.MEAD, mead);
         registerItem(ItemNames.RUM, rum);
         registerItem(ItemNames.PUMPKIN_SPICE_LATTE, pumpkinSpiceLatte);
-
-        registerItem(ItemNames.GRAPE_JAM, grapeJam);
-        registerItem(ItemNames.STRAWBERRY_JAM, strawberryJam);
-        registerItem(ItemNames.PEACH_JAM, peachJam);
-        registerItem(ItemNames.APRICOT_JAM, apricotJam);
-        registerItem(ItemNames.BLACKBERRY_JAM, blackberryJam);
-        registerItem(ItemNames.BLUEBERRY_JAM, blueberryJam);
-        registerItem(ItemNames.CHERRY_JAM, cherryJam);
-        registerItem(ItemNames.ELDERBERRY_JAM, elderberryJam);
-        registerItem(ItemNames.RASPBERRY_JAM, raspberryJam);
 
         registerItem(ItemNames.BEEF_JERKY, beefJerky); // todo no recipe
         registerItem(ItemNames.PORK_JERKY, porkJerky); // todo no recipe
@@ -367,11 +322,7 @@ public class ItemRegistry {
         registerItem(ItemNames.YAM_JAM, yamJam);
         registerItem(ItemNames.BANANA_CREAM_PIE, bananaCreamPie);
         registerItem(ItemNames.CANDY_CORN, candyCorn);
-        registerItem(ItemNames.VANILLA_ICE_CREAM, vanillaIceCream);
-        registerItem(ItemNames.STRAWBERRY_ICE_CREAM, strawberryIceCream);
-        registerItem(ItemNames.MANGO_ICE_CREAM, mangoIceCream);
         registerItem(ItemNames.RUM_RAISIN_ICE_CREAM, rumRaisinIceCream);
-        registerItem(ItemNames.PECAN_ICE_CREAM, pecanIceCream);
         registerItem(ItemNames.CHERRY_PIE, cherryPie);
         registerItem(ItemNames.CHEESE_CAKE, cheeseCake);
         registerItem(ItemNames.BROWNIES, brownies);

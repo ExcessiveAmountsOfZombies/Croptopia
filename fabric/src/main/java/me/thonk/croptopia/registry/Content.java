@@ -8,6 +8,7 @@ import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.CroptopiaSaplingItem;
+import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.SeedItem;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -39,9 +40,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.Croptopia.createIdentifier;
-import static me.thonk.croptopia.registry.FoodRegistry.EDIBLE_1;
-import static me.thonk.croptopia.registry.FoodRegistry.EDIBLE_3;
+import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
 /**
@@ -240,6 +241,145 @@ public class Content {
 
     }
 
+    public enum Juice implements ItemConvertible {
+        APPLE,
+        CRANBERRY,
+        GRAPE,
+        MELON,
+        ORANGE,
+        PINEAPPLE,
+        SAGUARO,
+        TOMATO(false);
+
+        private boolean sweet;
+        private Item item;
+        private ItemConvertible crop;
+
+        Juice(boolean sweet) {
+            this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
+            item = new Drink(createGroup().food(EDIBLE_5_BUILDER.alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_juice"), item);
+            crop = findCrop(name());
+            if (crop == null) {
+                throw new IllegalStateException("Unknown crop source");
+            }
+        }
+
+        Juice() {
+            this(true);
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public boolean isSweet() {
+            return sweet;
+        }
+
+        public ItemConvertible getCrop() {
+            return crop;
+        }
+    }
+
+    public enum Jam implements ItemConvertible {
+        APRICOT,
+        BLACKBERRY,
+        BLUEBERRY,
+        CHERRY,
+        ELDERBERRY,
+        GRAPE,
+        PEACH,
+        RASPBERRY,
+        STRAWBERRY;
+
+        private Item item;
+        private ItemConvertible crop;
+
+        Jam() {
+            item = new Drink(createGroup().food(EDIBLE_3_BUILDER.alwaysEdible().build()));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_jam"), item);
+            crop = findCrop(name());
+            if (crop == null) {
+                throw new IllegalStateException("Unknown crop source");
+            }
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public ItemConvertible getCrop() {
+            return crop;
+        }
+    }
+
+    public enum Smoothie implements ItemConvertible {
+        BANANA,
+        STRAWBERRY;
+
+        private boolean sweet;
+        private Item item;
+        private ItemConvertible crop;
+
+        Smoothie(boolean sweet) {
+            this.sweet = sweet;
+            item = new Drink(createGroup().food(EDIBLE_7_BUILDER.alwaysEdible().build()));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_smoothie"), item);
+            crop = findCrop(name());
+            if (crop == null) {
+                throw new IllegalStateException("Unknown crop source");
+            }
+        }
+
+        Smoothie() {
+            this(true);
+        }
+
+        public boolean isSweet() {
+            return sweet;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public ItemConvertible getCrop() {
+            return crop;
+        }
+    }
+
+    public enum IceCream implements ItemConvertible {
+        MANGO,
+        PECAN,
+        STRAWBERRY,
+        VANILLA;
+
+        private Item item;
+        private ItemConvertible crop;
+
+        IceCream() {
+            item = new Item(createGroup().food(EDIBLE_10));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_ice_cream"), item);
+            crop = findCrop(name());
+            if (crop == null) {
+                throw new IllegalStateException("Unknown crop source");
+            }
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public ItemConvertible getCrop() {
+            return crop;
+        }
+    }
+
     public static Stream<Item> createCropStream() {
         return Stream.concat(
                 Arrays.stream(Farmland.values()),
@@ -268,6 +408,38 @@ public class Content {
 
     public static LeafCropBlock createLeavesBlock() {
         return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates((a,b,c) -> false).blockVision((a,b,c) -> false));
+    }
+
+    /**
+     * Returns the crop of a specified name.
+     * <p>Search order is
+     * <ul>
+     *     <li>{@link Farmland}</li>
+     *     <li>{@link Tree}</li>
+     *     <li>Vanilla crops in alphabetical order save for {@link Items#APPLE} because of {@link Tree#APPLE}</li>
+     * </ul>
+     * </p>
+     * @param name the name of the crop to find, in CAPSLOCK with _ separation
+     * @return the crop with the given name or <code>null</code> if there is none.
+     */
+    public static ItemConvertible findCrop(String name) {
+        try {
+            return Farmland.valueOf(name);
+        } catch (IllegalArgumentException ex) {/* try next */}
+        try {
+            return Tree.valueOf(name);
+        } catch (IllegalArgumentException ex) {/* try next */}
+        // test vanilla crops
+        return switch (name) {
+            // note that apple has already been tested for
+            case "BEETROOT" -> Items.BEETROOT;
+            case "CARROT" -> Items.CARROT;
+            case "MELON" -> Items.MELON_SLICE;
+            case "POTATO" -> Items.POTATO;
+            case "PUMPKIN" -> Items.PUMPKIN;
+            case "WHEAT" -> Items.WHEAT;
+            default -> null;
+        };
     }
 
     public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createTreeGen(String name, int i, int j, int k, Block leafType, Block leafCrop) {
