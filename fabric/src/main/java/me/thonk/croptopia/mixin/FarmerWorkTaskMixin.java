@@ -3,6 +3,7 @@ package me.thonk.croptopia.mixin;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import me.thonk.croptopia.Croptopia;
+import me.thonk.croptopia.registry.Content;
 import net.minecraft.entity.ai.brain.task.FarmerWorkTask;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.inventory.SimpleInventory;
@@ -14,6 +15,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+import java.util.List;
+
 @Mixin(value = FarmerWorkTask.class, priority = 999)
 public class FarmerWorkTaskMixin {
 
@@ -23,10 +26,11 @@ public class FarmerWorkTaskMixin {
     @Redirect(method = "craftAndDropBread", at = @At(value = "INVOKE", target = "Lnet/minecraft/inventory/SimpleInventory;count(Lnet/minecraft/item/Item;)I"))
     public int redirectCraftAndDropBread(SimpleInventory simpleInventory, Item item) {
         int count = simpleInventory.count(Items.WHEAT);
+        List<Item> crops = Content.createCropStream().toList();
         for (int i = 0; i < simpleInventory.size(); ++i) {
             ItemStack inventoryItem = simpleInventory.getStack(i);
             Item regularItem = inventoryItem.getItem();
-            if (Croptopia.cropItems.contains(regularItem) && inventoryItem.getCount() > 0) {
+            if (crops.contains(regularItem) && inventoryItem.getCount() > 0) {
                 if (heldCrops.containsKey(regularItem)) {
                     heldCrops.put(regularItem,heldCrops.getInt(regularItem) + inventoryItem.getCount());
                 } else {
