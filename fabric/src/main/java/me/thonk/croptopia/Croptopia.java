@@ -84,6 +84,10 @@ public class Croptopia implements ModInitializer {
         // force loading
         Object o = Content.Farmland.TOMATO;
         o = Content.Tree.APPLE;
+        o = Content.Juice.TOMATO;
+        o = Content.Jam.APRICOT;
+        o = Content.Smoothie.BANANA;
+        o = Content.IceCream.MANGO;
 
         LeavesRegistry.init();
         BlockRegistry.init();
