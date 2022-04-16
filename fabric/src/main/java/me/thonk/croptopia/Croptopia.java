@@ -60,7 +60,6 @@ public class Croptopia implements ModInitializer {
     private final boolean devEnvironment = Boolean.getBoolean(MiscNames.MOD_ID + ".dev");
 
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
-    public static ArrayList<Item> cropItems = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
@@ -139,10 +138,6 @@ public class Croptopia implements ModInitializer {
             ((AliasedBlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
         }
 
-        if (item instanceof CropItem) {
-            cropItems.add(item);
-        }
-
         if (item instanceof SeedItem seedItem) {
             CroptopiaCropBlock block = (CroptopiaCropBlock) ((SeedItem) item).getBlock();
             block.setSeedsItem(seedItem);
@@ -206,14 +201,14 @@ public class Croptopia implements ModInitializer {
     private void modifyVillagerFoodItems() {
         ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
                 .putAll(VillagerAccess.getItemFoodValues());
-        cropItems.forEach(item -> villagerFoodItems.put(item, item.getFoodComponent().getHunger()));
+        Content.createCropStream().forEach(item -> villagerFoodItems.put(item, item.getFoodComponent().getHunger()));
         VillagerAccess.setItemFoodValues(villagerFoodItems.build());
     }
 
     private void modifyVillagerGatherables() {
         ImmutableSet.Builder<Item> villagerGatherables = new ImmutableSet.Builder<Item>().addAll(VillagerAccess.getGatherableItems());
         seeds.forEach(configurableSeed -> villagerGatherables.add(configurableSeed.getSeedItem()));
-        cropItems.forEach(villagerGatherables::add);
+        Content.createCropStream().forEach(villagerGatherables::add);
         VillagerAccess.setGatherableItems(villagerGatherables.build());
     }
 

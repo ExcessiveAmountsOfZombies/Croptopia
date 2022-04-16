@@ -35,7 +35,9 @@ import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 import static me.thonk.croptopia.Croptopia.createIdentifier;
 import static me.thonk.croptopia.registry.FoodRegistry.EDIBLE_1;
@@ -236,6 +238,13 @@ public class Content {
             return saplingBlock;
         }
 
+    }
+
+    public static Stream<Item> createCropStream() {
+        return Stream.concat(
+                Arrays.stream(Farmland.values()),
+                Arrays.stream(Tree.values())
+        ).map(ItemConvertible::asItem);
     }
 
     public static Item.Settings createGroup() {
