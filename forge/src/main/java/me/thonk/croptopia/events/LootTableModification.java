@@ -1,15 +1,12 @@
 package me.thonk.croptopia.events;
 
-import me.thonk.croptopia.BiomeLootCondition;
-import me.thonk.croptopia.CroptopiaForge;
-import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.mixin.LootTableAccessor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-import java.util.ArrayList;
+import java.util.List;
 
 
 public class LootTableModification {
@@ -17,6 +14,19 @@ public class LootTableModification {
 
     @SubscribeEvent
     public void onLootTableLoad(LootTableLoadEvent event) {
+        ResourceLocation location = event.getName();
+        if (location != null && location.getNamespace().equals("minecraft")) {
+            String path = location.getPath();
+            switch (path) {
+                case "gameplay/fishing/fish" -> {
+                    LootPool.Builder builder = LootPool.lootPool();
+                    List<LootPool> poolList = ((LootTableAccessor) event.getTable()).getPools();
+                    if (!poolList.isEmpty()) {
+                        poolList.get(0).
+                    }
+                }
+            }
+        }
         /*
         if (location != null) {
             if (location.getPath().equalsIgnoreCase("blocks/grass")) {

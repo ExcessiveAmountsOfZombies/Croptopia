@@ -3,6 +3,9 @@
   "package": "me.thonk.croptopia.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "croptopia.refmap.json",
-  "mixins": [],
+  "mixins": [
+    "LootPoolAccessor",
+    "LootTableAccessor"
+  ],
   "minVersion": "0.8"
 }

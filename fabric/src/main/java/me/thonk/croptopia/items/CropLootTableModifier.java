@@ -5,13 +5,21 @@ import me.thonk.croptopia.config.ConfigurableSeed;
 import me.thonk.croptopia.registry.ItemRegistry;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fabricmc.fabric.mixin.loot.table.LootSupplierBuilderHooks;
+import net.minecraft.loot.LootManager;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 
 public class CropLootTableModifier {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CropLootTableModifier.class);
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, fabricLootSupplierBuilder, lootTableSetter) -> {
@@ -44,20 +52,26 @@ public class CropLootTableModifier {
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "gameplay/fishing/fish" -> {
-                        FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(ItemEntry.builder(ItemRegistry.tuna)
-                                        .weight(20).build())
-                                .withEntry(ItemEntry.builder(ItemRegistry.anchovy)
-                                        .weight(30).build())
-                                .withEntry(ItemEntry.builder(ItemRegistry.shrimp)
-                                        .weight(20).build())
-                                .withEntry(ItemEntry.builder(ItemRegistry.crab)
-                                        .weight(15).build())
-                                .withEntry(ItemEntry.builder(ItemRegistry.clam)
-                                        .weight(10).build())
-                                .withEntry(ItemEntry.builder(ItemRegistry.oyster)
-                                        .weight(10).build());
-                        fabricLootSupplierBuilder.withPool(builder.build());
+                        List<LootPool> pools = ((LootSupplierBuilderHooks) fabricLootSupplierBuilder).getPools();
+                        if (pools.isEmpty()) {
+                            LOGGER.warn("Can not inject into gameplay/fishing/fish as it is empty");
+                        } else {
+                            // todo; make this configurable
+                            FabricLootPoolBuilder builder = FabricLootPoolBuilder.of(pools.get(0));
+                            builder.withEntry(ItemEntry.builder(ItemRegistry.tuna)
+                                            .weight(20).build())
+                                    .withEntry(ItemEntry.builder(ItemRegistry.anchovy)
+                                            .weight(30).build())
+                                    .withEntry(ItemEntry.builder(ItemRegistry.shrimp)
+                                            .weight(20).build())
+                                    .withEntry(ItemEntry.builder(ItemRegistry.crab)
+                                            .weight(15).build())
+                                    .withEntry(ItemEntry.builder(ItemRegistry.clam)
+                                            .weight(10).build())
+                                    .withEntry(ItemEntry.builder(ItemRegistry.oyster)
+                                            .weight(10).build());
+                            pools.set(0, builder.build());
+                        }
                     }
                     case "entities/squid" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
