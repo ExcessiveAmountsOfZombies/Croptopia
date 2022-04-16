@@ -60,7 +60,6 @@ public class Croptopia implements ModInitializer {
     private final boolean devEnvironment = Boolean.getBoolean(MiscNames.MOD_ID + ".dev");
 
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
-    public static ArrayList<Block> leafBlocks = new ArrayList<>();
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
 
@@ -162,12 +161,6 @@ public class Croptopia implements ModInitializer {
     public static Block registerBlock(String blockName, Block item) {
         cropBlocks.add(item);
 
-        if (item instanceof LeafCropBlock || item instanceof LeavesBlock) {
-            leafBlocks.add(item);
-            //System.out.println("\"" + blockName + "\",");
-        } else {
-            //System.out.println("\"" + blockName + "\",");
-        }
         Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
         return item;
     }

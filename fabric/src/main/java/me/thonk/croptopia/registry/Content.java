@@ -247,6 +247,13 @@ public class Content {
         ).map(ItemConvertible::asItem);
     }
 
+    public static Stream<Block> createLeafStream() {
+        return Stream.concat(
+                Arrays.stream(Tree.values()).map(Tree::getLeaves),
+                Stream.of(LeavesRegistry.cinnamonLeaves)
+        );
+    }
+
     public static Item.Settings createGroup() {
         return new Item.Settings().group(Croptopia.CROPTOPIA_ITEM_GROUP);
     }
