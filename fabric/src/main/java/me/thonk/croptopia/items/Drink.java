@@ -51,11 +51,11 @@ public class Drink extends Item {
 
         if (playerEntity == null || !playerEntity.getAbilities().creativeMode) {
             if (stack.isEmpty()) {
-                return new ItemStack(Items.GLASS_BOTTLE);
+                return new ItemStack(getRecipeRemainder());
             }
 
             if (playerEntity != null) {
-                playerEntity.getInventory().insertStack(new ItemStack(Items.GLASS_BOTTLE));
+                playerEntity.getInventory().insertStack(new ItemStack(getRecipeRemainder()));
             }
         }
 
