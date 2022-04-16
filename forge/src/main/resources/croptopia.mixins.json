@@ -5,6 +5,7 @@
   "refmap": "croptopia.refmap.json",
   "mixins": [
     "LootPoolAccessor",
+    "LootPoolBuilderAccessor",
     "LootTableAccessor"
   ],
   "minVersion": "0.8"

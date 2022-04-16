@@ -1,20 +1,20 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        //maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
         gradlePluginPortal()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
         classpath 'gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0'
-        //classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'net.minecraftforge.gradle'
-//apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.spongepowered.mixin'
 
 repositories {
     maven {
@@ -32,9 +32,10 @@ configurations {
 }
 
 
-/*mixin {
+mixin {
     add sourceSets.main, "croptopia.refmap.json"
-}*/
+    config "croptopia.mixins.json"
+}
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -43,7 +44,7 @@ minecraft {
         client {
             workingDirectory project.file('run')
             property 'legacyClassPath', '{minecraft_classpath}'
-            //arg "-mixin.config=croptopia.mixins.json"
+            arg "-mixin.config=croptopia.mixins.json"
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console //property 'forge.logging.console.level', 'debug'
@@ -87,7 +88,7 @@ minecraft {
 }
 
 processResources {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
     from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
         expand "dependent": "forge"
@@ -102,14 +103,14 @@ dependencies {
     implementation project(":shared")
     shade project(":shared")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18-58-SNAPSHOT")
-    //annotationProcessor 'org.spongepowered:mixin:0.8:processor'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 shadowJar {
     archiveClassifier = ""
     enabled = true
     configurations = [project.configurations.shade]
-    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
+    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     relocate 'dependents/platform', 'data/forge'
 }
@@ -136,6 +137,12 @@ jar {
     }
 }
 
-shadowJar.finalizedBy('reobfJar')
+tasks.build.dependsOn(tasks.shadowJar)
+
+reobf {
+    shadowJar {}
+}
+
+jar.finalizedBy('reobfJar')
 
 //tasks.getByName("addRefMapToShadowJar").mustRunAfter(task("shadowJar"))

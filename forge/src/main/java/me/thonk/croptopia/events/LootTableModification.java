@@ -1,8 +1,13 @@
 package me.thonk.croptopia.events;
 
+import me.thonk.croptopia.mixin.LootPoolAccessor;
+import me.thonk.croptopia.mixin.LootPoolBuilderAccessor;
 import me.thonk.croptopia.mixin.LootTableAccessor;
+import me.thonk.croptopia.registry.ItemRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -22,7 +27,16 @@ public class LootTableModification {
                     LootPool.Builder builder = LootPool.lootPool();
                     List<LootPool> poolList = ((LootTableAccessor) event.getTable()).getPools();
                     if (!poolList.isEmpty()) {
-                        poolList.get(0).
+                        LootPoolBuilderAccessor accessor = (LootPoolBuilderAccessor) builder;
+                        LootPoolEntryContainer[] entries = ((LootPoolAccessor) poolList.get(0)).getEntries();
+                        accessor.getEntries().addAll(List.of(entries));
+                        builder.add(LootItem.lootTableItem(ItemRegistry.tuna).setWeight(20))
+                                .add(LootItem.lootTableItem(ItemRegistry.anchovy).setWeight(30))
+                                .add(LootItem.lootTableItem(ItemRegistry.shrimp).setWeight(20))
+                                .add(LootItem.lootTableItem(ItemRegistry.crab).setWeight(15))
+                                .add(LootItem.lootTableItem(ItemRegistry.clam).setWeight(10))
+                                .add(LootItem.lootTableItem(ItemRegistry.oyster).setWeight(10));
+                        poolList.set(0, builder.build());
                     }
                 }
             }
