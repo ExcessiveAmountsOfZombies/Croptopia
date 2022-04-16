@@ -13,24 +13,8 @@ import static net.minecraft.world.biome.Biome.Category.*;
 public class ItemRegistry {
 
     // Spices
-    public static Item mustard = new Item(createGroup());
-    public static Item vanilla = new Item(createGroup());
     public static Item paprika = new Item(createGroup()); // TODO need recipe to make paprika in future update
-    public static Item chilePepper = new CropItem(createGroup().food(EDIBLE_3));
     public static Item salt = new Item(createGroup());
-    public static Item turmeric = new Item(createGroup());
-    public static Item ginger = new Item(createGroup());
-    // Herbs
-    public static Item basil = new CropItem(createGroup().food(EDIBLE_1));
-
-
-    public static Item mustardSeed = new SeedItem(BlockRegistry.mustardCropBlock, createGroup(), PLAINS);
-    public static Item chilePepperSeed = new SeedItem(BlockRegistry.chilePepperCropBlock, createGroup(), PLAINS);
-    public static Item turmericSeed = new SeedItem(BlockRegistry.turmericCropBlock, createGroup(), SAVANNA);
-    public static Item gingerSeed = new SeedItem(BlockRegistry.gingerCropBlock, createGroup(), SAVANNA);
-    public static Item basilSeed = new SeedItem(BlockRegistry.basilCropBlock, createGroup(), JUNGLE);
-    //public static Item vanillaSeed;
-
 
     // secondary ingredients?
     public static Item oliveOil = new Item(createGroup());
@@ -197,8 +181,6 @@ public class ItemRegistry {
     public static Item cinnamon = new Item(createGroup());
     public static Item cornHusk = new Item(createGroup());
     public static Item whippingCream = new Item(createGroup());
-    public static Item pepper = new Item(createGroup());
-    public static Item vanillaSeeds = new SeedItem(BlockRegistry.vanillaCropBlock, createGroup(), JUNGLE);
 
     public static Item cinnamonSapling = new AliasedBlockItem(BlockRegistry.cinnamonSaplingBlock, createGroup());
     public static Item cinnamonLog = new AliasedBlockItem(BlockRegistry.cinnamonLog, createGroup());
@@ -218,11 +200,8 @@ public class ItemRegistry {
     public static Item treacleTart = new Item(createGroup().food(EDIBLE_10));
     public static Item stickyToffeePudding = new Item(createGroup().food(EDIBLE_14));
     public static Item trifle = new Item(createGroup().food(EDIBLE_14));
-    public static Item pepperSeed = new SeedItem(BlockRegistry.pepperCropBlock, createGroup(), PLAINS);
     public static Item waterBottle = new Item(createGroup());
     public static Item milkBottle = new Item(createGroup());
-    public static Item teaLeaves = new Item(createGroup());
-    public static Item teaSeed = new SeedItem(BlockRegistry.teaCropBlock, createGroup(), FOREST);
 
     // 1.7.0
     public static Item ajvar = new Item(createGroup().food(EDIBLE_7));
@@ -274,23 +253,8 @@ public class ItemRegistry {
     public static void init() {
         registerItem(ItemNames.GUIDE, guide);
 
-        registerItem(ItemNames.MUSTARD, mustard);
-        registerItem(ItemNames.VANILLA, vanilla);
         registerItem(ItemNames.PAPRIKA, paprika);
-        registerItem(ItemNames.CHILE_PEPPER, chilePepper);
         registerItem(ItemNames.SALT, salt);
-        registerItem(ItemNames.TURMERIC, turmeric);
-        registerItem(ItemNames.GINGER, ginger);
-        registerItem(ItemNames.BASIL, basil);
-
-        registerItem(ItemNames.MUSTARD_SEED, mustardSeed);
-        registerItem(ItemNames.CHILE_PEPPER_SEED, chilePepperSeed);
-        registerItem(ItemNames.TURMERIC_SEED, turmericSeed);
-        registerItem(ItemNames.GINGER_SEED, gingerSeed);
-        registerItem(ItemNames.BASIL_SEED, basilSeed);
-        registerItem(ItemNames.VANILLA_SEEDS, vanillaSeeds);
-        registerItem(ItemNames.TEA_SEED, teaSeed);
-        registerItem(ItemNames.PEPPER_SEED, pepperSeed);
 
 
         registerItem(ItemNames.OLIVE_OIL, oliveOil);
@@ -483,12 +447,10 @@ public class ItemRegistry {
         registerItem(ItemNames.TRIFLE, trifle);
         registerItem(ItemNames.WATER_BOTTLE, waterBottle);
         registerItem(ItemNames.MILK_BOTTLE, milkBottle);
-        registerItem(ItemNames.TEA_LEAVES, teaLeaves);
 
         registerItem(ItemNames.CINNAMON, cinnamon);
         registerItem(ItemNames.CORN_HUSK, cornHusk);
         registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
-        registerItem(ItemNames.PEPPER, pepper);
 
         registerItem(ItemNames.FOOD_PRESS, foodPress);
         registerItem(ItemNames.FRYING_PAN, fryingPan);

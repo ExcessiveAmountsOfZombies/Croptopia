@@ -42,7 +42,7 @@ public class GeneratorRegistry {
             .add(Content.Farmland.ARTICHOKE.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.ASPARAGUS.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.BARLEY.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.basilCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
+            .add(Content.Farmland.BASIL.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(Content.Farmland.BELLPEPPER.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.BLACKBEAN.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.BLACKBERRY.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
@@ -60,7 +60,7 @@ public class GeneratorRegistry {
             .add(Content.Farmland.EGGPLANT.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(Content.Farmland.ELDERBERRY.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.GARLIC.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
-            .add(BlockRegistry.gingerCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(Content.Farmland.GINGER.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.GRAPE.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.GREENBEAN.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.GREENONION.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
@@ -70,12 +70,12 @@ public class GeneratorRegistry {
             .add(Content.Farmland.KIWI.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.LEEK.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.LETTUCE.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.mustardCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(Content.Farmland.MUSTARD.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.OAT.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.OLIVE.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.ONION.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(Content.Farmland.PEANUT.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
-            .add(BlockRegistry.chilePepperCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(Content.Farmland.CHILE_PEPPER.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.PINEAPPLE.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(Content.Farmland.RADISH.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.RASPBERRY.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
@@ -90,13 +90,13 @@ public class GeneratorRegistry {
             .add(Content.Farmland.SWEETPOTATO.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.TOMATILLO.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.TOMATO.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.turmericCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(Content.Farmland.TURMERIC.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.TURNIP.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
             .add(Content.Farmland.YAM.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .add(Content.Farmland.ZUCCHINI.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.vanillaCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
-            .add(BlockRegistry.pepperCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
-            .add(BlockRegistry.teaCropBlock.getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(Content.Farmland.VANILLA.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 20)
+            .add(Content.Farmland.PEPPER.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
+            .add(Content.Farmland.TEA_LEAVES.asBlock().getDefaultState().with(CroptopiaCropBlock.AGE, 7), 10)
             .build())));
 
     public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> RANDOM_CROP = register(createIdentifier("random_crop"), Feature.RANDOM_PATCH,
@@ -113,7 +113,7 @@ public class GeneratorRegistry {
                     new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
-    /*public static final RegistryEntry<PlacedFeature> APPLE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.APPLE_TREE_CONFIGURED),
+    public static final RegistryEntry<PlacedFeature> APPLE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.APPLE_TREE_CONFIGURED),
             Content.Tree.APPLE.getTreeGen(), SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.1F, 1), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> BANANA_TREE_CONFIGURED = register(createIdentifier(FeatureNames.BANANA_TREE_CONFIGURED),
@@ -190,7 +190,7 @@ public class GeneratorRegistry {
 
     public static final RegistryEntry<PlacedFeature> WALNUT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.WALNUT_TREE_CONFIGURED),
             Content.Tree.WALNUT.getTreeGen(), SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.25F, 5), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
-    */
+
     public static final RegistryEntry<PlacedFeature> CINNAMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CINNAMON_TREE_CONFIGURED),
             CINNAMON_TREE,SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(1, 0.1F, 6), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 

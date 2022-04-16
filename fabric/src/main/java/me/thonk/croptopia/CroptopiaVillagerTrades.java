@@ -34,9 +34,6 @@ public class CroptopiaVillagerTrades {
             for (Content.Farmland crop : Content.Farmland.values()) {
                 sellToUser(factories, crop.getSeed(), 4, 2, 16, 1, 0.5f);
             }
-            sellToUser(factories, ItemRegistry.mustardSeed, 4, 2, 16, 1, 0.5f);
-            sellToUser(factories, ItemRegistry.chilePepperSeed, 4, 2, 16, 1, 0.5f);
-            sellToUser(factories, ItemRegistry.turmericSeed, 4, 2, 16, 1, 0.5f);
         });
     }
 

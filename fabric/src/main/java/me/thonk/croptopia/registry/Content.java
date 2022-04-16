@@ -51,6 +51,7 @@ public class Content {
         ARTICHOKE(EDIBLE_1, SWAMP),
         ASPARAGUS(EDIBLE_3, SWAMP),
         BARLEY(EDIBLE_1, PLAINS, TAIGA),
+        BASIL(EDIBLE_1, JUNGLE),
         BELLPEPPER(EDIBLE_3, PLAINS),
         BLACKBEAN(EDIBLE_3, FOREST),
         BLACKBERRY(EDIBLE_3, FOREST, TAIGA),
@@ -60,6 +61,7 @@ public class Content {
         CANTALOUPE(EDIBLE_3, FOREST),
         CAULIFLOWER(EDIBLE_3, FOREST),
         CELERY(EDIBLE_3, FOREST),
+        CHILE_PEPPER(EDIBLE_3, PLAINS),
         COFFEE_BEANS(EDIBLE_3, "coffee", JUNGLE),
         CORN(EDIBLE_3, PLAINS),
         CRANBERRY(EDIBLE_3, SWAMP),
@@ -68,6 +70,7 @@ public class Content {
         EGGPLANT(EDIBLE_3, JUNGLE),
         ELDERBERRY(EDIBLE_3, FOREST),
         GARLIC(EDIBLE_1, JUNGLE),
+        GINGER(SAVANNA),
         GRAPE(EDIBLE_3, FOREST),
         GREENBEAN(EDIBLE_3, PLAINS),
         GREENONION(EDIBLE_1, JUNGLE),
@@ -77,10 +80,12 @@ public class Content {
         KIWI(EDIBLE_3, SAVANNA),
         LEEK(EDIBLE_3, SAVANNA),
         LETTUCE(EDIBLE_3, PLAINS),
+        MUSTARD(PLAINS),
         OAT(EDIBLE_1, PLAINS),
         OLIVE(EDIBLE_3, SAVANNA),
         ONION(EDIBLE_3, JUNGLE),
         PEANUT(EDIBLE_1, JUNGLE),
+        PEPPER(PLAINS),
         PINEAPPLE(EDIBLE_3, JUNGLE),
         RADISH(EDIBLE_3, FOREST),
         RASPBERRY(EDIBLE_3, FOREST, TAIGA),
@@ -93,9 +98,12 @@ public class Content {
         SQUASH(EDIBLE_3, SAVANNA, TAIGA),
         STRAWBERRY(EDIBLE_3, FOREST, TAIGA),
         SWEETPOTATO(EDIBLE_3, PLAINS),
+        TEA_LEAVES("tea", FOREST),
         TOMATILLO(EDIBLE_3, FOREST),
         TOMATO(EDIBLE_3, FOREST),
+        TURMERIC(SAVANNA),
         TURNIP(EDIBLE_3, JUNGLE),
+        VANILLA(JUNGLE),
         YAM(EDIBLE_3, SAVANNA),
         ZUCCHINI(EDIBLE_3, SAVANNA);
 
@@ -122,8 +130,12 @@ public class Content {
             this(foodComponent, null, biomes);
         }
 
+        Farmland(String shortNameVariant, Biome.Category... biomes) {
+            this(null, shortNameVariant, biomes);
+        }
+
         Farmland(Biome.Category... biomes) {
-            this(null, biomes);
+            this(null, null, biomes);
         }
 
         @Override
