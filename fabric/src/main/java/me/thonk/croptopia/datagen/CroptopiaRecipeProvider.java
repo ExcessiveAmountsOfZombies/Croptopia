@@ -267,6 +267,13 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('4', tag("milks"))
                 .criterion("has_milk", RecipeProvider.conditionsFromItem(Items.MILK_BUCKET))
                 .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(ItemRegistry.tortilla, 2)
+                .input(tag("flour"))
+                .input(ItemRegistry.fryingPan)
+                .input(tag("water_bottles"))
+                .criterion("took_flour", RecipeProvider.conditionsFromTag(tag("flour")))
+                .criterion("has_frying_pan", RecipeProvider.conditionsFromItem(ItemRegistry.fryingPan))
+                .offerTo(exporter);
     }
 
     private TagKey<Item> croptopia(String name) {

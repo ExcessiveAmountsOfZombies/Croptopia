@@ -201,6 +201,7 @@ a08593c1edad57433775b45ae47169dc000556d8 dependents\platform\tags\items\oats.jso
 3bfa2cf1f8f7db8d3a1364e98f1d9d4a9170b993 dependents\platform\tags\items\vegetables\kale.json
 4138eee8ed27e1ff4ca57298a52daabe0aba13f6 dependents\platform\tags\items\grain\oat.json
 f7111ecc157b66ea56be9f2ead52dd982829095c dependents\platform\tags\items\cooked_calamari.json
+98fb3ca67f3db1d2766c209521d7751b4727cb45 data\croptopia\advancements\recipes\croptopia.croptopia\tortilla.json
 ee3ab6dade926712f36704476fed8506da2bddd6 dependents\platform\tags\items\crops\cherry.json
 86e597d6fd8f73599e149881e7a13a9b3d904d46 dependents\platform\tags\items\spinach.json
 be6bb0ed4949fc26a477c1d2a91ef8f24cf678ad dependents\platform\tags\items\vegetables\onion.json
@@ -444,6 +445,7 @@ aeb1540a6aa09412469a89ffaa6d29319d670925 dependents\platform\tags\items\pecan_sa
 7da1b9ed76894d737796650850979549fb321a0c dependents\platform\tags\items\vegetables\radish.json
 0e09d591e2bf6f6cf4d790a4228794cfc0708783 assets\croptopia\models\item\cooked_anchovy.json
 bfe906094a024f5ab8e0179ba6070328a008baa3 dependents\platform\tags\items\molasses.json
+dd90f193d02bff5b2354d18b57f668251da903eb data\croptopia\recipes\tortilla.json
 cbcb734074bb07d286e7cb3cb8b4a5bfaba8ee6c dependents\platform\tags\items\fruits\pineapple.json
 b40b2be1579b0de1adac9d381e0567e682520e11 dependents\platform\tags\items\seeds\lettuce.json
 3a4d9b79abe994f250044a82ee67cd726908c095 dependents\platform\tags\items\rhubarb_seeds.json

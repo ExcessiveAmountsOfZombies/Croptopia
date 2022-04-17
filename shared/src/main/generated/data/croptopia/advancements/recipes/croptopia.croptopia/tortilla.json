@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_flour": {
+    "took_flour": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tags": "${dependent}:flour"
+            "tag": "${dependent}:flour"
           }
         ]
       }
@@ -21,7 +21,9 @@
       "conditions": {
         "items": [
           {
-            "items": ["croptopia:frying_pan"]
+            "items": [
+              "croptopia:frying_pan"
+            ]
           }
         ]
       }
@@ -35,7 +37,7 @@
   },
   "requirements": [
     [
-      "has_flour",
+      "took_flour",
       "has_frying_pan",
       "has_the_recipe"
     ]
