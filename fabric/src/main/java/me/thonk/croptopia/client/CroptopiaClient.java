@@ -1,6 +1,7 @@
 package me.thonk.croptopia.client;
 
 import me.thonk.croptopia.blocks.LeafCropBlock;
+import me.thonk.croptopia.registry.Content;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -12,7 +13,6 @@ import net.minecraft.client.color.world.FoliageColors;
 import net.minecraft.client.render.RenderLayer;
 
 import static me.thonk.croptopia.Croptopia.cropBlocks;
-import static me.thonk.croptopia.Croptopia.leafBlocks;
 
 @Environment(EnvType.CLIENT)
 public class CroptopiaClient implements ClientModInitializer {
@@ -34,6 +34,6 @@ public class CroptopiaClient implements ClientModInitializer {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
                 world != null && pos != null
                         ? BiomeColors.getFoliageColor(world, pos)
-                        : FoliageColors.getDefaultColor(), leafBlocks.toArray(new Block[]{}));
+                        : FoliageColors.getDefaultColor(), Content.createLeafStream().toArray(Block[]::new));
     }
 }
