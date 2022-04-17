@@ -1,5 +1,6 @@
 package me.thonk.croptopia.blocks;
 
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -7,6 +8,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
@@ -67,6 +69,9 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (getAge(state) == getMaxAge()) {
+            PlayerBlockBreakEvents.AFTER.invoker().afterBlockBreak(world, player, pos, state, null);
+            player.incrementStat(Stats.MINED.getOrCreateStat(this));
+            player.addExhaustion(0.005f);
             world.setBlockState(pos, this.withAge(0), 2);
             world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos);
             if (world instanceof ServerWorld) {

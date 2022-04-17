@@ -1,6 +1,7 @@
 package me.thonk.croptopia.blocks;
 
 import me.thonk.croptopia.items.SeedItem;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -9,6 +10,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.stat.Stats;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -69,6 +71,9 @@ public class CroptopiaCropBlock extends CropBlock {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (getAge(state) == getMaxAge()) {
+            PlayerBlockBreakEvents.AFTER.invoker().afterBlockBreak(world, player, pos, state, null);
+            player.incrementStat(Stats.MINED.getOrCreateStat(this));
+            player.addExhaustion(0.005f);
             world.setBlockState(pos, this.withAge(0), 2);
             dropStacks(state, world, pos);
             return ActionResult.SUCCESS;
