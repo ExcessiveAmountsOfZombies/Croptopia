@@ -1,6 +1,7 @@
 package me.thonk.croptopia.datagen.tags;
 
 import com.google.gson.JsonArray;
+import me.thonk.common.MiscNames;
 import net.minecraft.tag.Tag;
 import net.minecraft.util.Identifier;
 
@@ -9,7 +10,6 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class IndependentEntry implements Tag.Entry {
-    private final String prefix = "${dependent}:";
     private final String suffix;
 
     public IndependentEntry(String something) {
@@ -23,7 +23,7 @@ public class IndependentEntry implements Tag.Entry {
 
     @Override
     public void addToJson(JsonArray json) {
-        json.add("#" + prefix + suffix);
+        json.add("#" + MiscNames.INDEPENDENT_TAG + ":" + suffix);
 
     }
 

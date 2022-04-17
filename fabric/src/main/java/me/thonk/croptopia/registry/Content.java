@@ -71,7 +71,7 @@ public class Content {
         TagCategory() {
             lowerCaseName = name().toLowerCase();
             if (!name().equals("NONE")) {
-                tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.GLOBAL_TAG, lowerCaseName));
+                tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.INDEPENDENT_TAG, lowerCaseName));
             }
         }
 
@@ -161,7 +161,7 @@ public class Content {
             lowerCaseName = name().toLowerCase();
             this.hasPlural = hasPlural;
             this.tagegory = tagegory;
-            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.GLOBAL_TAG, tagegory.getLowerCaseName() + "/" + lowerCaseName));
+            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.INDEPENDENT_TAG, tagegory.getLowerCaseName() + "/" + lowerCaseName));
             if (foodRegistry == null) {
                 item = new CropItem(createGroup());
             }
@@ -262,7 +262,7 @@ public class Content {
             lowerCaseName = name().toLowerCase();
             this.hasPlural = hasPlural;
             this.tagegory = tagegory;
-            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.GLOBAL_TAG, tagegory.getLowerCaseName() + "/" + lowerCaseName));
+            tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.INDEPENDENT_TAG, tagegory.getLowerCaseName() + "/" + lowerCaseName));
             if (foodRegistry == null) {
                 item = Items.APPLE;
             }
