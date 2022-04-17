@@ -54,22 +54,29 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
         for (Content.Farmland crop : Content.Farmland.values()) {
             if (crop == Content.Farmland.CHILE_PEPPER) {
-                createSeedSaplingTag("seeds", "chilepepper", crop.asItem());
+                createSeedSaplingTag("seeds", "chilepepper", crop.getSeed());
             }
             else {
-                createSeedSaplingTag("seeds", crop.getLowerCaseName(), crop.asItem());
+                createSeedSaplingTag("seeds", crop.getLowerCaseName(), crop.getSeed());
             }
         }
         for (Content.Tree crop : Content.Tree.values()) {
-            createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.asItem());
+            createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
         }
         createSeedSaplingTag("saplings", "cinnamon", ItemRegistry.cinnamonSapling);
 
         for (Content.Juice juice : Content.Juice.values()) {
-            createCategoryTag("juices", juice.asItem().getName()+"s", juice.asItem());
+            createCategoryTag("juices", juice.name().toLowerCase()+"_juices", juice.asItem());
         }
         for (Content.Jam jam : Content.Jam.values()) {
-            createCategoryTag("jams", jam.asItem().getName()+"s", jam.asItem());
+            createCategoryTag("jams", jam.name().toLowerCase()+"_jams", jam.asItem());
+        }
+
+        for (Content.Smoothie smoothie : Content.Smoothie.values()) {
+            createGeneralTag(smoothie.name().toLowerCase()+"_smoothies", smoothie.asItem());
+        }
+        for (Content.IceCream iceCream : Content.IceCream.values()) {
+            createGeneralTag(iceCream.name().toLowerCase()+"_ice_creams", iceCream.asItem());
         }
 
         createGeneralTag("almond_brittles", ItemRegistry.almondBrittle);
@@ -78,7 +85,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("baked_beans", ItemRegistry.bakedBeans);
         createGeneralTag("banana_cream_pies", ItemRegistry.bananaCreamPie);
         createGeneralTag("banana_nut_breads", ItemRegistry.bananaNutBread);
-        /*createGeneralTag("banana_smoothies", ItemRegistry.bananaSmoothie);*/
         createGeneralTag("beef_jerkies", ItemRegistry.beefJerky);
         createGeneralTag("beef_wellington", ItemRegistry.beefWellington);
         createGeneralTag("beers", ItemRegistry.beer);
@@ -128,7 +134,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("lemon_chickens", ItemRegistry.lemonChicken);
         createGeneralTag("lemonades", ItemRegistry.lemonade);
         createGeneralTag("limeades", ItemRegistry.limeade);
-        /*createGeneralTag("mango_ice_creams", ItemRegistry.mangoIceCream);*/
         createGeneralTag("meads", ItemRegistry.mead);
         createGeneralTag("milk_bottles", ItemRegistry.milkBottle);
         createGeneralTag("molasses", ItemRegistry.molasses);
@@ -170,8 +175,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("spaghetti_squashs", ItemRegistry.spaghettiSquash);
         createGeneralTag("steamed_rices", ItemRegistry.steamedRice);
         createGeneralTag("sticky_toffee_pudding", ItemRegistry.stickyToffeePudding);
-        /*createGeneralTag("strawberry_ice_creams", ItemRegistry.strawberryIceCream);
-        createGeneralTag("strawberry_smoothies", ItemRegistry.strawberrySmoothie);*/
         createGeneralTag("supreme_pizzas", ItemRegistry.supremePizza);
         createGeneralTag("sushis", ItemRegistry.sushi);
         createGeneralTag("sweet_potato_friess", ItemRegistry.sweetPotatoFries);
@@ -187,7 +190,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("treacle_tarts", ItemRegistry.treacleTart);
         createGeneralTag("trifle", ItemRegistry.trifle);
         createGeneralTag("tuna_sandwiches", ItemRegistry.tunaSandwich);
-        /*createGeneralTag("vanilla_ice_creams", ItemRegistry.vanillaIceCream);*/
         createGeneralTag("veggie_salads", ItemRegistry.veggieSalad);
         createGeneralTag("wines", ItemRegistry.wine);
         createGeneralTag("yam_jam", ItemRegistry.yamJam);
