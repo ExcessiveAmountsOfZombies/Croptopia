@@ -3,12 +3,12 @@ package me.thonk.croptopia.datagen;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.item.Item;
+import net.minecraft.tag.ItemTags;
 
-public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
-    public CroptopiaBlockTagProvider(FabricDataGenerator dataGenerator) {
+    public CroptopiaItemTagProvider(FabricDataGenerator dataGenerator) {
         super(dataGenerator);
     }
 
@@ -18,12 +18,12 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateSaplings() {
-        FabricTagBuilder<Block> saplings = getOrCreateTagBuilder(BlockTags.SAPLINGS);
+        FabricTagBuilder<Item> saplings = getOrCreateTagBuilder(ItemTags.SAPLINGS);
         for (Content.Tree crop : Content.Tree.values()) {
-            saplings.add(crop.getSaplingBlock());
+            saplings.add(crop.getSapling());
         }
         for (Content.Bark crop : Content.Bark.values()) {
-            saplings.add(crop.getSaplingBlock());
+            saplings.add(crop.getSapling());
         }
     }
 

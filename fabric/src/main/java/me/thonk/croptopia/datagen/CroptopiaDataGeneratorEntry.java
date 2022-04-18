@@ -7,10 +7,11 @@ public class CroptopiaDataGeneratorEntry implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+        fabricDataGenerator.addProvider(CroptopiaBlockTagProvider::new);
+        fabricDataGenerator.addProvider(CroptopiaItemTagProvider::new);
+        fabricDataGenerator.addProvider(CroptopiaIndependentItemTagProvider::new);
+        // tags always first
         fabricDataGenerator.addProvider(CroptopiaModelProvider::new);
         fabricDataGenerator.addProvider(CroptopiaRecipeProvider::new);
-
-        CroptopiaBlockTagProvider tagProvider = new CroptopiaBlockTagProvider(fabricDataGenerator);
-        fabricDataGenerator.addProvider(new CroptopiaItemProvider(fabricDataGenerator, tagProvider));
     }
 }
