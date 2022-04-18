@@ -5,10 +5,7 @@ import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
-import me.thonk.croptopia.items.CropItem;
-import me.thonk.croptopia.items.CroptopiaSaplingItem;
-import me.thonk.croptopia.items.Drink;
-import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.items.*;
 import me.thonk.croptopia.util.BlockConvertible;
 import me.thonk.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -582,6 +579,36 @@ public class Content {
 
         public ItemConvertible getCrop() {
             return crop;
+        }
+    }
+
+    /**
+     * Enum for all (Croptopia) cooking utensils
+     */
+    public enum Utensil implements ItemConvertible, PluralInfo {
+        COOKING_POT(true),
+        FOOD_PRESS(false),
+        FRYING_PAN(true),
+        KNIFE(true),
+        MORTAR_AND_PESTLE(true);
+
+        private boolean hasPlural;
+        private Item item;
+
+        Utensil(boolean hasPlural) {
+            this.hasPlural = hasPlural;
+            item = new CookingUtensil(createGroup().maxCount(1));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return hasPlural;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
         }
     }
 

@@ -41,7 +41,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('1', Items.PUMPKIN_SEEDS)
                 .input('3', Content.Farmland.PEPPER.asItem())
                 .input('2', tag("salts"))
-                .input('4', ItemRegistry.fryingPan)
+                .input('4', Content.Utensil.FRYING_PAN)
                 .criterion("has_pumpkin_seed", RecipeProvider.conditionsFromItem(Items.PUMPKIN_SEEDS))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.roastedSunflowerSeeds)
@@ -51,7 +51,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('1', Items.SUNFLOWER)
                 .input('3', Content.Farmland.PEPPER.asItem())
                 .input('2', tag("salts"))
-                .input('4', ItemRegistry.fryingPan)
+                .input('4', Content.Utensil.FRYING_PAN)
                 .criterion("has_sunflower", RecipeProvider.conditionsFromItem(Items.SUNFLOWER))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.pumpkinBars, 3)
@@ -83,7 +83,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('3', Content.Farmland.PEPPER.asItem())
                 .input('4', Items.PUMPKIN)
                 .input('5', tag("salts"))
-                .input('6', ItemRegistry.cookingPot)
+                .input('6', Content.Utensil.COOKING_POT)
                 .criterion("has_pumpkin", RecipeProvider.conditionsFromItem(Items.PUMPKIN))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.meringue, 2)
@@ -99,7 +99,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("121")
                 .pattern("456")
                 .pattern("585")
-                .input('8', ItemRegistry.fryingPan)
+                .input('8', Content.Utensil.FRYING_PAN)
                 .input('1', croptopia("beef_replacements"))
                 .input('2', tag("onions"))
                 .input('6', tag("rice"))
@@ -117,7 +117,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('4', tag("onions"))
                 .input('5', tag("tomatoes"))
                 .input('6', tag("water_bottles"))
-                .input('8', ItemRegistry.cookingPot)
+                .input('8', Content.Utensil.COOKING_POT)
                 .input('7', tag("cabbage"))
                 .input('9', tag("garlic"))
                 .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
@@ -126,7 +126,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("123")
                 .pattern("454")
                 .pattern("183")
-                .input('8', ItemRegistry.fryingPan)
+                .input('8', Content.Utensil.FRYING_PAN)
                 .input('1', croptopia("pork_replacements"))
                 .input('3', croptopia("beef_replacements"))
                 .input('2', tag("onions"))
@@ -141,7 +141,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('1', Items.BEETROOT)
                 .input('4', tag("cheeses"))
                 .input('5', tag("lemons"))
-                .input('6', ItemRegistry.cookingPot)
+                .input('6', Content.Utensil.COOKING_POT)
                 .input('7', tag("lettuce"))
                 .criterion("has_beetroot", RecipeProvider.conditionsFromItem(Items.BEETROOT))
                 .offerTo(exporter);
@@ -183,7 +183,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("3")
                 .input('1', tag("crabs"))
                 .input('2', tag("water_bottles"))
-                .input('3', ItemRegistry.cookingPot)
+                .input('3', Content.Utensil.COOKING_POT)
                 .criterion("has_crab", RecipeProvider.conditionsFromItem(ItemRegistry.crab))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.deepFriedShrimp, 2)
@@ -192,7 +192,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('1', tag("shrimp"))
                 .input('4', Items.EGG)
                 .input('6', Items.BREAD)
-                .input('5', ItemRegistry.fryingPan)
+                .input('5', Content.Utensil.FRYING_PAN)
                 .criterion("has_shrimp", RecipeProvider.conditionsFromItem(ItemRegistry.shrimp))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.tunaRoll, 2)
@@ -211,7 +211,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('2', tag("lemons"))
                 .input('3', tag("olive_oils"))
                 .input('4', tag("flour"))
-                .input('5', ItemRegistry.fryingPan)
+                .input('5', Content.Utensil.FRYING_PAN)
                 .input('6', tag("sea_lettuce"))
                 .criterion("has_calamari", RecipeProvider.conditionsFromItem(ItemRegistry.calamari))
                 .offerTo(exporter);
@@ -224,7 +224,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('2', tag("garlic"))
                 .input('3', tag("salts"))
                 .input('4', Content.Farmland.PEPPER.asItem())
-                .input('7', ItemRegistry.fryingPan)
+                .input('7', Content.Utensil.FRYING_PAN)
                 .criterion("has_crab", RecipeProvider.conditionsFromItem(ItemRegistry.crab))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.steamedClams, 2)
@@ -236,7 +236,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('2', tag("garlic"))
                 .input('3', tag("salts"))
                 .input('4', Content.Farmland.PEPPER.asItem())
-                .input('7', ItemRegistry.fryingPan)
+                .input('7', Content.Utensil.FRYING_PAN)
                 .criterion("has_clams", RecipeProvider.conditionsFromItem(ItemRegistry.clam))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.grilledOysters, 2)
@@ -248,7 +248,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('4', tag("lemons"))
                 .input('5', tag("garlic"))
                 .input('6', tag("salts"))
-                .input('7', ItemRegistry.fryingPan)
+                .input('7', Content.Utensil.FRYING_PAN)
                 .criterion("has_oysters", RecipeProvider.conditionsFromItem(ItemRegistry.grilledOysters))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.anchovyPizza, 1)
@@ -259,7 +259,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('2', tag("anchovies"))
                 .input('3', tag("cheeses"))
                 .input('4', tag("doughs"))
-                .input('7', ItemRegistry.fryingPan)
+                .input('7', Content.Utensil.FRYING_PAN)
                 .criterion("has_anchovies", RecipeProvider.conditionsFromItem(ItemRegistry.anchovy))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.mashedPotatoes, 1)
@@ -268,16 +268,16 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("3 ")
                 .input('1', tag("potatoes"))
                 .input('2', tag("salts"))
-                .input('3', ItemRegistry.mortarAndPestle)
+                .input('3', Content.Utensil.MORTAR_AND_PESTLE)
                 .input('4', tag("milks"))
                 .criterion("has_milk", RecipeProvider.conditionsFromItem(Items.MILK_BUCKET))
                 .offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(ItemRegistry.tortilla, 2)
                 .input(tag("flour"))
-                .input(ItemRegistry.fryingPan)
+                .input(Content.Utensil.FRYING_PAN)
                 .input(tag("water_bottles"))
                 .criterion("took_flour", RecipeProvider.conditionsFromTag(tag("flour")))
-                .criterion("has_frying_pan", RecipeProvider.conditionsFromItem(ItemRegistry.fryingPan))
+                .criterion("has_frying_pan", RecipeProvider.conditionsFromItem(Content.Utensil.FRYING_PAN))
                 .offerTo(exporter);
     }
 
