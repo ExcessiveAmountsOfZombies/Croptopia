@@ -1,8 +1,5 @@
 package me.thonk.croptopia.registry;
 
-import me.thonk.common.BlockNames;
-import me.thonk.common.FeatureNames;
-import me.thonk.common.ItemNames;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
@@ -12,8 +9,6 @@ import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import me.thonk.croptopia.items.*;
 import me.thonk.croptopia.util.BlockConvertible;
 import me.thonk.croptopia.util.ItemConvertibleWithPlural;
-import me.thonk.croptopia.util.NamedPlural;
-import me.thonk.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.AliasedBlockItem;
@@ -44,7 +39,6 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import static me.thonk.croptopia.Croptopia.*;
-import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
@@ -498,6 +492,39 @@ public class Content {
         @Override
         public boolean hasPlural() {
             return true;
+        }
+    }
+
+    /**
+     * Enum for all (Croptopia) raw seafood.
+     */
+    public enum Seafood implements ItemConvertibleWithPlural {
+        ANCHOVY(true, REG_1),
+        CALAMARI(false, REG_1),
+        CLAM(true, REG_3),
+        CRAB(true, REG_1),
+        OYSTER(true, REG_3),
+        ROE(false, REG_1),
+        SHRIMP(false, REG_1),
+        TUNA(false, REG_3);
+
+        private boolean hasPlural;
+        private Item item;
+
+        Seafood(boolean hasPlural, FoodRegistry foodRegistry) {
+            this.hasPlural = hasPlural;
+            item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return hasPlural;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
         }
     }
 
