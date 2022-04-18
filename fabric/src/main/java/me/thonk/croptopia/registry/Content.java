@@ -658,6 +658,37 @@ public class Content {
     }
 
     /**
+     * Enum for all "generic" (Croptopia) pies.
+     */
+    public enum Pie implements ItemConvertible {
+        APPLE,
+        CHERRY,
+        PECAN,
+        RHUBARB;
+
+        private Item item;
+        private ItemConvertibleWithPlural crop;
+
+        Pie() {
+            item = new Item(createGroup().food(createComponent(REG_14)));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_pie"), item);
+            crop = findCrop(name());
+            if (crop == null) {
+                throw new IllegalStateException("Unknown crop source");
+            }
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public ItemConvertibleWithPlural getCrop() {
+            return crop;
+        }
+    }
+
+    /**
      * Enum for all (Croptopia) cooking utensils
      */
     public enum Utensil implements ItemConvertibleWithPlural {
