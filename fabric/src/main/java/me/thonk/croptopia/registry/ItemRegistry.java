@@ -130,17 +130,14 @@ public class ItemRegistry {
     //public static Item turtleCake;
 
     // desert item
-    public static Item applePie = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item yamJam = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item bananaCreamPie = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item candyCorn = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item rumRaisinIceCream = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
-    public static Item cherryPie = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item cheeseCake = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item brownies = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item snickerDoodle = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item bananaNutBread = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
-    public static Item pecanPie = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item candiedNuts = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item almondBrittle = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item oatmealCookie = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
@@ -205,7 +202,6 @@ public class ItemRegistry {
     public static Item ratatouille = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
     public static Item rawBacon = new Item(createGroup().food(FoodRegistry.createComponent(REG_1)));
     public static Item rhubarbCrisp = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
-    public static Item rhubarbPie = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item roastedAsparagus = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item roastedRadishes = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item roastedSquash = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
@@ -350,17 +346,14 @@ public class ItemRegistry {
         registerItem(ItemNames.EGG_ROLL, eggRoll);
         registerItem(ItemNames.CASHEW_CHICKEN, cashewChicken);
 
-        registerItem(ItemNames.APPLE_PIE, applePie);
         registerItem(ItemNames.YAM_JAM, yamJam);
         registerItem(ItemNames.BANANA_CREAM_PIE, bananaCreamPie);
         registerItem(ItemNames.CANDY_CORN, candyCorn);
         registerItem(ItemNames.RUM_RAISIN_ICE_CREAM, rumRaisinIceCream);
-        registerItem(ItemNames.CHERRY_PIE, cherryPie);
         registerItem(ItemNames.CHEESE_CAKE, cheeseCake);
         registerItem(ItemNames.BROWNIES, brownies);
         registerItem(ItemNames.SNICKER_DOODLE, snickerDoodle);
         registerItem(ItemNames.BANANA_NUT_BREAD, bananaNutBread);
-        registerItem(ItemNames.PECAN_PIE, pecanPie);
         registerItem(ItemNames.CANDIED_NUTS, candiedNuts);
         registerItem(ItemNames.ALMOND_BRITTLE, almondBrittle);
         registerItem(ItemNames.RAISIN_OATMEAL_COOKIE, oatmealCookie);
@@ -405,7 +398,6 @@ public class ItemRegistry {
         registerItem(ItemNames.RATATOUILLE, ratatouille);
         registerItem(ItemNames.RAW_BACON, rawBacon);
         registerItem(ItemNames.RHUBARB_CRISP, rhubarbCrisp);
-        registerItem(ItemNames.RHUBARB_PIE, rhubarbPie);
         registerItem(ItemNames.ROASTED_ASPARAGUS, roastedAsparagus);
         registerItem(ItemNames.ROASTED_RADISHES, roastedRadishes);
         registerItem(ItemNames.ROASTED_SQUASH, roastedSquash);
