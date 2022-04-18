@@ -1,6 +1,7 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.common.BlockNames;
+import me.thonk.common.FeatureNames;
 import me.thonk.common.ItemNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
@@ -328,7 +329,7 @@ public class Content {
      * Enum for all (Croptopia) bark crops. Don't confuse with {@link Tree}.
      */
     public enum Bark implements ItemConvertible, BlockConvertible, PluralInfo {
-        CINNAMON(false, TagCategory.CROPS);
+        CINNAMON(false, TagCategory.CROPS, 4, 3, 0);
 
         private String lowerCaseName;
         private boolean hasPlural;
@@ -339,10 +340,11 @@ public class Content {
         private Block wood;
         private Block strippedWood;
         private Block leaves;
+        private RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> treeGen;
         private Item sapling;
         private Block saplingBlock;
 
-        Bark(boolean hasPlural, TagCategory tagegory) {
+        Bark(boolean hasPlural, TagCategory tagegory, int iTreeGen, int jTreeGen, int kTreeGen) {
             Objects.requireNonNull(tagegory);
             this.hasPlural = hasPlural;
             this.tagegory = tagegory;
@@ -364,7 +366,8 @@ public class Content {
             registerItem("stripped_" + lowerCaseName + "_wood", new AliasedBlockItem(strippedWood, createGroup()));
             leaves = createRegularLeavesBlock();
             registerBlock(lowerCaseName + "_leaves", leaves);
-            saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.CINNAMON_TREE), Content.createSaplingSettings());
+            treeGen = createBarkGen(lowerCaseName + "_tree", iTreeGen, jTreeGen, kTreeGen, log, leaves);
+            saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> treeGen), Content.createSaplingSettings());
             registerBlock(lowerCaseName + "_sapling", saplingBlock);
             sapling = new AliasedBlockItem(saplingBlock, createGroup());
             registerItem(lowerCaseName + "_sapling", sapling);
@@ -419,6 +422,10 @@ public class Content {
 
         public Block getSaplingBlock() {
             return saplingBlock;
+        }
+
+        public RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> getTreeGen() {
+            return treeGen;
         }
     }
 
@@ -653,6 +660,16 @@ public class Content {
                         SimpleBlockStateProvider.of(leafType.getDefaultState()),
                         new StraightTrunkPlacer(i, j, k),
                         new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(leafType.getDefaultState(), 90).add(leafCrop.getDefaultState().with(LeafCropBlock.AGE, 3), 20).build()),
+                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
+    }
+
+    public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createBarkGen(String name, int i, int j, int k, Block log, Block leaves) {
+        return register(createIdentifier(name),
+                Feature.TREE, ((new TreeFeatureConfig.Builder(
+                        SimpleBlockStateProvider.of(log.getDefaultState()),
+                        new StraightTrunkPlacer(i, j, k),
+                        new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(leaves.getDefaultState(), 90).build()),
                         new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                         new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
     }

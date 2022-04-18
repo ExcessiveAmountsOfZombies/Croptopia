@@ -106,14 +106,6 @@ public class GeneratorRegistry {
     public static final RegistryEntry<PlacedFeature> RANDOM_CROP_PLACED = register(createIdentifier("random_crop"),
             RANDOM_CROP, CountPlacementModifier.of(3), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
 
-    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CINNAMON_TREE = register(createIdentifier(FeatureNames.CINNAMON_TREE),
-            Feature.TREE, ((new TreeFeatureConfig.Builder(
-                    SimpleBlockStateProvider.of(Content.Bark.CINNAMON.getLog().getDefaultState()),
-                    new StraightTrunkPlacer(4, 3, 0),
-                    new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(Content.Bark.CINNAMON.getLeaves().getDefaultState(), 90).build()),
-                    new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
-                    new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
-
     public static final RegistryEntry<PlacedFeature> APPLE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.APPLE_TREE_CONFIGURED),
             Content.Tree.APPLE.getTreeGen(), SquarePlacementModifier.of(), RarityFilterPlacementModifier.of(35), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 
@@ -193,7 +185,7 @@ public class GeneratorRegistry {
             Content.Tree.WALNUT.getTreeGen(), SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(0, 0.25F, 5), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 
     public static final RegistryEntry<PlacedFeature> CINNAMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CINNAMON_TREE_CONFIGURED),
-            CINNAMON_TREE,SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(1, 0.1F, 6), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
+            Content.Bark.CINNAMON.getTreeGen(),SquarePlacementModifier.of(), PlacedFeatures.createCountExtraModifier(1, 0.1F, 6), VegetationPlacedFeatures.NOT_IN_SURFACE_WATER_MODIFIER, PlacedFeatures.OCEAN_FLOOR_HEIGHTMAP, BlockFilterPlacementModifier.of(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.getDefaultState(), BlockPos.ORIGIN)), BiomePlacementModifier.of());
 
 
     public static final RegistryEntry<ConfiguredFeature<DiskFeatureConfig, ?>> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
