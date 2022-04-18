@@ -314,7 +314,7 @@ public class ItemNames {
     public static final String CORN_HUSK = "corn_husk";
     public static final String WHIPPING_CREAM = "whipping_cream";
     public static final String PEPPER = "pepper";
-    public static final String VANILLA_SEEDS = "vanilla_seeds";
+    public static final String VANILLA_SEEDS = "vanilla_seed";
 
     public static final String CINNAMON_SAPLING = "cinnamon_sapling";
     public static final String CINNAMON_LOG = "cinnamon_log";
