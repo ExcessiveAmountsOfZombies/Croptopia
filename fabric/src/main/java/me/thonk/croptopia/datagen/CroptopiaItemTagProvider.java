@@ -67,7 +67,6 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         fishes.add(Content.Seafood.ROE.asItem());
         fishes.add(Content.Seafood.SHRIMP.asItem());
         fishes.add(Content.Seafood.TUNA.asItem());
-        // I think one fish is missing
         // fox food: all berries added by croptopia
         FabricTagBuilder<Item> foxFood = getOrCreateTagBuilder(ItemTags.FOX_FOOD);
         foxFood.add(Content.Farmland.BLACKBERRY.asItem());
