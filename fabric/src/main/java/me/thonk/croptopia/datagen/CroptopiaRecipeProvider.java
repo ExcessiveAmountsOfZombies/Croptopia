@@ -60,37 +60,41 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     }
 
     protected void generateJams(Consumer<RecipeJsonProvider> exporter) {
-        for (Content.Jam jams : Content.Jam.values()) {
-            ShapelessRecipeJsonBuilder.create(jams)
-                    .input(jams.getCrop()).input(Items.SUGAR).input(Content.Utensil.COOKING_POT)
-                    .criterion("has_" + jams.name().toLowerCase(), RecipeProvider.conditionsFromItem(jams.getCrop()))
+        for (Content.Jam jam : Content.Jam.values()) {
+            TagKey<Item> tag = tag(jam.getCrop().getPlural());
+            ShapelessRecipeJsonBuilder.create(jam)
+                    .input(tag).input(Items.SUGAR).input(Content.Utensil.COOKING_POT)
+                    .criterion("has_" + jam.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
                     .offerTo(exporter);
         }
     }
 
     protected void generateJuices(Consumer<RecipeJsonProvider> exporter) {
         for (Content.Juice juice : Content.Juice.values()) {
+            TagKey<Item> tag = tag(juice.getCrop().getPlural());
             ShapelessRecipeJsonBuilder.create(juice)
-                    .input(juice.getCrop()).input(Content.Utensil.FOOD_PRESS).input(Items.GLASS_BOTTLE)
-                    .criterion("has_" + juice.name().toLowerCase(), RecipeProvider.conditionsFromItem(juice.getCrop()))
+                    .input(tag).input(Content.Utensil.FOOD_PRESS).input(Items.GLASS_BOTTLE)
+                    .criterion("has_" + juice.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
                     .offerTo(exporter);
         }
     }
 
     protected void generateSmoothies(Consumer<RecipeJsonProvider> exporter) {
         for (Content.Smoothie smoothie : Content.Smoothie.values()) {
+            TagKey<Item> tag = tag(smoothie.getCrop().getPlural());
             ShapelessRecipeJsonBuilder.create(smoothie)
-                    .input(smoothie.getCrop()).input(Items.ICE).input(tag("milks")).input(Items.GLASS_BOTTLE)
-                    .criterion("has_" + smoothie.name().toLowerCase(), RecipeProvider.conditionsFromItem(smoothie.getCrop()))
+                    .input(tag).input(Items.ICE).input(tag("milks")).input(Items.GLASS_BOTTLE)
+                    .criterion("has_" + smoothie.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
                     .offerTo(exporter);
         }
     }
 
     protected void generateIceCream(Consumer<RecipeJsonProvider> exporter) {
         for (Content.IceCream iceCream : Content.IceCream.values()) {
+            TagKey<Item> tag = tag(iceCream.getCrop().getPlural());
             ShapelessRecipeJsonBuilder.create(iceCream)
-                    .input(iceCream.getCrop()).input(Items.SUGAR).input(Items.EGG).input(tag("milks")).input(Content.Utensil.COOKING_POT)
-                    .criterion("has_" + iceCream.name().toLowerCase(), RecipeProvider.conditionsFromItem(iceCream.getCrop()))
+                    .input(tag).input(Items.SUGAR).input(Items.EGG).input(tag("milks")).input(Content.Utensil.COOKING_POT)
+                    .criterion("has_" + iceCream.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
                     .offerTo(exporter);
         }
     }
