@@ -33,12 +33,17 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
         generateSeeds(exporter);
         generateSaplings(exporter);
+        generateJams(exporter);
+        generateJuices(exporter);
+        generateSmoothies(exporter);
+        generateIceCream(exporter);
         generateMisc(exporter);
     }
 
     protected void generateSeeds(Consumer<RecipeJsonProvider> exporter) {
         for (Content.Farmland crop : Content.Farmland.values()) {
-            ShapelessRecipeJsonBuilder.create(crop.getSeed()).input(crop)
+            ShapelessRecipeJsonBuilder.create(crop.getSeed())
+                    .input(crop)
                     .criterion("has_" + crop.getLowerCaseName(), RecipeProvider.conditionsFromItem(crop))
                     .offerTo(exporter);
         }
@@ -46,11 +51,48 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
 
     protected void generateSaplings(Consumer<RecipeJsonProvider> exporter) {
         for (Content.Tree crop : Content.Tree.values()) {
-            ShapelessRecipeJsonBuilder.create(crop.getSapling()).input(crop).input(crop).input(ItemTags.SAPLINGS)
+            ShapelessRecipeJsonBuilder.create(crop.getSapling())
+                    .input(crop).input(crop).input(ItemTags.SAPLINGS)
                     .criterion("has_" + crop.getLowerCaseName(), RecipeProvider.conditionsFromItem(crop))
                     .offerTo(exporter);
         }
         // Bark saplings come from the leaves, not the crop
+    }
+
+    protected void generateJams(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Jam jams : Content.Jam.values()) {
+            ShapelessRecipeJsonBuilder.create(jams)
+                    .input(jams.getCrop()).input(Items.SUGAR).input(Content.Utensil.COOKING_POT)
+                    .criterion("has_" + jams.name().toLowerCase(), RecipeProvider.conditionsFromItem(jams.getCrop()))
+                    .offerTo(exporter);
+        }
+    }
+
+    protected void generateJuices(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Juice juice : Content.Juice.values()) {
+            ShapelessRecipeJsonBuilder.create(juice)
+                    .input(juice.getCrop()).input(Content.Utensil.FOOD_PRESS).input(Items.GLASS_BOTTLE)
+                    .criterion("has_" + juice.name().toLowerCase(), RecipeProvider.conditionsFromItem(juice.getCrop()))
+                    .offerTo(exporter);
+        }
+    }
+
+    protected void generateSmoothies(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Smoothie smoothie : Content.Smoothie.values()) {
+            ShapelessRecipeJsonBuilder.create(smoothie)
+                    .input(smoothie.getCrop()).input(Items.ICE).input(tag("milks")).input(Items.GLASS_BOTTLE)
+                    .criterion("has_" + smoothie.name().toLowerCase(), RecipeProvider.conditionsFromItem(smoothie.getCrop()))
+                    .offerTo(exporter);
+        }
+    }
+
+    protected void generateIceCream(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.IceCream iceCream : Content.IceCream.values()) {
+            ShapelessRecipeJsonBuilder.create(iceCream)
+                    .input(iceCream.getCrop()).input(Items.SUGAR).input(Items.EGG).input(tag("milks")).input(Content.Utensil.COOKING_POT)
+                    .criterion("has_" + iceCream.name().toLowerCase(), RecipeProvider.conditionsFromItem(iceCream.getCrop()))
+                    .offerTo(exporter);
+        }
     }
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
