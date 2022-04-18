@@ -1,6 +1,7 @@
 package me.thonk.croptopia.mixin;
 
 import me.thonk.croptopia.registry.BlockRegistry;
+import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.ItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -43,10 +44,14 @@ public class AxeMixin {
                     )
             ))
     public void blockUse(ItemUsageContext context, CallbackInfoReturnable<ActionResult> cir) {
+        if (context.getWorld().isClient)
+            return;
         BlockPos pos = context.getBlockPos();
         BlockState state = context.getWorld().getBlockState(pos);
-        if (state.getBlock().equals(BlockRegistry.cinnamonLog) && !context.getWorld().isClient) {
-            Block.dropStack(context.getWorld(), pos, new ItemStack(ItemRegistry.cinnamon));
+        for (Content.Bark crop : Content.Bark.values()) {
+            if (state.getBlock().equals(crop.getLog()) || state.getBlock().equals(crop.getWood())) {
+                Block.dropStack(context.getWorld(), pos, new ItemStack(crop.asItem()));
+            }
         }
     }
 }

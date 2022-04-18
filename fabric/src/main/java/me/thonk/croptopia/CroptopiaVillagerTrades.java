@@ -27,7 +27,9 @@ public class CroptopiaVillagerTrades {
             for (Content.Tree crop : Content.Tree.values()) {
                 sellToUser(factories, crop.getSapling(), 1, 4, 12, 15, 0.1f);
             }
-            sellToUser(factories, ItemRegistry.cinnamonSapling, 1, 4, 12, 15, 0.1f);
+            for (Content.Bark crop : Content.Bark.values()) {
+                sellToUser(factories, crop.getSapling(), 1, 4, 12, 15, 0.1f);
+            }
         });
 
         TradeOfferHelper.registerWanderingTraderOffers(2, factories -> {

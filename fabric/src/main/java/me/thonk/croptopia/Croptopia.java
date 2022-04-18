@@ -84,12 +84,12 @@ public class Croptopia implements ModInitializer {
         // force loading
         Object o = Content.Farmland.TOMATO;
         o = Content.Tree.APPLE;
+        o = Content.Bark.CINNAMON;
         o = Content.Juice.TOMATO;
         o = Content.Jam.APRICOT;
         o = Content.Smoothie.BANANA;
         o = Content.IceCream.MANGO;
 
-        LeavesRegistry.init();
         BlockRegistry.init();
         ItemRegistry.init();
         Composter.init();
@@ -212,11 +212,12 @@ public class Croptopia implements ModInitializer {
 
     private void modifyAxeBlockStripping() {
         Map<Block, Block> immutableBlocks = AxeAccess.getStrippedBlocks();
-        AxeAccess.setStrippedBlocks(new ImmutableMap.Builder<Block, Block>()
-                .putAll(immutableBlocks)
-                .put(BlockRegistry.cinnamonLog, BlockRegistry.strippedCinnamonLog)
-                .put(BlockRegistry.cinnamonWood, BlockRegistry.strippedCinnamonWood)
-                .build());
+        var axeMap = new ImmutableMap.Builder<Block, Block>().putAll(immutableBlocks);
+        for (Content.Bark crop : Content.Bark.values()) {
+            axeMap.put(crop.getLog(), crop.getStrippedLog());
+            axeMap.put(crop.getWood(), crop.getStrippedWood());
+        }
+        AxeAccess.setStrippedBlocks(axeMap.build());
     }
 
     private void modifyChickenBreeds() {
@@ -226,6 +227,7 @@ public class Croptopia implements ModInitializer {
         for (Integer stack : stacks) {
             baseItems.add(Item.byRawId(stack));
         }
+        // TODO iterate over farmland
         baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
         ChickenAccess.setBreedingIngredients(Ingredient.ofItems(baseItems.toArray(new Item[0])));
     }

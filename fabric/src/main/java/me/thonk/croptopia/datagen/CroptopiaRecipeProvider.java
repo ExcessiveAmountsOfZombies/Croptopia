@@ -2,6 +2,7 @@ package me.thonk.croptopia.datagen;
 
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.mixin.datagen.IdentifierAccessor;
+import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.ItemRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -29,12 +30,16 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
 
     @Override
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+
+    }
+
+    protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(ItemRegistry.roastedPumpkinSeeds)
                 .pattern("   ")
                 .pattern("123")
                 .pattern(" 4 ")
                 .input('1', Items.PUMPKIN_SEEDS)
-                .input('3', ItemRegistry.pepper)
+                .input('3', Content.Farmland.PEPPER.asItem())
                 .input('2', tag("salts"))
                 .input('4', ItemRegistry.fryingPan)
                 .criterion("has_pumpkin_seed", RecipeProvider.conditionsFromItem(Items.PUMPKIN_SEEDS))
@@ -44,7 +49,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("123")
                 .pattern(" 4 ")
                 .input('1', Items.SUNFLOWER)
-                .input('3', ItemRegistry.pepper)
+                .input('3', Content.Farmland.PEPPER.asItem())
                 .input('2', tag("salts"))
                 .input('4', ItemRegistry.fryingPan)
                 .criterion("has_sunflower", RecipeProvider.conditionsFromItem(Items.SUNFLOWER))
@@ -57,17 +62,17 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('2', Items.SUGAR)
                 .input('3', Items.PUMPKIN)
                 .input('4', tag("flour"))
-                .input('5', ItemRegistry.cinnamon)
+                .input('5', Content.Bark.CINNAMON)
                 .input('6', tag("salts"))
                 .input('7', tag("butters"))
                 .input('8', tag("vanilla"))
                 .criterion("has_pumpkin", RecipeProvider.conditionsFromItem(Items.PUMPKIN))
-                .criterion("has_cinnamon", RecipeProvider.conditionsFromItem(ItemRegistry.cinnamon))
+                .criterion("has_cinnamon", RecipeProvider.conditionsFromItem(Content.Bark.CINNAMON))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.cornBread)
                 .pattern("111")
                 .input('1', tag("corn"))
-                .criterion("has_corn", RecipeProvider.conditionsFromItem(ItemRegistry.corn))
+                .criterion("has_corn", RecipeProvider.conditionsFromItem(Content.Farmland.CORN.asItem()))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.pumpkinSoup, 2)
                 .pattern("123")
@@ -75,7 +80,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("464")
                 .input('1', tag("onions"))
                 .input('2', tag("garlic"))
-                .input('3', ItemRegistry.pepper)
+                .input('3', Content.Farmland.PEPPER.asItem())
                 .input('4', Items.PUMPKIN)
                 .input('5', tag("salts"))
                 .input('6', ItemRegistry.cookingPot)
@@ -100,7 +105,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('6', tag("rice"))
                 .input('4', tag("salts"))
                 .input('5', tag("cabbage"))
-                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(ItemRegistry.cabbage))
+                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.borscht, 2)
                 .pattern("123")
@@ -115,7 +120,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('8', ItemRegistry.cookingPot)
                 .input('7', tag("cabbage"))
                 .input('9', tag("garlic"))
-                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(ItemRegistry.cabbage))
+                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.goulash)
                 .pattern("123")
@@ -127,7 +132,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('2', tag("onions"))
                 .input('4', tag("cabbage"))
                 .input('5', tag("tomatoes"))
-                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(ItemRegistry.cabbage))
+                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.beetrootSalad)
                 .pattern("111")
@@ -150,7 +155,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input(tag("kumquat"))
                 .input(tag("vanilla"))
                 .input(Items.HONEY_BOTTLE)
-                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(ItemRegistry.kumquat))
+                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT.asItem()))
                 .offerTo(exporter);
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ItemRegistry.shrimp), ItemRegistry.cookedShrimp, 0.2f, 200)
                 .criterion("has_shrimp", RecipeProvider.conditionsFromItem(ItemRegistry.shrimp))
@@ -218,7 +223,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('1', tag("butters"))
                 .input('2', tag("garlic"))
                 .input('3', tag("salts"))
-                .input('4', ItemRegistry.pepper)
+                .input('4', Content.Farmland.PEPPER.asItem())
                 .input('7', ItemRegistry.fryingPan)
                 .criterion("has_crab", RecipeProvider.conditionsFromItem(ItemRegistry.crab))
                 .offerTo(exporter);
@@ -230,7 +235,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('1', tag("butters"))
                 .input('2', tag("garlic"))
                 .input('3', tag("salts"))
-                .input('4', ItemRegistry.pepper)
+                .input('4', Content.Farmland.PEPPER.asItem())
                 .input('7', ItemRegistry.fryingPan)
                 .criterion("has_clams", RecipeProvider.conditionsFromItem(ItemRegistry.clam))
                 .offerTo(exporter);
