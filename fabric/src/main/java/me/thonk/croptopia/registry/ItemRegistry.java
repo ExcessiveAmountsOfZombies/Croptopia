@@ -33,8 +33,6 @@ public class ItemRegistry {
     public static Item butter = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
     public static Item noodle = new Item(createGroup());
     public static Item tofu = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item molasses = new Item(createGroup());
-    public static Item caramel = new Item(createGroup());
     public static Item chocolate = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item tortilla = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item soySauce = new Item(createGroup());
@@ -71,11 +69,7 @@ public class ItemRegistry {
     public static Item frenchFries = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item sweetPotatoFries = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item onionRings = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item raisins = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item doughnut = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item popcorn = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
-    public static Item bakedBeans = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item toast = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item cucumberSalad = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item caesarSalad = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item leafySalad = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
@@ -182,8 +176,6 @@ public class ItemRegistry {
     public static Item ajvar = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item ajvarToast = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item avocadoToast = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
-    public static Item bakedSweetPotato = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
-    public static Item bakedYam = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item beefStew = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item beefStirFry = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item butteredGreenBeans = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
@@ -224,11 +216,7 @@ public class ItemRegistry {
     public static Item goulash = new Item(createGroup().food(FoodRegistry.createComponent(REG_16)));
     public static Item beetrootSalad = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item candiedKumquats = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
-    public static Item cookedShrimp = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
-    public static Item cookedTuna = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
-    public static Item cookedCalamari = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
     public static Item steamedCrab = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
-    public static Item glowingCalamari = new Item(createGroup().food(FoodRegistry.createBuilder(REG_3).statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 4000, 1), 1.0F).build()));
     public static Item seaLettuce = new Item(createGroup().food(FoodRegistry.createComponent(REG_1)));
     public static Item deepFriedShrimp = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item tunaRoll = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
@@ -236,7 +224,6 @@ public class ItemRegistry {
     public static Item crabLegs = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
     public static Item steamedClams = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
     public static Item grilledOysters = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
-    public static Item cookedAnchovy = new Item(createGroup().food(FoodRegistry.createComponent(REG_4)));
     public static Item anchovyPizza = new Item(createGroup().food(FoodRegistry.createComponent(REG_15)));
     public static Item mashedPotatoes = new Item(createGroup().food(FoodRegistry.createComponent(REG_9)));
 
@@ -258,8 +245,6 @@ public class ItemRegistry {
         registerItem(ItemNames.BUTTER, butter);
         registerItem(ItemNames.NOODLE, noodle);
         registerItem(ItemNames.TOFU, tofu);
-        registerItem(ItemNames.MOLASSES, molasses);
-        registerItem(ItemNames.CARAMEL, caramel);
         registerItem(ItemNames.CHOCOLATE, chocolate);
         registerItem(ItemNames.TORTILLA, tortilla);
         registerItem(ItemNames.SOY_SAUCE, soySauce);
@@ -290,11 +275,7 @@ public class ItemRegistry {
         registerItem(ItemNames.FRENCH_FRIES, frenchFries);
         registerItem(ItemNames.SWEET_POTATO_FRIES, sweetPotatoFries);
         registerItem(ItemNames.ONION_RINGS, onionRings);
-        registerItem(ItemNames.RAISINS, raisins);
         registerItem(ItemNames.DOUGHNUT, doughnut);
-        registerItem(ItemNames.POPCORN, popcorn);
-        registerItem(ItemNames.BAKED_BEANS, bakedBeans);
-        registerItem(ItemNames.TOAST, toast);
         registerItem(ItemNames.CUCUMBER_SALAD, cucumberSalad);
         registerItem(ItemNames.CAESAR_SALAD, caesarSalad);
         registerItem(ItemNames.LEAFY_SALAD, leafySalad);
@@ -370,14 +351,11 @@ public class ItemRegistry {
         registerItem(ItemNames.AJVAR, ajvar);
         registerItem(ItemNames.AJVAR_TOAST, ajvarToast);
         registerItem(ItemNames.AVOCADO_TOAST, avocadoToast);
-        registerItem(ItemNames.BAKED_SWEET_POTATO, bakedSweetPotato);
-        registerItem(ItemNames.BAKED_YAM, bakedYam);
         registerItem(ItemNames.BEEF_STEW, beefStew);
         registerItem(ItemNames.BEEF_STIR_FRY, beefStirFry);
         registerItem(ItemNames.BUTTERED_GREEN_BEANS, butteredGreenBeans);
         registerItem(ItemNames.CHEESY_ASPARAGUS, cheesyAsparagus);
         registerItem(ItemNames.CHOCOLATE_ICE_CREAM, chocolateIceCream);
-        registerItem(ItemNames.COOKED_BACON, cookedBacon);
         registerItem(ItemNames.EGGPLANT_PARMESAN, eggplantParmesan);
         registerItem(ItemNames.FRUIT_CAKE, fruitCake);
         registerItem(ItemNames.GRILLED_EGGPLANT, grilledEggplant);
@@ -425,11 +403,7 @@ public class ItemRegistry {
         registerItem(ItemNames.GOULASH, goulash);
         registerItem(ItemNames.BEETROOT_SALAD, beetrootSalad);
         registerItem(ItemNames.CANDIED_KUMQUATS, candiedKumquats);
-        registerItem(ItemNames.COOKED_SHRIMP, cookedShrimp);
-        registerItem(ItemNames.COOKED_TUNA, cookedTuna);
-        registerItem(ItemNames.COOKED_CALAMARI, cookedCalamari);
         registerItem(ItemNames.STEAMED_CRAB, steamedCrab);
-        registerItem(ItemNames.GLOWING_CALAMARI, glowingCalamari);
         registerItem(ItemNames.SEA_LETTUCE, seaLettuce);
         registerItem(ItemNames.DEEP_FRIED_SHRIMP, deepFriedShrimp);
         registerItem(ItemNames.TUNA_ROLL, tunaRoll);
@@ -437,7 +411,6 @@ public class ItemRegistry {
         registerItem(ItemNames.CRAB_LEGS, crabLegs);
         registerItem(ItemNames.STEAMED_CLAMS, steamedClams);
         registerItem(ItemNames.GRILLED_OYSTERS, grilledOysters);
-        registerItem(ItemNames.COOKED_ANCHOVY, cookedAnchovy);
         registerItem(ItemNames.ANCHOVY_PIZZA, anchovyPizza);
         registerItem(ItemNames.MASHED_POTATOES, mashedPotatoes);
 

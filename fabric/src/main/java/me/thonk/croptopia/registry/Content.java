@@ -11,6 +11,8 @@ import me.thonk.croptopia.util.BlockConvertible;
 import me.thonk.croptopia.util.ItemConvertibleWithPlural;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
@@ -39,6 +41,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import static me.thonk.croptopia.Croptopia.*;
+import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
@@ -463,7 +466,7 @@ public class Content {
     }
 
     /**
-     * Enum of vanilla crops for search and automation purposes.
+     * Enum of all vanilla crops for search and automation purposes.
      */
     public enum VanillaCrops implements ItemConvertibleWithPlural {
         APPLE(Items.APPLE),
@@ -503,6 +506,7 @@ public class Content {
         CALAMARI(false, REG_1),
         CLAM(true, REG_3),
         CRAB(true, REG_1),
+        GLOWING_CALAMARI(false, REG_3),
         OYSTER(true, REG_3),
         ROE(false, REG_1),
         SHRIMP(false, REG_1),
@@ -513,13 +517,55 @@ public class Content {
 
         Seafood(boolean hasPlural, FoodRegistry foodRegistry) {
             this.hasPlural = hasPlural;
-            item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
+            if (name().contains("GLOWING")) {
+                item = new Item(createGroup().food(FoodRegistry.createBuilder(foodRegistry)
+                        .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 4000, 1), 1.0F).build()));
+            }
+            else {
+                item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
+            }
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
         }
 
         @Override
         public boolean hasPlural() {
             return hasPlural;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+    }
+
+    /**
+     * Enum for all furnace products of Croptopia except salt.
+     */
+    public enum Furnace implements ItemConvertible {
+        BAKED_BEANS(REG_5),
+        BAKED_SWEET_POTATO(REG_7),
+        BAKED_YAM(REG_7),
+        CARAMEL(null),
+        COOKED_ANCHOVY(REG_4),
+        COOKED_BACON(REG_7),
+        COOKED_CALAMARI(REG_5),
+        COOKED_SHRIMP(REG_5),
+        COOKED_TUNA(REG_6),
+        MOLASSES(null),
+        POPCORN(REG_3),
+        RAISINS(REG_5),
+        TOAST(REG_7);
+
+        private Item item;
+
+        Furnace(FoodRegistry foodRegistry) {
+            if (foodRegistry == null) {
+                item = new Item(createGroup());
+            }
+            else {
+                item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
+            }
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
         }
 
         @Override
