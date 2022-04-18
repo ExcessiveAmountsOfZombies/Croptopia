@@ -1,5 +1,6 @@
 package me.thonk.croptopia.registry;
 
+import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
@@ -15,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -332,6 +334,8 @@ public class Content {
         private Block strippedLog;
         private Block wood;
         private Block strippedWood;
+        private TagKey<Item> logItemTag;
+        private TagKey<Block> logBlockTag;
         private Block leaves;
         private RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> treeGen;
         private Item sapling;
@@ -357,6 +361,11 @@ public class Content {
             strippedWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
             registerBlock("stripped_" + lowerCaseName + "_wood", strippedWood);
             registerItem("stripped_" + lowerCaseName + "_wood", new AliasedBlockItem(strippedWood, createGroup()));
+            // create the tags (will be filled by datagen)
+            String tagName = lowerCaseName + "_logs";
+            logItemTag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.MOD_ID, tagName));
+            logBlockTag = TagKey.of(Registry.BLOCK_KEY, new Identifier(MiscNames.MOD_ID, tagName));
+            // left is leaves and saplings
             leaves = createRegularLeavesBlock();
             registerBlock(lowerCaseName + "_leaves", leaves);
             treeGen = createBarkGen(lowerCaseName + "_tree", iTreeGen, jTreeGen, kTreeGen, log, leaves);
@@ -403,6 +412,14 @@ public class Content {
 
         public Block getStrippedWood() {
             return strippedWood;
+        }
+
+        public TagKey<Item> getLogItemTag() {
+            return logItemTag;
+        }
+
+        public TagKey<Block> getLogBlockTag() {
+            return logBlockTag;
         }
 
         public Block getLeaves() {
