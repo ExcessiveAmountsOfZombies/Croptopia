@@ -3,7 +3,9 @@ package me.thonk.croptopia.datagen;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.ItemTags;
 
 public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider {
@@ -16,6 +18,8 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
     protected void generateTags() {
         generateSaplings();
         generateBarkLogs();
+        // currently, only generates air, but leaves item tag isn't used by vanilla anyway
+        // generateLeaves();
     }
 
     protected void generateSaplings() {
@@ -39,6 +43,16 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
                     .add(crop.getStrippedWood().asItem());
             // make this crop log burnable
             burnableLog.addTag(crop.getLogItemTag());
+        }
+    }
+
+    protected void generateLeaves() {
+        FabricTagBuilder<Item> leaves = getOrCreateTagBuilder(ItemTags.LEAVES);
+        for (Content.Tree crop : Content.Tree.values()) {
+            leaves.add(crop.getLeaves().asItem());
+        }
+        for (Content.Bark crop : Content.Bark.values()) {
+            leaves.add(crop.getLeaves().asItem());
         }
     }
 

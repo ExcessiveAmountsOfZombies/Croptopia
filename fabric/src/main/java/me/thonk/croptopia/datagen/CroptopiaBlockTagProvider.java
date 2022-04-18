@@ -18,6 +18,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     protected void generateTags() {
         generateSaplings();
         generateBarkLogs();
+        generateLeaves();
     }
 
     protected void generateSaplings() {
@@ -41,6 +42,19 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
                     .add(crop.getStrippedWood());
             // make this crop log burnable
             burnableLog.addTag(crop.getLogBlockTag());
+        }
+    }
+
+    protected void generateLeaves() {
+        FabricTagBuilder<Block> leaves = getOrCreateTagBuilder(BlockTags.LEAVES);
+        FabricTagBuilder<Block> hoe = getOrCreateTagBuilder(BlockTags.HOE_MINEABLE);
+        for (Content.Tree crop : Content.Tree.values()) {
+            leaves.add(crop.getLeaves());
+            hoe.add(crop.getLeaves());
+        }
+        for (Content.Bark crop : Content.Bark.values()) {
+            leaves.add(crop.getLeaves());
+            hoe.add(crop.getLeaves());
         }
     }
 
