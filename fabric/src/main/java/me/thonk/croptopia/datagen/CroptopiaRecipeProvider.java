@@ -37,6 +37,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         generateJuices(exporter);
         generateSmoothies(exporter);
         generateIceCream(exporter);
+        generatePie(exporter);
         generateMisc(exporter);
     }
 
@@ -95,6 +96,16 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
             ShapelessRecipeJsonBuilder.create(iceCream)
                     .input(tag).input(Items.SUGAR).input(Items.EGG).input(tag("milks")).input(Content.Utensil.COOKING_POT)
                     .criterion("has_" + iceCream.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
+                    .offerTo(exporter);
+        }
+    }
+
+    protected void generatePie(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Pie pie : Content.Pie.values()) {
+            TagKey<Item> tag = tag(pie.getCrop().getPlural());
+            ShapelessRecipeJsonBuilder.create(pie)
+                    .input(tag).input(Items.SUGAR).input(Items.EGG).input(tag("flour")).input(tag("doughs")).input(Content.Utensil.FRYING_PAN)
+                    .criterion("has_" + pie.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
                     .offerTo(exporter);
         }
     }
