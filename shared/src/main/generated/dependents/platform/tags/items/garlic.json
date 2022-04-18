@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:garlic",
-    "#${dependent}:crops/garlic",
+    "#${dependent}:vegetables/garlic",
     "croptopia:garlic",
-    "#${dependent}:vegetables/garlic"
+    "#${dependent}:crops/garlic"
   ]
 }

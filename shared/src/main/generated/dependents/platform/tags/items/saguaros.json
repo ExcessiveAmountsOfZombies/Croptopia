@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "croptopia:saguaro"
+    "croptopia:saguaro",
+    "#${dependent}:fruits/saguaro",
+    "croptopia:saguaro",
+    "#${dependent}:crops/saguaro"
   ]
 }

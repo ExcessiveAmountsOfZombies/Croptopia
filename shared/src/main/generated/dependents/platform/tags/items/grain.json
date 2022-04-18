@@ -3,7 +3,7 @@
   "values": [
     "#${dependent}:barley",
     "#${dependent}:corn",
-    "#${dependent}:oats",
+    "#${dependent}:oat",
     "#${dependent}:rice"
   ]
 }

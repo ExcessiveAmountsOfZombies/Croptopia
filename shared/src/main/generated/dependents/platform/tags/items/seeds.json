@@ -15,7 +15,7 @@
     "#${dependent}:seeds/cauliflower",
     "#${dependent}:seeds/celery",
     "#${dependent}:seeds/chilepepper",
-    "#${dependent}:seeds/coffee",
+    "#${dependent}:seeds/coffee_beans",
     "#${dependent}:seeds/corn",
     "#${dependent}:seeds/cranberry",
     "#${dependent}:seeds/cucumber",
@@ -51,11 +51,12 @@
     "#${dependent}:seeds/squash",
     "#${dependent}:seeds/strawberry",
     "#${dependent}:seeds/sweetpotato",
-    "#${dependent}:seeds/tea",
+    "#${dependent}:seeds/tea_leaves",
     "#${dependent}:seeds/tomatillo",
     "#${dependent}:seeds/tomato",
     "#${dependent}:seeds/turmeric",
     "#${dependent}:seeds/turnip",
+    "#${dependent}:seeds/vanilla",
     "#${dependent}:seeds/yam",
     "#${dependent}:seeds/zucchini"
   ]

@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:kumquat",
-    "#${dependent}:crops/kumquat",
+    "#${dependent}:fruits/kumquat",
     "croptopia:kumquat",
-    "#${dependent}:fruits/kumquat"
+    "#${dependent}:crops/kumquat"
   ]
 }

@@ -181,7 +181,6 @@ public class ItemRegistry {
     public static Item butteredGreenBeans = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item cheesyAsparagus = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item chocolateIceCream = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
-    public static Item cookedBacon = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item eggplantParmesan = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
     public static Item fruitCake = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item grilledEggplant = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));

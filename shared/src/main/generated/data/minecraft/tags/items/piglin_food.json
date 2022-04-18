@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:ham_sandwich",
+    "croptopia:pepperoni",
+    "croptopia:pork_and_beans",
+    "croptopia:pork_jerky",
+    "croptopia:bacon",
+    "croptopia:cooked_bacon"
+  ]
+}

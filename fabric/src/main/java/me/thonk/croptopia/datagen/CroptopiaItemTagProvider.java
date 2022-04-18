@@ -82,7 +82,7 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         piglinFood.add(ItemRegistry.porkAndBeans);
         piglinFood.add(ItemRegistry.porkJerky);
         piglinFood.add(ItemRegistry.rawBacon);
-        piglinFood.add(ItemRegistry.cookedBacon);
+        piglinFood.add(Content.Furnace.COOKED_BACON.asItem());
     }
 
 }

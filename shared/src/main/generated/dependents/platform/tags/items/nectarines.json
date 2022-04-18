@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:nectarine",
-    "#${dependent}:crops/nectarine",
+    "#${dependent}:fruits/nectarine",
     "croptopia:nectarine",
-    "#${dependent}:fruits/nectarine"
+    "#${dependent}:crops/nectarine"
   ]
 }

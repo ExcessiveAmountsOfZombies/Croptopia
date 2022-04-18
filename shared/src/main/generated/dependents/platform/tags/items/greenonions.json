@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:greenonion",
-    "#${dependent}:crops/greenonion",
+    "#${dependent}:vegetables/greenonion",
     "croptopia:greenonion",
-    "#${dependent}:vegetables/greenonion"
+    "#${dependent}:crops/greenonion"
   ]
 }

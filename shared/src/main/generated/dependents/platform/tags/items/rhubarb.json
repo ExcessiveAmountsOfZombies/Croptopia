@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:rhubarb",
-    "#${dependent}:crops/rhubarb",
+    "#${dependent}:vegetables/rhubarb",
     "croptopia:rhubarb",
-    "#${dependent}:vegetables/rhubarb"
+    "#${dependent}:crops/rhubarb"
   ]
 }

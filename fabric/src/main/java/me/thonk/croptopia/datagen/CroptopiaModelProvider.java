@@ -1,5 +1,6 @@
 package me.thonk.croptopia.datagen;
 
+import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.ItemRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -32,18 +33,18 @@ public class CroptopiaModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ItemRegistry.goulash, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.beetrootSalad, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.candiedKumquats, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.shrimp, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.tuna, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.calamari, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.crab, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.roe, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.clam, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.oyster, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.cookedShrimp, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.cookedTuna, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.cookedCalamari, Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.SHRIMP.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.TUNA.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.CALAMARI.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.CRAB.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.ROE.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.CLAM.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.OYSTER.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Furnace.COOKED_SHRIMP.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Furnace.COOKED_TUNA.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Furnace.COOKED_CALAMARI.asItem(), Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.steamedCrab, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.glowingCalamari, Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.GLOWING_CALAMARI.asItem(), Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.seaLettuce, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.deepFriedShrimp, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.tunaRoll, Models.GENERATED);
@@ -51,8 +52,8 @@ public class CroptopiaModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ItemRegistry.crabLegs, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.steamedClams, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.grilledOysters, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.anchovy, Models.GENERATED);
-        itemModelGenerator.register(ItemRegistry.cookedAnchovy, Models.GENERATED);
+        itemModelGenerator.register(Content.Seafood.ANCHOVY.asItem(), Models.GENERATED);
+        itemModelGenerator.register(Content.Furnace.COOKED_ANCHOVY.asItem(), Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.anchovyPizza, Models.GENERATED);
         itemModelGenerator.register(ItemRegistry.mashedPotatoes, Models.GENERATED);
     }

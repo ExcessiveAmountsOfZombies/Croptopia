@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:spinach",
-    "#${dependent}:crops/spinach",
+    "#${dependent}:vegetables/spinach",
     "croptopia:spinach",
-    "#${dependent}:vegetables/spinach"
+    "#${dependent}:crops/spinach"
   ]
 }

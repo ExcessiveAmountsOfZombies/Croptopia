@@ -89,6 +89,11 @@ public class Croptopia implements ModInitializer {
         o = Content.Jam.APRICOT;
         o = Content.Smoothie.BANANA;
         o = Content.IceCream.MANGO;
+        o = Content.Furnace.BAKED_SWEET_POTATO;
+        o = Content.Seafood.CRAB;
+        o = Content.Pie.APPLE;
+        o = Content.VanillaCrops.POTATO;
+        o = Content.Utensil.COOKING_POT;
 
         BlockRegistry.init();
         ItemRegistry.init();

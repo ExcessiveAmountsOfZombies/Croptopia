@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:olive",
-    "#${dependent}:crops/olive",
+    "#${dependent}:fruits/olive",
     "croptopia:olive",
-    "#${dependent}:fruits/olive"
+    "#${dependent}:crops/olive"
   ]
 }

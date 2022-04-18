@@ -167,7 +167,11 @@ public class Content {
             block = new CroptopiaCropBlock(createCropSettings());
             Croptopia.registerBlock((shortNameVariant != null ? shortNameVariant : lowerCaseName) + "_crop", block);
             seed = new SeedItem(block, createGroup(), biomes);
-            Croptopia.registerItem((shortNameVariant != null ? shortNameVariant : lowerCaseName) + "_seed", seed);
+            if (this.name().equals("VANILLA")) {
+                Croptopia.registerItem((shortNameVariant != null ? shortNameVariant : lowerCaseName) + "_seeds", seed);
+            } else {
+                Croptopia.registerItem((shortNameVariant != null ? shortNameVariant : lowerCaseName) + "_seed", seed);
+            }
         }
 
         /**

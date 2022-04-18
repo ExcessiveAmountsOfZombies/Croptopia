@@ -2,8 +2,8 @@
   "replace": false,
   "values": [
     "croptopia:kale",
-    "#${dependent}:crops/kale",
+    "#${dependent}:vegetables/kale",
     "croptopia:kale",
-    "#${dependent}:vegetables/kale"
+    "#${dependent}:crops/kale"
   ]
 }
