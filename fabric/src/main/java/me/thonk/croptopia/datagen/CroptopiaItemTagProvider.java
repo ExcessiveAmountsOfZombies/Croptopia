@@ -4,9 +4,7 @@ import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.ItemRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.ItemTags;
 
 public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider {
@@ -61,13 +59,14 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
     protected void generateMisc() {
         // explicitly used as dolphin food in vanilla
         FabricTagBuilder<Item> fishes = getOrCreateTagBuilder(ItemTags.FISHES);
-        fishes.add(ItemRegistry.anchovy);
-        fishes.add(ItemRegistry.calamari);
-        fishes.add(ItemRegistry.clam);
-        fishes.add(ItemRegistry.oyster);
-        fishes.add(ItemRegistry.roe);
-        fishes.add(ItemRegistry.crab);
-        fishes.add(ItemRegistry.tuna);
+        fishes.add(Content.Seafood.ANCHOVY.asItem());
+        fishes.add(Content.Seafood.CALAMARI.asItem());
+        fishes.add(Content.Seafood.CLAM.asItem());
+        fishes.add(Content.Seafood.CRAB.asItem());
+        fishes.add(Content.Seafood.OYSTER.asItem());
+        fishes.add(Content.Seafood.ROE.asItem());
+        fishes.add(Content.Seafood.SHRIMP.asItem());
+        fishes.add(Content.Seafood.TUNA.asItem());
         // I think one fish is missing
         // fox food: all berries added by croptopia
         FabricTagBuilder<Item> foxFood = getOrCreateTagBuilder(ItemTags.FOX_FOOD);
