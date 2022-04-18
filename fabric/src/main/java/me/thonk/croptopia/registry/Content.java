@@ -307,7 +307,7 @@ public class Content {
         }
 
         public Block getLeaves() {
-            return asBlock();
+            return leaves;
         }
 
         public RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> getTreeGen() {
