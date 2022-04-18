@@ -30,7 +30,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
 
     @Override
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
-
+        generateMisc(exporter);
     }
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {

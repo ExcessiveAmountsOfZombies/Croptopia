@@ -28,7 +28,7 @@ public interface PluralInfo {
         if (word.endsWith("leaf")) {
             return word.substring(0, word.length()-1) + "ves";
         }
-        if (word.endsWith("sh") || word.endsWith("tomato")) {
+        if (word.endsWith("sh") || word.endsWith("tomato") || word.endsWith("ch")) {
             return word + "es";
         }
         return word + "s";

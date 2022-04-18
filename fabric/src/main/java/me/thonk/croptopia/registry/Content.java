@@ -1,8 +1,5 @@
 package me.thonk.croptopia.registry;
 
-import me.thonk.common.BlockNames;
-import me.thonk.common.FeatureNames;
-import me.thonk.common.ItemNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
@@ -43,7 +40,6 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import static me.thonk.croptopia.Croptopia.*;
-import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
@@ -93,7 +89,7 @@ public class Content {
         CAULIFLOWER(false, TagCategory.VEGETABLES, REG_3, FOREST),
         CELERY(false, TagCategory.VEGETABLES, REG_3, FOREST),
         CHILE_PEPPER(true, TagCategory.CROPS, REG_3, PLAINS),
-        COFFEE_BEANS("coffee", true, TagCategory.CROPS, REG_3, JUNGLE),
+        COFFEE_BEANS("coffee", false, TagCategory.CROPS, REG_3, JUNGLE),
         CORN(false, TagCategory.GRAIN, REG_3, PLAINS),
         CRANBERRY(true, TagCategory.FRUITS, REG_3, SWAMP),
         CUCUMBER(true, TagCategory.VEGETABLES, REG_3, PLAINS),
@@ -111,7 +107,7 @@ public class Content {
         KIWI(true, TagCategory.FRUITS, REG_3, SAVANNA),
         LEEK(false, TagCategory.VEGETABLES, REG_3, SAVANNA),
         LETTUCE(false, TagCategory.VEGETABLES, REG_3, PLAINS),
-        MUSTARD(true, TagCategory.VEGETABLES, null, PLAINS),
+        MUSTARD(false, TagCategory.VEGETABLES, null, PLAINS),
         OAT(false, TagCategory.GRAIN, REG_1, PLAINS),
         OLIVE(true, TagCategory.FRUITS, REG_3, SAVANNA),
         ONION(true, TagCategory.VEGETABLES, REG_3, JUNGLE),
@@ -129,7 +125,7 @@ public class Content {
         SQUASH(true, TagCategory.VEGETABLES, REG_3, SAVANNA, TAIGA),
         STRAWBERRY(true, TagCategory.FRUITS, REG_3, FOREST, TAIGA),
         SWEETPOTATO(true, TagCategory.VEGETABLES, REG_3, PLAINS),
-        TEA_LEAVES("tea", true, TagCategory.CROPS, null, FOREST),
+        TEA_LEAVES("tea", false, TagCategory.CROPS, null, FOREST),
         TOMATILLO(true, TagCategory.VEGETABLES, REG_3, FOREST),
         TOMATO(true, TagCategory.VEGETABLES, REG_3, FOREST),
         TURMERIC(false, TagCategory.CROPS, null, SAVANNA),
