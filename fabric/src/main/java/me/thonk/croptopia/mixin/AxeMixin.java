@@ -49,7 +49,7 @@ public class AxeMixin {
         BlockPos pos = context.getBlockPos();
         BlockState state = context.getWorld().getBlockState(pos);
         for (Content.Bark crop : Content.Bark.values()) {
-            if (state.getBlock().equals(crop.getLog())) { // TODO add WOOD
+            if (state.getBlock().equals(crop.getLog()) || state.getBlock().equals(crop.getWood())) {
                 Block.dropStack(context.getWorld(), pos, new ItemStack(crop.asItem()));
             }
         }
