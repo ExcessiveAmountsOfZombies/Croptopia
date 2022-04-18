@@ -1,6 +1,5 @@
 package me.thonk.croptopia.registry;
 
-import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
@@ -12,7 +11,6 @@ import me.thonk.croptopia.items.Drink;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.util.BlockConvertible;
 import me.thonk.croptopia.util.PluralInfo;
-import me.thonk.croptopia.util.TagConvertible;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,7 +20,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -56,7 +53,7 @@ public class Content {
     /**
      * Enum for all commonly used crop categories; always in plural form, if existent.
      */
-    public enum TagCategory implements TagConvertible<Item> {
+    public enum TagCategory {
 
         NONE,
         CROPS,
@@ -66,29 +63,20 @@ public class Content {
         VEGETABLES;
 
         String lowerCaseName;
-        TagKey<Item> tag;
 
         TagCategory() {
             lowerCaseName = name().toLowerCase();
-            /*if (!name().equals("NONE")) {
-                tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.INDEPENDENT_TAG, lowerCaseName));
-            }*/
         }
 
         public String getLowerCaseName() {
             return lowerCaseName;
-        }
-
-        @Override
-        public TagKey<Item> asTag() {
-            return tag;
         }
     }
 
     /**
      * Enum for all (Croptopia) farmland crops.
      */
-    public enum Farmland implements ItemConvertible, BlockConvertible, TagConvertible<Item>, PluralInfo {
+    public enum Farmland implements ItemConvertible, BlockConvertible, PluralInfo {
         ARTICHOKE(true, TagCategory.VEGETABLES, REG_1, SWAMP),
         ASPARAGUS(false, TagCategory.VEGETABLES, REG_3, SWAMP),
         BARLEY(false, TagCategory.GRAIN, REG_1, PLAINS, TAIGA),
@@ -151,17 +139,24 @@ public class Content {
         private String lowerCaseName;
         private boolean hasPlural;
         private TagCategory tagegory;
-        private TagKey<Item> tag;
         private Item item;
         private Block block;
         private SeedItem seed;
 
+        /**
+         * Creates a new farmland crop enum instance.
+         * @param shortNameVariant A variant of this entry's name that is used for suffixes instead of its name. Optional, see {@link #Farmland(boolean, TagCategory, FoodRegistry, Biome.Category...)}.
+         * @param hasPlural <code>false</code> indicates that the plural of this enum entry is the same as singular
+         * @param tagegory The {@link TagCategory} of this crop, not <code>null</code>.
+         * @param foodRegistry Hunger/Saturation value for this crop. <code>null</code> means cannot be eaten.
+         * @param biomes Which biomes this crop can be found in. Not supplying at least one biome leads to undefined behaviour.
+         * @throws NullPointerException If <code>tagegory</code> refer to <code>null</code>.
+         */
         Farmland(String shortNameVariant, boolean hasPlural, TagCategory tagegory, FoodRegistry foodRegistry, Biome.Category... biomes) {
             Objects.requireNonNull(tagegory);
             lowerCaseName = name().toLowerCase();
             this.hasPlural = hasPlural;
             this.tagegory = tagegory;
-            //tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.INDEPENDENT_TAG, tagegory.getLowerCaseName() + "/" + lowerCaseName));
             if (foodRegistry == null) {
                 item = new CropItem(createGroup());
             }
@@ -175,6 +170,9 @@ public class Content {
             Croptopia.registerItem((shortNameVariant != null ? shortNameVariant : lowerCaseName) + "_seed", seed);
         }
 
+        /**
+         * @see #Farmland(String, boolean, TagCategory, FoodRegistry, Biome.Category...)
+         */
         Farmland(boolean hasPlural, TagCategory tagegory, FoodRegistry foodRegistry, Biome.Category... biomes) {
             this(null, hasPlural, tagegory, foodRegistry, biomes);
         }
@@ -201,11 +199,6 @@ public class Content {
             return block;
         }
 
-        @Override
-        public TagKey<Item> asTag() {
-            return tag;
-        }
-
         public SeedItem getSeed() {
             return seed;
         }
@@ -214,11 +207,11 @@ public class Content {
     /**
      * Enum for all (Croptopia) tree crops.
      * <p>
-     * Does include {@link Items#APPLE} as {@link Tree#APPLE} (access via {@link Tree#asItem()}.
+     * Does include {@link Items#APPLE} as {@link Tree#APPLE} (access via {@link Tree#asItem()}).
      * Does not include cinnamon.
      * </p>
      */
-    public enum Tree implements ItemConvertible, BlockConvertible, TagConvertible<Item>, PluralInfo {
+    public enum Tree implements ItemConvertible, BlockConvertible, PluralInfo {
         ALMOND(true, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
         // coding for apple requires null for food registry here, other fruits must be eatable
         APPLE(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0),
@@ -250,19 +243,29 @@ public class Content {
         private String lowerCaseName;
         private boolean hasPlural;
         private TagCategory tagegory;
-        private TagKey<Item> tag;
         private Item item;
         private Block leaves;
         private RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> treeGen;
         private CroptopiaSaplingItem sapling;
         private CroptopiaSaplingBlock saplingBlock;
 
+        /**
+         * Creates a new tree crop enum instance.
+         * @param hasPlural <code>false</code> indicates that the plural of this enum entry is the same as singular
+         * @param leafType The type of leaves to use for this crop, not <code>null</code>. Beware that it isn't checked if the given block is really a leaf block.
+         * @param tagegory The {@link TagCategory} of this crop, not <code>null</code>.
+         * @param foodRegistry Hunger/Saturation value for this crop. <code>null</code> means this is the tree crop for {@link Items#APPLE}.
+         * @param iTreeGen First param for {@link StraightTrunkPlacer#StraightTrunkPlacer(int, int, int)}.
+         * @param jTreeGen Second param for {@link StraightTrunkPlacer#StraightTrunkPlacer(int, int, int)}.
+         * @param kTreeGen Third param for {@link StraightTrunkPlacer#StraightTrunkPlacer(int, int, int)}.
+         * @throws NullPointerException If <code>leafType</code> or <code>tagegory</code> refer to <code>null</code>.
+         */
         Tree(boolean hasPlural, Block leafType, TagCategory tagegory, FoodRegistry foodRegistry, int iTreeGen, int jTreeGen, int kTreeGen) {
+            Objects.requireNonNull(leafType);
             Objects.requireNonNull(tagegory);
             lowerCaseName = name().toLowerCase();
             this.hasPlural = hasPlural;
             this.tagegory = tagegory;
-            //tag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.INDEPENDENT_TAG, tagegory.getLowerCaseName() + "/" + lowerCaseName));
             if (foodRegistry == null) {
                 item = Items.APPLE;
             }
@@ -302,11 +305,6 @@ public class Content {
             return leaves;
         }
 
-        @Override
-        public TagKey<Item> asTag() {
-            return tag;
-        }
-
         public Block getLeaves() {
             return asBlock();
         }
@@ -325,6 +323,9 @@ public class Content {
 
     }
 
+    /**
+     * Enum for all "generic" (Croptopia) juices.
+     */
     public enum Juice implements ItemConvertible {
         APPLE,
         CRANBERRY,
@@ -339,6 +340,9 @@ public class Content {
         private Item item;
         private ItemConvertible crop;
 
+        /**
+         * @param sweet If this juice is "sweet" (i.e. sugary) or "not sweet" (i.e. healthy from vegetable or something).
+         */
         Juice(boolean sweet) {
             this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
             item = new Drink(createGroup().food(createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
@@ -367,6 +371,9 @@ public class Content {
         }
     }
 
+    /**
+     * Enum for all "generic" (Croptopia) jams.
+     */
     public enum Jam implements ItemConvertible {
         APRICOT,
         BLACKBERRY,
@@ -400,6 +407,9 @@ public class Content {
         }
     }
 
+    /**
+     * Enum for all "generic" (Croptopia) smoothies.
+     */
     public enum Smoothie implements ItemConvertible {
         BANANA,
         STRAWBERRY;
@@ -408,6 +418,9 @@ public class Content {
         private Item item;
         private ItemConvertible crop;
 
+        /**
+         * @param sweet If this smoothie is "sweet" (i.e. sugary) or "not sweet" (i.e. healthy from vegetable or something). Defaults to <code>true</code>, see {@link #Smoothie()}.
+         */
         Smoothie(boolean sweet) {
             this.sweet = sweet;
             item = new Drink(createGroup().food(createBuilder(REG_7).alwaysEdible().build()));
@@ -418,6 +431,9 @@ public class Content {
             }
         }
 
+        /**
+         * Creates a sweet smoothie.
+         */
         Smoothie() {
             this(true);
         }
@@ -436,6 +452,9 @@ public class Content {
         }
     }
 
+    /**
+     * Enum for all "generic" (Croptopia) ice creams.
+     */
     public enum IceCream implements ItemConvertible {
         MANGO,
         PECAN,
@@ -541,6 +560,7 @@ public class Content {
     }
 
     public static <V extends T, T> RegistryEntry<V> badRegister(Registry<T> registry, Identifier id, V value) {
+        //noinspection unchecked
         return BuiltinRegistries.add((Registry<V>) registry, id, value);
     }
 
