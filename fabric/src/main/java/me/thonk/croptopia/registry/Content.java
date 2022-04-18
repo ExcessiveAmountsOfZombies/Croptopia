@@ -516,7 +516,7 @@ public class Content {
 
         private boolean sweet;
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         /**
          * @param sweet If this juice is "sweet" (i.e. sugary) or "not sweet" (i.e. healthy from vegetable or something).
@@ -544,7 +544,7 @@ public class Content {
             return sweet;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -564,7 +564,7 @@ public class Content {
         STRAWBERRY;
 
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         Jam() {
             item = new Drink(createGroup().food(createBuilder(REG_3).alwaysEdible().build()));
@@ -580,7 +580,7 @@ public class Content {
             return item;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -594,7 +594,7 @@ public class Content {
 
         private boolean sweet;
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         /**
          * @param sweet If this smoothie is "sweet" (i.e. sugary) or "not sweet" (i.e. healthy from vegetable or something). Defaults to <code>true</code>, see {@link #Smoothie()}.
@@ -625,7 +625,7 @@ public class Content {
             return item;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -640,7 +640,7 @@ public class Content {
         VANILLA;
 
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         IceCream() {
             item = new Item(createGroup().food(createComponent(REG_10)));
@@ -656,7 +656,7 @@ public class Content {
             return item;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -713,13 +713,15 @@ public class Content {
      * <ul>
      *     <li>{@link Farmland}</li>
      *     <li>{@link Tree}</li>
-     *     <li>Vanilla crops in alphabetical order save for {@link Items#APPLE} because of {@link Tree#APPLE}</li>
+     *     <li>{@link Bark}</li>
+     *     <li>{@link VanillaCrops}</li>
      * </ul>
+     * Note that {@link Items#APPLE} will always be matched via {@link Tree} and never via {@link VanillaCrops}.
      * </p>
      * @param name the name of the crop to find, in CAPSLOCK with _ separation
      * @return the crop with the given name or <code>null</code> if there is none.
      */
-    public static ItemConvertible findCrop(String name) {
+    public static ItemConvertibleWithPlural findCrop(String name) {
         try {
             return Farmland.valueOf(name);
         } catch (IllegalArgumentException ex) {/* try next */}
@@ -729,17 +731,10 @@ public class Content {
         try {
             return Bark.valueOf(name);
         } catch (IllegalArgumentException ex) {/* try next */}
-        // test vanilla crops
-        return switch (name) {
-            // note that apple has already been tested for
-            case "BEETROOT" -> Items.BEETROOT;
-            case "CARROT" -> Items.CARROT;
-            case "MELON" -> Items.MELON_SLICE;
-            case "POTATO" -> Items.POTATO;
-            case "PUMPKIN" -> Items.PUMPKIN;
-            case "WHEAT" -> Items.WHEAT;
-            default -> null;
-        };
+        try {
+            return VanillaCrops.valueOf(name);
+        } catch (IllegalArgumentException ex) {/* uhm... */}
+        return null;
     }
 
     public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createTreeGen(String name, int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
