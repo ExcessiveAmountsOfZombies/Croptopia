@@ -2,10 +2,12 @@ package me.thonk.croptopia.datagen;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.RecordBuilder;
+import me.thonk.common.ItemNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.mixin.datagen.IdentifierAccessor;
 import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.ItemRegistry;
+import me.thonk.croptopia.util.ItemConvertibleWithPlural;
 import me.thonk.croptopia.util.NamedLikeEnum;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -116,33 +118,40 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void offerFoodCookingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible input, ItemConvertible output, int time, float exp) {
-
+    protected void offerFoodCookingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible input, String inputName, ItemConvertible output, int time, float exp, boolean campFire) {
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(input), output, exp, time)
+                .criterion("has_" + inputName, RecipeProvider.conditionsFromItem(input))
+                .offerTo(exporter, RecipeProvider.getItemPath(output) + "_from_" + inputName);
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(input), output, exp, time/2)
+                .criterion("has_" + inputName, RecipeProvider.conditionsFromItem(input))
+                .offerTo(exporter, RecipeProvider.getItemPath(output) + "_from_" + inputName);
+        // TODO campfire
     }
 
     protected void generateFurnace(Consumer<RecipeJsonProvider> exporter) {
         final int time = 200; // default vanilla time
         final float exp = 0.2f; // default vanilla experience
-        var cookingList = new ImmutableMap.Builder<ItemConvertible, ItemConvertible>()
+        var cookingList = new ImmutableMap.Builder<ItemConvertibleWithPlural, ItemConvertible>()
                 .put(Content.Farmland.BLACKBEAN, Content.Furnace.BAKED_BEANS)
                 .put(Content.Farmland.SWEETPOTATO, Content.Furnace.BAKED_SWEET_POTATO)
                 .put(Content.Farmland.YAM, Content.Furnace.BAKED_YAM)
                 .put(Content.Seafood.ANCHOVY, Content.Furnace.COOKED_ANCHOVY)
-                .put(ItemRegistry.rawBacon, Content.Furnace.COOKED_BACON)
                 .put(Content.Seafood.CALAMARI, Content.Furnace.COOKED_CALAMARI)
+                .put(Content.Seafood.GLOWING_CALAMARI, Content.Furnace.COOKED_CALAMARI)
                 .put(Content.Seafood.SHRIMP, Content.Furnace.COOKED_SHRIMP)
                 .put(Content.Seafood.TUNA, Content.Furnace.COOKED_TUNA)
                 .put(Content.Farmland.CORN, Content.Furnace.POPCORN)
                 .put(Content.Farmland.GRAPE, Content.Furnace.RAISINS)
                 .build();
-        cookingList.forEach((input, output) -> offerFoodCookingRecipe(exporter,input,output,time,exp));
-        // glowing calamari is extra
+        cookingList.forEach((input, output) -> offerFoodCookingRecipe(exporter, input, input.getLowercaseName(), output, time, exp, true));
+        // raw bacon is not yet moved
+        offerFoodCookingRecipe(exporter, ItemRegistry.rawBacon, ItemNames.RAW_BACON, Content.Furnace.COOKED_BACON, time, exp, true);
         // now the vanilla ingredients
-                /*.put(Items.SUGAR, Content.Furnace.CARAMEL)
-                .put(Items.SUGAR_CANE, Content.Furnace.MOLASSES)
-                .put(Items.BREAD, Content.Furnace.TOAST)*/
+        offerFoodCookingRecipe(exporter, Items.SUGAR, "sugar", Content.Furnace.CARAMEL, time, exp, true);
+        offerFoodCookingRecipe(exporter, Items.SUGAR_CANE, "sugar_cane", Content.Furnace.MOLASSES, time, exp, false);
+        offerFoodCookingRecipe(exporter, Items.BREAD, "bread", Content.Furnace.TOAST, time, exp, false);
         // only salt missing
-        offerFoodCookingRecipe(exporter,ItemRegistry.waterBottle,ItemRegistry.salt,time*4,exp);
+        offerFoodCookingRecipe(exporter,ItemRegistry.waterBottle, ItemNames.WATER_BOTTLE, ItemRegistry.salt,800,0.1f, false);
     }
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
@@ -269,26 +278,9 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input(Items.HONEY_BOTTLE)
                 .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT.asItem()))
                 .offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Content.Seafood.SHRIMP), Content.Furnace.COOKED_SHRIMP, 0.2f, 200)
-                .criterion("has_shrimp", RecipeProvider.conditionsFromItem(Content.Seafood.SHRIMP))
-                .offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Content.Seafood.TUNA), Content.Furnace.COOKED_TUNA, 0.2f, 200)
-                .criterion("has_tuna", RecipeProvider.conditionsFromItem(Content.Seafood.TUNA))
-                .offerTo(exporter);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Content.Seafood.CALAMARI), Content.Furnace.COOKED_CALAMARI, 0.2f, 200)
-                .criterion("has_calamari", RecipeProvider.conditionsFromItem(Content.Seafood.CALAMARI))
-                .offerTo(exporter);
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Content.Seafood.GLOWING_CALAMARI), Content.Furnace.COOKED_CALAMARI, 0.2f, 200)
                 .criterion("has_glowing_calamari", RecipeProvider.conditionsFromItem(Content.Seafood.GLOWING_CALAMARI))
                 .offerTo(exporter, RecipeProvider.getItemPath(Content.Furnace.COOKED_CALAMARI) + "_from_glowing_calamari");
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Content.Seafood.ANCHOVY), Content.Furnace.COOKED_ANCHOVY, 0.2f, 200)
-                .criterion("has_anchovy", RecipeProvider.conditionsFromItem(Content.Seafood.ANCHOVY))
-                .offerTo(exporter);
-        RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, Content.Seafood.SHRIMP, Content.Furnace.COOKED_SHRIMP, 0.2f);
-        RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, Content.Seafood.TUNA, Content.Furnace.COOKED_TUNA, 0.2f);
-        RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, Content.Seafood.CALAMARI, Content.Furnace.COOKED_CALAMARI, 0.2f);
-        RecipeProvider.offerCookingRecipe(exporter, "smoking", RecipeSerializer.SMELTING, 100, Content.Seafood.ANCHOVY, Content.Furnace.COOKED_ANCHOVY, 0.2f);
-        RecipeProvider.offerCookingRecipe(exporter, "glowing_calamri_smoking", RecipeSerializer.SMELTING, 100, Content.Seafood.GLOWING_CALAMARI, Content.Furnace.COOKED_CALAMARI, 0.2f);
         ShapedRecipeJsonBuilder.create(ItemRegistry.steamedCrab)
                 .pattern("1")
                 .pattern("2")
