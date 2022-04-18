@@ -8,12 +8,11 @@ import me.thonk.croptopia.registry.ItemRegistry;
 import me.thonk.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Block;
 import net.minecraft.data.DataCache;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.tag.Tag;
-import net.minecraft.tag.TagKey;
-import net.minecraft.tag.TagManagerLoader;
+import net.minecraft.tag.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
@@ -21,16 +20,19 @@ import org.jetbrains.annotations.Nullable;
 
 import java.nio.file.Path;
 
-public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
+public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
 
-    public CroptopiaItemProvider(FabricDataGenerator dataGenerator, @Nullable BlockTagProvider blockTagProvider) {
-        super(dataGenerator, blockTagProvider);
+    public CroptopiaIndependentItemTagProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
     protected void generateTags() {
+        generateMisc();
+    }
 
+    protected void generateMisc() {
         for (Content.Farmland crop : Content.Farmland.values()) {
             createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
             if (crop.getTagegory() != Content.TagCategory.CROPS) { // don't double only-crops
