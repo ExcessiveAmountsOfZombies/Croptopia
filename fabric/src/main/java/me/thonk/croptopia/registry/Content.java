@@ -214,33 +214,33 @@ public class Content {
      * </p>
      */
     public enum Tree implements ItemConvertible, BlockConvertible, PluralInfo {
-        ALMOND(true, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
+        ALMOND(true,  Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
         // coding for apple requires null for food registry here, other fruits must be eatable
-        APPLE(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0),
-        APRICOT(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 2, 0),
-        AVOCADO(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        BANANA(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
-        CASHEW(true, Blocks.DARK_OAK_LEAVES, TagCategory.CROPS, REG_1, 4, 3, 0),
-        CHERRY(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        COCONUT(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_1, 5, 2, 3),
-        DATE(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 5, 8, 0),
-        DRAGONFRUIT(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 5, 7, 0),
-        FIG(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
-        GRAPEFRUIT(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
-        KUMQUAT(false, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
-        LEMON(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        LIME(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 2, 0),
-        MANGO(true, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 5, 8, 0),
-        NECTARINE(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 4, 4, 0),
-        NUTMEG(true, Blocks.JUNGLE_LEAVES, TagCategory.CROPS, REG_1, 4, 8, 0),
-        ORANGE(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 4, 4, 0),
-        PEACH(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        PEAR(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 2, 0),
-        PECAN(true, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
-        PERSIMMON(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        PLUM(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        STARFRUIT(true, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
-        WALNUT(true, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0);
+        APPLE(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0),
+        APRICOT(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 2, 0),
+        AVOCADO(true, Blocks.SPRUCE_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        BANANA(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
+        CASHEW(true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.CROPS, REG_1, 4, 3, 0),
+        CHERRY(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        COCONUT(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_1, 5, 2, 3),
+        DATE(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 5, 8, 0),
+        DRAGONFRUIT(true, Blocks.JUNGLE_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 7, 0),
+        FIG(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
+        GRAPEFRUIT(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
+        KUMQUAT(false, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 4, 8, 0),
+        LEMON(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        LIME(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 2, 0),
+        MANGO(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, REG_3, 5, 8, 0),
+        NECTARINE(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 4, 4, 0),
+        NUTMEG(true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.CROPS, REG_1, 4, 8, 0),
+        ORANGE(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 4, 4, 0),
+        PEACH(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        PEAR(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 2, 0),
+        PECAN(true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
+        PERSIMMON(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        PLUM(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        STARFRUIT(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0),
+        WALNUT(true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0);
 
         private String lowerCaseName;
         private boolean hasPlural;
@@ -262,7 +262,7 @@ public class Content {
          * @param kTreeGen Third param for {@link StraightTrunkPlacer#StraightTrunkPlacer(int, int, int)}.
          * @throws NullPointerException If <code>leafType</code> or <code>tagegory</code> refer to <code>null</code>.
          */
-        Tree(boolean hasPlural, Block leafType, TagCategory tagegory, FoodRegistry foodRegistry, int iTreeGen, int jTreeGen, int kTreeGen) {
+        Tree(boolean hasPlural, Block logType, Block leafType, TagCategory tagegory, FoodRegistry foodRegistry, int iTreeGen, int jTreeGen, int kTreeGen) {
             Objects.requireNonNull(leafType);
             Objects.requireNonNull(tagegory);
             lowerCaseName = name().toLowerCase();
@@ -277,7 +277,7 @@ public class Content {
             }
             leaves = createLeavesBlock();
             Croptopia.registerBlock(lowerCaseName + "_crop", leaves);
-            treeGen = createTreeGen(lowerCaseName + "_tree", iTreeGen, jTreeGen, kTreeGen, leafType, leaves);
+            treeGen = createTreeGen(lowerCaseName + "_tree", iTreeGen, jTreeGen, kTreeGen, logType, leafType, leaves);
             saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> treeGen), createSaplingSettings());
             Croptopia.registerBlock(lowerCaseName + "_sapling", saplingBlock);
             sapling = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
@@ -654,10 +654,10 @@ public class Content {
         };
     }
 
-    public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createTreeGen(String name, int i, int j, int k, Block leafType, Block leafCrop) {
+    public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createTreeGen(String name, int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
         return register(createIdentifier(name),
                 Feature.TREE, ((new TreeFeatureConfig.Builder(
-                        SimpleBlockStateProvider.of(leafType.getDefaultState()),
+                        SimpleBlockStateProvider.of(logType.getDefaultState()),
                         new StraightTrunkPlacer(i, j, k),
                         new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(leafType.getDefaultState(), 90).add(leafCrop.getDefaultState().with(LeafCropBlock.AGE, 3), 20).build()),
                         new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
