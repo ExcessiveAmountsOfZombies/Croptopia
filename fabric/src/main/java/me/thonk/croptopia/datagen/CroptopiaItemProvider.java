@@ -46,10 +46,14 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
                 createCategoryTag(Content.TagCategory.FRUITS.getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
             }
         }
-        // the following three are all done above with a category tag of crops I believe
-        /*createGeneralTag("saguaros", ItemRegistry.saguaro);*/
-        /*createGeneralTag("turmeric", ItemRegistry.turmeric);*/
-        /*createGeneralTag("tea_leaves", ItemRegistry.teaLeaves);*/
+        for (Content.Bark crop : Content.Bark.values()) {
+            createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
+        }
+        // the following four are all done above with a category tag of crops I believe
+        /*createGeneralTag("saguaros", ItemRegistry.saguaro);
+        createGeneralTag("turmeric", ItemRegistry.turmeric);
+        createGeneralTag("tea_leaves", ItemRegistry.teaLeaves);
+        createGeneralTag("cinnamon", ItemRegistry.cinnamon);*/
 
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
         for (Content.Farmland crop : Content.Farmland.values()) {
@@ -63,7 +67,9 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         for (Content.Tree crop : Content.Tree.values()) {
             createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
         }
-        createSeedSaplingTag("saplings", "cinnamon", ItemRegistry.cinnamonSapling);
+        for (Content.Bark crop : Content.Bark.values()) {
+            createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
+        }
 
         for (Content.Juice juice : Content.Juice.values()) {
             createCategoryTag("juices", juice.name().toLowerCase()+"_juices", juice.asItem());
@@ -229,7 +235,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("cooked_anchovies", ItemRegistry.cookedAnchovy);
         createGeneralTag("anchovy_pizzas", ItemRegistry.anchovyPizza);
         createGeneralTag("mashed_potatoes", ItemRegistry.mashedPotatoes);
-        createGeneralTag("cinnamon", ItemRegistry.cinnamon);
 
         this.getOrCreateTagBuilder(register("water_bottles")).add(ItemRegistry.waterBottle).add(Items.WATER_BUCKET);
         this.getOrCreateTagBuilder(register("milks")).add(ItemRegistry.milkBottle).add(ItemRegistry.soyMilk).add(Items.MILK_BUCKET);

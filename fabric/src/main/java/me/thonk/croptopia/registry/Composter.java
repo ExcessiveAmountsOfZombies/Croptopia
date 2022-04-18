@@ -16,6 +16,10 @@ public class Composter {
             registerCompostableItem(0.65F, crop.asItem());
             registerCompostableItem(0.5F, crop.getSapling());
         }
+        for (Content.Bark crop : Content.Bark.values()) {
+            registerCompostableItem(0.65F, crop.asItem());
+            registerCompostableItem(0.5F, crop.getSapling());
+        }
     }
 
     public static void registerCompostableItem(float levelIncreaseChance, ItemConvertible item) {

@@ -163,15 +163,8 @@ public class ItemRegistry {
     public static Item chimichanga = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
     public static Item quesadilla = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
 
-    public static Item cinnamon = new Item(createGroup());
     public static Item cornHusk = new Item(createGroup());
     public static Item whippingCream = new Item(createGroup());
-
-    public static Item cinnamonSapling = new AliasedBlockItem(BlockRegistry.cinnamonSaplingBlock, createGroup());
-    public static Item cinnamonLog = new AliasedBlockItem(BlockRegistry.cinnamonLog, createGroup());
-    public static Item strippedCinnamonLog = new AliasedBlockItem(BlockRegistry.strippedCinnamonLog, createGroup());
-    public static Item cinnamonWood = new AliasedBlockItem(BlockRegistry.cinnamonWood, createGroup());
-    public static Item strippedCinnamonWood = new AliasedBlockItem(BlockRegistry.strippedCinnamonWood, createGroup());
 
     // 1.4.0
     public static Item shepherdsPie = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
@@ -480,7 +473,6 @@ public class ItemRegistry {
         registerItem(ItemNames.ANCHOVY_PIZZA, anchovyPizza);
         registerItem(ItemNames.MASHED_POTATOES, mashedPotatoes);
 
-        registerItem(ItemNames.CINNAMON, cinnamon);
         registerItem(ItemNames.CORN_HUSK, cornHusk);
         registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
 
@@ -488,12 +480,6 @@ public class ItemRegistry {
         registerItem(ItemNames.FRYING_PAN, fryingPan);
         registerItem(ItemNames.COOKING_POT, cookingPot);
         registerItem(ItemNames.MORTAR_AND_PESTLE, mortarAndPestle);
-
-        registerItem(ItemNames.CINNAMON_SAPLING, cinnamonSapling);
-        registerItem(ItemNames.CINNAMON_LOG, cinnamonLog);
-        registerItem(ItemNames.STRIPPED_CINNAMON_LOG, strippedCinnamonLog);
-        registerItem(ItemNames.CINNAMON_WOOD, cinnamonWood);
-        registerItem(ItemNames.STRIPPED_CINNAMON_WOOD, strippedCinnamonWood);
 
         registerItem(ItemNames.SALT_ORE, saltOre);
     }

@@ -1,5 +1,7 @@
 package me.thonk.croptopia.registry;
 
+import me.thonk.common.BlockNames;
+import me.thonk.common.ItemNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
@@ -12,10 +14,8 @@ import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.util.BlockConvertible;
 import me.thonk.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
+import net.minecraft.block.*;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -41,7 +41,8 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import static me.thonk.croptopia.Croptopia.createIdentifier;
+import static me.thonk.croptopia.Croptopia.*;
+import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
@@ -205,10 +206,10 @@ public class Content {
     }
 
     /**
-     * Enum for all (Croptopia) tree crops.
+     * Enum for all (Croptopia) tree crops. Don't confuse with {@link Bark}.
      * <p>
      * Does include {@link Items#APPLE} as {@link Tree#APPLE} (access via {@link Tree#asItem()}).
-     * Does not include cinnamon.
+     * Does not include cinnamon, that one is {@link Bark#CINNAMON}.
      * </p>
      */
     public enum Tree implements ItemConvertible, BlockConvertible, PluralInfo {
@@ -321,6 +322,104 @@ public class Content {
             return saplingBlock;
         }
 
+    }
+
+    /**
+     * Enum for all (Croptopia) bark crops. Don't confuse with {@link Tree}.
+     */
+    public enum Bark implements ItemConvertible, BlockConvertible, PluralInfo {
+        CINNAMON(false, TagCategory.CROPS);
+
+        private String lowerCaseName;
+        private boolean hasPlural;
+        private TagCategory tagegory;
+        private Item item;
+        private Block log;
+        private Block strippedLog;
+        private Block wood;
+        private Block strippedWood;
+        private Block leaves;
+        private Item sapling;
+        private Block saplingBlock;
+
+        Bark(boolean hasPlural, TagCategory tagegory) {
+            Objects.requireNonNull(tagegory);
+            this.hasPlural = hasPlural;
+            this.tagegory = tagegory;
+            lowerCaseName = name().toLowerCase();
+            item = new Item(createGroup());
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(lowerCaseName), item);
+            // in the following we use registerItem because of AliasedBlockItem
+            log = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerBlock(lowerCaseName + "_log", log);
+            registerItem(lowerCaseName + "_log", new AliasedBlockItem(log, createGroup()));
+            strippedLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerBlock("stripped_" + lowerCaseName + "_log", strippedLog);
+            registerItem("stripped_" + lowerCaseName + "_log", new AliasedBlockItem(strippedLog, createGroup()));
+            wood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerBlock(lowerCaseName + "_wood", wood);
+            registerItem(lowerCaseName + "_wood", new AliasedBlockItem(wood, createGroup()));
+            strippedWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerBlock("stripped_" + lowerCaseName + "_wood", strippedWood);
+            registerItem("stripped_" + lowerCaseName + "_wood", new AliasedBlockItem(strippedWood, createGroup()));
+            leaves = createRegularLeavesBlock();
+            registerBlock(lowerCaseName + "_leaves", leaves);
+            saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.CINNAMON_TREE), Content.createSaplingSettings());
+            registerBlock(lowerCaseName + "_sapling", saplingBlock);
+            sapling = new AliasedBlockItem(saplingBlock, createGroup());
+            registerItem(lowerCaseName + "_sapling", sapling);
+        }
+
+        public String getLowerCaseName() {
+            return lowerCaseName;
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return hasPlural;
+        }
+
+        public TagCategory getTagegory() {
+            return tagegory;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        @Override
+        public Block asBlock() {
+            return log;
+        }
+
+        public Block getLog() {
+            return log;
+        }
+
+        public Block getStrippedLog() {
+            return strippedLog;
+        }
+
+        public Block getWood() {
+            return wood;
+        }
+
+        public Block getStrippedWood() {
+            return strippedWood;
+        }
+
+        public Block getLeaves() {
+            return leaves;
+        }
+
+        public Item getSapling() {
+            return sapling;
+        }
+
+        public Block getSaplingBlock() {
+            return saplingBlock;
+        }
     }
 
     /**
@@ -486,14 +585,14 @@ public class Content {
     public static Stream<Item> createCropStream() {
         return Stream.concat(
                 Arrays.stream(Farmland.values()),
-                Arrays.stream(Tree.values())
+                Stream.concat(Arrays.stream(Tree.values()), Arrays.stream(Bark.values()))
         ).map(ItemConvertible::asItem);
     }
 
     public static Stream<Block> createLeafStream() {
         return Stream.concat(
                 Arrays.stream(Tree.values()).map(Tree::getLeaves),
-                Stream.of(LeavesRegistry.cinnamonLeaves)
+                Arrays.stream(Bark.values()).map(Bark::getLeaves)
         );
     }
 
@@ -531,6 +630,9 @@ public class Content {
         } catch (IllegalArgumentException ex) {/* try next */}
         try {
             return Tree.valueOf(name);
+        } catch (IllegalArgumentException ex) {/* try next */}
+        try {
+            return Bark.valueOf(name);
         } catch (IllegalArgumentException ex) {/* try next */}
         // test vanilla crops
         return switch (name) {

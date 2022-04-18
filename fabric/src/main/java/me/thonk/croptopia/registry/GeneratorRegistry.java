@@ -108,9 +108,9 @@ public class GeneratorRegistry {
 
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> CINNAMON_TREE = register(createIdentifier(FeatureNames.CINNAMON_TREE),
             Feature.TREE, ((new TreeFeatureConfig.Builder(
-                    SimpleBlockStateProvider.of(BlockRegistry.cinnamonLog.getDefaultState()),
+                    SimpleBlockStateProvider.of(Content.Bark.CINNAMON.getLog().getDefaultState()),
                     new StraightTrunkPlacer(4, 3, 0),
-                    new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(LeavesRegistry.cinnamonLeaves.getDefaultState(), 90).build()),
+                    new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(Content.Bark.CINNAMON.getLeaves().getDefaultState(), 90).build()),
                     new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
                     new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
 
