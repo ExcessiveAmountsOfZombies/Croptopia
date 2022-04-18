@@ -1,23 +1,24 @@
 package me.thonk.croptopia.registry;
 
+import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
 import me.thonk.croptopia.blocks.CroptopiaSaplingBlock;
 import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
-import me.thonk.croptopia.items.CropItem;
-import me.thonk.croptopia.items.CroptopiaSaplingItem;
-import me.thonk.croptopia.items.Drink;
-import me.thonk.croptopia.items.SeedItem;
+import me.thonk.croptopia.items.*;
 import me.thonk.croptopia.util.BlockConvertible;
-import me.thonk.croptopia.util.PluralInfo;
+import me.thonk.croptopia.util.ItemConvertibleWithPlural;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
@@ -40,6 +41,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import static me.thonk.croptopia.Croptopia.*;
+import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
 import static net.minecraft.world.biome.Biome.Category.*;
 
@@ -74,7 +76,7 @@ public class Content {
     /**
      * Enum for all (Croptopia) farmland crops.
      */
-    public enum Farmland implements ItemConvertible, BlockConvertible, PluralInfo {
+    public enum Farmland implements ItemConvertibleWithPlural, BlockConvertible {
         ARTICHOKE(true, TagCategory.VEGETABLES, REG_1, SWAMP),
         ASPARAGUS(false, TagCategory.VEGETABLES, REG_3, SWAMP),
         BARLEY(false, TagCategory.GRAIN, REG_1, PLAINS, TAIGA),
@@ -209,7 +211,7 @@ public class Content {
      * Does not include cinnamon, that one is {@link Bark#CINNAMON}.
      * </p>
      */
-    public enum Tree implements ItemConvertible, BlockConvertible, PluralInfo {
+    public enum Tree implements ItemConvertibleWithPlural, BlockConvertible {
         ALMOND(true,  Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
         // coding for apple requires null for food registry here, other fruits must be eatable
         APPLE(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0),
@@ -304,7 +306,7 @@ public class Content {
         }
 
         public Block getLeaves() {
-            return asBlock();
+            return leaves;
         }
 
         public RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> getTreeGen() {
@@ -324,7 +326,7 @@ public class Content {
     /**
      * Enum for all (Croptopia) bark crops. Don't confuse with {@link Tree}.
      */
-    public enum Bark implements ItemConvertible, BlockConvertible, PluralInfo {
+    public enum Bark implements ItemConvertibleWithPlural, BlockConvertible {
         CINNAMON(false, TagCategory.CROPS, 4, 3, 0);
 
         private String lowerCaseName;
@@ -335,6 +337,8 @@ public class Content {
         private Block strippedLog;
         private Block wood;
         private Block strippedWood;
+        private TagKey<Item> logItemTag;
+        private TagKey<Block> logBlockTag;
         private Block leaves;
         private RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> treeGen;
         private Item sapling;
@@ -360,6 +364,11 @@ public class Content {
             strippedWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
             registerBlock("stripped_" + lowerCaseName + "_wood", strippedWood);
             registerItem("stripped_" + lowerCaseName + "_wood", new AliasedBlockItem(strippedWood, createGroup()));
+            // create the tags (will be filled by datagen)
+            String tagName = lowerCaseName + "_logs";
+            logItemTag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.MOD_ID, tagName));
+            logBlockTag = TagKey.of(Registry.BLOCK_KEY, new Identifier(MiscNames.MOD_ID, tagName));
+            // left is leaves and saplings
             leaves = createRegularLeavesBlock();
             registerBlock(lowerCaseName + "_leaves", leaves);
             treeGen = createBarkGen(lowerCaseName + "_tree", iTreeGen, jTreeGen, kTreeGen, log, leaves);
@@ -408,6 +417,14 @@ public class Content {
             return strippedWood;
         }
 
+        public TagKey<Item> getLogItemTag() {
+            return logItemTag;
+        }
+
+        public TagKey<Block> getLogBlockTag() {
+            return logBlockTag;
+        }
+
         public Block getLeaves() {
             return leaves;
         }
@@ -426,6 +443,138 @@ public class Content {
     }
 
     /**
+     * Creates a stream iterating through the item forms of {@link Farmland}, {@link Tree} and {@link Bark} in that order.
+     * Does NOT include {@link VanillaCrops} safe for {@link Tree#APPLE}.
+     * @return not <code>null</code>
+     */
+    public static Stream<Item> createCropStream() {
+        return Stream.concat(
+                Arrays.stream(Farmland.values()),
+                Stream.concat(Arrays.stream(Tree.values()), Arrays.stream(Bark.values()))
+        ).map(ItemConvertible::asItem);
+    }
+
+    /**
+     * Creates a stream iterating through the leaf forms of {@link Tree} and {@link Bark} in that order.
+     * @return not <code>null</code>
+     */
+    public static Stream<Block> createLeafStream() {
+        return Stream.concat(
+                Arrays.stream(Tree.values()).map(Tree::getLeaves),
+                Arrays.stream(Bark.values()).map(Bark::getLeaves)
+        );
+    }
+
+    /**
+     * Enum of all vanilla crops for search and automation purposes.
+     */
+    public enum VanillaCrops implements ItemConvertibleWithPlural {
+        APPLE(Items.APPLE),
+        BEETROOT(Items.BEETROOT),
+        CARROT(Items.CARROT),
+        MELON(Items.MELON_SLICE),
+        POTATO(Items.POTATO),
+        PUMPKIN(Items.PUMPKIN),
+        WHEAT(Items.WHEAT);
+
+        private Item item;
+
+        /**
+         * @param source the vanilla crop, not <code>null</code>
+         */
+        VanillaCrops(ItemConvertible source) {
+            Objects.requireNonNull(source);
+            this.item = source.asItem();
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return true;
+        }
+    }
+
+    /**
+     * Enum for all (Croptopia) raw seafood.
+     */
+    public enum Seafood implements ItemConvertibleWithPlural {
+        ANCHOVY(true, REG_1),
+        CALAMARI(false, REG_1),
+        CLAM(true, REG_3),
+        CRAB(true, REG_1),
+        GLOWING_CALAMARI(false, REG_3),
+        OYSTER(true, REG_3),
+        ROE(false, REG_1),
+        SHRIMP(false, REG_1),
+        TUNA(false, REG_3);
+
+        private boolean hasPlural;
+        private Item item;
+
+        Seafood(boolean hasPlural, FoodRegistry foodRegistry) {
+            this.hasPlural = hasPlural;
+            if (name().contains("GLOWING")) {
+                item = new Item(createGroup().food(FoodRegistry.createBuilder(foodRegistry)
+                        .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 4000, 1), 1.0F).build()));
+            }
+            else {
+                item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
+            }
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return hasPlural;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+    }
+
+    /**
+     * Enum for all furnace products of Croptopia except salt.
+     */
+    public enum Furnace implements ItemConvertible {
+        BAKED_BEANS(REG_5),
+        BAKED_SWEET_POTATO(REG_7),
+        BAKED_YAM(REG_7),
+        CARAMEL(null),
+        COOKED_ANCHOVY(REG_4),
+        COOKED_BACON(REG_7),
+        COOKED_CALAMARI(REG_5),
+        COOKED_SHRIMP(REG_5),
+        COOKED_TUNA(REG_6),
+        MOLASSES(null),
+        POPCORN(REG_3),
+        RAISINS(REG_5),
+        TOAST(REG_7);
+
+        private Item item;
+
+        Furnace(FoodRegistry foodRegistry) {
+            if (foodRegistry == null) {
+                item = new Item(createGroup());
+            }
+            else {
+                item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
+            }
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+    }
+
+    /**
      * Enum for all "generic" (Croptopia) juices.
      */
     public enum Juice implements ItemConvertible {
@@ -440,7 +589,7 @@ public class Content {
 
         private boolean sweet;
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         /**
          * @param sweet If this juice is "sweet" (i.e. sugary) or "not sweet" (i.e. healthy from vegetable or something).
@@ -468,7 +617,7 @@ public class Content {
             return sweet;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -488,7 +637,7 @@ public class Content {
         STRAWBERRY;
 
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         Jam() {
             item = new Drink(createGroup().food(createBuilder(REG_3).alwaysEdible().build()));
@@ -504,7 +653,7 @@ public class Content {
             return item;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -518,7 +667,7 @@ public class Content {
 
         private boolean sweet;
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         /**
          * @param sweet If this smoothie is "sweet" (i.e. sugary) or "not sweet" (i.e. healthy from vegetable or something). Defaults to <code>true</code>, see {@link #Smoothie()}.
@@ -549,7 +698,7 @@ public class Content {
             return item;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
@@ -564,7 +713,7 @@ public class Content {
         VANILLA;
 
         private Item item;
-        private ItemConvertible crop;
+        private ItemConvertibleWithPlural crop;
 
         IceCream() {
             item = new Item(createGroup().food(createComponent(REG_10)));
@@ -580,23 +729,70 @@ public class Content {
             return item;
         }
 
-        public ItemConvertible getCrop() {
+        public ItemConvertibleWithPlural getCrop() {
             return crop;
         }
     }
 
-    public static Stream<Item> createCropStream() {
-        return Stream.concat(
-                Arrays.stream(Farmland.values()),
-                Stream.concat(Arrays.stream(Tree.values()), Arrays.stream(Bark.values()))
-        ).map(ItemConvertible::asItem);
+    /**
+     * Enum for all "generic" (Croptopia) pies.
+     */
+    public enum Pie implements ItemConvertible {
+        APPLE,
+        CHERRY,
+        PECAN,
+        RHUBARB;
+
+        private Item item;
+        private ItemConvertibleWithPlural crop;
+
+        Pie() {
+            item = new Item(createGroup().food(createComponent(REG_14)));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_pie"), item);
+            crop = findCrop(name());
+            if (crop == null) {
+                throw new IllegalStateException("Unknown crop source");
+            }
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        public ItemConvertibleWithPlural getCrop() {
+            return crop;
+        }
     }
 
-    public static Stream<Block> createLeafStream() {
-        return Stream.concat(
-                Arrays.stream(Tree.values()).map(Tree::getLeaves),
-                Arrays.stream(Bark.values()).map(Bark::getLeaves)
-        );
+    /**
+     * Enum for all (Croptopia) cooking utensils
+     */
+    public enum Utensil implements ItemConvertibleWithPlural {
+        COOKING_POT(true),
+        FOOD_PRESS(false),
+        FRYING_PAN(true),
+        KNIFE(true),
+        MORTAR_AND_PESTLE(true);
+
+        private boolean hasPlural;
+        private Item item;
+
+        Utensil(boolean hasPlural) {
+            this.hasPlural = hasPlural;
+            item = new CookingUtensil(createGroup().maxCount(1));
+            Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return hasPlural;
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
     }
 
     public static Item.Settings createGroup() {
@@ -621,13 +817,15 @@ public class Content {
      * <ul>
      *     <li>{@link Farmland}</li>
      *     <li>{@link Tree}</li>
-     *     <li>Vanilla crops in alphabetical order save for {@link Items#APPLE} because of {@link Tree#APPLE}</li>
+     *     <li>{@link Bark}</li>
+     *     <li>{@link VanillaCrops}</li>
      * </ul>
+     * Note that {@link Items#APPLE} will always be matched via {@link Tree} and never via {@link VanillaCrops}.
      * </p>
      * @param name the name of the crop to find, in CAPSLOCK with _ separation
      * @return the crop with the given name or <code>null</code> if there is none.
      */
-    public static ItemConvertible findCrop(String name) {
+    public static ItemConvertibleWithPlural findCrop(String name) {
         try {
             return Farmland.valueOf(name);
         } catch (IllegalArgumentException ex) {/* try next */}
@@ -637,17 +835,10 @@ public class Content {
         try {
             return Bark.valueOf(name);
         } catch (IllegalArgumentException ex) {/* try next */}
-        // test vanilla crops
-        return switch (name) {
-            // note that apple has already been tested for
-            case "BEETROOT" -> Items.BEETROOT;
-            case "CARROT" -> Items.CARROT;
-            case "MELON" -> Items.MELON_SLICE;
-            case "POTATO" -> Items.POTATO;
-            case "PUMPKIN" -> Items.PUMPKIN;
-            case "WHEAT" -> Items.WHEAT;
-            default -> null;
-        };
+        try {
+            return VanillaCrops.valueOf(name);
+        } catch (IllegalArgumentException ex) {/* uhm... */}
+        return null;
     }
 
     public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createTreeGen(String name, int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
