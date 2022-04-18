@@ -444,6 +444,28 @@ public class Content {
     }
 
     /**
+     * Creates a stream iterating through the item forms of {@link Farmland}, {@link Tree} and {@link Bark} in that order.
+     * @return not <code>null</code>
+     */
+    public static Stream<Item> createCropStream() {
+        return Stream.concat(
+                Arrays.stream(Farmland.values()),
+                Stream.concat(Arrays.stream(Tree.values()), Arrays.stream(Bark.values()))
+        ).map(ItemConvertible::asItem);
+    }
+
+    /**
+     * Creates a stream iterating through the leaf forms of {@link Tree} and {@link Bark} in that order.
+     * @return not <code>null</code>
+     */
+    public static Stream<Block> createLeafStream() {
+        return Stream.concat(
+                Arrays.stream(Tree.values()).map(Tree::getLeaves),
+                Arrays.stream(Bark.values()).map(Bark::getLeaves)
+        );
+    }
+
+    /**
      * Enum for all "generic" (Croptopia) juices.
      */
     public enum Juice implements ItemConvertible {
@@ -631,20 +653,6 @@ public class Content {
         public Item asItem() {
             return item;
         }
-    }
-
-    public static Stream<Item> createCropStream() {
-        return Stream.concat(
-                Arrays.stream(Farmland.values()),
-                Stream.concat(Arrays.stream(Tree.values()), Arrays.stream(Bark.values()))
-        ).map(ItemConvertible::asItem);
-    }
-
-    public static Stream<Block> createLeafStream() {
-        return Stream.concat(
-                Arrays.stream(Tree.values()).map(Tree::getLeaves),
-                Arrays.stream(Bark.values()).map(Bark::getLeaves)
-        );
     }
 
     public static Item.Settings createGroup() {
