@@ -1,6 +1,7 @@
 package me.thonk.croptopia.datagen;
 
 import me.thonk.croptopia.registry.Content;
+import me.thonk.croptopia.registry.ItemRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
@@ -20,6 +21,7 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         generateBarkLogs();
         // currently, only generates air, but leaves item tag isn't used by vanilla anyway
         // generateLeaves();
+        generateMisc();
     }
 
     protected void generateSaplings() {
@@ -54,6 +56,35 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         for (Content.Bark crop : Content.Bark.values()) {
             leaves.add(crop.getLeaves().asItem());
         }
+    }
+
+    protected void generateMisc() {
+        // explicitly used as dolphin food in vanilla
+        FabricTagBuilder<Item> fishes = getOrCreateTagBuilder(ItemTags.FISHES);
+        fishes.add(ItemRegistry.anchovy);
+        fishes.add(ItemRegistry.calamari);
+        fishes.add(ItemRegistry.clam);
+        fishes.add(ItemRegistry.oyster);
+        fishes.add(ItemRegistry.roe);
+        fishes.add(ItemRegistry.crab);
+        fishes.add(ItemRegistry.tuna);
+        // I think one fish is missing
+        // fox food: all berries added by croptopia
+        FabricTagBuilder<Item> foxFood = getOrCreateTagBuilder(ItemTags.FOX_FOOD);
+        foxFood.add(Content.Farmland.BLACKBERRY.asItem());
+        foxFood.add(Content.Farmland.BLUEBERRY.asItem());
+        foxFood.add(Content.Farmland.CRANBERRY.asItem());
+        foxFood.add(Content.Farmland.ELDERBERRY.asItem());
+        foxFood.add(Content.Farmland.RASPBERRY.asItem());
+        foxFood.add(Content.Farmland.STRAWBERRY.asItem());
+        // piglin food: more cannibalism (which already happens in vanilla)
+        FabricTagBuilder<Item> piglinFood = getOrCreateTagBuilder(ItemTags.PIGLIN_FOOD);
+        piglinFood.add(ItemRegistry.hamSandwich);
+        piglinFood.add(ItemRegistry.pepperoni);
+        piglinFood.add(ItemRegistry.porkAndBeans);
+        piglinFood.add(ItemRegistry.porkJerky);
+        piglinFood.add(ItemRegistry.rawBacon);
+        piglinFood.add(ItemRegistry.cookedBacon);
     }
 
 }
