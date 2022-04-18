@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.tag.ItemTags;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -30,7 +31,26 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
 
     @Override
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+        generateSeeds(exporter);
+        generateSaplings(exporter);
         generateMisc(exporter);
+    }
+
+    protected void generateSeeds(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Farmland crop : Content.Farmland.values()) {
+            ShapelessRecipeJsonBuilder.create(crop.getSeed()).input(crop)
+                    .criterion("has_" + crop.getLowerCaseName(), RecipeProvider.conditionsFromItem(crop))
+                    .offerTo(exporter);
+        }
+    }
+
+    protected void generateSaplings(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Tree crop : Content.Tree.values()) {
+            ShapelessRecipeJsonBuilder.create(crop.getSapling()).input(crop).input(crop).input(ItemTags.SAPLINGS)
+                    .criterion("has_" + crop.getLowerCaseName(), RecipeProvider.conditionsFromItem(crop))
+                    .offerTo(exporter);
+        }
+        // Bark saplings come from the leaves, not the crop
     }
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
