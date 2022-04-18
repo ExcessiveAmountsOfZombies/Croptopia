@@ -1,9 +1,12 @@
 package me.thonk.croptopia.datagen;
 
+import com.google.common.collect.ImmutableMap;
+import com.mojang.serialization.RecordBuilder;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.mixin.datagen.IdentifierAccessor;
 import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.ItemRegistry;
+import me.thonk.croptopia.util.NamedLikeEnum;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.RecipeProvider;
@@ -12,6 +15,7 @@ import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
@@ -20,6 +24,7 @@ import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class CroptopiaRecipeProvider extends FabricRecipeProvider {
@@ -38,6 +43,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         generateSmoothies(exporter);
         generateIceCream(exporter);
         generatePie(exporter);
+        generateFurnace(exporter);
         generateMisc(exporter);
     }
 
@@ -108,6 +114,35 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                     .criterion("has_" + pie.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
                     .offerTo(exporter);
         }
+    }
+
+    protected void offerFoodCookingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible input, ItemConvertible output, int time, float exp) {
+
+    }
+
+    protected void generateFurnace(Consumer<RecipeJsonProvider> exporter) {
+        final int time = 200; // default vanilla time
+        final float exp = 0.2f; // default vanilla experience
+        var cookingList = new ImmutableMap.Builder<ItemConvertible, ItemConvertible>()
+                .put(Content.Farmland.BLACKBEAN, Content.Furnace.BAKED_BEANS)
+                .put(Content.Farmland.SWEETPOTATO, Content.Furnace.BAKED_SWEET_POTATO)
+                .put(Content.Farmland.YAM, Content.Furnace.BAKED_YAM)
+                .put(Content.Seafood.ANCHOVY, Content.Furnace.COOKED_ANCHOVY)
+                .put(ItemRegistry.rawBacon, Content.Furnace.COOKED_BACON)
+                .put(Content.Seafood.CALAMARI, Content.Furnace.COOKED_CALAMARI)
+                .put(Content.Seafood.SHRIMP, Content.Furnace.COOKED_SHRIMP)
+                .put(Content.Seafood.TUNA, Content.Furnace.COOKED_TUNA)
+                .put(Content.Farmland.CORN, Content.Furnace.POPCORN)
+                .put(Content.Farmland.GRAPE, Content.Furnace.RAISINS)
+                .build();
+        cookingList.forEach((input, output) -> offerFoodCookingRecipe(exporter,input,output,time,exp));
+        // glowing calamari is extra
+        // now the vanilla ingredients
+                /*.put(Items.SUGAR, Content.Furnace.CARAMEL)
+                .put(Items.SUGAR_CANE, Content.Furnace.MOLASSES)
+                .put(Items.BREAD, Content.Furnace.TOAST)*/
+        // only salt missing
+        offerFoodCookingRecipe(exporter,ItemRegistry.waterBottle,ItemRegistry.salt,time*4,exp);
     }
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
