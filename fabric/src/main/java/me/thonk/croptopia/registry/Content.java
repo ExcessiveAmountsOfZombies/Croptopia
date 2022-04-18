@@ -441,6 +441,7 @@ public class Content {
 
     /**
      * Creates a stream iterating through the item forms of {@link Farmland}, {@link Tree} and {@link Bark} in that order.
+     * Does NOT include {@link VanillaCrops} safe for {@link Tree#APPLE}.
      * @return not <code>null</code>
      */
     public static Stream<Item> createCropStream() {
@@ -459,6 +460,36 @@ public class Content {
                 Arrays.stream(Tree.values()).map(Tree::getLeaves),
                 Arrays.stream(Bark.values()).map(Bark::getLeaves)
         );
+    }
+
+    /**
+     * Enum of vanilla crops for search and automation purposes.
+     */
+    public enum VanillaCrops implements ItemConvertible, PluralInfo {
+        APPLE(Items.APPLE),
+        BEETROOT(Items.BEETROOT),
+        CARROT(Items.CARROT),
+        MELON(Items.MELON_SLICE),
+        POTATO(Items.POTATO),
+        PUMPKIN(Items.PUMPKIN),
+        WHEAT(Items.WHEAT);
+
+        private Item item;
+
+        VanillaCrops(ItemConvertible source) {
+            Objects.requireNonNull(source);
+            this.item = source.asItem();
+        }
+
+        @Override
+        public Item asItem() {
+            return item;
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return true;
+        }
     }
 
     /**
