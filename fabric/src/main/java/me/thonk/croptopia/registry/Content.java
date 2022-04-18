@@ -545,24 +545,26 @@ public class Content {
     /**
      * Enum for all furnace products of Croptopia except salt.
      */
-    public enum Furnace implements ItemConvertible {
-        BAKED_BEANS(REG_5),
-        BAKED_SWEET_POTATO(REG_7),
-        BAKED_YAM(REG_7),
-        CARAMEL(null),
-        COOKED_ANCHOVY(REG_4),
-        COOKED_BACON(REG_7),
-        COOKED_CALAMARI(REG_5),
-        COOKED_SHRIMP(REG_5),
-        COOKED_TUNA(REG_6),
-        MOLASSES(null),
-        POPCORN(REG_3),
-        RAISINS(REG_5),
-        TOAST(REG_7);
+    public enum Furnace implements ItemConvertibleWithPlural {
+        BAKED_BEANS(false, REG_5),
+        BAKED_SWEET_POTATO(true, REG_7),
+        BAKED_YAM(true, REG_7),
+        CARAMEL(false, null),
+        COOKED_ANCHOVY(true, REG_4),
+        COOKED_BACON(false, REG_7),
+        COOKED_CALAMARI(false, REG_5),
+        COOKED_SHRIMP(false, REG_5),
+        COOKED_TUNA(false, REG_6),
+        MOLASSES(false, null),
+        POPCORN(false, REG_3),
+        RAISINS(false, REG_5),
+        TOAST(true, REG_7);
 
+        private boolean hasPlural;
         private Item item;
 
-        Furnace(FoodRegistry foodRegistry) {
+        Furnace(boolean hasPlural, FoodRegistry foodRegistry) {
+            this.hasPlural = hasPlural;
             if (foodRegistry == null) {
                 item = new Item(createGroup());
             }
@@ -570,6 +572,11 @@ public class Content {
                 item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
             }
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
+        }
+
+        @Override
+        public boolean hasPlural() {
+            return hasPlural;
         }
 
         @Override
