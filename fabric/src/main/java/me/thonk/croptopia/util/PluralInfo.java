@@ -12,7 +12,7 @@ public interface PluralInfo {
 
     /**
      *
-     * @param word The word
+     * @param word The word to form the plural from, not <code>null</code>.
      * @param hasPlural {@see #hasPlural}
      * @return the plural form of the supplied word
      * @throws NullPointerException If <code>word</code> refers to <code>null</code>.
@@ -27,6 +27,9 @@ public interface PluralInfo {
         }
         if (word.endsWith("leaf")) {
             return word.substring(0, word.length()-1) + "ves";
+        }
+        if (word.endsWith("knife")) {
+            return word.substring(0, word.length()-2) + "ves";
         }
         if (word.endsWith("sh") || word.endsWith("tomato")) {
             return word + "es";

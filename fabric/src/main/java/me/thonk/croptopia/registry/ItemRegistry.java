@@ -197,7 +197,6 @@ public class ItemRegistry {
     public static Item fruitCake = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item grilledEggplant = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item kiwiSorbet = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
-    public static Item knife = new CookingUtensil(createGroup().maxCount(1));
     public static Item lemonCoconutBar = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item netherWartStew = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
     public static Item peanutButter = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
@@ -252,12 +251,6 @@ public class ItemRegistry {
     public static Item cookedAnchovy = new Item(createGroup().food(FoodRegistry.createComponent(REG_4)));
     public static Item anchovyPizza = new Item(createGroup().food(FoodRegistry.createComponent(REG_15)));
     public static Item mashedPotatoes = new Item(createGroup().food(FoodRegistry.createComponent(REG_9)));
-
-    // cooking utensils?
-    public static Item foodPress = new CookingUtensil(createGroup().maxCount(1));
-    public static Item fryingPan = new CookingUtensil(createGroup().maxCount(1));
-    public static Item cookingPot = new CookingUtensil(createGroup().maxCount(1));
-    public static Item mortarAndPestle = new CookingUtensil(createGroup().maxCount(1));
 
     public static Item saltOre = new AliasedBlockItem(BlockRegistry.salt, createGroup());
 
@@ -404,7 +397,6 @@ public class ItemRegistry {
         registerItem(ItemNames.FRUIT_CAKE, fruitCake);
         registerItem(ItemNames.GRILLED_EGGPLANT, grilledEggplant);
         registerItem(ItemNames.KIWI_SORBET, kiwiSorbet);
-        registerItem(ItemNames.KNIFE, knife);
         registerItem(ItemNames.LEMON_COCONUT_BAR, lemonCoconutBar);
         registerItem(ItemNames.NETHER_WART_STEW, netherWartStew);
         registerItem(ItemNames.PEANUT_BUTTER, peanutButter);
@@ -475,11 +467,6 @@ public class ItemRegistry {
 
         registerItem(ItemNames.CORN_HUSK, cornHusk);
         registerItem(ItemNames.WHIPPING_CREAM, whippingCream);
-
-        registerItem(ItemNames.FOOD_PRESS, foodPress);
-        registerItem(ItemNames.FRYING_PAN, fryingPan);
-        registerItem(ItemNames.COOKING_POT, cookingPot);
-        registerItem(ItemNames.MORTAR_AND_PESTLE, mortarAndPestle);
 
         registerItem(ItemNames.SALT_ORE, saltOre);
     }

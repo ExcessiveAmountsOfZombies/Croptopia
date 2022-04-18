@@ -84,6 +84,9 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         for (Content.IceCream iceCream : Content.IceCream.values()) {
             createGeneralTag(iceCream.name().toLowerCase()+"_ice_creams", iceCream.asItem());
         }
+        for (Content.Utensil utensil : Content.Utensil.values()) {
+            createGeneralTag(PluralInfo.plural(utensil.name().toLowerCase(),utensil.hasPlural()), utensil.asItem());
+        }
 
         createGeneralTag("almond_brittles", ItemRegistry.almondBrittle);
         createGeneralTag("apple_pies", ItemRegistry.applePie);
@@ -114,7 +117,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("chocolate_milkshakes", ItemRegistry.chocolateMilkshake);
         createGeneralTag("chocolates", ItemRegistry.chocolate);
         createGeneralTag("coffees", ItemRegistry.coffee);
-        createGeneralTag("cooking_pots", ItemRegistry.cookingPot);
         createGeneralTag("cornish_pasty", ItemRegistry.cornishPasty);
         createGeneralTag("cucumber_salads", ItemRegistry.cucumberSalad);
         createGeneralTag("doughnuts", ItemRegistry.doughnut);
@@ -124,12 +126,10 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("figgy_pudding", ItemRegistry.figgyPudding);
         createGeneralTag("fish_and_chips", ItemRegistry.fishAndChips);
         createGeneralTag("flour", ItemRegistry.flour);
-        createGeneralTag("food_press", ItemRegistry.foodPress);
         createGeneralTag("french_fries", ItemRegistry.frenchFries);
         createGeneralTag("fried_chickens", ItemRegistry.friedChicken);
         createGeneralTag("fruit_salads", ItemRegistry.fruitSalad);
         createGeneralTag("fruit_smoothies", ItemRegistry.fruitSmoothie);
-        createGeneralTag("frying_pans", ItemRegistry.fryingPan);
         createGeneralTag("grilled_cheeses", ItemRegistry.grilledCheese);
         createGeneralTag("ham_sandwiches", ItemRegistry.hamSandwich);
         createGeneralTag("hamburgers", ItemRegistry.hamburger);
@@ -143,7 +143,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("meads", ItemRegistry.mead);
         createGeneralTag("milk_bottles", ItemRegistry.milkBottle);
         createGeneralTag("molasses", ItemRegistry.molasses);
-        createGeneralTag("mortar_and_pestles", ItemRegistry.mortarAndPestle);
         createGeneralTag("noodles", ItemRegistry.noodle);
         createGeneralTag("nougats", ItemRegistry.nougat);
         createGeneralTag("nutty_cookies", ItemRegistry.nuttyCookie);
@@ -151,7 +150,6 @@ public class CroptopiaItemProvider extends FabricTagProvider.ItemTagProvider {
         createGeneralTag("olive_oils", ItemRegistry.oliveOil);
         createGeneralTag("onion_rings", ItemRegistry.onionRings);
         createGeneralTag("peanut_butter_and_jam", ItemRegistry.peanutButterAndJam);
-        /*createGeneralTag("pecan_ice_creams", ItemRegistry.pecanIceCream);*/
         createGeneralTag("pecan_pies", ItemRegistry.pecanPie);
         createGeneralTag("pepperoni", ItemRegistry.pepperoni);
         createGeneralTag("pineapple_pepperoni_pizzas", ItemRegistry.pineapplePepperoniPizza);
