@@ -11,6 +11,8 @@ import me.thonk.croptopia.blocks.LeafCropBlock;
 import me.thonk.croptopia.generator.CroptopiaSaplingGenerator;
 import me.thonk.croptopia.items.*;
 import me.thonk.croptopia.util.BlockConvertible;
+import me.thonk.croptopia.util.ItemConvertibleWithPlural;
+import me.thonk.croptopia.util.NamedPlural;
 import me.thonk.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -77,7 +79,7 @@ public class Content {
     /**
      * Enum for all (Croptopia) farmland crops.
      */
-    public enum Farmland implements ItemConvertible, BlockConvertible, PluralInfo {
+    public enum Farmland implements ItemConvertibleWithPlural, BlockConvertible {
         ARTICHOKE(true, TagCategory.VEGETABLES, REG_1, SWAMP),
         ASPARAGUS(false, TagCategory.VEGETABLES, REG_3, SWAMP),
         BARLEY(false, TagCategory.GRAIN, REG_1, PLAINS, TAIGA),
@@ -212,7 +214,7 @@ public class Content {
      * Does not include cinnamon, that one is {@link Bark#CINNAMON}.
      * </p>
      */
-    public enum Tree implements ItemConvertible, BlockConvertible, PluralInfo {
+    public enum Tree implements ItemConvertibleWithPlural, BlockConvertible {
         ALMOND(true,  Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0),
         // coding for apple requires null for food registry here, other fruits must be eatable
         APPLE(true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0),
@@ -327,7 +329,7 @@ public class Content {
     /**
      * Enum for all (Croptopia) bark crops. Don't confuse with {@link Tree}.
      */
-    public enum Bark implements ItemConvertible, BlockConvertible, PluralInfo {
+    public enum Bark implements ItemConvertibleWithPlural, BlockConvertible {
         CINNAMON(false, TagCategory.CROPS, 4, 3, 0);
 
         private String lowerCaseName;
@@ -469,7 +471,7 @@ public class Content {
     /**
      * Enum of vanilla crops for search and automation purposes.
      */
-    public enum VanillaCrops implements ItemConvertible, PluralInfo {
+    public enum VanillaCrops implements ItemConvertibleWithPlural {
         APPLE(Items.APPLE),
         BEETROOT(Items.BEETROOT),
         CARROT(Items.CARROT),
@@ -480,6 +482,9 @@ public class Content {
 
         private Item item;
 
+        /**
+         * @param source the vanilla crop, not <code>null</code>
+         */
         VanillaCrops(ItemConvertible source) {
             Objects.requireNonNull(source);
             this.item = source.asItem();
@@ -659,7 +664,7 @@ public class Content {
     /**
      * Enum for all (Croptopia) cooking utensils
      */
-    public enum Utensil implements ItemConvertible, PluralInfo {
+    public enum Utensil implements ItemConvertibleWithPlural {
         COOKING_POT(true),
         FOOD_PRESS(false),
         FRYING_PAN(true),
