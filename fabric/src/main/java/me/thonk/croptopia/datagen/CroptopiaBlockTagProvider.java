@@ -19,6 +19,8 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
         generateSaplings();
         generateBarkLogs();
         generateLeaves();
+        // in vanilla for bees only
+        generateCrops();
     }
 
     protected void generateSaplings() {
@@ -55,6 +57,16 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
         for (Content.Bark crop : Content.Bark.values()) {
             leaves.add(crop.getLeaves());
             hoe.add(crop.getLeaves());
+        }
+    }
+
+    protected void generateCrops() {
+        FabricTagBuilder<Block> crops = getOrCreateTagBuilder(BlockTags.CROPS);
+        for (Content.Farmland crop : Content.Farmland.values()) {
+            crops.add(crop.asBlock());
+        }
+        for (Content.Tree crop : Content.Tree.values()) {
+            crops.add(crop.asBlock());
         }
     }
 
