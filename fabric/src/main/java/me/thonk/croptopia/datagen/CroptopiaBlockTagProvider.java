@@ -1,5 +1,6 @@
 package me.thonk.croptopia.datagen;
 
+import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -21,6 +22,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
         generateLeaves();
         // in vanilla for bees only
         generateCrops();
+        generateMisc();
     }
 
     protected void generateSaplings() {
@@ -68,6 +70,13 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
         for (Content.Tree crop : Content.Tree.values()) {
             crops.add(crop.asBlock());
         }
+    }
+
+    protected void generateMisc() {
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(BlockRegistry.salt);
+        getOrCreateTagBuilder(BlockTags.AZALEA_ROOT_REPLACEABLE).add(BlockRegistry.salt);
+        getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS).add(BlockRegistry.salt);
+        getOrCreateTagBuilder(BlockTags.ENDERMAN_HOLDABLE).add(BlockRegistry.salt);
     }
 
 }
