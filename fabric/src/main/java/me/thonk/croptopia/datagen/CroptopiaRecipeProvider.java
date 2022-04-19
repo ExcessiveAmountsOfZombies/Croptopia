@@ -36,6 +36,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
         generateSeeds(exporter);
         generateSaplings(exporter);
+        generateBarkWood(exporter);
         generateJams(exporter);
         generateJuices(exporter);
         generateSmoothies(exporter);
@@ -65,6 +66,23 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                     .offerTo(exporter);
         }
         // Bark saplings come from the leaves, not the crop
+    }
+
+    protected void generateBarkWood(Consumer<RecipeJsonProvider> exporter) {
+        for (Content.Bark crop : Content.Bark.values()) {
+            ShapedRecipeJsonBuilder.create(crop.getWood())
+                    .pattern("##")
+                    .pattern("##")
+                    .input('#', crop.getLog())
+                    .criterion("has_" + crop.getLowerCaseName() + "_log", RecipeProvider.conditionsFromItem(crop.getLog()))
+                    .offerTo(exporter);
+            ShapedRecipeJsonBuilder.create(crop.getStrippedWood())
+                    .pattern("##")
+                    .pattern("##")
+                    .input('#', crop.getStrippedLog())
+                    .criterion("has_stripped" + crop.getLowerCaseName() + "_log", RecipeProvider.conditionsFromItem(crop.getStrippedLog()))
+                    .offerTo(exporter);
+        }
     }
 
     protected void generateJams(Consumer<RecipeJsonProvider> exporter) {
