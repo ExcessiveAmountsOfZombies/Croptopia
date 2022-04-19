@@ -29,10 +29,13 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
     @Override
     protected void generateTags() {
+        generateCrops();
+        generateSeedsSaplings();
+        generateOtherEnums();
         generateMisc();
     }
 
-    protected void generateMisc() {
+    protected void generateCrops() {
         for (Content.Farmland crop : Content.Farmland.values()) {
             createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
             if (crop.getTagegory() != Content.TagCategory.CROPS) { // don't double only-crops
@@ -56,13 +59,14 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("turmeric", ItemRegistry.turmeric);
         createGeneralTag("tea_leaves", ItemRegistry.teaLeaves);
         createGeneralTag("cinnamon", ItemRegistry.cinnamon);*/
+    }
 
+    protected void generateSeedsSaplings() {
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
         for (Content.Farmland crop : Content.Farmland.values()) {
             if (crop == Content.Farmland.CHILE_PEPPER) {
                 createSeedSaplingTag("seeds", "chilepepper", crop.getSeed());
-            }
-            else {
+            } else {
                 createSeedSaplingTag("seeds", crop.getLowerCaseName(), crop.getSeed());
             }
         }
@@ -72,7 +76,9 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         for (Content.Bark crop : Content.Bark.values()) {
             createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
         }
+    }
 
+    protected void generateOtherEnums() {
         for (Content.Seafood seafood : Content.Seafood.values()) {
             createGeneralTag(seafood.getPlural(), seafood.asItem());
         }
@@ -82,25 +88,27 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         }
 
         for (Content.Juice juice : Content.Juice.values()) {
-            createCategoryTag("juices", juice.name().toLowerCase()+"_juices", juice.asItem());
+            createCategoryTag("juices", juice.name().toLowerCase() + "_juices", juice.asItem());
         }
         for (Content.Jam jam : Content.Jam.values()) {
-            createCategoryTag("jams", jam.name().toLowerCase()+"_jams", jam.asItem());
+            createCategoryTag("jams", jam.name().toLowerCase() + "_jams", jam.asItem());
         }
         for (Content.Smoothie smoothie : Content.Smoothie.values()) {
-            createGeneralTag(smoothie.name().toLowerCase()+"_smoothies", smoothie.asItem());
+            createGeneralTag(smoothie.name().toLowerCase() + "_smoothies", smoothie.asItem());
         }
         for (Content.IceCream iceCream : Content.IceCream.values()) {
-            createGeneralTag(iceCream.name().toLowerCase()+"_ice_creams", iceCream.asItem());
+            createGeneralTag(iceCream.name().toLowerCase() + "_ice_creams", iceCream.asItem());
         }
         for (Content.Pie pie : Content.Pie.values()) {
-            createGeneralTag(pie.name().toLowerCase()+"_pies", pie.asItem());
+            createGeneralTag(pie.name().toLowerCase() + "_pies", pie.asItem());
         }
 
         for (Content.Utensil utensil : Content.Utensil.values()) {
             createGeneralTag(utensil.getPlural(), utensil.asItem());
         }
+    }
 
+    protected void generateMisc() {
         createGeneralTag("almond_brittles", ItemRegistry.almondBrittle);
         createGeneralTag("artichoke_dips", ItemRegistry.artichokeDip);
         createGeneralTag("banana_cream_pies", ItemRegistry.bananaCreamPie);
