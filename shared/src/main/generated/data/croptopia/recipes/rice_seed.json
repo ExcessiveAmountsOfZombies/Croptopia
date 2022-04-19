@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:rice"
+    }
+  ],
+  "result": {
+    "item": "croptopia:rice_seed"
+  }
+}

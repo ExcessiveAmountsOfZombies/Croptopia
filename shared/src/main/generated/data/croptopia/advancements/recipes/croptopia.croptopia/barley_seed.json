@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:barley_seed"
+    ]
+  },
+  "criteria": {
+    "has_barley": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:barley"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:barley_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_barley",
+      "has_the_recipe"
+    ]
+  ]
+}

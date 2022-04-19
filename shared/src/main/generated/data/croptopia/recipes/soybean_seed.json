@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:soybeans"
+    }
+  ],
+  "result": {
+    "item": "croptopia:soybean_seed"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:kale_seed"
+    ]
+  },
+  "criteria": {
+    "has_kale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:kale"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:kale_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_kale",
+      "has_the_recipe"
+    ]
+  ]
+}

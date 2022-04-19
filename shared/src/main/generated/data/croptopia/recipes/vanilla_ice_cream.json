@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:vanilla"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "${dependent}:milks"
+    },
+    {
+      "item": "croptopia:cooking_pot"
+    }
+  ],
+  "result": {
+    "item": "croptopia:vanilla_ice_cream"
+  }
+}

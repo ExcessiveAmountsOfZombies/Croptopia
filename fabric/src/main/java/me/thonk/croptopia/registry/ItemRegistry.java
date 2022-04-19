@@ -140,7 +140,7 @@ public class ItemRegistry {
 
     public static Item burrito = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item tostada = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
-    public static Item horchata = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static Item horchata = new Drink(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item carnitas = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item fajitas = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static Item enchilada = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));

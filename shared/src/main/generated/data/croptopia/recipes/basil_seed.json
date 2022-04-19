@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:basil"
+    }
+  ],
+  "result": {
+    "item": "croptopia:basil_seed"
+  }
+}

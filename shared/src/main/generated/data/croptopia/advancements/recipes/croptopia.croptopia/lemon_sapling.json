@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:lemon_sapling"
+    ]
+  },
+  "criteria": {
+    "has_lemon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:lemon"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:lemon_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lemon",
+      "has_the_recipe"
+    ]
+  ]
+}

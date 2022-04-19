@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:apricot_sapling"
+    ]
+  },
+  "criteria": {
+    "has_apricot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:apricot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:apricot_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_apricot",
+      "has_the_recipe"
+    ]
+  ]
+}

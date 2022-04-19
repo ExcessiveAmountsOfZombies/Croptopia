@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:persimmon_sapling"
+    ]
+  },
+  "criteria": {
+    "has_persimmon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:persimmon"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:persimmon_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_persimmon",
+      "has_the_recipe"
+    ]
+  ]
+}

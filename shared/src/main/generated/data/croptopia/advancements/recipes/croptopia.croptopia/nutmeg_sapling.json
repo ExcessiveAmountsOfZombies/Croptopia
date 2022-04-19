@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:nutmeg_sapling"
+    ]
+  },
+  "criteria": {
+    "has_nutmeg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:nutmeg"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:nutmeg_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_nutmeg",
+      "has_the_recipe"
+    ]
+  ]
+}
