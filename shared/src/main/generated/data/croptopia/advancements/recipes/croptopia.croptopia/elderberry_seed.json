@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:elderberry_seed"
+    ]
+  },
+  "criteria": {
+    "has_elderberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:elderberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:elderberry_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_elderberry",
+      "has_the_recipe"
+    ]
+  ]
+}

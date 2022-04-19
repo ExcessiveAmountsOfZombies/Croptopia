@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:popcorn_from_smoking_corn"
+    ]
+  },
+  "criteria": {
+    "has_corn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:corn"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:popcorn_from_smoking_corn"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_corn",
+      "has_the_recipe"
+    ]
+  ]
+}

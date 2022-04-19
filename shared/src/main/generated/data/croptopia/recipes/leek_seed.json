@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:leek"
+    }
+  ],
+  "result": {
+    "item": "croptopia:leek_seed"
+  }
+}

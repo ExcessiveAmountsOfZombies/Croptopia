@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:tomatillo_seed"
+    ]
+  },
+  "criteria": {
+    "has_tomatillo": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:tomatillo"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:tomatillo_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tomatillo",
+      "has_the_recipe"
+    ]
+  ]
+}

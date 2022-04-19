@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:pepper_seed"
+    ]
+  },
+  "criteria": {
+    "has_pepper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:pepper"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:pepper_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pepper",
+      "has_the_recipe"
+    ]
+  ]
+}

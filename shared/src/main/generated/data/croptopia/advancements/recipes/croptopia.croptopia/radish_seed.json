@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:radish_seed"
+    ]
+  },
+  "criteria": {
+    "has_radish": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:radish"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:radish_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_radish",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:garlic"
+    }
+  ],
+  "result": {
+    "item": "croptopia:garlic_seed"
+  }
+}

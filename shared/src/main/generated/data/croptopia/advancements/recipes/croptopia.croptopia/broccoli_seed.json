@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:broccoli_seed"
+    ]
+  },
+  "criteria": {
+    "has_broccoli": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:broccoli"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:broccoli_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_broccoli",
+      "has_the_recipe"
+    ]
+  ]
+}

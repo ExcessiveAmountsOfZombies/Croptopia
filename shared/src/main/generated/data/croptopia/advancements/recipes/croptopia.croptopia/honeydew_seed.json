@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:honeydew_seed"
+    ]
+  },
+  "criteria": {
+    "has_honeydew": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:honeydew"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:honeydew_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_honeydew",
+      "has_the_recipe"
+    ]
+  ]
+}

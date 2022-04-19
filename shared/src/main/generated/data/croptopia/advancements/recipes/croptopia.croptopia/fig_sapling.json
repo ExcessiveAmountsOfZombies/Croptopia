@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:fig_sapling"
+    ]
+  },
+  "criteria": {
+    "has_fig": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:fig"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:fig_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fig",
+      "has_the_recipe"
+    ]
+  ]
+}

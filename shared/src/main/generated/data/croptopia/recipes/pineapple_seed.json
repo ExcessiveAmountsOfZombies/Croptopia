@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:pineapples"
+    }
+  ],
+  "result": {
+    "item": "croptopia:pineapple_seed"
+  }
+}

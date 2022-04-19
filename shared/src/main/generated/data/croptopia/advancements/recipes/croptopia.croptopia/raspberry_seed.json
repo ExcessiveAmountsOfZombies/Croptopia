@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:raspberry_seed"
+    ]
+  },
+  "criteria": {
+    "has_raspberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:raspberry"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:raspberry_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raspberry",
+      "has_the_recipe"
+    ]
+  ]
+}

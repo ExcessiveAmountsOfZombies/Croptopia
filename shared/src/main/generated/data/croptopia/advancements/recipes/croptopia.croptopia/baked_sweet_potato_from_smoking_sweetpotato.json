@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:baked_sweet_potato_from_smoking_sweetpotato"
+    ]
+  },
+  "criteria": {
+    "has_sweetpotato": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:sweetpotato"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:baked_sweet_potato_from_smoking_sweetpotato"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sweetpotato",
+      "has_the_recipe"
+    ]
+  ]
+}

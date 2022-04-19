@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:currant_seed"
+    ]
+  },
+  "criteria": {
+    "has_currant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:currant"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:currant_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_currant",
+      "has_the_recipe"
+    ]
+  ]
+}

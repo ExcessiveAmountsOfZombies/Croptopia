@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:broccoli"
+    }
+  ],
+  "result": {
+    "item": "croptopia:broccoli_seed"
+  }
+}

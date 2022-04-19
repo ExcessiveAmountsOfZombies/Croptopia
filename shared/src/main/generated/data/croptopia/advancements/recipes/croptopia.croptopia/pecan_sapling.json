@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:pecan_sapling"
+    ]
+  },
+  "criteria": {
+    "has_pecan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:pecan"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:pecan_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pecan",
+      "has_the_recipe"
+    ]
+  ]
+}

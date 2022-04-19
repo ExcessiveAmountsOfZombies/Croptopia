@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:almond_sapling"
+    ]
+  },
+  "criteria": {
+    "has_almond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:almond"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:almond_sapling"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_almond",
+      "has_the_recipe"
+    ]
+  ]
+}
