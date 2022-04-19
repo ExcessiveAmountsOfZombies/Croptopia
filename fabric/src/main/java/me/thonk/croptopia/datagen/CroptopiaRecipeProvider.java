@@ -211,6 +211,11 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     }
 
     protected void generateMiscShapeless(Consumer<RecipeJsonProvider> exporter) {
+        TagKey<Item> tag = tag("salts");
+        ShapelessRecipeJsonBuilder.create(Items.DEAD_BUSH)
+                .input(tag).input(ItemTags.SAPLINGS)
+                .criterion("has_salts", RecipeProvider.conditionsFromTag(tag))
+                .offerTo(exporter);
         ShapelessRecipeJsonBuilder.create(ItemRegistry.candiedKumquats, 7)
                 .independentTag(tag("kumquat"))
                 .independentTag(tag("kumquat"))
@@ -223,7 +228,6 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .independentTag(Items.HONEY_BOTTLE)
                 .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT.asItem()))
                 .offerTo(exporter);
-
     }
 
     protected void generateMiscShaped(Consumer<RecipeJsonProvider> exporter) {
