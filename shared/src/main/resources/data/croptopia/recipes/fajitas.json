@@ -8,10 +8,10 @@
       "tag": "${dependent}:bellpeppers"
     },
     {
-      "tag": "${dependent}:onion"
+      "tag": "${dependent}:onions"
     },
     {
-      "tag": "${dependent}:tomato"
+      "tag": "${dependent}:tomatoes"
     },
     {
       "tag": "${dependent}:cheeses"

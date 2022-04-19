@@ -14,7 +14,7 @@
       "tag": "${dependent}:tofu"
     },
     {
-      "tag": "${dependent}:onion"
+      "tag": "${dependent}:onions"
     }
   ],
   "result": {
