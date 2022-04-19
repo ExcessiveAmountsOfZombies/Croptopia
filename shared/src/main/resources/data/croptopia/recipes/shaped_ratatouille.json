@@ -13,10 +13,10 @@
       "tag": "${dependent}:eggplant"
     },
     "3": {
-      "tag": "${dependent}:tomato"
+      "tag": "${dependent}:tomatoes"
     },
     "4": {
-      "tag": "${dependent}:squash"
+      "tag": "${dependent}:squashes"
     },
     "5": {
       "tag": "${dependent}:zucchini"
@@ -25,7 +25,7 @@
       "tag": "${dependent}:olive_oils"
     },
     "7": {
-      "tag": "${dependent}:onion"
+      "tag": "${dependent}:onions"
     },
     "8": {
       "tag": "${dependent}:bellpeppers"

@@ -19,7 +19,7 @@
       "item": "minecraft:potato"
     },
     "5": {
-      "tag": "${dependent}:onion"
+      "tag": "${dependent}:onions"
     },
     "6": {
       "tag": "${dependent}:rutabagas"

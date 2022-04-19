@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "croptopia:tuna"
-  },
-  "result": "croptopia:cooked_tuna",
-  "experience": 0.2,
-  "cookingtime": 100
-}

@@ -165,6 +165,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("oatmeals", ItemRegistry.oatmeal);
         createGeneralTag("olive_oils", ItemRegistry.oliveOil);
         createGeneralTag("onion_rings", ItemRegistry.onionRings);
+        createGeneralTag("paprika", ItemRegistry.paprika);
         createGeneralTag("peanut_butter_and_jam", ItemRegistry.peanutButterAndJam);
         createGeneralTag("pepperoni", ItemRegistry.pepperoni);
         createGeneralTag("pineapple_pepperoni_pizzas", ItemRegistry.pineapplePepperoniPizza);
@@ -284,7 +285,13 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
      * Saplings.json -> references Fabric -> references forge
      */
     private void createSeedSaplingTag(String category, String name, Item item) {
-        String pluralSeedName = Registry.ITEM.getId(item).getPath() + "s";
+        String pluralSeedName;
+        if (item == Content.Farmland.VANILLA.getSeed()) {
+           pluralSeedName = Registry.ITEM.getId(item).getPath();
+        } else {
+            pluralSeedName = Registry.ITEM.getId(item).getPath() + "s";
+        }
+
         // Forge tags use seed/cropname, but not including seed name. artichoke good artichoke_seed bad.
         TagKey<Item> forgeFriendlyTag = register(category + "/" + name);
         IndependentEntry independentEntry = new IndependentEntry(category + "/" + name);

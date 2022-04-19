@@ -5,7 +5,7 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "${dependent}:cucumber"
+      "tag": "${dependent}:cucumbers"
     },
     {
       "item": "minecraft:carrot"

@@ -22,7 +22,7 @@
       "item": "minecraft:potato"
     },
     "5": {
-      "tag": "${dependent}:tomato"
+      "tag": "${dependent}:tomatoes"
     },
     "6": {
       "tag": "${dependent}:corn"
@@ -31,7 +31,7 @@
       "tag": "${dependent}:garlic"
     },
     "8": {
-      "tag": "${dependent}:onion"
+      "tag": "${dependent}:onions"
     }
   },
   "result": {

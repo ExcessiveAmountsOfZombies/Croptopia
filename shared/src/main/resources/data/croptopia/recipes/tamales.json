@@ -5,7 +5,7 @@
       "item": "minecraft:chicken"
     },
     {
-      "tag": "${dependent}:onion"
+      "tag": "${dependent}:onions"
     },
     {
       "item": "croptopia:corn_husk"
