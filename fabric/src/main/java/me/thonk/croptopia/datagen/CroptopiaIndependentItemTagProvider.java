@@ -29,10 +29,13 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
     @Override
     protected void generateTags() {
+        generateCrops();
+        generateSeedsSaplings();
+        generateOtherEnums();
         generateMisc();
     }
 
-    protected void generateMisc() {
+    protected void generateCrops() {
         for (Content.Farmland crop : Content.Farmland.values()) {
             createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
             if (crop.getTagegory() != Content.TagCategory.CROPS) { // don't double only-crops
@@ -56,13 +59,14 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("turmeric", ItemRegistry.turmeric);
         createGeneralTag("tea_leaves", ItemRegistry.teaLeaves);
         createGeneralTag("cinnamon", ItemRegistry.cinnamon);*/
+    }
 
+    protected void generateSeedsSaplings() {
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
         for (Content.Farmland crop : Content.Farmland.values()) {
             if (crop == Content.Farmland.CHILE_PEPPER) {
                 createSeedSaplingTag("seeds", "chilepepper", crop.getSeed());
-            }
-            else {
+            } else {
                 createSeedSaplingTag("seeds", crop.getLowerCaseName(), crop.getSeed());
             }
         }
@@ -72,28 +76,41 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         for (Content.Bark crop : Content.Bark.values()) {
             createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
         }
+    }
+
+    protected void generateOtherEnums() {
+        for (Content.Seafood seafood : Content.Seafood.values()) {
+            createGeneralTag(seafood.getPlural(), seafood.asItem());
+        }
+
+        for (Content.Furnace cooked : Content.Furnace.values()) {
+            createGeneralTag(cooked.getPlural(), cooked.asItem());
+        }
 
         for (Content.Juice juice : Content.Juice.values()) {
-            createCategoryTag("juices", juice.name().toLowerCase()+"_juices", juice.asItem());
+            createCategoryTag("juices", juice.name().toLowerCase() + "_juices", juice.asItem());
         }
         for (Content.Jam jam : Content.Jam.values()) {
-            createCategoryTag("jams", jam.name().toLowerCase()+"_jams", jam.asItem());
+            createCategoryTag("jams", jam.name().toLowerCase() + "_jams", jam.asItem());
         }
-
         for (Content.Smoothie smoothie : Content.Smoothie.values()) {
-            createGeneralTag(smoothie.name().toLowerCase()+"_smoothies", smoothie.asItem());
+            createGeneralTag(smoothie.name().toLowerCase() + "_smoothies", smoothie.asItem());
         }
         for (Content.IceCream iceCream : Content.IceCream.values()) {
-            createGeneralTag(iceCream.name().toLowerCase()+"_ice_creams", iceCream.asItem());
+            createGeneralTag(iceCream.name().toLowerCase() + "_ice_creams", iceCream.asItem());
         }
-        for (Content.Utensil utensil : Content.Utensil.values()) {
-            createGeneralTag(PluralInfo.plural(utensil.name().toLowerCase(),utensil.hasPlural()), utensil.asItem());
+        for (Content.Pie pie : Content.Pie.values()) {
+            createGeneralTag(pie.name().toLowerCase() + "_pies", pie.asItem());
         }
 
+        for (Content.Utensil utensil : Content.Utensil.values()) {
+            createGeneralTag(utensil.getPlural(), utensil.asItem());
+        }
+    }
+
+    protected void generateMisc() {
         createGeneralTag("almond_brittles", ItemRegistry.almondBrittle);
-        createGeneralTag("apple_pies", Content.Pie.APPLE.asItem());
         createGeneralTag("artichoke_dips", ItemRegistry.artichokeDip);
-        createGeneralTag("baked_beans", Content.Furnace.BAKED_BEANS.asItem());
         createGeneralTag("banana_cream_pies", ItemRegistry.bananaCreamPie);
         createGeneralTag("banana_nut_breads", ItemRegistry.bananaNutBread);
         createGeneralTag("beef_jerkies", ItemRegistry.beefJerky);
@@ -106,13 +123,11 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("caesar_salads", ItemRegistry.caesarSalad);
         createGeneralTag("candied_nuts", ItemRegistry.candiedNuts);
         createGeneralTag("candy_corns", ItemRegistry.candyCorn);
-        createGeneralTag("caramel", Content.Furnace.CARAMEL.asItem());
         createGeneralTag("cashew_chickens", ItemRegistry.cashewChicken);
         createGeneralTag("cheese_cakes", ItemRegistry.cheeseCake);
         createGeneralTag("cheese_pizzas", ItemRegistry.cheesePizza);
         createGeneralTag("cheeseburgers", ItemRegistry.cheeseburger);
         createGeneralTag("cheeses", ItemRegistry.cheese);
-        createGeneralTag("cherry_pies", Content.Pie.CHERRY.asItem());
         createGeneralTag("chicken_and_dumplings", ItemRegistry.chickenAndDumplings);
         createGeneralTag("chicken_and_noodles", ItemRegistry.chickenAndNoodles);
         createGeneralTag("chicken_and_rice", ItemRegistry.chickenAndRice);
@@ -144,7 +159,6 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("limeades", ItemRegistry.limeade);
         createGeneralTag("meads", ItemRegistry.mead);
         createGeneralTag("milk_bottles", ItemRegistry.milkBottle);
-        createGeneralTag("molasses", Content.Furnace.MOLASSES.asItem());
         createGeneralTag("noodles", ItemRegistry.noodle);
         createGeneralTag("nougats", ItemRegistry.nougat);
         createGeneralTag("nutty_cookies", ItemRegistry.nuttyCookie);
@@ -152,18 +166,15 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("olive_oils", ItemRegistry.oliveOil);
         createGeneralTag("onion_rings", ItemRegistry.onionRings);
         createGeneralTag("peanut_butter_and_jam", ItemRegistry.peanutButterAndJam);
-        createGeneralTag("pecan_pies", Content.Pie.PECAN.asItem());
         createGeneralTag("pepperoni", ItemRegistry.pepperoni);
         createGeneralTag("pineapple_pepperoni_pizzas", ItemRegistry.pineapplePepperoniPizza);
         createGeneralTag("pizzas", ItemRegistry.pizza);
-        createGeneralTag("popcorns", Content.Furnace.POPCORN.asItem());
         createGeneralTag("pork_and_beanss", ItemRegistry.porkAndBeans);
         createGeneralTag("pork_jerkies", ItemRegistry.porkJerky);
         createGeneralTag("potato_chips", ItemRegistry.potatoChips);
         createGeneralTag("protein_bars", ItemRegistry.proteinBar);
         createGeneralTag("pumpkin_spice_lattes", ItemRegistry.pumpkinSpiceLatte);
         createGeneralTag("raisin_oatmeal_cookies", ItemRegistry.oatmealCookie);
-        createGeneralTag("raisins", Content.Furnace.RAISINS.asItem());
         createGeneralTag("ravioli", ItemRegistry.ravioli);
         createGeneralTag("roasted_nuts", ItemRegistry.roastedNuts);
         createGeneralTag("rum_raisin_ice_creams", ItemRegistry.rumRaisinIceCream);
@@ -187,7 +198,6 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("tacos", ItemRegistry.taco);
         createGeneralTag("tea", ItemRegistry.tea);
         createGeneralTag("toast_with_jam", ItemRegistry.toastWithJam);
-        createGeneralTag("toasts", Content.Furnace.TOAST.asItem());
         createGeneralTag("tofu", ItemRegistry.tofu);
         createGeneralTag("tofu_and_dumplings", ItemRegistry.tofuAndDumplings);
         createGeneralTag("tofuburgers", ItemRegistry.tofuBurger);
@@ -212,18 +222,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("goulashes", ItemRegistry.goulash);
         createGeneralTag("beetroot_salads", ItemRegistry.beetrootSalad);
         createGeneralTag("candied_kumquats", ItemRegistry.candiedKumquats);
-        createGeneralTag("shrimp", Content.Seafood.SHRIMP.asItem());
-        createGeneralTag("tuna", Content.Seafood.TUNA.asItem());
-        createGeneralTag("calamari", Content.Seafood.CALAMARI.asItem()).add(Content.Seafood.GLOWING_CALAMARI.asItem());
-        createGeneralTag("crabs", Content.Seafood.CRAB.asItem());
-        createGeneralTag("roe", Content.Seafood.ROE.asItem());
-        createGeneralTag("clams", Content.Seafood.CLAM.asItem());
-        createGeneralTag("oysters", Content.Seafood.OYSTER.asItem());
-        createGeneralTag("cooked_shrimp", Content.Furnace.COOKED_SHRIMP.asItem());
-        createGeneralTag("cooked_tuna", Content.Furnace.COOKED_TUNA.asItem());
-        createGeneralTag("cooked_calamari", Content.Furnace.COOKED_CALAMARI.asItem());
         createGeneralTag("steamed_crabs", ItemRegistry.steamedCrab);
-        createGeneralTag("glowing_calamari", Content.Seafood.GLOWING_CALAMARI.asItem());
         createGeneralTag("sea_lettuce", ItemRegistry.seaLettuce);
         createGeneralTag("deep_fried_shrimp", ItemRegistry.deepFriedShrimp);
         createGeneralTag("tuna_rolls", ItemRegistry.tunaRoll);
@@ -231,8 +230,6 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("crab_legs", ItemRegistry.crabLegs);
         createGeneralTag("steamed_clams", ItemRegistry.steamedClams);
         createGeneralTag("grilled_oysters", ItemRegistry.grilledOysters);
-        createGeneralTag("anchovies", Content.Seafood.ANCHOVY.asItem());
-        createGeneralTag("cooked_anchovies", Content.Furnace.COOKED_ANCHOVY.asItem());
         createGeneralTag("anchovy_pizzas", ItemRegistry.anchovyPizza);
         createGeneralTag("mashed_potatoes", ItemRegistry.mashedPotatoes);
 
