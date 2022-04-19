@@ -2,6 +2,7 @@ package me.thonk.croptopia.datagen;
 
 import com.google.common.collect.ImmutableMap;
 import me.thonk.common.ItemNames;
+import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.mixin.datagen.IdentifierAccessor;
 import me.thonk.croptopia.registry.Content;
@@ -44,7 +45,8 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         generatePie(exporter);
         generateFurnace(exporter);
         generateUtensil(exporter);
-        generateMisc(exporter);
+        generateMiscShapeless(exporter);
+        generateMiscShaped(exporter);
     }
 
     protected void generateSeeds(Consumer<RecipeJsonProvider> exporter) {
@@ -208,7 +210,23 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateMiscShapeless(Consumer<RecipeJsonProvider> exporter) {
+        ShapelessRecipeJsonBuilder.create(ItemRegistry.candiedKumquats, 7)
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("kumquat"))
+                .independentTag(tag("vanilla"))
+                .independentTag(Items.HONEY_BOTTLE)
+                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT.asItem()))
+                .offerTo(exporter);
+
+    }
+
+    protected void generateMiscShaped(Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(ItemRegistry.roastedPumpkinSeeds)
                 .pattern("123")
                 .pattern(" 4 ")
@@ -318,18 +336,6 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .input('7', independentTag("lettuce"))
                 .criterion("has_beetroot", RecipeProvider.conditionsFromItem(Items.BEETROOT))
                 .offerTo(exporter);
-        ShapelessRecipeJsonBuilder.create(ItemRegistry.candiedKumquats, 7)
-                .input(independentTag("kumquat"))
-                .input(independentTag("kumquat"))
-                .input(independentTag("kumquat"))
-                .input(independentTag("kumquat"))
-                .input(independentTag("kumquat"))
-                .input(independentTag("kumquat"))
-                .input(independentTag("kumquat"))
-                .input(independentTag("vanilla"))
-                .input(Items.HONEY_BOTTLE)
-                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT.asItem()))
-                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.steamedCrab)
                 .pattern("1")
                 .pattern("2")
@@ -435,7 +441,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     }
 
     private TagKey<Item> croptopia(String name) {
-        return TagKey.of(Registry.ITEM_KEY, new Identifier("croptopia", name));
+        return TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.MOD_ID, name));
     }
 
     private TagKey<Item> independentTag(String name) {
