@@ -154,7 +154,6 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(ItemRegistry.roastedPumpkinSeeds)
-                .pattern("   ")
                 .pattern("123")
                 .pattern(" 4 ")
                 .input('1', Items.PUMPKIN_SEEDS)
@@ -164,7 +163,6 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_pumpkin_seed", RecipeProvider.conditionsFromItem(Items.PUMPKIN_SEEDS))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(ItemRegistry.roastedSunflowerSeeds)
-                .pattern("   ")
                 .pattern("123")
                 .pattern(" 4 ")
                 .input('1', Items.SUNFLOWER)
