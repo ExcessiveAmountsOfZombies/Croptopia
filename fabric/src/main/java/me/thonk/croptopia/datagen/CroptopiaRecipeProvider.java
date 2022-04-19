@@ -42,6 +42,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         generateIceCream(exporter);
         generatePie(exporter);
         generateFurnace(exporter);
+        generateUtensil(exporter);
         generateMisc(exporter);
     }
 
@@ -150,6 +151,43 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         offerFoodCookingRecipe(exporter, Items.BREAD, "bread", Content.Furnace.TOAST, time, exp, false);
         // only salt missing
         offerFoodCookingRecipe(exporter,ItemRegistry.waterBottle, ItemNames.WATER_BOTTLE, ItemRegistry.salt,800,0.1f, false);
+    }
+
+    protected void generateUtensil(Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(Content.Utensil.COOKING_POT)
+                .pattern("# #")
+                .pattern("# #")
+                .pattern(" # ")
+                .input('#', Items.IRON_INGOT)
+                .criterion("has_iron", RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Content.Utensil.FOOD_PRESS)
+                .pattern("I")
+                .pattern("H")
+                .pattern("I")
+                .input('I', Items.PISTON).input('H', Items.HOPPER)
+                .criterion("has_piston", RecipeProvider.conditionsFromItem(Items.PISTON))
+                .criterion("has_hopper", RecipeProvider.conditionsFromItem(Items.HOPPER))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Content.Utensil.FRYING_PAN)
+                .pattern("#  ")
+                .pattern(" ##")
+                .pattern(" ##")
+                .input('#', Items.IRON_INGOT)
+                .criterion("has_iron", RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Content.Utensil.KNIFE)
+                .pattern(" #")
+                .pattern("i ")
+                .input('i', Items.STICK).input('#', Items.IRON_INGOT)
+                .criterion("has_iron", RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(Content.Utensil.MORTAR_AND_PESTLE)
+                .pattern("i")
+                .pattern("#")
+                .input('i', Items.STICK).input('#', Items.BOWL)
+                .criterion("has_bowl", RecipeProvider.conditionsFromItem(Items.BOWL))
+                .offerTo(exporter);
     }
 
     protected void generateMisc(Consumer<RecipeJsonProvider> exporter) {
