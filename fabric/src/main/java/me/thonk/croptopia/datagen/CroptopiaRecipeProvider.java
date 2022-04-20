@@ -211,22 +211,23 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     }
 
     protected void generateMiscShapeless(Consumer<RecipeJsonProvider> exporter) {
-        TagKey<Item> tag = tag("salts");
+        TagKey<Item> saltTag = independentTag("salts");
         ShapelessRecipeJsonBuilder.create(Items.DEAD_BUSH)
-                .input(tag).input(ItemTags.SAPLINGS)
-                .criterion("has_salts", RecipeProvider.conditionsFromTag(tag))
+                .input(saltTag).input(ItemTags.SAPLINGS)
+                .criterion("has_salts", RecipeProvider.conditionsFromTag(saltTag))
                 .offerTo(exporter);
+        TagKey<Item> kumquatTag = independentTag(Content.Tree.KUMQUAT.getPlural());
         ShapelessRecipeJsonBuilder.create(ItemRegistry.candiedKumquats, 7)
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("kumquat"))
-                .independentTag(tag("vanilla"))
-                .independentTag(Items.HONEY_BOTTLE)
-                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT.asItem()))
+                .input(kumquatTag)
+                .input(kumquatTag)
+                .input(kumquatTag)
+                .input(kumquatTag)
+                .input(kumquatTag)
+                .input(kumquatTag)
+                .input(kumquatTag)
+                .input(independentTag("vanilla"))
+                .input(Items.HONEY_BOTTLE)
+                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT))
                 .offerTo(exporter);
     }
 
