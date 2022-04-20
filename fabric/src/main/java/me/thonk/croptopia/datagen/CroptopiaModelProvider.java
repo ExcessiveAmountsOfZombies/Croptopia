@@ -4,9 +4,9 @@ import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+import net.minecraft.data.models.model.ModelTemplates;
 
 public class CroptopiaModelProvider extends FabricModelProvider {
 
@@ -16,45 +16,45 @@ public class CroptopiaModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
 
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(Content.ROASTED_PUMPKIN_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(Content.ROASTED_SUNFLOWER_SEEDS, Models.GENERATED);
-        itemModelGenerator.register(Content.PUMPKIN_BARS, Models.GENERATED);
-        itemModelGenerator.register(Content.CORN_BREAD, Models.GENERATED);
-        itemModelGenerator.register(Content.PUMPKIN_SOUP, Models.GENERATED);
-        itemModelGenerator.register(Content.MERINGUE, Models.GENERATED);
-        itemModelGenerator.register(Content.CABBAGE_ROLL, Models.GENERATED);
-        itemModelGenerator.register(Content.BORSCHT, Models.GENERATED);
-        itemModelGenerator.register(Content.GOULASH, Models.GENERATED);
-        itemModelGenerator.register(Content.BEETROOT_SALAD, Models.GENERATED);
-        itemModelGenerator.register(Content.CANDIED_KUMQUATS, Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.SHRIMP.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.TUNA.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.CALAMARI.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.CRAB.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.ROE.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.CLAM.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.OYSTER.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Furnace.COOKED_SHRIMP.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Furnace.COOKED_TUNA.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Furnace.COOKED_CALAMARI.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.STEAMED_CRAB, Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.GLOWING_CALAMARI.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.SEA_LETTUCE, Models.GENERATED);
-        itemModelGenerator.register(Content.DEEP_FRIED_SHRIMP, Models.GENERATED);
-        itemModelGenerator.register(Content.TUNA_ROLL, Models.GENERATED);
-        itemModelGenerator.register(Content.FRIED_CALAMARI, Models.GENERATED);
-        itemModelGenerator.register(Content.CRAB_LEGS, Models.GENERATED);
-        itemModelGenerator.register(Content.STEAMED_CLAMS, Models.GENERATED);
-        itemModelGenerator.register(Content.GRILLED_OYSTERS, Models.GENERATED);
-        itemModelGenerator.register(Content.Seafood.ANCHOVY.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.Furnace.COOKED_ANCHOVY.asItem(), Models.GENERATED);
-        itemModelGenerator.register(Content.ANCHOVY_PIZZA, Models.GENERATED);
-        itemModelGenerator.register(Content.MASHED_POTATOES, Models.GENERATED);
+    public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+        itemModelGenerator.generateFlatItem(Content.ROASTED_PUMPKIN_SEEDS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.ROASTED_SUNFLOWER_SEEDS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.PUMPKIN_BARS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CORN_BREAD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.PUMPKIN_SOUP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.MERINGUE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CABBAGE_ROLL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.BORSCHT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.GOULASH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.BEETROOT_SALAD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CANDIED_KUMQUATS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.SHRIMP.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.TUNA.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.CRAB.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.ROE.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.CLAM.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.OYSTER.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_SHRIMP.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_TUNA.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.STEAMED_CRAB, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.GLOWING_CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.SEA_LETTUCE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.DEEP_FRIED_SHRIMP, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.TUNA_ROLL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.FRIED_CALAMARI, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CRAB_LEGS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.STEAMED_CLAMS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.GRILLED_OYSTERS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Seafood.ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.ANCHOVY_PIZZA, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.MASHED_POTATOES, ModelTemplates.FLAT_ITEM);
     }
 }

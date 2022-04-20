@@ -6,11 +6,11 @@ import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.mixin.loot.table.LootSupplierBuilderHooks;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -47,7 +47,7 @@ public class CropLootTableModifier {
                 switch (path) {
                     case "entities/cod", "entities/salmon", "entities/tropical_fish" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(ItemEntry.builder(Content.Seafood.ROE).build());
+                        builder.withEntry(LootItem.lootTableItem(Content.Seafood.ROE).build());
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "gameplay/fishing/fish" -> {
@@ -57,45 +57,45 @@ public class CropLootTableModifier {
                         } else {
                             // todo; make this configurable
                             FabricLootPoolBuilder builder = FabricLootPoolBuilder.of(pools.get(0));
-                            builder.withEntry(ItemEntry.builder(Content.Seafood.TUNA)
-                                            .weight(15).build())
-                                    .withEntry(ItemEntry.builder(Content.Seafood.ANCHOVY)
-                                            .weight(15).build())
-                                    .withEntry(ItemEntry.builder(Content.Seafood.SHRIMP)
-                                            .weight(15).build())
-                                    .withEntry(ItemEntry.builder(Content.Seafood.CRAB)
-                                            .weight(15).build())
-                                    .withEntry(ItemEntry.builder(Content.Seafood.CLAM)
-                                            .weight(10).build())
-                                    .withEntry(ItemEntry.builder(Content.Seafood.OYSTER)
-                                            .weight(10).build())
-                                    .withEntry(ItemEntry.builder(Content.SEA_LETTUCE)
-                                            .weight(10).build());
+                            builder.withEntry(LootItem.lootTableItem(Content.Seafood.TUNA)
+                                            .setWeight(15).build())
+                                    .withEntry(LootItem.lootTableItem(Content.Seafood.ANCHOVY)
+                                            .setWeight(15).build())
+                                    .withEntry(LootItem.lootTableItem(Content.Seafood.SHRIMP)
+                                            .setWeight(15).build())
+                                    .withEntry(LootItem.lootTableItem(Content.Seafood.CRAB)
+                                            .setWeight(15).build())
+                                    .withEntry(LootItem.lootTableItem(Content.Seafood.CLAM)
+                                            .setWeight(10).build())
+                                    .withEntry(LootItem.lootTableItem(Content.Seafood.OYSTER)
+                                            .setWeight(10).build())
+                                    .withEntry(LootItem.lootTableItem(Content.SEA_LETTUCE)
+                                            .setWeight(10).build());
                             pools.set(0, builder.build());
                         }
                     }
                     case "entities/squid" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(ItemEntry.builder(Content.Seafood.CALAMARI).build());
+                        builder.withEntry(LootItem.lootTableItem(Content.Seafood.CALAMARI).build());
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "entities/glow_squid" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(ItemEntry.builder(Content.Seafood.GLOWING_CALAMARI).build());
+                        builder.withEntry(LootItem.lootTableItem(Content.Seafood.GLOWING_CALAMARI).build());
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "chests/spawn_bonus_chest" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.rolls(ConstantLootNumberProvider.create(1));
-                        builder.bonusRolls(ConstantLootNumberProvider.create(0));
+                        builder.setRolls(ConstantValue.exactly(1));
+                        builder.setBonusRolls(ConstantValue.exactly(0));
                         for (ConfigurableSeed seed : Croptopia.getSeeds()) {
                             builder.withEntry(
-                                    ItemEntry.builder(seed.getSeedItem())
-                                            .weight(5)
-                                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3, 8), false)).build()
+                                    LootItem.lootTableItem(seed.getSeedItem())
+                                            .setWeight(5)
+                                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false)).build()
                             );
                         }
-                        fabricLootSupplierBuilder.pool(builder);
+                        fabricLootSupplierBuilder.withPool(builder);
                     }
                 }
             }

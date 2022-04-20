@@ -2,9 +2,8 @@ package me.thonk.croptopia.datagen.tags;
 
 import com.google.gson.JsonArray;
 import me.thonk.common.MiscNames;
-import net.minecraft.tag.Tag;
-import net.minecraft.util.Identifier;
-
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.Tag;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -17,18 +16,18 @@ public class IndependentEntry implements Tag.Entry {
     }
 
     @Override
-    public <T> boolean resolve(Function<Identifier, Tag<T>> tagGetter, Function<Identifier, T> objectGetter, Consumer<T> collector) {
+    public <T> boolean build(Function<ResourceLocation, Tag<T>> tagGetter, Function<ResourceLocation, T> objectGetter, Consumer<T> collector) {
         return true;
     }
 
     @Override
-    public void addToJson(JsonArray json) {
+    public void serializeTo(JsonArray json) {
         json.add("#" + MiscNames.INDEPENDENT_TAG + ":" + suffix);
 
     }
 
     @Override
-    public boolean canAdd(Predicate<Identifier> objectExistsTest, Predicate<Identifier> tagExistsTest) {
+    public boolean verifyIfPresent(Predicate<ResourceLocation> objectExistsTest, Predicate<ResourceLocation> tagExistsTest) {
         return true;
     }
 }

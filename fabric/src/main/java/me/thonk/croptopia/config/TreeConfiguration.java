@@ -1,10 +1,6 @@
 package me.thonk.croptopia.config;
 
 import com.google.common.collect.SetMultimap;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
 import org.spongepowered.configurate.ConfigurationNode;
 import org.spongepowered.configurate.serialize.SerializationException;
 import org.spongepowered.configurate.serialize.TypeSerializer;
@@ -13,19 +9,23 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
 
 public class TreeConfiguration {
 
-    private Collection<RegistryKey<Biome>> treesAllowedInBiome;
+    private Collection<ResourceKey<Biome>> treesAllowedInBiome;
     private String featureKey;
 
-    public TreeConfiguration(String featureKey, Collection<RegistryKey<Biome>> treesAllowedInBiome) {
+    public TreeConfiguration(String featureKey, Collection<ResourceKey<Biome>> treesAllowedInBiome) {
         this.featureKey = featureKey;
         this.treesAllowedInBiome = treesAllowedInBiome;
     }
 
 
-    public static void createSameTreeConfigs(SetMultimap<String, RegistryKey<Biome>> map, Collection<RegistryKey<Biome>> biomes, String... keys) {
+    public static void createSameTreeConfigs(SetMultimap<String, ResourceKey<Biome>> map, Collection<ResourceKey<Biome>> biomes, String... keys) {
         for (String key : keys) {
             map.putAll(key, biomes);
         }
@@ -35,7 +35,7 @@ public class TreeConfiguration {
         return featureKey;
     }
 
-    public Collection<RegistryKey<Biome>> getTreesAllowedInBiome() {
+    public Collection<ResourceKey<Biome>> getTreesAllowedInBiome() {
         return treesAllowedInBiome;
     }
 
@@ -48,11 +48,11 @@ public class TreeConfiguration {
         @Override
         public TreeConfiguration deserialize(Type type, ConfigurationNode node) throws SerializationException {
             String key = node.node(KEY_FEATURE_NAME).getString();
-            List<Identifier> ids = node.node(KEY_ACCEPTABLE_BIOMES).getList(Identifier.class);
-            List<RegistryKey<Biome>> biomeKeys = new ArrayList<>();
+            List<ResourceLocation> ids = node.node(KEY_ACCEPTABLE_BIOMES).getList(ResourceLocation.class);
+            List<ResourceKey<Biome>> biomeKeys = new ArrayList<>();
             if (ids != null) {
-                for (Identifier id : ids) {
-                    biomeKeys.add(RegistryKey.of(Registry.BIOME_KEY, id));
+                for (ResourceLocation id : ids) {
+                    biomeKeys.add(ResourceKey.create(Registry.BIOME_REGISTRY, id));
                 }
             }
 
@@ -67,11 +67,11 @@ public class TreeConfiguration {
             }
 
             node.node(KEY_FEATURE_NAME).set(obj.featureKey);
-            List<Identifier> identifiers = new ArrayList<>();
-            for (RegistryKey<Biome> registryKey : obj.treesAllowedInBiome) {
-                identifiers.add(registryKey.getValue());
+            List<ResourceLocation> identifiers = new ArrayList<>();
+            for (ResourceKey<Biome> registryKey : obj.treesAllowedInBiome) {
+                identifiers.add(registryKey.location());
             }
-            node.node(KEY_ACCEPTABLE_BIOMES).setList(Identifier.class, identifiers);
+            node.node(KEY_ACCEPTABLE_BIOMES).setList(ResourceLocation.class, identifiers);
         }
     }
 

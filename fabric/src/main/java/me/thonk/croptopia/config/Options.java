@@ -3,10 +3,9 @@ package me.thonk.croptopia.config;
 import com.google.gson.*;
 import me.thonk.croptopia.Croptopia;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.item.Item;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
-
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -121,9 +120,9 @@ public class Options {
                 String category = seedObject.getAsJsonPrimitive("biome-category").getAsString();
                 float chance = seedObject.getAsJsonPrimitive("drop-chance").getAsFloat();
                 Item item = Registry.ITEM.get(Croptopia.createIdentifier(entry.getKey()));
-                Biome.Category biomeCategory = Biome.Category.byName(category);
+                Biome.BiomeCategory biomeCategory = Biome.BiomeCategory.byName(category);
                 if (biomeCategory == null) {
-                    biomeCategory = Biome.Category.PLAINS;
+                    biomeCategory = Biome.BiomeCategory.PLAINS;
                 }
                 seeds.add(new ConfigurableSeed(entry.getKey(), item, List.of(biomeCategory)));
             }

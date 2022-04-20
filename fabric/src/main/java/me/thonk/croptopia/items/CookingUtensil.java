@@ -1,10 +1,10 @@
 package me.thonk.croptopia.items;
 
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 
 public class CookingUtensil extends Item {
 
-    public CookingUtensil(Settings settings) {
+    public CookingUtensil(Properties settings) {
         super(settings);
     }
 }

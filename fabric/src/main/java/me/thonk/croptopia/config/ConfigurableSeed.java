@@ -2,9 +2,9 @@ package me.thonk.croptopia.config;
 
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.items.SeedItem;
-import net.minecraft.item.Item;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import org.spongepowered.configurate.ConfigurationNode;
 import org.spongepowered.configurate.serialize.SerializationException;
 import org.spongepowered.configurate.serialize.TypeSerializer;
@@ -17,17 +17,17 @@ public class ConfigurableSeed {
 
     private String seed;
     private Item seedItem;
-    private List<Biome.Category> biomeCategory;
+    private List<Biome.BiomeCategory> biomeCategory;
     //private float chanceToDrop;
 
-    public ConfigurableSeed(String seed, Item seedItem, List<Biome.Category> biomeCategory) {
+    public ConfigurableSeed(String seed, Item seedItem, List<Biome.BiomeCategory> biomeCategory) {
         this.seed = seed;
         this.seedItem = seedItem;
         this.biomeCategory = biomeCategory;
         //this.chanceToDrop = chanceToDrop;
     }
 
-    public List<Biome.Category> getBiomeCategory() {
+    public List<Biome.BiomeCategory> getBiomeCategory() {
         return biomeCategory;
     }
 
@@ -57,7 +57,7 @@ public class ConfigurableSeed {
         public ConfigurableSeed deserialize(Type type, ConfigurationNode node) throws SerializationException {
             String seed = node.node(KEY_SEED).getString();
             Item item = Registry.ITEM.get(Croptopia.createIdentifier(seed));
-            List<Biome.Category> categories = node.node(KEY_BIOME_CATEGORIES).getList(Biome.Category.class);
+            List<Biome.BiomeCategory> categories = node.node(KEY_BIOME_CATEGORIES).getList(Biome.BiomeCategory.class);
             if (item instanceof SeedItem) {
                 ((SeedItem) item).setCategory(categories);
             }
@@ -73,7 +73,7 @@ public class ConfigurableSeed {
             }
 
             node.node(KEY_SEED).set(obj.seed);
-            node.node(KEY_BIOME_CATEGORIES).setList(Biome.Category.class, obj.biomeCategory);
+            node.node(KEY_BIOME_CATEGORIES).setList(Biome.BiomeCategory.class, obj.biomeCategory);
             /*node.node(KEY_DROP_CHANCE).set(obj.chanceToDrop);*/
         }
     }

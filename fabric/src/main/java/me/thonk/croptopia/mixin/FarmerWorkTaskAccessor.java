@@ -1,25 +1,21 @@
 package me.thonk.croptopia.mixin;
 
-import net.minecraft.entity.ai.brain.task.FarmerWorkTask;
-import net.minecraft.item.Item;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Accessor;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
+import net.minecraft.world.entity.ai.behavior.WorkAtComposter;
+import net.minecraft.world.item.Item;
 
-@Mixin(FarmerWorkTask.class)
+@Mixin(WorkAtComposter.class)
 public interface FarmerWorkTaskAccessor {
 
-    @Accessor(value = "COMPOSTABLES")
+    @Accessor(value = "COMPOSTABLE_ITEMS")
     static List<Item> getCompostables() {
         throw new AssertionError();
     }
 
-    @Accessor(value = "COMPOSTABLES")
+    @Accessor(value = "COMPOSTABLE_ITEMS")
     static void setCompostables(List<Item> items) {
         throw new AssertionError();
     }

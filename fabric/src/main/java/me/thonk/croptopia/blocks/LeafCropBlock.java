@@ -1,88 +1,87 @@
 package me.thonk.croptopia.blocks;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.stat.Stats;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
-import net.minecraft.world.event.GameEvent;
-
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Random;
 
 public class LeafCropBlock extends CroptopiaCropBlock {
-    public static final IntProperty AGE = Properties.AGE_3;
-    public static final IntProperty DISTANCE = Properties.DISTANCE_1_7;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+    public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE;
 
-    public LeafCropBlock(Settings settings) {
+    public LeafCropBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.fullCube();
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return Shapes.block();
     }
 
     @Override
-    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
         return new ItemStack(this);
     }
 
     @Override
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
+    protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
         return true;
     }
 
     @Override
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         return true;
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
         int distance = getDistanceFromLog(neighborState) + 1;
-        if (distance != 1 || state.get(DISTANCE) != distance) {
-            world.createAndScheduleBlockTick(pos, this, 1);
+        if (distance != 1 || state.getValue(DISTANCE) != distance) {
+            world.scheduleTick(pos, this, 1);
         }
 
         return state;
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (getAge(state) == getMaxAge()) {
             PlayerBlockBreakEvents.AFTER.invoker().afterBlockBreak(world, player, pos, state, null);
-            player.incrementStat(Stats.MINED.getOrCreateStat(this));
-            player.addExhaustion(0.005f);
-            world.setBlockState(pos, this.withAge(0), 2);
-            world.emitGameEvent(GameEvent.BLOCK_DESTROY, pos);
-            if (world instanceof ServerWorld) {
-                for (ItemStack droppedStack : getDroppedStacks(state, (ServerWorld) world, pos, null)) {
-                    dropStack(world, pos, hit.getSide(), droppedStack);
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005f);
+            world.setBlock(pos, this.getStateForAge(0), 2);
+            world.gameEvent(GameEvent.BLOCK_DESTROY, pos);
+            if (world instanceof ServerLevel) {
+                for (ItemStack droppedStack : getDrops(state, (ServerLevel) world, pos, null)) {
+                    popResourceFromFace(world, pos, hit.getDirection(), droppedStack);
                 }
-                return ActionResult.CONSUME;
+                return InteractionResult.CONSUME;
             }
-            return ActionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
-        return ActionResult.PASS;
+        return InteractionResult.PASS;
     }
 
     @Override
@@ -91,67 +90,67 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     }
 
     @Override
-    public IntProperty getAgeProperty() {
+    public IntegerProperty getAgeProperty() {
         return AGE;
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(AGE, DISTANCE);
     }
 
     @Override
-    public boolean hasRandomTicks(BlockState state) {
+    public boolean isRandomlyTicking(BlockState state) {
         return true;
     }
 
     @Override
-    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (world.getBaseLightLevel(pos, 0) >= 9) {
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
+        if (world.getRawBrightness(pos, 0) >= 9) {
             int i = this.getAge(state);
             if (i < this.getMaxAge()) {
                 if (random.nextInt(100) % 20 == 0) {
-                    world.setBlockState(pos, this.withAge(i + 1), Block.NOTIFY_LISTENERS);
+                    world.setBlock(pos, this.getStateForAge(i + 1), Block.UPDATE_CLIENTS);
                 }
             }
         }
-        if (state.get(DISTANCE) == 7) {
-            dropStacks(state, world, pos);
+        if (state.getValue(DISTANCE) == 7) {
+            dropResources(state, world, pos);
             world.removeBlock(pos, false);
         }
     }
 
     @Override
-    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        world.setBlockState(pos, updateDistanceFromLogs(state, world, pos), Block.NOTIFY_ALL);
+    public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
+        world.setBlock(pos, updateDistanceFromLogs(state, world, pos), Block.UPDATE_ALL);
     }
 
     @Override
-    public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
+    public int getLightBlock(BlockState state, BlockGetter world, BlockPos pos) {
         return 1;
     }
 
-    private static BlockState updateDistanceFromLogs(BlockState state, WorldAccess world, BlockPos pos) {
+    private static BlockState updateDistanceFromLogs(BlockState state, LevelAccessor world, BlockPos pos) {
         int distance = 7;
-        BlockPos.Mutable mutablePos = new BlockPos.Mutable();
+        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
         Direction[] directions = Direction.values();
 
         for (Direction direction : directions) {
-            mutablePos.set(pos, direction);
+            mutablePos.setWithOffset(pos, direction);
             distance = Math.min(distance, getDistanceFromLog(world.getBlockState(mutablePos)) + 1);
             if (distance == 1) {
                 break;
             }
         }
 
-        return state.with(DISTANCE, distance);
+        return state.setValue(DISTANCE, distance);
     }
 
     private static int getDistanceFromLog(BlockState state) {
-        if (state.isIn(BlockTags.LOGS)) {
+        if (state.is(BlockTags.LOGS)) {
             return 0;
         } else {
-            return state.getBlock() instanceof LeafCropBlock || state.getBlock() instanceof LeavesBlock ? state.get(DISTANCE) : 7;
+            return state.getBlock() instanceof LeafCropBlock || state.getBlock() instanceof LeavesBlock ? state.getValue(DISTANCE) : 7;
         }
     }
 }

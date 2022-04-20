@@ -1,11 +1,11 @@
 package me.thonk.croptopia.items;
 
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 
 public class CropItem extends Item {
 
 
-    public CropItem(Settings settings) {
+    public CropItem(Properties settings) {
         super(settings);
     }
 }

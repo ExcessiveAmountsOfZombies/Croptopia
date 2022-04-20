@@ -10,20 +10,19 @@ import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.util.ItemConvertibleWithPlural;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.RecipeProvider;
-import net.minecraft.data.server.recipe.CookingRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.tag.ItemTags;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-
+import net.minecraft.core.Registry;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import java.util.function.Consumer;
 
 public class CroptopiaRecipeProvider extends FabricRecipeProvider {
@@ -34,7 +33,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    protected void generateRecipes(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateRecipes(Consumer<FinishedRecipe> exporter) {
         generateSeeds(exporter);
         generateSaplings(exporter);
         generateBarkWood(exporter);
@@ -49,108 +48,108 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         generateMiscShaped(exporter);
     }
 
-    protected void generateSeeds(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateSeeds(Consumer<FinishedRecipe> exporter) {
         for (Content.Farmland crop : Content.Farmland.values()) {
             TagKey<Item> tag = independentTag(crop.getPlural());
-            ShapelessRecipeJsonBuilder.create(crop.getSeed())
-                    .input(tag)
-                    .criterion("has_" + crop.getLowerCaseName(), RecipeProvider.conditionsFromItem(crop))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(crop.getSeed())
+                    .requires(tag)
+                    .unlockedBy("has_" + crop.getLowerCaseName(), RecipeProvider.has(crop))
+                    .save(exporter);
         }
     }
 
-    protected void generateSaplings(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateSaplings(Consumer<FinishedRecipe> exporter) {
         for (Content.Tree crop : Content.Tree.values()) {
             TagKey<Item> tag = independentTag(crop.getPlural());
-            ShapelessRecipeJsonBuilder.create(crop.getSapling())
-                    .input(tag).input(tag).input(ItemTags.SAPLINGS)
-                    .criterion("has_" + crop.getLowerCaseName(), RecipeProvider.conditionsFromItem(crop))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(crop.getSapling())
+                    .requires(tag).requires(tag).requires(ItemTags.SAPLINGS)
+                    .unlockedBy("has_" + crop.getLowerCaseName(), RecipeProvider.has(crop))
+                    .save(exporter);
         }
         // Bark saplings come from the leaves, not the crop
     }
 
-    protected void generateBarkWood(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateBarkWood(Consumer<FinishedRecipe> exporter) {
         for (Content.Bark crop : Content.Bark.values()) {
-            ShapedRecipeJsonBuilder.create(crop.getWood())
+            ShapedRecipeBuilder.shaped(crop.getWood())
                     .pattern("##")
                     .pattern("##")
-                    .input('#', crop.getLog())
-                    .criterion("has_" + crop.getLowerCaseName() + "_log", RecipeProvider.conditionsFromItem(crop.getLog()))
-                    .offerTo(exporter);
-            ShapedRecipeJsonBuilder.create(crop.getStrippedWood())
+                    .define('#', crop.getLog())
+                    .unlockedBy("has_" + crop.getLowerCaseName() + "_log", RecipeProvider.has(crop.getLog()))
+                    .save(exporter);
+            ShapedRecipeBuilder.shaped(crop.getStrippedWood())
                     .pattern("##")
                     .pattern("##")
-                    .input('#', crop.getStrippedLog())
-                    .criterion("has_stripped" + crop.getLowerCaseName() + "_log", RecipeProvider.conditionsFromItem(crop.getStrippedLog()))
-                    .offerTo(exporter);
+                    .define('#', crop.getStrippedLog())
+                    .unlockedBy("has_stripped" + crop.getLowerCaseName() + "_log", RecipeProvider.has(crop.getStrippedLog()))
+                    .save(exporter);
         }
     }
 
-    protected void generateJams(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateJams(Consumer<FinishedRecipe> exporter) {
         for (Content.Jam jam : Content.Jam.values()) {
             TagKey<Item> tag = independentTag(jam.getCrop().getPlural());
-            ShapelessRecipeJsonBuilder.create(jam)
-                    .input(tag).input(Items.SUGAR).input(Content.Utensil.COOKING_POT)
-                    .criterion("has_" + jam.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(jam)
+                    .requires(tag).requires(Items.SUGAR).requires(Content.Utensil.COOKING_POT)
+                    .unlockedBy("has_" + jam.name().toLowerCase(), RecipeProvider.has(tag))
+                    .save(exporter);
         }
     }
 
-    protected void generateJuices(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateJuices(Consumer<FinishedRecipe> exporter) {
         for (Content.Juice juice : Content.Juice.values()) {
             TagKey<Item> tag = independentTag(juice.getCrop().getPlural());
-            ShapelessRecipeJsonBuilder.create(juice)
-                    .input(tag).input(Content.Utensil.FOOD_PRESS).input(Items.GLASS_BOTTLE)
-                    .criterion("has_" + juice.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(juice)
+                    .requires(tag).requires(Content.Utensil.FOOD_PRESS).requires(Items.GLASS_BOTTLE)
+                    .unlockedBy("has_" + juice.name().toLowerCase(), RecipeProvider.has(tag))
+                    .save(exporter);
         }
     }
 
-    protected void generateSmoothies(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateSmoothies(Consumer<FinishedRecipe> exporter) {
         for (Content.Smoothie smoothie : Content.Smoothie.values()) {
             TagKey<Item> tag = independentTag(smoothie.getCrop().getPlural());
-            ShapelessRecipeJsonBuilder.create(smoothie)
-                    .input(tag).input(Items.ICE).input(independentTag("milks")).input(Items.GLASS_BOTTLE)
-                    .criterion("has_" + smoothie.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(smoothie)
+                    .requires(tag).requires(Items.ICE).requires(independentTag("milks")).requires(Items.GLASS_BOTTLE)
+                    .unlockedBy("has_" + smoothie.name().toLowerCase(), RecipeProvider.has(tag))
+                    .save(exporter);
         }
     }
 
-    protected void generateIceCream(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateIceCream(Consumer<FinishedRecipe> exporter) {
         for (Content.IceCream iceCream : Content.IceCream.values()) {
             TagKey<Item> tag = independentTag(iceCream.getCrop().getPlural());
-            ShapelessRecipeJsonBuilder.create(iceCream)
-                    .input(tag).input(Items.SUGAR).input(Items.EGG).input(independentTag("milks")).input(Content.Utensil.COOKING_POT)
-                    .criterion("has_" + iceCream.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(iceCream)
+                    .requires(tag).requires(Items.SUGAR).requires(Items.EGG).requires(independentTag("milks")).requires(Content.Utensil.COOKING_POT)
+                    .unlockedBy("has_" + iceCream.name().toLowerCase(), RecipeProvider.has(tag))
+                    .save(exporter);
         }
     }
 
-    protected void generatePie(Consumer<RecipeJsonProvider> exporter) {
+    protected void generatePie(Consumer<FinishedRecipe> exporter) {
         for (Content.Pie pie : Content.Pie.values()) {
             TagKey<Item> tag = independentTag(pie.getCrop().getPlural());
-            ShapelessRecipeJsonBuilder.create(pie)
-                    .input(tag).input(Items.SUGAR).input(Items.EGG).input(independentTag("flour")).input(independentTag("doughs")).input(Content.Utensil.FRYING_PAN)
-                    .criterion("has_" + pie.name().toLowerCase(), RecipeProvider.conditionsFromTag(tag))
-                    .offerTo(exporter);
+            ShapelessRecipeBuilder.shapeless(pie)
+                    .requires(tag).requires(Items.SUGAR).requires(Items.EGG).requires(independentTag("flour")).requires(independentTag("doughs")).requires(Content.Utensil.FRYING_PAN)
+                    .unlockedBy("has_" + pie.name().toLowerCase(), RecipeProvider.has(tag))
+                    .save(exporter);
         }
     }
 
-    protected void offerFoodCookingRecipe(Consumer<RecipeJsonProvider> exporter, ItemConvertible input, String inputName, ItemConvertible output, int time, float exp, boolean campFire) {
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(input), output, exp, time)
-                .criterion("has_" + inputName, RecipeProvider.conditionsFromItem(input))
-                .offerTo(exporter, RecipeProvider.getItemPath(output) + "_from_" + inputName);
-        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(input), output, exp, time/2)
-                .criterion("has_" + inputName, RecipeProvider.conditionsFromItem(input))
-                .offerTo(exporter, RecipeProvider.getItemPath(output) + "_from_smoking_" + inputName);
+    protected void offerFoodCookingRecipe(Consumer<FinishedRecipe> exporter, ItemLike input, String inputName, ItemLike output, int time, float exp, boolean campFire) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), output, exp, time)
+                .unlockedBy("has_" + inputName, RecipeProvider.has(input))
+                .save(exporter, RecipeProvider.getItemName(output) + "_from_" + inputName);
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), output, exp, time/2)
+                .unlockedBy("has_" + inputName, RecipeProvider.has(input))
+                .save(exporter, RecipeProvider.getItemName(output) + "_from_smoking_" + inputName);
         // TODO campfire
     }
 
-    protected void generateFurnace(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateFurnace(Consumer<FinishedRecipe> exporter) {
         final int time = 200; // default vanilla time
         final float exp = 0.2f; // default vanilla experience
-        var cookingList = new ImmutableMap.Builder<ItemConvertibleWithPlural, ItemConvertible>()
+        var cookingList = new ImmutableMap.Builder<ItemConvertibleWithPlural, ItemLike>()
                 .put(Content.Farmland.BLACKBEAN, Content.Furnace.BAKED_BEANS)
                 .put(Content.Farmland.SWEETPOTATO, Content.Furnace.BAKED_SWEET_POTATO)
                 .put(Content.Farmland.YAM, Content.Furnace.BAKED_YAM)
@@ -173,286 +172,286 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         offerFoodCookingRecipe(exporter,Content.WATER_BOTTLE, ItemNames.WATER_BOTTLE, Content.SALT,800,0.1f, false);
     }
 
-    protected void generateUtensil(Consumer<RecipeJsonProvider> exporter) {
-        ShapedRecipeJsonBuilder.create(Content.Utensil.COOKING_POT)
+    protected void generateUtensil(Consumer<FinishedRecipe> exporter) {
+        ShapedRecipeBuilder.shaped(Content.Utensil.COOKING_POT)
                 .pattern("# #")
                 .pattern("# #")
                 .pattern(" # ")
-                .input('#', Items.IRON_INGOT)
-                .criterion("has_iron", RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.Utensil.FOOD_PRESS)
+                .define('#', Items.IRON_INGOT)
+                .unlockedBy("has_iron", RecipeProvider.has(Items.IRON_INGOT))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.Utensil.FOOD_PRESS)
                 .pattern("I")
                 .pattern("H")
                 .pattern("I")
-                .input('I', Items.PISTON).input('H', Items.HOPPER)
-                .criterion("has_piston", RecipeProvider.conditionsFromItem(Items.PISTON))
-                .criterion("has_hopper", RecipeProvider.conditionsFromItem(Items.HOPPER))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.Utensil.FRYING_PAN)
+                .define('I', Items.PISTON).define('H', Items.HOPPER)
+                .unlockedBy("has_piston", RecipeProvider.has(Items.PISTON))
+                .unlockedBy("has_hopper", RecipeProvider.has(Items.HOPPER))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.Utensil.FRYING_PAN)
                 .pattern("#  ")
                 .pattern(" ##")
                 .pattern(" ##")
-                .input('#', Items.IRON_INGOT)
-                .criterion("has_iron", RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.Utensil.KNIFE)
+                .define('#', Items.IRON_INGOT)
+                .unlockedBy("has_iron", RecipeProvider.has(Items.IRON_INGOT))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.Utensil.KNIFE)
                 .pattern(" #")
                 .pattern("i ")
-                .input('i', Items.STICK).input('#', Items.IRON_INGOT)
-                .criterion("has_iron", RecipeProvider.conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.Utensil.MORTAR_AND_PESTLE)
+                .define('i', Items.STICK).define('#', Items.IRON_INGOT)
+                .unlockedBy("has_iron", RecipeProvider.has(Items.IRON_INGOT))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.Utensil.MORTAR_AND_PESTLE)
                 .pattern("i")
                 .pattern("#")
-                .input('i', Items.STICK).input('#', Items.BOWL)
-                .criterion("has_bowl", RecipeProvider.conditionsFromItem(Items.BOWL))
-                .offerTo(exporter);
+                .define('i', Items.STICK).define('#', Items.BOWL)
+                .unlockedBy("has_bowl", RecipeProvider.has(Items.BOWL))
+                .save(exporter);
     }
 
-    protected void generateMiscShapeless(Consumer<RecipeJsonProvider> exporter) {
+    protected void generateMiscShapeless(Consumer<FinishedRecipe> exporter) {
         TagKey<Item> saltTag = independentTag("salts");
-        ShapelessRecipeJsonBuilder.create(Items.DEAD_BUSH)
-                .input(saltTag).input(ItemTags.SAPLINGS)
-                .criterion("has_salts", RecipeProvider.conditionsFromTag(saltTag))
-                .offerTo(exporter);
+        ShapelessRecipeBuilder.shapeless(Items.DEAD_BUSH)
+                .requires(saltTag).requires(ItemTags.SAPLINGS)
+                .unlockedBy("has_salts", RecipeProvider.has(saltTag))
+                .save(exporter);
         TagKey<Item> kumquatTag = independentTag(Content.Tree.KUMQUAT.getPlural());
-        ShapelessRecipeJsonBuilder.create(Content.CANDIED_KUMQUATS, 7)
-                .input(kumquatTag)
-                .input(kumquatTag)
-                .input(kumquatTag)
-                .input(kumquatTag)
-                .input(kumquatTag)
-                .input(kumquatTag)
-                .input(kumquatTag)
-                .input(independentTag("vanilla"))
-                .input(Items.HONEY_BOTTLE)
-                .criterion("has_kumquat", RecipeProvider.conditionsFromItem(Content.Tree.KUMQUAT))
-                .offerTo(exporter);
+        ShapelessRecipeBuilder.shapeless(Content.CANDIED_KUMQUATS, 7)
+                .requires(kumquatTag)
+                .requires(kumquatTag)
+                .requires(kumquatTag)
+                .requires(kumquatTag)
+                .requires(kumquatTag)
+                .requires(kumquatTag)
+                .requires(kumquatTag)
+                .requires(independentTag("vanilla"))
+                .requires(Items.HONEY_BOTTLE)
+                .unlockedBy("has_kumquat", RecipeProvider.has(Content.Tree.KUMQUAT))
+                .save(exporter);
     }
 
-    protected void generateMiscShaped(Consumer<RecipeJsonProvider> exporter) {
-        ShapedRecipeJsonBuilder.create(Content.ROASTED_PUMPKIN_SEEDS)
+    protected void generateMiscShaped(Consumer<FinishedRecipe> exporter) {
+        ShapedRecipeBuilder.shaped(Content.ROASTED_PUMPKIN_SEEDS)
                 .pattern("123")
                 .pattern(" 4 ")
-                .input('1', Items.PUMPKIN_SEEDS)
-                .input('3', Content.Farmland.PEPPER.asItem())
-                .input('2', independentTag("salts"))
-                .input('4', Content.Utensil.FRYING_PAN)
-                .criterion("has_pumpkin_seed", RecipeProvider.conditionsFromItem(Items.PUMPKIN_SEEDS))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.ROASTED_SUNFLOWER_SEEDS)
+                .define('1', Items.PUMPKIN_SEEDS)
+                .define('3', Content.Farmland.PEPPER.asItem())
+                .define('2', independentTag("salts"))
+                .define('4', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_pumpkin_seed", RecipeProvider.has(Items.PUMPKIN_SEEDS))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.ROASTED_SUNFLOWER_SEEDS)
                 .pattern("123")
                 .pattern(" 4 ")
-                .input('1', Items.SUNFLOWER)
-                .input('3', Content.Farmland.PEPPER.asItem())
-                .input('2', independentTag("salts"))
-                .input('4', Content.Utensil.FRYING_PAN)
-                .criterion("has_sunflower", RecipeProvider.conditionsFromItem(Items.SUNFLOWER))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.PUMPKIN_BARS, 3)
+                .define('1', Items.SUNFLOWER)
+                .define('3', Content.Farmland.PEPPER.asItem())
+                .define('2', independentTag("salts"))
+                .define('4', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_sunflower", RecipeProvider.has(Items.SUNFLOWER))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.PUMPKIN_BARS, 3)
                 .pattern("586")
                 .pattern("124")
                 .pattern("373")
-                .input('1', Items.EGG)
-                .input('2', Items.SUGAR)
-                .input('3', Items.PUMPKIN)
-                .input('4', independentTag("flour"))
-                .input('5', Content.Bark.CINNAMON)
-                .input('6', independentTag("salts"))
-                .input('7', independentTag("butters"))
-                .input('8', independentTag("vanilla"))
-                .criterion("has_pumpkin", RecipeProvider.conditionsFromItem(Items.PUMPKIN))
-                .criterion("has_cinnamon", RecipeProvider.conditionsFromItem(Content.Bark.CINNAMON))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.CORN_BREAD)
+                .define('1', Items.EGG)
+                .define('2', Items.SUGAR)
+                .define('3', Items.PUMPKIN)
+                .define('4', independentTag("flour"))
+                .define('5', Content.Bark.CINNAMON)
+                .define('6', independentTag("salts"))
+                .define('7', independentTag("butters"))
+                .define('8', independentTag("vanilla"))
+                .unlockedBy("has_pumpkin", RecipeProvider.has(Items.PUMPKIN))
+                .unlockedBy("has_cinnamon", RecipeProvider.has(Content.Bark.CINNAMON))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.CORN_BREAD)
                 .pattern("111")
-                .input('1', independentTag("corn"))
-                .criterion("has_corn", RecipeProvider.conditionsFromItem(Content.Farmland.CORN.asItem()))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.PUMPKIN_SOUP, 2)
+                .define('1', independentTag("corn"))
+                .unlockedBy("has_corn", RecipeProvider.has(Content.Farmland.CORN.asItem()))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.PUMPKIN_SOUP, 2)
                 .pattern("123")
                 .pattern(" 5 ")
                 .pattern("464")
-                .input('1', independentTag("onions"))
-                .input('2', independentTag("garlic"))
-                .input('3', Content.Farmland.PEPPER.asItem())
-                .input('4', Items.PUMPKIN)
-                .input('5', independentTag("salts"))
-                .input('6', Content.Utensil.COOKING_POT)
-                .criterion("has_pumpkin", RecipeProvider.conditionsFromItem(Items.PUMPKIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.MERINGUE, 2)
+                .define('1', independentTag("onions"))
+                .define('2', independentTag("garlic"))
+                .define('3', Content.Farmland.PEPPER.asItem())
+                .define('4', Items.PUMPKIN)
+                .define('5', independentTag("salts"))
+                .define('6', Content.Utensil.COOKING_POT)
+                .unlockedBy("has_pumpkin", RecipeProvider.has(Items.PUMPKIN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.MERINGUE, 2)
                 .pattern("243")
                 .pattern("111")
-                .input('1', Items.EGG)
-                .input('2', independentTag("salts"))
-                .input('3', Items.SUGAR)
-                .input('4', independentTag("vanilla"))
-                .criterion("has_egg", RecipeProvider.conditionsFromItem(Items.EGG))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.CABBAGE_ROLL, 2)
+                .define('1', Items.EGG)
+                .define('2', independentTag("salts"))
+                .define('3', Items.SUGAR)
+                .define('4', independentTag("vanilla"))
+                .unlockedBy("has_egg", RecipeProvider.has(Items.EGG))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.CABBAGE_ROLL, 2)
                 .pattern("121")
                 .pattern("456")
                 .pattern("585")
-                .input('8', Content.Utensil.FRYING_PAN)
-                .input('1', croptopia("beef_replacements"))
-                .input('2', independentTag("onions"))
-                .input('6', independentTag("rice"))
-                .input('4', independentTag("salts"))
-                .input('5', independentTag("cabbage"))
-                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.BORSCHT, 2)
+                .define('8', Content.Utensil.FRYING_PAN)
+                .define('1', croptopia("beef_replacements"))
+                .define('2', independentTag("onions"))
+                .define('6', independentTag("rice"))
+                .define('4', independentTag("salts"))
+                .define('5', independentTag("cabbage"))
+                .unlockedBy("has_cabbage", RecipeProvider.has(Content.Farmland.CABBAGE.asItem()))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.BORSCHT, 2)
                 .pattern("123")
                 .pattern("456")
                 .pattern("789")
-                .input('1', Items.CARROT)
-                .input('2', Items.POTATO)
-                .input('3', Items.BEETROOT)
-                .input('4', independentTag("onions"))
-                .input('5', independentTag("tomatoes"))
-                .input('6', independentTag("water_bottles"))
-                .input('8', Content.Utensil.COOKING_POT)
-                .input('7', independentTag("cabbage"))
-                .input('9', independentTag("garlic"))
-                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.GOULASH)
+                .define('1', Items.CARROT)
+                .define('2', Items.POTATO)
+                .define('3', Items.BEETROOT)
+                .define('4', independentTag("onions"))
+                .define('5', independentTag("tomatoes"))
+                .define('6', independentTag("water_bottles"))
+                .define('8', Content.Utensil.COOKING_POT)
+                .define('7', independentTag("cabbage"))
+                .define('9', independentTag("garlic"))
+                .unlockedBy("has_cabbage", RecipeProvider.has(Content.Farmland.CABBAGE.asItem()))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.GOULASH)
                 .pattern("123")
                 .pattern("454")
                 .pattern("183")
-                .input('8', Content.Utensil.FRYING_PAN)
-                .input('1', croptopia("pork_replacements"))
-                .input('3', croptopia("beef_replacements"))
-                .input('2', independentTag("onions"))
-                .input('4', independentTag("cabbage"))
-                .input('5', independentTag("tomatoes"))
-                .criterion("has_cabbage", RecipeProvider.conditionsFromItem(Content.Farmland.CABBAGE.asItem()))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.BEETROOT_SALAD)
+                .define('8', Content.Utensil.FRYING_PAN)
+                .define('1', croptopia("pork_replacements"))
+                .define('3', croptopia("beef_replacements"))
+                .define('2', independentTag("onions"))
+                .define('4', independentTag("cabbage"))
+                .define('5', independentTag("tomatoes"))
+                .unlockedBy("has_cabbage", RecipeProvider.has(Content.Farmland.CABBAGE.asItem()))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.BEETROOT_SALAD)
                 .pattern("111")
                 .pattern("745")
                 .pattern(" 6 ")
-                .input('1', Items.BEETROOT)
-                .input('4', independentTag("cheeses"))
-                .input('5', independentTag("lemons"))
-                .input('6', Content.Utensil.COOKING_POT)
-                .input('7', independentTag("lettuce"))
-                .criterion("has_beetroot", RecipeProvider.conditionsFromItem(Items.BEETROOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.STEAMED_CRAB)
+                .define('1', Items.BEETROOT)
+                .define('4', independentTag("cheeses"))
+                .define('5', independentTag("lemons"))
+                .define('6', Content.Utensil.COOKING_POT)
+                .define('7', independentTag("lettuce"))
+                .unlockedBy("has_beetroot", RecipeProvider.has(Items.BEETROOT))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.STEAMED_CRAB)
                 .pattern("1")
                 .pattern("2")
                 .pattern("3")
-                .input('1', independentTag("crabs"))
-                .input('2', independentTag("water_bottles"))
-                .input('3', Content.Utensil.COOKING_POT)
-                .criterion("has_crab", RecipeProvider.conditionsFromItem(Content.Seafood.CRAB))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.DEEP_FRIED_SHRIMP, 2)
+                .define('1', independentTag("crabs"))
+                .define('2', independentTag("water_bottles"))
+                .define('3', Content.Utensil.COOKING_POT)
+                .unlockedBy("has_crab", RecipeProvider.has(Content.Seafood.CRAB))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.DEEP_FRIED_SHRIMP, 2)
                 .pattern("111")
                 .pattern("456")
-                .input('1', independentTag("shrimp"))
-                .input('4', Items.EGG)
-                .input('6', Items.BREAD)
-                .input('5', Content.Utensil.FRYING_PAN)
-                .criterion("has_shrimp", RecipeProvider.conditionsFromItem(Content.Seafood.SHRIMP))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.TUNA_ROLL, 2)
+                .define('1', independentTag("shrimp"))
+                .define('4', Items.EGG)
+                .define('6', Items.BREAD)
+                .define('5', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_shrimp", RecipeProvider.has(Content.Seafood.SHRIMP))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.TUNA_ROLL, 2)
                 .pattern("234")
                 .pattern(" 1 ")
-                .input('1', independentTag("tuna"))
-                .input('2', Items.DRIED_KELP)
-                .input('3', independentTag("rice"))
-                .input('4', independentTag("onions"))
-                .criterion("has_tuna", RecipeProvider.conditionsFromItem(Content.Seafood.TUNA))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.FRIED_CALAMARI, 2)
+                .define('1', independentTag("tuna"))
+                .define('2', Items.DRIED_KELP)
+                .define('3', independentTag("rice"))
+                .define('4', independentTag("onions"))
+                .unlockedBy("has_tuna", RecipeProvider.has(Content.Seafood.TUNA))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.FRIED_CALAMARI, 2)
                 .pattern("123")
                 .pattern("456")
-                .input('1', independentTag("calamari"))
-                .input('2', independentTag("lemons"))
-                .input('3', independentTag("olive_oils"))
-                .input('4', independentTag("flour"))
-                .input('5', Content.Utensil.FRYING_PAN)
-                .input('6', independentTag("sea_lettuce"))
-                .criterion("has_calamari", RecipeProvider.conditionsFromItem(Content.Seafood.CALAMARI))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.CRAB_LEGS, 2)
+                .define('1', independentTag("calamari"))
+                .define('2', independentTag("lemons"))
+                .define('3', independentTag("olive_oils"))
+                .define('4', independentTag("flour"))
+                .define('5', Content.Utensil.FRYING_PAN)
+                .define('6', independentTag("sea_lettuce"))
+                .unlockedBy("has_calamari", RecipeProvider.has(Content.Seafood.CALAMARI))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.CRAB_LEGS, 2)
                 .pattern("123")
                 .pattern("455")
                 .pattern(" 7 ")
-                .input('5', independentTag("crabs"))
-                .input('1', independentTag("butters"))
-                .input('2', independentTag("garlic"))
-                .input('3', independentTag("salts"))
-                .input('4', Content.Farmland.PEPPER.asItem())
-                .input('7', Content.Utensil.FRYING_PAN)
-                .criterion("has_crab", RecipeProvider.conditionsFromItem(Content.Seafood.CRAB))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.STEAMED_CLAMS, 2)
+                .define('5', independentTag("crabs"))
+                .define('1', independentTag("butters"))
+                .define('2', independentTag("garlic"))
+                .define('3', independentTag("salts"))
+                .define('4', Content.Farmland.PEPPER.asItem())
+                .define('7', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_crab", RecipeProvider.has(Content.Seafood.CRAB))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.STEAMED_CLAMS, 2)
                 .pattern("123")
                 .pattern("455")
                 .pattern(" 7 ")
-                .input('5', independentTag("clams"))
-                .input('1', independentTag("butters"))
-                .input('2', independentTag("garlic"))
-                .input('3', independentTag("salts"))
-                .input('4', Content.Farmland.PEPPER.asItem())
-                .input('7', Content.Utensil.FRYING_PAN)
-                .criterion("has_clams", RecipeProvider.conditionsFromItem(Content.Seafood.CLAM))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.GRILLED_OYSTERS, 2)
+                .define('5', independentTag("clams"))
+                .define('1', independentTag("butters"))
+                .define('2', independentTag("garlic"))
+                .define('3', independentTag("salts"))
+                .define('4', Content.Farmland.PEPPER.asItem())
+                .define('7', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_clams", RecipeProvider.has(Content.Seafood.CLAM))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.GRILLED_OYSTERS, 2)
                 .pattern("121")
                 .pattern("456")
                 .pattern(" 7 ")
-                .input('1', independentTag("oysters"))
-                .input('2', independentTag("cheeses"))
-                .input('4', independentTag("lemons"))
-                .input('5', independentTag("garlic"))
-                .input('6', independentTag("salts"))
-                .input('7', Content.Utensil.FRYING_PAN)
-                .criterion("has_oysters", RecipeProvider.conditionsFromItem(Content.GRILLED_OYSTERS))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.ANCHOVY_PIZZA, 1)
+                .define('1', independentTag("oysters"))
+                .define('2', independentTag("cheeses"))
+                .define('4', independentTag("lemons"))
+                .define('5', independentTag("garlic"))
+                .define('6', independentTag("salts"))
+                .define('7', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_oysters", RecipeProvider.has(Content.GRILLED_OYSTERS))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.ANCHOVY_PIZZA, 1)
                 .pattern("123")
                 .pattern(" 4 ")
                 .pattern(" 7 ")
-                .input('1', independentTag("tomatoes"))
-                .input('2', independentTag("anchovies"))
-                .input('3', independentTag("cheeses"))
-                .input('4', independentTag("doughs"))
-                .input('7', Content.Utensil.FRYING_PAN)
-                .criterion("has_anchovies", RecipeProvider.conditionsFromItem(Content.Seafood.ANCHOVY))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(Content.MASHED_POTATOES, 1)
+                .define('1', independentTag("tomatoes"))
+                .define('2', independentTag("anchovies"))
+                .define('3', independentTag("cheeses"))
+                .define('4', independentTag("doughs"))
+                .define('7', Content.Utensil.FRYING_PAN)
+                .unlockedBy("has_anchovies", RecipeProvider.has(Content.Seafood.ANCHOVY))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.MASHED_POTATOES, 1)
                 .pattern("1 ")
                 .pattern("24")
                 .pattern("3 ")
-                .input('1', independentTag("potatoes"))
-                .input('2', independentTag("salts"))
-                .input('3', Content.Utensil.MORTAR_AND_PESTLE)
-                .input('4', independentTag("milks"))
-                .criterion("has_milk", RecipeProvider.conditionsFromItem(Items.MILK_BUCKET))
-                .offerTo(exporter);
-        ShapelessRecipeJsonBuilder.create(Content.TORTILLA, 2)
-                .input(independentTag("flour"))
-                .input(Content.Utensil.FRYING_PAN)
-                .input(independentTag("water_bottles"))
-                .criterion("took_flour", RecipeProvider.conditionsFromTag(independentTag("flour")))
-                .criterion("has_frying_pan", RecipeProvider.conditionsFromItem(Content.Utensil.FRYING_PAN))
-                .offerTo(exporter);
+                .define('1', independentTag("potatoes"))
+                .define('2', independentTag("salts"))
+                .define('3', Content.Utensil.MORTAR_AND_PESTLE)
+                .define('4', independentTag("milks"))
+                .unlockedBy("has_milk", RecipeProvider.has(Items.MILK_BUCKET))
+                .save(exporter);
+        ShapelessRecipeBuilder.shapeless(Content.TORTILLA, 2)
+                .requires(independentTag("flour"))
+                .requires(Content.Utensil.FRYING_PAN)
+                .requires(independentTag("water_bottles"))
+                .unlockedBy("took_flour", RecipeProvider.has(independentTag("flour")))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.Utensil.FRYING_PAN))
+                .save(exporter);
     }
 
     private TagKey<Item> croptopia(String name) {
-        return TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.MOD_ID, name));
+        return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MiscNames.MOD_ID, name));
     }
 
     private TagKey<Item> independentTag(String name) {
         IdentifierAccessor accessor = (IdentifierAccessor) Croptopia.createIdentifier(name);
         accessor.setNamespace("${dependent}"); // lmao
-        return TagKey.of(Registry.ITEM_KEY, (Identifier) accessor);
+        return TagKey.create(Registry.ITEM_REGISTRY, (ResourceLocation) accessor);
     }
 
 

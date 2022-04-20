@@ -1,6 +1,6 @@
 package me.thonk.croptopia.util;
 
-import net.minecraft.item.ItemConvertible;
+import net.minecraft.world.level.ItemLike;
 
-public interface ItemConvertibleWithPlural extends ItemConvertible, NamedPlural {
+public interface ItemConvertibleWithPlural extends ItemLike, NamedPlural {
 }

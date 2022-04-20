@@ -1,12 +1,12 @@
 package me.thonk.croptopia.mixin.datagen;
 
-import net.minecraft.data.server.AbstractTagProvider;
-import net.minecraft.tag.Tag;
+import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.Tag;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 
-@Mixin(AbstractTagProvider.ObjectBuilder.class)
+@Mixin(TagsProvider.TagAppender.class)
 public interface ObjectBuilderAccessor {
 
     @Accessor("builder")

@@ -2,13 +2,12 @@ package me.thonk.croptopia;
 
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOffers;
-import net.minecraft.village.VillagerProfession;
-
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.MerchantOffer;
 import java.util.List;
 
 public class CroptopiaVillagerTrades {
@@ -37,11 +36,11 @@ public class CroptopiaVillagerTrades {
         });
     }
 
-    private static void buyFromUser(List<TradeOffers.Factory> factory, Item item, int itemCount, int tradeXP, int maxTrades, float priceMultiplier) {
-        factory.add((entity, random) -> new TradeOffer(new ItemStack(item, itemCount), new ItemStack(Items.EMERALD), maxTrades, tradeXP, priceMultiplier));
+    private static void buyFromUser(List<VillagerTrades.ItemListing> factory, Item item, int itemCount, int tradeXP, int maxTrades, float priceMultiplier) {
+        factory.add((entity, random) -> new MerchantOffer(new ItemStack(item, itemCount), new ItemStack(Items.EMERALD), maxTrades, tradeXP, priceMultiplier));
     }
 
-    private static void sellToUser(List<TradeOffers.Factory> factory, Item item, int itemCount, int purchaseAmount, int maxTrades, int tradeXP, float priceMultiplier) {
-        factory.add((entity, random) -> new TradeOffer(new ItemStack(Items.EMERALD, purchaseAmount), new ItemStack(item, itemCount), maxTrades, tradeXP, priceMultiplier));
+    private static void sellToUser(List<VillagerTrades.ItemListing> factory, Item item, int itemCount, int purchaseAmount, int maxTrades, int tradeXP, float priceMultiplier) {
+        factory.add((entity, random) -> new MerchantOffer(new ItemStack(Items.EMERALD, purchaseAmount), new ItemStack(item, itemCount), maxTrades, tradeXP, priceMultiplier));
     }
 }

@@ -1,6 +1,6 @@
 package me.thonk.croptopia;
 
-import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -15,7 +15,6 @@ import me.thonk.croptopia.config.TreeConfiguration;
 import me.thonk.croptopia.dependencies.Patchouli;
 import me.thonk.croptopia.generator.BiomeModifiers;
 import me.thonk.croptopia.items.CropLootTableModifier;
-import me.thonk.croptopia.items.CropItem;
 import me.thonk.croptopia.items.SeedItem;
 import me.thonk.croptopia.loottables.BiomeLootCondition;
 import me.thonk.croptopia.mixin.AxeAccess;
@@ -31,20 +30,26 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.block.*;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.*;
-import net.minecraft.loot.condition.LootCondition;
-import net.minecraft.loot.condition.LootConditionType;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonSerializer;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.BlockView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.storage.loot.Serializer;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
 import org.spongepowered.configurate.serialize.SerializationException;
 
 import java.util.ArrayList;
@@ -65,10 +70,10 @@ public class Croptopia implements ModInitializer {
 
     public CroptopiaConfig config;
 
-    public static final ItemGroup CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier(MiscNames.MOD_ID, "croptopia"))
+    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new ResourceLocation(MiscNames.MOD_ID, "croptopia"))
             .icon(() -> new ItemStack(Content.Farmland.ONION.asItem()))
             .build();
-    public static final LootConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
+    public static final LootItemConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     public static Patchouli patchouli;
 
     private static final String TECH_REBORN_MOD_ID = "techreborn";
@@ -76,7 +81,7 @@ public class Croptopia implements ModInitializer {
     @Override
     public void onInitialize() {
         FabricLoader.getInstance().getModContainer(TECH_REBORN_MOD_ID)
-                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new Identifier("croptopia", "treborn"),  modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
+                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("croptopia", "treborn"),  modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
                 .filter(success -> !success);
 
         patchouli = new Patchouli();
@@ -87,7 +92,7 @@ public class Croptopia implements ModInitializer {
         this.config = new CroptopiaConfig(devEnvironment, "croptopia.conf");
         config.addSerializer(ConfigurableSeed.class, ConfigurableSeed.Serializer.INSTANCE);
         config.addSerializer(TreeConfiguration.class, TreeConfiguration.Serializer.INSTANCE);
-        config.addSerializer(Identifier.class, IdentifierSerializer.INSTANCE);
+        config.addSerializer(ResourceLocation.class, IdentifierSerializer.INSTANCE);
         config.loadConfig();
         try {
             seeds = config.getRootNode().node("configuredSeeds").getList(ConfigurableSeed.class);
@@ -112,23 +117,23 @@ public class Croptopia implements ModInitializer {
         modifyVillagerFarmerTaskCompostables();
     }
 
-    public static Identifier createIdentifier(String name) {
+    public static ResourceLocation createIdentifier(String name) {
         //System.out.println("\"" + MOD_ID + ":" + name + "\",");
-        return new Identifier(MiscNames.MOD_ID, name);
+        return new ResourceLocation(MiscNames.MOD_ID, name);
     }
 
-    public static LootConditionType registerLootCondition(String id, JsonSerializer<? extends LootCondition> serializer) {
-        return Registry.register(Registry.LOOT_CONDITION_TYPE, new Identifier(MiscNames.MOD_ID, id), new LootConditionType(serializer));
+    public static LootItemConditionType registerLootCondition(String id, Serializer<? extends LootItemCondition> serializer) {
+        return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootItemConditionType(serializer));
     }
 
     public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
-        return Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(MiscNames.MOD_ID, id), serializer);
+        return Registry.register(Registry.RECIPE_SERIALIZER, new ResourceLocation(MiscNames.MOD_ID, id), serializer);
     }
 
     public static Item registerItem(String itemName, Item item) {
         Registry.register(Registry.ITEM, Croptopia.createIdentifier(itemName), item);
-        if (item instanceof AliasedBlockItem) {
-            ((AliasedBlockItem) item).appendBlocks(Item.BLOCK_ITEMS, item);
+        if (item instanceof ItemNameBlockItem) {
+            ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
         }
 
         if (item instanceof SeedItem seedItem) {
@@ -148,8 +153,8 @@ public class Croptopia implements ModInitializer {
         return item;
     }
 
-    public static Item.Settings createGroup() {
-        return new Item.Settings().group(CROPTOPIA_ITEM_GROUP);
+    public static Item.Properties createGroup() {
+        return new Item.Properties().tab(CROPTOPIA_ITEM_GROUP);
     }
 
     public static Block registerBlock(String blockName, Block item) {
@@ -160,22 +165,22 @@ public class Croptopia implements ModInitializer {
     }
 
     public static FabricBlockSettings createCropSettings() {
-        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP);
+        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(SoundType.CROP);
     }
 
     public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
+        return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Croptopia::canSpawnOnLeaves).isSuffocating(Croptopia::never).isViewBlocking(Croptopia::never));
     }
 
     public static LeavesBlock createRegularLeavesBlock() {
-        return new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates(Croptopia::never).blockVision(Croptopia::never));
+        return new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Croptopia::canSpawnOnLeaves).isSuffocating(Croptopia::never).isViewBlocking(Croptopia::never));
     }
 
-    public static boolean canSpawnOnLeaves(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+    public static boolean canSpawnOnLeaves(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
         return type == EntityType.OCELOT || type == EntityType.PARROT;
     }
 
-    private static boolean never(BlockState state, BlockView world, BlockPos pos) {
+    private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
         return false;
     }
 
@@ -186,10 +191,10 @@ public class Croptopia implements ModInitializer {
 
 
     private void modifyVillagerFoodItems() {
-        ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
+        Builder<Item, Integer> villagerFoodItems = new Builder<Item, Integer>()
                 .putAll(VillagerAccess.getItemFoodValues());
-        Content.createCropStream().filter(item -> item.getFoodComponent() != null)
-                .forEach(item -> villagerFoodItems.put(item, item.getFoodComponent().getHunger()));
+        Content.createCropStream().filter(item -> item.getFoodProperties() != null)
+                .forEach(item -> villagerFoodItems.put(item, item.getFoodProperties().getNutrition()));
         VillagerAccess.setItemFoodValues(villagerFoodItems.build());
     }
 
@@ -201,25 +206,25 @@ public class Croptopia implements ModInitializer {
     }
 
     private void modifyAxeBlockStripping() {
-        Map<Block, Block> immutableBlocks = AxeAccess.getStrippedBlocks();
-        var axeMap = new ImmutableMap.Builder<Block, Block>().putAll(immutableBlocks);
+        Map<Block, Block> immutableBlocks = AxeAccess.getStrippables();
+        var axeMap = new Builder<Block, Block>().putAll(immutableBlocks);
         for (Content.Bark crop : Content.Bark.values()) {
             axeMap.put(crop.getLog(), crop.getStrippedLog());
             axeMap.put(crop.getWood(), crop.getStrippedWood());
         }
-        AxeAccess.setStrippedBlocks(axeMap.build());
+        AxeAccess.setStrippables(axeMap.build());
     }
 
     private void modifyChickenBreeds() {
-        IntList stacks = ChickenAccess.getBreedingIngredients().getMatchingItemIds();
+        IntList stacks = ChickenAccess.getFoodItems().getStackingIds();
         List<Item> baseItems = new ArrayList<>();
 
         for (Integer stack : stacks) {
-            baseItems.add(Item.byRawId(stack));
+            baseItems.add(Item.byId(stack));
         }
         // TODO iterate over farmland
         baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
-        ChickenAccess.setBreedingIngredients(Ingredient.ofItems(baseItems.toArray(new Item[0])));
+        ChickenAccess.setFoodItems(Ingredient.of(baseItems.toArray(new Item[0])));
     }
 
     private void modifyParrotBreeds() {

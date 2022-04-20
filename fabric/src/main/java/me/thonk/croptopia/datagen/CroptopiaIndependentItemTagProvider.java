@@ -4,18 +4,18 @@ import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.datagen.tags.IndependentEntry;
 import me.thonk.croptopia.mixin.datagen.ObjectBuilderAccessor;
 import me.thonk.croptopia.registry.Content;
-import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.data.DataCache;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.tag.*;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-
+import net.minecraft.core.Registry;
+import net.minecraft.data.HashCache;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagKey;
+import net.minecraft.tags.TagManager;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import java.nio.file.Path;
 
 public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemTagProvider {
@@ -232,43 +232,43 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("anchovy_pizzas", Content.ANCHOVY_PIZZA);
         createGeneralTag("mashed_potatoes", Content.MASHED_POTATOES);
 
-        this.getOrCreateTagBuilder(register("water_bottles")).add(Content.WATER_BOTTLE).add(Items.WATER_BUCKET);
-        this.getOrCreateTagBuilder(register("milks")).add(Content.MILK_BOTTLE).add(Content.SOY_MILK).add(Items.MILK_BUCKET);
-        this.getOrCreateTagBuilder(register("potatoes")).add(Items.POTATO).add(Content.Farmland.SWEETPOTATO.asItem());
+        this.tag(register("water_bottles")).add(Content.WATER_BOTTLE).add(Items.WATER_BUCKET);
+        this.tag(register("milks")).add(Content.MILK_BOTTLE).add(Content.SOY_MILK).add(Items.MILK_BUCKET);
+        this.tag(register("potatoes")).add(Items.POTATO).add(Content.Farmland.SWEETPOTATO.asItem());
     }
 
     @Override
-    protected Path getOutput(Identifier id) {
-        RegistryKey<? extends Registry<?>> registryKey = this.registry.getKey();
-        Path rootOutput = this.root.getOutput();
-        return rootOutput.resolve("dependents/platform/" + TagManagerLoader.getPath(registryKey) + "/" + id.getPath() + ".json");
+    protected Path getPath(ResourceLocation id) {
+        ResourceKey<? extends Registry<?>> registryKey = this.registry.key();
+        Path rootOutput = this.generator.getOutputFolder();
+        return rootOutput.resolve("dependents/platform/" + TagManager.getTagDir(registryKey) + "/" + id.getPath() + ".json");
     }
 
     @Override
-    public void run(DataCache cache) {
+    public void run(HashCache cache) {
         super.run(cache);
     }
 
     private static TagKey<Item> register(String id) {
-        return TagKey.of(Registry.ITEM_KEY, Croptopia.createIdentifier(id));
+        return TagKey.create(Registry.ITEM_REGISTRY, Croptopia.createIdentifier(id));
     }
 
     private void createCategoryTag(String category, String name, Item item) {
-        String path = Registry.ITEM.getId(item).getPath();
+        String path = Registry.ITEM.getKey(item).getPath();
         TagKey<Item> forgeFriendlyTag = register(category + "/" + path);
         IndependentEntry independentEntry = new IndependentEntry(category + "/" + path);
-        this.getOrCreateTagBuilder(forgeFriendlyTag).add(item);
-        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(name)).add(item);
-        fabricGeneralTag.getBuilder().add(new Tag.TrackedEntry(independentEntry, fabricGeneralTag.getSource()));
+        this.tag(forgeFriendlyTag).add(item);
+        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) this.tag(register(name)).add(item);
+        fabricGeneralTag.getBuilder().add(new Tag.BuilderEntry(independentEntry, fabricGeneralTag.getSource()));
 
         // this is the group i.e vegetables.json encompassing all the vegetables in the mod. it should pull from zucchini.json and not vegetables/zucchini.json
-        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(category));
+        ObjectBuilderAccessor group = (ObjectBuilderAccessor) this.tag(register(category));
         // we need a new independentEntry
         IndependentEntry entryForGroup = new IndependentEntry(name);
-        group.getBuilder().add(new Tag.TrackedEntry(entryForGroup, group.getSource()));
+        group.getBuilder().add(new Tag.BuilderEntry(entryForGroup, group.getSource()));
     }
 
-    private FabricTagProvider.FabricTagBuilder createGeneralTag(String name, Item item) {
+    private FabricTagBuilder createGeneralTag(String name, Item item) {
         TagKey<Item> pluralTag = register(name);
         return this.getOrCreateTagBuilder(pluralTag).add(item);
     }
@@ -285,21 +285,21 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
     private void createSeedSaplingTag(String category, String name, Item item) {
         String pluralSeedName;
         if (item == Content.Farmland.VANILLA.getSeed()) {
-           pluralSeedName = Registry.ITEM.getId(item).getPath();
+           pluralSeedName = Registry.ITEM.getKey(item).getPath();
         } else {
-            pluralSeedName = Registry.ITEM.getId(item).getPath() + "s";
+            pluralSeedName = Registry.ITEM.getKey(item).getPath() + "s";
         }
 
         // Forge tags use seed/cropname, but not including seed name. artichoke good artichoke_seed bad.
         TagKey<Item> forgeFriendlyTag = register(category + "/" + name);
         IndependentEntry independentEntry = new IndependentEntry(category + "/" + name);
 
-        this.getOrCreateTagBuilder(forgeFriendlyTag).add(item);
-        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(category));
-        group.getBuilder().add(new Tag.TrackedEntry(independentEntry, group.getSource()));
+        this.tag(forgeFriendlyTag).add(item);
+        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object) this.tag(register(category));
+        group.getBuilder().add(new Tag.BuilderEntry(independentEntry, group.getSource()));
 
-        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.getOrCreateTagBuilder(register(pluralSeedName)).add(item);
-        fabricGeneralTag.getBuilder().add(new Tag.TrackedEntry(independentEntry, fabricGeneralTag.getSource()));
+        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.tag(register(pluralSeedName)).add(item);
+        fabricGeneralTag.getBuilder().add(new Tag.BuilderEntry(independentEntry, fabricGeneralTag.getSource()));
     }
 
 }

@@ -1,25 +1,25 @@
 package me.thonk.croptopia.generator;
 
-import net.minecraft.block.sapling.SaplingGenerator;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 import java.util.function.Supplier;
+import net.minecraft.core.Holder;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class CroptopiaSaplingGenerator extends SaplingGenerator {
+public class CroptopiaSaplingGenerator extends AbstractTreeGrower {
 
-    private final Supplier<RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>>> tree;
+    private final Supplier<Holder<ConfiguredFeature<TreeConfiguration, ?>>> tree;
 
-    public CroptopiaSaplingGenerator(Supplier<RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>>> tree) {
+    public CroptopiaSaplingGenerator(Supplier<Holder<ConfiguredFeature<TreeConfiguration, ?>>> tree) {
         this.tree = tree;
     }
 
     @Nullable
     @Override
-    protected RegistryEntry<? extends ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean bees) {
         return tree.get();
     }
 }

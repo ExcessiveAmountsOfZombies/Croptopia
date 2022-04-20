@@ -3,8 +3,8 @@ package me.thonk.croptopia.datagen;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Block;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 
 public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
@@ -36,7 +36,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
         FabricTagBuilder<Block> burnableLog = getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN);
         for (Content.Bark crop : Content.Bark.values()) {
             // add different log types to log tag of this crop
-            getOrCreateTagBuilder(crop.getLogBlockTag())
+            tag(crop.getLogBlockTag())
                     .add(crop.getLog())
                     .add(crop.getStrippedLog())
                     .add(crop.getWood())
@@ -48,7 +48,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
 
     protected void generateLeaves() {
         FabricTagBuilder<Block> leaves = getOrCreateTagBuilder(BlockTags.LEAVES);
-        FabricTagBuilder<Block> hoe = getOrCreateTagBuilder(BlockTags.HOE_MINEABLE);
+        FabricTagBuilder<Block> hoe = getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE);
         for (Content.Tree crop : Content.Tree.values()) {
             leaves.add(crop.getLeaves());
             hoe.add(crop.getLeaves());
@@ -70,10 +70,10 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateMisc() {
-        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(Content.SALT_ORE_BLOCK);
-        getOrCreateTagBuilder(BlockTags.AZALEA_ROOT_REPLACEABLE).add(Content.SALT_ORE_BLOCK);
-        getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS).add(Content.SALT_ORE_BLOCK);
-        getOrCreateTagBuilder(BlockTags.ENDERMAN_HOLDABLE).add(Content.SALT_ORE_BLOCK);
+        tag(BlockTags.MINEABLE_WITH_SHOVEL).add(Content.SALT_ORE_BLOCK);
+        tag(BlockTags.AZALEA_ROOT_REPLACEABLE).add(Content.SALT_ORE_BLOCK);
+        tag(BlockTags.DRIPSTONE_REPLACEABLE).add(Content.SALT_ORE_BLOCK);
+        tag(BlockTags.ENDERMAN_HOLDABLE).add(Content.SALT_ORE_BLOCK);
     }
 
 }

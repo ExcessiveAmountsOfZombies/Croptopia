@@ -12,32 +12,36 @@ import me.thonk.croptopia.items.*;
 import me.thonk.croptopia.util.BlockConvertible;
 import me.thonk.croptopia.util.ItemConvertibleWithPlural;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.tag.TagKey;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.DataPool;
-import net.minecraft.util.math.intprovider.ConstantIntProvider;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
-import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
-import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
-import net.minecraft.world.gen.stateprovider.WeightedBlockStateProvider;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
-
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -45,7 +49,7 @@ import java.util.stream.Stream;
 import static me.thonk.croptopia.Croptopia.*;
 import static me.thonk.croptopia.Croptopia.createGroup;
 import static me.thonk.croptopia.registry.FoodRegistry.*;
-import static net.minecraft.world.biome.Biome.Category.*;
+import static net.minecraft.world.level.biome.Biome.BiomeCategory.*;
 
 /**
  * Contains the items and blocks we want and need.
@@ -147,14 +151,14 @@ public class Content {
 
         /**
          * Creates a new farmland crop enum instance.
-         * @param shortNameVariant A variant of this entry's name that is used for suffixes instead of its name. Optional, see {@link #Farmland(boolean, TagCategory, FoodRegistry, Biome.Category...)}.
+         * @param shortNameVariant A variant of this entry's name that is used for suffixes instead of its name. Optional, see {@link #Farmland(boolean, TagCategory, FoodRegistry, Biome.BiomeCategory...)}.
          * @param hasPlural <code>false</code> indicates that the plural of this enum entry is the same as singular
          * @param tagegory The {@link TagCategory} of this crop, not <code>null</code>.
          * @param foodRegistry Hunger/Saturation value for this crop. <code>null</code> means cannot be eaten.
          * @param biomes Which biomes this crop can be found in. Not supplying at least one biome leads to undefined behaviour.
          * @throws NullPointerException If <code>tagegory</code> refer to <code>null</code>.
          */
-        Farmland(String shortNameVariant, boolean hasPlural, TagCategory tagegory, FoodRegistry foodRegistry, Biome.Category... biomes) {
+        Farmland(String shortNameVariant, boolean hasPlural, TagCategory tagegory, FoodRegistry foodRegistry, Biome.BiomeCategory... biomes) {
             Objects.requireNonNull(tagegory);
             lowerCaseName = name().toLowerCase();
             this.hasPlural = hasPlural;
@@ -177,9 +181,9 @@ public class Content {
         }
 
         /**
-         * @see #Farmland(String, boolean, TagCategory, FoodRegistry, Biome.Category...)
+         * @see #Farmland(String, boolean, TagCategory, FoodRegistry, Biome.BiomeCategory...)
          */
-        Farmland(boolean hasPlural, TagCategory tagegory, FoodRegistry foodRegistry, Biome.Category... biomes) {
+        Farmland(boolean hasPlural, TagCategory tagegory, FoodRegistry foodRegistry, Biome.BiomeCategory... biomes) {
             this(null, hasPlural, tagegory, foodRegistry, biomes);
         }
 
@@ -251,7 +255,7 @@ public class Content {
         private TagCategory tagegory;
         private Item item;
         private Block leaves;
-        private RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> treeGen;
+        private Holder<ConfiguredFeature<TreeConfiguration, ?>> treeGen;
         private CroptopiaSaplingItem sapling;
         private CroptopiaSaplingBlock saplingBlock;
 
@@ -315,7 +319,7 @@ public class Content {
             return leaves;
         }
 
-        public RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> getTreeGen() {
+        public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTreeGen() {
             return treeGen;
         }
 
@@ -346,7 +350,7 @@ public class Content {
         private TagKey<Item> logItemTag;
         private TagKey<Block> logBlockTag;
         private Block leaves;
-        private RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> treeGen;
+        private Holder<ConfiguredFeature<TreeConfiguration, ?>> treeGen;
         private Item sapling;
         private Block saplingBlock;
 
@@ -358,29 +362,29 @@ public class Content {
             item = new Item(createGroup());
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(lowerCaseName), item);
             // in the following we use registerItem because of AliasedBlockItem
-            log = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            log = new RotatedPillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
             registerBlock(lowerCaseName + "_log", log);
-            registerItem(lowerCaseName + "_log", new AliasedBlockItem(log, createGroup()));
-            strippedLog = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerItem(lowerCaseName + "_log", new ItemNameBlockItem(log, createGroup()));
+            strippedLog = new RotatedPillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
             registerBlock("stripped_" + lowerCaseName + "_log", strippedLog);
-            registerItem("stripped_" + lowerCaseName + "_log", new AliasedBlockItem(strippedLog, createGroup()));
-            wood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerItem("stripped_" + lowerCaseName + "_log", new ItemNameBlockItem(strippedLog, createGroup()));
+            wood = new RotatedPillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
             registerBlock(lowerCaseName + "_wood", wood);
-            registerItem(lowerCaseName + "_wood", new AliasedBlockItem(wood, createGroup()));
-            strippedWood = new PillarBlock(FabricBlockSettings.of(Material.WOOD, MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F));
+            registerItem(lowerCaseName + "_wood", new ItemNameBlockItem(wood, createGroup()));
+            strippedWood = new RotatedPillarBlock(FabricBlockSettings.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
             registerBlock("stripped_" + lowerCaseName + "_wood", strippedWood);
-            registerItem("stripped_" + lowerCaseName + "_wood", new AliasedBlockItem(strippedWood, createGroup()));
+            registerItem("stripped_" + lowerCaseName + "_wood", new ItemNameBlockItem(strippedWood, createGroup()));
             // create the tags (will be filled by datagen)
             String tagName = lowerCaseName + "_logs";
-            logItemTag = TagKey.of(Registry.ITEM_KEY, new Identifier(MiscNames.MOD_ID, tagName));
-            logBlockTag = TagKey.of(Registry.BLOCK_KEY, new Identifier(MiscNames.MOD_ID, tagName));
+            logItemTag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MiscNames.MOD_ID, tagName));
+            logBlockTag = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MiscNames.MOD_ID, tagName));
             // left is leaves and saplings
             leaves = createRegularLeavesBlock();
             registerBlock(lowerCaseName + "_leaves", leaves);
             treeGen = createBarkGen(lowerCaseName + "_tree", iTreeGen, jTreeGen, kTreeGen, log, leaves);
             saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> treeGen), Content.createSaplingSettings());
             registerBlock(lowerCaseName + "_sapling", saplingBlock);
-            sapling = new AliasedBlockItem(saplingBlock, createGroup());
+            sapling = new ItemNameBlockItem(saplingBlock, createGroup());
             registerItem(lowerCaseName + "_sapling", sapling);
         }
 
@@ -443,7 +447,7 @@ public class Content {
             return saplingBlock;
         }
 
-        public RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> getTreeGen() {
+        public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTreeGen() {
             return treeGen;
         }
     }
@@ -457,7 +461,7 @@ public class Content {
         return Stream.concat(
                 Arrays.stream(Farmland.values()),
                 Stream.concat(Arrays.stream(Tree.values()), Arrays.stream(Bark.values()))
-        ).map(ItemConvertible::asItem);
+        ).map(ItemLike::asItem);
     }
 
     /**
@@ -488,7 +492,7 @@ public class Content {
         /**
          * @param source the vanilla crop, not <code>null</code>
          */
-        VanillaCrops(ItemConvertible source) {
+        VanillaCrops(ItemLike source) {
             Objects.requireNonNull(source);
             this.item = source.asItem();
         }
@@ -525,7 +529,7 @@ public class Content {
             this.hasPlural = hasPlural;
             if (name().contains("GLOWING")) {
                 item = new Item(createGroup().food(FoodRegistry.createBuilder(foodRegistry)
-                        .statusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 4000, 1), 1.0F).build()));
+                        .effect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1), 1.0F).build()));
             }
             else {
                 item = new Item(createGroup().food(FoodRegistry.createComponent(foodRegistry)));
@@ -590,7 +594,7 @@ public class Content {
     /**
      * Enum for all "generic" (Croptopia) juices.
      */
-    public enum Juice implements ItemConvertible {
+    public enum Juice implements ItemLike {
         APPLE,
         CRANBERRY,
         GRAPE,
@@ -609,7 +613,7 @@ public class Content {
          */
         Juice(boolean sweet) {
             this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
-            item = new Drink(createGroup().food(createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+            item = new Drink(createGroup().food(createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_juice"), item);
             crop = findCrop(name());
             if (crop == null) {
@@ -638,7 +642,7 @@ public class Content {
     /**
      * Enum for all "generic" (Croptopia) jams.
      */
-    public enum Jam implements ItemConvertible {
+    public enum Jam implements ItemLike {
         APRICOT,
         BLACKBERRY,
         BLUEBERRY,
@@ -653,7 +657,7 @@ public class Content {
         private ItemConvertibleWithPlural crop;
 
         Jam() {
-            item = new Drink(createGroup().food(createBuilder(REG_3).alwaysEdible().build()));
+            item = new Drink(createGroup().food(createBuilder(REG_3).alwaysEat().build()));
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_jam"), item);
             crop = findCrop(name());
             if (crop == null) {
@@ -674,7 +678,7 @@ public class Content {
     /**
      * Enum for all "generic" (Croptopia) smoothies.
      */
-    public enum Smoothie implements ItemConvertible {
+    public enum Smoothie implements ItemLike {
         BANANA,
         STRAWBERRY;
 
@@ -687,7 +691,7 @@ public class Content {
          */
         Smoothie(boolean sweet) {
             this.sweet = sweet;
-            item = new Drink(createGroup().food(createBuilder(REG_7).alwaysEdible().build()));
+            item = new Drink(createGroup().food(createBuilder(REG_7).alwaysEat().build()));
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_smoothie"), item);
             crop = findCrop(name());
             if (crop == null) {
@@ -719,7 +723,7 @@ public class Content {
     /**
      * Enum for all "generic" (Croptopia) ice creams.
      */
-    public enum IceCream implements ItemConvertible {
+    public enum IceCream implements ItemLike {
         MANGO,
         PECAN,
         STRAWBERRY,
@@ -750,7 +754,7 @@ public class Content {
     /**
      * Enum for all "generic" (Croptopia) pies.
      */
-    public enum Pie implements ItemConvertible {
+    public enum Pie implements ItemLike {
         APPLE,
         CHERRY,
         PECAN,
@@ -793,7 +797,7 @@ public class Content {
 
         Utensil(boolean hasPlural) {
             this.hasPlural = hasPlural;
-            item = new CookingUtensil(createGroup().maxCount(1));
+            item = new CookingUtensil(createGroup().stacksTo(1));
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
         }
 
@@ -829,21 +833,21 @@ public class Content {
     public static final Item PEPPERONI = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
 
     // drinks
-    public static final Item COFFEE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static final Item LEMONADE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static final Item LIMEADE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static final Item SOY_MILK = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static final Item COFFEE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item LEMONADE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item LIMEADE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item SOY_MILK = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
 
-    public static final Item KALE_SMOOTHIE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEdible().build()));
-    public static final Item FRUIT_SMOOTHIE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+    public static final Item KALE_SMOOTHIE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEat().build()));
+    public static final Item FRUIT_SMOOTHIE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEat().build()));
 
-    public static final Item CHOCOLATE_MILKSHAKE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+    public static final Item CHOCOLATE_MILKSHAKE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEat().build()));
 
-    public static final Item BEER = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
-    public static final Item WINE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
-    public static final Item MEAD = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
-    public static final Item RUM = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
-    public static final Item PUMPKIN_SPICE_LATTE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEdible().build()));
+    public static final Item BEER = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEat().build()));
+    public static final Item WINE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEat().build()));
+    public static final Item MEAD = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEat().build()));
+    public static final Item RUM = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item PUMPKIN_SPICE_LATTE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEat().build()));
 
     // snacks?
     public static final Item BEEF_JERKY = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
@@ -947,7 +951,7 @@ public class Content {
     public static final Item BEEF_WELLINGTON = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
     public static final Item FISH_AND_CHIPS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static final Item ETON_MESS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
-    public static final Item TEA = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static final Item TEA = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEat().build()));
     public static final Item CORNISH_PASTY = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static final Item SCONES = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
     public static final Item FIGGY_PUDDING = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
@@ -1011,8 +1015,8 @@ public class Content {
     public static final Item ANCHOVY_PIZZA = new Item(createGroup().food(FoodRegistry.createComponent(REG_15)));
     public static final Item MASHED_POTATOES = new Item(createGroup().food(FoodRegistry.createComponent(REG_9)));
 
-    public static Block SALT_ORE_BLOCK = new Block(FabricBlockSettings.of(Material.AGGREGATE).strength(0.5F).sounds(BlockSoundGroup.SAND));
-    public static final Item SALT_ORE = new AliasedBlockItem(SALT_ORE_BLOCK, createGroup());
+    public static Block SALT_ORE_BLOCK = new Block(FabricBlockSettings.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
+    public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
 
     public static final Item GUIDE = new GuideBookItem(createGroup());
 
@@ -1229,20 +1233,20 @@ public class Content {
         registerItem(ItemNames.SALT_ORE, SALT_ORE);
     }
 
-    public static Item.Settings createGroup() {
-        return new Item.Settings().group(Croptopia.CROPTOPIA_ITEM_GROUP);
+    public static Item.Properties createGroup() {
+        return new Item.Properties().tab(Croptopia.CROPTOPIA_ITEM_GROUP);
     }
 
     public static FabricBlockSettings createCropSettings() {
-        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP);
+        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(SoundType.CROP);
     }
 
     public static FabricBlockSettings createSaplingSettings() {
-        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS);
+        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(SoundType.GRASS);
     }
 
     public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(Croptopia::canSpawnOnLeaves).suffocates((a,b,c) -> false).blockVision((a,b,c) -> false));
+        return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Croptopia::canSpawnOnLeaves).isSuffocating((a,b,c) -> false).isViewBlocking((a,b,c) -> false));
     }
 
     /**
@@ -1275,33 +1279,33 @@ public class Content {
         return null;
     }
 
-    public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createTreeGen(String name, int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
+    public static Holder<ConfiguredFeature<TreeConfiguration, ?>> createTreeGen(String name, int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
         return register(createIdentifier(name),
-                Feature.TREE, ((new TreeFeatureConfig.Builder(
-                        SimpleBlockStateProvider.of(logType.getDefaultState()),
+                Feature.TREE, ((new TreeConfiguration.TreeConfigurationBuilder(
+                        SimpleStateProvider.simple(logType.defaultBlockState()),
                         new StraightTrunkPlacer(i, j, k),
-                        new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(leafType.getDefaultState(), 90).add(leafCrop.getDefaultState().with(LeafCropBlock.AGE, 3), 20).build()),
-                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leafType.defaultBlockState(), 90).add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20).build()),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                         new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
     }
 
-    public static RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> createBarkGen(String name, int i, int j, int k, Block log, Block leaves) {
+    public static Holder<ConfiguredFeature<TreeConfiguration, ?>> createBarkGen(String name, int i, int j, int k, Block log, Block leaves) {
         return register(createIdentifier(name),
-                Feature.TREE, ((new TreeFeatureConfig.Builder(
-                        SimpleBlockStateProvider.of(log.getDefaultState()),
+                Feature.TREE, ((new TreeConfiguration.TreeConfigurationBuilder(
+                        SimpleStateProvider.simple(log.defaultBlockState()),
                         new StraightTrunkPlacer(i, j, k),
-                        new WeightedBlockStateProvider(DataPool.<BlockState>builder().add(leaves.getDefaultState(), 90).build()),
-                        new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+                        new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leaves.defaultBlockState(), 90).build()),
+                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                         new TwoLayersFeatureSize(1, 0, 2))).ignoreVines().build()));
     }
 
-    public static <FC extends FeatureConfig, F extends Feature<FC>> RegistryEntry<ConfiguredFeature<FC, ?>> register(Identifier id, F feature, FC config) {
+    public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(ResourceLocation id, F feature, FC config) {
         return badRegister(BuiltinRegistries.CONFIGURED_FEATURE, id, new ConfiguredFeature<>(feature, config));
     }
 
-    public static <V extends T, T> RegistryEntry<V> badRegister(Registry<T> registry, Identifier id, V value) {
+    public static <V extends T, T> Holder<V> badRegister(Registry<T> registry, ResourceLocation id, V value) {
         //noinspection unchecked
-        return BuiltinRegistries.add((Registry<V>) registry, id, value);
+        return BuiltinRegistries.register((Registry<V>) registry, id, value);
     }
 
     /**

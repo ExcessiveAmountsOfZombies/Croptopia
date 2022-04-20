@@ -7,10 +7,10 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.client.color.world.BiomeColors;
-import net.minecraft.client.color.world.FoliageColors;
-import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.block.Block;
 
 import static me.thonk.croptopia.Croptopia.cropBlocks;
 
@@ -24,16 +24,16 @@ public class CroptopiaClient implements ClientModInitializer {
 
     public void registerCropBlockLayer(Block block) {
         if (block instanceof LeafCropBlock) {
-            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutoutMipped());
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutoutMipped());
             return;
         }
-        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutoutMipped());
+        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutoutMipped());
     }
 
     public void registerColorProvider() {
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
                 world != null && pos != null
-                        ? BiomeColors.getFoliageColor(world, pos)
-                        : FoliageColors.getDefaultColor(), Content.createLeafStream().toArray(Block[]::new));
+                        ? BiomeColors.getAverageFoliageColor(world, pos)
+                        : FoliageColor.getDefaultColor(), Content.createLeafStream().toArray(Block[]::new));
     }
 }

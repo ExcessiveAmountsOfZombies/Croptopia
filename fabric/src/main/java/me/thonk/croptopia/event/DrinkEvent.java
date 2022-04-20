@@ -2,8 +2,8 @@ package me.thonk.croptopia.event;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 
 public class DrinkEvent {
 
@@ -16,6 +16,6 @@ public class DrinkEvent {
 
     public interface Drink {
 
-        void onDrink(ItemStack item, PlayerEntity entity);
+        void onDrink(ItemStack item, Player entity);
     }
 }

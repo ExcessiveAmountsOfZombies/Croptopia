@@ -1,61 +1,60 @@
 package me.thonk.croptopia.items;
 
 import me.thonk.croptopia.event.DrinkEvent;
-import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.stat.Stats;
-import net.minecraft.util.UseAction;
-import net.minecraft.world.World;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.Level;
 
 
 public class Drink extends Item {
 
 
-    public Drink(Settings settings) {
+    public Drink(Properties settings) {
         super(settings);
     }
 
     @Override
-    public UseAction getUseAction(ItemStack stack) {
-        return UseAction.DRINK;
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.DRINK;
     }
 
     @Override
-    public SoundEvent getEatSound() {
-        return getDrinkSound();
+    public SoundEvent getEatingSound() {
+        return getDrinkingSound();
     }
 
 
     @Override
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        PlayerEntity playerEntity = user instanceof PlayerEntity ? (PlayerEntity)user : null;
-        if (playerEntity instanceof ServerPlayerEntity) {
-            Criteria.CONSUME_ITEM.trigger((ServerPlayerEntity)playerEntity, stack);
+    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
+        Player playerEntity = user instanceof Player ? (Player)user : null;
+        if (playerEntity instanceof ServerPlayer) {
+            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)playerEntity, stack);
         }
 
         if (playerEntity != null) {
-            playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-            if (!playerEntity.getAbilities().creativeMode) {
-                if (isFood()) {
+            playerEntity.awardStat(Stats.ITEM_USED.get(this));
+            if (!playerEntity.getAbilities().instabuild) {
+                if (isEdible()) {
                     DrinkEvent.DRINK.invoker().onDrink(stack, playerEntity);
-                    user.eatFood(world, stack);
+                    user.eat(world, stack);
                 }
             }
         }
 
-        if (playerEntity == null || !playerEntity.getAbilities().creativeMode) {
+        if (playerEntity == null || !playerEntity.getAbilities().instabuild) {
             if (stack.isEmpty()) {
-                return new ItemStack(getRecipeRemainder());
+                return new ItemStack(getCraftingRemainingItem());
             }
 
             if (playerEntity != null) {
-                playerEntity.getInventory().insertStack(new ItemStack(getRecipeRemainder()));
+                playerEntity.getInventory().add(new ItemStack(getCraftingRemainingItem()));
             }
         }
 

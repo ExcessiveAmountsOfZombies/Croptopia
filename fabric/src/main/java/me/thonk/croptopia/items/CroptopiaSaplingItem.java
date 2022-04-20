@@ -1,32 +1,32 @@
 package me.thonk.croptopia.items;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.util.ActionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class CroptopiaSaplingItem extends AliasedBlockItem {
+public class CroptopiaSaplingItem extends ItemNameBlockItem {
 
     private final Block saplingFruitLeafBlock;
     private final Block vanillaLeafBlock;
 
-    public CroptopiaSaplingItem(Block block, Block saplingFruitLeafBlock, Block vanillaLeafBlock, Settings settings) {
+    public CroptopiaSaplingItem(Block block, Block saplingFruitLeafBlock, Block vanillaLeafBlock, Properties settings) {
         super(block, settings);
         this.saplingFruitLeafBlock = saplingFruitLeafBlock;
         this.vanillaLeafBlock = vanillaLeafBlock;
     }
 
     @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        BlockState atPos = context.getWorld().getBlockState(context.getBlockPos());
+    public InteractionResult useOn(UseOnContext context) {
+        BlockState atPos = context.getLevel().getBlockState(context.getClickedPos());
         if (atPos.getBlock() == vanillaLeafBlock) {
             if (!context.getPlayer().isCreative()) {
-                context.getStack().decrement(1);
+                context.getItemInHand().shrink(1);
             }
-            context.getWorld().setBlockState(context.getBlockPos(), saplingFruitLeafBlock.getDefaultState());
-            return ActionResult.CONSUME;
+            context.getLevel().setBlockAndUpdate(context.getClickedPos(), saplingFruitLeafBlock.defaultBlockState());
+            return InteractionResult.CONSUME;
         }
-        return super.useOnBlock(context);
+        return super.useOn(context);
     }
 }

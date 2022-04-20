@@ -1,21 +1,21 @@
 package me.thonk.croptopia.mixin;
 
-import net.minecraft.entity.passive.ChickenEntity;
-import net.minecraft.recipe.Ingredient;
+import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.item.crafting.Ingredient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 
-@Mixin(ChickenEntity.class)
+@Mixin(Chicken.class)
 public interface ChickenAccess {
 
-    @Accessor("BREEDING_INGREDIENT")
-    static Ingredient getBreedingIngredients() {
+    @Accessor("FOOD_ITEMS")
+    static Ingredient getFoodItems() {
         throw new AssertionError();
     }
 
-    @Accessor("BREEDING_INGREDIENT")
-    static void setBreedingIngredients(Ingredient items) {
+    @Accessor("FOOD_ITEMS")
+    static void setFoodItems(Ingredient items) {
         throw new AssertionError();
     }
 

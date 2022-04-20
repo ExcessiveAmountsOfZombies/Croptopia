@@ -4,8 +4,8 @@ import me.thonk.croptopia.registry.Content;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.item.Item;
-import net.minecraft.tag.ItemTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 
 public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
@@ -36,7 +36,7 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         FabricTagBuilder<Item> burnableLog = getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN);
         for (Content.Bark crop : Content.Bark.values()) {
             // add different log types to log tag of this crop
-            getOrCreateTagBuilder(crop.getLogItemTag())
+            tag(crop.getLogItemTag())
                     .add(crop.getLog().asItem())
                     .add(crop.getStrippedLog().asItem())
                     .add(crop.getWood().asItem())

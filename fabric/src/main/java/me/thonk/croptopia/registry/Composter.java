@@ -1,9 +1,9 @@
 package me.thonk.croptopia.registry;
 
 import me.thonk.croptopia.Croptopia;
-import net.minecraft.item.ItemConvertible;
+import net.minecraft.world.level.ItemLike;
 
-import static net.minecraft.block.ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE;
+import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
 
 public class Composter {
 
@@ -22,7 +22,7 @@ public class Composter {
         }
     }
 
-    public static void registerCompostableItem(float levelIncreaseChance, ItemConvertible item) {
-        ITEM_TO_LEVEL_INCREASE_CHANCE.put(item.asItem(), levelIncreaseChance);
+    public static void registerCompostableItem(float levelIncreaseChance, ItemLike item) {
+        COMPOSTABLES.put(item.asItem(), levelIncreaseChance);
     }
 }

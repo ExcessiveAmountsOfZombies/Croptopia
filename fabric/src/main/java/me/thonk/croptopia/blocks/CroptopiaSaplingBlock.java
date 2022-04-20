@@ -1,12 +1,12 @@
 package me.thonk.croptopia.blocks;
 
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.sapling.SaplingGenerator;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 
 public class CroptopiaSaplingBlock extends SaplingBlock {
 
 
-    public CroptopiaSaplingBlock(SaplingGenerator generator, Settings settings) {
+    public CroptopiaSaplingBlock(AbstractTreeGrower generator, Properties settings) {
         super(generator, settings);
     }
 }

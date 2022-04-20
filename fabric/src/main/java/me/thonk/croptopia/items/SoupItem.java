@@ -1,36 +1,36 @@
 package me.thonk.croptopia.items;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.StewItem;
-import net.minecraft.world.World;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BowlFoodItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 
-public class SoupItem extends StewItem {
+public class SoupItem extends BowlFoodItem {
 
 
-    public SoupItem(Settings settings) {
+    public SoupItem(Properties settings) {
         super(settings);
     }
 
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        PlayerEntity playerEntity = user instanceof PlayerEntity ? (PlayerEntity)user : null;
+    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
+        Player playerEntity = user instanceof Player ? (Player)user : null;
         if (playerEntity != null) {
-            if (!playerEntity.getAbilities().creativeMode) {
-                if (isFood()) {
-                    user.eatFood(world, stack);
+            if (!playerEntity.getAbilities().instabuild) {
+                if (isEdible()) {
+                    user.eat(world, stack);
                 }
             }
         }
 
-        if (playerEntity == null || !playerEntity.getAbilities().creativeMode) {
+        if (playerEntity == null || !playerEntity.getAbilities().instabuild) {
             if (stack.isEmpty()) {
                 return new ItemStack(Items.BOWL);
             }
 
             if (playerEntity != null) {
-                playerEntity.getInventory().insertStack(new ItemStack(Items.BOWL));
+                playerEntity.getInventory().add(new ItemStack(Items.BOWL));
             }
         }
 

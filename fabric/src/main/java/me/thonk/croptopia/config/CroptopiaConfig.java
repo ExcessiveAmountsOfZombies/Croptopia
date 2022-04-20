@@ -6,11 +6,11 @@ import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Constants;
 import me.thonk.croptopia.Croptopia;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.configurate.CommentedConfigurationNode;
@@ -199,12 +199,12 @@ public class CroptopiaConfig {
 
     private boolean addTreeConfigIfDoesNotExist(ConfigurationNode node, String nodeToAdd) {
         if (!node.hasChild(nodeToAdd)) {
-            Collection<RegistryKey<Biome>> forestBiomes = Arrays.asList(BiomeKeys.FOREST, BiomeKeys.WINDSWEPT_FOREST, BiomeKeys.FLOWER_FOREST);
-            Collection<RegistryKey<Biome>> jungleBiomes = Arrays.asList(BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE);
-            Collection<RegistryKey<Biome>> plainsKeys = Arrays.asList(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS);
-            Collection<RegistryKey<Biome>> darkForestKeys = Arrays.asList(BiomeKeys.DARK_FOREST);
+            Collection<ResourceKey<Biome>> forestBiomes = Arrays.asList(Biomes.FOREST, Biomes.WINDSWEPT_FOREST, Biomes.FLOWER_FOREST);
+            Collection<ResourceKey<Biome>> jungleBiomes = Arrays.asList(Biomes.JUNGLE, Biomes.SPARSE_JUNGLE);
+            Collection<ResourceKey<Biome>> plainsKeys = Arrays.asList(Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS);
+            Collection<ResourceKey<Biome>> darkForestKeys = Arrays.asList(Biomes.DARK_FOREST);
 
-            HashMultimap<String, RegistryKey<Biome>> biomes = HashMultimap.create();
+            HashMultimap<String, ResourceKey<Biome>> biomes = HashMultimap.create();
 
             TreeConfiguration.createSameTreeConfigs(biomes, forestBiomes,
                     "lime_tree_configured",
@@ -242,18 +242,18 @@ public class CroptopiaConfig {
                     "pecan_tree_configured",
                     "walnut_tree_configured");
 
-            RegistryKey<Biome> woodlands = RegistryKey.of(Registry.BIOME_KEY, travID("woodlands"));
-            RegistryKey<Biome> wooded_plateau = RegistryKey.of(Registry.BIOME_KEY, travID("wooded_plateau"));
-            RegistryKey<Biome> wooded_island = RegistryKey.of(Registry.BIOME_KEY, travID("wooded_island"));
-            RegistryKey<Biome> autumnal_woods = RegistryKey.of(Registry.BIOME_KEY, travID("autumnal_woods"));
-            RegistryKey<Biome> autumnal_wooded_hills = RegistryKey.of(Registry.BIOME_KEY, travID("autumnal_wooded_hills"));
-            RegistryKey<Biome> lush_swamp = RegistryKey.of(Registry.BIOME_KEY, travID("lush_swamp"));
-            RegistryKey<Biome> mini_jungle = RegistryKey.of(Registry.BIOME_KEY, travID("mini_jungle"));
+            ResourceKey<Biome> woodlands = ResourceKey.create(Registry.BIOME_REGISTRY, travID("woodlands"));
+            ResourceKey<Biome> wooded_plateau = ResourceKey.create(Registry.BIOME_REGISTRY, travID("wooded_plateau"));
+            ResourceKey<Biome> wooded_island = ResourceKey.create(Registry.BIOME_REGISTRY, travID("wooded_island"));
+            ResourceKey<Biome> autumnal_woods = ResourceKey.create(Registry.BIOME_REGISTRY, travID("autumnal_woods"));
+            ResourceKey<Biome> autumnal_wooded_hills = ResourceKey.create(Registry.BIOME_REGISTRY, travID("autumnal_wooded_hills"));
+            ResourceKey<Biome> lush_swamp = ResourceKey.create(Registry.BIOME_REGISTRY, travID("lush_swamp"));
+            ResourceKey<Biome> mini_jungle = ResourceKey.create(Registry.BIOME_REGISTRY, travID("mini_jungle"));
 
-            Collection<RegistryKey<Biome>> wooded = Arrays.asList(wooded_island, wooded_plateau, woodlands);
-            Collection<RegistryKey<Biome>> autumnal = Arrays.asList(autumnal_woods, autumnal_wooded_hills);
-            Collection<RegistryKey<Biome>> jungle = Arrays.asList(mini_jungle);
-            Collection<RegistryKey<Biome>> lush = Arrays.asList(lush_swamp);
+            Collection<ResourceKey<Biome>> wooded = Arrays.asList(wooded_island, wooded_plateau, woodlands);
+            Collection<ResourceKey<Biome>> autumnal = Arrays.asList(autumnal_woods, autumnal_wooded_hills);
+            Collection<ResourceKey<Biome>> jungle = Arrays.asList(mini_jungle);
+            Collection<ResourceKey<Biome>> lush = Arrays.asList(lush_swamp);
 
             TreeConfiguration.createSameTreeConfigs(biomes, wooded,
                     "apple_tree_configured",
@@ -283,59 +283,59 @@ public class CroptopiaConfig {
             //RegistryKey<Biome> alliumFields = RegistryKey.of(Registry.BIOME_KEY, bygID("allium_fields"));
             //RegistryKey<Biome> amaranthFields = RegistryKey.of(Registry.BIOME_KEY, bygID("amaranth_fields"));
             //RegistryKey<Biome> araucariaSavanna = RegistryKey.of(Registry.BIOME_KEY, bygID("araucaria_savanna"));wwwwwwwwwwww
-            RegistryKey<Biome> aspenForest = RegistryKey.of(Registry.BIOME_KEY, bygID("aspen_forest"));
-            RegistryKey<Biome> autumnalValley = RegistryKey.of(Registry.BIOME_KEY, bygID("autumnal_valley"));
+            ResourceKey<Biome> aspenForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("aspen_forest"));
+            ResourceKey<Biome> autumnalValley = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("autumnal_valley"));
             //RegistryKey<Biome> baobabSavanna = RegistryKey.of(Registry.BIOME_KEY, bygID("baobab_savanna"));
-            RegistryKey<Biome> bayou = RegistryKey.of(Registry.BIOME_KEY, bygID("bayou"));
-            RegistryKey<Biome> blackForest = RegistryKey.of(Registry.BIOME_KEY, bygID("black_forest"));
+            ResourceKey<Biome> bayou = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("bayou"));
+            ResourceKey<Biome> blackForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("black_forest"));
             //RegistryKey<Biome> borealisGrove = RegistryKey.of(Registry.BIOME_KEY, bygID("borealis_grove"));
-            RegistryKey<Biome> canadianShield = RegistryKey.of(Registry.BIOME_KEY, bygID("canadian_shield"));
-            RegistryKey<Biome> cherryBlossomForest = RegistryKey.of(Registry.BIOME_KEY, bygID("cherry_blossom_forest"));
-            RegistryKey<Biome> cikaWoods = RegistryKey.of(Registry.BIOME_KEY, bygID("cika_woods"));
-            RegistryKey<Biome> coniferousForest = RegistryKey.of(Registry.BIOME_KEY, bygID("coniferous_forest"));
-            RegistryKey<Biome> cragGardens = RegistryKey.of(Registry.BIOME_KEY, bygID("crag_gardens"));
-            RegistryKey<Biome> cypressSwamplands = RegistryKey.of(Registry.BIOME_KEY, bygID("cypress_swamplands"));
-            RegistryKey<Biome> deadSea = RegistryKey.of(Registry.BIOME_KEY, bygID("dead_sea"));
-            RegistryKey<Biome> daciteRidges = RegistryKey.of(Registry.BIOME_KEY, bygID("dacite_ridges"));
-            RegistryKey<Biome> windsweptDunes = RegistryKey.of(Registry.BIOME_KEY, bygID("windswept_dunes"));
-            RegistryKey<Biome> ebonyWoods = RegistryKey.of(Registry.BIOME_KEY, bygID("ebony_woods"));
-            RegistryKey<Biome> forgottenForest = RegistryKey.of(Registry.BIOME_KEY, bygID("forgotten_forest"));
-            RegistryKey<Biome> grove = RegistryKey.of(Registry.BIOME_KEY, bygID("temperate_grove"));
-            RegistryKey<Biome> guianaShield = RegistryKey.of(Registry.BIOME_KEY, bygID("guiana_shield"));
-            RegistryKey<Biome> jacarandaForest = RegistryKey.of(Registry.BIOME_KEY, bygID("jacaranda_forest"));
-            RegistryKey<Biome> mapleTaiga = RegistryKey.of(Registry.BIOME_KEY, bygID("maple_taiga"));
-            RegistryKey<Biome> coconinoMeadow = RegistryKey.of(Registry.BIOME_KEY, bygID("coconino_meadow"));
-            RegistryKey<Biome> mojaveDesert = RegistryKey.of(Registry.BIOME_KEY, bygID("mojave_desert"));
-            RegistryKey<Biome> lushTundra = RegistryKey.of(Registry.BIOME_KEY, bygID("lush_tundra"));
-            RegistryKey<Biome> orchard = RegistryKey.of(Registry.BIOME_KEY, bygID("orchard"));
-            RegistryKey<Biome> prairie = RegistryKey.of(Registry.BIOME_KEY, bygID("prairie"));
-            RegistryKey<Biome> redOakForest = RegistryKey.of(Registry.BIOME_KEY, bygID("red_oak_forest"));
-            RegistryKey<Biome> redRockValley = RegistryKey.of(Registry.BIOME_KEY, bygID("red_rock_valley"));
-            RegistryKey<Biome> roseFields = RegistryKey.of(Registry.BIOME_KEY, bygID("rose_fields"));
-            RegistryKey<Biome> autumnalForest = RegistryKey.of(Registry.BIOME_KEY, bygID("autumnal_forest"));
-            RegistryKey<Biome> autumnalTaiga = RegistryKey.of(Registry.BIOME_KEY, bygID("autumnal_taiga"));
-            RegistryKey<Biome> shatteredGlacier = RegistryKey.of(Registry.BIOME_KEY, bygID("shattered_glacier"));
-            RegistryKey<Biome> firecrackerShrubland = RegistryKey.of(Registry.BIOME_KEY, bygID("firecracker_shrubland"));
-            RegistryKey<Biome> sierraBadlands = RegistryKey.of(Registry.BIOME_KEY, bygID("sierra_badlands"));
-            RegistryKey<Biome> skyrisVale = RegistryKey.of(Registry.BIOME_KEY, bygID("skyris_vale"));
-            RegistryKey<Biome> redwoodThicket = RegistryKey.of(Registry.BIOME_KEY, bygID("redwood_thicket"));
-            RegistryKey<Biome> frostedTaiga = RegistryKey.of(Registry.BIOME_KEY, bygID("frosted_taiga"));
-            RegistryKey<Biome> frostedConiferousForest = RegistryKey.of(Registry.BIOME_KEY, bygID("frosted_coniferous_forest"));
-            RegistryKey<Biome> fragmentForest = RegistryKey.of(Registry.BIOME_KEY, bygID("fragment_forest"));
-            RegistryKey<Biome> tropicalIsland = RegistryKey.of(Registry.BIOME_KEY, bygID("tropical_islands"));
-            RegistryKey<Biome> tropicalRainforest = RegistryKey.of(Registry.BIOME_KEY, bygID("tropical_rainforest"));
-            RegistryKey<Biome> twilightMeadow = RegistryKey.of(Registry.BIOME_KEY, bygID("twilight_meadow"));
-            RegistryKey<Biome> weepingWitchForest = RegistryKey.of(Registry.BIOME_KEY, bygID("weeping_witch_forest"));
-            RegistryKey<Biome> whiteMangroveMarshes = RegistryKey.of(Registry.BIOME_KEY, bygID("white_mangrove_marshes"));
-            RegistryKey<Biome> temperateRainforest = RegistryKey.of(Registry.BIOME_KEY, bygID("temperate_rainforest"));
-            RegistryKey<Biome> zelkovaForest = RegistryKey.of(Registry.BIOME_KEY, bygID("zelkova_forest"));
+            ResourceKey<Biome> canadianShield = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("canadian_shield"));
+            ResourceKey<Biome> cherryBlossomForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("cherry_blossom_forest"));
+            ResourceKey<Biome> cikaWoods = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("cika_woods"));
+            ResourceKey<Biome> coniferousForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("coniferous_forest"));
+            ResourceKey<Biome> cragGardens = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("crag_gardens"));
+            ResourceKey<Biome> cypressSwamplands = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("cypress_swamplands"));
+            ResourceKey<Biome> deadSea = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("dead_sea"));
+            ResourceKey<Biome> daciteRidges = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("dacite_ridges"));
+            ResourceKey<Biome> windsweptDunes = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("windswept_dunes"));
+            ResourceKey<Biome> ebonyWoods = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("ebony_woods"));
+            ResourceKey<Biome> forgottenForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("forgotten_forest"));
+            ResourceKey<Biome> grove = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("temperate_grove"));
+            ResourceKey<Biome> guianaShield = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("guiana_shield"));
+            ResourceKey<Biome> jacarandaForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("jacaranda_forest"));
+            ResourceKey<Biome> mapleTaiga = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("maple_taiga"));
+            ResourceKey<Biome> coconinoMeadow = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("coconino_meadow"));
+            ResourceKey<Biome> mojaveDesert = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("mojave_desert"));
+            ResourceKey<Biome> lushTundra = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("lush_tundra"));
+            ResourceKey<Biome> orchard = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("orchard"));
+            ResourceKey<Biome> prairie = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("prairie"));
+            ResourceKey<Biome> redOakForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("red_oak_forest"));
+            ResourceKey<Biome> redRockValley = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("red_rock_valley"));
+            ResourceKey<Biome> roseFields = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("rose_fields"));
+            ResourceKey<Biome> autumnalForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("autumnal_forest"));
+            ResourceKey<Biome> autumnalTaiga = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("autumnal_taiga"));
+            ResourceKey<Biome> shatteredGlacier = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("shattered_glacier"));
+            ResourceKey<Biome> firecrackerShrubland = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("firecracker_shrubland"));
+            ResourceKey<Biome> sierraBadlands = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("sierra_badlands"));
+            ResourceKey<Biome> skyrisVale = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("skyris_vale"));
+            ResourceKey<Biome> redwoodThicket = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("redwood_thicket"));
+            ResourceKey<Biome> frostedTaiga = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("frosted_taiga"));
+            ResourceKey<Biome> frostedConiferousForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("frosted_coniferous_forest"));
+            ResourceKey<Biome> fragmentForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("fragment_forest"));
+            ResourceKey<Biome> tropicalIsland = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("tropical_islands"));
+            ResourceKey<Biome> tropicalRainforest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("tropical_rainforest"));
+            ResourceKey<Biome> twilightMeadow = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("twilight_meadow"));
+            ResourceKey<Biome> weepingWitchForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("weeping_witch_forest"));
+            ResourceKey<Biome> whiteMangroveMarshes = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("white_mangrove_marshes"));
+            ResourceKey<Biome> temperateRainforest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("temperate_rainforest"));
+            ResourceKey<Biome> zelkovaForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("zelkova_forest"));
 
-            Collection<RegistryKey<Biome>> bygWoods = Arrays.asList(aspenForest, orchard, redOakForest);
-            Collection<RegistryKey<Biome>> cherry = Arrays.asList(cherryBlossomForest);
+            Collection<ResourceKey<Biome>> bygWoods = Arrays.asList(aspenForest, orchard, redOakForest);
+            Collection<ResourceKey<Biome>> cherry = Arrays.asList(cherryBlossomForest);
 
-            Collection<RegistryKey<Biome>> nutty = Arrays.asList(weepingWitchForest, daciteRidges, ebonyWoods,
+            Collection<ResourceKey<Biome>> nutty = Arrays.asList(weepingWitchForest, daciteRidges, ebonyWoods,
                     mapleTaiga, twilightMeadow);
-            Collection<RegistryKey<Biome>> jungleByg = Arrays.asList(cragGardens, tropicalIsland, tropicalRainforest);
+            Collection<ResourceKey<Biome>> jungleByg = Arrays.asList(cragGardens, tropicalIsland, tropicalRainforest);
 
             TreeConfiguration.createSameTreeConfigs(biomes, Collections.singleton(prairie),
                     FeatureNames.APPLE_TREE_CONFIGURED);
@@ -383,7 +383,7 @@ public class CroptopiaConfig {
                     "nectarine_tree_configured");
 
             List<TreeConfiguration> allTreeConfigs = new ArrayList<>();
-            for (Map.Entry<String, Collection<RegistryKey<Biome>>> entry : biomes.asMap().entrySet()) {
+            for (Map.Entry<String, Collection<ResourceKey<Biome>>> entry : biomes.asMap().entrySet()) {
                 allTreeConfigs.add(new TreeConfiguration(entry.getKey(), entry.getValue()));
             }
 
@@ -405,11 +405,11 @@ public class CroptopiaConfig {
         return false;
     }
 
-    private static Identifier travID(String name) {
-        return new Identifier("traverse", name);
+    private static ResourceLocation travID(String name) {
+        return new ResourceLocation("traverse", name);
     }
 
-    private static Identifier bygID(String name) {
-        return new Identifier("byg", name);
+    private static ResourceLocation bygID(String name) {
+        return new ResourceLocation("byg", name);
     }
 }

@@ -1,7 +1,7 @@
 package me.thonk.croptopia.mixin;
 
 import me.thonk.croptopia.items.CookingUtensil;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
@@ -15,13 +15,13 @@ public abstract class ItemMixin {
 
 
     @Mutable
-    @Shadow @Final private Item recipeRemainder;
+    @Shadow @Final private Item craftingRemainingItem;
 
     @Inject(method = "<init>", at = {@At("TAIL")})
-    public void overrideConstructor(Item.Settings settings, CallbackInfo ci) {
+    public void overrideConstructor(Item.Properties settings, CallbackInfo ci) {
         Item thisInstance = (Item)(Object)this;
         if (thisInstance instanceof CookingUtensil) {
-            this.recipeRemainder = thisInstance;
+            this.craftingRemainingItem = thisInstance;
         }
     }
 }

@@ -29,7 +29,10 @@ configurations {
 
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
-    mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-1.18.1:2021.12.19")
+    }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
     modImplementation "vazkii.patchouli:Patchouli:1.18.2-67-FABRIC-SNAPSHOT"

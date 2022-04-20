@@ -2,47 +2,46 @@ package me.thonk.croptopia.blocks;
 
 import me.thonk.croptopia.items.SeedItem;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CropBlock;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.stat.Stats;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldView;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.chunk.ChunkStatus;
+import net.minecraft.core.BlockPos;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkStatus;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CroptopiaCropBlock extends CropBlock {
     protected static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)};
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)};
 
     private SeedItem seed;
 
-    public CroptopiaCropBlock(Settings settings) {
+    public CroptopiaCropBlock(Properties settings) {
         super(settings);
     }
 
     @Override
-    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return AGE_TO_SHAPE[state.get(this.getAgeProperty())];
+    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return AGE_TO_SHAPE[state.getValue(this.getAgeProperty())];
     }
 
     public void setSeedsItem(SeedItem seed) {
@@ -50,44 +49,44 @@ public class CroptopiaCropBlock extends CropBlock {
     }
 
     @Override // JANK
-    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        Biome.Category biomeCat = Biome.getCategory(world.getBiome(pos));
+    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+        Biome.BiomeCategory biomeCat = Biome.getBiomeCategory(world.getBiome(pos));
         if (world.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
-            if (seed.getCategory().contains(biomeCat) && biomeCat != Biome.Category.NONE) {
-                return super.canPlaceAt(state, world, pos);
+            if (seed.getCategory().contains(biomeCat) && biomeCat != Biome.BiomeCategory.NONE) {
+                return super.canSurvive(state, world, pos);
             }
         } else if (world.getChunk(pos).getStatus().getIndex() == ChunkStatus.FULL.getIndex()) {
             // ON PLAYER PLACEMENT
-            return super.canPlaceAt(state, world, pos);
+            return super.canSurvive(state, world, pos);
         }
         return false;
     }
 
-    protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return super.canPlantOnTop(floor, world, pos) || floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.SAND);
+    protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
+        return super.mayPlaceOn(floor, world, pos) || floor.is(BlockTags.DIRT) || floor.is(BlockTags.SAND);
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (getAge(state) == getMaxAge()) {
             PlayerBlockBreakEvents.AFTER.invoker().afterBlockBreak(world, player, pos, state, null);
-            player.incrementStat(Stats.MINED.getOrCreateStat(this));
-            player.addExhaustion(0.005f);
-            world.setBlockState(pos, this.withAge(0), 2);
-            dropStacks(state, world, pos);
-            return ActionResult.SUCCESS;
+            player.awardStat(Stats.BLOCK_MINED.get(this));
+            player.causeFoodExhaustion(0.005f);
+            world.setBlock(pos, this.getStateForAge(0), 2);
+            dropResources(state, world, pos);
+            return InteractionResult.SUCCESS;
         }
-        return ActionResult.PASS;
+        return InteractionResult.PASS;
     }
 
     @Override
-    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-        super.onLandedUpon(world, state, pos, entity, fallDistance);
+    public void fallOn(Level world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
+        super.fallOn(world, state, pos, entity, fallDistance);
     }
 
     @Override
-    protected ItemConvertible getSeedsItem() {
+    protected ItemLike getBaseSeedId() {
         /*if (seedItem == null) {
             seedItem = Registry.ITEM.get(Croptopia.createIdentifier(seed));
         }*/

@@ -5,11 +5,11 @@ import me.thonk.croptopia.config.TreeConfiguration;
 import me.thonk.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import org.spongepowered.configurate.serialize.SerializationException;
 
 import java.util.Arrays;
@@ -24,24 +24,24 @@ public class BiomeModifiers {
         // generate in ALL biomes
         BiomeModifications.addFeature(context -> {
             Biome biome = context.getBiome();
-            return Biome.getCategory(RegistryEntry.of(biome)) != Biome.Category.OCEAN;
-        }, GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
+            return Biome.getBiomeCategory(Holder.direct(biome)) != Biome.BiomeCategory.OCEAN;
+        }, GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
 
         try {
             List<TreeConfiguration> trees = croptopia.config.getRootNode().node("treeConfig").getList(TreeConfiguration.class);
             for (TreeConfiguration tree : trees) {
                 BiomeModifications.addFeature(BiomeSelectors.includeByKey(tree.getTreesAllowedInBiome()),
-                        GenerationStep.Feature.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(tree.getFeatureKey()));
+                        GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(tree.getFeatureKey()));
             }
         } catch (SerializationException e) {
             e.printStackTrace();
         }
 
-        Collection<RegistryKey<Biome>> exclusion = Arrays.asList(BiomeKeys.SWAMP, BiomeKeys.SWAMP);
+        Collection<ResourceKey<Biome>> exclusion = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP);
 
         if (croptopia.config.generateSaltInWorld()) {
             BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
-                    GenerationStep.Feature.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
+                    GenerationStep.Decoration.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
         }
     }
 }

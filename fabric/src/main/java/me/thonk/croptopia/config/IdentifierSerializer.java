@@ -1,23 +1,5 @@
 package me.thonk.croptopia.config;
 
-/*
- * Copyright 2020 zml
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import net.minecraft.util.Identifier;
-import net.minecraft.util.InvalidIdentifierException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.configurate.ConfigurationNode;
@@ -26,9 +8,11 @@ import org.spongepowered.configurate.serialize.TypeSerializer;
 
 import java.lang.reflect.Type;
 import java.util.List;
+import net.minecraft.ResourceLocationException;
+import net.minecraft.resources.ResourceLocation;
 
 /**
- * Serializes an {@link Identifier} to a configuration object.
+ * Serializes an {@link ResourceLocation} to a configuration object.
  *
  * <p>When identifiers are output, they are given in the canonical
  * string format.
@@ -44,22 +28,22 @@ import java.util.List;
  *     format, where the default namespace is <pre>minecraft</pre></li>
  * </ul>
  */
-public final class IdentifierSerializer implements TypeSerializer<Identifier> {
+public final class IdentifierSerializer implements TypeSerializer<ResourceLocation> {
 
     //private static final String NAMESPACE_MINECRAFT = "minecraft";
     public static final IdentifierSerializer INSTANCE = new IdentifierSerializer();
 
     @Override
-    public Identifier deserialize(final @NotNull Type type, final @NotNull ConfigurationNode value) throws SerializationException {
+    public ResourceLocation deserialize(final @NotNull Type type, final @NotNull ConfigurationNode value) throws SerializationException {
         return fromNode(value);
     }
 
     @Override
-    public void serialize(final @NotNull Type type, final @Nullable Identifier obj, final @NotNull ConfigurationNode value) {
+    public void serialize(final @NotNull Type type, final @Nullable ResourceLocation obj, final @NotNull ConfigurationNode value) {
         toNode(obj, value);
     }
 
-    static Identifier fromNode(final ConfigurationNode node) throws SerializationException {
+    static ResourceLocation fromNode(final ConfigurationNode node) throws SerializationException {
         if (node.virtual()) {
             return null;
         }
@@ -88,22 +72,22 @@ public final class IdentifierSerializer implements TypeSerializer<Identifier> {
             if (val == null) {
                 throw listAcceptedFormats();
             }
-            return new Identifier(val);
+            return new ResourceLocation(val);
         }
     }
 
-    static Identifier createIdentifier(final String key, final String value) throws SerializationException {
+    static ResourceLocation createIdentifier(final String key, final String value) throws SerializationException {
         try {
-            return new Identifier(key, value);
-        } catch (final InvalidIdentifierException ex) {
+            return new ResourceLocation(key, value);
+        } catch (final ResourceLocationException ex) {
             throw new SerializationException(ex);
         }
     }
 
-    static Identifier createIdentifier(final String data) throws SerializationException {
+    static ResourceLocation createIdentifier(final String data) throws SerializationException {
         try {
-            return new Identifier(data);
-        } catch (final InvalidIdentifierException ex) {
+            return new ResourceLocation(data);
+        } catch (final ResourceLocationException ex) {
             throw new SerializationException(ex.getMessage());
         }
     }
@@ -112,7 +96,7 @@ public final class IdentifierSerializer implements TypeSerializer<Identifier> {
         return new SerializationException("The provided item must be in [<namespace>:]<path> format");
     }
 
-    static void toNode(final Identifier ident, final ConfigurationNode node) {
+    static void toNode(final ResourceLocation ident, final ConfigurationNode node) {
         if (ident == null) {
             node.raw(null);
         } else {

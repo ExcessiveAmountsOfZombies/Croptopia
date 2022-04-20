@@ -1,6 +1,6 @@
 package me.thonk.croptopia.registry;
 
-import net.minecraft.item.FoodComponent;
+import net.minecraft.world.food.FoodProperties;
 
 public record FoodRegistry(int hunger, float satMod) {
     public static final FoodRegistry REG_1 = new FoodRegistry(1, 0.2F);
@@ -25,11 +25,11 @@ public record FoodRegistry(int hunger, float satMod) {
     public static final FoodRegistry REG_20 = new FoodRegistry(20, 2.6F);
 
 
-    public static FoodComponent.Builder createBuilder(FoodRegistry reg) {
-        return new FoodComponent.Builder().hunger(reg.hunger).saturationModifier(reg.satMod);
+    public static FoodProperties.Builder createBuilder(FoodRegistry reg) {
+        return new FoodProperties.Builder().nutrition(reg.hunger).saturationMod(reg.satMod);
     }
 
-    public static FoodComponent createComponent(FoodRegistry reg) {
+    public static FoodProperties createComponent(FoodRegistry reg) {
         return createBuilder(reg).build();
     }
 }
