@@ -189,7 +189,7 @@ public class GeneratorRegistry {
 
 
     public static final RegistryEntry<ConfiguredFeature<DiskFeatureConfig, ?>> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
-            Feature.DISK, ((new DiskFeatureConfig(BlockRegistry.salt.getDefaultState(),
+            Feature.DISK, ((new DiskFeatureConfig(Content.SALT_ORE_BLOCK.getDefaultState(),
                     UniformIntProvider.create(2, 4), 2,
                     ImmutableList.of(Blocks.DIRT.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState())))));
 

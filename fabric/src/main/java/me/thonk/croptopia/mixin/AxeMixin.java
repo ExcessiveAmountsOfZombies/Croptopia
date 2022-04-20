@@ -1,8 +1,6 @@
 package me.thonk.croptopia.mixin;
 
-import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Content;
-import me.thonk.croptopia.registry.ItemRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.*;

@@ -1,10 +1,8 @@
 package me.thonk.croptopia;
 
 import me.thonk.croptopia.registry.Content;
-import me.thonk.croptopia.registry.ItemRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
