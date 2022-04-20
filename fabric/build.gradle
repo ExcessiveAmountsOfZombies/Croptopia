@@ -79,6 +79,7 @@ tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
+    source(project(":shared").sourceSets.main.allSource)
 }
 
 shadowJar {

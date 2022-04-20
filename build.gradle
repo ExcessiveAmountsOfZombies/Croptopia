@@ -15,17 +15,17 @@ ext {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'java-library'
-    //apply plugin: 'maven'
     apply plugin: 'idea'
 
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 
-    // have to move the build dir here for when we launch the dev environment so the "common" module moves over.
-    // doesn't change the dependent tag though...
-    task launch {
-        //project.buildDir = new File("${rootProject.projectDir}/build/jars")
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spongepowered.org/repository/maven-public/"}
     }
 
-    launch.dependsOn(processResources, compileJava)
+    tasks.withType(GenerateModuleMetadata) {
+        enabled = false
+    }
 }
