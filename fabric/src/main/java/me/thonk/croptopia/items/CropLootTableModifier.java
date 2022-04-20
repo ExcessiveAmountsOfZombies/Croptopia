@@ -69,7 +69,7 @@ public class CropLootTableModifier {
                                             .weight(10).build())
                                     .withEntry(ItemEntry.builder(Content.Seafood.OYSTER)
                                             .weight(10).build())
-                                    .withEntry(ItemEntry.builder(ItemRegistry.seaLettuce)
+                                    .withEntry(ItemEntry.builder(Content.SEA_LETTUCE)
                                             .weight(10).build());
                             pools.set(0, builder.build());
                         }
