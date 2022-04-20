@@ -1,12 +1,12 @@
 {
   "required": true,
-  "package": "me.thonk.croptopia.mixin",
+  "package": "com.epherical.croptopia.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "croptopia.refmap.json",
   "mixins": [
-    "LootPoolAccessor",
-    "LootPoolBuilderAccessor",
-    "LootTableAccessor"
+    "com.thonk.croptopia.mixin.LootPoolAccessor",
+    "com.thonk.croptopia.mixin.LootPoolBuilderAccessor",
+    "com.thonk.croptopia.mixin.LootTableAccessor"
   ],
   "minVersion": "0.8"
 }
