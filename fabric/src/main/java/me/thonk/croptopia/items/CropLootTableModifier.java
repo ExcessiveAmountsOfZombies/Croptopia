@@ -60,16 +60,18 @@ public class CropLootTableModifier {
                             // todo; make this configurable
                             FabricLootPoolBuilder builder = FabricLootPoolBuilder.of(pools.get(0));
                             builder.withEntry(ItemEntry.builder(Content.Seafood.TUNA)
-                                            .weight(20).build())
+                                            .weight(15).build())
                                     .withEntry(ItemEntry.builder(Content.Seafood.ANCHOVY)
-                                            .weight(30).build())
+                                            .weight(15).build())
                                     .withEntry(ItemEntry.builder(Content.Seafood.SHRIMP)
-                                            .weight(20).build())
+                                            .weight(15).build())
                                     .withEntry(ItemEntry.builder(Content.Seafood.CRAB)
                                             .weight(15).build())
                                     .withEntry(ItemEntry.builder(Content.Seafood.CLAM)
                                             .weight(10).build())
                                     .withEntry(ItemEntry.builder(Content.Seafood.OYSTER)
+                                            .weight(10).build())
+                                    .withEntry(ItemEntry.builder(ItemRegistry.seaLettuce)
                                             .weight(10).build());
                             pools.set(0, builder.build());
                         }

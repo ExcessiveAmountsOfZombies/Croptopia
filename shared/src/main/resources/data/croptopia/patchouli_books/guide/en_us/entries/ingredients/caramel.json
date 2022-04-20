@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:caramel",
+      "recipe": "croptopia:caramel_from_sugar",
       "text": "Recipe for caramel."
     }
   ]

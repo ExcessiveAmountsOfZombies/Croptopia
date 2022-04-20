@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:smelting_baked_sweet_potato",
+      "recipe": "croptopia:baked_sweet_potato_from_sweetpotato",
       "text": "Recipe"
     }
   ]

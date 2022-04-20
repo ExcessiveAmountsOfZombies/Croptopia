@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:smelting_cooked_bacon",
+      "recipe": "croptopia:cooked_bacon_from_bacon",
       "text": "Recipe"
     }
   ]

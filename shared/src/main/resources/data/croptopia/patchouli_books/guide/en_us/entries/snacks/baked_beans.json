@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:baked_beans",
+      "recipe": "croptopia:baked_beans_from_blackbean",
       "text": "Recipe for making baked beans."
     }
   ]

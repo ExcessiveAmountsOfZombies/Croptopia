@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:raisins",
+      "recipe": "croptopia:raisins_from_grape",
       "text": "Recipe for making raisins."
     }
   ]

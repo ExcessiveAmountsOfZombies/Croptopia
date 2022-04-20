@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:molasses",
+      "recipe": "croptopia:molasses_from_sugar_cane",
       "text": "Recipe for molasses."
     }
   ]
