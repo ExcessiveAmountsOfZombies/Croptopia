@@ -1,13 +1,10 @@
 package me.thonk.croptopia.datagen;
 
-import me.thonk.croptopia.registry.BlockRegistry;
 import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.ItemTags;
 
 public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
@@ -73,10 +70,10 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateMisc() {
-        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(BlockRegistry.salt);
-        getOrCreateTagBuilder(BlockTags.AZALEA_ROOT_REPLACEABLE).add(BlockRegistry.salt);
-        getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS).add(BlockRegistry.salt);
-        getOrCreateTagBuilder(BlockTags.ENDERMAN_HOLDABLE).add(BlockRegistry.salt);
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE).add(Content.SALT_ORE_BLOCK);
+        getOrCreateTagBuilder(BlockTags.AZALEA_ROOT_REPLACEABLE).add(Content.SALT_ORE_BLOCK);
+        getOrCreateTagBuilder(BlockTags.DRIPSTONE_REPLACEABLE_BLOCKS).add(Content.SALT_ORE_BLOCK);
+        getOrCreateTagBuilder(BlockTags.ENDERMAN_HOLDABLE).add(Content.SALT_ORE_BLOCK);
     }
 
 }

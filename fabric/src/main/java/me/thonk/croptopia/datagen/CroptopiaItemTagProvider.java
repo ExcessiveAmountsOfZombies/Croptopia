@@ -1,7 +1,7 @@
 package me.thonk.croptopia.datagen;
 
 import me.thonk.croptopia.registry.Content;
-import me.thonk.croptopia.registry.ItemRegistry;
+import me.thonk.croptopia.registry.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
@@ -77,11 +77,11 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         foxFood.add(Content.Farmland.STRAWBERRY.asItem());
         // piglin food: more cannibalism (which already happens in vanilla)
         FabricTagBuilder<Item> piglinFood = getOrCreateTagBuilder(ItemTags.PIGLIN_FOOD);
-        piglinFood.add(ItemRegistry.hamSandwich);
-        piglinFood.add(ItemRegistry.pepperoni);
-        piglinFood.add(ItemRegistry.porkAndBeans);
-        piglinFood.add(ItemRegistry.porkJerky);
-        piglinFood.add(ItemRegistry.rawBacon);
+        piglinFood.add(Content.HAM_SANDWICH);
+        piglinFood.add(Content.PEPPERONI);
+        piglinFood.add(Content.PORK_AND_BEANS);
+        piglinFood.add(Content.PORK_JERKY);
+        piglinFood.add(Content.RAW_BACON);
         piglinFood.add(Content.Furnace.COOKED_BACON.asItem());
     }
 

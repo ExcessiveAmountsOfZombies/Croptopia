@@ -1,5 +1,7 @@
 package me.thonk.croptopia.registry;
 
+import me.thonk.common.BlockNames;
+import me.thonk.common.ItemNames;
 import me.thonk.common.MiscNames;
 import me.thonk.croptopia.Croptopia;
 import me.thonk.croptopia.blocks.CroptopiaCropBlock;
@@ -804,6 +806,427 @@ public class Content {
         public Item asItem() {
             return item;
         }
+    }
+
+    // Spices
+    public static final Item PAPRIKA = new Item(createGroup()); // TODO need recipe to make paprika in future update
+    public static final Item SALT = new Item(createGroup());
+
+    // secondary ingredients?
+    public static final Item OLIVE_OIL = new Item(createGroup());
+    public static final Item CHEESE = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item FLOUR = new Item(createGroup());
+    public static final Item BUTTER = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
+    public static final Item NOODLE = new Item(createGroup());
+    public static final Item TOFU = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item CHOCOLATE = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item TORTILLA = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item SOY_SAUCE = new Item(createGroup());
+    public static final Item DOUGH = new Item(createGroup());
+    public static final Item RAVIOLI = new Item(createGroup());
+    public static final Item SALSA = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item ARTICHOKE_DIP = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item PEPPERONI = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+
+    // drinks
+    public static final Item COFFEE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static final Item LEMONADE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static final Item LIMEADE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static final Item SOY_MILK = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+
+    public static final Item KALE_SMOOTHIE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEdible().build()));
+    public static final Item FRUIT_SMOOTHIE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+
+    public static final Item CHOCOLATE_MILKSHAKE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+
+    public static final Item BEER = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+    public static final Item WINE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+    public static final Item MEAD = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()));
+    public static final Item RUM = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_7).alwaysEdible().build()).recipeRemainder(Items.GLASS_BOTTLE));
+    public static final Item PUMPKIN_SPICE_LATTE = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_14).alwaysEdible().build()));
+
+    // snacks?
+    public static final Item BEEF_JERKY = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item PORK_JERKY = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item KALE_CHIPS = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item POTATO_CHIPS = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item STEAMED_RICE = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item FRENCH_FRIES = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item SWEET_POTATO_FRIES = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item ONION_RINGS = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item DOUGHNUT = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item CUCUMBER_SALAD = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CAESAR_SALAD = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item LEAFY_SALAD = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item FRUIT_SALAD = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item VEGGIE_SALAD = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item PORK_AND_BEANS = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item OATMEAL = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item LEEK_SOUP = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item YOGHURT = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item SAUCY_CHIPS = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item ROASTED_NUTS = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item TRAIL_MIX = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item PROTEIN_BAR = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item NOUGAT = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+
+    // breakfast
+    public static final Item SCRAMBLED_EGGS = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item BUTTERED_TOAST = new Item(createGroup().food(FoodRegistry.createComponent(REG_9)));
+    public static final Item TOAST_WITH_JAM = new Item(createGroup().food(FoodRegistry.createComponent(REG_9)));
+
+
+    // meals
+    public static final Item HAM_SANDWICH = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item PEANUT_BUTTER_AND_JAM = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item BLT = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item GRILLED_CHEESE = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item TUNA_SANDWICH = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHEESEBURGER = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item HAMBURGER = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TOFU_BURGER = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item PIZZA = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item SUPREME_PIZZA = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item CHEESE_PIZZA = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item PINEAPPLE_PEPPERONI_PIZZA = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item LEMON_CHICKEN = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item FRIED_CHICKEN = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHICKEN_AND_NOODLES = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHICKEN_AND_DUMPLINGS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TOFU_AND_DUMPLINGS = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item SPAGHETTI_SQUASH = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHICKEN_AND_RICE = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TACO = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item SUSHI = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item EGG_ROLL = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CASHEW_CHICKEN = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+
+    // desert block?
+    //public static final Item coffeeCake;
+    //public static final Item chocolateCake;
+    //public static final Item strawberryShortCake;
+    //public static final Item carrotCake;
+    //public static final Item turtleCake;
+
+    // desert item
+    public static final Item YAM_JAM = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item BANANA_CREAM_PIE = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item CANDY_CORN = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item RUM_RAISIN_ICE_CREAM = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item CHEESE_CAKE = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item BROWNIES = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item SNICKER_DOODLE = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item BANANA_NUT_BREAD = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CANDIED_NUTS = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item ALMOND_BRITTLE = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item OATMEAL_COOKIE = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item NUTTY_COOKIE = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    //public static final Item praline = new Item(createGroup().food(EDIBLE_5));
+
+    public static final Item BURRITO = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TOSTADA = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item HORCHATA = new Drink(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CARNITAS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item FAJITAS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item ENCHILADA = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHURROS = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item TAMALES = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item TRES_LECHE_CAKE = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item STUFFED_POBLANOS = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item CHILI_RELLENO = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item CREMA = new Item(createGroup().food(FoodRegistry.createComponent(REG_3)));
+    public static final Item REFRIED_BEANS = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item CHIMICHANGA = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item QUESADILLA = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+
+    public static final Item CORN_HUSK = new Item(createGroup());
+    public static final Item WHIPPING_CREAM = new Item(createGroup());
+
+    // 1.4.0
+    public static final Item SHEPHERDS_PIE = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item BEEF_WELLINGTON = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item FISH_AND_CHIPS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item ETON_MESS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TEA = new Drink(createGroup().food(FoodRegistry.createBuilder(REG_5).alwaysEdible().build()));
+    public static final Item CORNISH_PASTY = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item SCONES = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item FIGGY_PUDDING = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TREACLE_TART = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item STICKY_TOFFEE_PUDDING = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item TRIFLE = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item WATER_BOTTLE = new Item(createGroup());
+    public static final Item MILK_BOTTLE = new Item(createGroup());
+
+    // 1.7.0
+    public static final Item AJVAR = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item AJVAR_TOAST = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item AVOCADO_TOAST = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item BEEF_STEW = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item BEEF_STIR_FRY = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item BUTTERED_GREEN_BEANS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHEESY_ASPARAGUS = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CHOCOLATE_ICE_CREAM = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item EGGPLANT_PARMESAN = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item FRUIT_CAKE = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item GRILLED_EGGPLANT = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item KIWI_SORBET = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item LEMON_COCONUT_BAR = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item NETHER_WART_STEW = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item PEANUT_BUTTER = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item PEANUT_BUTTER_W_CELERY = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item POTATO_SOUP = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item RATATOUILLE = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item RAW_BACON = new Item(createGroup().food(FoodRegistry.createComponent(REG_1)));
+    public static final Item RHUBARB_CRISP = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item ROASTED_ASPARAGUS = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item ROASTED_RADISHES = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item ROASTED_SQUASH = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item ROASTED_TURNIPS = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item STEAMED_BROCCOLI = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item STEAMED_GREEN_BEANS = new Item(createGroup().food(FoodRegistry.createComponent(REG_7)));
+    public static final Item STIR_FRY = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item STUFFED_ARTICHOKE = new Item(createGroup().food(FoodRegistry.createComponent(REG_18)));
+    public static final Item TOAST_SANDWICH = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+
+    // 2.0.0
+    public static final Item ROASTED_PUMPKIN_SEEDS = new Item(createGroup().food(FoodRegistry.createComponent(REG_4)));
+    public static final Item ROASTED_SUNFLOWER_SEEDS = new Item(createGroup().food(FoodRegistry.createComponent(REG_4)));
+    public static final Item PUMPKIN_BARS = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
+    public static final Item CORN_BREAD = new Item(createGroup().food(FoodRegistry.createComponent(REG_5)));
+    public static final Item PUMPKIN_SOUP = new SoupItem(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item MERINGUE = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
+    public static final Item CABBAGE_ROLL = new Item(createGroup().food(FoodRegistry.createComponent(REG_14)));
+    public static final Item BORSCHT = new Item(createGroup().food(FoodRegistry.createComponent(REG_12)));
+    public static final Item GOULASH = new Item(createGroup().food(FoodRegistry.createComponent(REG_16)));
+    public static final Item BEETROOT_SALAD = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CANDIED_KUMQUATS = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
+    public static final Item STEAMED_CRAB = new Item(createGroup().food(FoodRegistry.createComponent(REG_6)));
+    public static final Item SEA_LETTUCE = new Item(createGroup().food(FoodRegistry.createComponent(REG_1)));
+    public static final Item DEEP_FRIED_SHRIMP = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item TUNA_ROLL = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item FRIED_CALAMARI = new Item(createGroup().food(FoodRegistry.createComponent(REG_10)));
+    public static final Item CRAB_LEGS = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
+    public static final Item STEAMED_CLAMS = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
+    public static final Item GRILLED_OYSTERS = new Item(createGroup().food(FoodRegistry.createComponent(REG_11)));
+    public static final Item ANCHOVY_PIZZA = new Item(createGroup().food(FoodRegistry.createComponent(REG_15)));
+    public static final Item MASHED_POTATOES = new Item(createGroup().food(FoodRegistry.createComponent(REG_9)));
+
+    public static Block SALT_ORE_BLOCK = new Block(FabricBlockSettings.of(Material.AGGREGATE).strength(0.5F).sounds(BlockSoundGroup.SAND));
+    public static final Item SALT_ORE = new AliasedBlockItem(SALT_ORE_BLOCK, createGroup());
+
+    public static final Item GUIDE = new GuideBookItem(createGroup());
+
+    // force loading of the enums
+    static {
+        // the following four will be loaded by finding the source in Juice etc
+        // Farmland.values();
+        // Tree.values();
+        // Bark.values();
+        // VanillaCrops.values();
+        //noinspection ResultOfMethodCallIgnored
+        Juice.values();
+        //noinspection ResultOfMethodCallIgnored
+        Jam.values();
+        //noinspection ResultOfMethodCallIgnored
+        Smoothie.values();
+        //noinspection ResultOfMethodCallIgnored
+        IceCream.values();
+        //noinspection ResultOfMethodCallIgnored
+        Seafood.values();
+        //noinspection ResultOfMethodCallIgnored
+        Furnace.values();
+        //noinspection ResultOfMethodCallIgnored
+        Pie.values();
+        //noinspection ResultOfMethodCallIgnored
+        Utensil.values();
+    }
+
+    public static void init() {
+        registerItem(ItemNames.GUIDE, GUIDE);
+
+        registerItem(ItemNames.PAPRIKA, PAPRIKA);
+
+        registerItem(ItemNames.OLIVE_OIL, OLIVE_OIL);
+        registerItem(ItemNames.CHEESE, CHEESE);
+        registerItem(ItemNames.FLOUR, FLOUR);
+        registerItem(ItemNames.BUTTER, BUTTER);
+        registerItem(ItemNames.NOODLE, NOODLE);
+        registerItem(ItemNames.TOFU, TOFU);
+        registerItem(ItemNames.CHOCOLATE, CHOCOLATE);
+        registerItem(ItemNames.TORTILLA, TORTILLA);
+        registerItem(ItemNames.SOY_SAUCE, SOY_SAUCE);
+        registerItem(ItemNames.DOUGH, DOUGH);
+        registerItem(ItemNames.RAVIOLI, RAVIOLI);
+        registerItem(ItemNames.SALSA, SALSA);
+        registerItem(ItemNames.ARTICHOKE_DIP, ARTICHOKE_DIP);
+        registerItem(ItemNames.PEPPERONI, PEPPERONI);
+
+        registerItem(ItemNames.COFFEE, COFFEE);
+        registerItem(ItemNames.LEMONADE, LEMONADE);
+        registerItem(ItemNames.LIMEADE, LIMEADE);
+        registerItem(ItemNames.SOY_MILK, SOY_MILK);
+        registerItem(ItemNames.KALE_SMOOTHIE, KALE_SMOOTHIE);
+        registerItem(ItemNames.FRUIT_SMOOTHIE, FRUIT_SMOOTHIE);
+        registerItem(ItemNames.CHOCOLATE_MILKSHAKE, CHOCOLATE_MILKSHAKE);
+        registerItem(ItemNames.BEER, BEER);
+        registerItem(ItemNames.WINE, WINE);
+        registerItem(ItemNames.MEAD, MEAD);
+        registerItem(ItemNames.RUM, RUM);
+        registerItem(ItemNames.PUMPKIN_SPICE_LATTE, PUMPKIN_SPICE_LATTE);
+
+        registerItem(ItemNames.BEEF_JERKY, BEEF_JERKY); // todo no recipe
+        registerItem(ItemNames.PORK_JERKY, PORK_JERKY); // todo no recipe
+        registerItem(ItemNames.KALE_CHIPS, KALE_CHIPS);
+        registerItem(ItemNames.POTATO_CHIPS, POTATO_CHIPS);
+        registerItem(ItemNames.STEAMED_RICE, STEAMED_RICE);
+        registerItem(ItemNames.FRENCH_FRIES, FRENCH_FRIES);
+        registerItem(ItemNames.SWEET_POTATO_FRIES, SWEET_POTATO_FRIES);
+        registerItem(ItemNames.ONION_RINGS, ONION_RINGS);
+        registerItem(ItemNames.DOUGHNUT, DOUGHNUT);
+        registerItem(ItemNames.CUCUMBER_SALAD, CUCUMBER_SALAD);
+        registerItem(ItemNames.CAESAR_SALAD, CAESAR_SALAD);
+        registerItem(ItemNames.LEAFY_SALAD, LEAFY_SALAD);
+        registerItem(ItemNames.FRUIT_SALAD, FRUIT_SALAD);
+        registerItem(ItemNames.VEGGIE_SALAD, VEGGIE_SALAD);
+        registerItem(ItemNames.PORK_AND_BEANS, PORK_AND_BEANS);
+        registerItem(ItemNames.OATMEAL, OATMEAL);
+        registerItem(ItemNames.LEEK_SOUP, LEEK_SOUP);
+        registerItem(ItemNames.YOGHURT, YOGHURT);
+        registerItem(ItemNames.SAUCY_CHIPS, SAUCY_CHIPS);
+        registerItem(ItemNames.ROASTED_NUTS, ROASTED_NUTS);
+        registerItem(ItemNames.TRAIL_MIX, TRAIL_MIX);
+        registerItem(ItemNames.PROTEIN_BAR, PROTEIN_BAR);
+        registerItem(ItemNames.NOUGAT, NOUGAT);
+
+        registerItem(ItemNames.SCRAMBLED_EGGS, SCRAMBLED_EGGS);
+        registerItem(ItemNames.BUTTERED_TOAST, BUTTERED_TOAST);
+        registerItem(ItemNames.TOAST_WITH_JAM, TOAST_WITH_JAM);
+
+        registerItem(ItemNames.HAM_SANDWICH, HAM_SANDWICH);
+        registerItem(ItemNames.PEANUT_BUTTER_AND_JAM, PEANUT_BUTTER_AND_JAM);
+        registerItem(ItemNames.BLT, BLT);
+        registerItem(ItemNames.GRILLED_CHEESE, GRILLED_CHEESE);
+        registerItem(ItemNames.TUNA_SANDWICH, TUNA_SANDWICH); // todo no recipe
+        registerItem(ItemNames.CHEESEBURGER, CHEESEBURGER);
+        registerItem(ItemNames.HAMBURGER, HAMBURGER);
+        registerItem(ItemNames.TOFUBURGER, TOFU_BURGER);
+        registerItem(ItemNames.PIZZA, PIZZA);
+        registerItem(ItemNames.SUPREME_PIZZA, SUPREME_PIZZA);
+        registerItem(ItemNames.CHEESE_PIZZA, CHEESE_PIZZA);
+        registerItem(ItemNames.PINEAPPLE_PEPPERONI_PIZZA, PINEAPPLE_PEPPERONI_PIZZA);
+        registerItem(ItemNames.LEMON_CHICKEN, LEMON_CHICKEN);
+        registerItem(ItemNames.FRIED_CHICKEN, FRIED_CHICKEN);
+        registerItem(ItemNames.CHICKEN_AND_NOODLES, CHICKEN_AND_NOODLES);
+        registerItem(ItemNames.CHICKEN_AND_DUMPLINGS, CHICKEN_AND_DUMPLINGS);
+        registerItem(ItemNames.TOFU_AND_DUMPLINGS, TOFU_AND_DUMPLINGS);
+        registerItem(ItemNames.SPAGHETTI_SQUASH, SPAGHETTI_SQUASH);
+        registerItem(ItemNames.CHICKEN_AND_RICE, CHICKEN_AND_RICE);
+        registerItem(ItemNames.TACO, TACO);
+        registerItem(ItemNames.SUSHI, SUSHI);
+        registerItem(ItemNames.EGG_ROLL, EGG_ROLL);
+        registerItem(ItemNames.CASHEW_CHICKEN, CASHEW_CHICKEN);
+
+        registerItem(ItemNames.YAM_JAM, YAM_JAM);
+        registerItem(ItemNames.BANANA_CREAM_PIE, BANANA_CREAM_PIE);
+        registerItem(ItemNames.CANDY_CORN, CANDY_CORN);
+        registerItem(ItemNames.RUM_RAISIN_ICE_CREAM, RUM_RAISIN_ICE_CREAM);
+        registerItem(ItemNames.CHEESE_CAKE, CHEESE_CAKE);
+        registerItem(ItemNames.BROWNIES, BROWNIES);
+        registerItem(ItemNames.SNICKER_DOODLE, SNICKER_DOODLE);
+        registerItem(ItemNames.BANANA_NUT_BREAD, BANANA_NUT_BREAD);
+        registerItem(ItemNames.CANDIED_NUTS, CANDIED_NUTS);
+        registerItem(ItemNames.ALMOND_BRITTLE, ALMOND_BRITTLE);
+        registerItem(ItemNames.RAISIN_OATMEAL_COOKIE, OATMEAL_COOKIE);
+        registerItem(ItemNames.NUTTY_COOKIE, NUTTY_COOKIE);
+
+        registerItem(ItemNames.BURRITO, BURRITO);
+        registerItem(ItemNames.TOSTADA, TOSTADA);
+        registerItem(ItemNames.HORCHATA, HORCHATA);
+        registerItem(ItemNames.CARNITAS, CARNITAS);
+        registerItem(ItemNames.FAJITAS, FAJITAS);
+        registerItem(ItemNames.ENCHILADA, ENCHILADA);
+        registerItem(ItemNames.CHURROS, CHURROS);
+        registerItem(ItemNames.TAMALES, TAMALES);
+        registerItem(ItemNames.TRES_LECHE_CAKE, TRES_LECHE_CAKE);
+        registerItem(ItemNames.STUFFED_POBLANOS, STUFFED_POBLANOS);
+        registerItem(ItemNames.CHILI_RELLENO, CHILI_RELLENO);
+        registerItem(ItemNames.CREMA, CREMA);
+        registerItem(ItemNames.REFRIED_BEANS, REFRIED_BEANS);
+        registerItem(ItemNames.CHIMICHANGA, CHIMICHANGA);
+        registerItem(ItemNames.QUESADILLA, QUESADILLA);
+
+        registerItem(ItemNames.AJVAR, AJVAR);
+        registerItem(ItemNames.AJVAR_TOAST, AJVAR_TOAST);
+        registerItem(ItemNames.AVOCADO_TOAST, AVOCADO_TOAST);
+        registerItem(ItemNames.BEEF_STEW, BEEF_STEW);
+        registerItem(ItemNames.BEEF_STIR_FRY, BEEF_STIR_FRY);
+        registerItem(ItemNames.BUTTERED_GREEN_BEANS, BUTTERED_GREEN_BEANS);
+        registerItem(ItemNames.CHEESY_ASPARAGUS, CHEESY_ASPARAGUS);
+        registerItem(ItemNames.CHOCOLATE_ICE_CREAM, CHOCOLATE_ICE_CREAM);
+        registerItem(ItemNames.EGGPLANT_PARMESAN, EGGPLANT_PARMESAN);
+        registerItem(ItemNames.FRUIT_CAKE, FRUIT_CAKE);
+        registerItem(ItemNames.GRILLED_EGGPLANT, GRILLED_EGGPLANT);
+        registerItem(ItemNames.KIWI_SORBET, KIWI_SORBET);
+        registerItem(ItemNames.LEMON_COCONUT_BAR, LEMON_COCONUT_BAR);
+        registerItem(ItemNames.NETHER_WART_STEW, NETHER_WART_STEW);
+        registerItem(ItemNames.PEANUT_BUTTER, PEANUT_BUTTER);
+        registerItem(ItemNames.PEANUT_BUTTER_W_CELERY, PEANUT_BUTTER_W_CELERY);
+        registerItem(ItemNames.POTATO_SOUP, POTATO_SOUP);
+        registerItem(ItemNames.RATATOUILLE, RATATOUILLE);
+        registerItem(ItemNames.RAW_BACON, RAW_BACON);
+        registerItem(ItemNames.RHUBARB_CRISP, RHUBARB_CRISP);
+        registerItem(ItemNames.ROASTED_ASPARAGUS, ROASTED_ASPARAGUS);
+        registerItem(ItemNames.ROASTED_RADISHES, ROASTED_RADISHES);
+        registerItem(ItemNames.ROASTED_SQUASH, ROASTED_SQUASH);
+        registerItem(ItemNames.ROASTED_TURNIPS, ROASTED_TURNIPS);
+        registerItem(ItemNames.STEAMED_BROCCOLI, STEAMED_BROCCOLI);
+        registerItem(ItemNames.STEAMED_GREEN_BEANS, STEAMED_GREEN_BEANS);
+        registerItem(ItemNames.STIR_FRY, STIR_FRY);
+        registerItem(ItemNames.STUFFED_ARTICHOKE, STUFFED_ARTICHOKE);
+        registerItem(ItemNames.TOAST_SANDWICH, TOAST_SANDWICH);
+
+        registerItem(ItemNames.SHEPHERDS_PIE, SHEPHERDS_PIE);
+        registerItem(ItemNames.BEEF_WELLINGTON, BEEF_WELLINGTON);
+        registerItem(ItemNames.FISH_AND_CHIPS, FISH_AND_CHIPS);
+        registerItem(ItemNames.ETON_MESS, ETON_MESS);
+        registerItem(ItemNames.TEA, TEA);
+        registerItem(ItemNames.CORNISH_PASTY, CORNISH_PASTY);
+        registerItem(ItemNames.SCONES, SCONES);
+        registerItem(ItemNames.FIGGY_PUDDING, FIGGY_PUDDING);
+        registerItem(ItemNames.TREACLE_TART, TREACLE_TART);
+        registerItem(ItemNames.STICKY_TOFFEE_PUDDING, STICKY_TOFFEE_PUDDING);
+        registerItem(ItemNames.TRIFLE, TRIFLE);
+        registerItem(ItemNames.WATER_BOTTLE, WATER_BOTTLE);
+        registerItem(ItemNames.MILK_BOTTLE, MILK_BOTTLE);
+
+        registerItem(ItemNames.ROASTED_PUMPKIN_SEEDS, ROASTED_PUMPKIN_SEEDS);
+        registerItem(ItemNames.ROASTED_SUNFLOWER_SEEDS, ROASTED_SUNFLOWER_SEEDS);
+        registerItem(ItemNames.PUMPKIN_BARS, PUMPKIN_BARS);
+        registerItem(ItemNames.CORN_BREAD, CORN_BREAD);
+        registerItem(ItemNames.PUMPKIN_SOUP, PUMPKIN_SOUP);
+        registerItem(ItemNames.MERINGUE, MERINGUE);
+        registerItem(ItemNames.CABBAGE_ROLL, CABBAGE_ROLL);
+        registerItem(ItemNames.BORSCHT, BORSCHT);
+        registerItem(ItemNames.GOULASH, GOULASH);
+        registerItem(ItemNames.BEETROOT_SALAD, BEETROOT_SALAD);
+        registerItem(ItemNames.CANDIED_KUMQUATS, CANDIED_KUMQUATS);
+        registerItem(ItemNames.STEAMED_CRAB, STEAMED_CRAB);
+        registerItem(ItemNames.SEA_LETTUCE, SEA_LETTUCE);
+        registerItem(ItemNames.DEEP_FRIED_SHRIMP, DEEP_FRIED_SHRIMP);
+        registerItem(ItemNames.TUNA_ROLL, TUNA_ROLL);
+        registerItem(ItemNames.FRIED_CALAMARI, FRIED_CALAMARI);
+        registerItem(ItemNames.CRAB_LEGS, CRAB_LEGS);
+        registerItem(ItemNames.STEAMED_CLAMS, STEAMED_CLAMS);
+        registerItem(ItemNames.GRILLED_OYSTERS, GRILLED_OYSTERS);
+        registerItem(ItemNames.ANCHOVY_PIZZA, ANCHOVY_PIZZA);
+        registerItem(ItemNames.MASHED_POTATOES, MASHED_POTATOES);
+
+        registerItem(ItemNames.CORN_HUSK, CORN_HUSK);
+        registerItem(ItemNames.WHIPPING_CREAM, WHIPPING_CREAM);
+
+        registerItem(ItemNames.SALT, SALT);
+        registerBlock(BlockNames.SALT_ORE, SALT_ORE_BLOCK);
+        registerItem(ItemNames.SALT_ORE, SALT_ORE);
     }
 
     public static Item.Settings createGroup() {
