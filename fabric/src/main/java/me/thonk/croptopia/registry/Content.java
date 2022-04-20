@@ -1016,24 +1016,32 @@ public class Content {
 
     public static final Item GUIDE = new GuideBookItem(createGroup());
 
+    // force loading of the enums
+    static {
+        // the following four will be loaded by finding the source in Juice etc
+        // Farmland.values();
+        // Tree.values();
+        // Bark.values();
+        // VanillaCrops.values();
+        //noinspection ResultOfMethodCallIgnored
+        Juice.values();
+        //noinspection ResultOfMethodCallIgnored
+        Jam.values();
+        //noinspection ResultOfMethodCallIgnored
+        Smoothie.values();
+        //noinspection ResultOfMethodCallIgnored
+        IceCream.values();
+        //noinspection ResultOfMethodCallIgnored
+        Seafood.values();
+        //noinspection ResultOfMethodCallIgnored
+        Furnace.values();
+        //noinspection ResultOfMethodCallIgnored
+        Pie.values();
+        //noinspection ResultOfMethodCallIgnored
+        Utensil.values();
+    }
 
     public static void init() {
-
-        // force loading
-        Object o = Content.Farmland.TOMATO;
-        o = Content.Tree.APPLE;
-        o = Content.Bark.CINNAMON;
-        o = Content.Juice.TOMATO;
-        o = Content.Jam.APRICOT;
-        o = Content.Smoothie.BANANA;
-        o = Content.IceCream.MANGO;
-        o = Content.Furnace.BAKED_SWEET_POTATO;
-        o = Content.Seafood.CRAB;
-        o = Content.Pie.APPLE;
-        o = Content.VanillaCrops.POTATO;
-        o = Content.Utensil.COOKING_POT;
-
-
         registerItem(ItemNames.GUIDE, GUIDE);
 
         registerItem(ItemNames.PAPRIKA, PAPRIKA);
