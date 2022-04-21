@@ -2,23 +2,18 @@ package com.epherical.croptopia;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import com.epherical.croptopia.blocks.LeafCropBlock;
-import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.SeedItem;
-import com.epherical.croptopia.register.CroptopiaContent;
+import com.epherical.croptopia.register.Content;
 import com.google.common.collect.Sets;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.Config;
 import com.epherical.croptopia.events.BiomeModification;
 import com.epherical.croptopia.events.BlockBreakEvent;
-import com.epherical.croptopia.events.CroptopiaVillagerTrades;
 import com.epherical.croptopia.events.EntitySpawn;
 import com.epherical.croptopia.events.Harvest;
 import com.epherical.croptopia.events.LootTableModification;
 import com.epherical.croptopia.loot.EntityModifier;
-import com.epherical.croptopia.registry.BlockRegistry;
-import com.epherical.croptopia.registry.GeneratorRegistry;
 import com.epherical.croptopia.registry.ItemRegistry;
-import com.epherical.croptopia.registry.LeavesRegistry;
 //import me.thonk.croptopia.mixin.VillagerAccess;
 import com.epherical.croptopia.loot.SpawnChestModifier;
 import net.minecraft.client.Minecraft;
@@ -29,7 +24,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
@@ -68,7 +62,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -169,7 +162,7 @@ public class CroptopiaForge {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            CroptopiaContent.registerBlocks((object, id) -> {
+            Content.registerBlocks((id, object) -> {
                 object.setRegistryName(id);
                 blockRegistryEvent.getRegistry().register(object);
             });
@@ -180,7 +173,7 @@ public class CroptopiaForge {
 
         @SubscribeEvent
         public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
-            CroptopiaContent.registerItems((item, id) -> {
+            Content.registerItems((id, item) -> {
                 item.setRegistryName(id);
                 itemRegister.getRegistry().register(item);
                 if (item instanceof ItemNameBlockItem) {

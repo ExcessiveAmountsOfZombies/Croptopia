@@ -28,6 +28,7 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
     private static final Set<FarmlandCrop> FARMLAND_CROPS = new HashSet<>();
 
     private final String name;
+    private final String dropName;
     private final boolean plural;
     private final TagCategory tagCategory;
     private final Item cropItem;
@@ -36,8 +37,13 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
     private final TagKey<Biome> biomes; // todo implement
 
     public FarmlandCrop(String cropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes) {
+        this(cropName, cropName, isPlural, category, registry, biomes);
+    }
+
+    public FarmlandCrop(String cropName, String dropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes) {
         Objects.requireNonNull(category);
         this.name = cropName;
+        this.dropName = dropName;
         this.plural = isPlural;
         this.tagCategory = category;
         this.biomes = biomes;
@@ -58,7 +64,7 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
 
     @Override
     public String name() {
-        return name;
+        return dropName;
     }
 
     @Override
