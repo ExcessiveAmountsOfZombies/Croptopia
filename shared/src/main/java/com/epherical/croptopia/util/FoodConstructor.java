@@ -29,7 +29,7 @@ public record FoodConstructor(int hunger, float satMod) {
         return new FoodProperties.Builder().nutrition(reg.hunger).saturationMod(reg.satMod);
     }
 
-    public static FoodProperties createComponent(FoodConstructor reg) {
+    public static FoodProperties createFood(FoodConstructor reg) {
         return createBuilder(reg).build();
     }
 }

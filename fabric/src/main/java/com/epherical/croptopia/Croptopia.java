@@ -85,6 +85,7 @@ public class Croptopia implements ModInitializer {
                 .filter(success -> !success);
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
 
+
         patchouli = new Patchouli();
 
         Content.init();

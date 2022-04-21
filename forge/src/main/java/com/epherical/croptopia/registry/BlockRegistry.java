@@ -111,7 +111,7 @@ public class BlockRegistry {
     public static Block cinnamonSaplingBlock;
 
     public static void init() {
-        salt = registerBlock(BlockNames.SALT_ORE, new Block(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.5F).sound(SoundType.SAND)));
+        /*salt = registerBlock(BlockNames.SALT_ORE, new Block(BlockBehaviour.Properties.of(Material.DECORATION).strength(0.5F).sound(SoundType.SAND)));
         cinnamonLog = registerBlock(BlockNames.CINNAMON_LOG, new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
         strippedCinnamonLog = registerBlock(BlockNames.STRIPPED_CINNAMON_LOG, new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
         cinnamonWood = registerBlock(BlockNames.CINNAMON_WOOD, new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).sound(SoundType.WOOD).strength(2.0F)));
@@ -202,7 +202,7 @@ public class BlockRegistry {
         cashewSaplingBlock = registerBlock(BlockNames.CASHEW_SAPLING, new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.CASHEW_TREE), createSaplingSettings()));
         pecanSaplingBlock = registerBlock(BlockNames.PECAN_SAPLING, new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.PECAN_TREE), createSaplingSettings()));
         walnutSaplingBlock = registerBlock(BlockNames.WALNUT_SAPLING, new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.WALNUT_TREE), createSaplingSettings()));
-        cinnamonSaplingBlock = registerBlock(BlockNames.CINNAMON_SAPLING, new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.CINNAMON_TREE), createSaplingSettings()));
+        cinnamonSaplingBlock = registerBlock(BlockNames.CINNAMON_SAPLING, new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> GeneratorRegistry.CINNAMON_TREE), createSaplingSettings()));*/
 
     }
 }

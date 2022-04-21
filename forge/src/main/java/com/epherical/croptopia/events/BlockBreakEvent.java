@@ -17,7 +17,7 @@ public class BlockBreakEvent {
 
     @SubscribeEvent
     public void onInteractionWithTool(BlockEvent.BlockToolInteractEvent event) {
-        BlockState state = event.getState();
+        /*BlockState state = event.getState();
         if (state.is(BlockRegistry.cinnamonLog) || state.is(BlockRegistry.cinnamonWood)) {
             if (!event.getPlayer().isCreative()) {
                 Block.popResource(event.getPlayer().level, event.getPos(), new ItemStack(ItemRegistry.cinnamon));
@@ -27,6 +27,6 @@ public class BlockBreakEvent {
             } else {
                 event.setFinalState(BlockRegistry.strippedCinnamonWood.withPropertiesOf(state));
             }
-        }
+        }*/
     }
 }

@@ -167,7 +167,7 @@ public class Content {
                 item = new CropItem(createGroup());
             }
             else {
-                item = new CropItem(createGroup().food(createComponent(foodRegistry)));
+                item = new CropItem(createGroup().food(createFood(foodRegistry)));
             }
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(lowerCaseName), item);
             block = new CroptopiaCropBlock(createCropSettings());
@@ -280,7 +280,7 @@ public class Content {
                 item = Items.APPLE;
             }
             else {
-                item = new CropItem(createGroup().food(createComponent(foodRegistry)));
+                item = new CropItem(createGroup().food(createFood(foodRegistry)));
                 Registry.register(Registry.ITEM, Croptopia.createIdentifier(lowerCaseName), item);
             }
             leaves = createLeavesBlock();
@@ -532,7 +532,7 @@ public class Content {
                         .effect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1), 1.0F).build()));
             }
             else {
-                item = new Item(createGroup().food(FoodConstructor.createComponent(foodRegistry)));
+                item = new Item(createGroup().food(FoodConstructor.createFood(foodRegistry)));
             }
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
         }
@@ -575,7 +575,7 @@ public class Content {
                 item = new Item(createGroup());
             }
             else {
-                item = new Item(createGroup().food(FoodConstructor.createComponent(foodRegistry)));
+                item = new Item(createGroup().food(FoodConstructor.createFood(foodRegistry)));
             }
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase()), item);
         }
@@ -733,7 +733,7 @@ public class Content {
         private ItemConvertibleWithPlural crop;
 
         IceCream() {
-            item = new Item(createGroup().food(createComponent(REG_10)));
+            item = new Item(createGroup().food(createFood(REG_10)));
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_ice_cream"), item);
             crop = findCrop(name());
             if (crop == null) {
@@ -764,7 +764,7 @@ public class Content {
         private ItemConvertibleWithPlural crop;
 
         Pie() {
-            item = new Item(createGroup().food(createComponent(REG_14)));
+            item = new Item(createGroup().food(createFood(REG_14)));
             Registry.register(Registry.ITEM, Croptopia.createIdentifier(name().toLowerCase() + "_pie"), item);
             crop = findCrop(name());
             if (crop == null) {
@@ -818,19 +818,19 @@ public class Content {
 
     // secondary ingredients?
     public static final Item OLIVE_OIL = new Item(createGroup());
-    public static final Item CHEESE = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
+    public static final Item CHEESE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item FLOUR = new Item(createGroup());
-    public static final Item BUTTER = new Item(createGroup().food(FoodConstructor.createComponent(REG_3)));
+    public static final Item BUTTER = new Item(createGroup().food(FoodConstructor.createFood(REG_3)));
     public static final Item NOODLE = new Item(createGroup());
-    public static final Item TOFU = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item CHOCOLATE = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item TORTILLA = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
+    public static final Item TOFU = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item CHOCOLATE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item TORTILLA = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item SOY_SAUCE = new Item(createGroup());
     public static final Item DOUGH = new Item(createGroup());
     public static final Item RAVIOLI = new Item(createGroup());
-    public static final Item SALSA = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item ARTICHOKE_DIP = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item PEPPERONI = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
+    public static final Item SALSA = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item ARTICHOKE_DIP = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item PEPPERONI = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
 
     // drinks
     public static final Item COFFEE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
@@ -850,60 +850,60 @@ public class Content {
     public static final Item PUMPKIN_SPICE_LATTE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_14).alwaysEat().build()));
 
     // snacks?
-    public static final Item BEEF_JERKY = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item PORK_JERKY = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item KALE_CHIPS = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item POTATO_CHIPS = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item STEAMED_RICE = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item FRENCH_FRIES = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item SWEET_POTATO_FRIES = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item ONION_RINGS = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item DOUGHNUT = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item CUCUMBER_SALAD = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CAESAR_SALAD = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item LEAFY_SALAD = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item FRUIT_SALAD = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item VEGGIE_SALAD = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item PORK_AND_BEANS = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item OATMEAL = new Soup(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item LEEK_SOUP = new Soup(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item YOGHURT = new Soup(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item SAUCY_CHIPS = new Soup(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item ROASTED_NUTS = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item TRAIL_MIX = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item PROTEIN_BAR = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item NOUGAT = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
+    public static final Item BEEF_JERKY = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item PORK_JERKY = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item KALE_CHIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item POTATO_CHIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item STEAMED_RICE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item FRENCH_FRIES = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item SWEET_POTATO_FRIES = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item ONION_RINGS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item DOUGHNUT = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item CUCUMBER_SALAD = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CAESAR_SALAD = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item LEAFY_SALAD = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item FRUIT_SALAD = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item VEGGIE_SALAD = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item PORK_AND_BEANS = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item OATMEAL = new Soup(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item LEEK_SOUP = new Soup(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item YOGHURT = new Soup(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item SAUCY_CHIPS = new Soup(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item ROASTED_NUTS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item TRAIL_MIX = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item PROTEIN_BAR = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item NOUGAT = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
 
     // breakfast
-    public static final Item SCRAMBLED_EGGS = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item BUTTERED_TOAST = new Item(createGroup().food(FoodConstructor.createComponent(REG_9)));
-    public static final Item TOAST_WITH_JAM = new Item(createGroup().food(FoodConstructor.createComponent(REG_9)));
+    public static final Item SCRAMBLED_EGGS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item BUTTERED_TOAST = new Item(createGroup().food(FoodConstructor.createFood(REG_9)));
+    public static final Item TOAST_WITH_JAM = new Item(createGroup().food(FoodConstructor.createFood(REG_9)));
 
 
     // meals
-    public static final Item HAM_SANDWICH = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item PEANUT_BUTTER_AND_JAM = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item BLT = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item GRILLED_CHEESE = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item TUNA_SANDWICH = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHEESEBURGER = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item HAMBURGER = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item TOFU_BURGER = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item PIZZA = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item SUPREME_PIZZA = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item CHEESE_PIZZA = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item PINEAPPLE_PEPPERONI_PIZZA = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item LEMON_CHICKEN = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item FRIED_CHICKEN = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHICKEN_AND_NOODLES = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHICKEN_AND_DUMPLINGS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item TOFU_AND_DUMPLINGS = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item SPAGHETTI_SQUASH = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHICKEN_AND_RICE = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item TACO = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item SUSHI = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item EGG_ROLL = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CASHEW_CHICKEN = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
+    public static final Item HAM_SANDWICH = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item PEANUT_BUTTER_AND_JAM = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item BLT = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item GRILLED_CHEESE = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item TUNA_SANDWICH = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHEESEBURGER = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item HAMBURGER = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item TOFU_BURGER = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item SUPREME_PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item CHEESE_PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item PINEAPPLE_PEPPERONI_PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item LEMON_CHICKEN = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item FRIED_CHICKEN = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHICKEN_AND_NOODLES = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHICKEN_AND_DUMPLINGS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item TOFU_AND_DUMPLINGS = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item SPAGHETTI_SQUASH = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHICKEN_AND_RICE = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item TACO = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item SUSHI = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item EGG_ROLL = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CASHEW_CHICKEN = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
 
     // desert block?
     //public static final Item coffeeCake;
@@ -913,107 +913,107 @@ public class Content {
     //public static final Item turtleCake;
 
     // desert item
-    public static final Item YAM_JAM = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item BANANA_CREAM_PIE = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item CANDY_CORN = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item RUM_RAISIN_ICE_CREAM = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item CHEESE_CAKE = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item BROWNIES = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item SNICKER_DOODLE = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item BANANA_NUT_BREAD = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CANDIED_NUTS = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item ALMOND_BRITTLE = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item OATMEAL_COOKIE = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item NUTTY_COOKIE = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
+    public static final Item YAM_JAM = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item BANANA_CREAM_PIE = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item CANDY_CORN = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item RUM_RAISIN_ICE_CREAM = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item CHEESE_CAKE = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item BROWNIES = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item SNICKER_DOODLE = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item BANANA_NUT_BREAD = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CANDIED_NUTS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item ALMOND_BRITTLE = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item OATMEAL_COOKIE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item NUTTY_COOKIE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     //public static final Item praline = new Item(createGroup().food(EDIBLE_5));
 
-    public static final Item BURRITO = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item TOSTADA = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item HORCHATA = new Drink(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CARNITAS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item FAJITAS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item ENCHILADA = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHURROS = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item TAMALES = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item TRES_LECHE_CAKE = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item STUFFED_POBLANOS = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item CHILI_RELLENO = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item CREMA = new Item(createGroup().food(FoodConstructor.createComponent(REG_3)));
-    public static final Item REFRIED_BEANS = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item CHIMICHANGA = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item QUESADILLA = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
+    public static final Item BURRITO = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item TOSTADA = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item HORCHATA = new Drink(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CARNITAS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item FAJITAS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item ENCHILADA = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHURROS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item TAMALES = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item TRES_LECHE_CAKE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item STUFFED_POBLANOS = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item CHILI_RELLENO = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item CREMA = new Item(createGroup().food(FoodConstructor.createFood(REG_3)));
+    public static final Item REFRIED_BEANS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item CHIMICHANGA = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item QUESADILLA = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
 
     public static final Item CORN_HUSK = new Item(createGroup());
     public static final Item WHIPPING_CREAM = new Item(createGroup());
 
     // 1.4.0
-    public static final Item SHEPHERDS_PIE = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item BEEF_WELLINGTON = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item FISH_AND_CHIPS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item ETON_MESS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
+    public static final Item SHEPHERDS_PIE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item BEEF_WELLINGTON = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item FISH_AND_CHIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item ETON_MESS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
     public static final Item TEA = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_5).alwaysEat().build()));
-    public static final Item CORNISH_PASTY = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item SCONES = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item FIGGY_PUDDING = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item TREACLE_TART = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item STICKY_TOFFEE_PUDDING = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item TRIFLE = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
+    public static final Item CORNISH_PASTY = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item SCONES = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item FIGGY_PUDDING = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item TREACLE_TART = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item STICKY_TOFFEE_PUDDING = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item TRIFLE = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
     public static final Item WATER_BOTTLE = new Item(createGroup());
     public static final Item MILK_BOTTLE = new Item(createGroup());
 
     // 1.7.0
-    public static final Item AJVAR = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item AJVAR_TOAST = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item AVOCADO_TOAST = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item BEEF_STEW = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item BEEF_STIR_FRY = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item BUTTERED_GREEN_BEANS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHEESY_ASPARAGUS = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CHOCOLATE_ICE_CREAM = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item EGGPLANT_PARMESAN = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item FRUIT_CAKE = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item GRILLED_EGGPLANT = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item KIWI_SORBET = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item LEMON_COCONUT_BAR = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item NETHER_WART_STEW = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item PEANUT_BUTTER = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item PEANUT_BUTTER_W_CELERY = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item POTATO_SOUP = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item RATATOUILLE = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item RAW_BACON = new Item(createGroup().food(FoodConstructor.createComponent(REG_1)));
-    public static final Item RHUBARB_CRISP = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item ROASTED_ASPARAGUS = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item ROASTED_RADISHES = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item ROASTED_SQUASH = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item ROASTED_TURNIPS = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item STEAMED_BROCCOLI = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item STEAMED_GREEN_BEANS = new Item(createGroup().food(FoodConstructor.createComponent(REG_7)));
-    public static final Item STIR_FRY = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item STUFFED_ARTICHOKE = new Item(createGroup().food(FoodConstructor.createComponent(REG_18)));
-    public static final Item TOAST_SANDWICH = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
+    public static final Item AJVAR = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item AJVAR_TOAST = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item AVOCADO_TOAST = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item BEEF_STEW = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item BEEF_STIR_FRY = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item BUTTERED_GREEN_BEANS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHEESY_ASPARAGUS = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CHOCOLATE_ICE_CREAM = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item EGGPLANT_PARMESAN = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item FRUIT_CAKE = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item GRILLED_EGGPLANT = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item KIWI_SORBET = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item LEMON_COCONUT_BAR = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item NETHER_WART_STEW = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item PEANUT_BUTTER = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item PEANUT_BUTTER_W_CELERY = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item POTATO_SOUP = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item RATATOUILLE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item RAW_BACON = new Item(createGroup().food(FoodConstructor.createFood(REG_1)));
+    public static final Item RHUBARB_CRISP = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item ROASTED_ASPARAGUS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item ROASTED_RADISHES = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item ROASTED_SQUASH = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item ROASTED_TURNIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item STEAMED_BROCCOLI = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item STEAMED_GREEN_BEANS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static final Item STIR_FRY = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item STUFFED_ARTICHOKE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item TOAST_SANDWICH = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
 
     // 2.0.0
-    public static final Item ROASTED_PUMPKIN_SEEDS = new Item(createGroup().food(FoodConstructor.createComponent(REG_4)));
-    public static final Item ROASTED_SUNFLOWER_SEEDS = new Item(createGroup().food(FoodConstructor.createComponent(REG_4)));
-    public static final Item PUMPKIN_BARS = new Item(createGroup().food(FoodConstructor.createComponent(REG_6)));
-    public static final Item CORN_BREAD = new Item(createGroup().food(FoodConstructor.createComponent(REG_5)));
-    public static final Item PUMPKIN_SOUP = new Soup(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item MERINGUE = new Item(createGroup().food(FoodConstructor.createComponent(REG_6)));
-    public static final Item CABBAGE_ROLL = new Item(createGroup().food(FoodConstructor.createComponent(REG_14)));
-    public static final Item BORSCHT = new Item(createGroup().food(FoodConstructor.createComponent(REG_12)));
-    public static final Item GOULASH = new Item(createGroup().food(FoodConstructor.createComponent(REG_16)));
-    public static final Item BEETROOT_SALAD = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CANDIED_KUMQUATS = new Item(createGroup().food(FoodConstructor.createComponent(REG_6)));
-    public static final Item STEAMED_CRAB = new Item(createGroup().food(FoodConstructor.createComponent(REG_6)));
-    public static final Item SEA_LETTUCE = new Item(createGroup().food(FoodConstructor.createComponent(REG_1)));
-    public static final Item DEEP_FRIED_SHRIMP = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item TUNA_ROLL = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item FRIED_CALAMARI = new Item(createGroup().food(FoodConstructor.createComponent(REG_10)));
-    public static final Item CRAB_LEGS = new Item(createGroup().food(FoodConstructor.createComponent(REG_11)));
-    public static final Item STEAMED_CLAMS = new Item(createGroup().food(FoodConstructor.createComponent(REG_11)));
-    public static final Item GRILLED_OYSTERS = new Item(createGroup().food(FoodConstructor.createComponent(REG_11)));
-    public static final Item ANCHOVY_PIZZA = new Item(createGroup().food(FoodConstructor.createComponent(REG_15)));
-    public static final Item MASHED_POTATOES = new Item(createGroup().food(FoodConstructor.createComponent(REG_9)));
+    public static final Item ROASTED_PUMPKIN_SEEDS = new Item(createGroup().food(FoodConstructor.createFood(REG_4)));
+    public static final Item ROASTED_SUNFLOWER_SEEDS = new Item(createGroup().food(FoodConstructor.createFood(REG_4)));
+    public static final Item PUMPKIN_BARS = new Item(createGroup().food(FoodConstructor.createFood(REG_6)));
+    public static final Item CORN_BREAD = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item PUMPKIN_SOUP = new Soup(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item MERINGUE = new Item(createGroup().food(FoodConstructor.createFood(REG_6)));
+    public static final Item CABBAGE_ROLL = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item BORSCHT = new Item(createGroup().food(FoodConstructor.createFood(REG_12)));
+    public static final Item GOULASH = new Item(createGroup().food(FoodConstructor.createFood(REG_16)));
+    public static final Item BEETROOT_SALAD = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CANDIED_KUMQUATS = new Item(createGroup().food(FoodConstructor.createFood(REG_6)));
+    public static final Item STEAMED_CRAB = new Item(createGroup().food(FoodConstructor.createFood(REG_6)));
+    public static final Item SEA_LETTUCE = new Item(createGroup().food(FoodConstructor.createFood(REG_1)));
+    public static final Item DEEP_FRIED_SHRIMP = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item TUNA_ROLL = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item FRIED_CALAMARI = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
+    public static final Item CRAB_LEGS = new Item(createGroup().food(FoodConstructor.createFood(REG_11)));
+    public static final Item STEAMED_CLAMS = new Item(createGroup().food(FoodConstructor.createFood(REG_11)));
+    public static final Item GRILLED_OYSTERS = new Item(createGroup().food(FoodConstructor.createFood(REG_11)));
+    public static final Item ANCHOVY_PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_15)));
+    public static final Item MASHED_POTATOES = new Item(createGroup().food(FoodConstructor.createFood(REG_9)));
 
     public static Block SALT_ORE_BLOCK = new Block(FabricBlockSettings.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
     public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());

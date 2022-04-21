@@ -1,5 +1,6 @@
 package com.epherical.croptopia.events;
 
+import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.config.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

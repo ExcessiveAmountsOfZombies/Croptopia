@@ -1,9 +1,12 @@
 package com.epherical.croptopia.register;
 
+import com.epherical.croptopia.blocks.CroptopiaCropBlock;
+import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -13,6 +16,13 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import static com.epherical.croptopia.CroptopiaMod.createCropSettings;
+import static com.epherical.croptopia.CroptopiaMod.createGroup;
+import static com.epherical.croptopia.util.FoodConstructor.createFood;
+
+/**
+ * FarmlandCrop represents the Item, Block, and Item seed that creates a croptopia crop.
+ */
 public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     private static final Set<FarmlandCrop> FARMLAND_CROPS = new HashSet<>();
@@ -33,6 +43,13 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
         this.tagCategory = category;
         this.food = registry;
         this.biomes = biomes;
+        if (this.food == null) {
+            this.cropItem = new CropItem(createGroup());
+        } else {
+            this.cropItem = new CropItem(createGroup().food(createFood(food)));
+        }
+        cropBlock = new CroptopiaCropBlock(createCropSettings());
+        seedItem = new SeedItem(cropBlock, createGroup(), biomes);
         FARMLAND_CROPS.add(this);
     }
 
@@ -62,5 +79,9 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
 
     public SeedItem getSeedItem() {
         return seedItem;
+    }
+
+    public static Set<FarmlandCrop> getFarmlandCrops() {
+        return ImmutableSet.copyOf(FARMLAND_CROPS);
     }
 }

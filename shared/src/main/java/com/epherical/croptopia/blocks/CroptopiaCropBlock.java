@@ -5,6 +5,7 @@ import com.epherical.croptopia.items.SeedItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -44,7 +45,7 @@ public class CroptopiaCropBlock extends CropBlock {
         return AGE_TO_SHAPE[state.getValue(this.getAgeProperty())];
     }
 
-    public void setSeedsItem(SeedItem seed) {
+    public void setSeed(SeedItem seed) {
         this.seed = seed;
     }
 
@@ -54,7 +55,9 @@ public class CroptopiaCropBlock extends CropBlock {
         if (world.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
             // todo: consider biome tags?
-            if (seed.getCategory().contains(biomeCat) && biomeCat != Biome.BiomeCategory.NONE) {
+            TagKey<Biome> biomeTagKey;
+
+            if (world.getBiome(pos).is(seed.getCategory())) {
                 return super.canSurvive(state, world, pos);
             }
         } else if (world.getChunk(pos).getStatus().getIndex() == ChunkStatus.FULL.getIndex()) {

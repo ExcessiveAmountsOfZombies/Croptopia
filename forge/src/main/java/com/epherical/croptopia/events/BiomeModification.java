@@ -17,7 +17,7 @@ public class BiomeModification {
 
     @SubscribeEvent
     public void onBiomeLoad(BiomeLoadingEvent event) {
-        BiomeGenerationSettingsBuilder settings = event.getGeneration();
+        /*BiomeGenerationSettingsBuilder settings = event.getGeneration();
         if (event.getCategory() != Biome.BiomeCategory.OCEAN) {
             settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.RANDOM_CROP_PLACED);
         }
@@ -62,7 +62,7 @@ public class BiomeModification {
             settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.PEACH_TREE_CONFIGURED);
         } else if (event.getCategory() == Biome.BiomeCategory.RIVER) {
             settings.addFeature(UNDERGROUND_ORES, GeneratorRegistry.DISK_SALT_CONFIGURED);
-        }
+        }*/
 
         /*if (!loaded) { LAZY WAY OF OUTPUTTING ALL MY CONFIGURED FEATURES TO JSON
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

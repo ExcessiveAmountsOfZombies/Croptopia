@@ -19,7 +19,7 @@ public class LootTableModification {
 
     @SubscribeEvent
     public void onLootTableLoad(LootTableLoadEvent event) {
-        ResourceLocation location = event.getName();
+        /*ResourceLocation location = event.getName();
         if (location != null && location.getNamespace().equals("minecraft")) {
             String path = location.getPath();
             switch (path) {
@@ -40,7 +40,7 @@ public class LootTableModification {
                     }
                 }
             }
-        }
+        }*/
         /*
         if (location != null) {
             if (location.getPath().equalsIgnoreCase("blocks/grass")) {

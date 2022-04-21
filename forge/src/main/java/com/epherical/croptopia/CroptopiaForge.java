@@ -4,6 +4,7 @@ import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.SeedItem;
+import com.epherical.croptopia.register.CroptopiaContent;
 import com.google.common.collect.Sets;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.Config;
@@ -28,6 +29,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
@@ -79,14 +81,11 @@ import java.util.stream.Collectors;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("croptopia")
 public class CroptopiaForge {
-
-    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public static ArrayList<Block> cropBlocks = new ArrayList<>();
+    /*public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
-    public static ArrayList<SeedItem> seeds = new ArrayList<>();
-    public static ArrayList<Item> cropItems = new ArrayList<>();
+    public static ArrayList<Item> cropItems = new ArrayList<>();*/
 
     // todo: there might be a different way i'm supposed to do this in forge.
     public static LootItemConditionType BIOME_CHECK;
@@ -97,15 +96,13 @@ public class CroptopiaForge {
 
     public static CreativeModeTab CROPTOPIA_ITEM_GROUP;
 
+    public static CroptopiaMod mod;
+
     public CroptopiaForge() {
         config = new Config();
-        // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(config::initConfig);
@@ -115,7 +112,7 @@ public class CroptopiaForge {
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
         MinecraftForge.EVENT_BUS.register(new Harvest());
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
-        MinecraftForge.EVENT_BUS.register(new CroptopiaVillagerTrades());
+        //MinecraftForge.EVENT_BUS.register(new CroptopiaVillagerTrades());
         MinecraftForge.EVENT_BUS.register(new EntitySpawn());
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
@@ -127,6 +124,7 @@ public class CroptopiaForge {
                 return new ItemStack(ItemRegistry.coffee);
             }
         };
+        mod = new CroptopiaMod(new ForgeAdapter());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -137,15 +135,16 @@ public class CroptopiaForge {
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        cropBlocks.forEach(block -> {
+
+        CroptopiaMod.cropBlocks.forEach(block -> {
             ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped());
         });
 
         BlockColors colors = Minecraft.getInstance().getBlockColors();
-        colors.register((state, world, pos, tintIndex) ->
+        /*colors.register((state, world, pos, tintIndex) ->
                 world != null && pos != null
                         ? BiomeColors.getAverageFoliageColor(world, pos)
-                        : FoliageColor.getDefaultColor(), leafBlocks.toArray(new Block[]{}));
+                        : FoliageColor.getDefaultColor(), leafBlocks.toArray(new Block[]{}));*/
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -156,20 +155,13 @@ public class CroptopiaForge {
 
         InterModComms.sendTo("cookingforblockheads", "RegisterWaterItem", () -> new ItemStack(ItemRegistry.waterBottle));
         InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(ItemRegistry.milkBottle));
-
-        // some example code to dispatch IMC to another mod
     }
 
-    private void processIMC(final InterModProcessEvent event) {
-        // some example code to receive and process InterModComms from other mods
-    }
+    private void processIMC(final InterModProcessEvent event) {}
 
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(FMLDedicatedServerSetupEvent event) {
-        // do something when the server starts
-    }
+    @SubscribeEvent // You can use SubscribeEvent and let the Event Bus discover methods to call
+    public void onServerStarting(FMLDedicatedServerSetupEvent event) {}
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
@@ -177,20 +169,35 @@ public class CroptopiaForge {
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
-            LeavesRegistry.init();
-            BlockRegistry.init();
-            GeneratorRegistry.init();
+            CroptopiaContent.registerBlocks((object, id) -> {
+                object.setRegistryName(id);
+                blockRegistryEvent.getRegistry().register(object);
+            });
+            //LeavesRegistry.init();
+            //BlockRegistry.init();
+            //GeneratorRegistry.init();
         }
 
         @SubscribeEvent
         public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
-            ItemRegistry.init(itemRegister);
-            List<ItemLike> chickenItems = new ArrayList<>(seeds);
+            CroptopiaContent.registerItems((item, id) -> {
+                item.setRegistryName(id);
+                itemRegister.getRegistry().register(item);
+                if (item instanceof ItemNameBlockItem) {
+                    ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
+                }
+                if (item instanceof SeedItem it) {
+                    // maybe not needed anymore
+                    CroptopiaCropBlock block = (CroptopiaCropBlock) (it).getBlock();
+                    block.setSeed(it);
+                }
+            });
+            //ItemRegistry.init(itemRegister);
+            List<ItemLike> chickenItems = new ArrayList<>(CroptopiaMod.seeds);
             chickenItems.addAll(Arrays.stream(Chicken.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
             Chicken.FOOD_ITEMS = Ingredient.of(chickenItems.toArray(new ItemLike[0]));
             List<Item> parrotItems = new ArrayList<>(Parrot.TAME_FOOD);
-            parrotItems.addAll(seeds);
+            parrotItems.addAll(CroptopiaMod.seeds);
             Parrot.TAME_FOOD = Sets.newHashSet(parrotItems);
 
             List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(ItemRegistry.yam, ItemRegistry.sweetPotato));
@@ -210,34 +217,11 @@ public class CroptopiaForge {
     }
 
     public static ResourceLocation createIdentifier(String name) {
-        //System.out.println("\"" + MOD_ID + ":" + name + "\",");
         return new ResourceLocation(MiscNames.MOD_ID, name);
     }
 
-    public static Item registerItem(RegistryEvent.Register<Item> itemRegister, String itemName, Item item) {
-        item.setRegistryName(createIdentifier(itemName));
-        itemRegister.getRegistry().register(item);
-        if (item instanceof ItemNameBlockItem) {
-            ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
-        }
-
-        if (item instanceof CropItem) {
-            cropItems.add(item);
-        }
-
-        if (item instanceof SeedItem it) {
-            CroptopiaCropBlock block = (CroptopiaCropBlock) (it).getBlock();
-            block.setSeed(it);
-        }
-
-        if (item instanceof SeedItem) {
-            seeds.add((SeedItem) item);
-        }
-        return item;
-    }
-
     public static Block registerBlock(String blockName, Block block) {
-        cropBlocks.add(block);
+        /*cropBlocks.add(block);
 
         if (block instanceof LeafCropBlock || block instanceof LeavesBlock) {
             leafBlocks.add(block);
@@ -246,16 +230,12 @@ public class CroptopiaForge {
             //System.out.println("\"" + blockName + "\",");
         }
         block.setRegistryName(createIdentifier(blockName));
-        ForgeRegistries.BLOCKS.register(block);
+        ForgeRegistries.BLOCKS.register(block);*/
         return block;
     }
 
     public static LootItemConditionType registerLootCondition(String id, Serializer<? extends LootItemCondition> serializer) {
         return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootItemConditionType(serializer));
-    }
-
-    public static BlockBehaviour.Properties createCropSettings() {
-        return BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP);
     }
 
     public static BlockBehaviour.Properties createSaplingSettings() {

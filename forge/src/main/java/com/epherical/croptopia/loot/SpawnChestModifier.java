@@ -1,5 +1,7 @@
 package com.epherical.croptopia.loot;
 
+import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.items.SeedItem;
 import com.google.gson.JsonObject;
 import com.epherical.croptopia.CroptopiaForge;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +34,7 @@ public class SpawnChestModifier extends LootModifier {
         LootPool.Builder builder = new LootPool.Builder();
         builder.setRolls(ConstantValue.exactly(1));
         builder.setBonusRolls(ConstantValue.exactly(0));
-        for (SeedItem seed : CroptopiaForge.seeds) {
+        for (SeedItem seed : CroptopiaMod.seeds) {
             builder.add(LootItem.lootTableItem(seed)
                     .setWeight(2)
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false))

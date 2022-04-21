@@ -37,7 +37,7 @@ public class LeavesRegistry {
     public static Block cinnamonLeaves = createRegularLeavesBlock();
 
     public static void init() {
-        registerBlock(BlockNames.APPLE_CROP, appleCrop);
+        /*registerBlock(BlockNames.APPLE_CROP, appleCrop);
         registerBlock(BlockNames.BANANA_CROP, bananaCrop);
         registerBlock(BlockNames.ORANGE_CROP, orangeCrop);
         registerBlock(BlockNames.PERSIMMON_CROP, persimmonCrop);
@@ -63,7 +63,7 @@ public class LeavesRegistry {
         registerBlock(BlockNames.CASHEW_CROP, cashewCrop);
         registerBlock(BlockNames.PECAN_CROP, pecanCrop);
         registerBlock(BlockNames.WALNUT_CROP, walnutCrop);
-        registerBlock(BlockNames.CINNAMON_LEAVES, cinnamonLeaves);
+        registerBlock(BlockNames.CINNAMON_LEAVES, cinnamonLeaves);*/
     }
 
 }
