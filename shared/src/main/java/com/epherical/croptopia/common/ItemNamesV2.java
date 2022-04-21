@@ -4,28 +4,34 @@ package com.epherical.croptopia.common;
 public class ItemNamesV2 {
     public static final String GUIDE = "guide";
 
-    public static final String APPLE_SAPLING = "apple_sapling";
-    public static final String BANANA_SAPLING = "banana_sapling";
-    public static final String ORANGE_SAPLING = "orange_sapling";
-    public static final String PERSIMMON_SAPLING = "persimmon_sapling";
-    public static final String PLUM_SAPLING = "plum_sapling";
-    public static final String CHERRY_SAPLING = "cherry_sapling";
-    public static final String LEMON_SAPLING = "lemon_sapling";
-    public static final String GRAPEFRUIT_SAPLING = "grapefruit_sapling";
-    public static final String KUMQUAT_SAPLING = "kumquat_sapling";
-    public static final String PEACH_SAPLING = "peach_sapling";
-    public static final String COCONUT_SAPLING = "coconut_sapling";
-    public static final String NUTMEG_SAPLING = "nutmeg_sapling";
-    public static final String FIG_SAPLING = "fig_sapling";
-    public static final String NECTARINE_SAPLING = "nectarine_sapling";
-    public static final String MANGO_SAPLING = "mango_sapling";
-    public static final String DRAGONFRUIT_SAPLING = "dragonfruit_sapling";
-    public static final String STARFRUIT_SAPLING = "starfruit_sapling";
-    public static final String AVOCADO_SAPLING = "avocado_sapling";
-    public static final String APRICOT_SAPLING = "apricot_sapling";
-    public static final String PEAR_SAPLING = "pear_sapling";
-    public static final String LIME_SAPLING = "lime_sapling";
-    public static final String DATE_SAPLING = "date_sapling";
+    public static final String ALMOND = "almond";
+    public static final String APPLE = "apple";
+    public static final String APRICOT = "apricot";
+    public static final String AVOCADO = "avocado";
+    public static final String BANANA = "banana";
+    public static final String CASHEW = "cashew";
+    public static final String CHERRY = "cherry";
+    public static final String COCONUT = "coconut";
+    public static final String DATE = "date";
+    public static final String DRAGONFRUIT = "dragonfruit";
+    public static final String FIG = "fig";
+    public static final String GRAPEFRUIT = "grapefruit";
+    public static final String KUMQUAT = "kumquat";
+    public static final String LEMON = "lemon";
+    public static final String LIME = "lime";
+    public static final String MANGO = "mango";
+    public static final String NECTARINE = "nectarine";
+    public static final String NUTMEG = "nutmeg";
+    public static final String ORANGE = "orange";
+    public static final String PEACH = "peach";
+    public static final String PEAR = "pear";
+    public static final String PECAN = "pecan";
+    public static final String PERSIMMON = "persimmon";
+    public static final String PLUM = "plum";
+    public static final String STARFRUIT = "starfruit";
+    public static final String WALNUT = "walnut";
+
+    public static final String CINNAMON = "cinnamon";
 
     public static final String ARTICHOKE = "artichoke";
     public static final String ASPARAGUS = "asparagus";
@@ -85,9 +91,15 @@ public class ItemNamesV2 {
     public static final String YAM = "yam";
     public static final String ZUCCHINI = "zucchini";
 
+    public static final String MUSTARD = "mustard";
+    public static final String PAPRIKA = "paprika";
+    public static final String SALT = "salt";
+
 
     public static final String ARTICHOKE_SEED = "artichoke_seed";
     public static final String ASPARAGUS_SEED = "asparagus_seed";
+    public static final String BARLEY_SEED = "barley_seed";
+    public static final String BASIL_SEED = "basil_seed";
     public static final String BELLPEPPER_SEED = "bellpepper_seed";
     public static final String BLACKBEAN_SEED = "blackbean_seed";
     public static final String BLACKBERRY_SEED = "blackberry_seed";
@@ -97,6 +109,7 @@ public class ItemNamesV2 {
     public static final String CANTALOUPE_SEED = "cantaloupe_seed";
     public static final String CAULIFLOWER_SEED = "cauliflower_seed";
     public static final String CELERY_SEED = "celery_seed";
+    public static final String CHILE_PEPPER_SEED = "chile_pepper_seed";
     public static final String COFFEE_SEED = "coffee_seed";
     public static final String CORN_SEED = "corn_seed";
     public static final String CRANBERRY_SEED = "cranberry_seed";
@@ -105,6 +118,7 @@ public class ItemNamesV2 {
     public static final String EGGPLANT_SEED = "eggplant_seed";
     public static final String ELDERBERRY_SEED = "elderberry_seed";
     public static final String GARLIC_SEED = "garlic_seed";
+    public static final String GINGER_SEED = "ginger_seed";
     public static final String GRAPE_SEED = "grape_seed";
     public static final String GREENBEAN_SEED = "greenbean_seed";
     public static final String GREENONION_SEED = "greenonion_seed";
@@ -114,9 +128,12 @@ public class ItemNamesV2 {
     public static final String KIWI_SEED = "kiwi_seed";
     public static final String LEEK_SEED = "leek_seed";
     public static final String LETTUCE_SEED = "lettuce_seed";
+    public static final String MUSTARD_SEED = "mustard_seed";
+    public static final String OAT_SEED = "oat_seed";
     public static final String OLIVE_SEED = "olive_seed";
     public static final String ONION_SEED = "onion_seed";
     public static final String PEANUT_SEED = "peanut_seed";
+    public static final String PEPPER_SEED = "pepper_seed";
     public static final String PINEAPPLE_SEED = "pineapple_seed";
     public static final String RADISH_SEED = "radish_seed";
     public static final String RASPBERRY_SEED = "raspberry_seed";
@@ -124,63 +141,20 @@ public class ItemNamesV2 {
     public static final String RICE_SEED = "rice_seed";
     public static final String RUTABAGA_SEED = "rutabaga_seed";
     public static final String SAGUARO_SEED = "saguaro_seed";
+    public static final String SOYBEAN_SEED = "soybean_seed";
     public static final String SPINACH_SEED = "spinach_seed";
     public static final String SQUASH_SEED = "squash_seed";
     public static final String STRAWBERRY_SEED = "strawberry_seed";
     public static final String SWEETPOTATO_SEED = "sweetpotato_seed";
+    public static final String TEA_SEED = "tea_seed";
     public static final String TOMATILLO_SEED = "tomatillo_seed";
     public static final String TOMATO_SEED = "tomato_seed";
+    public static final String TURMERIC_SEED = "turmeric_seed";
     public static final String TURNIP_SEED = "turnip_seed";
+    public static final String VANILLA_SEEDS = "vanilla_seeds";
     public static final String YAM_SEED = "yam_seed";
     public static final String ZUCCHINI_SEED = "zucchini_seed";
-    public static final String MUSTARD_SEED = "mustard_seed";
-    public static final String CHILE_PEPPER_SEED = "chile_pepper_seed";
-    public static final String TURMERIC_SEED = "turmeric_seed";
-    public static final String GINGER_SEED = "ginger_seed";
-    public static final String BASIL_SEED = "basil_seed";
-    public static final String OAT_SEED = "oat_seed";
-    public static final String BARLEY_SEED = "barley_seed";
-    public static final String SOYBEAN_SEED = "soybean_seed";
-    public static final String TEA_SEED = "tea_seed";
 
-
-
-    public static final String ORANGE = "orange";
-    public static final String BANANA = "banana";
-    public static final String PERSIMMON = "persimmon";
-    public static final String PLUM = "plum";
-    public static final String CHERRY = "cherry";
-    public static final String LEMON = "lemon";
-    public static final String GRAPEFRUIT = "grapefruit";
-    public static final String KUMQUAT = "kumquat";
-    public static final String PEACH = "peach";
-    public static final String COCONUT = "coconut";
-    public static final String NUTMEG = "nutmeg";
-    public static final String FIG = "fig";
-    public static final String NECTARINE = "nectarine";
-    public static final String MANGO = "mango";
-    public static final String DRAGONFRUIT = "dragonfruit";
-    public static final String STARFRUIT = "starfruit";
-    public static final String AVOCADO = "avocado";
-    public static final String APRICOT = "apricot";
-    public static final String PEAR = "pear";
-    public static final String LIME = "lime";
-    public static final String DATE = "date";
-    public static final String ALMOND = "almond";
-    public static final String CASHEW = "cashew";
-    public static final String PECAN = "pecan";
-    public static final String WALNUT = "walnut";
-    public static final String MUSTARD = "mustard";
-    public static final String PAPRIKA = "paprika";
-    public static final String SALT = "salt";
-
-
-
-
-    public static final String ALMOND_SAPLING = "almond_sapling";
-    public static final String CASHEW_SAPLING = "cashew_sapling";
-    public static final String PECAN_SAPLING = "pecan_sapling";
-    public static final String WALNUT_SAPLING = "walnut_sapling";
     public static final String OLIVE_OIL = "olive_oil";
     public static final String CHEESE = "cheese";
     public static final String FLOUR = "flour";
@@ -323,20 +297,16 @@ public class ItemNamesV2 {
     public static final String CHIMICHANGA = "chimichanga";
     public static final String QUESADILLA = "quesadilla";
 
-
-    public static final String CINNAMON = "cinnamon";
     public static final String CORN_HUSK = "corn_husk";
     public static final String WHIPPING_CREAM = "whipping_cream";
-    public static final String VANILLA_SEEDS = "vanilla_seeds";
 
-    public static final String CINNAMON_SAPLING = "cinnamon_sapling";
+
     public static final String CINNAMON_LOG = "cinnamon_log";
     public static final String STRIPPED_CINNAMON_LOG = "stripped_cinnamon_log";
     public static final String CINNAMON_WOOD = "cinnamon_wood";
     public static final String STRIPPED_CINNAMON_WOOD = "stripped_cinnamon_wood";
 
     // 1.4.0
-    public static final String PEPPER_SEED = "pepper_seed";
     public static final String MILK_BOTTLE = "milk_bottle";
     public static final String WATER_BOTTLE = "water_bottle";
     public static final String SHEPHERDS_PIE = "shepherds_pie";

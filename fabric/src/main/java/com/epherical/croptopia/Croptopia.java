@@ -178,10 +178,6 @@ public class Croptopia implements ModInitializer {
         return new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Croptopia::canSpawnOnLeaves).isSuffocating(Croptopia::never).isViewBlocking(Croptopia::never));
     }
 
-    public static boolean canSpawnOnLeaves(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
-        return type == EntityType.OCELOT || type == EntityType.PARROT;
-    }
-
     private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
         return false;
     }

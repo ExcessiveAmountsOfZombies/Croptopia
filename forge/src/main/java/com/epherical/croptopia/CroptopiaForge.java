@@ -141,10 +141,10 @@ public class CroptopiaForge {
         });
 
         BlockColors colors = Minecraft.getInstance().getBlockColors();
-        /*colors.register((state, world, pos, tintIndex) ->
+        colors.register((state, world, pos, tintIndex) ->
                 world != null && pos != null
                         ? BiomeColors.getAverageFoliageColor(world, pos)
-                        : FoliageColor.getDefaultColor(), leafBlocks.toArray(new Block[]{}));*/
+                        : FoliageColor.getDefaultColor(), CroptopiaMod.leafBlocks.toArray(new Block[]{}));
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

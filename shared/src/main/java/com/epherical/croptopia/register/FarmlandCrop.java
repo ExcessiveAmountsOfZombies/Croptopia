@@ -30,23 +30,21 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
     private final String name;
     private final boolean plural;
     private final TagCategory tagCategory;
-    private Item cropItem;
-    private Block cropBlock;
-    private SeedItem seedItem;
-    private final TagKey<Biome> biomes;
-    private final FoodConstructor food;
+    private final Item cropItem;
+    private final Block cropBlock;
+    private final SeedItem seedItem;
+    private final TagKey<Biome> biomes; // todo implement
 
     public FarmlandCrop(String cropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes) {
         Objects.requireNonNull(category);
         this.name = cropName;
         this.plural = isPlural;
         this.tagCategory = category;
-        this.food = registry;
         this.biomes = biomes;
-        if (this.food == null) {
+        if (registry == null) {
             this.cropItem = new CropItem(createGroup());
         } else {
-            this.cropItem = new CropItem(createGroup().food(createFood(food)));
+            this.cropItem = new CropItem(createGroup().food(createFood(registry)));
         }
         cropBlock = new CroptopiaCropBlock(createCropSettings());
         seedItem = new SeedItem(cropBlock, createGroup(), biomes);
