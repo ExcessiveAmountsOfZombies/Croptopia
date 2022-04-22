@@ -473,8 +473,6 @@ public class ItemRegistry {
     public static Item saltOre;
 
 
-    public static Item guide;
-
 
     public static void init(RegistryEvent.Register<Item> itemRegister) {
 

@@ -1,6 +1,5 @@
 package com.epherical.croptopia.register;
 
-import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.common.BlockNames;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.items.Drink;
@@ -23,8 +22,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.material.Material;
-
-import java.util.Objects;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
@@ -119,11 +116,61 @@ public class Content {
     public static final TreeCrop STARFRUIT = new TreeCrop(ItemNamesV2.STARFRUIT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0);
     public static final TreeCrop WALNUT = new TreeCrop(ItemNamesV2.WALNUT, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0);
 
+    public static final Seafood ANCHOVY = new Seafood(ItemNamesV2.ANCHOVY, true, REG_1);
+    public static final Seafood CALAMARI = new Seafood(ItemNamesV2.CALAMARI, false, REG_1);
+    public static final Seafood CLAM = new Seafood(ItemNamesV2.CLAM, true, REG_3);
+    public static final Seafood CRAB = new Seafood(ItemNamesV2.CRAB, true, REG_1);
+    public static final Seafood GLOWING_CALAMARI = new Seafood(ItemNamesV2.GLOWING_CALAMARI, false, REG_3);
+    public static final Seafood OYSTER = new Seafood(ItemNamesV2.OYSTER, true, REG_3);
+    public static final Seafood ROE = new Seafood(ItemNamesV2.ROE, false, REG_1);
+    public static final Seafood SHRIMP = new Seafood(ItemNamesV2.SHRIMP, false, REG_1);
+    public static final Seafood TUNA = new Seafood(ItemNamesV2.TUNA, false, REG_3);
 
-    public static final Pie APPLE_PIE = new Pie(ItemNamesV2.APPLE);
-    public static final Pie CHERRY_PIE = new Pie(ItemNamesV2.CHERRY);
-    public static final Pie PECAN_PIE = new Pie(ItemNamesV2.PECAN);
-    public static final Pie RHUBARB_PIE = new Pie(ItemNamesV2.RHUBARB);
+    public static final Furnace BAKED_BEANS = new Furnace(ItemNamesV2.BAKED_BEANS, false, REG_5);
+    public static final Furnace BAKED_SWEET_POTATO = new Furnace(ItemNamesV2.BAKED_SWEET_POTATO, true, REG_7);
+    public static final Furnace BAKED_YAM = new Furnace(ItemNamesV2.BAKED_YAM, true, REG_7);
+    public static final Furnace CARAMEL = new Furnace(ItemNamesV2.CARAMEL, false, null);
+    public static final Furnace COOKED_ANCHOVY = new Furnace(ItemNamesV2.COOKED_ANCHOVY, true, REG_4);
+    public static final Furnace COOKED_BACON = new Furnace(ItemNamesV2.COOKED_BACON, false, REG_7);
+    public static final Furnace COOKED_CALAMARI = new Furnace(ItemNamesV2.COOKED_CALAMARI, false, REG_5);
+    public static final Furnace COOKED_SHRIMP = new Furnace(ItemNamesV2.COOKED_SHRIMP, false, REG_5);
+    public static final Furnace COOKED_TUNA = new Furnace(ItemNamesV2.COOKED_TUNA, false, REG_6);
+    public static final Furnace MOLASSES = new Furnace(ItemNamesV2.MOLASSES, false, null);
+    public static final Furnace POPCORN = new Furnace(ItemNamesV2.POPCORN, false, REG_3);
+    public static final Furnace RAISINS = new Furnace(ItemNamesV2.RAISINS, false, REG_5);
+    public static final Furnace TOAST = new Furnace(ItemNamesV2.TOAST, true, REG_7);
+
+    public static final Juice APPLE_JUICE = new Juice(ItemNamesV2.APPLE_JUICE);
+    public static final Juice CRANBERRY_JUICE = new Juice(ItemNamesV2.CRANBERRY_JUICE);
+    public static final Juice GRAPE_JUICE = new Juice(ItemNamesV2.GRAPE_JUICE);
+    public static final Juice MELON_JUICE = new Juice(ItemNamesV2.MELON_JUICE);
+    public static final Juice ORANGE_JUICE = new Juice(ItemNamesV2.ORANGE_JUICE);
+    public static final Juice PINEAPPLE_JUICE = new Juice(ItemNamesV2.PINEAPPLE_JUICE);
+    public static final Juice SAGUARO_JUICE = new Juice(ItemNamesV2.SAGUARO_JUICE);
+    public static final Juice TOMATO_JUICE = new Juice(ItemNamesV2.TOMATO_JUICE, false);
+
+    public static final Jam APRICOT_JAM = new Jam(ItemNamesV2.APRICOT_JAM);
+    public static final Jam BLACKBERRY_JAM = new Jam(ItemNamesV2.BLACKBERRY_JAM);
+    public static final Jam BLUEBERRY_JAM = new Jam(ItemNamesV2.BLUEBERRY_JAM);
+    public static final Jam CHERRY_JAM = new Jam(ItemNamesV2.CHERRY_JAM);
+    public static final Jam ELDERBERRY_JAM = new Jam(ItemNamesV2.ELDERBERRY_JAM);
+    public static final Jam GRAPE_JAM = new Jam(ItemNamesV2.GRAPE_JAM);
+    public static final Jam PEACH_JAM = new Jam(ItemNamesV2.PEACH_JAM);
+    public static final Jam RASPBERRY_JAM = new Jam(ItemNamesV2.RASPBERRY_JAM);
+    public static final Jam STRAWBERRY_JAM = new Jam(ItemNamesV2.STRAWBERRY_JAM);
+
+    public static final Smoothie BANANA_SMOOTHIE = new Smoothie(ItemNamesV2.BANANA_SMOOTHIE);
+    public static final Smoothie STRAWBERRY_SMOOTHIE = new Smoothie(ItemNamesV2.STRAWBERRY_SMOOTHIE);
+
+    public static final IceCream MANGO_ICE_CREAM = new IceCream(ItemNamesV2.MANGO_ICE_CREAM);
+    public static final IceCream PECAN_ICE_CREAM = new IceCream(ItemNamesV2.PECAN_ICE_CREAM);
+    public static final IceCream STRAWBERRY_ICE_CREAM = new IceCream(ItemNamesV2.STRAWBERRY_ICE_CREAM);
+    public static final IceCream VANILLA_ICE_CREAM = new IceCream(ItemNamesV2.VANILLA_ICE_CREAM);
+
+    public static final Pie APPLE_PIE = new Pie(ItemNamesV2.APPLE_PIE);
+    public static final Pie CHERRY_PIE = new Pie(ItemNamesV2.CHERRY_PIE);
+    public static final Pie PECAN_PIE = new Pie(ItemNamesV2.PECAN_PIE);
+    public static final Pie RHUBARB_PIE = new Pie(ItemNamesV2.RHUBARB_PIE);
 
     public static final Utensil COOKING_POT = new Utensil(ItemNamesV2.COOKING_POT, true);
     public static final Utensil FOOD_PRESS = new Utensil(ItemNamesV2.FOOD_PRESS, false);
@@ -337,7 +384,7 @@ public class Content {
     public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
     public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
 
-    /*public static final Item GUIDE = new GuideBookItem(createGroup());*/
+    public static Item GUIDE;
 
     public static void registerBlocks(RegisterFunction<Block> register) {
         FarmlandCrop.registerBlocks(register);
@@ -350,6 +397,12 @@ public class Content {
     public static void registerItems(RegisterFunction<Item> register) {
         FarmlandCrop.registerItems(register);
         TreeCrop.registerItems(register);
+        Seafood.registerItems(register);
+        Furnace.registerItems(register);
+        Juice.registerItems(register);
+        Jam.registerItems(register);
+        Smoothie.registerItems(register);
+        IceCream.registerItems(register);
         Pie.registerItems(register);
         Utensil.registerItems(register);
 

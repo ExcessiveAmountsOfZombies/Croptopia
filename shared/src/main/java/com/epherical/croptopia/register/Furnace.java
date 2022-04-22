@@ -1,29 +1,34 @@
 package com.epherical.croptopia.register;
 
 import com.epherical.croptopia.CroptopiaMod;
-import com.epherical.croptopia.items.CookingUtensil;
+import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
-public class Utensil implements ItemConvertibleWithPlural {
-
-    private static final HashSet<Utensil> UTENSILS = new HashSet<>();
+public class Furnace extends AbstractContent implements ItemConvertibleWithPlural {
+    private static final Set<Furnace> ITEMS = new HashSet<>();
 
     private final String name;
     private final boolean plural;
-    private final Item utensil;
+    private final Item item;
 
 
-    public Utensil(String name, boolean plural) {
+    public Furnace(String name, boolean plural, FoodConstructor foodConstructor) {
+        super();
         this.name = name;
         this.plural = plural;
-        this.utensil = new CookingUtensil(createGroup().stacksTo(1));
-        UTENSILS.add(this);
+        if (foodConstructor == null) {
+            this.item = new Item(createGroup());
+        } else {
+            this.item = new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
+        }
+        ITEMS.add(this);
     }
 
     @Override
@@ -38,12 +43,12 @@ public class Utensil implements ItemConvertibleWithPlural {
 
     @Override
     public Item asItem() {
-        return utensil;
+        return item;
     }
 
     public static void registerItems(RegisterFunction<Item> register) {
-        for (Utensil utensil : UTENSILS) {
-            register.register(CroptopiaMod.createIdentifier(utensil.name), utensil.utensil);
+        for (Furnace item : ITEMS) {
+            register.register(CroptopiaMod.createIdentifier(item.name), item.item);
         }
     }
 }

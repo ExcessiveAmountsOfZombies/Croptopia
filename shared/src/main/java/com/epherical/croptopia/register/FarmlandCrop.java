@@ -65,7 +65,7 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
 
     @Override
     public String name() {
-        return dropName;
+        return name;
     }
 
     @Override
@@ -88,18 +88,18 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
 
     public static void registerBlocks(RegisterFunction<Block> register) {
         for (FarmlandCrop farmlandCrop : FARMLAND_CROPS) {
-            register.register(createIdentifier(farmlandCrop.name() + "_crop"), farmlandCrop.asBlock());
+            register.register(createIdentifier(farmlandCrop.name + "_crop"), farmlandCrop.asBlock());
             CroptopiaMod.cropBlocks.add(farmlandCrop.asBlock());
         }
     }
 
     public static void registerItems(RegisterFunction<Item> register) {
         for (FarmlandCrop farmlandCrop : FARMLAND_CROPS) {
-            register.register(createIdentifier(farmlandCrop.name()), farmlandCrop.asItem());
+            register.register(createIdentifier(farmlandCrop.dropName), farmlandCrop.asItem());
             if (farmlandCrop.name().equals(ItemNamesV2.VANILLA)) {
-                register.register(createIdentifier(farmlandCrop.name() + "_seeds"), farmlandCrop.getSeedItem());
+                register.register(createIdentifier(farmlandCrop.name + "_seeds"), farmlandCrop.getSeedItem());
             } else {
-                register.register(createIdentifier(farmlandCrop.name() + "_seed"), farmlandCrop.getSeedItem());
+                register.register(createIdentifier(farmlandCrop.name + "_seed"), farmlandCrop.getSeedItem());
             }
             CroptopiaMod.cropItems.add(farmlandCrop.asItem());
             CroptopiaMod.seeds.add(farmlandCrop.getSeedItem());

@@ -2,9 +2,7 @@ package com.epherical.croptopia;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import com.epherical.croptopia.blocks.LeafCropBlock;
-import com.epherical.croptopia.items.SeedItem;
-import com.epherical.croptopia.register.Content;
-import com.google.common.collect.Sets;
+import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.Config;
 import com.epherical.croptopia.events.BiomeModification;
@@ -12,10 +10,13 @@ import com.epherical.croptopia.events.BlockBreakEvent;
 import com.epherical.croptopia.events.EntitySpawn;
 import com.epherical.croptopia.events.Harvest;
 import com.epherical.croptopia.events.LootTableModification;
+import com.epherical.croptopia.items.GuideBookItem;
+import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.loot.EntityModifier;
-import com.epherical.croptopia.registry.ItemRegistry;
-//import me.thonk.croptopia.mixin.VillagerAccess;
 import com.epherical.croptopia.loot.SpawnChestModifier;
+import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.registry.ItemRegistry;
+import com.google.common.collect.Sets;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
@@ -69,6 +70,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static com.epherical.croptopia.common.ItemNames.GUIDE;
+import static com.epherical.croptopia.registry.ItemRegistry.createGroup;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -150,11 +154,13 @@ public class CroptopiaForge {
         InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(ItemRegistry.milkBottle));
     }
 
-    private void processIMC(final InterModProcessEvent event) {}
+    private void processIMC(final InterModProcessEvent event) {
+    }
 
 
     @SubscribeEvent // You can use SubscribeEvent and let the Event Bus discover methods to call
-    public void onServerStarting(FMLDedicatedServerSetupEvent event) {}
+    public void onServerStarting(FMLDedicatedServerSetupEvent event) {
+    }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
@@ -173,6 +179,9 @@ public class CroptopiaForge {
 
         @SubscribeEvent
         public static void onItemRegister(final RegistryEvent.Register<Item> itemRegister) {
+            Content.GUIDE = new GuideBookItem(createGroup());
+            Content.GUIDE.setRegistryName(createIdentifier(ItemNamesV2.GUIDE));
+            itemRegister.getRegistry().register(Content.GUIDE);
             Content.registerItems((id, item) -> {
                 item.setRegistryName(id);
                 itemRegister.getRegistry().register(item);

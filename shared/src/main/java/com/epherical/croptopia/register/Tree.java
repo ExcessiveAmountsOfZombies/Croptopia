@@ -25,7 +25,7 @@ import java.util.Objects;
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
 public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
-    private final String name;
+    /*private final String name;
     private final boolean hasPlural;
     private final TagCategory tagegory;
     private final Item item;
@@ -38,10 +38,10 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final Block leaves;
     private final Holder<ConfiguredFeature<TreeConfiguration, ?>> treeGen;
     private final Item sapling;
-    private final Block saplingBlock;
+    private final Block saplingBlock;*/
 
     public Tree(String name, boolean hasPlural, TagCategory tagegory, int iTreeGen, int jTreeGen, int kTreeGen) {
-        Objects.requireNonNull(tagegory);
+        /*Objects.requireNonNull(tagegory);
         this.hasPlural = hasPlural;
         this.tagegory = tagegory;
         name = name;
@@ -71,7 +71,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> treeGen), Content.createSaplingSettings());
         registerBlock(lowerCaseName + "_sapling", saplingBlock);
         sapling = new ItemNameBlockItem(saplingBlock, createGroup());
-        registerItem(lowerCaseName + "_sapling", sapling);
+        registerItem(lowerCaseName + "_sapling", sapling);*/
     }
 
     @Override
