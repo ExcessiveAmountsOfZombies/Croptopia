@@ -1,12 +1,14 @@
 package com.epherical.croptopia.register;
 
+import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
+import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
-import com.google.common.collect.ImmutableSet;
+import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -16,8 +18,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-import static com.epherical.croptopia.CroptopiaMod.createCropSettings;
-import static com.epherical.croptopia.CroptopiaMod.createGroup;
+import static com.epherical.croptopia.CroptopiaMod.*;
 import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 /**
@@ -85,7 +86,23 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
         return seedItem;
     }
 
-    public static Set<FarmlandCrop> getFarmlandCrops() {
-        return ImmutableSet.copyOf(FARMLAND_CROPS);
+    public static void registerBlocks(RegisterFunction<Block> register) {
+        for (FarmlandCrop farmlandCrop : FARMLAND_CROPS) {
+            register.register(createIdentifier(farmlandCrop.name() + "_crop"), farmlandCrop.asBlock());
+            CroptopiaMod.cropBlocks.add(farmlandCrop.asBlock());
+        }
+    }
+
+    public static void registerItems(RegisterFunction<Item> register) {
+        for (FarmlandCrop farmlandCrop : FARMLAND_CROPS) {
+            register.register(createIdentifier(farmlandCrop.name()), farmlandCrop.asItem());
+            if (farmlandCrop.name().equals(ItemNamesV2.VANILLA)) {
+                register.register(createIdentifier(farmlandCrop.name() + "_seeds"), farmlandCrop.getSeedItem());
+            } else {
+                register.register(createIdentifier(farmlandCrop.name() + "_seed"), farmlandCrop.getSeedItem());
+            }
+            CroptopiaMod.cropItems.add(farmlandCrop.asItem());
+            CroptopiaMod.seeds.add(farmlandCrop.getSeedItem());
+        }
     }
 }

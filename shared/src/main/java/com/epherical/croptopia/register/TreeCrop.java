@@ -3,17 +3,15 @@ package com.epherical.croptopia.register;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
 import com.epherical.croptopia.blocks.LeafCropBlock;
+import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
 import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.CroptopiaSaplingItem;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
-import com.google.common.collect.ImmutableSet;
+import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
@@ -22,7 +20,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -114,8 +111,24 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return saplingItem;
     }
 
-    public static Set<TreeCrop> getTreeCrops() {
-        return ImmutableSet.copyOf(TREE_CROPS);
+    public static void registerBlocks(RegisterFunction<Block> register) {
+        for (TreeCrop treeCrop : TREE_CROPS) {
+            register.register(createIdentifier(treeCrop.name() + "_crop"), treeCrop.asBlock());
+            CroptopiaMod.cropBlocks.add(treeCrop.asBlock());
+            CroptopiaMod.leafBlocks.add(treeCrop.asBlock());
+            treeCrop.tree = Content.register(createIdentifier(treeCrop.name() + "_tree"), treeCrop.getTreeConfig());
+            register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingBlock());
+        }
+    }
+
+    public static void registerItems(RegisterFunction<Item> register) {
+        for (TreeCrop treeCrop : TREE_CROPS) {
+            if (!Objects.equals(treeCrop.name(), ItemNamesV2.APPLE)) {
+                register.register(createIdentifier(treeCrop.name()), treeCrop.asItem());
+                CroptopiaMod.cropItems.add(treeCrop.asItem());
+            }
+            register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingItem());
+        }
     }
 
     public static ConfiguredFeature<TreeConfiguration, ?> createTreeGen(int i, int j, int k, Block logType, Block leafType, Block leafCrop) {

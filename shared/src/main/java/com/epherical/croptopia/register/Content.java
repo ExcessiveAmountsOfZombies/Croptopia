@@ -32,6 +32,7 @@ import static com.epherical.croptopia.util.FoodConstructor.*;
 
 public class Content {
 
+    // TODO: abstract these classes a bit further.
     public static final FarmlandCrop ARTICHOKE = new FarmlandCrop(ItemNamesV2.ARTICHOKE, true, TagCategory.VEGETABLES, REG_1, BiomeTags.IS_MOUNTAIN);
     public static final FarmlandCrop ASPARAGUS = new FarmlandCrop(ItemNamesV2.ASPARAGUS, false, TagCategory.VEGETABLES, REG_3, BiomeTags.IS_MOUNTAIN);
     public static final FarmlandCrop BARLEY = new FarmlandCrop(ItemNamesV2.BARLEY, false, TagCategory.GRAIN, REG_1, BiomeTags.IS_MOUNTAIN);
@@ -117,6 +118,18 @@ public class Content {
     public static final TreeCrop PLUM = new TreeCrop(ItemNamesV2.PLUM, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0);
     public static final TreeCrop STARFRUIT = new TreeCrop(ItemNamesV2.STARFRUIT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0);
     public static final TreeCrop WALNUT = new TreeCrop(ItemNamesV2.WALNUT, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0);
+
+
+    public static final Pie APPLE_PIE = new Pie(ItemNamesV2.APPLE);
+    public static final Pie CHERRY_PIE = new Pie(ItemNamesV2.CHERRY);
+    public static final Pie PECAN_PIE = new Pie(ItemNamesV2.PECAN);
+    public static final Pie RHUBARB_PIE = new Pie(ItemNamesV2.RHUBARB);
+
+    public static final Utensil COOKING_POT = new Utensil(ItemNamesV2.COOKING_POT, true);
+    public static final Utensil FOOD_PRESS = new Utensil(ItemNamesV2.FOOD_PRESS, false);
+    public static final Utensil FRYING_PAN = new Utensil(ItemNamesV2.FRYING_PAN, true);
+    public static final Utensil KNIFE = new Utensil(ItemNamesV2.KNIFE, true);
+    public static final Utensil MORTAR_AND_PESTLE = new Utensil(ItemNamesV2.MORTAR_AND_PESTLE, true);
 
     // Spices
     public static final Item PAPRIKA = new Item(createGroup()); // TODO need recipe to make paprika in future update
@@ -327,41 +340,18 @@ public class Content {
     /*public static final Item GUIDE = new GuideBookItem(createGroup());*/
 
     public static void registerBlocks(RegisterFunction<Block> register) {
-        for (FarmlandCrop farmlandCrop : FarmlandCrop.getFarmlandCrops()) {
-            register.register(createIdentifier(farmlandCrop.name() + "_crop"), farmlandCrop.asBlock());
-            CroptopiaMod.cropBlocks.add(farmlandCrop.asBlock());
-        }
-        for (TreeCrop treeCrop : TreeCrop.getTreeCrops()) {
-            register.register(createIdentifier(treeCrop.name() + "_crop"), treeCrop.asBlock());
-            CroptopiaMod.cropBlocks.add(treeCrop.asBlock());
-            CroptopiaMod.leafBlocks.add(treeCrop.asBlock());
-            treeCrop.setTree(register(createIdentifier(treeCrop.name() + "_tree"), treeCrop.getTreeConfig()));
-            register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingBlock());
-        }
+        FarmlandCrop.registerBlocks(register);
+        TreeCrop.registerBlocks(register);
 
 
         register.register(createIdentifier(BlockNames.SALT_ORE), SALT_ORE_BLOCK);
     }
 
     public static void registerItems(RegisterFunction<Item> register) {
-        for (FarmlandCrop farmlandCrop : FarmlandCrop.getFarmlandCrops()) {
-            register.register(createIdentifier(farmlandCrop.name()), farmlandCrop.asItem());
-            if (farmlandCrop.name().equals(ItemNamesV2.VANILLA)) {
-                register.register(createIdentifier(farmlandCrop.name() + "_seeds"), farmlandCrop.getSeedItem());
-            } else {
-                register.register(createIdentifier(farmlandCrop.name() + "_seed"), farmlandCrop.getSeedItem());
-            }
-            CroptopiaMod.cropItems.add(farmlandCrop.asItem());
-            CroptopiaMod.seeds.add(farmlandCrop.getSeedItem());
-        }
-        for (TreeCrop treeCrop : TreeCrop.getTreeCrops()) {
-            if (!Objects.equals(treeCrop.name(), ItemNamesV2.APPLE)) {
-                register.register(createIdentifier(treeCrop.name()), treeCrop.asItem());
-                CroptopiaMod.cropItems.add(treeCrop.asItem());
-            }
-            register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingItem());
-
-        }
+        FarmlandCrop.registerItems(register);
+        TreeCrop.registerItems(register);
+        Pie.registerItems(register);
+        Utensil.registerItems(register);
 
         register.register(createIdentifier(ItemNamesV2.PAPRIKA), PAPRIKA);
         register.register(createIdentifier(ItemNamesV2.SALT), SALT);
