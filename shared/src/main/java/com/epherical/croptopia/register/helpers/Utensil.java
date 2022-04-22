@@ -1,4 +1,4 @@
-package com.epherical.croptopia.register;
+package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.CookingUtensil;

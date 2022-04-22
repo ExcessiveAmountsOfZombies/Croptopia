@@ -54,9 +54,6 @@ public class CroptopiaCropBlock extends CropBlock {
         Biome.BiomeCategory biomeCat = Biome.getBiomeCategory(world.getBiome(pos));
         if (world.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
-            // todo: consider biome tags?
-            TagKey<Biome> biomeTagKey;
-
             if (world.getBiome(pos).is(seed.getCategory())) {
                 return super.canSurvive(state, world, pos);
             }
@@ -73,6 +70,9 @@ public class CroptopiaCropBlock extends CropBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (CroptopiaMod.getInstance().platform().skipHarvest()) {
+            return super.use(state, world, pos, player, hand, hit);
+        }
         if (getAge(state) == getMaxAge()) {
             CroptopiaMod.getInstance().platform().afterBlockBroken(world, player, pos, state, null);
             player.awardStat(Stats.BLOCK_MINED.get(this));

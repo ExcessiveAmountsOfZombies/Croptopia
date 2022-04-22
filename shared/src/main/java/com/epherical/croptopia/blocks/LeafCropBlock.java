@@ -68,6 +68,10 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (CroptopiaMod.getInstance().platform().skipHarvest()) {
+            // this is so we just use a forge event. only fabric will proceed beyond this point
+            return super.use(state, world, pos, player, hand, hit);
+        }
         if (getAge(state) == getMaxAge()) {
             CroptopiaMod.getInstance().platform().afterBlockBroken(world, player, pos, state, null);
             player.awardStat(Stats.BLOCK_MINED.get(this));

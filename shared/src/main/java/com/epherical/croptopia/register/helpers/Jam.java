@@ -1,6 +1,7 @@
-package com.epherical.croptopia.register;
+package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
@@ -9,19 +10,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.REG_14;
-import static com.epherical.croptopia.util.FoodConstructor.createFood;
+import static com.epherical.croptopia.util.FoodConstructor.*;
 
-public class Pie implements ItemLike {
-    private static final Set<Pie> PIES = new HashSet<>();
+public class Jam implements ItemLike {
+    private static final Set<Jam> ITEMS = new HashSet<>();
 
     private final String name;
     private final Item item;
 
-    public Pie(String name) {
+    public Jam(String name) {
         this.name = name;
-        this.item = new Item(createGroup().food(createFood(REG_14)));
-        PIES.add(this);
+        item = new Drink(createGroup().food(createBuilder(REG_3).alwaysEat().build()));
+        ITEMS.add(this);
     }
 
     @Override
@@ -30,8 +30,8 @@ public class Pie implements ItemLike {
     }
 
     public static void registerItems(RegisterFunction<Item> register) {
-        for (Pie pie : PIES) {
-            register.register(CroptopiaMod.createIdentifier(pie.name), pie.item);
+        for (Jam item : ITEMS) {
+            register.register(CroptopiaMod.createIdentifier(item.name), item.item);
         }
     }
 }

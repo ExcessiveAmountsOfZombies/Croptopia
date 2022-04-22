@@ -4,6 +4,17 @@ import com.epherical.croptopia.common.BlockNames;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.items.Soup;
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
+import com.epherical.croptopia.register.helpers.Furnace;
+import com.epherical.croptopia.register.helpers.IceCream;
+import com.epherical.croptopia.register.helpers.Jam;
+import com.epherical.croptopia.register.helpers.Juice;
+import com.epherical.croptopia.register.helpers.Pie;
+import com.epherical.croptopia.register.helpers.Seafood;
+import com.epherical.croptopia.register.helpers.Smoothie;
+import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.register.helpers.TreeCrop;
+import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.core.Holder;
@@ -115,6 +126,8 @@ public class Content {
     public static final TreeCrop PLUM = new TreeCrop(ItemNamesV2.PLUM, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0);
     public static final TreeCrop STARFRUIT = new TreeCrop(ItemNamesV2.STARFRUIT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, REG_3, 5, 3, 0);
     public static final TreeCrop WALNUT = new TreeCrop(ItemNamesV2.WALNUT, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, REG_3, 4, 3, 0);
+
+    public static final Tree CINNAMON = new Tree(ItemNamesV2.CINNAMON, false, TagCategory.CROPS, 4, 3, 0);
 
     public static final Seafood ANCHOVY = new Seafood(ItemNamesV2.ANCHOVY, true, REG_1);
     public static final Seafood CALAMARI = new Seafood(ItemNamesV2.CALAMARI, false, REG_1);
@@ -389,6 +402,7 @@ public class Content {
     public static void registerBlocks(RegisterFunction<Block> register) {
         FarmlandCrop.registerBlocks(register);
         TreeCrop.registerBlocks(register);
+        Tree.registerBlocks(register);
 
 
         register.register(createIdentifier(BlockNames.SALT_ORE), SALT_ORE_BLOCK);
@@ -405,6 +419,7 @@ public class Content {
         IceCream.registerItems(register);
         Pie.registerItems(register);
         Utensil.registerItems(register);
+        Tree.registerItems(register);
 
         register.register(createIdentifier(ItemNamesV2.PAPRIKA), PAPRIKA);
         register.register(createIdentifier(ItemNamesV2.SALT), SALT);

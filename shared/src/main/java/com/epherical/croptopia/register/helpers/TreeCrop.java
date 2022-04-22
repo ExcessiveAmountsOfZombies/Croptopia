@@ -1,4 +1,4 @@
-package com.epherical.croptopia.register;
+package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
@@ -7,6 +7,8 @@ import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
 import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.CroptopiaSaplingItem;
+import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;

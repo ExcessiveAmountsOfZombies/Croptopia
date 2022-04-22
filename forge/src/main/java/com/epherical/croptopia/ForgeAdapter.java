@@ -24,4 +24,9 @@ public class ForgeAdapter implements PlatformAdapter<ForgeAdapter> {
     public CreativeModeTab getTab() {
         return CroptopiaForge.CROPTOPIA_ITEM_GROUP;
     }
+
+    @Override
+    public boolean skipHarvest() {
+        return true;
+    }
 }

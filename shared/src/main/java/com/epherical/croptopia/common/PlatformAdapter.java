@@ -15,4 +15,6 @@ public interface PlatformAdapter<T> {
     void afterBlockBroken(Level level, Player player, BlockPos pos, BlockState state, BlockEntity entity);
 
     CreativeModeTab getTab();
+
+    boolean skipHarvest();
 }
