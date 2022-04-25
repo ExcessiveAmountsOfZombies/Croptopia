@@ -1,12 +1,16 @@
 package com.epherical.croptopia.events;
 
 
+import com.epherical.croptopia.CroptopiaForge;
 import com.epherical.croptopia.registry.GeneratorRegistry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+
+import java.util.List;
 
 import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.UNDERGROUND_ORES;
 import static net.minecraft.world.level.levelgen.GenerationStep.Decoration.VEGETAL_DECORATION;
@@ -17,12 +21,31 @@ public class BiomeModification {
 
     @SubscribeEvent
     public void onBiomeLoad(BiomeLoadingEvent event) {
-        /*BiomeGenerationSettingsBuilder settings = event.getGeneration();
+        BiomeGenerationSettingsBuilder settings = event.getGeneration();
         if (event.getCategory() != Biome.BiomeCategory.OCEAN) {
             settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.RANDOM_CROP_PLACED);
         }
+        ResourceLocation location = event.getName();
+        if (location == null) {
+            return;
+        }
+        String biomeName = location.toString();
+        ForgeConfigSpec.ConfigValue<List<? extends String>> features = CroptopiaForge.config.config.getValues().get("worldGeneration." + biomeName + ".trees");
+        if (features != null) {
+            for (String s : features.get()) {
+                settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(s));
+            }
+        }
 
-        if (event.getCategory() == Biome.BiomeCategory.FOREST) {
+        if (event.getCategory() == Biome.BiomeCategory.RIVER) {
+            settings.addFeature(UNDERGROUND_ORES, GeneratorRegistry.DISK_SALT_CONFIGURED);
+        }
+
+
+
+
+
+        /*if (event.getCategory() == Biome.BiomeCategory.FOREST) {
             if (event.getName() != null) {
                 // TODO: find a better way to do this, surely there is a cleaner way.
                 // this also isn't very compatible with modded biomes that might add their own dark oak forest esque biomes.
@@ -60,9 +83,7 @@ public class BiomeModification {
             settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.APPLE_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.ORANGE_TREE_CONFIGURED);
             settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.PEACH_TREE_CONFIGURED);
-        } else if (event.getCategory() == Biome.BiomeCategory.RIVER) {
-            settings.addFeature(UNDERGROUND_ORES, GeneratorRegistry.DISK_SALT_CONFIGURED);
-        }*/
+        } */
 
         /*if (!loaded) { LAZY WAY OF OUTPUTTING ALL MY CONFIGURED FEATURES TO JSON
             Gson gson = new GsonBuilder().setPrettyPrinting().create();

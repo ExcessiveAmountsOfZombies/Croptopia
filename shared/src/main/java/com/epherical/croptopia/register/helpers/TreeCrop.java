@@ -105,6 +105,10 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return treeConfig;
     }
 
+    public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTree() {
+        return tree;
+    }
+
     public CroptopiaSaplingBlock getSaplingBlock() {
         return saplingBlock;
     }

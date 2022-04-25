@@ -15,7 +15,6 @@ import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
 import com.epherical.croptopia.register.Content;
-import com.epherical.croptopia.registry.ItemRegistry;
 import com.google.common.collect.Sets;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
@@ -71,8 +70,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.epherical.croptopia.common.ItemNames.GUIDE;
-import static com.epherical.croptopia.registry.ItemRegistry.createGroup;
+import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -118,7 +116,7 @@ public class CroptopiaForge {
         CROPTOPIA_ITEM_GROUP = new CreativeModeTab("croptopia") {
             @Override
             public ItemStack makeIcon() {
-                return new ItemStack(ItemRegistry.coffee);
+                return new ItemStack(Content.COFFEE);
             }
         };
         mod = new CroptopiaMod(new ForgeAdapter());
@@ -145,13 +143,13 @@ public class CroptopiaForge {
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.cookingPot));
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.foodPress));
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.fryingPan));
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(ItemRegistry.mortarAndPestle));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.COOKING_POT));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.FOOD_PRESS));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.FRYING_PAN));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.MORTAR_AND_PESTLE));
 
-        InterModComms.sendTo("cookingforblockheads", "RegisterWaterItem", () -> new ItemStack(ItemRegistry.waterBottle));
-        InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(ItemRegistry.milkBottle));
+        InterModComms.sendTo("cookingforblockheads", "RegisterWaterItem", () -> new ItemStack(Content.WATER_BOTTLE));
+        InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(Content.MILK_BOTTLE));
     }
 
     private void processIMC(final InterModProcessEvent event) {
@@ -202,7 +200,7 @@ public class CroptopiaForge {
             parrotItems.addAll(CroptopiaMod.seeds);
             Parrot.TAME_FOOD = Sets.newHashSet(parrotItems);
 
-            List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(ItemRegistry.yam, ItemRegistry.sweetPotato));
+            List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
             pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
             Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
 

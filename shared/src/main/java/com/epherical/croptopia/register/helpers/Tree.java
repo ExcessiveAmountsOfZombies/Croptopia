@@ -143,6 +143,10 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return treeGen;
     }
 
+    public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTree() {
+        return tree;
+    }
+
     public void setTree(Holder<ConfiguredFeature<TreeConfiguration, ?>> tree) {
         this.tree = tree;
     }

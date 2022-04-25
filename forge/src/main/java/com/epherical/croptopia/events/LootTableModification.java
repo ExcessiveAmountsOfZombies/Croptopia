@@ -1,17 +1,7 @@
 package com.epherical.croptopia.events;
 
-import com.epherical.croptopia.mixin.LootPoolAccessor;
-import com.epherical.croptopia.mixin.LootPoolBuilderAccessor;
-import com.epherical.croptopia.mixin.LootTableAccessor;
-import com.epherical.croptopia.registry.ItemRegistry;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-
-import java.util.List;
 
 
 public class LootTableModification {

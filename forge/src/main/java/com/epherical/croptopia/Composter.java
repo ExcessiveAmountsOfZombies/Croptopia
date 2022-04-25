@@ -1,6 +1,5 @@
 package com.epherical.croptopia;
 
-import com.epherical.croptopia.registry.ItemRegistry;
 import net.minecraft.world.level.ItemLike;
 
 import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;

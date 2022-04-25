@@ -1,10 +1,5 @@
 package com.epherical.croptopia.events;
 
-import com.epherical.croptopia.registry.BlockRegistry;
-import com.epherical.croptopia.registry.ItemRegistry;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 

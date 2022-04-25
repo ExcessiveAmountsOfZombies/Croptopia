@@ -25,7 +25,7 @@ public class Config {
     public ForgeConfigSpec config;
 
     public static ForgeConfigSpec.ConfigValue<Boolean> rightClickHarvest;
-    public final Map<TreeConfiguration, TreeBuilder> builderMap = new HashMap<>();
+    public final Map<String, TreeBuilder> builderMap = new HashMap<>();
     public static boolean canRightClickHarvest;
 
     public Config() {
@@ -35,7 +35,7 @@ public class Config {
         List<TreeConfiguration> trees = TreeConfiguration.init();
         CONFIG_BUILDER.comment("Croptopia tree generation").push("worldGeneration");
         for (TreeConfiguration tree : trees) {
-            builderMap.put(tree, new TreeBuilder(CONFIG_BUILDER, tree));
+            builderMap.put(tree.biomeKey, new TreeBuilder(CONFIG_BUILDER, tree));
         }
         CONFIG_BUILDER.pop();
 
@@ -54,8 +54,8 @@ public class Config {
         public final ForgeConfigSpec.ConfigValue<List<? extends String>> acceptableBiomes;
 
         private TreeBuilder(ForgeConfigSpec.Builder builder, TreeConfiguration configuration) {
-            acceptableBiomes = builder.comment("Settings for " + configuration.featureKey).push(configuration.featureKey)
-                    .defineList("biomes", configuration.keys, o -> true);
+            acceptableBiomes = builder.comment("Settings for " + configuration.biomeKey).push(configuration.biomeKey)
+                    .defineList("trees", configuration.keys, o -> true);
             builder.pop();
         }
     }
@@ -84,23 +84,21 @@ public class Config {
     }
 
     public static class TreeConfiguration {
-        String featureKey;
-        List<ResourceKey<Biome>> treesInBiome;
+        String biomeKey;
+        List<String> treesInBiome;
         List<String> keys;
         
-        public TreeConfiguration(String featureKey, List<ResourceKey<Biome>> treesInBiome) {
-            this.featureKey = featureKey;
+        public TreeConfiguration(String featureKey, List<String> treesInBiome) {
+            this.biomeKey = featureKey;
             this.treesInBiome = treesInBiome;
             this.keys = new ArrayList<>();
-            for (ResourceKey<Biome> biomeResourceKey : treesInBiome) {
-                keys.add(biomeResourceKey.location().toString());
-            }
+            keys.addAll(treesInBiome);
         }
 
 
-        public static void createSameTreeConfigs(SetMultimap<String, ResourceKey<Biome>> map, Collection<ResourceKey<Biome>> biomes, String... keys) {
-            for (String key : keys) {
-                map.putAll(key, biomes);
+        public static void createSameTreeConfigs(SetMultimap<String, String> map, Collection<ResourceKey<Biome>> biomes, String... keys) {
+            for (ResourceKey<Biome> biome : biomes) {
+                map.putAll(biome.location().toString(), Arrays.asList(keys));
             }
         }
         
@@ -110,7 +108,7 @@ public class Config {
             Collection<ResourceKey<Biome>> plainsKeys = Arrays.asList(Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS);
             Collection<ResourceKey<Biome>> darkForestKeys = Arrays.asList(Biomes.DARK_FOREST);
             
-            HashMultimap<String, ResourceKey<Biome>> biomes = HashMultimap.create();
+            HashMultimap<String, String> biomes = HashMultimap.create();
 
             TreeConfiguration.createSameTreeConfigs(biomes, forestBiomes,
                     "lime_tree_configured",
@@ -149,12 +147,14 @@ public class Config {
                     "walnut_tree_configured");
 
             List<TreeConfiguration> allTreeConfigs = new ArrayList<>();
-            for (Map.Entry<String, Collection<ResourceKey<Biome>>> entry : biomes.asMap().entrySet()) {
+            for (Map.Entry<String, Collection<String>> entry : biomes.asMap().entrySet()) {
                 allTreeConfigs.add(new TreeConfiguration(entry.getKey(), new ArrayList<>(entry.getValue())));
             }
             return allTreeConfigs;
         }
     }
 
-
+    public Map<String, TreeBuilder> getBuilderMap() {
+        return builderMap;
+    }
 }

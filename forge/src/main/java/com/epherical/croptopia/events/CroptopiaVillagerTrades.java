@@ -1,6 +1,5 @@
 package com.epherical.croptopia.events;
 
-import com.epherical.croptopia.registry.ItemRegistry;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
