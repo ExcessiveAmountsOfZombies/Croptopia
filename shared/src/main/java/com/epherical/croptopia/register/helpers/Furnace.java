@@ -4,6 +4,7 @@ import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 
 import java.util.HashSet;
@@ -12,7 +13,7 @@ import java.util.Set;
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
 public class Furnace extends AbstractContent implements ItemConvertibleWithPlural {
-    private static final Set<Furnace> ITEMS = new HashSet<>();
+    private static final Set<Furnace> INSTANCES = new HashSet<>();
 
     private final String name;
     private final boolean plural;
@@ -28,7 +29,7 @@ public class Furnace extends AbstractContent implements ItemConvertibleWithPlura
         } else {
             this.item = new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
         }
-        ITEMS.add(this);
+        INSTANCES.add(this);
     }
 
     @Override
@@ -46,8 +47,12 @@ public class Furnace extends AbstractContent implements ItemConvertibleWithPlura
         return item;
     }
 
+    public static Set<Furnace> copy() {
+        return ImmutableSet.copyOf(INSTANCES);
+    }
+
     public static void registerItems(RegisterFunction<Item> register) {
-        for (Furnace item : ITEMS) {
+        for (Furnace item : INSTANCES) {
             register.register(CroptopiaMod.createIdentifier(item.name), item.item);
         }
     }

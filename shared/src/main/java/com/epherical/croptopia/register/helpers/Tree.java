@@ -1,8 +1,6 @@
 package com.epherical.croptopia.register.helpers;
 
-import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
-import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
 import com.epherical.croptopia.register.Content;
@@ -10,6 +8,7 @@ import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -47,7 +46,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
 
     private final String name;
     private final boolean hasPlural;
-    private final TagCategory tagegory;
+    private final TagCategory tagCategory;
     private final Item item;
     private final Block log;
     private final Block strippedLog;
@@ -64,7 +63,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen) {
         Objects.requireNonNull(category);
         this.hasPlural = hasPlural;
-        this.tagegory = category;
+        this.tagCategory = category;
         this.name = name;
         item = new Item(createGroup());
         // in the following we use registerItem because of AliasedBlockItem
@@ -89,8 +88,8 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return hasPlural;
     }
 
-    public TagCategory getTagegory() {
-        return tagegory;
+    public TagCategory getTagCategory() {
+        return tagCategory;
     }
 
     @Override
@@ -154,6 +153,10 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     @Override
     public String name() {
         return name;
+    }
+
+    public static Set<Tree> copy() {
+        return ImmutableSet.copyOf(TREES);
     }
 
     public static void registerBlocks(RegisterFunction<Block> register) {

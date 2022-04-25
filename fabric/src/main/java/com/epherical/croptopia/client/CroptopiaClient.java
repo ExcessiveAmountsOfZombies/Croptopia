@@ -1,6 +1,6 @@
 package com.epherical.croptopia.client;
 
-import com.epherical.croptopia.registry.Content;
+import com.epherical.croptopia.blocks.LeafCropBlock;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

@@ -1,8 +1,9 @@
 package com.epherical.croptopia.mixin;
 
+import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.register.Content;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import com.epherical.croptopia.registry.Content;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.ai.behavior.WorkAtComposter;
 import net.minecraft.world.item.Item;
@@ -24,11 +25,10 @@ public class FarmerWorkTaskMixin {
     @Redirect(method = "makeBread", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/SimpleContainer;countItem(Lnet/minecraft/world/item/Item;)I"))
     public int redirectCraftAndDropBread(SimpleContainer simpleInventory, Item item) {
         int count = simpleInventory.countItem(Items.WHEAT);
-        List<Item> crops = Content.createCropStream().toList();
         for (int i = 0; i < simpleInventory.getContainerSize(); ++i) {
             ItemStack inventoryItem = simpleInventory.getItem(i);
             Item regularItem = inventoryItem.getItem();
-            if (crops.contains(regularItem) && inventoryItem.getCount() > 0) {
+            if (CroptopiaMod.cropItems.contains(regularItem) && inventoryItem.getCount() > 0) {
                 if (heldCrops.containsKey(regularItem)) {
                     heldCrops.put(regularItem,heldCrops.getInt(regularItem) + inventoryItem.getCount());
                 } else {

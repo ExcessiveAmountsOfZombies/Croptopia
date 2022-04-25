@@ -1,6 +1,5 @@
 package com.epherical.croptopia.mixin;
 
-import com.epherical.croptopia.registry.Content;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.AxeItem;

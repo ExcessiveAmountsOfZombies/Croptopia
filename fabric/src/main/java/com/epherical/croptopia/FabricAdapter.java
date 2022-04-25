@@ -28,4 +28,9 @@ public class FabricAdapter implements PlatformAdapter<FabricAdapter> {
     public CreativeModeTab getTab() {
         return Croptopia.CROPTOPIA_ITEM_GROUP;
     }
+
+    @Override
+    public boolean skipHarvest() {
+        return false;
+    }
 }

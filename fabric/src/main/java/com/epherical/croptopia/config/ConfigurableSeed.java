@@ -1,6 +1,7 @@
 package com.epherical.croptopia.config;
 
 import com.epherical.croptopia.Croptopia;
+import com.epherical.croptopia.items.SeedItem;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;

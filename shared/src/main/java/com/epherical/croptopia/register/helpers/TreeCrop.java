@@ -13,6 +13,7 @@ import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.core.Holder;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -115,6 +116,18 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     public CroptopiaSaplingItem getSaplingItem() {
         return saplingItem;
+    }
+
+    public Block getLeaves() {
+        return leaves;
+    }
+
+    public TagCategory getTagCategory() {
+        return category;
+    }
+
+    public static Set<TreeCrop> copy() {
+        return ImmutableSet.copyOf(TREE_CROPS);
     }
 
     public static void registerBlocks(RegisterFunction<Block> register) {

@@ -10,6 +10,7 @@ import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -85,6 +86,10 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
 
     public SeedItem getSeedItem() {
         return seedItem;
+    }
+
+    public static Set<FarmlandCrop> copy() {
+        return ImmutableSet.copyOf(FARMLAND_CROPS);
     }
 
     public static void registerBlocks(RegisterFunction<Block> register) {

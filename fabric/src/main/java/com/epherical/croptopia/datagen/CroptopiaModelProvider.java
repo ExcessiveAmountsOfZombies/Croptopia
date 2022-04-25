@@ -1,6 +1,6 @@
 package com.epherical.croptopia.datagen;
 
-import com.epherical.croptopia.registry.Content;
+import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -32,18 +32,18 @@ public class CroptopiaModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(Content.GOULASH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.BEETROOT_SALAD, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.CANDIED_KUMQUATS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.SHRIMP.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.TUNA.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.CRAB.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.ROE.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.CLAM.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.OYSTER.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_SHRIMP.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_TUNA.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.SHRIMP.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.TUNA.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CRAB.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.ROE.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CLAM.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.OYSTER.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.COOKED_SHRIMP.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.COOKED_TUNA.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.COOKED_CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.STEAMED_CRAB, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.GLOWING_CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.GLOWING_CALAMARI.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.SEA_LETTUCE, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.DEEP_FRIED_SHRIMP, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.TUNA_ROLL, ModelTemplates.FLAT_ITEM);
@@ -51,8 +51,8 @@ public class CroptopiaModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(Content.CRAB_LEGS, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.STEAMED_CLAMS, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.GRILLED_OYSTERS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Seafood.ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(Content.Furnace.COOKED_ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.COOKED_ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.ANCHOVY_PIZZA, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.MASHED_POTATOES, ModelTemplates.FLAT_ITEM);
     }

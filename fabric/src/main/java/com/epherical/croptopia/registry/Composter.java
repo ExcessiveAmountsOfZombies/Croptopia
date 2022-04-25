@@ -1,5 +1,8 @@
 package com.epherical.croptopia.registry;
 
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
+import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.minecraft.world.level.ItemLike;
 
 import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
@@ -7,15 +10,15 @@ import static net.minecraft.world.level.block.ComposterBlock.COMPOSTABLES;
 public class Composter {
 
     public static void init() {
-        for (Content.Farmland crop : Content.Farmland.values()) {
+        for (FarmlandCrop crop : FarmlandCrop.copy()) {
             registerCompostableItem(0.65F, crop.asItem());
-            registerCompostableItem(0.3F, crop.getSeed());
+            registerCompostableItem(0.3F, crop.getSeedItem());
         }
-        for (Content.Tree crop : Content.Tree.values()) {
+        for (TreeCrop crop : TreeCrop.copy()) {
             registerCompostableItem(0.65F, crop.asItem());
-            registerCompostableItem(0.5F, crop.getSapling());
+            registerCompostableItem(0.5F, crop.getSaplingItem());
         }
-        for (Content.Bark crop : Content.Bark.values()) {
+        for (Tree crop : Tree.copy()) {
             registerCompostableItem(0.65F, crop.asItem());
             registerCompostableItem(0.5F, crop.getSapling());
         }

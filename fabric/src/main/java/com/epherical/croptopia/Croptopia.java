@@ -3,6 +3,10 @@ package com.epherical.croptopia;
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.items.SeedItem;
+import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
+import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
@@ -16,7 +20,6 @@ import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.dependencies.Patchouli;
 import com.epherical.croptopia.generator.BiomeModifiers;
 import com.epherical.croptopia.items.CropLootTableModifier;
-import com.epherical.croptopia.loottables.BiomeLootCondition;
 import com.epherical.croptopia.mixin.AxeAccess;
 import com.epherical.croptopia.mixin.ChickenAccess;
 import com.epherical.croptopia.mixin.FarmerWorkTaskAccessor;
@@ -33,7 +36,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -64,16 +66,14 @@ public class Croptopia implements ModInitializer {
 
     private final boolean devEnvironment = Boolean.getBoolean(MiscNames.MOD_ID + ".dev");
 
-    public static ArrayList<Block> cropBlocks = new ArrayList<>();
     private static List<ConfigurableSeed> seeds = new ArrayList<>();
 
 
     public CroptopiaConfig config;
 
     public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new ResourceLocation(MiscNames.MOD_ID, "croptopia"))
-            .icon(() -> new ItemStack(Content.Farmland.ONION.asItem()))
+            .icon(() -> new ItemStack(Content.COFFEE))
             .build();
-    public static final LootItemConditionType BIOME_CHECK =  registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     public static Patchouli patchouli;
 
     private static final String TECH_REBORN_MOD_ID = "techreborn";
@@ -88,7 +88,6 @@ public class Croptopia implements ModInitializer {
 
         patchouli = new Patchouli();
 
-        Content.init();
         Composter.init();
 
         this.config = new CroptopiaConfig(devEnvironment, "croptopia.conf");
@@ -120,66 +119,7 @@ public class Croptopia implements ModInitializer {
     }
 
     public static ResourceLocation createIdentifier(String name) {
-        //System.out.println("\"" + MOD_ID + ":" + name + "\",");
         return new ResourceLocation(MiscNames.MOD_ID, name);
-    }
-
-    public static LootItemConditionType registerLootCondition(String id, Serializer<? extends LootItemCondition> serializer) {
-        return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootItemConditionType(serializer));
-    }
-
-    public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String id, S serializer) {
-        return Registry.register(Registry.RECIPE_SERIALIZER, new ResourceLocation(MiscNames.MOD_ID, id), serializer);
-    }
-
-    public static Item registerItem(String itemName, Item item) {
-        Registry.register(Registry.ITEM, Croptopia.createIdentifier(itemName), item);
-        if (item instanceof ItemNameBlockItem) {
-            ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
-        }
-
-        if (item instanceof SeedItem seedItem) {
-            CroptopiaCropBlock block = (CroptopiaCropBlock) ((SeedItem) item).getBlock();
-            block.setSeedsItem(seedItem);
-            //runner.getTagger().addSeedTag(item, Croptopia.createIdentifier(itemName));
-        }
-
-        // \bregisterItem\b..[A-Z]\w+",
-        //System.out.println( "\"" + itemName + "\",");
-        if (item instanceof SeedItem) {
-            seeds.add(new ConfigurableSeed(itemName, item, ((SeedItem) item).getCategory()));
-        }
-
-        // data generation
-        //runner.getTagger().addTag(item, Croptopia.createIdentifier(itemName));
-        return item;
-    }
-
-    public static Item.Properties createGroup() {
-        return new Item.Properties().tab(CROPTOPIA_ITEM_GROUP);
-    }
-
-    public static Block registerBlock(String blockName, Block item) {
-        cropBlocks.add(item);
-
-        Registry.register(Registry.BLOCK, Croptopia.createIdentifier(blockName), item);
-        return item;
-    }
-
-    public static FabricBlockSettings createCropSettings() {
-        return FabricBlockSettings.of(Material.PLANT).noCollision().ticksRandomly().breakInstantly().sounds(SoundType.CROP);
-    }
-
-    public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Croptopia::canSpawnOnLeaves).isSuffocating(Croptopia::never).isViewBlocking(Croptopia::never));
-    }
-
-    public static LeavesBlock createRegularLeavesBlock() {
-        return new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(Croptopia::canSpawnOnLeaves).isSuffocating(Croptopia::never).isViewBlocking(Croptopia::never));
-    }
-
-    private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
-        return false;
     }
 
 
@@ -206,7 +146,7 @@ public class Croptopia implements ModInitializer {
     private void modifyAxeBlockStripping() {
         Map<Block, Block> immutableBlocks = AxeAccess.getStrippables();
         var axeMap = new Builder<Block, Block>().putAll(immutableBlocks);
-        for (Content.Bark crop : Content.Bark.values()) {
+        for (Tree crop : Tree.copy()) {
             axeMap.put(crop.getLog(), crop.getStrippedLog());
             axeMap.put(crop.getWood(), crop.getStrippedWood());
         }

@@ -2,7 +2,7 @@ package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.config.ConfigurableSeed;
-import com.epherical.croptopia.registry.Content;
+import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.mixin.loot.table.LootSupplierBuilderHooks;
@@ -47,7 +47,7 @@ public class CropLootTableModifier {
                 switch (path) {
                     case "entities/cod", "entities/salmon", "entities/tropical_fish" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(LootItem.lootTableItem(Content.Seafood.ROE).build());
+                        builder.withEntry(LootItem.lootTableItem(Content.ROE).build());
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "gameplay/fishing/fish" -> {
@@ -57,17 +57,17 @@ public class CropLootTableModifier {
                         } else {
                             // todo; make this configurable
                             FabricLootPoolBuilder builder = FabricLootPoolBuilder.of(pools.get(0));
-                            builder.withEntry(LootItem.lootTableItem(Content.Seafood.TUNA)
+                            builder.withEntry(LootItem.lootTableItem(Content.TUNA)
                                             .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.Seafood.ANCHOVY)
+                                    .withEntry(LootItem.lootTableItem(Content.ANCHOVY)
                                             .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.Seafood.SHRIMP)
+                                    .withEntry(LootItem.lootTableItem(Content.SHRIMP)
                                             .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.Seafood.CRAB)
+                                    .withEntry(LootItem.lootTableItem(Content.CRAB)
                                             .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.Seafood.CLAM)
+                                    .withEntry(LootItem.lootTableItem(Content.CLAM)
                                             .setWeight(10).build())
-                                    .withEntry(LootItem.lootTableItem(Content.Seafood.OYSTER)
+                                    .withEntry(LootItem.lootTableItem(Content.OYSTER)
                                             .setWeight(10).build())
                                     .withEntry(LootItem.lootTableItem(Content.SEA_LETTUCE)
                                             .setWeight(10).build());
@@ -76,12 +76,12 @@ public class CropLootTableModifier {
                     }
                     case "entities/squid" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(LootItem.lootTableItem(Content.Seafood.CALAMARI).build());
+                        builder.withEntry(LootItem.lootTableItem(Content.CALAMARI).build());
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "entities/glow_squid" -> {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(LootItem.lootTableItem(Content.Seafood.GLOWING_CALAMARI).build());
+                        builder.withEntry(LootItem.lootTableItem(Content.GLOWING_CALAMARI).build());
                         fabricLootSupplierBuilder.withPool(builder.build());
                     }
                     case "chests/spawn_bonus_chest" -> {

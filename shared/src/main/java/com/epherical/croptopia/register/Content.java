@@ -25,6 +25,7 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -33,6 +34,9 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.material.Material;
+
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
@@ -153,37 +157,37 @@ public class Content {
     public static final Furnace RAISINS = new Furnace(ItemNamesV2.RAISINS, false, REG_5);
     public static final Furnace TOAST = new Furnace(ItemNamesV2.TOAST, true, REG_7);
 
-    public static final Juice APPLE_JUICE = new Juice(ItemNamesV2.APPLE_JUICE);
-    public static final Juice CRANBERRY_JUICE = new Juice(ItemNamesV2.CRANBERRY_JUICE);
-    public static final Juice GRAPE_JUICE = new Juice(ItemNamesV2.GRAPE_JUICE);
-    public static final Juice MELON_JUICE = new Juice(ItemNamesV2.MELON_JUICE);
-    public static final Juice ORANGE_JUICE = new Juice(ItemNamesV2.ORANGE_JUICE);
-    public static final Juice PINEAPPLE_JUICE = new Juice(ItemNamesV2.PINEAPPLE_JUICE);
-    public static final Juice SAGUARO_JUICE = new Juice(ItemNamesV2.SAGUARO_JUICE);
-    public static final Juice TOMATO_JUICE = new Juice(ItemNamesV2.TOMATO_JUICE, false);
+    public static final Juice APPLE_JUICE = new Juice(ItemNamesV2.APPLE_JUICE, APPLE);
+    public static final Juice CRANBERRY_JUICE = new Juice(ItemNamesV2.CRANBERRY_JUICE, CRANBERRY);
+    public static final Juice GRAPE_JUICE = new Juice(ItemNamesV2.GRAPE_JUICE, GRAPE);
+    public static final Juice MELON_JUICE = new Juice(ItemNamesV2.MELON_JUICE, );
+    public static final Juice ORANGE_JUICE = new Juice(ItemNamesV2.ORANGE_JUICE, ORANGE);
+    public static final Juice PINEAPPLE_JUICE = new Juice(ItemNamesV2.PINEAPPLE_JUICE, PINEAPPLE);
+    public static final Juice SAGUARO_JUICE = new Juice(ItemNamesV2.SAGUARO_JUICE, SAGUARO);
+    public static final Juice TOMATO_JUICE = new Juice(ItemNamesV2.TOMATO_JUICE, TOMATO, false);
 
-    public static final Jam APRICOT_JAM = new Jam(ItemNamesV2.APRICOT_JAM);
-    public static final Jam BLACKBERRY_JAM = new Jam(ItemNamesV2.BLACKBERRY_JAM);
-    public static final Jam BLUEBERRY_JAM = new Jam(ItemNamesV2.BLUEBERRY_JAM);
-    public static final Jam CHERRY_JAM = new Jam(ItemNamesV2.CHERRY_JAM);
-    public static final Jam ELDERBERRY_JAM = new Jam(ItemNamesV2.ELDERBERRY_JAM);
-    public static final Jam GRAPE_JAM = new Jam(ItemNamesV2.GRAPE_JAM);
-    public static final Jam PEACH_JAM = new Jam(ItemNamesV2.PEACH_JAM);
-    public static final Jam RASPBERRY_JAM = new Jam(ItemNamesV2.RASPBERRY_JAM);
-    public static final Jam STRAWBERRY_JAM = new Jam(ItemNamesV2.STRAWBERRY_JAM);
+    public static final Jam APRICOT_JAM = new Jam(ItemNamesV2.APRICOT_JAM, APRICOT);
+    public static final Jam BLACKBERRY_JAM = new Jam(ItemNamesV2.BLACKBERRY_JAM, BLACKBERRY);
+    public static final Jam BLUEBERRY_JAM = new Jam(ItemNamesV2.BLUEBERRY_JAM, BLUEBERRY);
+    public static final Jam CHERRY_JAM = new Jam(ItemNamesV2.CHERRY_JAM, CHERRY);
+    public static final Jam ELDERBERRY_JAM = new Jam(ItemNamesV2.ELDERBERRY_JAM, ELDERBERRY);
+    public static final Jam GRAPE_JAM = new Jam(ItemNamesV2.GRAPE_JAM, GRAPE);
+    public static final Jam PEACH_JAM = new Jam(ItemNamesV2.PEACH_JAM, PEACH);
+    public static final Jam RASPBERRY_JAM = new Jam(ItemNamesV2.RASPBERRY_JAM, RASPBERRY);
+    public static final Jam STRAWBERRY_JAM = new Jam(ItemNamesV2.STRAWBERRY_JAM, STRAWBERRY);
 
-    public static final Smoothie BANANA_SMOOTHIE = new Smoothie(ItemNamesV2.BANANA_SMOOTHIE);
-    public static final Smoothie STRAWBERRY_SMOOTHIE = new Smoothie(ItemNamesV2.STRAWBERRY_SMOOTHIE);
+    public static final Smoothie BANANA_SMOOTHIE = new Smoothie(ItemNamesV2.BANANA_SMOOTHIE, BANANA);
+    public static final Smoothie STRAWBERRY_SMOOTHIE = new Smoothie(ItemNamesV2.STRAWBERRY_SMOOTHIE, STRAWBERRY);
 
-    public static final IceCream MANGO_ICE_CREAM = new IceCream(ItemNamesV2.MANGO_ICE_CREAM);
-    public static final IceCream PECAN_ICE_CREAM = new IceCream(ItemNamesV2.PECAN_ICE_CREAM);
-    public static final IceCream STRAWBERRY_ICE_CREAM = new IceCream(ItemNamesV2.STRAWBERRY_ICE_CREAM);
-    public static final IceCream VANILLA_ICE_CREAM = new IceCream(ItemNamesV2.VANILLA_ICE_CREAM);
+    public static final IceCream MANGO_ICE_CREAM = new IceCream(ItemNamesV2.MANGO_ICE_CREAM, MANGO);
+    public static final IceCream PECAN_ICE_CREAM = new IceCream(ItemNamesV2.PECAN_ICE_CREAM, PECAN);
+    public static final IceCream STRAWBERRY_ICE_CREAM = new IceCream(ItemNamesV2.STRAWBERRY_ICE_CREAM, STRAWBERRY);
+    public static final IceCream VANILLA_ICE_CREAM = new IceCream(ItemNamesV2.VANILLA_ICE_CREAM, VANILLA);
 
-    public static final Pie APPLE_PIE = new Pie(ItemNamesV2.APPLE_PIE);
-    public static final Pie CHERRY_PIE = new Pie(ItemNamesV2.CHERRY_PIE);
-    public static final Pie PECAN_PIE = new Pie(ItemNamesV2.PECAN_PIE);
-    public static final Pie RHUBARB_PIE = new Pie(ItemNamesV2.RHUBARB_PIE);
+    public static final Pie APPLE_PIE = new Pie(ItemNamesV2.APPLE_PIE, APPLE);
+    public static final Pie CHERRY_PIE = new Pie(ItemNamesV2.CHERRY_PIE, CHERRY);
+    public static final Pie PECAN_PIE = new Pie(ItemNamesV2.PECAN_PIE, PECAN);
+    public static final Pie RHUBARB_PIE = new Pie(ItemNamesV2.RHUBARB_PIE, RHUBARB);
 
     public static final Utensil COOKING_POT = new Utensil(ItemNamesV2.COOKING_POT, true);
     public static final Utensil FOOD_PRESS = new Utensil(ItemNamesV2.FOOD_PRESS, false);
@@ -591,6 +595,13 @@ public class Content {
         register.register(createIdentifier(ItemNamesV2.ANCHOVY_PIZZA), ANCHOVY_PIZZA);
         register.register(createIdentifier(ItemNamesV2.MASHED_POTATOES), MASHED_POTATOES);
         register.register(createIdentifier(ItemNamesV2.SALT_ORE), SALT_ORE);
+    }
+
+    public static Stream<Item> createCropStream() {
+        return Stream.concat(
+                Arrays.stream(FarmlandCrop.copy().toArray(new FarmlandCrop[0])),
+                Stream.concat(Arrays.stream(TreeCrop.copy().toArray(new TreeCrop[0])), Arrays.stream(Tree.copy().toArray(new Tree[0])))
+        ).map(ItemLike::asItem);
     }
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(ResourceLocation id, ConfiguredFeature<FC, F> feature) {

@@ -1,6 +1,9 @@
 package com.epherical.croptopia.datagen;
 
-import com.epherical.croptopia.registry.Content;
+import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
+import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.tags.BlockTags;
@@ -24,17 +27,17 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
 
     protected void generateSaplings() {
         FabricTagBuilder<Block> saplings = getOrCreateTagBuilder(BlockTags.SAPLINGS);
-        for (Content.Tree crop : Content.Tree.values()) {
+        for (TreeCrop crop : TreeCrop.copy()) {
             saplings.add(crop.getSaplingBlock());
         }
-        for (Content.Bark crop : Content.Bark.values()) {
+        for (Tree crop : Tree.copy()) {
             saplings.add(crop.getSaplingBlock());
         }
     }
 
     protected void generateBarkLogs() {
         FabricTagBuilder<Block> burnableLog = getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN);
-        for (Content.Bark crop : Content.Bark.values()) {
+        for (Tree crop : Tree.copy()) {
             // add different log types to log tag of this crop
             tag(crop.getLogBlockTag())
                     .add(crop.getLog())
@@ -49,11 +52,11 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     protected void generateLeaves() {
         FabricTagBuilder<Block> leaves = getOrCreateTagBuilder(BlockTags.LEAVES);
         FabricTagBuilder<Block> hoe = getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE);
-        for (Content.Tree crop : Content.Tree.values()) {
+        for (TreeCrop crop : TreeCrop.copy()) {
             leaves.add(crop.getLeaves());
             hoe.add(crop.getLeaves());
         }
-        for (Content.Bark crop : Content.Bark.values()) {
+        for (Tree crop : Tree.copy()) {
             leaves.add(crop.getLeaves());
             hoe.add(crop.getLeaves());
         }
@@ -61,10 +64,10 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
 
     protected void generateCrops() {
         FabricTagBuilder<Block> crops = getOrCreateTagBuilder(BlockTags.CROPS);
-        for (Content.Farmland crop : Content.Farmland.values()) {
+        for (FarmlandCrop crop : FarmlandCrop.copy()) {
             crops.add(crop.asBlock());
         }
-        for (Content.Tree crop : Content.Tree.values()) {
+        for (TreeCrop crop : TreeCrop.copy()) {
             crops.add(crop.asBlock());
         }
     }

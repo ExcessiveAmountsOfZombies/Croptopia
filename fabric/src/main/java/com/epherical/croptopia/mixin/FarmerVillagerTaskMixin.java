@@ -1,5 +1,6 @@
 package com.epherical.croptopia.mixin;
 
+import com.epherical.croptopia.items.SeedItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.SimpleContainer;

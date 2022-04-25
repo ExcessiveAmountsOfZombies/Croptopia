@@ -3,7 +3,19 @@ package com.epherical.croptopia.datagen;
 import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.datagen.tags.IndependentEntry;
 import com.epherical.croptopia.mixin.datagen.ObjectBuilderAccessor;
-import com.epherical.croptopia.registry.Content;
+import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.TagCategory;
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
+import com.epherical.croptopia.register.helpers.Furnace;
+import com.epherical.croptopia.register.helpers.IceCream;
+import com.epherical.croptopia.register.helpers.Jam;
+import com.epherical.croptopia.register.helpers.Juice;
+import com.epherical.croptopia.register.helpers.Pie;
+import com.epherical.croptopia.register.helpers.Seafood;
+import com.epherical.croptopia.register.helpers.Smoothie;
+import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.register.helpers.TreeCrop;
+import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -34,23 +46,23 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
     }
 
     protected void generateCrops() {
-        for (Content.Farmland crop : Content.Farmland.values()) {
-            createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
-            if (crop.getTagegory() != Content.TagCategory.CROPS) { // don't double only-crops
-                createCategoryTag(Content.TagCategory.CROPS.getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
+        for (FarmlandCrop crop : FarmlandCrop.copy()) {
+            createCategoryTag(crop.getTagCategory().getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
+            if (crop.getTagCategory() != TagCategory.CROPS) { // don't double only-crops
+                createCategoryTag(TagCategory.CROPS.getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
             }
         }
-        for (Content.Tree crop : Content.Tree.values()) {
-            createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
-            if (crop.getTagegory() != Content.TagCategory.CROPS) { // don't double only-crops
-                createCategoryTag(Content.TagCategory.CROPS.getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
+        for (TreeCrop crop : TreeCrop.copy()) {
+            createCategoryTag(crop.getTagCategory().getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
+            if (crop.getTagCategory() != TagCategory.CROPS) { // don't double only-crops
+                createCategoryTag(TagCategory.CROPS.getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
             }
-            if (crop.getTagegory() == Content.TagCategory.NUTS) { // nuts are fruits
-                createCategoryTag(Content.TagCategory.FRUITS.getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
+            if (crop.getTagCategory() == TagCategory.NUTS) { // nuts are fruits
+                createCategoryTag(TagCategory.FRUITS.getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
             }
         }
-        for (Content.Bark crop : Content.Bark.values()) {
-            createCategoryTag(crop.getTagegory().getLowerCaseName(), PluralInfo.plural(crop.getLowerCaseName(), crop.hasPlural()), crop.asItem());
+        for (Tree crop : Tree.copy()) {
+            createCategoryTag(crop.getTagCategory().getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
         }
         // the following four are all done above with a category tag of crops I believe
         /*createGeneralTag("saguaros", Content.saguaro);
@@ -61,47 +73,44 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
     protected void generateSeedsSaplings() {
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
-        for (Content.Farmland crop : Content.Farmland.values()) {
-            if (crop == Content.Farmland.CHILE_PEPPER) {
-                createSeedSaplingTag("seeds", "chilepepper", crop.getSeed());
+        for (FarmlandCrop crop : FarmlandCrop.copy()) {
+            if (crop == Content.CHILE_PEPPER) {
+                createSeedSaplingTag("seeds", "chilepepper", crop.getSeedItem());
             } else {
-                createSeedSaplingTag("seeds", crop.getLowerCaseName(), crop.getSeed());
+                createSeedSaplingTag("seeds", crop.getLowercaseName(), crop.getSeedItem());
             }
         }
-        for (Content.Tree crop : Content.Tree.values()) {
-            createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
+        for (TreeCrop crop : TreeCrop.copy()) {
+            createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSaplingItem());
         }
-        for (Content.Bark crop : Content.Bark.values()) {
-            createSeedSaplingTag("saplings", crop.getLowerCaseName(), crop.getSapling());
+        for (Tree crop : Tree.copy()) {
+            createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSapling());
         }
     }
 
     protected void generateOtherEnums() {
-        for (Content.Seafood seafood : Content.Seafood.values()) {
+        for (Seafood seafood : Seafood.copy()) {
             createGeneralTag(seafood.getPlural(), seafood.asItem());
         }
-
-        for (Content.Furnace cooked : Content.Furnace.values()) {
-            createGeneralTag(cooked.getPlural(), cooked.asItem());
+        for (Furnace furnace : Furnace.copy()) {
+            createGeneralTag(furnace.getPlural(), furnace.asItem());
         }
-
-        for (Content.Juice juice : Content.Juice.values()) {
+        for (Juice juice : Juice.copy()) {
             createCategoryTag("juices", juice.name().toLowerCase() + "_juices", juice.asItem());
         }
-        for (Content.Jam jam : Content.Jam.values()) {
+        for (Jam jam : Jam.copy()) {
             createCategoryTag("jams", jam.name().toLowerCase() + "_jams", jam.asItem());
         }
-        for (Content.Smoothie smoothie : Content.Smoothie.values()) {
+        for (Smoothie smoothie : Smoothie.copy()) {
             createGeneralTag(smoothie.name().toLowerCase() + "_smoothies", smoothie.asItem());
         }
-        for (Content.IceCream iceCream : Content.IceCream.values()) {
+        for (IceCream iceCream : IceCream.copy()) {
             createGeneralTag(iceCream.name().toLowerCase() + "_ice_creams", iceCream.asItem());
         }
-        for (Content.Pie pie : Content.Pie.values()) {
+        for (Pie pie : Pie.copy()) {
             createGeneralTag(pie.name().toLowerCase() + "_pies", pie.asItem());
         }
-
-        for (Content.Utensil utensil : Content.Utensil.values()) {
+        for (Utensil utensil : Utensil.copy()) {
             createGeneralTag(utensil.getPlural(), utensil.asItem());
         }
     }
@@ -199,7 +208,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("toast_with_jam", Content.TOAST_WITH_JAM);
         createGeneralTag("tofu", Content.TOFU);
         createGeneralTag("tofu_and_dumplings", Content.TOFU_AND_DUMPLINGS);
-        createGeneralTag("tofuburgers", Content.TOFU_BURGER);
+        createGeneralTag("tofuburgers", Content.TOFUBURGER);
         createGeneralTag("tortillas", Content.TORTILLA);
         createGeneralTag("trail_mixes", Content.TRAIL_MIX);
         createGeneralTag("treacle_tarts", Content.TREACLE_TART);
@@ -234,7 +243,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
         this.tag(register("water_bottles")).add(Content.WATER_BOTTLE).add(Items.WATER_BUCKET);
         this.tag(register("milks")).add(Content.MILK_BOTTLE).add(Content.SOY_MILK).add(Items.MILK_BUCKET);
-        this.tag(register("potatoes")).add(Items.POTATO).add(Content.Farmland.SWEETPOTATO.asItem());
+        this.tag(register("potatoes")).add(Items.POTATO).add(Content.SWEETPOTATO.asItem());
     }
 
     @Override
@@ -284,7 +293,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
      */
     private void createSeedSaplingTag(String category, String name, Item item) {
         String pluralSeedName;
-        if (item == Content.Farmland.VANILLA.getSeed()) {
+        if (item == Content.VANILLA.getSeedItem()) {
            pluralSeedName = Registry.ITEM.getKey(item).getPath();
         } else {
             pluralSeedName = Registry.ITEM.getKey(item).getPath() + "s";

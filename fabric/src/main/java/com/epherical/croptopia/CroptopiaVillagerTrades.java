@@ -1,6 +1,5 @@
 package com.epherical.croptopia;
 
-import com.epherical.croptopia.registry.Content;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -14,7 +13,7 @@ public class CroptopiaVillagerTrades {
 
 
     public static void init() {
-        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {
+        /*TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {
             for (Content.Farmland crop : Content.Farmland.values()) {
                 buyFromUser(factories, crop.asItem(), 26, 2, 16, 0.1f);
             }
@@ -33,7 +32,7 @@ public class CroptopiaVillagerTrades {
             for (Content.Farmland crop : Content.Farmland.values()) {
                 sellToUser(factories, crop.getSeed(), 4, 2, 16, 1, 0.5f);
             }
-        });
+        });*/
     }
 
     private static void buyFromUser(List<VillagerTrades.ItemListing> factory, Item item, int itemCount, int tradeXP, int maxTrades, float priceMultiplier) {

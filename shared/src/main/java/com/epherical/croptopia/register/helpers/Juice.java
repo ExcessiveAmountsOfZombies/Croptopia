@@ -2,7 +2,9 @@ package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.Drink;
+import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -15,21 +17,31 @@ import static com.epherical.croptopia.util.FoodConstructor.REG_5;
 import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
 
 public class Juice implements ItemLike {
-    private static final Set<Juice> ITEMS = new HashSet<>();
+    private static final Set<Juice> INSTANCES = new HashSet<>();
 
     private final String name;
+    private final ItemConvertibleWithPlural crop;
     private final boolean sweet;
     private final Item item;
 
-    public Juice(String name, boolean sweet) {
+    public Juice(String name, ItemConvertibleWithPlural crop, boolean sweet) {
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
+        this.crop = crop;
         item = new Drink(createGroup().food(createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
-        ITEMS.add(this);
+        INSTANCES.add(this);
     }
 
-    public Juice(String name) {
-        this(name, true);
+    public Juice(String name, ItemConvertibleWithPlural crop) {
+        this(name, crop, true);
+    }
+
+    public ItemConvertibleWithPlural getCrop() {
+        return crop;
+    }
+
+    public String name() {
+        return name;
     }
 
     @Override
@@ -38,8 +50,12 @@ public class Juice implements ItemLike {
     }
 
     public static void registerItems(RegisterFunction<Item> register) {
-        for (Juice item : ITEMS) {
+        for (Juice item : INSTANCES) {
             register.register(CroptopiaMod.createIdentifier(item.name), item.item);
         }
+    }
+
+    public static Set<Juice> copy() {
+        return ImmutableSet.copyOf(INSTANCES);
     }
 }
