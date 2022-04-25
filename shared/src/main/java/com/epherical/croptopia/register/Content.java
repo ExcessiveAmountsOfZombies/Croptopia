@@ -15,6 +15,7 @@ import com.epherical.croptopia.register.helpers.Smoothie;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.register.helpers.Utensil;
+import com.epherical.croptopia.register.helpers.VanillaCrops;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.core.Holder;
@@ -160,7 +161,7 @@ public class Content {
     public static final Juice APPLE_JUICE = new Juice(ItemNamesV2.APPLE_JUICE, APPLE);
     public static final Juice CRANBERRY_JUICE = new Juice(ItemNamesV2.CRANBERRY_JUICE, CRANBERRY);
     public static final Juice GRAPE_JUICE = new Juice(ItemNamesV2.GRAPE_JUICE, GRAPE);
-    public static final Juice MELON_JUICE = new Juice(ItemNamesV2.MELON_JUICE, );
+    public static final Juice MELON_JUICE = new Juice(ItemNamesV2.MELON_JUICE, VanillaCrops.MELON);
     public static final Juice ORANGE_JUICE = new Juice(ItemNamesV2.ORANGE_JUICE, ORANGE);
     public static final Juice PINEAPPLE_JUICE = new Juice(ItemNamesV2.PINEAPPLE_JUICE, PINEAPPLE);
     public static final Juice SAGUARO_JUICE = new Juice(ItemNamesV2.SAGUARO_JUICE, SAGUARO);
