@@ -9,6 +9,7 @@ public class CroptopiaDataGeneratorEntry implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         fabricDataGenerator.addProvider(CroptopiaBlockTagProvider::new);
         fabricDataGenerator.addProvider(CroptopiaItemTagProvider::new);
+        fabricDataGenerator.addProvider(CroptopiaBiomeTagProvider::new);
         fabricDataGenerator.addProvider(CroptopiaIndependentItemTagProvider::new);
         // tags always first
         fabricDataGenerator.addProvider(CroptopiaModelProvider::new);

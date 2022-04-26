@@ -161,21 +161,21 @@ public class Croptopia implements ModInitializer {
             baseItems.add(Item.byId(stack));
         }
         // TODO iterate over farmland
-        baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        baseItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).toList());
         ChickenAccess.setFoodItems(Ingredient.of(baseItems.toArray(new Item[0])));
     }
 
     private void modifyParrotBreeds() {
         Set<Item> baseItems = ParrotAccess.getTamingIngredients();
         Set<Item> newItems = Sets.newHashSet(baseItems);
-        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).toList());
         ParrotAccess.setTamingIngredients(newItems);
     }
 
     private void modifyVillagerFarmerTaskCompostables() {
         List<Item> baseItems = FarmerWorkTaskAccessor.getCompostables();
         List<Item> newItems = Lists.newArrayList(baseItems);
-        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toList()));
+        newItems.addAll(seeds.stream().map(ConfigurableSeed::getSeedItem).toList());
         FarmerWorkTaskAccessor.setCompostables(newItems);
     }
 }

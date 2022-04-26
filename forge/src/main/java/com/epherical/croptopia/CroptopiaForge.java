@@ -83,7 +83,6 @@ public class CroptopiaForge {
     public static ArrayList<Item> cropItems = new ArrayList<>();*/
 
     // todo: there might be a different way i'm supposed to do this in forge.
-    public static LootItemConditionType BIOME_CHECK;
     private static final SpawnChestModifier.Serializer SPAWN_CHEST_MODIFIER = new SpawnChestModifier.Serializer();
     private static final EntityModifier.Serializer ENTITY_MODIFIER = new EntityModifier.Serializer();
 
@@ -125,7 +124,6 @@ public class CroptopiaForge {
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         Composter.init();
-        BIOME_CHECK = registerLootCondition(MiscNames.BIOME_CHECK_LOOT_CONDITION, new BiomeLootCondition.Serializer());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
