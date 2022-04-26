@@ -135,8 +135,9 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     public static void registerBlocks(RegisterFunction<Block> register) {
         for (TreeCrop treeCrop : TREE_CROPS) {
             register.register(createIdentifier(treeCrop.name() + "_crop"), treeCrop.asBlock());
-            CroptopiaMod.cropBlocks.add(treeCrop.asBlock());
-            CroptopiaMod.leafBlocks.add(treeCrop.asBlock());
+            cropBlocks.add(treeCrop.asBlock());
+            cropBlocks.add(treeCrop.saplingBlock);
+            leafBlocks.add(treeCrop.asBlock());
             treeCrop.tree = Content.register(createIdentifier(treeCrop.name() + "_tree"), treeCrop.getTreeConfig());
             register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingBlock());
         }
