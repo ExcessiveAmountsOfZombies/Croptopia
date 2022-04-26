@@ -13,13 +13,13 @@
       "item": "minecraft:potato"
     },
     "2": {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     "3": {
       "item": "croptopia:pepper"
     },
     "4": {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     "5": {
       "tag": "minecraft:fishes"

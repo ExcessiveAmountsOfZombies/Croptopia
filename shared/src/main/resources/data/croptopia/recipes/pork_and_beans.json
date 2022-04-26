@@ -5,7 +5,7 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "${dependant}:crops/blackbeans"
+      "tag": "${dependent}:blackbeans"
     },
     {
       "item": "minecraft:porkchop"

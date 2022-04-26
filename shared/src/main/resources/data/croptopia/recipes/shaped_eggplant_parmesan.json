@@ -10,19 +10,19 @@
       "item": "minecraft:egg"
     },
     "2": {
-      "tag": "${dependant}:vegetables/eggplant"
+      "tag": "${dependent}:eggplant"
     },
     "3": {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     },
     "4": {
       "item": "croptopia:pepper"
     },
     "5": {
-      "tag": "${dependant}:cheeses"
+      "tag": "${dependent}:cheeses"
     },
     "6": {
-      "tag": "${dependant}:crops/basil"
+      "tag": "${dependent}:basil"
     },
     "7": {
       "item": "minecraft:bread"

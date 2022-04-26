@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:pineapples"
+    },
+    {
+      "item": "croptopia:food_press"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "result": {
+    "item": "croptopia:pineapple_juice"
+  }
+}

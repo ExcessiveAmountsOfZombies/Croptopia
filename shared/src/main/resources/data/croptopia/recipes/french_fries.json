@@ -8,10 +8,10 @@
       "item": "croptopia:cooking_pot"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     }
   ],
   "result": {

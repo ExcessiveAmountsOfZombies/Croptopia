@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Break tall grass with a hoe in various biomes to get the different seeds to plant your crops."
+      "text": "Crops can be found around the world. They have specific biomes that they will spawn in. In 2.0.0 crop spawning is now determined with datapacks rather than the 'category' of biome, it is now determined by the biomes name. If you would like certain crops added to modded biomes, make an issue on my github page."
     }
   ]
 }

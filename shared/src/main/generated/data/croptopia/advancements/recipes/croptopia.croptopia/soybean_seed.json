@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:soybean_seed"
+    ]
+  },
+  "criteria": {
+    "has_soybean": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:soybean"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:soybean_seed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_soybean",
+      "has_the_recipe"
+    ]
+  ]
+}

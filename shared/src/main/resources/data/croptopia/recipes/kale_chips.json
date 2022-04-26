@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:vegetables/kale"
+      "tag": "${dependent}:kale"
     },
     {
       "item": "croptopia:frying_pan"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     }
   ],
   "result": {

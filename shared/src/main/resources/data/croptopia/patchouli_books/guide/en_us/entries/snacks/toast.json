@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:toast",
+      "recipe": "croptopia:toast_from_bread",
       "text": "Recipe for making toast."
     }
   ]

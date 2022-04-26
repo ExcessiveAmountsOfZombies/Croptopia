@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:grain/rice"
+      "tag": "${dependent}:rice"
     },
     {
       "item": "croptopia:cooking_pot"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     {
-      "tag": "${dependant}:water_bottles"
+      "tag": "${dependent}:water_bottles"
     }
   ],
   "result": {

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "croptopia:corn"
+  },
+  "result": "croptopia:popcorn",
+  "experience": 0.2,
+  "cookingtime": 100
+}

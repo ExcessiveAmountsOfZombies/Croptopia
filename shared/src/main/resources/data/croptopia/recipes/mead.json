@@ -5,7 +5,7 @@
       "item": "minecraft:honey_bottle"
     },
     {
-      "tag": "${dependant}:water_bottles"
+      "tag": "${dependent}:water_bottles"
     },
     {
       "item": "croptopia:food_press"

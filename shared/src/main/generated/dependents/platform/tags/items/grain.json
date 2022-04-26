@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#${dependent}:barley",
+    "#${dependent}:corn",
+    "#${dependent}:oat",
+    "#${dependent}:rice"
+  ]
+}

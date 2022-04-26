@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:crafting",
-      "recipe": "croptopia:shaped_knife",
+      "recipe": "croptopia:knife",
       "text": "Recipe"
     }
   ]

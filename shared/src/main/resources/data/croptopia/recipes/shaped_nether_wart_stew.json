@@ -6,7 +6,7 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     "2": {
       "item": "minecraft:nether_wart"

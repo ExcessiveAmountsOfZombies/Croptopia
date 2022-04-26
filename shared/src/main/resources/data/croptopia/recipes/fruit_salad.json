@@ -5,13 +5,13 @@
       "item": "minecraft:bowl"
     },
     {
-      "tag": "${dependant}:fruits/strawberries"
+      "tag": "${dependent}:strawberries"
     },
     {
-      "tag": "${dependant}:fruits/bananas"
+      "tag": "${dependent}:bananas"
     },
     {
-      "tag": "${dependant}:fruits/grapes"
+      "tag": "${dependent}:grapes"
     },
     {
       "item": "minecraft:apple"

@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/eggplant"
+            "tag": "${dependent}:eggplant"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:vegetables/squash"
+            "tag": "${dependent}:squashes"
           }
         ]
       }

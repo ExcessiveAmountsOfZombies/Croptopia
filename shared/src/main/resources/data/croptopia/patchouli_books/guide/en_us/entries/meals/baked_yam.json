@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:smelting_baked_yam",
+      "recipe": "croptopia:baked_yam_from_yam",
       "text": "Recipe"
     }
   ]

@@ -3,36 +3,33 @@
   "pattern": [
     "456",
     "123",
-    "7 8"
+    "7  "
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:vegetables/artichokes"
+      "tag": "${dependent}:rhubarb"
     },
     "2": {
-      "item": "croptopia:pepper"
+      "item": "minecraft:sugar"
     },
     "3": {
-      "tag": "${dependant}:fruits/lemons"
+      "tag": "${dependent}:cinnamon"
     },
     "4": {
-      "item": "minecraft:bread"
+      "tag": "${dependent}:oats"
     },
     "5": {
-      "tag": "${dependant}:cheeses"
+      "tag": "${dependent}:flour"
     },
     "6": {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:butters"
     },
     "7": {
-      "tag": "${dependant}:salts"
-    },
-    "8": {
-      "item": "croptopia:frying_pan"
+      "tag": "${dependent}:salts"
     }
   },
   "result": {
-    "item": "croptopia:stuffed_artichoke",
+    "item": "croptopia:rhubarb_crisp",
     "count": 1
   }
 }

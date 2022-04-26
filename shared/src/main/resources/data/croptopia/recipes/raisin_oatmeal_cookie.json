@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:raisins"
+      "tag": "${dependent}:raisins"
     },
     {
       "item": "croptopia:oatmeal"
@@ -11,7 +11,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     }
   ],
   "result": {

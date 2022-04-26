@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "patchouli:smelting",
-      "recipe": "croptopia:popcorn",
+      "recipe": "croptopia:popcorn_from_corn",
       "text": "Recipe for making popcorn."
     }
   ]

@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:doughs"
+      "tag": "${dependent}:doughs"
     },
     {
-      "tag": "${dependant}:crops/chile_peppers"
+      "tag": "${dependent}:chile_peppers"
     },
     {
       "item": "minecraft:chicken"

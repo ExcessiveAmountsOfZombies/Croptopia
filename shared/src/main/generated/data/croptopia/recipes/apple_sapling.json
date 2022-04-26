@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:apples"
+    },
+    {
+      "tag": "${dependent}:apples"
+    },
+    {
+      "tag": "minecraft:saplings"
+    }
+  ],
+  "result": {
+    "item": "croptopia:apple_sapling"
+  }
+}

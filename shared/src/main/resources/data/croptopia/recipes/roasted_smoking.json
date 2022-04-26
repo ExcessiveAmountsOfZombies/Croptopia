@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smoking",
   "ingredient": {
-    "tag": "${dependant}:nuts"
+    "tag": "${dependent}:nuts"
   },
   "result": "croptopia:roasted_nuts",
   "experience": 0.1,

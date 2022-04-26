@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:raisins_from_smoking_grape"
+    ]
+  },
+  "criteria": {
+    "has_grape": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:grape"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:raisins_from_smoking_grape"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_grape",
+      "has_the_recipe"
+    ]
+  ]
+}

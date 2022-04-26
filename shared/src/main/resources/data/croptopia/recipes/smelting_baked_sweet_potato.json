@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "tag": "${dependant}:vegetables/sweetpotatos"
-  },
-  "result": "croptopia:baked_sweet_potato",
-  "experience": 0.1,
-  "cookingtime": 200
-}

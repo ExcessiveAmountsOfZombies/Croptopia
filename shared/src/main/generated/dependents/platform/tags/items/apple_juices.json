@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:apple_juice",
+    "#${dependent}:juices/apple_juice"
+  ]
+}

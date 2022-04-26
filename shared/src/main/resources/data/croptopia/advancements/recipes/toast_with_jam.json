@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:toasts"
+            "tag": "${dependent}:toasts"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:jam"
+            "tag": "${dependent}:jams"
           }
         ]
       }

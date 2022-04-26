@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:roasted_sunflower_seeds"
+    ]
+  },
+  "criteria": {
+    "has_sunflower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:sunflower"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:roasted_sunflower_seeds"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sunflower",
+      "has_the_recipe"
+    ]
+  ]
+}

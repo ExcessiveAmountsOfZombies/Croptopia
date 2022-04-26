@@ -10,28 +10,28 @@
       "item": "croptopia:frying_pan"
     },
     "2": {
-      "tag": "${dependant}:vegetables/eggplant"
+      "tag": "${dependent}:eggplant"
     },
     "3": {
-      "tag": "${dependant}:vegetables/tomatoes"
+      "tag": "${dependent}:tomatoes"
     },
     "4": {
-      "tag": "${dependant}:vegetables/squash"
+      "tag": "${dependent}:squashes"
     },
     "5": {
-      "tag": "${dependant}:vegetables/zucchini"
+      "tag": "${dependent}:zucchini"
     },
     "6": {
-      "tag": "${dependant}:olive_oils"
+      "tag": "${dependent}:olive_oils"
     },
     "7": {
-      "tag": "${dependant}:vegetables/onion"
+      "tag": "${dependent}:onions"
     },
     "8": {
-      "tag": "${dependant}:fruits/bellpeppers"
+      "tag": "${dependent}:bellpeppers"
     },
     "9": {
-      "tag": "${dependant}:crops/basil"
+      "tag": "${dependent}:basil"
     }
   },
   "result": {

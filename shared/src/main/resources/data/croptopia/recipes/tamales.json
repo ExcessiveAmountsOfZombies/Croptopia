@@ -5,19 +5,19 @@
       "item": "minecraft:chicken"
     },
     {
-      "tag": "${dependant}:vegetables/onion"
+      "tag": "${dependent}:onions"
     },
     {
       "item": "croptopia:corn_husk"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     {
-      "tag": "${dependant}:crops/chile_peppers"
+      "tag": "${dependent}:chile_peppers"
     },
     {
       "item": "croptopia:cooking_pot"

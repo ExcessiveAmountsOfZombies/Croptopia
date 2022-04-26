@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:anchovy",
+    "croptopia:calamari",
+    "croptopia:clam",
+    "croptopia:crab",
+    "croptopia:oyster",
+    "croptopia:roe",
+    "croptopia:shrimp",
+    "croptopia:tuna"
+  ]
+}

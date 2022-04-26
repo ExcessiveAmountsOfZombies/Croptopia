@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependant}:milks"
+      "tag": "${dependent}:milks"
     },
     {
-      "tag": "${dependant}:fruits/limes"
+      "tag": "${dependent}:limes"
     },
     {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     }
   ],
   "result": {

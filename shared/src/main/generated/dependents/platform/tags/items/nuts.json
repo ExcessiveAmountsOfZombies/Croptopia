@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#${dependent}:almonds",
+    "#${dependent}:pecans",
+    "#${dependent}:walnuts"
+  ]
+}

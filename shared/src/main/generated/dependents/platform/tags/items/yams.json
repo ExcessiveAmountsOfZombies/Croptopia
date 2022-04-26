@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:yam",
+    "#${dependent}:vegetables/yam",
+    "croptopia:yam",
+    "#${dependent}:crops/yam"
+  ]
+}

@@ -6,16 +6,16 @@
   ],
   "key": {
     "1": {
-      "tag": "${dependant}:butters"
+      "tag": "${dependent}:butters"
     },
     "2": {
-      "tag": "${dependant}:vegetables/greenbeans"
+      "tag": "${dependent}:greenbeans"
     },
     "3": {
-      "tag": "${dependant}:vegetables/ginger"
+      "tag": "${dependent}:ginger"
     },
     "4": {
-      "tag": "${dependant}:salts"
+      "tag": "${dependent}:salts"
     },
     "5": {
       "item": "croptopia:pepper"

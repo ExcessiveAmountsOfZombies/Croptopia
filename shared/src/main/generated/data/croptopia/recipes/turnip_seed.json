@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "${dependent}:turnips"
+    }
+  ],
+  "result": {
+    "item": "croptopia:turnip_seed"
+  }
+}

@@ -9,16 +9,16 @@
       "item": "minecraft:egg"
     },
     "2": {
-      "tag": "${dependant}:water_bottles"
+      "tag": "${dependent}:water_bottles"
     },
     "3": {
       "item": "croptopia:whipping_cream"
     },
     "4": {
-      "tag": "${dependant}:fruits/dates"
+      "tag": "${dependent}:dates"
     },
     "5": {
-      "tag": "${dependant}:fruits/figs"
+      "tag": "${dependent}:figs"
     },
     "6": {
       "item": "minecraft:sugar"

@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:rums"
+            "tag": "${dependent}:rums"
           }
         ]
       }
@@ -21,7 +21,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "${dependant}:raisins"
+            "tag": "${dependent}:raisins"
           }
         ]
       }

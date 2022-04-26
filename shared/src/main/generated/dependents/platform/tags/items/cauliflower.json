@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:cauliflower",
+    "#${dependent}:vegetables/cauliflower",
+    "croptopia:cauliflower",
+    "#${dependent}:crops/cauliflower"
+  ]
+}

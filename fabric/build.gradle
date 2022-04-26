@@ -29,7 +29,10 @@ configurations {
 
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
-    mappings "net.fabricmc:yarn:${rootProject.yarn_mappings}:v2"
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-1.18.1:2021.12.19")
+    }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
     modImplementation "vazkii.patchouli:Patchouli:1.18.2-67-FABRIC-SNAPSHOT"
@@ -48,8 +51,18 @@ dependencies {
     implementation(project(":shared"))
 }
 
-minecraft {
-    accessWidener = file("src/main/resources/croptopia.accesswidener")
+loom {
+    accessWidenerPath = file("src/main/resources/croptopia.accesswidener")
+
+    runs {
+        datagen {
+            server()
+            name "Data Generation"
+            vmArg "-Dfabric-api.datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${project(":shared").file("src/main/generated")}"
+            runDir "build/datagen"
+        }
+    }
 }
 
 processResources {
@@ -62,19 +75,20 @@ processResources {
 
     from(sourceSets.main.resources.srcDirs) {
         include('**/data/croptopia/recipes/**')
-        expand "dependant": "c"
+        expand "dependent": "c"
     }
 }
 tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
+    source(project(":shared").sourceSets.main.allSource)
 }
 
 shadowJar {
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-dev.jar"
     configurations = [project.configurations.shade]
-    relocate 'dependants/platform', 'data/c'
+    relocate 'dependents/platform', 'data/c'
 }
 
 task remappedShadowJar(type: RemapJarTask) {

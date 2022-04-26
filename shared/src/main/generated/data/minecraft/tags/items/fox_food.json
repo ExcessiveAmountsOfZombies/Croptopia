@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:blackberry",
+    "croptopia:blueberry",
+    "croptopia:cranberry",
+    "croptopia:elderberry",
+    "croptopia:raspberry",
+    "croptopia:strawberry"
+  ]
+}

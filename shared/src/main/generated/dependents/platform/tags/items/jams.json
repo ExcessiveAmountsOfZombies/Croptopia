@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "#${dependent}:apricot_jams",
+    "#${dependent}:blackberry_jams",
+    "#${dependent}:blueberry_jams",
+    "#${dependent}:cherry_jams",
+    "#${dependent}:elderberry_jams",
+    "#${dependent}:grape_jams",
+    "#${dependent}:peach_jams",
+    "#${dependent}:raspberry_jams",
+    "#${dependent}:strawberry_jams"
+  ]
+}

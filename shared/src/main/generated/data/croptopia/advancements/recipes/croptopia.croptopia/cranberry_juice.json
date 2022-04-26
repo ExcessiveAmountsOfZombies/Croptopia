@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:cranberry_juice"
+    ]
+  },
+  "criteria": {
+    "has_cranberry": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:cranberries"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:cranberry_juice"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cranberry",
+      "has_the_recipe"
+    ]
+  ]
+}

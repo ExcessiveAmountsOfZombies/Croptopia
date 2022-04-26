@@ -12,7 +12,7 @@
       "item": "minecraft:sugar"
     },
     "3": {
-      "tag": "${dependant}:fruits/strawberries"
+      "tag": "${dependent}:strawberries"
     },
     "4": {
       "item": "croptopia:whipping_cream"

@@ -5,7 +5,7 @@
       "item": "croptopia:burrito"
     },
     {
-      "tag": "${dependant}:flour"
+      "tag": "${dependent}:flour"
     },
     {
       "item": "croptopia:cooking_pot"

@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "minecraft:sugar_cane"
-  },
-  "result": "croptopia:molasses",
-  "experience": 0.1,
-  "cookingtime": 100
-}
