@@ -1,5 +1,7 @@
 package com.epherical.croptopia;
 
+import com.epherical.croptopia.common.ItemNamesV2;
+import com.epherical.croptopia.items.GuideBookItem;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.google.common.collect.ImmutableMap.Builder;
@@ -40,6 +42,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static com.epherical.croptopia.CroptopiaMod.createGroup;
+
 
 public class Croptopia implements ModInitializer {
 
@@ -61,6 +65,8 @@ public class Croptopia implements ModInitializer {
                 .filter(success -> !success);
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
         Content.registerBlocks((id, object) -> Registry.register(Registry.BLOCK, id, object));
+        Content.GUIDE = new GuideBookItem(createGroup());
+        Registry.register(Registry.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
         Content.registerItems((id, object) -> Registry.register(Registry.ITEM, id, object));
 
 

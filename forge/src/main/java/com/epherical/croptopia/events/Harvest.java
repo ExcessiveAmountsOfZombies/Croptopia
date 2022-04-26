@@ -21,7 +21,7 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (Config.canRightClickHarvest) {
+        if (Config.canRightClickHarvest && !event.getPlayer().isSpectator()) {
             if (!(event.getPlayer().getMainHandItem().getItem() instanceof BoneMealItem)) {
                 if (!event.getWorld().isClientSide) {
                     Level world = event.getWorld();

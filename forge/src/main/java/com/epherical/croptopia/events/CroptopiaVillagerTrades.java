@@ -16,7 +16,7 @@ public class CroptopiaVillagerTrades {
     public void initVillager(VillagerTradesEvent event) {
         List<VillagerTrades.ItemListing> crops = NonNullList.create();
         List<VillagerTrades.ItemListing> saplings = NonNullList.create();
-        if (event.getType() == VillagerProfession.FARMER) {
+        /*if (event.getType() == VillagerProfession.FARMER) {
             buyFromUser(crops, ItemRegistry.artichoke, 26, 2, 16, 0.1f);
             buyFromUser(crops, ItemRegistry.asparagus, 26, 2, 16, 0.1f);
             buyFromUser(crops, ItemRegistry.barley, 26, 2, 16, 0.1f);
@@ -98,12 +98,12 @@ public class CroptopiaVillagerTrades {
             sellToUser(saplings, ItemRegistry.cinnamonSapling, 1, 4, 12, 15, 0.1f);
             //event.getTrades().put(4, crops);
             
-        }
+        }*/
     }
 
     @SubscribeEvent
     public void initWandering(WandererTradesEvent event) {
-        List<VillagerTrades.ItemListing> seeds = NonNullList.create();
+       /* List<VillagerTrades.ItemListing> seeds = NonNullList.create();
         sellToUser(seeds, ItemRegistry.asparagusSeed, 4, 2, 16, 1, 0.5f);
         sellToUser(seeds, ItemRegistry.bellPepperSeed, 4, 2, 16, 1, 0.5f);
         sellToUser(seeds, ItemRegistry.blackBeanSeed, 4, 2, 16, 1, 0.5f);
@@ -152,7 +152,7 @@ public class CroptopiaVillagerTrades {
         sellToUser(seeds, ItemRegistry.zucchiniSeed, 4, 2, 16, 1, 0.5f);
         sellToUser(seeds, ItemRegistry.mustardSeed, 4, 2, 16, 1, 0.5f);
         sellToUser(seeds, ItemRegistry.chilePepperSeed, 4, 2, 16, 1, 0.5f);
-        sellToUser(seeds, ItemRegistry.turmericSeed, 4, 2, 16, 1, 0.5f);
+        sellToUser(seeds, ItemRegistry.turmericSeed, 4, 2, 16, 1, 0.5f);*/
         //event.getGenericTrades().addAll(seeds);
     }
 
