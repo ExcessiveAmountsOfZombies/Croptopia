@@ -30,7 +30,9 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProv
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -41,7 +43,7 @@ import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
-    private static final Set<TreeCrop> TREE_CROPS = new HashSet<>();
+    private static final List<TreeCrop> TREE_CROPS = new ArrayList<>();
 
     private final String name;
     private final boolean isPlural;
@@ -126,8 +128,8 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return category;
     }
 
-    public static Set<TreeCrop> copy() {
-        return ImmutableSet.copyOf(TREE_CROPS);
+    public static List<TreeCrop> copy() {
+        return TREE_CROPS;
     }
 
     public static void registerBlocks(RegisterFunction<Block> register) {

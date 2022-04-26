@@ -1,7 +1,7 @@
 package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.Croptopia;
-import com.epherical.croptopia.config.ConfigurableSeed;
+import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
@@ -88,9 +88,9 @@ public class CropLootTableModifier {
                         FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
                         builder.setRolls(ConstantValue.exactly(1));
                         builder.setBonusRolls(ConstantValue.exactly(0));
-                        for (ConfigurableSeed seed : Croptopia.getSeeds()) {
+                        for (SeedItem seed : CroptopiaMod.seeds) {
                             builder.withEntry(
-                                    LootItem.lootTableItem(seed.getSeedItem())
+                                    LootItem.lootTableItem(seed)
                                             .setWeight(5)
                                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false)).build()
                             );

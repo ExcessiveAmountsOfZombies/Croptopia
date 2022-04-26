@@ -1,6 +1,7 @@
 package com.epherical.croptopia.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 import java.util.Set;
@@ -15,7 +16,7 @@ public interface ParrotAccess {
         throw new AssertionError();
     }
 
-    @Accessor("TAME_FOOD")
+    @Accessor("TAME_FOOD") @Mutable
     static void setTamingIngredients(Set<Item> items) {
         throw new AssertionError();
     }

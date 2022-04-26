@@ -1,5 +1,6 @@
 package com.epherical.croptopia.mixin;
 
+import com.epherical.croptopia.register.helpers.Tree;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.AxeItem;
@@ -27,10 +28,6 @@ public class AxeMixin {
             return;
         BlockPos pos = context.getClickedPos();
         BlockState state = context.getLevel().getBlockState(pos);
-        for (Content.Bark crop : Content.Bark.values()) {
-            if (state.getBlock().equals(crop.getLog()) || state.getBlock().equals(crop.getWood())) {
-                Block.popResource(context.getLevel(), pos, new ItemStack(crop.asItem()));
-            }
-        }
+        Tree.attemptPop(state, context, pos);
     }
 }

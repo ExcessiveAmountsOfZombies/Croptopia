@@ -3,6 +3,7 @@ package com.epherical.croptopia.mixin;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 
@@ -14,7 +15,7 @@ public interface ChickenAccess {
         throw new AssertionError();
     }
 
-    @Accessor("FOOD_ITEMS")
+    @Accessor("FOOD_ITEMS") @Mutable
     static void setFoodItems(Ingredient items) {
         throw new AssertionError();
     }

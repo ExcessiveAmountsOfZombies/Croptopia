@@ -1,5 +1,9 @@
 package com.epherical.croptopia.datagen;
 
+import com.epherical.croptopia.Croptopia;
+import com.epherical.croptopia.common.ItemNames;
+import com.epherical.croptopia.common.MiscNames;
+import com.epherical.croptopia.mixin.datagen.IdentifierAccessor;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.IceCream;
@@ -9,12 +13,8 @@ import com.epherical.croptopia.register.helpers.Pie;
 import com.epherical.croptopia.register.helpers.Smoothie;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
-import com.google.common.collect.ImmutableMap;
-import com.epherical.croptopia.common.ItemNames;
-import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.Croptopia;
-import com.epherical.croptopia.mixin.datagen.IdentifierAccessor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
+import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.Registry;
@@ -30,6 +30,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+
 import java.util.function.Consumer;
 
 public class CroptopiaRecipeProvider extends FabricRecipeProvider {
@@ -98,7 +99,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
             TagKey<Item> tag = independentTag(jam.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(jam)
                     .requires(tag).requires(Items.SUGAR).requires(Content.COOKING_POT)
-                    .unlockedBy("has_" + jam.name().toLowerCase(), RecipeProvider.has(tag))
+                    .unlockedBy("has_" + jam.getCrop().getLowercaseName(), RecipeProvider.has(tag))
                     .save(exporter);
         }
     }
@@ -108,7 +109,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
             TagKey<Item> tag = independentTag(juice.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(juice)
                     .requires(tag).requires(Content.FOOD_PRESS).requires(Items.GLASS_BOTTLE)
-                    .unlockedBy("has_" + juice.name().toLowerCase(), RecipeProvider.has(tag))
+                    .unlockedBy("has_" + juice.getCrop().getLowercaseName(), RecipeProvider.has(tag))
                     .save(exporter);
         }
     }
@@ -118,7 +119,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
             TagKey<Item> tag = independentTag(smoothie.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(smoothie)
                     .requires(tag).requires(Items.ICE).requires(independentTag("milks")).requires(Items.GLASS_BOTTLE)
-                    .unlockedBy("has_" + smoothie.name(), RecipeProvider.has(tag))
+                    .unlockedBy("has_" + smoothie.getCrop().getLowercaseName(), RecipeProvider.has(tag))
                     .save(exporter);
         }
     }
@@ -128,7 +129,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
             TagKey<Item> tag = independentTag(iceCream.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(iceCream)
                     .requires(tag).requires(Items.SUGAR).requires(Items.EGG).requires(independentTag("milks")).requires(Content.COOKING_POT)
-                    .unlockedBy("has_" + iceCream.name().toLowerCase(), RecipeProvider.has(tag))
+                    .unlockedBy("has_" + iceCream.getCrop().getLowercaseName(), RecipeProvider.has(tag))
                     .save(exporter);
         }
     }
@@ -138,7 +139,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
             TagKey<Item> tag = independentTag(pie.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(pie)
                     .requires(tag).requires(Items.SUGAR).requires(Items.EGG).requires(independentTag("flour")).requires(independentTag("doughs")).requires(Content.FRYING_PAN)
-                    .unlockedBy("has_" + pie.name().toLowerCase(), RecipeProvider.has(tag))
+                    .unlockedBy("has_" + pie.getCrop().getLowercaseName(), RecipeProvider.has(tag))
                     .save(exporter);
         }
     }
@@ -147,7 +148,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), output, exp, time)
                 .unlockedBy("has_" + inputName, RecipeProvider.has(input))
                 .save(exporter, RecipeProvider.getItemName(output) + "_from_" + inputName);
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), output, exp, time/2)
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), output, exp, time / 2)
                 .unlockedBy("has_" + inputName, RecipeProvider.has(input))
                 .save(exporter, RecipeProvider.getItemName(output) + "_from_smoking_" + inputName);
         // TODO campfire
@@ -176,7 +177,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         offerFoodCookingRecipe(exporter, Items.SUGAR_CANE, "sugar_cane", Content.MOLASSES, time, exp, false);
         offerFoodCookingRecipe(exporter, Items.BREAD, "bread", Content.TOAST, time, exp, false);
         // only salt missing
-        offerFoodCookingRecipe(exporter,Content.WATER_BOTTLE, ItemNames.WATER_BOTTLE, Content.SALT,800,0.1f, false);
+        offerFoodCookingRecipe(exporter, Content.WATER_BOTTLE, ItemNames.WATER_BOTTLE, Content.SALT, 800, 0.1f, false);
     }
 
     protected void generateUtensil(Consumer<FinishedRecipe> exporter) {

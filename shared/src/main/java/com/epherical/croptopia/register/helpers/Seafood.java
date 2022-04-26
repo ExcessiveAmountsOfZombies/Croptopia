@@ -4,18 +4,17 @@ import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
 public class Seafood implements ItemConvertibleWithPlural {
-    private static final Set<Seafood> INSTANCES = new HashSet<>();
+    private static final List<Seafood> INSTANCES = new ArrayList<>();
 
     private final String name;
     private final boolean plural;
@@ -48,8 +47,8 @@ public class Seafood implements ItemConvertibleWithPlural {
         return item;
     }
 
-    public static Set<Seafood> copy() {
-        return ImmutableSet.copyOf(INSTANCES);
+    public static List<Seafood> copy() {
+        return INSTANCES;
     }
 
     public static void registerItems(RegisterFunction<Item> register) {

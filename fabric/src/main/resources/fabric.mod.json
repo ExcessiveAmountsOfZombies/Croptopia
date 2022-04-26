@@ -28,16 +28,16 @@
   "accessWidener": "croptopia.accesswidener",
   "entrypoints": {
     "fabric-datagen": [
-      "me.thonk.croptopia.datagen.CroptopiaDataGeneratorEntry"
+      "com.epherical.croptopia.datagen.CroptopiaDataGeneratorEntry"
     ],
     "client": [
-      "me.thonk.croptopia.client.CroptopiaClient"
+      "com.epherical.croptopia.client.CroptopiaClient"
     ],
     "main": [
-      "me.thonk.croptopia.Croptopia"
+      "com.epherical.croptopia.Croptopia"
     ],
     "modmenu": [
-      "me.thonk.croptopia.dependencies.ModMenu"
+      "com.epherical.croptopia.dependencies.ModMenu"
     ]
   },
   "mixins": [
@@ -45,7 +45,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.13.3",
-    "fabric": ">=0.47.5",
+    "fabric": ">=0.51.1",
     "fabric-biome-api-v1": ">=3.0.0",
     "minecraft": ">=1.18.2"
   },

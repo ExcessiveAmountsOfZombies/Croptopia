@@ -1,8 +1,8 @@
 package com.epherical.croptopia.mixin;
 
+import com.epherical.croptopia.CroptopiaMod;
 import com.google.common.collect.ImmutableSet;
 import com.epherical.croptopia.Croptopia;
-import com.epherical.croptopia.config.ConfigurableSeed;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.item.Item;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,7 +21,7 @@ public class VillagerMixin {
     public Set<Item> addSeedToPlant(Set<Item> set) {
         return ImmutableSet.<Item>builder()
                 .addAll(set)
-                .addAll(Croptopia.getSeeds().stream().map(ConfigurableSeed::getSeedItem).collect(Collectors.toSet()))
+                .addAll(CroptopiaMod.seeds)
                 .build();
     }
 }

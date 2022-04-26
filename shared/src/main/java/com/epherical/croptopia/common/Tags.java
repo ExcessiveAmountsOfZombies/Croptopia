@@ -2,6 +2,7 @@ package com.epherical.croptopia.common;
 
 import com.epherical.croptopia.CroptopiaMod;
 import net.minecraft.core.Registry;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 

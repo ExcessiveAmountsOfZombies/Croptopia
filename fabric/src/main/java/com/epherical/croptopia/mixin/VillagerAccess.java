@@ -1,6 +1,7 @@
 package com.epherical.croptopia.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 import java.util.Map;
@@ -16,7 +17,7 @@ public interface VillagerAccess {
         throw new AssertionError();
     }
 
-    @Accessor("WANTED_ITEMS")
+    @Accessor("WANTED_ITEMS") @Mutable
     static void setGatherableItems(Set<Item> items) {
         throw new AssertionError();
     }
@@ -27,7 +28,7 @@ public interface VillagerAccess {
         throw new AssertionError();
     }
 
-    @Accessor("FOOD_POINTS")
+    @Accessor("FOOD_POINTS") @Mutable
     static void setItemFoodValues(Map<Item, Integer> food) {
         throw new AssertionError();
     }

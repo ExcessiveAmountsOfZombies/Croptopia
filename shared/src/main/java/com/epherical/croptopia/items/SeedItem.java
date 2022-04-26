@@ -16,7 +16,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -42,7 +41,7 @@ public class SeedItem extends ItemNameBlockItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> tooltip, TooltipFlag context) {
+    public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag context) {
         TranslatableComponent text = new TranslatableComponent("info.croptopia.seed");
         String[] translated = text.getString().split("\n");
         /*if (translated.length >= 2) {

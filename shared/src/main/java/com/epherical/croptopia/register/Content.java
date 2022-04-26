@@ -307,7 +307,7 @@ public class Content {
     public static final Item SNICKER_DOODLE = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item BANANA_NUT_BREAD = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
     public static final Item CANDIED_NUTS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
-    public static final Item ALMOND_BRITTLE = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
+    public static Item ALMOND_BRITTLE = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item OATMEAL_COOKIE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item NUTTY_COOKIE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     //public static final Item praline = new Item(createGroup().food(EDIBLE_5));
@@ -406,12 +406,10 @@ public class Content {
     public static Item GUIDE;
 
     public static void registerBlocks(RegisterFunction<Block> register) {
+        SALT_ORE_BLOCK = register.register(createIdentifier(BlockNames.SALT_ORE), SALT_ORE_BLOCK);
         FarmlandCrop.registerBlocks(register);
         TreeCrop.registerBlocks(register);
         Tree.registerBlocks(register);
-
-
-        register.register(createIdentifier(BlockNames.SALT_ORE), SALT_ORE_BLOCK);
     }
 
     public static void registerItems(RegisterFunction<Item> register) {

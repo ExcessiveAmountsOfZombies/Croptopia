@@ -21,6 +21,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.Registry;
 import net.minecraft.data.HashCache;
+import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.Tag;
@@ -28,6 +29,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.tags.TagManager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+
 import java.nio.file.Path;
 
 public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemTagProvider {
@@ -96,19 +98,19 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
             createGeneralTag(furnace.getPlural(), furnace.asItem());
         }
         for (Juice juice : Juice.copy()) {
-            createCategoryTag("juices", juice.name().toLowerCase() + "_juices", juice.asItem());
+            createCategoryTag("juices", juice.name().toLowerCase() + "s", juice.asItem());
         }
         for (Jam jam : Jam.copy()) {
-            createCategoryTag("jams", jam.name().toLowerCase() + "_jams", jam.asItem());
+            createCategoryTag("jams", jam.name().toLowerCase() + "s", jam.asItem());
         }
         for (Smoothie smoothie : Smoothie.copy()) {
-            createGeneralTag(smoothie.name().toLowerCase() + "_smoothies", smoothie.asItem());
+            createGeneralTag(smoothie.name().toLowerCase() + "s", smoothie.asItem());
         }
         for (IceCream iceCream : IceCream.copy()) {
-            createGeneralTag(iceCream.name().toLowerCase() + "_ice_creams", iceCream.asItem());
+            createGeneralTag(iceCream.name().toLowerCase() + "s", iceCream.asItem());
         }
         for (Pie pie : Pie.copy()) {
-            createGeneralTag(pie.name().toLowerCase() + "_pies", pie.asItem());
+            createGeneralTag(pie.name().toLowerCase() + "s", pie.asItem());
         }
         for (Utensil utensil : Utensil.copy()) {
             createGeneralTag(utensil.getPlural(), utensil.asItem());
@@ -294,7 +296,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
     private void createSeedSaplingTag(String category, String name, Item item) {
         String pluralSeedName;
         if (item == Content.VANILLA.getSeedItem()) {
-           pluralSeedName = Registry.ITEM.getKey(item).getPath();
+            pluralSeedName = Registry.ITEM.getKey(item).getPath();
         } else {
             pluralSeedName = Registry.ITEM.getKey(item).getPath() + "s";
         }

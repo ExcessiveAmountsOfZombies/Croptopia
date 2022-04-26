@@ -1,6 +1,7 @@
 package com.epherical.croptopia.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 import java.util.Map;
@@ -15,7 +16,7 @@ public interface AxeAccess {
         throw new AssertionError();
     }
 
-    @Accessor("STRIPPABLES")
+    @Accessor("STRIPPABLES") @Mutable
     public static void setStrippables(Map<Block, Block> map) {
         throw new AssertionError();
     }

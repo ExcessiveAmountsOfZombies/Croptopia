@@ -167,6 +167,7 @@ public class CroptopiaForge {
             Content.registerBlocks((id, object) -> {
                 object.setRegistryName(id);
                 blockRegistryEvent.getRegistry().register(object);
+                return object;
             });
             //LeavesRegistry.init();
             //BlockRegistry.init();
@@ -189,6 +190,7 @@ public class CroptopiaForge {
                     CroptopiaCropBlock block = (CroptopiaCropBlock) (it).getBlock();
                     block.setSeed(it);
                 }
+                return item;
             });
             //ItemRegistry.init(itemRegister);
             List<ItemLike> chickenItems = new ArrayList<>(CroptopiaMod.seeds);

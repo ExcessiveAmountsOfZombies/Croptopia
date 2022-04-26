@@ -2,25 +2,25 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
-      "tag": "${dependent}:kumquat"
+      "tag": "${dependent}:kumquats"
     },
     {
       "tag": "${dependent}:vanilla"

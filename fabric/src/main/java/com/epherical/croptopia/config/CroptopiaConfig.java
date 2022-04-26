@@ -3,7 +3,6 @@ package com.epherical.croptopia.config;
 import com.google.common.collect.HashMultimap;
 import com.epherical.croptopia.common.FeatureNames;
 import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.Constants;
 import com.epherical.croptopia.Croptopia;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
@@ -121,6 +120,11 @@ public class CroptopiaConfig {
     }
 
     protected ConfigurationNode generateConfig(CommentedConfigurationNode node) {
+        try {
+            node.node("generateSaltInWorld").set(true);
+        } catch (SerializationException e) {
+            e.printStackTrace();
+        }
         return node;
     }
 
@@ -128,44 +132,7 @@ public class CroptopiaConfig {
         File configDirectory = new File(FabricLoader.getInstance().getConfigDir().toFile(), MiscNames.MOD_ID);
 
         if (configDirectory.exists()) {
-            // now we're going to delete the options file. This is our conversion code
-            File file = new File(configDirectory, "options.json");
-            if (file.exists()) {
-                ConfigurationNode cropsNode = node.node("configuredSeeds");
-                try {
-                    Constants.OPTIONS.readOptionsFile(file);
-                    cropsNode.setList(ConfigurableSeed.class, Constants.OPTIONS.readConfiguredSeeds(file));
-                    node.node("generateSaltInWorld").set(!Constants.OPTIONS.disableSaltOre);
-                } catch (SerializationException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    loader.save(node);
-                } catch (ConfigurateException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    Files.delete(file.toPath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                LOGGER.info("Deleted old options json file");
-            } else {
-                addTreeConfigIfDoesNotExist(node, "treeConfig");
-                if (!node.hasChild("configuredSeeds")) {
-                    ConfigurationNode cropsNode = node.node("configuredSeeds");
-                    try {
-                        cropsNode.setList(ConfigurableSeed.class, Croptopia.getSeeds());
-                    } catch (SerializationException e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        loader.save(node);
-                    } catch (ConfigurateException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
+            addTreeConfigIfDoesNotExist(node, "treeConfig");
         }
     }
 

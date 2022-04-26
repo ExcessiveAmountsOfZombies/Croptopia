@@ -95,66 +95,6 @@ public class ItemNamesV2 {
     public static final String PAPRIKA = "paprika";
     public static final String SALT = "salt";
 
-
-    public static final String ARTICHOKE_SEED = "artichoke_seed";
-    public static final String ASPARAGUS_SEED = "asparagus_seed";
-    public static final String BARLEY_SEED = "barley_seed";
-    public static final String BASIL_SEED = "basil_seed";
-    public static final String BELLPEPPER_SEED = "bellpepper_seed";
-    public static final String BLACKBEAN_SEED = "blackbean_seed";
-    public static final String BLACKBERRY_SEED = "blackberry_seed";
-    public static final String BLUEBERRY_SEED = "blueberry_seed";
-    public static final String BROCCOLI_SEED = "broccoli_seed";
-    public static final String CABBAGE_SEED = "cabbage_seed";
-    public static final String CANTALOUPE_SEED = "cantaloupe_seed";
-    public static final String CAULIFLOWER_SEED = "cauliflower_seed";
-    public static final String CELERY_SEED = "celery_seed";
-    public static final String CHILE_PEPPER_SEED = "chile_pepper_seed";
-    public static final String COFFEE_SEED = "coffee_seed";
-    public static final String CORN_SEED = "corn_seed";
-    public static final String CRANBERRY_SEED = "cranberry_seed";
-    public static final String CUCUMBER_SEED = "cucumber_seed";
-    public static final String CURRANT_SEED = "currant_seed";
-    public static final String EGGPLANT_SEED = "eggplant_seed";
-    public static final String ELDERBERRY_SEED = "elderberry_seed";
-    public static final String GARLIC_SEED = "garlic_seed";
-    public static final String GINGER_SEED = "ginger_seed";
-    public static final String GRAPE_SEED = "grape_seed";
-    public static final String GREENBEAN_SEED = "greenbean_seed";
-    public static final String GREENONION_SEED = "greenonion_seed";
-    public static final String HONEYDEW_SEED = "honeydew_seed";
-    public static final String HOPS_SEED = "hops_seed";
-    public static final String KALE_SEED = "kale_seed";
-    public static final String KIWI_SEED = "kiwi_seed";
-    public static final String LEEK_SEED = "leek_seed";
-    public static final String LETTUCE_SEED = "lettuce_seed";
-    public static final String MUSTARD_SEED = "mustard_seed";
-    public static final String OAT_SEED = "oat_seed";
-    public static final String OLIVE_SEED = "olive_seed";
-    public static final String ONION_SEED = "onion_seed";
-    public static final String PEANUT_SEED = "peanut_seed";
-    public static final String PEPPER_SEED = "pepper_seed";
-    public static final String PINEAPPLE_SEED = "pineapple_seed";
-    public static final String RADISH_SEED = "radish_seed";
-    public static final String RASPBERRY_SEED = "raspberry_seed";
-    public static final String RHUBARB_SEED = "rhubarb_seed";
-    public static final String RICE_SEED = "rice_seed";
-    public static final String RUTABAGA_SEED = "rutabaga_seed";
-    public static final String SAGUARO_SEED = "saguaro_seed";
-    public static final String SOYBEAN_SEED = "soybean_seed";
-    public static final String SPINACH_SEED = "spinach_seed";
-    public static final String SQUASH_SEED = "squash_seed";
-    public static final String STRAWBERRY_SEED = "strawberry_seed";
-    public static final String SWEETPOTATO_SEED = "sweetpotato_seed";
-    public static final String TEA_SEED = "tea_seed";
-    public static final String TOMATILLO_SEED = "tomatillo_seed";
-    public static final String TOMATO_SEED = "tomato_seed";
-    public static final String TURMERIC_SEED = "turmeric_seed";
-    public static final String TURNIP_SEED = "turnip_seed";
-    public static final String VANILLA_SEEDS = "vanilla_seeds";
-    public static final String YAM_SEED = "yam_seed";
-    public static final String ZUCCHINI_SEED = "zucchini_seed";
-
     public static final String OLIVE_OIL = "olive_oil";
     public static final String CHEESE = "cheese";
     public static final String FLOUR = "flour";
@@ -299,12 +239,6 @@ public class ItemNamesV2 {
 
     public static final String CORN_HUSK = "corn_husk";
     public static final String WHIPPING_CREAM = "whipping_cream";
-
-
-    public static final String CINNAMON_LOG = "cinnamon_log";
-    public static final String STRIPPED_CINNAMON_LOG = "stripped_cinnamon_log";
-    public static final String CINNAMON_WOOD = "cinnamon_wood";
-    public static final String STRIPPED_CINNAMON_WOOD = "stripped_cinnamon_wood";
 
     // 1.4.0
     public static final String MILK_BOTTLE = "milk_bottle";

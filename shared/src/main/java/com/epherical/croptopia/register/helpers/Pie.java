@@ -3,19 +3,18 @@ package com.epherical.croptopia.register.helpers;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 import static com.epherical.croptopia.util.FoodConstructor.REG_14;
 import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class Pie implements ItemLike {
-    private static final Set<Pie> INSTANCES = new HashSet<>();
+    private static final List<Pie> INSTANCES = new ArrayList<>();
 
     private final String name;
     private final ItemConvertibleWithPlural crop;
@@ -47,7 +46,7 @@ public class Pie implements ItemLike {
         }
     }
 
-    public static Set<Pie> copy() {
-        return ImmutableSet.copyOf(INSTANCES);
+    public static List<Pie> copy() {
+        return INSTANCES;
     }
 }

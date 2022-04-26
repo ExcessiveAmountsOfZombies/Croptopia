@@ -1,6 +1,5 @@
 package com.epherical.croptopia.generator;
 
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -17,7 +16,6 @@ public class CroptopiaSaplingGenerator extends AbstractTreeGrower {
         this.tree = tree;
     }
 
-    @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean bees) {
         return tree.get();

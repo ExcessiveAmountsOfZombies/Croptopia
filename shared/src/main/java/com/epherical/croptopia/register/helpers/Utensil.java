@@ -4,17 +4,16 @@ import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.CookingUtensil;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
 public class Utensil implements ItemConvertibleWithPlural {
 
-    private static final HashSet<Utensil> UTENSILS = new HashSet<>();
+    private static final List<Utensil> UTENSILS = new ArrayList<>();
 
     private final String name;
     private final boolean plural;
@@ -43,8 +42,8 @@ public class Utensil implements ItemConvertibleWithPlural {
         return utensil;
     }
 
-    public static Set<Utensil> copy() {
-        return ImmutableSet.copyOf(UTENSILS);
+    public static List<Utensil> copy() {
+        return UTENSILS;
     }
 
     public static void registerItems(RegisterFunction<Item> register) {

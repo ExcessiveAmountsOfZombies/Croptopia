@@ -2,6 +2,7 @@ package com.epherical.croptopia.generator;
 
 import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.config.TreeConfiguration;
+import com.epherical.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.core.Holder;

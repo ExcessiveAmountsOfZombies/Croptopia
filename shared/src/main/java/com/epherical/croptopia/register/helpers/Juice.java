@@ -4,20 +4,19 @@ import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 import static com.epherical.croptopia.util.FoodConstructor.REG_5;
 import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
 
 public class Juice implements ItemLike {
-    private static final Set<Juice> INSTANCES = new HashSet<>();
+    private static final List<Juice> INSTANCES = new ArrayList<>();
 
     private final String name;
     private final ItemConvertibleWithPlural crop;
@@ -55,7 +54,7 @@ public class Juice implements ItemLike {
         }
     }
 
-    public static Set<Juice> copy() {
-        return ImmutableSet.copyOf(INSTANCES);
+    public static List<Juice> copy() {
+        return INSTANCES;
     }
 }

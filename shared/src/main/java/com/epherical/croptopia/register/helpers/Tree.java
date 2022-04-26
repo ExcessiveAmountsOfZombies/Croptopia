@@ -8,7 +8,7 @@ import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableSet;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +17,8 @@ import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -33,32 +35,30 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlac
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 import static com.epherical.croptopia.CroptopiaMod.*;
-import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.CroptopiaMod.createRegularLeavesBlock;
 
 public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
-    private static final Set<Tree> TREES = new HashSet<>();
+    private static final List<Tree> TREES = new ArrayList<>();
 
     private final String name;
     private final boolean hasPlural;
     private final TagCategory tagCategory;
     private final Item item;
-    private final Block log;
-    private final Block strippedLog;
-    private final Block wood;
-    private final Block strippedWood;
+    private Block log;
+    private Block strippedLog;
+    private Block wood;
+    private Block strippedWood;
     private final TagKey<Item> logItemTag;
     private final TagKey<Block> logBlockTag;
-    private final Block leaves;
+    private Block leaves;
     private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
     private Holder<ConfiguredFeature<TreeConfiguration, ?>> tree;
     private final Item sapling;
-    private final Block saplingBlock;
+    private Block saplingBlock;
 
     public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen) {
         Objects.requireNonNull(category);
@@ -155,19 +155,19 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return name;
     }
 
-    public static Set<Tree> copy() {
-        return ImmutableSet.copyOf(TREES);
+    public static List<Tree> copy() {
+        return TREES;
     }
 
     public static void registerBlocks(RegisterFunction<Block> register) {
         for (Tree tree : TREES) {
-            register.register(createIdentifier(tree.name + "_log"), tree.log);
-            register.register(createIdentifier("stripped_" + tree.name + "_log"), tree.strippedLog);
-            register.register(createIdentifier(tree.name + "_wood"), tree.wood);
-            register.register(createIdentifier("stripped_" + tree.name + "_wood"), tree.strippedWood);
-            register.register(createIdentifier(tree.name + "_leaves"), tree.leaves);
+            tree.log = register.register(createIdentifier(tree.name + "_log"), tree.log);
+            tree.strippedLog = register.register(createIdentifier("stripped_" + tree.name + "_log"), tree.strippedLog);
+            tree.wood = register.register(createIdentifier(tree.name + "_wood"), tree.wood);
+            tree.strippedWood = register.register(createIdentifier("stripped_" + tree.name + "_wood"), tree.strippedWood);
+            tree.leaves = register.register(createIdentifier(tree.name + "_leaves"), tree.leaves);
             leafBlocks.add(tree.leaves);
-            register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
+            tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
             tree.tree = Content.register(createIdentifier(tree.name + "_tree"), tree.getTreeGen());
         }
     }
@@ -190,5 +190,13 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
                 new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leaves.defaultBlockState(), 90).build()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
+    }
+
+    public static void attemptPop(BlockState state, UseOnContext context, BlockPos pos) {
+        for (Tree crop : TREES) {
+            if (state.getBlock().equals(crop.getLog()) || state.getBlock().equals(crop.getWood())) {
+                Block.popResource(context.getLevel(), pos, new ItemStack(crop.asItem()));
+            }
+        }
     }
 }
