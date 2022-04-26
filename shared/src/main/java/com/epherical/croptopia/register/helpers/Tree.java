@@ -168,6 +168,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             tree.leaves = register.register(createIdentifier(tree.name + "_leaves"), tree.leaves);
             leafBlocks.add(tree.leaves);
             tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
+            cropBlocks.add(tree.saplingBlock);
             tree.tree = Content.register(createIdentifier(tree.name + "_tree"), tree.getTreeGen());
         }
     }
