@@ -4,13 +4,13 @@
       "item": "croptopia:yam_seed"
     },
     "title": {
-      "translate": "advancements.croptopia.gather_savanna.title"
+      "translate": "advancements.croptopia.gather_seed_savanna.title"
     },
     "description": {
-      "translate": "advancements.croptopia.gather_savanna.description"
+      "translate": "advancements.croptopia.gather_seed_savanna.description"
     }
   },
-  "parent": "croptopia:gather_forest",
+  "parent": "croptopia:gather_seed_forest",
   "criteria": {
     "hops_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:hops_seed"] } ] } },
     "kiwi_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:kiwi_seed"] } ] } },

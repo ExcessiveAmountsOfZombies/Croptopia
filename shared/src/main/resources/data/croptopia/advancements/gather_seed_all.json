@@ -4,14 +4,14 @@
       "item": "croptopia:turnip_seed"
     },
     "title": {
-      "translate": "advancements.croptopia.gather_all.title"
+      "translate": "advancements.croptopia.gather_seed_all.title"
     },
     "description": {
-      "translate": "advancements.croptopia.gather_all.description"
+      "translate": "advancements.croptopia.gather_seed_all.description"
     },
     "frame": "goal"
   },
-  "parent": "croptopia:gather_swamp",
+  "parent": "croptopia:gather_seed_swamp",
   "criteria": {
     "saguaro_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:saguaro_seed"] } ] } },
     "blackbean_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:blackbean_seed"] } ] } },

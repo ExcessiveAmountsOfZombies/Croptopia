@@ -4,13 +4,13 @@
       "item": "croptopia:cranberry_seed"
     },
     "title": {
-      "translate": "advancements.croptopia.gather_swamp.title"
+      "translate": "advancements.croptopia.gather_seed_swamp.title"
     },
     "description": {
-      "translate": "advancements.croptopia.gather_swamp.description"
+      "translate": "advancements.croptopia.gather_seed_swamp.description"
     }
   },
-  "parent": "croptopia:gather_jungle",
+  "parent": "croptopia:gather_seed_jungle",
   "criteria": {
     "asparagus_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:asparagus_seed"] } ] } },
     "artichoke_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:artichoke_seed"] } ] } },

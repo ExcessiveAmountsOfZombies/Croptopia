@@ -4,9 +4,9 @@
       "item": "croptopia:broccoli_seed"
     },
     "title": {
-      "translate": "advancements.croptopia.gather_plains.title"},
+      "translate": "advancements.croptopia.gather_seed_plains.title"},
     "description": {
-      "translate": "advancements.croptopia.gather_plains.description"}},
+      "translate": "advancements.croptopia.gather_seed_plains.description"}},
   "parent": "croptopia:getseeds",
   "criteria": {
     "bellpepper_seed": { "trigger": "minecraft:inventory_changed", "conditions": { "items":[ { "items": ["croptopia:bellpepper_seed"] } ] } },
