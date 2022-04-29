@@ -4,13 +4,13 @@
       "item": "croptopia:coffee_seed"
     },
     "title": {
-      "translate": "advancements.croptopia.gather_seed_jungle.title"
+      "translate": "advancements.croptopia.gather_jungle.title"
     },
     "description": {
-      "translate": "advancements.croptopia.gather_seed_jungle.description"
+      "translate": "advancements.croptopia.gather_jungle.description"
     }
   },
-  "parent": "croptopia:gather_seed_savanna",
+  "parent": "croptopia:gather_savanna",
   "criteria": {
     "coffee_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:coffee_seed"] } ] } },
     "eggplant_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": [ "croptopia:eggplant_seed" ] } ] } },

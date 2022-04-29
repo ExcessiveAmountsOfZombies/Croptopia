@@ -4,13 +4,13 @@
       "item": "croptopia:celery_seed"
     },
     "title": {
-      "translate": "advancements.croptopia.gather_seed_forest.title"
+      "translate": "advancements.croptopia.gather_forest.title"
     },
     "description": {
-      "translate": "advancements.croptopia.gather_seed_forest.description"
+      "translate": "advancements.croptopia.gather_forest.description"
     }
   },
-  "parent": "croptopia:gather_seed_desert",
+  "parent": "croptopia:gather_desert",
   "criteria": {
     "blackbean_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:blackbean_seed"] } ] } },
     "blackberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:blackberry_seed"] } ] } },
