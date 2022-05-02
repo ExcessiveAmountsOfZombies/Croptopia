@@ -1,0 +1,12 @@
+{
+  "name": "Жаренная спаржа",
+  "icon": "croptopia:roasted_asparagus",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_roasted_asparagus",
+      "text": "Рецепт Жареной спаржи."
+    }
+  ]
+}

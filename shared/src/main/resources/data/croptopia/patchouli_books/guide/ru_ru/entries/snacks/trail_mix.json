@@ -1,0 +1,12 @@
+{
+  "name": "Смесь сухофруктов и орехов",
+  "icon": "croptopia:trail_mix",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:trail_mix",
+      "text": "Рецепт Смеси сухофруктов и орехов."
+    }
+  ]
+}

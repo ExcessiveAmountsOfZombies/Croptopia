@@ -1,0 +1,12 @@
+{
+  "name": "Рататуй",
+  "icon": "croptopia:ratatouille",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ratatouille",
+      "text": "\"Что готовим сегодня, Рататуй?\""
+    }
+  ]
+}

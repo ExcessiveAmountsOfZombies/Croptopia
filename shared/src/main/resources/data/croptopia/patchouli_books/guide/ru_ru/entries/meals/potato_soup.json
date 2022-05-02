@@ -1,0 +1,12 @@
+{
+  "name": "Картофельный суп",
+  "icon": "croptopia:potato_soup",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_potato_soup",
+      "text": "Рецепт Картофельного супа."
+    }
+  ]
+}

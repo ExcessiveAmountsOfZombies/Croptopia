@@ -1,0 +1,12 @@
+{
+  "name": "Тамал",
+  "icon": "croptopia:tamales",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tamales",
+      "text": "Рецепт Тамала."
+    }
+  ]
+}

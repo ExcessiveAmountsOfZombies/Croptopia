@@ -1,0 +1,12 @@
+{
+  "name": "Йогурт",
+  "icon": "croptopia:yoghurt",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:yoghurt",
+      "text": "Рецепт Йогурта."
+    }
+  ]
+}

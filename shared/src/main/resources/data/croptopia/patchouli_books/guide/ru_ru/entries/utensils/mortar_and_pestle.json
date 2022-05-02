@@ -1,0 +1,12 @@
+{
+  "name": "Ступка и пестик",
+  "icon": "croptopia:mortar_and_pestle",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mortar_and_pestle",
+      "text": "Рецепт Ступки и пестика."
+    }
+  ]
+}
