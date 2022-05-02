@@ -1,0 +1,12 @@
+{
+  "name": "Тортилья",
+  "icon": "croptopia:tortilla",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tortilla",
+      "text": "Рецепт Тортильи."
+    }
+  ]
+}

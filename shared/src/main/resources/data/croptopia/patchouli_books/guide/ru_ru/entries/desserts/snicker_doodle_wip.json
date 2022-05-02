@@ -1,0 +1,12 @@
+{
+  "name": "Печенье «Сникердудл»",
+  "icon": "croptopia:snicker_doodle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:snicker_doodle",
+      "text": "Рецепт Печенья \"Сникердудл\"."
+    }
+  ]
+}

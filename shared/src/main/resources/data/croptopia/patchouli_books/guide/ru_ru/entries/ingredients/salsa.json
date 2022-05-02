@@ -1,0 +1,12 @@
+{
+  "name": "Сальса",
+  "icon": "croptopia:salsa",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:salsa",
+      "text": "Рецепт Сальсы."
+    }
+  ]
+}

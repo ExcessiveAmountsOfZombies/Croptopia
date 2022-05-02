@@ -1,0 +1,12 @@
+{
+  "name": "Тыквенный кофе латте с пряностями",
+  "icon": "croptopia:pumpkin_spice_latte",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pumpkin_spice_latte",
+      "text": "Рецепт Тыквенного кофе с пряностями."
+    }
+  ]
+}

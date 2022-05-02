@@ -1,0 +1,12 @@
+{
+  "name": "Курица с кешью",
+  "icon": "croptopia:cashew_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cashew_chicken",
+      "text": "Рецепт Курицы с кешью."
+    }
+  ]
+}

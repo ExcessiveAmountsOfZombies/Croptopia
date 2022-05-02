@@ -1,0 +1,12 @@
+{
+  "name": "Карнитас",
+  "icon": "croptopia:carnitas",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:carnitas",
+      "text": "Рецепт Карнитаса."
+    }
+  ]
+}

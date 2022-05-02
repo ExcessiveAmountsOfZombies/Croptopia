@@ -1,0 +1,12 @@
+{
+  "name": "Говядина стир-фрай",
+  "icon": "croptopia:beef_stir_fry",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_stir_fry",
+      "text": "Рецепт Говядины стир-фрай"
+    }
+  ]
+}

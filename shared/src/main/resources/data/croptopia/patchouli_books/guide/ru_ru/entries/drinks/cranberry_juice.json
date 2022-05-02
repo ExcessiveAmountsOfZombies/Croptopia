@@ -1,0 +1,12 @@
+{
+  "name": "Клюквенный сок",
+  "icon": "croptopia:cranberry_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cranberry_juice",
+      "text": "Рецепт Клюквенного сока."
+    }
+  ]
+}
