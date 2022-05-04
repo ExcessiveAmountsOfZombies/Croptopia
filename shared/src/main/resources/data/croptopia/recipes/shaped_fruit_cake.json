@@ -25,7 +25,7 @@
       "tag": "${dependent}:salts"
     },
     "7": {
-      "tag": "${dependent}:nutmeg"
+      "tag": "${dependent}:nutmegs"
     },
     "8": {
       "item": "minecraft:egg"
