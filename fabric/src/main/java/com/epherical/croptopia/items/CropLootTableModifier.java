@@ -6,8 +6,10 @@ import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fabricmc.fabric.mixin.loot.table.LootSupplierBuilderHooks;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootTableReference;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -55,22 +57,9 @@ public class CropLootTableModifier {
                         if (pools.isEmpty()) {
                             LOGGER.warn("Can not inject into gameplay/fishing/fish as it is empty");
                         } else {
-                            // todo; make this configurable
                             FabricLootPoolBuilder builder = FabricLootPoolBuilder.of(pools.get(0));
-                            builder.withEntry(LootItem.lootTableItem(Content.TUNA)
-                                            .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.ANCHOVY)
-                                            .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.SHRIMP)
-                                            .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.CRAB)
-                                            .setWeight(15).build())
-                                    .withEntry(LootItem.lootTableItem(Content.CLAM)
-                                            .setWeight(10).build())
-                                    .withEntry(LootItem.lootTableItem(Content.OYSTER)
-                                            .setWeight(10).build())
-                                    .withEntry(LootItem.lootTableItem(Content.SEA_LETTUCE)
-                                            .setWeight(10).build());
+                            builder.withEntry(LootTableReference.lootTableReference(new ResourceLocation("croptopia", "gameplay/fishing/fish"))
+                                    .setWeight(30).build());
                             pools.set(0, builder.build());
                         }
                     }
