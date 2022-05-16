@@ -1,0 +1,11 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/fishing/fish"
+    }
+  ],
+  "tableRef": "croptopia:gameplay/fishing/fish",
+  "referChance": 0.25,
+  "type": "croptopia:table_adder"
+}

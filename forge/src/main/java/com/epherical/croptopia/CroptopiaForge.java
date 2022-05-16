@@ -12,6 +12,7 @@ import com.epherical.croptopia.events.Harvest;
 import com.epherical.croptopia.events.LootTableModification;
 import com.epherical.croptopia.items.GuideBookItem;
 import com.epherical.croptopia.items.SeedItem;
+import com.epherical.croptopia.loot.AdditionalTableModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
 import com.epherical.croptopia.register.Content;
@@ -78,13 +79,10 @@ import static com.epherical.croptopia.CroptopiaMod.createGroup;
 public class CroptopiaForge {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    /*public static ArrayList<Block> cropBlocks = new ArrayList<>();
-    public static ArrayList<Block> leafBlocks = new ArrayList<>();
-    public static ArrayList<Item> cropItems = new ArrayList<>();*/
-
     // todo: there might be a different way i'm supposed to do this in forge.
     private static final SpawnChestModifier.Serializer SPAWN_CHEST_MODIFIER = new SpawnChestModifier.Serializer();
     private static final EntityModifier.Serializer ENTITY_MODIFIER = new EntityModifier.Serializer();
+    private static final AdditionalTableModifier.Serializer ADDTIONAL_TABLE_MODIFIER = new AdditionalTableModifier.Serializer();
 
     public static Config config;
 
@@ -122,7 +120,6 @@ public class CroptopiaForge {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
         Composter.init();
     }
 
@@ -169,9 +166,6 @@ public class CroptopiaForge {
                 blockRegistryEvent.getRegistry().register(object);
                 return object;
             });
-            //LeavesRegistry.init();
-            //BlockRegistry.init();
-            //GeneratorRegistry.init();
         }
 
         @SubscribeEvent
@@ -211,53 +205,15 @@ public class CroptopiaForge {
             // lazy
             SPAWN_CHEST_MODIFIER.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, "spawn_loot"));
             ENTITY_MODIFIER.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, "entity_modifier"));
+            ADDTIONAL_TABLE_MODIFIER.setRegistryName(new ResourceLocation(MiscNames.MOD_ID, "table_adder"));
             register.getRegistry().register(SPAWN_CHEST_MODIFIER);
             register.getRegistry().register(ENTITY_MODIFIER);
+            register.getRegistry().register(ADDTIONAL_TABLE_MODIFIER);
         }
     }
 
     public static ResourceLocation createIdentifier(String name) {
         return new ResourceLocation(MiscNames.MOD_ID, name);
-    }
-
-    public static Block registerBlock(String blockName, Block block) {
-        /*cropBlocks.add(block);
-
-        if (block instanceof LeafCropBlock || block instanceof LeavesBlock) {
-            leafBlocks.add(block);
-            //System.out.println("\"" + blockName + "\",");
-        } else {
-            //System.out.println("\"" + blockName + "\",");
-        }
-        block.setRegistryName(createIdentifier(blockName));
-        ForgeRegistries.BLOCKS.register(block);*/
-        return block;
-    }
-
-    public static LootItemConditionType registerLootCondition(String id, Serializer<? extends LootItemCondition> serializer) {
-        return Registry.register(Registry.LOOT_CONDITION_TYPE, new ResourceLocation(MiscNames.MOD_ID, id), new LootItemConditionType(serializer));
-    }
-
-    public static BlockBehaviour.Properties createSaplingSettings() {
-        return BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS);
-    }
-
-    public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.CROP).noOcclusion()
-                .isValidSpawn(CroptopiaForge::canSpawnOnLeaves).isSuffocating(CroptopiaForge::never).isViewBlocking(CroptopiaForge::never));
-    }
-
-    public static LeavesBlock createRegularLeavesBlock() {
-        return new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.CROP).noOcclusion()
-                .isValidSpawn(CroptopiaForge::canSpawnOnLeaves).isSuffocating(CroptopiaForge::never).isViewBlocking(CroptopiaForge::never));
-    }
-
-    private static Boolean canSpawnOnLeaves(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
-        return type == EntityType.OCELOT || type == EntityType.PARROT;
-    }
-
-    private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
-        return false;
     }
 
     private static void modifyVillagerFoodItems() {
