@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 15,
+          "name": "croptopia:tuna"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 15,
+          "name": "croptopia:anchovy"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 15,
+          "name": "croptopia:shrimp"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 15,
+          "name": "croptopia:crab"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "croptopia:clam"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "croptopia:oyster"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 10,
+          "name": "croptopia:sea_lettuce"
+        }
+      ]
+    }
+  ]
+}

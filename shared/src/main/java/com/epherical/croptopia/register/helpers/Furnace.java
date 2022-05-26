@@ -5,13 +5,14 @@ import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
-public class Furnace extends AbstractContent implements ItemConvertibleWithPlural {
+public class Furnace implements ItemConvertibleWithPlural {
     private static final List<Furnace> INSTANCES = new ArrayList<>();
 
     private final String name;

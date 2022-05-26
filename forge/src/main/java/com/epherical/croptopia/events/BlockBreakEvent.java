@@ -1,5 +1,9 @@
 package com.epherical.croptopia.events;
 
+import com.epherical.croptopia.register.Content;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -12,16 +16,16 @@ public class BlockBreakEvent {
 
     @SubscribeEvent
     public void onInteractionWithTool(BlockEvent.BlockToolInteractEvent event) {
-        /*BlockState state = event.getState();
-        if (state.is(BlockRegistry.cinnamonLog) || state.is(BlockRegistry.cinnamonWood)) {
+        BlockState state = event.getState();
+        if (state.is(Content.CINNAMON.getLog()) || state.is(Content.CINNAMON.getWood())) {
             if (!event.getPlayer().isCreative()) {
-                Block.popResource(event.getPlayer().level, event.getPos(), new ItemStack(ItemRegistry.cinnamon));
+                Block.popResource(event.getPlayer().level, event.getPos(), new ItemStack(Content.CINNAMON));
             }
-            if (state.is(BlockRegistry.cinnamonLog)) {
-                event.setFinalState(BlockRegistry.strippedCinnamonLog.withPropertiesOf(state));
+            if (state.is((Content.CINNAMON.getLog()))) {
+                event.setFinalState(Content.CINNAMON.getStrippedLog().withPropertiesOf(state));
             } else {
-                event.setFinalState(BlockRegistry.strippedCinnamonWood.withPropertiesOf(state));
+                event.setFinalState(Content.CINNAMON.getStrippedWood().withPropertiesOf(state));
             }
-        }*/
+        }
     }
 }
