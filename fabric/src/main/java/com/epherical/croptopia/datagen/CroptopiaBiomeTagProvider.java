@@ -1,20 +1,10 @@
 package com.epherical.croptopia.datagen;
 
-import com.epherical.croptopia.common.Tags;
-import net.minecraft.core.Holder;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-
-import static net.minecraft.world.level.biome.Biome.BiomeCategory.*;
 
 public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
 
@@ -24,7 +14,7 @@ public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
 
     @Override
     protected void addTags() {
-        Set<BiomeTagHolding> holdingArrayList = new HashSet<>();
+        /*Set<BiomeTagHolding> holdingArrayList = new HashSet<>();
         holdingArrayList.add(new BiomeTagHolding(Tags.HAS_ARTICHOKE, SWAMP));
         holdingArrayList.add(new BiomeTagHolding(Tags.HAS_ASPARAGUS, SWAMP));
         holdingArrayList.add(new BiomeTagHolding(Tags.HAS_BELLPEPPER, PLAINS));
@@ -98,7 +88,7 @@ public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
                     });
                 }
             }
-        }
+        }*/
 /*
         this.tag(Tags.HAS_ARTICHOKE).add(Biomes.SWAMP)
         this.tag(Tags.HAS_ASPARAGUS).add(Biomes.SWAMP)
@@ -160,12 +150,7 @@ public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
         this.tag(Tags.HAS_TEA_LEAVES).add(Biomes.FOREST)*/
     }
 
-    @Override
-    public String getName() {
-        return "Croptopia Biome Tags";
-    }
-
-    public static class BiomeTagHolding {
+    /*public static class BiomeTagHolding {
         private final List<Biome.BiomeCategory> biomeCategory;
         private final TagKey<Biome> biomeTag;
 
@@ -186,7 +171,7 @@ public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
         public int hashCode() {
             return Objects.hash(biomeCategory, biomeTag);
         }
-    }
+    }*/
 
 
 }

@@ -1,10 +1,11 @@
 package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Style;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -17,7 +18,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.awt.*;
 import java.util.List;
+import java.util.Locale;
 
 public class SeedItem extends ItemNameBlockItem {
 
@@ -42,7 +45,7 @@ public class SeedItem extends ItemNameBlockItem {
 
     @Override
     public void appendHoverText(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag context) {
-        TranslatableComponent text = new TranslatableComponent("info.croptopia.seed");
+        Component text = Component.translatable("info.croptopia.seed");
         String[] translated = text.getString().split("\n");
         /*if (translated.length >= 2) {
             tooltip.add(new TextComponent(translated[0]).setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));

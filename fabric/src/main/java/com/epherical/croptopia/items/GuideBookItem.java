@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import vazkii.patchouli.api.PatchouliAPI;
+//import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class GuideBookItem extends Item {
 
         if (user instanceof ServerPlayer && Croptopia.patchouli.isLoaded()) {
             ServerPlayer player = (ServerPlayer) user;
-            PatchouliAPI.get().openBookGUI(player, Registry.ITEM.getKey(this));
+            //PatchouliAPI.get().openBookGUI(player, Registry.ITEM.getKey(this));
         }
 
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);

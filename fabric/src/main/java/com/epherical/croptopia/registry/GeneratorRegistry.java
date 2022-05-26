@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.DiskConfigurati
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
@@ -193,9 +194,9 @@ public class GeneratorRegistry {
 
 
     public static final Holder<ConfiguredFeature<DiskConfiguration, ?>> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
-            Feature.DISK, ((new DiskConfiguration(Content.SALT_ORE_BLOCK.defaultBlockState(),
-                    UniformInt.of(2, 4), 2,
-                    ImmutableList.of(Blocks.DIRT.defaultBlockState(), Blocks.GRASS_BLOCK.defaultBlockState())))));
+            Feature.DISK, ((new DiskConfiguration(RuleBasedBlockStateProvider.simple(Content.SALT_ORE_BLOCK),
+                    BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)),
+                    UniformInt.of(2, 4), 2))));
 
     public static final Holder<PlacedFeature> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
             DISK_SALT, PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome(), InSquarePlacement.spread());

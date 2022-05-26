@@ -22,10 +22,8 @@ public class BiomeModifiers {
     public static void init(Croptopia croptopia) {
 
         // generate in ALL biomes
-        BiomeModifications.addFeature(context -> {
-            Biome biome = context.getBiome();
-            return Biome.getBiomeCategory(Holder.direct(biome)) != Biome.BiomeCategory.OCEAN;
-        }, GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
+        BiomeModifications.addFeature(context -> true,
+                GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
 
         try {
             List<TreeConfiguration> trees = croptopia.config.getRootNode().node("treeConfig").getList(TreeConfiguration.class);

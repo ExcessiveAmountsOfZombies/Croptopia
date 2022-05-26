@@ -1,8 +1,9 @@
 package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.Croptopia;
-import com.epherical.croptopia.datagen.tags.IndependentEntry;
+import com.epherical.croptopia.mixin.datagen.IdentifierAccessor;
 import com.epherical.croptopia.mixin.datagen.ObjectBuilderAccessor;
+import com.epherical.croptopia.mixin.datagen.TagProviderAccessor;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
@@ -20,23 +21,22 @@ import com.epherical.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.Registry;
-import net.minecraft.data.HashCache;
-import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.TagEntry;
 import net.minecraft.tags.TagKey;
 import net.minecraft.tags.TagManager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
-import java.nio.file.Path;
 
 public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
 
     public CroptopiaIndependentItemTagProvider(FabricDataGenerator dataGenerator) {
         super(dataGenerator);
+        ((TagProviderAccessor) this).setPathProvider(dataGenerator
+                .createPathProvider(DataGenerator.Target.DATA_PACK, "dependents/platform" + TagManager.getTagDir(this.registry.key())));
     }
 
     @Override
@@ -248,18 +248,6 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         this.tag(register("potatoes")).add(Items.POTATO).add(Content.SWEETPOTATO.asItem());
     }
 
-    @Override
-    protected Path getPath(ResourceLocation id) {
-        ResourceKey<? extends Registry<?>> registryKey = this.registry.key();
-        Path rootOutput = this.generator.getOutputFolder();
-        return rootOutput.resolve("dependents/platform/" + TagManager.getTagDir(registryKey) + "/" + id.getPath() + ".json");
-    }
-
-    @Override
-    public void run(HashCache cache) {
-        super.run(cache);
-    }
-
     private static TagKey<Item> register(String id) {
         return TagKey.create(Registry.ITEM_REGISTRY, Croptopia.createIdentifier(id));
     }
@@ -267,16 +255,16 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
     private void createCategoryTag(String category, String name, Item item) {
         String path = Registry.ITEM.getKey(item).getPath();
         TagKey<Item> forgeFriendlyTag = register(category + "/" + path);
-        IndependentEntry independentEntry = new IndependentEntry(category + "/" + path);
+        ResourceLocation independentEntry = independentTag(category + "/" + path);
         this.tag(forgeFriendlyTag).add(item);
         ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) this.tag(register(name)).add(item);
-        fabricGeneralTag.getBuilder().add(new Tag.BuilderEntry(independentEntry, fabricGeneralTag.getSource()));
+        fabricGeneralTag.getBuilder().add(TagEntry.tag(independentEntry));
 
         // this is the group i.e vegetables.json encompassing all the vegetables in the mod. it should pull from zucchini.json and not vegetables/zucchini.json
         ObjectBuilderAccessor group = (ObjectBuilderAccessor) this.tag(register(category));
         // we need a new independentEntry
-        IndependentEntry entryForGroup = new IndependentEntry(name);
-        group.getBuilder().add(new Tag.BuilderEntry(entryForGroup, group.getSource()));
+        ResourceLocation entryForGroup = independentTag(name);
+        group.getBuilder().add(TagEntry.tag(entryForGroup));
     }
 
     private FabricTagBuilder createGeneralTag(String name, Item item) {
@@ -303,14 +291,20 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
         // Forge tags use seed/cropname, but not including seed name. artichoke good artichoke_seed bad.
         TagKey<Item> forgeFriendlyTag = register(category + "/" + name);
-        IndependentEntry independentEntry = new IndependentEntry(category + "/" + name);
+        ResourceLocation independentEntry = independentTag(category + "/" + name);
 
         this.tag(forgeFriendlyTag).add(item);
-        ObjectBuilderAccessor group = (ObjectBuilderAccessor) (Object) this.tag(register(category));
-        group.getBuilder().add(new Tag.BuilderEntry(independentEntry, group.getSource()));
+        ObjectBuilderAccessor<?> group = (ObjectBuilderAccessor<?>) (Object) this.tag(register(category));
+        group.getBuilder().add(TagEntry.tag(independentEntry));
 
-        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) (Object) this.tag(register(pluralSeedName)).add(item);
-        fabricGeneralTag.getBuilder().add(new Tag.BuilderEntry(independentEntry, fabricGeneralTag.getSource()));
+        ObjectBuilderAccessor<?> fabricGeneralTag = (ObjectBuilderAccessor<?>) (Object) this.tag(register(pluralSeedName)).add(item);
+        fabricGeneralTag.getBuilder().add(TagEntry.tag(independentEntry));
+    }
+
+    private ResourceLocation independentTag(String name) {
+        IdentifierAccessor accessor = (IdentifierAccessor) Croptopia.createIdentifier(name);
+        accessor.setNamespace("${dependent}"); // lmao
+        return (ResourceLocation) accessor;
     }
 
 }

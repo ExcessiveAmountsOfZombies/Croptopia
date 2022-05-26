@@ -6,6 +6,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -77,7 +78,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
             player.awardStat(Stats.BLOCK_MINED.get(this));
             player.causeFoodExhaustion(0.005f);
             world.setBlock(pos, this.getStateForAge(0), 2);
-            world.gameEvent(GameEvent.BLOCK_DESTROY, pos);
+            world.gameEvent(GameEvent.BLOCK_DESTROY, pos, GameEvent.Context.of(player, state));
             if (world instanceof ServerLevel) {
                 for (ItemStack droppedStack : getDrops(state, (ServerLevel) world, pos, null)) {
                     popResourceFromFace(world, pos, hit.getDirection(), droppedStack);
@@ -110,7 +111,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     }
 
     @Override
-    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
+    public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         if (world.getRawBrightness(pos, 0) >= 9) {
             int i = this.getAge(state);
             if (i < this.getMaxAge()) {
@@ -126,7 +127,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     }
 
     @Override
-    public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
+    public void tick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         world.setBlock(pos, updateDistanceFromLogs(state, world, pos), Block.UPDATE_ALL);
     }
 

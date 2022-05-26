@@ -24,7 +24,7 @@ import com.epherical.croptopia.mixin.VillagerAccess;
 import com.epherical.croptopia.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -82,8 +82,8 @@ public class Croptopia implements ModInitializer {
         BiomeModifiers.init(this);
         CropLootTableModifier.init();
 
-        CommandRegistrationCallback.EVENT.register((commandDispatcher, b) -> {
-            SetupCommand.register(commandDispatcher);
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            SetupCommand.register(dispatcher, registryAccess);
         });
 
         //CroptopiaVillagerTrades.init();

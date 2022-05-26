@@ -17,7 +17,8 @@
     "VillagerAccess",
     "VillagerMixin",
     "datagen.IdentifierAccessor",
-    "datagen.ObjectBuilderAccessor"
+    "datagen.ObjectBuilderAccessor",
+    "datagen.TagProviderAccessor"
   ],
   "client": [
   ],
