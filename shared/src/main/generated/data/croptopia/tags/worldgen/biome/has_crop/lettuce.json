@@ -2,6 +2,15 @@
   "replace": false,
   "values": [
     "minecraft:plains",
-    "minecraft:sunflower_plains"
+    "minecraft:sunflower_plains",
+    "byg:allium_fields",
+    "byg:amaranth_fields",
+    "byg:autumnal_valley",
+    "byg:temperate_grove",
+    "byg:coconino_meadow",
+    "byg:orchard",
+    "byg:prairie",
+    "byg:rose_fields",
+    "byg:sierra_badlands"
   ]
 }

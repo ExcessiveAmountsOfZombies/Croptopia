@@ -10,6 +10,26 @@
     "minecraft:old_growth_spruce_taiga",
     "minecraft:taiga",
     "minecraft:snowy_taiga",
-    "minecraft:grove"
+    "minecraft:grove",
+    "byg:aspen_forest",
+    "byg:black_forest",
+    "byg:borealis_grove",
+    "byg:cherry_blossom_forest",
+    "byg:cika_woods",
+    "byg:coniferous_forest",
+    "byg:ebony_woods",
+    "byg:forgotten_forest",
+    "byg:maple_taiga",
+    "byg:red_oak_forest",
+    "byg:autumnal_forest",
+    "byg:autumnal_taiga",
+    "byg:redwood_thicket",
+    "byg:frosted_taiga",
+    "byg:frosted_coniferous_forest",
+    "byg:fragment_forest",
+    "byg:twilight_meadow",
+    "byg:weeping_witch_forest",
+    "byg:temperate_rainforest",
+    "byg:zelkova_forest"
   ]
 }

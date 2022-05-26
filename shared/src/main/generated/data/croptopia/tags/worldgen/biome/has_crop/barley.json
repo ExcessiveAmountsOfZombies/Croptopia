@@ -6,6 +6,22 @@
     "minecraft:old_growth_pine_taiga",
     "minecraft:old_growth_spruce_taiga",
     "minecraft:taiga",
-    "minecraft:snowy_taiga"
+    "minecraft:snowy_taiga",
+    "byg:allium_fields",
+    "byg:amaranth_fields",
+    "byg:autumnal_valley",
+    "byg:black_forest",
+    "byg:coniferous_forest",
+    "byg:temperate_grove",
+    "byg:maple_taiga",
+    "byg:coconino_meadow",
+    "byg:orchard",
+    "byg:prairie",
+    "byg:rose_fields",
+    "byg:autumnal_taiga",
+    "byg:sierra_badlands",
+    "byg:frosted_taiga",
+    "byg:frosted_coniferous_forest",
+    "byg:zelkova_forest"
   ]
 }

@@ -1,6 +1,5 @@
 package com.epherical.croptopia.items;
 
-import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
@@ -24,26 +23,6 @@ public class CropLootTableModifier {
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, fabricLootSupplierBuilder, lootTableSetter) -> {
-            /*if (id.getPath().equalsIgnoreCase("blocks/grass") ||
-                    id.getPath().equalsIgnoreCase("blocks/tall_grass") ||
-                    id.getPath().equalsIgnoreCase("blocks/fern") ||
-                    id.getPath().equalsIgnoreCase("blocks/large_fern")) {
-                FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                builder.rolls(UniformLootNumberProvider.create(0, 1));
-                builder.withFunction(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE).build());
-
-                if (Constants.OPTIONS.useHoeToCollectSeeds()) {
-                    builder.withCondition(new MatchToolLootCondition(ItemPredicate.Builder.create().tag(FabricToolTags.HOES).build()));
-                }
-                ArrayList<LootPoolEntry.Builder> builders = new ArrayList<>();
-                for (ConfigurableSeed seed : Croptopia.getSeeds()) {
-                    builders.add(ItemEntry.builder(seed.getSeedItem())
-                            .conditionally(() -> BiomeLootCondition.builder(seed.getBiomeCategory()).build()));
-                }
-                builder.with(AlternativeEntry.builder(builders.toArray(builders.toArray(new LootPoolEntry.Builder[0]))));
-                fabricLootSupplierBuilder.withPool(builder.build());
-                //System.out.println(LootManager.toJson(fabricLootSupplierBuilder.build()));
-            }*/
             if (id.getNamespace().equalsIgnoreCase("minecraft")) {
                 String path = id.getPath();
                 switch (path) {

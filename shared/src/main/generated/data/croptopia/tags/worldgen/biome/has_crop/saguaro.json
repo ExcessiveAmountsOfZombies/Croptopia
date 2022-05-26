@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
-    "minecraft:desert"
+    "minecraft:desert",
+    "byg:atacama_desert",
+    "byg:windswept_dunes",
+    "byg:windswept_desert",
+    "byg:mojave_desert",
+    "byg:red_rock_valley",
+    "byg:firecracker_shrubland"
   ]
 }

@@ -51,7 +51,7 @@ minecraft {
             args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
                 croptopia {
-                    source sourceSets.main
+                    sources(sourceSets.main, project(":shared").sourceSets.main)
                 }
             }
         }
@@ -64,7 +64,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             mods {
                 croptopia {
-                    source sourceSets.main
+                    sources(sourceSets.main, project(":shared").sourceSets.main)
                 }
             }
         }
@@ -80,7 +80,7 @@ minecraft {
             args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
             mods {
                 croptopia {
-                    source sourceSets.main
+                    sources(sourceSets.main, project(":shared").sourceSets.main)
                 }
             }
         }

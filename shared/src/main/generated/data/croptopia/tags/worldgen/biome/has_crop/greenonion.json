@@ -3,6 +3,10 @@
   "values": [
     "minecraft:jungle",
     "minecraft:sparse_jungle",
-    "minecraft:bamboo_jungle"
+    "minecraft:bamboo_jungle",
+    "byg:crag_gardens",
+    "byg:guiana_shield",
+    "byg:jacaranda_forest",
+    "byg:tropical_rainforest"
   ]
 }
