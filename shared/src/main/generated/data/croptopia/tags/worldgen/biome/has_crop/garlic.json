@@ -4,9 +4,21 @@
     "minecraft:jungle",
     "minecraft:sparse_jungle",
     "minecraft:bamboo_jungle",
-    "byg:crag_gardens",
-    "byg:guiana_shield",
-    "byg:jacaranda_forest",
-    "byg:tropical_rainforest"
+    {
+      "id": "byg:crag_gardens",
+      "required": false
+    },
+    {
+      "id": "byg:guiana_shield",
+      "required": false
+    },
+    {
+      "id": "byg:jacaranda_forest",
+      "required": false
+    },
+    {
+      "id": "byg:tropical_rainforest",
+      "required": false
+    }
   ]
 }

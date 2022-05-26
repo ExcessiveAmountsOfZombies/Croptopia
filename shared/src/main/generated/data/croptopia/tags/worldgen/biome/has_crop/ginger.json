@@ -4,7 +4,13 @@
     "minecraft:savanna",
     "minecraft:savanna_plateau",
     "minecraft:windswept_savanna",
-    "byg:araucaria_savanna",
-    "byg:baobab_savanna"
+    {
+      "id": "byg:araucaria_savanna",
+      "required": false
+    },
+    {
+      "id": "byg:baobab_savanna",
+      "required": false
+    }
   ]
 }

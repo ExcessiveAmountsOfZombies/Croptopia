@@ -2,8 +2,17 @@
   "replace": false,
   "values": [
     "minecraft:swamp",
-    "byg:bayou",
-    "byg:cypress_swamplands",
-    "byg:white_mangrove_marshes"
+    {
+      "id": "byg:bayou",
+      "required": false
+    },
+    {
+      "id": "byg:cypress_swamplands",
+      "required": false
+    },
+    {
+      "id": "byg:white_mangrove_marshes",
+      "required": false
+    }
   ]
 }

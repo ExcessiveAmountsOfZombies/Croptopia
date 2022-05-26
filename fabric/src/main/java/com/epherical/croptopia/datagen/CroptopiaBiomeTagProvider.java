@@ -5,6 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
@@ -88,7 +89,13 @@ public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
             for (BiomeTagHolding biomeTagHolding : holdingArrayList) {
                 Biome.BiomeCategory category = Biome.getBiomeCategory(biomeHolder);
                 if (biomeTagHolding.biomeCategory.contains(category)) {
-                    this.tag(biomeTagHolding.biomeTag).add(biomeHolder.value());
+                    biomeHolder.unwrapKey().ifPresent(biomeResourceKey -> {
+                        if (biomeResourceKey.location().getNamespace().equals(ResourceLocation.DEFAULT_NAMESPACE)) {
+                            this.tag(biomeTagHolding.biomeTag).add(biomeHolder.value());
+                        } else {
+                            this.tag(biomeTagHolding.biomeTag).addOptional(biomeResourceKey.location());
+                        }
+                    });
                 }
             }
         }

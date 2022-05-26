@@ -8,14 +8,41 @@
     "minecraft:savanna",
     "minecraft:savanna_plateau",
     "minecraft:windswept_savanna",
-    "byg:araucaria_savanna",
-    "byg:baobab_savanna",
-    "byg:black_forest",
-    "byg:coniferous_forest",
-    "byg:maple_taiga",
-    "byg:autumnal_taiga",
-    "byg:frosted_taiga",
-    "byg:frosted_coniferous_forest",
-    "byg:zelkova_forest"
+    {
+      "id": "byg:araucaria_savanna",
+      "required": false
+    },
+    {
+      "id": "byg:baobab_savanna",
+      "required": false
+    },
+    {
+      "id": "byg:black_forest",
+      "required": false
+    },
+    {
+      "id": "byg:coniferous_forest",
+      "required": false
+    },
+    {
+      "id": "byg:maple_taiga",
+      "required": false
+    },
+    {
+      "id": "byg:autumnal_taiga",
+      "required": false
+    },
+    {
+      "id": "byg:frosted_taiga",
+      "required": false
+    },
+    {
+      "id": "byg:frosted_coniferous_forest",
+      "required": false
+    },
+    {
+      "id": "byg:zelkova_forest",
+      "required": false
+    }
   ]
 }

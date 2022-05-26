@@ -7,18 +7,57 @@
     "minecraft:dark_forest",
     "minecraft:old_growth_birch_forest",
     "minecraft:grove",
-    "byg:aspen_forest",
-    "byg:borealis_grove",
-    "byg:cherry_blossom_forest",
-    "byg:cika_woods",
-    "byg:ebony_woods",
-    "byg:forgotten_forest",
-    "byg:red_oak_forest",
-    "byg:autumnal_forest",
-    "byg:redwood_thicket",
-    "byg:fragment_forest",
-    "byg:twilight_meadow",
-    "byg:weeping_witch_forest",
-    "byg:temperate_rainforest"
+    {
+      "id": "byg:aspen_forest",
+      "required": false
+    },
+    {
+      "id": "byg:borealis_grove",
+      "required": false
+    },
+    {
+      "id": "byg:cherry_blossom_forest",
+      "required": false
+    },
+    {
+      "id": "byg:cika_woods",
+      "required": false
+    },
+    {
+      "id": "byg:ebony_woods",
+      "required": false
+    },
+    {
+      "id": "byg:forgotten_forest",
+      "required": false
+    },
+    {
+      "id": "byg:red_oak_forest",
+      "required": false
+    },
+    {
+      "id": "byg:autumnal_forest",
+      "required": false
+    },
+    {
+      "id": "byg:redwood_thicket",
+      "required": false
+    },
+    {
+      "id": "byg:fragment_forest",
+      "required": false
+    },
+    {
+      "id": "byg:twilight_meadow",
+      "required": false
+    },
+    {
+      "id": "byg:weeping_witch_forest",
+      "required": false
+    },
+    {
+      "id": "byg:temperate_rainforest",
+      "required": false
+    }
   ]
 }
