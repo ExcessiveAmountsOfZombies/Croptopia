@@ -3,6 +3,7 @@ package com.epherical.croptopia.datagen;
 import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.mixin.datagen.IdentifierAccessor;
 import com.epherical.croptopia.mixin.datagen.ObjectBuilderAccessor;
+import com.epherical.croptopia.mixin.datagen.PathProviderAccessor;
 import com.epherical.croptopia.mixin.datagen.TagProviderAccessor;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.TagCategory;
@@ -20,7 +21,9 @@ import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.impl.datagen.ForcedTagEntry;
 import net.minecraft.core.Registry;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagEntry;
@@ -35,8 +38,10 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
     public CroptopiaIndependentItemTagProvider(FabricDataGenerator dataGenerator) {
         super(dataGenerator);
-        ((TagProviderAccessor) this).setPathProvider(dataGenerator
-                .createPathProvider(DataGenerator.Target.DATA_PACK, "dependents/platform" + TagManager.getTagDir(this.registry.key())));
+        ((TagProviderAccessor) this).setPathProvider(
+                new DependentPathProvider(dataGenerator,
+                        DataGenerator.Target.DATA_PACK,
+                        TagManager.getTagDir(this.registry.key())));
     }
 
     @Override
@@ -258,13 +263,13 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         ResourceLocation independentEntry = independentTag(category + "/" + path);
         this.tag(forgeFriendlyTag).add(item);
         ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) this.tag(register(name)).add(item);
-        fabricGeneralTag.getBuilder().add(TagEntry.tag(independentEntry));
+        fabricGeneralTag.getBuilder().add(new ForcedTagEntry(TagEntry.tag(independentEntry)));
 
         // this is the group i.e vegetables.json encompassing all the vegetables in the mod. it should pull from zucchini.json and not vegetables/zucchini.json
         ObjectBuilderAccessor group = (ObjectBuilderAccessor) this.tag(register(category));
         // we need a new independentEntry
         ResourceLocation entryForGroup = independentTag(name);
-        group.getBuilder().add(TagEntry.tag(entryForGroup));
+        group.getBuilder().add(new ForcedTagEntry(TagEntry.tag(entryForGroup)));
     }
 
     private FabricTagBuilder createGeneralTag(String name, Item item) {
@@ -295,10 +300,10 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
         this.tag(forgeFriendlyTag).add(item);
         ObjectBuilderAccessor<?> group = (ObjectBuilderAccessor<?>) (Object) this.tag(register(category));
-        group.getBuilder().add(TagEntry.tag(independentEntry));
+        group.getBuilder().add(new ForcedTagEntry(TagEntry.tag(independentEntry)));
 
         ObjectBuilderAccessor<?> fabricGeneralTag = (ObjectBuilderAccessor<?>) (Object) this.tag(register(pluralSeedName)).add(item);
-        fabricGeneralTag.getBuilder().add(TagEntry.tag(independentEntry));
+        fabricGeneralTag.getBuilder().add(new ForcedTagEntry(TagEntry.tag(independentEntry)));
     }
 
     private ResourceLocation independentTag(String name) {

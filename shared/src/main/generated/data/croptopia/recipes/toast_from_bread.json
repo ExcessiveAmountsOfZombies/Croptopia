@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
   "ingredient": {
     "item": "minecraft:bread"
   },
-  "result": "croptopia:toast",
-  "experience": 0.2,
-  "cookingtime": 200
+  "result": "croptopia:toast"
 }

@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "234",
-    " 1 "
-  ],
   "key": {
     "1": {
       "tag": "${dependent}:tuna"
@@ -18,8 +14,12 @@
       "tag": "${dependent}:onions"
     }
   },
+  "pattern": [
+    "234",
+    " 1 "
+  ],
   "result": {
-    "item": "croptopia:tuna_roll",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:tuna_roll"
   }
 }

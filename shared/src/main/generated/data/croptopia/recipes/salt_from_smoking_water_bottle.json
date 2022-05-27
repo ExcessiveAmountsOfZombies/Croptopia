@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smoking",
+  "cookingtime": 400,
+  "experience": 0.1,
   "ingredient": {
     "item": "croptopia:water_bottle"
   },
-  "result": "croptopia:salt",
-  "experience": 0.1,
-  "cookingtime": 400
+  "result": "croptopia:salt"
 }

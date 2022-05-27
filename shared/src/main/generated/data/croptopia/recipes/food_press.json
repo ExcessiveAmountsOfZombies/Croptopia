@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "I": {
+      "item": "minecraft:piston"
+    }
+  },
   "pattern": [
     "I",
     "H",
     "I"
   ],
-  "key": {
-    "I": {
-      "item": "minecraft:piston"
-    },
-    "H": {
-      "item": "minecraft:hopper"
-    }
-  },
   "result": {
     "item": "croptopia:food_press"
   }

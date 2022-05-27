@@ -1,30 +1,30 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    "454",
-    "183"
-  ],
   "key": {
-    "8": {
-      "item": "croptopia:frying_pan"
-    },
     "1": {
       "tag": "croptopia:pork_replacements"
     },
-    "3": {
-      "tag": "croptopia:beef_replacements"
-    },
     "2": {
       "tag": "${dependent}:onions"
+    },
+    "3": {
+      "tag": "croptopia:beef_replacements"
     },
     "4": {
       "tag": "${dependent}:cabbage"
     },
     "5": {
       "tag": "${dependent}:tomatoes"
+    },
+    "8": {
+      "item": "croptopia:frying_pan"
     }
   },
+  "pattern": [
+    "123",
+    "454",
+    "183"
+  ],
   "result": {
     "item": "croptopia:goulash"
   }

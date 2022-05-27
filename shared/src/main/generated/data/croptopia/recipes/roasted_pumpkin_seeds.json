@@ -1,23 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    " 4 "
-  ],
   "key": {
     "1": {
       "item": "minecraft:pumpkin_seeds"
     },
-    "3": {
-      "item": "croptopia:pepper"
-    },
     "2": {
       "tag": "${dependent}:salts"
+    },
+    "3": {
+      "item": "croptopia:pepper"
     },
     "4": {
       "item": "croptopia:frying_pan"
     }
   },
+  "pattern": [
+    "123",
+    " 4 "
+  ],
   "result": {
     "item": "croptopia:roasted_pumpkin_seeds"
   }

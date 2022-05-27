@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    "456"
-  ],
   "key": {
     "1": {
       "tag": "${dependent}:calamari"
@@ -24,8 +20,12 @@
       "tag": "${dependent}:sea_lettuce"
     }
   },
+  "pattern": [
+    "123",
+    "456"
+  ],
   "result": {
-    "item": "croptopia:fried_calamari",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:fried_calamari"
   }
 }

@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    "456",
-    "789"
-  ],
   "key": {
     "1": {
       "item": "minecraft:carrot"
@@ -24,18 +19,23 @@
     "6": {
       "tag": "${dependent}:water_bottles"
     },
-    "8": {
-      "item": "croptopia:cooking_pot"
-    },
     "7": {
       "tag": "${dependent}:cabbage"
+    },
+    "8": {
+      "item": "croptopia:cooking_pot"
     },
     "9": {
       "tag": "${dependent}:garlic"
     }
   },
+  "pattern": [
+    "123",
+    "456",
+    "789"
+  ],
   "result": {
-    "item": "croptopia:borscht",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:borscht"
   }
 }

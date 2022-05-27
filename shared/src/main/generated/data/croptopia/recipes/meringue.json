@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "243",
-    "111"
-  ],
   "key": {
     "1": {
       "item": "minecraft:egg"
@@ -18,8 +14,12 @@
       "tag": "${dependent}:vanilla"
     }
   },
+  "pattern": [
+    "243",
+    "111"
+  ],
   "result": {
-    "item": "croptopia:meringue",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:meringue"
   }
 }

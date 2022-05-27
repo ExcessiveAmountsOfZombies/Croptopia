@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.2,
   "ingredient": {
     "item": "minecraft:sugar"
   },
-  "result": "croptopia:caramel",
-  "experience": 0.2,
-  "cookingtime": 100
+  "result": "croptopia:caramel"
 }

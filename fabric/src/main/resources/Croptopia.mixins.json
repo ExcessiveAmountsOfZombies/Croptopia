@@ -18,6 +18,7 @@
     "VillagerMixin",
     "datagen.IdentifierAccessor",
     "datagen.ObjectBuilderAccessor",
+    "datagen.PathProviderAccessor",
     "datagen.TagProviderAccessor"
   ],
   "client": [

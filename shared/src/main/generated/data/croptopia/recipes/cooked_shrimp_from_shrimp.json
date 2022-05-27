@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
   "ingredient": {
     "item": "croptopia:shrimp"
   },
-  "result": "croptopia:cooked_shrimp",
-  "experience": 0.2,
-  "cookingtime": 200
+  "result": "croptopia:cooked_shrimp"
 }

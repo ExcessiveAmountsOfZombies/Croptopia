@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    " 5 ",
-    "464"
-  ],
   "key": {
     "1": {
       "tag": "${dependent}:onions"
@@ -25,8 +20,13 @@
       "item": "croptopia:cooking_pot"
     }
   },
+  "pattern": [
+    "123",
+    " 5 ",
+    "464"
+  ],
   "result": {
-    "item": "croptopia:pumpkin_soup",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:pumpkin_soup"
   }
 }

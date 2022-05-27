@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.2,
   "ingredient": {
     "item": "minecraft:sugar"
   },
-  "result": "croptopia:caramel",
-  "experience": 0.2,
-  "cookingtime": 200
+  "result": "croptopia:caramel"
 }
