@@ -2,6 +2,7 @@ package com.epherical.croptopia.events;
 
 
 import com.epherical.croptopia.CroptopiaForge;
+import com.epherical.croptopia.config.Config;
 import com.epherical.croptopia.registry.GeneratorRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
@@ -35,7 +36,7 @@ public class BiomeModification {
             }
         }
 
-        if (event.getCategory() == Biome.BiomeCategory.RIVER) {
+        if (!Config.isSaltDisabled) {
             settings.addFeature(UNDERGROUND_ORES, GeneratorRegistry.DISK_SALT_CONFIGURED);
         }
 

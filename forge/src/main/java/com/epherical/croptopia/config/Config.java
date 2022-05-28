@@ -29,14 +29,18 @@ public class Config {
     public ForgeConfigSpec config;
 
     public static ForgeConfigSpec.ConfigValue<Boolean> rightClickHarvest;
+    public static ForgeConfigSpec.ConfigValue<Boolean> disableSaltGeneration;
     public final Map<TreeConfiguration, TreeBuilder> builderMap = new HashMap<>();
     private final Multimap<ResourceLocation, String> features = HashMultimap.create();
     public static boolean canRightClickHarvest;
+    public static boolean isSaltDisabled;
 
     public Config() {
         rightClickHarvest = CONFIG_BUILDER.comment("allows the user to right click harvest crops")
                 .translation("croptopia.config.rightclickharvest")
                 .define("rightClickHarvest", true);
+        disableSaltGeneration = CONFIG_BUILDER.comment("allows the user to disable salt generation in the world, default is false")
+                .define("disableSaltGeneration", false);
         List<TreeConfiguration> trees = TreeConfiguration.init();
         CONFIG_BUILDER.comment("Croptopia tree generation").push("worldGeneration");
         for (TreeConfiguration tree : trees) {
@@ -52,6 +56,7 @@ public class Config {
     public void initConfig(ModConfigEvent configEvent) {
         if (configEvent.getConfig().getSpec() == config) {
             canRightClickHarvest = rightClickHarvest.get();
+            isSaltDisabled = disableSaltGeneration.get();
             for (Map.Entry<TreeConfiguration, TreeBuilder> entry : builderMap.entrySet()) {
                 for (String s : entry.getValue().acceptableBiomes.get()) {
                     features.put(new ResourceLocation(s), entry.getKey().featureKey);
