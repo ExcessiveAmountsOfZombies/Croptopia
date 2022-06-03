@@ -12,6 +12,7 @@
     "FarmerWorkTaskAccessor",
     "FarmerWorkTaskMixin",
     "ItemMixin",
+    "LootTableBuilderAccessor",
     "ParrotAccess",
     "StructurePoolsMixin",
     "VillagerAccess",
