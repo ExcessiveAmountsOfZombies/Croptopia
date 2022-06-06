@@ -1,7 +1,6 @@
-package com.epherical.croptopia.events;
+package com.epherical.croptopia.listeners;
 
 import net.minecraft.core.NonNullList;
-import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.event.village.VillagerTradesEvent;

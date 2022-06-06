@@ -1,4 +1,4 @@
-package com.epherical.croptopia.events;
+package com.epherical.croptopia.listeners;
 
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
