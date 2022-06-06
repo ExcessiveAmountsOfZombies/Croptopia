@@ -1,0 +1,12 @@
+{
+  "name": "Ириски «Кэнди корн»",
+  "icon": "croptopia:candy_corn",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:candy_corn",
+      "text": "Рецепт Ирисок \"Кэнди корн\"."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Пепперони с ананасом",
+  "icon": "croptopia:pineapple_pepperoni_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_pepperoni_pizza",
+      "text": "Рецепт Пепперони с ананасом."
+    }
+  ]
+}

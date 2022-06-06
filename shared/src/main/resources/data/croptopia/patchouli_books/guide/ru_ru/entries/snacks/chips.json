@@ -1,0 +1,16 @@
+{
+  "name": "Чипсы",
+  "icon": "croptopia:potato_chips",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_chips",
+      "recipe2": "croptopia:potato_chips"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Рецепты разных видов чипсов."
+    }
+  ]
+}

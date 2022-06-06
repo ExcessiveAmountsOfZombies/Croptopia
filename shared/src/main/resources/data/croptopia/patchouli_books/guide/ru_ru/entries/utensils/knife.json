@@ -1,0 +1,12 @@
+{
+  "name": "Нож",
+  "icon": "croptopia:knife",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:knife",
+      "text": "Рецепт Ножа."
+    }
+  ]
+}

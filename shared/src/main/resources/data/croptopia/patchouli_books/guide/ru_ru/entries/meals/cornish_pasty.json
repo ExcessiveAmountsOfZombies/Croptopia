@@ -1,0 +1,12 @@
+{
+  "name": "Корнуоллский пирожок",
+  "icon": "croptopia:cornish_pasty",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_cornish_pasty",
+      "text": "Рецепт Корнуоллского пирожка."
+    }
+  ]
+}

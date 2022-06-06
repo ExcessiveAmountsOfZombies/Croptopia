@@ -1,0 +1,12 @@
+{
+  "name": "Вишнёвый пирог",
+  "icon": "croptopia:cherry_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cherry_pie",
+      "text": "Рецепт Вишнёвого пирога."
+    }
+  ]
+}

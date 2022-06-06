@@ -1,0 +1,12 @@
+{
+  "name": "Нуга",
+  "icon": "croptopia:nougat",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:nougat",
+      "text": "Рецепт Нуги."
+    }
+  ]
+}

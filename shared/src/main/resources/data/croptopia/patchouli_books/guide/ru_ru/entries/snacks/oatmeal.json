@@ -1,0 +1,12 @@
+{
+  "name": "Овсяная каша",
+  "icon": "croptopia:oatmeal",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:oatmeal",
+      "text": "Рецепт Овсяной каши."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Пареная зелёная фасоль",
+  "icon": "croptopia:steamed_green_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_steamed_green_beans",
+      "text": "Рецепт Пареной зелёной фасоли."
+    }
+  ]
+}

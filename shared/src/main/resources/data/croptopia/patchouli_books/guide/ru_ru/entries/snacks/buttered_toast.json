@@ -1,0 +1,12 @@
+{
+  "name": "Тост с маслом",
+  "icon": "croptopia:buttered_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:buttered_toast",
+      "text": "Рецепт Тоста с маслом."
+    }
+  ]
+}
