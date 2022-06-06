@@ -1,0 +1,12 @@
+{
+  "name": "Зелёная фасоль с маслом",
+  "icon": "croptopia:buttered_green_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_buttered_green_beans",
+      "text": "Рецепт Зелёной фасоли с маслом."
+    }
+  ]
+}

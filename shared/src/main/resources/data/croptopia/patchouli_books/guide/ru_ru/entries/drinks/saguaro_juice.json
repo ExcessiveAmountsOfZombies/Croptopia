@@ -1,0 +1,12 @@
+{
+  "name": "Сок из цереуса",
+  "icon": "croptopia:saguaro_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saguaro_juice",
+      "text": "Рецепт Сока из цереуса."
+    }
+  ]
+}

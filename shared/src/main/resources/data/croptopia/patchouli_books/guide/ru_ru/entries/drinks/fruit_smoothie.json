@@ -1,0 +1,12 @@
+{
+  "name": "Фруктовый коктейль",
+  "icon": "croptopia:fruit_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fruit_smoothie",
+      "text": "Рецепт Фруктового коктейля."
+    }
+  ]
+}

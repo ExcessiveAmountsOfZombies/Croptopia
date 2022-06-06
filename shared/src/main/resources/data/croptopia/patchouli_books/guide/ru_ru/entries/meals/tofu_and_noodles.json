@@ -1,0 +1,12 @@
+{
+  "name": "Клёцки с тофу",
+  "icon": "croptopia:tofu_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu_and_dumplings",
+      "text": "Рецепт Клёцок с тофу."
+    }
+  ]
+}

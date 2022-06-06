@@ -1,0 +1,12 @@
+{
+  "name": "Соевое молоко",
+  "icon": "croptopia:soy_milk",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:soy_milk",
+      "text": "Рецепт Соевого молока."
+    }
+  ]
+}

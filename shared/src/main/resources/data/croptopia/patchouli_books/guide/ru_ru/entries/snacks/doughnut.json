@@ -1,0 +1,12 @@
+{
+  "name": "Пончик",
+  "icon": "croptopia:doughnut",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:doughnut",
+      "text": "Ваша первая модель в Blender."
+    }
+  ]
+}

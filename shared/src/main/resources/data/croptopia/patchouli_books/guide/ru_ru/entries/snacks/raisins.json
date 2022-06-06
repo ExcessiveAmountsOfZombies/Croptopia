@@ -1,0 +1,12 @@
+{
+  "name": "Изюм",
+  "icon": "croptopia:raisins",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:raisins_from_grape",
+      "text": "Рецепт Изюма."
+    }
+  ]
+}

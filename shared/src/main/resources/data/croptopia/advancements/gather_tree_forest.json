@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "croptopia:cherry_sapling"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_tree_forest.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.gather_tree_forest.description"
+    }
+  },
+  "parent": "croptopia:gather_tree_plains",
+  "criteria": {
+    "apricot_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:apricot_sapling"] } ] } },
+    "avocado_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:avocado_sapling"] } ] } },
+    "cherry_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:cherry_sapling"] } ] } },
+    "lemon_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:lemon_sapling"] } ] } },
+    "lime_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:lime_sapling"] } ] } },
+    "nectarine_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:nectarine_sapling"] } ] } },
+    "orange_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:orange_sapling"] } ] } },
+    "persimmon_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:persimmon_sapling"] } ] } },
+    "plum_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:plum_sapling"] } ] } },
+    "starfruit_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:plum_sapling"] } ] } },
+    "pear_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:pear_sapling"] } ] } }
+  }
+}

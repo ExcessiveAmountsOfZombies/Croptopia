@@ -1,10 +1,10 @@
 package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.mixin.LootTableBuilderAccessor;
 import com.epherical.croptopia.register.Content;
-import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.fabricmc.fabric.mixin.loot.table.LootSupplierBuilderHooks;
+import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -22,48 +22,48 @@ public class CropLootTableModifier {
     private static final Logger LOGGER = LoggerFactory.getLogger(CropLootTableModifier.class);
 
     public static void init() {
-        LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, fabricLootSupplierBuilder, lootTableSetter) -> {
+        LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if (id.getNamespace().equalsIgnoreCase("minecraft")) {
                 String path = id.getPath();
                 switch (path) {
                     case "entities/cod", "entities/salmon", "entities/tropical_fish" -> {
-                        FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(LootItem.lootTableItem(Content.ROE).build());
-                        fabricLootSupplierBuilder.withPool(builder.build());
+                        LootPool.Builder builder = LootPool.lootPool();
+                        builder.add(LootItem.lootTableItem(Content.ROE));
+                        tableBuilder.withPool(builder);
                     }
                     case "gameplay/fishing/fish" -> {
-                        List<LootPool> pools = ((LootSupplierBuilderHooks) fabricLootSupplierBuilder).getPools();
+                        List<LootPool> pools = ((LootTableBuilderAccessor) tableBuilder).getPools();
                         if (pools.isEmpty()) {
                             LOGGER.warn("Can not inject into gameplay/fishing/fish as it is empty");
                         } else {
-                            FabricLootPoolBuilder builder = FabricLootPoolBuilder.of(pools.get(0));
-                            builder.withEntry(LootTableReference.lootTableReference(new ResourceLocation("croptopia", "gameplay/fishing/fish"))
-                                    .setWeight(30).build());
+                            LootPool.Builder builder = FabricLootPoolBuilder.copyOf(pools.get(0));
+                            builder.add(LootTableReference.lootTableReference(new ResourceLocation("croptopia", "gameplay/fishing/fish"))
+                                    .setWeight(30));
                             pools.set(0, builder.build());
                         }
                     }
                     case "entities/squid" -> {
-                        FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(LootItem.lootTableItem(Content.CALAMARI).build());
-                        fabricLootSupplierBuilder.withPool(builder.build());
+                        LootPool.Builder builder = LootPool.lootPool();
+                        builder.add(LootItem.lootTableItem(Content.CALAMARI));
+                        tableBuilder.withPool(builder);
                     }
                     case "entities/glow_squid" -> {
-                        FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
-                        builder.withEntry(LootItem.lootTableItem(Content.GLOWING_CALAMARI).build());
-                        fabricLootSupplierBuilder.withPool(builder.build());
+                        LootPool.Builder builder = LootPool.lootPool();
+                        builder.add(LootItem.lootTableItem(Content.GLOWING_CALAMARI));
+                        tableBuilder.withPool(builder);
                     }
                     case "chests/spawn_bonus_chest" -> {
-                        FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
+                        LootPool.Builder builder = LootPool.lootPool();
                         builder.setRolls(ConstantValue.exactly(1));
                         builder.setBonusRolls(ConstantValue.exactly(0));
                         for (SeedItem seed : CroptopiaMod.seeds) {
-                            builder.withEntry(
+                            builder.add(
                                     LootItem.lootTableItem(seed)
                                             .setWeight(5)
-                                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false)).build()
+                                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false))
                             );
                         }
-                        fabricLootSupplierBuilder.withPool(builder);
+                        tableBuilder.withPool(builder);
                     }
                 }
             }

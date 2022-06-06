@@ -1,0 +1,12 @@
+{
+  "name": "Миндальный грильяж",
+  "icon": "croptopia:almond_brittle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:almond_brittle",
+      "text": "Рецепт Миндального грильяжа."
+    }
+  ]
+}

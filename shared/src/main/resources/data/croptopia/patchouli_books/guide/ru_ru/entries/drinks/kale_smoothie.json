@@ -1,0 +1,12 @@
+{
+  "name": "Коктейль из кудрявой капусты",
+  "icon": "croptopia:kale_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_smoothie",
+      "text": "Рецепт Коктейля из кудрявой капусты."
+    }
+  ]
+}

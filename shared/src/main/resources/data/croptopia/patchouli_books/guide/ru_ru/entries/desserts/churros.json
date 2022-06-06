@@ -1,0 +1,12 @@
+{
+  "name": "Чуррос",
+  "icon": "croptopia:churros",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:churros",
+      "text": "Рецепт Чуррос."
+    }
+  ]
+}

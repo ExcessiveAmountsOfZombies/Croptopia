@@ -10,7 +10,7 @@
       "translate": "advancements.croptopia.eatcrafted.description"
     }
   },
-  "parent": "croptopia:getseeds",
+  "parent": "croptopia:root",
   "criteria": {
     "eat_crafted": {
       "trigger": "minecraft:consume_item",

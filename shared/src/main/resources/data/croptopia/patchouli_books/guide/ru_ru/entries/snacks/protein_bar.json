@@ -1,0 +1,12 @@
+{
+  "name": "Протеиновый батончик",
+  "icon": "croptopia:protein_bar",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:protein_bar",
+      "text": "Рецепт Протеинового батончика."
+    }
+  ]
+}

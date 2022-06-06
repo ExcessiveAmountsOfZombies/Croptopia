@@ -1,0 +1,12 @@
+{
+  "name": "Жареная репа",
+  "icon": "croptopia:roasted_turnips",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_roasted_turnips",
+      "text": "Рецепт Жареной репы"
+    }
+  ]
+}

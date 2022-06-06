@@ -1,0 +1,12 @@
+{
+  "name": "Патока",
+  "icon": "croptopia:molasses",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:molasses_from_sugar_cane",
+      "text": "Рецепт Патоки."
+    }
+  ]
+}

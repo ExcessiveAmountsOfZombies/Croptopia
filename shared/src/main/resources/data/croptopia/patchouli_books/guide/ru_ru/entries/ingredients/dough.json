@@ -1,0 +1,12 @@
+{
+  "name": "Тесто",
+  "icon": "croptopia:dough",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:dough",
+      "text": "Рецепт Теста."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Итонская путаница",
+  "icon": "croptopia:eton_mess",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_eton_mess",
+      "text": "Рецепт Итонской путаницы."
+    }
+  ]
+}

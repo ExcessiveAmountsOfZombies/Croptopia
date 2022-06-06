@@ -1,0 +1,12 @@
+{
+  "name": "Чизбургер",
+  "icon": "croptopia:cheeseburger",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheeseburger",
+      "text": "Рецепт Чизбургера."
+    }
+  ]
+}

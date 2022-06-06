@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "croptopia:advancements_hoe"
+            "tag": "minecraft:hoe"
           }
         ]
       }
