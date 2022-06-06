@@ -72,6 +72,18 @@
     "croptopia:steamed_broccoli",
     "croptopia:stir_fry",
     "croptopia:stuffed_artichoke",
-    "croptopia:toast_sandwich"
+    "croptopia:toast_sandwich",
+
+    "croptopia:pumpkin_bars",
+    "croptopia:pumpkin_soup",
+    "croptopia:cabbage_roll",
+    "croptopia:borscht",
+    "croptopia:goulash",
+    "croptopia:candied_kumquats",
+    "croptopia:deep_fried_shrimp",
+    "croptopia:crab_legs",
+    "croptopia:steamed_clams",
+    "croptopia:grilled_oysters",
+    "croptopia:anchovy_pizza"
   ]
 }
