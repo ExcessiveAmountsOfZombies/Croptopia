@@ -56,13 +56,8 @@ public class Croptopia implements ModInitializer {
             .build();
     public static Patchouli patchouli;
 
-    private static final String TECH_REBORN_MOD_ID = "techreborn";
-
     @Override
     public void onInitialize() {
-        FabricLoader.getInstance().getModContainer(TECH_REBORN_MOD_ID)
-                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("croptopia", "treborn"),  modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
-                .filter(success -> !success);
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
         Content.registerBlocks((id, object) -> Registry.register(Registry.BLOCK, id, object));
         Content.GUIDE = new GuideBookItem(createGroup());
