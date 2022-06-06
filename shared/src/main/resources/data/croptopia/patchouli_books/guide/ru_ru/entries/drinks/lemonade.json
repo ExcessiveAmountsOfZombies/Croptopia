@@ -1,0 +1,12 @@
+{
+  "name": "Лимонад",
+  "icon": "croptopia:lemonade",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:lemonade",
+      "text": "Рецепт Лимонада."
+    }
+  ]
+}

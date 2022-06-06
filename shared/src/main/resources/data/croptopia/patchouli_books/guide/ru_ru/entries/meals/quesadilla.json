@@ -1,0 +1,12 @@
+{
+  "name": "Кесадилья",
+  "icon": "croptopia:quesadilla",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:quesadilla",
+      "text": "Рецепт Кесадильи."
+    }
+  ]
+}

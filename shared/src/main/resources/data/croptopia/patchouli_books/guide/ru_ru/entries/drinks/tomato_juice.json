@@ -1,0 +1,12 @@
+{
+  "name": "Томатный сок",
+  "icon": "croptopia:tomato_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tomato_juice",
+      "text": "Рецепт Томатного сока."
+    }
+  ]
+}

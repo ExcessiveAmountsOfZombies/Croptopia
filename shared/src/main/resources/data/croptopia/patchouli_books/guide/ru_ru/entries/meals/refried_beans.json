@@ -1,0 +1,12 @@
+{
+  "name": "Фасолевая икра",
+  "icon": "croptopia:refried_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:refried_beans",
+      "text": "Рецепт Фасолевой икры."
+    }
+  ]
+}

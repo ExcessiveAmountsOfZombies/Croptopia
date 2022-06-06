@@ -1,0 +1,12 @@
+{
+  "name": "Сэндвич БСТ",
+  "icon": "croptopia:blt",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:blt",
+      "text": "Рецепт Сэндвича БСТ."
+    }
+  ]
+}

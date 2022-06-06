@@ -1,0 +1,12 @@
+{
+  "name": "Фаршированный артишок",
+  "icon": "croptopia:stuffed_artichoke",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_stuffed_artichoke",
+      "text": "Рецепт Фаршированного артишка."
+    }
+  ]
+}

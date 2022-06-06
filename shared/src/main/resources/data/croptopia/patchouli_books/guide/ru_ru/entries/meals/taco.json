@@ -1,0 +1,12 @@
+{
+  "name": "Тако",
+  "icon": "croptopia:taco",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:taco",
+      "text": "Рецепт Тако."
+    }
+  ]
+}

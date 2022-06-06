@@ -1,0 +1,12 @@
+{
+  "name": "Сорбет из киви",
+  "icon": "croptopia:kiwi_sorbet",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_kiwi_sorbet",
+      "text": "Рецепт Сорбета из киви."
+    }
+  ]
+}

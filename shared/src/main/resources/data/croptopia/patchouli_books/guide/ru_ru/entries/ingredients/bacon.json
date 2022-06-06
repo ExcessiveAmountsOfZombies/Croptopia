@@ -1,0 +1,12 @@
+{
+  "name": "Бекон",
+  "icon": "croptopia:bacon",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_bacon",
+      "text": "Рецепт Бекона."
+    }
+  ]
+}

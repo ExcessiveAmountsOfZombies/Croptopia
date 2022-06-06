@@ -1,0 +1,12 @@
+{
+  "name": "Запечённый сладкий картофель",
+  "icon": "croptopia:baked_sweet_potato",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_sweet_potato_from_sweetpotato",
+      "text": "Рецепт Запечённого сладкого картофеля."
+    }
+  ]
+}

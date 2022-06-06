@@ -1,0 +1,12 @@
+{
+  "name": "Айвар",
+  "icon": "croptopia:ajvar",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ajvar",
+      "text": "Рецепт Айвара."
+    }
+  ]
+}

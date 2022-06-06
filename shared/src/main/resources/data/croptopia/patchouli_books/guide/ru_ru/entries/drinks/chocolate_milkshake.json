@@ -1,0 +1,12 @@
+{
+  "name": "Шоколадный молочный коктейль",
+  "icon": "croptopia:chocolate_milkshake",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chocolate_milkshake",
+      "text": "Рецепт Шоколадного молочного коктейля."
+    }
+  ]
+}

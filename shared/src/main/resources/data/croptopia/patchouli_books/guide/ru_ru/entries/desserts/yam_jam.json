@@ -1,0 +1,12 @@
+{
+  "name": "Варенье из батата",
+  "icon": "croptopia:yam_jam",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:yam_jam",
+      "text": "Рецепт Варенья из батата."
+    }
+  ]
+}

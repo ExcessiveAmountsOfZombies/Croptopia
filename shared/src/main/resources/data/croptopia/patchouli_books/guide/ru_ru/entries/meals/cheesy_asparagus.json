@@ -1,0 +1,12 @@
+{
+  "name": "Сырная спаржа",
+  "icon": "croptopia:cheesy_asparagus",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_cheesy_asparagus",
+      "text": "Рецепт Сырной спаржи."
+    }
+  ]
+}

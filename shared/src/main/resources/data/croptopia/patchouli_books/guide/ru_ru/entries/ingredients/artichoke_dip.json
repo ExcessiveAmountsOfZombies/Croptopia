@@ -1,0 +1,12 @@
+{
+  "name": "Артишоковый соус",
+  "icon": "croptopia:artichoke_dip",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:artichoke_dip",
+      "text": "Рецепт Артишокового соуса."
+    }
+  ]
+}

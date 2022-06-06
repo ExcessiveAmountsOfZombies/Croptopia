@@ -1,0 +1,12 @@
+{
+  "name": "Суп из лука-порея",
+  "icon": "croptopia:leek_soup",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:leek_soup",
+      "text": "Рецепт Супа из лука-порея."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Бутылка воды",
+  "icon": "croptopia:water_bottle",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_water_bottle",
+      "text": "Рецепт Бутылки воды."
+    }
+  ]
+}

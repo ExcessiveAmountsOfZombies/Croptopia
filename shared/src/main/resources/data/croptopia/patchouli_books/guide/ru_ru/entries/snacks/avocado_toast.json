@@ -1,0 +1,12 @@
+{
+  "name": "Тост с авокадо",
+  "icon": "croptopia:avocado_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_avocado_toast",
+      "text": "Рецепт Тоста с авокадо. (Любимое блюдо по всему миру!)"
+    }
+  ]
+}

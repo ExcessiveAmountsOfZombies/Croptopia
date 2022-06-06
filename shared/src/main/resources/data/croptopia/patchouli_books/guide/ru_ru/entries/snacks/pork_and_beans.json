@@ -1,0 +1,12 @@
+{
+  "name": "Свинина с фасолью",
+  "icon": "croptopia:pork_and_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pork_and_beans",
+      "text": "Рецепт Свинины с фасолью."
+    }
+  ]
+}

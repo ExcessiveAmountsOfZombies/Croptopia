@@ -1,0 +1,12 @@
+{
+  "name": "Тыква-спагетти",
+  "icon": "croptopia:spaghetti_squash",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:spaghetti_squash",
+      "text": "Рецепт Тыквы-спагетти."
+    }
+  ]
+}

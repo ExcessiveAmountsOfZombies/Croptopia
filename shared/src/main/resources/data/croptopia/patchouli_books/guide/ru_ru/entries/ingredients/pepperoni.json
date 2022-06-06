@@ -1,0 +1,12 @@
+{
+  "name": "Пепперони",
+  "icon": "croptopia:pepperoni",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pepperoni",
+      "text": "Рецепт Пепперони."
+    }
+  ]
+}

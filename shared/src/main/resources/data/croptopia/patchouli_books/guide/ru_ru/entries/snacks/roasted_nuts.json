@@ -1,0 +1,12 @@
+{
+  "name": "Калёные орехи",
+  "icon": "croptopia:roasted_nuts",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:roasted_nuts",
+      "text": "Рецепт Калёных орехов."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Запечённый баклажан",
+  "icon": "croptopia:grilled_eggplant",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_grilled_eggplant",
+      "text": "Рецепт Запечённого баклажана."
+    }
+  ]
+}
