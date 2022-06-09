@@ -4,6 +4,7 @@ import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.SeedItem;
 import com.google.gson.JsonObject;
 import com.epherical.croptopia.CroptopiaForge;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -43,9 +45,8 @@ public class SpawnChestModifier extends LootModifier {
         table = builder.build();
     }
 
-    @Nonnull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         table.addRandomItems(generatedLoot::add, context);
         return generatedLoot;
     }

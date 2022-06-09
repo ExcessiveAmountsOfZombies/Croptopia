@@ -98,6 +98,14 @@ public class Config {
         }
     }
 
+    public static void setFeatures(Config config) {
+        for (TreeConfiguration treeConfiguration : TreeConfiguration.init()) {
+            for (String key : treeConfiguration.keys) {
+                config.features.put(new ResourceLocation(key), treeConfiguration.featureKey);
+            }
+        }
+    }
+
     public static class TreeConfiguration {
         String featureKey;
         List<ResourceKey<Biome>> treesInBiome;

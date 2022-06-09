@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.DiskConfigurati
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
@@ -32,6 +33,7 @@ import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.material.Fluids;
 
 import java.util.HashMap;
 import java.util.List;
@@ -199,12 +201,13 @@ public class GeneratorRegistry {
 
 
     public static final Holder<ConfiguredFeature<DiskConfiguration, ?>> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
-            Feature.DISK, ((new DiskConfiguration(Content.SALT_ORE_BLOCK.defaultBlockState(),
-                    UniformInt.of(2, 4), 2,
-                    ImmutableList.of(Blocks.DIRT.defaultBlockState(), Blocks.GRASS_BLOCK.defaultBlockState())))));
+            Feature.DISK, ((new DiskConfiguration(RuleBasedBlockStateProvider.simple(Content.SALT_ORE_BLOCK),
+                    BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)),
+                    UniformInt.of(2, 4), 2))));
 
     public static final Holder<PlacedFeature> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
-            DISK_SALT, PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome(), InSquarePlacement.spread());
+            DISK_SALT, PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome(), InSquarePlacement.spread(),
+            BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)));
 
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(ResourceLocation id, F feature, FC config) {

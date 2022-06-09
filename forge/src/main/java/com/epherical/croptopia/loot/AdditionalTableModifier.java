@@ -2,6 +2,7 @@ package com.epherical.croptopia.loot;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.ItemStack;
@@ -36,11 +37,10 @@ public class AdditionalTableModifier extends LootModifier {
         this.reference = reference;
     }
 
-    @NotNull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         if (context.getRandom().nextFloat() <= chanceToRefer) {
-            List<ItemStack> items = new ArrayList<>();
+            ObjectArrayList<ItemStack> items = new ObjectArrayList<>();
             reference.createItemStack(items::add, context);
             return items;
         }

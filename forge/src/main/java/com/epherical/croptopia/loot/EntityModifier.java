@@ -1,6 +1,7 @@
 package com.epherical.croptopia.loot;
 
 import com.google.gson.JsonObject;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.Item;
@@ -47,9 +48,8 @@ public class EntityModifier extends LootModifier {
         pool = builder.build();
     }
 
-    @NotNull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         pool.addRandomItems(generatedLoot::add, context);
         return generatedLoot;
     }

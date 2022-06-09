@@ -33,6 +33,8 @@ import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.material.Fluids;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -199,7 +201,8 @@ public class GeneratorRegistry {
                     UniformInt.of(2, 4), 2))));
 
     public static final Holder<PlacedFeature> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
-            DISK_SALT, PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome(), InSquarePlacement.spread());
+            DISK_SALT, PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome(), InSquarePlacement.spread(),
+            BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)));
 
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(ResourceLocation id, F feature, FC config) {

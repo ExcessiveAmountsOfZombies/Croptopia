@@ -38,6 +38,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.material.Material;
 
 import java.util.Arrays;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
