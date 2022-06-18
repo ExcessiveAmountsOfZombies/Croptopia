@@ -3,14 +3,6 @@
   "values": [
     "minecraft:savanna",
     "minecraft:savanna_plateau",
-    "minecraft:windswept_savanna",
-    {
-      "id": "byg:araucaria_savanna",
-      "required": false
-    },
-    {
-      "id": "byg:baobab_savanna",
-      "required": false
-    }
+    "minecraft:windswept_savanna"
   ]
 }

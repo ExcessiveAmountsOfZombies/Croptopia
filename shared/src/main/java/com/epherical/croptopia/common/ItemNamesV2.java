@@ -325,5 +325,21 @@ public class ItemNamesV2 {
     public static final String ANCHOVY_PIZZA = "anchovy_pizza";
     public static final String MASHED_POTATOES = "mashed_potatoes";
 
+    public static final String BAKED_CREPES = "baked_crepes";
+    public static final String CINNAMON_ROLL = "cinnamon_roll";
+    public static final String CROQUE_MADAME = "croque_madame";
+    public static final String CROQUE_MONSIEUR = "croque_monsieur";
+    public static final String DAUPHINE_POTATOES = "dauphine_potatoes";
+    public static final String FRIED_FROG_LEGS = "fried_frog_legs";
+    public static final String FROG_LEGS = "frog_legs";
+    public static final String GROUND_PORK = "ground_pork";
+    public static final String HASHED_BROWN = "hashed_brown";
+    public static final String MACARON = "macaron";
+    public static final String QUICHE = "quiche";
+    public static final String SAUSAGE = "sausage";
+    public static final String SUNNY_SIDE_EGGS = "sunny_side_eggs";
+    public static final String SWEET_CREPES = "sweet_crepes";
+    public static final String THE_BIG_BREAKFAST = "the_big_breakfast";
+
 }
 
