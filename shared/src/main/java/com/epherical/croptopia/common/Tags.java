@@ -1,12 +1,19 @@
 package com.epherical.croptopia.common;
 
 import com.epherical.croptopia.CroptopiaMod;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Registry;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Tags {
+
+    private static final List<TagKey<Biome>> CROPTOPIA_BIOME_TAGS = new ArrayList<>();
+
     public static final TagKey<Biome> HAS_ARTICHOKE = create("has_crop/" + ItemNamesV2.ARTICHOKE);
     public static final TagKey<Biome> HAS_ASPARAGUS = create("has_crop/" + ItemNamesV2.ASPARAGUS);
     public static final TagKey<Biome> HAS_BARLEY = create("has_crop/" + ItemNamesV2.BARLEY);
@@ -66,8 +73,13 @@ public class Tags {
     public static final TagKey<Biome> HAS_YAM = create("has_crop/" + ItemNamesV2.YAM);
     public static final TagKey<Biome> HAS_ZUCCHINI = create("has_crop/" + ItemNamesV2.ZUCCHINI);
 
-
     private static TagKey<Biome> create(String key) {
-        return TagKey.create(Registry.BIOME_REGISTRY, CroptopiaMod.createIdentifier(key));
+        TagKey<Biome> biomeKey = TagKey.create(Registry.BIOME_REGISTRY, CroptopiaMod.createIdentifier(key));
+        CROPTOPIA_BIOME_TAGS.add(biomeKey);
+        return biomeKey;
+    }
+
+    public static List<TagKey<Biome>> getCroptopiaBiomeTags() {
+        return ImmutableList.copyOf(CROPTOPIA_BIOME_TAGS);
     }
 }

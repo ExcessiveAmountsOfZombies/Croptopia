@@ -1,6 +1,7 @@
 package com.epherical.croptopia;
 
 import com.epherical.croptopia.common.ItemNamesV2;
+import com.epherical.croptopia.common.Tags;
 import com.epherical.croptopia.items.GuideBookItem;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.Tree;
@@ -8,6 +9,7 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.mojang.logging.LogUtils;
 import it.unimi.dsi.fastutil.ints.IntList;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.CroptopiaConfig;
@@ -25,13 +27,18 @@ import com.epherical.croptopia.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.commands.Commands;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +49,9 @@ import static com.epherical.croptopia.CroptopiaMod.createGroup;
 
 
 public class Croptopia implements ModInitializer {
+
+
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     private final boolean devEnvironment = Boolean.getBoolean(MiscNames.MOD_ID + ".dev");
 
@@ -75,6 +85,23 @@ public class Croptopia implements ModInitializer {
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             SetupCommand.register(dispatcher, registryAccess);
+            /*dispatcher.register(Commands.literal("croptopia")
+                    .requires(commandSourceStack -> commandSourceStack.hasPermission(4))
+                    .then(Commands.literal("wiki"))
+                    .executes(context -> {
+                        LOGGER.info("| Crop | Biomes |");
+                        LOGGER.info("| ---- | ---- |");
+                        for (TagKey<Biome> croptopiaBiomeTag : Tags.getCroptopiaBiomeTags()) {
+                            context.getSource().registryAccess().registry(Registry.BIOME_REGISTRY).ifPresent(biomes -> {
+                                List<String> biomeNames = new ArrayList<>();
+                                for (Holder<Biome> biomeHolder : biomes.getTagOrEmpty(croptopiaBiomeTag)) {
+                                    biomeHolder.unwrapKey().ifPresent(biomeResourceKey -> biomeNames.add(biomeResourceKey.location().toString()));
+                                }
+                                LOGGER.info("| {} | {} |", croptopiaBiomeTag.location().getPath(), biomeNames.toString());
+                            });
+                        }
+                        return 1;
+                    }));*/
         });
 
         //CroptopiaVillagerTrades.init();
