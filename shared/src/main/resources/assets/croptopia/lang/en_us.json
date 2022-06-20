@@ -588,5 +588,28 @@
   "itemGroup.croptopia.croptopia": "Croptopia",
   "itemGroup.croptopia": "Croptopia",
 
-  "info.croptopia.seed": "This seed will drop in biomes\n categorized as:"
+  "info.croptopia.seed": "This seed will drop in biomes\n categorized as:",
+
+  "tag.c.crops" : "Crops",
+  "tag.c.saplings" : "Saplings",
+  "tag.c.vegetables" : "Vegetables",
+  "tag.c.nuts" : "Nuts",
+  "tag.c.fruits" : "Fruits",
+  "tag.c.grain" : "Grain",
+  "tag.c.seeds" : "Seeds",
+  "tag.c.jams" : "Jams",
+  "tag.c.juices" : "Juices",
+  "tag.c.tools.knives" : "Knives",
+  "tag.croptopia.beef_mutton" : "Beef Mutton",
+  "tag.croptopia.meat_replacements" : "Meat Replacements",
+  "tag.croptopia.nuts" : "Nuts",
+  "tag.croptopia.chicken_replacements" : "Chicken Replacements",
+  "tag.croptopia.pork_replacements" : "Pork Replacements",
+  "tag.croptopia.fishes" : "Fishes",
+  "tag.croptopia.peppers" : "Peppers",
+  "tag.croptopia.sauces" : "Sauces",
+  "tag.croptopia.melons" : "Melons",
+  "tag.croptopia.beef_replacements" : "Beef Replacements",
+  "tag.croptopia.flourable" : "Flourable",
+  "tag.croptopia.cinnamon_logs" : "Cinnamon Logs"
 }
