@@ -1,21 +1,23 @@
 package com.epherical.croptopia.loot;
 
 import com.google.gson.JsonObject;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import com.sun.org.apache.bcel.internal.classfile.ConstantValue;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.loot.BinomialRange;
+import net.minecraft.loot.ConstantRange;
+import net.minecraft.loot.ItemLootEntry;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.loot.functions.ILootFunction;
+import net.minecraft.loot.functions.SetCount;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.NotNull;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.List;
 
@@ -32,18 +34,17 @@ public class EntityModifier extends LootModifier {
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    protected EntityModifier(LootItemCondition[] conditionsIn, Item item, int weight, int min, int max) {
+    protected EntityModifier(ILootCondition[] conditionsIn, Item item, int weight, int min, int max) {
         super(conditionsIn);
         this.item = item;
         this.weight = weight;
         this.min = min;
         this.max = max;
         LootPool.Builder builder = LootPool.lootPool();
-        builder.setRolls(ConstantValue.exactly(1));
-        builder.setBonusRolls(ConstantValue.exactly(0));
-        builder.add(LootItem.lootTableItem(item)
+        builder.setRolls(ConstantRange.exactly(1));
+        builder.add(ItemLootEntry.lootTableItem(item)
                 .setWeight(weight)
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max), false)));
+                .apply(SetCount.setCount(BinomialRange.binomial(min, max))));
         pool = builder.build();
     }
 
@@ -57,11 +58,11 @@ public class EntityModifier extends LootModifier {
     public static class Serializer extends GlobalLootModifierSerializer<EntityModifier> {
 
         @Override
-        public EntityModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
-            Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(GsonHelper.getAsString(object, "item", "minecraft:air")));
-            int weight = GsonHelper.getAsInt(object, "weight", 1);
-            int min = GsonHelper.getAsInt(object, "min", 0);
-            int max = GsonHelper.getAsInt(object, "max", 1);
+        public EntityModifier read(ResourceLocation location, JsonObject object, ILootCondition[] ailootcondition) {
+            Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getAsString(object, "item", "minecraft:air")));
+            int weight = JSONUtils.getAsInt(object, "weight", 1);
+            int min = JSONUtils.getAsInt(object, "min", 0);
+            int max = JSONUtils.getAsInt(object, "max", 1);
             return new EntityModifier(ailootcondition, item, weight, min, max);
         }
 

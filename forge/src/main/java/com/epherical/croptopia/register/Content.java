@@ -18,12 +18,15 @@ import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.register.helpers.VanillaCrops;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.RegisterFunction;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
@@ -392,8 +395,8 @@ public class Content {
     public static final Item ANCHOVY_PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_15)));
     public static final Item MASHED_POTATOES = new Item(createGroup().food(FoodConstructor.createFood(REG_9)));
 
-    public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
-    public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
+    public static Block SALT_ORE_BLOCK = new Block(AbstractBlock.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
+    public static final Item SALT_ORE = new BlockNamedItem(SALT_ORE_BLOCK, createGroup());
 
     public static Item GUIDE;
 
@@ -593,7 +596,7 @@ public class Content {
         return Stream.concat(
                 Arrays.stream(FarmlandCrop.copy().toArray(new FarmlandCrop[0])),
                 Stream.concat(Arrays.stream(TreeCrop.copy().toArray(new TreeCrop[0])), Arrays.stream(Tree.copy().toArray(new Tree[0])))
-        ).map(ItemLike::asItem);
+        ).map(IItemProvider::asItem);
     }
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(ResourceLocation id, ConfiguredFeature<FC, F> feature) {

@@ -21,6 +21,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -158,10 +159,11 @@ public class CroptopiaForge {
             Content.registerItems((id, item) -> {
                 item.setRegistryName(id);
                 itemRegister.getRegistry().register(item);
-                if (item instanceof ItemNameBlockItem) {
-                    ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
+                if (item instanceof BlockNamedItem) {
+                    ((BlockNamedItem) item).registerBlocks(Item.BY_BLOCK, item);
                 }
-                if (item instanceof SeedItem it) {
+                if (item instanceof SeedItem) {
+                    SeedItem it = (SeedItem) item;
                     // maybe not needed anymore
                     CroptopiaCropBlock block = (CroptopiaCropBlock) (it).getBlock();
                     block.setSeed(it);

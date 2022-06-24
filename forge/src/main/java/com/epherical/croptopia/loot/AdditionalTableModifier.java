@@ -1,16 +1,15 @@
 package com.epherical.croptopia.loot;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.entries.LootTableReference;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.item.ItemStack;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.TableLootEntry;
+import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
-import org.jetbrains.annotations.NotNull;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +20,7 @@ import java.util.List;
 public class AdditionalTableModifier extends LootModifier {
 
     private String tableID;
-    private final LootTableReference reference;
+    private final TableLootEntry reference;
     private final float chanceToRefer;
 
     /**
@@ -29,7 +28,7 @@ public class AdditionalTableModifier extends LootModifier {
      *
      * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
      */
-    protected AdditionalTableModifier(LootItemCondition[] conditionsIn, LootTableReference reference, String tableID, float chanceToRefer) {
+    protected AdditionalTableModifier(ILootCondition[] conditionsIn, TableLootEntry reference, String tableID, float chanceToRefer) {
         super(conditionsIn);
         this.chanceToRefer = chanceToRefer;
         this.tableID = tableID;
@@ -51,10 +50,10 @@ public class AdditionalTableModifier extends LootModifier {
     public static class Serializer extends GlobalLootModifierSerializer<AdditionalTableModifier> {
 
         @Override
-        public AdditionalTableModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
-            String tableID = GsonHelper.getAsString(object, "tableRef");
-            LootTableReference reference = (LootTableReference) LootTableReference.lootTableReference(new ResourceLocation(tableID)).build();
-            float referChance = GsonHelper.getAsFloat(object, "referChance");
+        public AdditionalTableModifier read(ResourceLocation location, JsonObject object, ILootCondition[] ailootcondition) {
+            String tableID = JSONUtils.getAsString(object, "tableRef");
+            TableLootEntry reference = (TableLootEntry) TableLootEntry.lootTableReference(new ResourceLocation(tableID)).build();
+            float referChance = JSONUtils.getAsFloat(object, "referChance");
             return new AdditionalTableModifier(ailootcondition, reference, tableID, referChance);
         }
 

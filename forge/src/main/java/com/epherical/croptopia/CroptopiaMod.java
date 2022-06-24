@@ -4,6 +4,7 @@ import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.common.PlatformAdapter;
 import com.epherical.croptopia.items.SeedItem;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
@@ -13,6 +14,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,10 @@ public class CroptopiaMod {
         mod = this;
     }
 
+    public PlatformAdapter<?> platform() {
+        return platform;
+    }
+
     public static CroptopiaMod getInstance() {
         return mod;
     }
@@ -42,27 +48,27 @@ public class CroptopiaMod {
         return new ResourceLocation(MiscNames.MOD_ID, name);
     }
 
-    public static BlockBehaviour.Properties createCropSettings() {
-        return BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP);
+    public static AbstractBlock.Properties createCropSettings() {
+        return AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP);
     }
 
     public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating((a,b,c) -> false).isViewBlocking((a,b,c) -> false));
+        return new LeafCropBlock(AbstractBlock.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating((a,b,c) -> false).isViewBlocking((a,b,c) -> false));
     }
 
     public static LeavesBlock createRegularLeavesBlock() {
-        return new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating(CroptopiaMod::never).isViewBlocking(CroptopiaMod::never));
+        return new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating(CroptopiaMod::never).isViewBlocking(CroptopiaMod::never));
     }
 
-    public static BlockBehaviour.Properties createSaplingSettings() {
-        return BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS);
+    public static AbstractBlock.Properties createSaplingSettings() {
+        return AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS);
     }
 
-    private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
+    private static boolean never(BlockState state, IBlockReader world, BlockPos pos) {
         return false;
     }
 
-    public static boolean canSpawnOnLeaves(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
+    public static boolean canSpawnOnLeaves(BlockState state, IBlockReader world, BlockPos pos, EntityType<?> type) {
         return type == EntityType.OCELOT || type == EntityType.PARROT;
     }
 }

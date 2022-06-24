@@ -2,9 +2,11 @@ package com.epherical.croptopia.items;
 
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.SoupItem;
+import net.minecraft.world.World;
 
 public class Soup extends SoupItem {
 
@@ -13,23 +15,23 @@ public class Soup extends SoupItem {
         super(settings);
     }
 
-    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
-        Player playerEntity = user instanceof Player ? (Player)user : null;
+    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity user) {
+        PlayerEntity playerEntity = user instanceof PlayerEntity ? (PlayerEntity)user : null;
         if (playerEntity != null) {
-            if (!playerEntity.getAbilities().instabuild) {
+            if (!playerEntity.abilities.instabuild) {
                 if (isEdible()) {
                     user.eat(world, stack);
                 }
             }
         }
 
-        if (playerEntity == null || !playerEntity.getAbilities().instabuild) {
+        if (playerEntity == null || !playerEntity.abilities.instabuild) {
             if (stack.isEmpty()) {
                 return new ItemStack(Items.BOWL);
             }
 
             if (playerEntity != null) {
-                playerEntity.getInventory().add(new ItemStack(Items.BOWL));
+                playerEntity.inventory.add(new ItemStack(Items.BOWL));
             }
         }
 

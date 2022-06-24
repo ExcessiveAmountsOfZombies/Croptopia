@@ -15,19 +15,27 @@ import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.FeatureSpread;
+import net.minecraft.world.gen.feature.TwoLayerFeature;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 import static com.epherical.croptopia.CroptopiaMod.*;
 
@@ -43,12 +51,12 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private Block wood;
     private Block strippedWood;
     private Block leaves;
-    private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
-    private Holder<ConfiguredFeature<TreeConfiguration, ?>> tree;
+    //private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
+    //private Holder<ConfiguredFeature<TreeConfiguration, ?>> tree;
     private final Item sapling;
     private Block saplingBlock;
 
-    public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen) {
+    public Tree(String name, boolean hasPlural, TagCategory category, Supplier<ConfiguredFeature<BaseTreeFeatureConfig, ?>> supplier) {
         Objects.requireNonNull(category);
         this.hasPlural = hasPlural;
         this.tagCategory = category;
@@ -61,9 +69,9 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         strippedWood = new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
         // left is leaves and saplings
         leaves = createRegularLeavesBlock();
-        treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings());
-        sapling = new ItemNameBlockItem(saplingBlock, createGroup());
+        //treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
+        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(supplier), createSaplingSettings());
+        sapling = new BlockNamedItem(saplingBlock, createGroup());
         TREES.add(this);
     }
 
@@ -114,17 +122,17 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return saplingBlock;
     }
 
-    public ConfiguredFeature<TreeConfiguration, ?> getTreeGen() {
+    /*public ConfiguredFeature<BaseTreeFeatureConfig, ?> getTreeGen() {
         return treeGen;
-    }
+    }*/
 
-    public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTree() {
+    /*public Holder<ConfiguredFeature<BaseTreeFeatureConfig, ?>> getTree() {
         return tree;
-    }
+    }*/
 
-    public void setTree(Holder<ConfiguredFeature<TreeConfiguration, ?>> tree) {
+   /* public void setTree(Holder<ConfiguredFeature<BaseTreeFeatureConfig, ?>> tree) {
         this.tree = tree;
-    }
+    }*/
 
     @Override
     public String name() {
@@ -145,31 +153,31 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             leafBlocks.add(tree.leaves);
             tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
             cropBlocks.add(tree.saplingBlock);
-            tree.tree = Content.register(createIdentifier(tree.name + "_tree"), tree.getTreeGen());
+            //tree.tree = Content.register(createIdentifier(tree.name + "_tree"), tree.getTreeGen());
         }
     }
 
     public static void registerItems(RegisterFunction<Item> register) {
         for (Tree tree : TREES) {
             register.register(createIdentifier(tree.name), tree.item);
-            register.register(createIdentifier(tree.name + "_log"), new ItemNameBlockItem(tree.log, createGroup()));
-            register.register(createIdentifier("stripped_" + tree.name + "_log"), new ItemNameBlockItem(tree.strippedLog, createGroup()));
-            register.register(createIdentifier(tree.name + "_wood"), new ItemNameBlockItem(tree.wood, createGroup()));
-            register.register(createIdentifier("stripped_" + tree.name + "_wood"), new ItemNameBlockItem(tree.strippedWood, createGroup()));
+            register.register(createIdentifier(tree.name + "_log"), new BlockNamedItem(tree.log, createGroup()));
+            register.register(createIdentifier("stripped_" + tree.name + "_log"), new BlockNamedItem(tree.strippedLog, createGroup()));
+            register.register(createIdentifier(tree.name + "_wood"), new BlockNamedItem(tree.wood, createGroup()));
+            register.register(createIdentifier("stripped_" + tree.name + "_wood"), new BlockNamedItem(tree.strippedWood, createGroup()));
             register.register(createIdentifier(tree.name + "_sapling"), tree.sapling);
         }
     }
 
-    public static ConfiguredFeature<TreeConfiguration, ?> createBarkGen(int i, int j, int k, Block log, Block leaves) {
-        return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                SimpleStateProvider.simple(log.defaultBlockState()),
+    public static ConfiguredFeature<BaseTreeFeatureConfig, ?> createBarkGen(int i, int j, int k, Block log, Block leaves) {
+        return Feature.TREE.configured(new BaseTreeFeatureConfig.Builder(
+                new SimpleBlockStateProvider(log.defaultBlockState()),
+                new WeightedBlockStateProvider().add(leaves.defaultBlockState(), 90),
+                new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3),
                 new StraightTrunkPlacer(i, j, k),
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leaves.defaultBlockState(), 90).build()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
+                new TwoLayerFeature(1, 0, 2)).ignoreVines().build());
     }
 
-    public static void attemptPop(BlockState state, UseOnContext context, BlockPos pos) {
+    public static void attemptPop(BlockState state, ItemUseContext context, BlockPos pos) {
         for (Tree crop : TREES) {
             if (state.getBlock().equals(crop.getLog()) || state.getBlock().equals(crop.getWood())) {
                 Block.popResource(context.getLevel(), pos, new ItemStack(crop.asItem()));

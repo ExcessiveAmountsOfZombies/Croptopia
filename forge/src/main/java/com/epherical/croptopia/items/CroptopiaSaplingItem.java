@@ -1,12 +1,13 @@
 package com.epherical.croptopia.items;
 
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 
-public class CroptopiaSaplingItem extends ItemNameBlockItem {
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.item.BlockNamedItem;
+import net.minecraft.item.ItemUseContext;
+import net.minecraft.util.ActionResultType;
+
+public class CroptopiaSaplingItem extends BlockNamedItem {
 
     private final Block saplingFruitLeafBlock;
     private final Block vanillaLeafBlock;
@@ -18,14 +19,14 @@ public class CroptopiaSaplingItem extends ItemNameBlockItem {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext context) {
+    public ActionResultType useOn(ItemUseContext context) {
         BlockState atPos = context.getLevel().getBlockState(context.getClickedPos());
         if (atPos.getBlock() == vanillaLeafBlock) {
             if (!context.getPlayer().isCreative()) {
                 context.getItemInHand().shrink(1);
             }
             context.getLevel().setBlockAndUpdate(context.getClickedPos(), saplingFruitLeafBlock.defaultBlockState());
-            return InteractionResult.CONSUME;
+            return ActionResultType.CONSUME;
         }
         return super.useOn(context);
     }

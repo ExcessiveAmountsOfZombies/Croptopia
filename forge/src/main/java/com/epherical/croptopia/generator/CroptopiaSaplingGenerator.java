@@ -3,21 +3,24 @@ package com.epherical.croptopia.generator;
 
 import java.util.Random;
 import java.util.function.Supplier;
-import net.minecraft.core.Holder;
-import net.minecraft.world.level.block.grower.AbstractTreeGrower;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 
-public class CroptopiaSaplingGenerator extends AbstractTreeGrower {
+import net.minecraft.block.trees.Tree;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
+import net.minecraft.world.gen.feature.ConfiguredFeature;
 
-    private final Supplier<Holder<ConfiguredFeature<TreeConfiguration, ?>>> tree;
+import javax.annotation.Nullable;
 
-    public CroptopiaSaplingGenerator(Supplier<Holder<ConfiguredFeature<TreeConfiguration, ?>>> tree) {
+public class CroptopiaSaplingGenerator extends Tree {
+
+    private final Supplier<ConfiguredFeature<BaseTreeFeatureConfig, ?>> tree;
+
+    public CroptopiaSaplingGenerator(Supplier<ConfiguredFeature<BaseTreeFeatureConfig, ?>> tree) {
         this.tree = tree;
     }
 
+    @Nullable
     @Override
-    protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean bees) {
+    protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random p_225546_1_, boolean p_225546_2_) {
         return tree.get();
     }
 }

@@ -3,16 +3,16 @@ package com.epherical.croptopia.loot;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.SeedItem;
 import com.google.gson.JsonObject;
-import com.epherical.croptopia.CroptopiaForge;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import com.sun.org.apache.bcel.internal.classfile.ConstantValue;
+import net.minecraft.item.ItemStack;
+import net.minecraft.loot.BinomialRange;
+import net.minecraft.loot.ConstantRange;
+import net.minecraft.loot.ItemLootEntry;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.loot.functions.SetCount;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 
@@ -29,15 +29,14 @@ public class SpawnChestModifier extends LootModifier {
      *
      * @param conditionsIn the LootItemCondition that need to be matched before the loot is modified.
      */
-    protected SpawnChestModifier(LootItemCondition[] conditionsIn) {
+    protected SpawnChestModifier(ILootCondition[] conditionsIn) {
         super(conditionsIn);
         LootPool.Builder builder = new LootPool.Builder();
-        builder.setRolls(ConstantValue.exactly(1));
-        builder.setBonusRolls(ConstantValue.exactly(0));
+        builder.setRolls(ConstantRange.exactly(1));
         for (SeedItem seed : CroptopiaMod.seeds) {
-            builder.add(LootItem.lootTableItem(seed)
+            builder.add(ItemLootEntry.lootTableItem(seed)
                     .setWeight(2)
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false))
+                    .apply(SetCount.setCount(BinomialRange.binomial(3, 8)))
             );
         }
         table = builder.build();
@@ -53,7 +52,7 @@ public class SpawnChestModifier extends LootModifier {
     public static class Serializer extends GlobalLootModifierSerializer<SpawnChestModifier> {
 
         @Override
-        public SpawnChestModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
+        public SpawnChestModifier read(ResourceLocation location, JsonObject object, ILootCondition[] ailootcondition) {
             return new SpawnChestModifier(ailootcondition);
         }
 

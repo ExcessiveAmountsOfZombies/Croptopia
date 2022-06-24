@@ -42,8 +42,8 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagCategory category;
     private final Item item;
     private final Block leaves;
-    private Holder<ConfiguredFeature<TreeConfiguration, ?>> tree;
-    private final ConfiguredFeature<TreeConfiguration, ?> treeConfig;
+    //private Holder<ConfiguredFeature<TreeConfiguration, ?>> tree;
+    //private final ConfiguredFeature<TreeConfiguration, ?> treeConfig;
     private final CroptopiaSaplingItem saplingItem;
     private final CroptopiaSaplingBlock saplingBlock;
 
@@ -60,7 +60,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             item = new CropItem(createGroup().food(createFood(constructor)));
         }
         leaves = createLeavesBlock();
-        treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
+        //treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
         saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings());
         saplingItem = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
         TREE_CROPS.add(this);
@@ -92,7 +92,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return item;
     }
 
-    public void setTree(Holder<ConfiguredFeature<TreeConfiguration, ?>> tree) {
+    /*public void setTree(Holder<ConfiguredFeature<TreeConfiguration, ?>> tree) {
         this.tree = tree;
     }
 
@@ -102,7 +102,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTree() {
         return tree;
-    }
+    }*/
 
     public CroptopiaSaplingBlock getSaplingBlock() {
         return saplingBlock;

@@ -3,6 +3,8 @@ package com.epherical.croptopia.items;
 import com.epherical.croptopia.CroptopiaMod;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.UseAction;
@@ -30,29 +32,29 @@ public class Drink extends Item {
 
 
     @Override
-    public ItemStack finishUsingItem(ItemStack p_77654_1_, World p_77654_2_, LivingEntity p_77654_3_) {
-        Player playerEntity = user instanceof Player ? (Player)user : null;
-        if (playerEntity instanceof ServerPlayer) {
-            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)playerEntity, stack);
+    public ItemStack finishUsingItem(ItemStack stack, World world, LivingEntity user) {
+        PlayerEntity playerEntity = user instanceof PlayerEntity ? (PlayerEntity)user : null;
+        if (playerEntity instanceof ServerPlayerEntity) {
+            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayerEntity)playerEntity, stack);
         }
 
         if (playerEntity != null) {
             playerEntity.awardStat(Stats.ITEM_USED.get(this));
-            if (!playerEntity.getAbilities().instabuild) {
+            if (!playerEntity.abilities.instabuild) {
                 if (isEdible()) {
-                    CroptopiaMod.getInstance().platform().invokeDrinkEvent(stack, playerEntity);
+                    //CroptopiaMod.getInstance().platform().invokeDrinkEvent(stack, playerEntity);
                     user.eat(world, stack);
                 }
             }
         }
 
-        if (playerEntity == null || !playerEntity.getAbilities().instabuild) {
+        if (playerEntity == null || !playerEntity.abilities.instabuild) {
             if (stack.isEmpty()) {
                 return new ItemStack(getCraftingRemainingItem());
             }
 
             if (playerEntity != null) {
-                playerEntity.getInventory().add(new ItemStack(getCraftingRemainingItem()));
+                playerEntity.inventory.add(new ItemStack(getCraftingRemainingItem()));
             }
         }
 
