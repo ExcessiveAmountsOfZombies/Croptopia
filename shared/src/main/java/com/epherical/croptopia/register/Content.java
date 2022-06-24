@@ -149,8 +149,8 @@ public class Content {
     public static final Seafood TUNA = new Seafood(ItemNamesV2.TUNA, false, REG_3);
 
     public static final Furnace BAKED_BEANS = new Furnace(ItemNamesV2.BAKED_BEANS, false, REG_5);
-    public static final Furnace BAKED_SWEET_POTATO = new Furnace(ItemNamesV2.BAKED_SWEET_POTATO, true, REG_7);
-    public static final Furnace BAKED_YAM = new Furnace(ItemNamesV2.BAKED_YAM, true, REG_7);
+    public static final Furnace BAKED_SWEET_POTATO = new Furnace(ItemNamesV2.BAKED_SWEET_POTATO, true, REG_5);
+    public static final Furnace BAKED_YAM = new Furnace(ItemNamesV2.BAKED_YAM, true, REG_5);
     public static final Furnace CARAMEL = new Furnace(ItemNamesV2.CARAMEL, false, null);
     public static final Furnace COOKED_ANCHOVY = new Furnace(ItemNamesV2.COOKED_ANCHOVY, true, REG_4);
     public static final Furnace COOKED_BACON = new Furnace(ItemNamesV2.COOKED_BACON, false, REG_7);
@@ -376,7 +376,7 @@ public class Content {
     public static final Item ROASTED_TURNIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item STEAMED_BROCCOLI = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item STEAMED_GREEN_BEANS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
-    public static final Item STIR_FRY = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item STIR_FRY = new Item(createGroup().food(FoodConstructor.createFood(REG_12)));
     public static final Item STUFFED_ARTICHOKE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
     public static final Item TOAST_SANDWICH = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
 
