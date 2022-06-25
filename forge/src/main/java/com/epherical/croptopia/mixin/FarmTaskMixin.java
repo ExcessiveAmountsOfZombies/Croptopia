@@ -23,22 +23,22 @@ import javax.annotation.Nullable;
 @Mixin(FarmTask.class)
 public class FarmTaskMixin {
 
-    @Shadow @Nullable private BlockPos field_220422_a;
+    @Shadow @Nullable private BlockPos aboveFarmlandPos;
     @Unique boolean planted = false;
 
-    @Inject(method = "updateTask", at = @At(value = "INVOKE_ASSIGN",
+    @Inject(method = "tick(Lnet/minecraft/world/server/ServerWorld;Lnet/minecraft/entity/merchant/villager/VillagerEntity;J)V", at = @At(value = "INVOKE_ASSIGN",
             target = "Lnet/minecraft/item/ItemStack;isEmpty()Z", opcode = 0),
             locals = LocalCapture.CAPTURE_FAILEXCEPTION)
     public void running(ServerWorld serverWorld, VillagerEntity villagerEntity, long l, CallbackInfo ci,
                         BlockState blockState, Block block, Block block2,
                         Inventory inventory, int i, ItemStack itemStack) {
         if (itemStack.getItem() instanceof SeedItem) {
-            serverWorld.setBlockState(this.field_220422_a, ((SeedItem) itemStack.getItem()).getBlock().getDefaultState(), 3);
+            serverWorld.setBlock(this.aboveFarmlandPos, ((SeedItem) itemStack.getItem()).getBlock().defaultBlockState(), 3);
             planted = true;
         }
     }
 
-    @ModifyVariable(method = "updateTask", at = @At(value = "LOAD", ordinal = 0))
+    @ModifyVariable(method = "tick(Lnet/minecraft/world/server/ServerWorld;Lnet/minecraft/entity/merchant/villager/VillagerEntity;J)V", at = @At(value = "LOAD", ordinal = 0))
     public boolean planted(boolean bl) {
         if (planted) {
             planted = false;

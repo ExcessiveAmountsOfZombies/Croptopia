@@ -48,7 +48,7 @@ mixin {
 
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'parchment', version: '2022.03.06-1.16.5'
     runs {
         client {
             workingDirectory project.file('run')
@@ -103,16 +103,18 @@ dependencies {
     implementation project(":shared")
     shade project(":shared")
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
-    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
+    if (System.getProperty("idea.sync.active") != "true") {
+        annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
+    }
 }
 
 shadowJar {
     archiveClassifier = ""
     enabled = true
     configurations = [project.configurations.shade]
-    archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
+    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORG2E-${rootProject.version}.jar"
     //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
-    relocate 'dependants/platform', 'data/forge'
+    relocate 'dependents/platform', 'data/forge'
 }
 
 artifacts {

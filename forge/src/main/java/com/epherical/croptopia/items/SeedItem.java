@@ -25,6 +25,7 @@ public class SeedItem extends BlockNamedItem {
 
     public SeedItem(Block block, Properties settings, Biome.Category category) {
         super(block, settings);
+        this.category= category;
         ((CroptopiaCropBlock) block).setSeed(this);
     }
 

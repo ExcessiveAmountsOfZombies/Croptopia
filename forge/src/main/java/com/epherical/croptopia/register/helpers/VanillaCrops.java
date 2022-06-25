@@ -1,9 +1,9 @@
 package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.util.IItemProvider;
 
 import java.util.Objects;
 
@@ -21,7 +21,7 @@ public enum VanillaCrops implements ItemConvertibleWithPlural {
     /**
      * @param source the vanilla crop, not <code>null</code>
      */
-    VanillaCrops(ItemLike source) {
+    VanillaCrops(IItemProvider source) {
         Objects.requireNonNull(source);
         this.item = source.asItem();
     }

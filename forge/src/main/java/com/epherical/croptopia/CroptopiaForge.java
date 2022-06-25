@@ -14,7 +14,10 @@ import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.loot.AdditionalTableModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
+import com.epherical.croptopia.mixin.VillagerAccess;
 import com.epherical.croptopia.register.Content;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -26,6 +29,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.BiomeColors;
@@ -171,16 +175,16 @@ public class CroptopiaForge {
                 return item;
             });
             //ItemRegistry.init(itemRegister);
-            List<ItemLike> chickenItems = new ArrayList<>(CroptopiaMod.seeds);
+            /*List<IItemProvider> chickenItems = new ArrayList<>(CroptopiaMod.seeds);
             chickenItems.addAll(Arrays.stream(Chicken.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
-            Chicken.FOOD_ITEMS = Ingredient.of(chickenItems.toArray(new ItemLike[0]));
+            Chicken.FOOD_ITEMS = Ingredient.of(chickenItems.toArray(new IItemProvider[0]));
             List<Item> parrotItems = new ArrayList<>(Parrot.TAME_FOOD);
             parrotItems.addAll(CroptopiaMod.seeds);
             Parrot.TAME_FOOD = Sets.newHashSet(parrotItems);
 
-            List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
+            List<IItemProvider> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
             pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
-            Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
+            Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new IItemProvider[0]));*/
 
         }
 
@@ -201,10 +205,13 @@ public class CroptopiaForge {
     }
 
     private static void modifyVillagerFoodItems() {
-        // todo: implement again
         /*ImmutableMap.Builder<Item, Integer> villagerFoodItems = new ImmutableMap.Builder<Item, Integer>()
                 .putAll(VillagerAccess.getItemFoodValues());
-        cropItems.forEach(item -> villagerFoodItems.put(item, item.getFood().getHealing()));
+        CroptopiaMod.cropItems.forEach(item -> {
+            if (item.getFoodProperties() != null) {
+                villagerFoodItems.put(item, item.getFoodProperties().getNutrition());
+            }
+        });
         VillagerAccess.setItemFoodValues(villagerFoodItems.build());*/
     }
 

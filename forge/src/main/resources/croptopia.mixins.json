@@ -3,10 +3,6 @@
   "package": "com.epherical.croptopia.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "croptopia.refmap.json",
-  "mixins": [
-    "FarmTaskMixin",
-    "VillagerAccess",
-    "VillagerMixin"
-  ],
+  "mixins": [],
   "minVersion": "0.8"
 }

@@ -12,23 +12,23 @@ import java.util.Set;
 public interface VillagerAccess {
 
 
-    @Accessor("ALLOWED_INVENTORY_ITEMS")
+    @Accessor("WANTED_ITEMS")
     static Set<Item> getGatherableItems() {
         throw new AssertionError();
     }
 
-    @Accessor("ALLOWED_INVENTORY_ITEMS")
+    @Accessor("WANTED_ITEMS")
     static void setGatherableItems(Set<Item> items) {
         throw new AssertionError();
     }
 
 
-    @Accessor("FOOD_VALUES")
+    @Accessor("FOOD_POINTS")
     static Map<Item, Integer> getItemFoodValues() {
         throw new AssertionError();
     }
 
-    @Accessor("FOOD_VALUES")
+    @Accessor("FOOD_POINTS")
     static void setItemFoodValues(Map<Item, Integer> food) {
         throw new AssertionError();
     }

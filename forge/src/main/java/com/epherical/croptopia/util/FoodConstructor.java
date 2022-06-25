@@ -1,9 +1,8 @@
 package com.epherical.croptopia.util;
 
 import net.minecraft.item.Food;
-import net.minecraft.world.food.FoodProperties;
 
-public class FoodConstructor() {
+public class FoodConstructor {
     public static final FoodConstructor REG_1 = new FoodConstructor(1, 0.2F);
     public static final FoodConstructor REG_2 = new FoodConstructor(2, 0.2F);
     public static final FoodConstructor REG_3 = new FoodConstructor(3, 0.6F);

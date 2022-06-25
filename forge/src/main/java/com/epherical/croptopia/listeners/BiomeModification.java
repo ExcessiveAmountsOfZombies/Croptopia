@@ -24,7 +24,7 @@ public class BiomeModification {
     public void onBiomeLoad(BiomeLoadingEvent event) {
         BiomeGenerationSettingsBuilder settings = event.getGeneration();
         if (event.getCategory() != Biome.Category.OCEAN) {
-            settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.RANDOM_CROP_PLACED);
+            settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.RANDOM_CROP);
         }
         ResourceLocation location = event.getName();
         if (location == null) {
@@ -33,7 +33,7 @@ public class BiomeModification {
         Collection<String> features = CroptopiaForge.config.getFeatures().get(location);
         if (!features.isEmpty()) {
             for (String feature : features) {
-                settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(feature));
+                settings.addFeature(VEGETAL_DECORATION, GeneratorRegistry.getFeature(feature));
             }
         }
 

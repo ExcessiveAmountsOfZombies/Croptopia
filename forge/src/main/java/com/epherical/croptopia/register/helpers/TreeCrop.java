@@ -17,6 +17,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
@@ -27,6 +28,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import static com.epherical.croptopia.CroptopiaMod.*;
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
@@ -47,7 +49,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private final CroptopiaSaplingItem saplingItem;
     private final CroptopiaSaplingBlock saplingBlock;
 
-    public TreeCrop(String name, boolean plural, Block logType, Block leafType, TagCategory category, FoodConstructor constructor, int base, int randA, int randB) {
+    public TreeCrop(String name, boolean plural, Block logType, Block leafType, TagCategory category, FoodConstructor constructor, Supplier<ConfiguredFeature<BaseTreeFeatureConfig, ?>> tree) {
         Objects.requireNonNull(leafType);
         Objects.requireNonNull(category);
         Objects.requireNonNull(logType);
@@ -61,7 +63,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         }
         leaves = createLeavesBlock();
         //treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings());
+        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(tree), createSaplingSettings());
         saplingItem = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
         TREE_CROPS.add(this);
     }
@@ -130,7 +132,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             cropBlocks.add(treeCrop.asBlock());
             cropBlocks.add(treeCrop.saplingBlock);
             leafBlocks.add(treeCrop.asBlock());
-            treeCrop.tree = Content.register(createIdentifier(treeCrop.name() + "_tree"), treeCrop.getTreeConfig());
+            //treeCrop.tree = Content.register(createIdentifier(treeCrop.name() + "_tree"), treeCrop.getTreeConfig());
             register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingBlock());
         }
     }
@@ -143,14 +145,5 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             }
             register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingItem());
         }
-    }
-
-    public static ConfiguredFeature<TreeConfiguration, ?> createTreeGen(int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
-        return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                SimpleStateProvider.simple(logType.defaultBlockState()),
-                new StraightTrunkPlacer(i, j, k),
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leafType.defaultBlockState(), 90).add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20).build()),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
-                new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
     }
 }

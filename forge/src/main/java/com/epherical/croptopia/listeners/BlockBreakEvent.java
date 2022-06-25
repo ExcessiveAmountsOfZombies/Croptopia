@@ -3,6 +3,8 @@ package com.epherical.croptopia.listeners;
 import com.epherical.croptopia.register.Content;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,9 +24,9 @@ public class BlockBreakEvent {
                 Block.popResource(event.getPlayer().level, event.getPos(), new ItemStack(Content.CINNAMON));
             }
             if (state.is((Content.CINNAMON.getLog()))) {
-                event.setFinalState(Content.CINNAMON.getStrippedLog().withPropertiesOf(state));
+                event.setFinalState(Content.CINNAMON.getStrippedLog().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS)));
             } else {
-                event.setFinalState(Content.CINNAMON.getStrippedWood().withPropertiesOf(state));
+                event.setFinalState(Content.CINNAMON.getStrippedWood().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS)));
             }
         }
     }
