@@ -12,7 +12,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
-//import vazkii.patchouli.api.PatchouliAPI;
+import vazkii.patchouli.api.PatchouliAPI;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -30,7 +30,7 @@ public class GuideBookItem extends Item {
         ItemStack stack = user.getItemInHand(hand);
 
         if (user instanceof ServerPlayer player && ModList.get().isLoaded("patchouli")) {
-           // PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
+           PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
         }
 
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);

@@ -35,7 +35,7 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    //modImplementation "vazkii.patchouli:Patchouli:1.18.2-67-FABRIC-SNAPSHOT"
+    modImplementation "vazkii.patchouli:Patchouli:1.19-74-FABRIC-SNAPSHOT"
 
     modImplementation(include("org.spongepowered:configurate-hocon:4.1.2"))
     modImplementation(include("org.spongepowered:configurate-core:4.1.2"))

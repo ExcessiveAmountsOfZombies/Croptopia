@@ -102,7 +102,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_ver}-${forge_ver}"
     implementation project(":shared")
     shade project(":shared")
-    //compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18-58-SNAPSHOT")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19-74-SNAPSHOT")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
