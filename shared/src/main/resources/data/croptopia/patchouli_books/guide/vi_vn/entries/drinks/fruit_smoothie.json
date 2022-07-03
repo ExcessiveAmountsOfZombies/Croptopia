@@ -1,0 +1,12 @@
+{
+  "name": "Sinh tố trái cây",
+  "icon": "croptopia:fruit_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fruit_smoothie",
+      "text": "Công thức pha sinh tố trái cây."
+    }
+  ]
+}

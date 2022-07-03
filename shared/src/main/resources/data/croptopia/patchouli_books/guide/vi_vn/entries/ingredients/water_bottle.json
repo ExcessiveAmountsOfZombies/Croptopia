@@ -1,0 +1,12 @@
+{
+  "name": "Chai nước",
+  "icon": "croptopia:water_bottle",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_water_bottle",
+      "text": "Công thức làm chai nước. Khác với chai nước bình thường."
+    }
+  ]
+}

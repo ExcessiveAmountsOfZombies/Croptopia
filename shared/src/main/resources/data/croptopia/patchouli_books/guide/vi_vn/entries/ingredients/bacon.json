@@ -1,0 +1,12 @@
+{
+  "name": "Thịt xông khói",
+  "icon": "croptopia:bacon",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_bacon",
+      "text": "Công thức"
+    }
+  ]
+}

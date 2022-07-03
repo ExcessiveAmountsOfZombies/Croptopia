@@ -1,0 +1,12 @@
+{
+  "name": "Sữa lắc sô cô la",
+  "icon": "croptopia:chocolate_milkshake",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chocolate_milkshake",
+      "text": "Công thức pha sữa lắc sô cô la."
+    }
+  ]
+}

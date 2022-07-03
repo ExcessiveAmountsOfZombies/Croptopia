@@ -1,0 +1,12 @@
+{
+  "name": "Nước ép dưa hấu",
+  "icon": "croptopia:melon_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:melon_juice",
+      "text": "Công thức pha nước ép dưa hấu."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Nước ép nam việt quất",
+  "icon": "croptopia:cranberry_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cranberry_juice",
+      "text": "Công thức pha nước ép nam việt quất."
+    }
+  ]
+}
