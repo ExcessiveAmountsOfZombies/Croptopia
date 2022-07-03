@@ -1,0 +1,6 @@
+{
+  "name": "Cây trồng",
+  "description": "Thông tin về các loại cây trồng mà bạn có thể tìm thấy trong Croptopia.",
+  "icon": "croptopia:kiwi",
+  "sortnum": -100
+}
