@@ -1,0 +1,12 @@
+{
+  "name": "Bánh kẹp cà chua rau diếp và thịt xông khói",
+  "icon": "croptopia:blt",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:blt",
+      "text": "Công thức làm bánh kẹp cà chua rau diếp và thịt xông khói."
+    }
+  ]
+}

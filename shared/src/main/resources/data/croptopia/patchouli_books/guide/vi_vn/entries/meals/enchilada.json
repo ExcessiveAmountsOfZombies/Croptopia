@@ -1,0 +1,12 @@
+{
+  "name": "Bánh ngô cuộn phủ sốt",
+  "icon": "croptopia:enchilada",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:enchilada",
+      "text": "Công thức làm bánh ngô cuộn phủ sốt."
+    }
+  ]
+}

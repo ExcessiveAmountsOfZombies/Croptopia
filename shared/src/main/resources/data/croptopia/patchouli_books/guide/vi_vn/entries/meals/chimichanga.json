@@ -1,0 +1,12 @@
+{
+  "name": "Bánh burrito chiên",
+  "icon": "croptopia:chimichanga",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chimichanga",
+      "text": "Công thức."
+    }
+  ]
+}

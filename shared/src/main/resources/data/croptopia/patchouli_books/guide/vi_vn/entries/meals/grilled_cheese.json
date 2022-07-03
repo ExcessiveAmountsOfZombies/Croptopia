@@ -1,0 +1,12 @@
+{
+  "name": "Phô mai nướng",
+  "icon": "croptopia:grilled_cheese",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:grilled_cheese",
+      "text": "Công thức làm một cái bánh kẹp phô mai nướng."
+    }
+  ]
+}

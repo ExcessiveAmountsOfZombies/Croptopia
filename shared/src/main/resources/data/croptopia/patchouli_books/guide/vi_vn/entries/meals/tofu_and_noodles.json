@@ -1,0 +1,12 @@
+{
+  "name": "Đậu phụ và Bánh bao",
+  "icon": "croptopia:tofu_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu_and_dumplings",
+      "text": "Công thức làm đậu phụ và Bánh bao."
+    }
+  ]
+}

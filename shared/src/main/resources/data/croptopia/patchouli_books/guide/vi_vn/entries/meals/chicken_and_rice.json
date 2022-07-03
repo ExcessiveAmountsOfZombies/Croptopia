@@ -1,0 +1,12 @@
+{
+  "name": "Cơm gà",
+  "icon": "croptopia:chicken_and_rice",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_rice",
+      "text": "Công thức làm cơm gà."
+    }
+  ]
+}

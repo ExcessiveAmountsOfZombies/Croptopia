@@ -1,0 +1,12 @@
+{
+  "name": "Bánh mì nướng mứt",
+  "icon": "croptopia:toast_with_jam",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:toast_with_jam",
+      "text": "Công thức làm bánh mì nướng với mứt ở trên."
+    }
+  ]
+}
