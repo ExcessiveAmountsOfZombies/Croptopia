@@ -15,7 +15,7 @@
       "tag": "${dependent}:garlic"
     },
     "4": {
-      "item": "croptopia:pepper"
+      "tag": "${dependent}:chile_peppers"
     },
     "5": {
       "tag": "${dependent}:olive_oils"
