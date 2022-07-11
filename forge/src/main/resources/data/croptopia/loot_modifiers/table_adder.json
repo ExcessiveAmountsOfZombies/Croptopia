@@ -6,6 +6,6 @@
     }
   ],
   "tableRef": "croptopia:gameplay/fishing/fish",
-  "referChance": 0.25,
+  "referChance": 0.35,
   "type": "croptopia:table_adder"
 }

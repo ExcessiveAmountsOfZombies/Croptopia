@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "croptopia:water_bottle",
-    "minecraft:water_bucket"
+    "minecraft:water_bucket",
+    {
+      "id": "early_buckets:wooden_water_bucket",
+      "required": false
+    }
   ]
 }

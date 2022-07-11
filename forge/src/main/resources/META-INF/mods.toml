@@ -23,7 +23,7 @@ Crop mod for forge
 [[dependencies.croptopia]] #optional
    modId="forge" #mandatory
    mandatory=true #mandatory
-   versionRange="[37,)" #mandatory
+   versionRange="[41.0.84,)" #mandatory
    ordering="NONE"
    side="BOTH"
 # Here's another dependency

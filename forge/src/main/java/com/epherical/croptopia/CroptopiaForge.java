@@ -8,12 +8,12 @@ import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.Config;
 import com.epherical.croptopia.datagen.CroptopiaBiomeData;
+import com.epherical.croptopia.items.GuideBookItem;
+import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.listeners.BlockBreakEvent;
 import com.epherical.croptopia.listeners.EntitySpawn;
 import com.epherical.croptopia.listeners.Harvest;
 import com.epherical.croptopia.listeners.LootTableModification;
-import com.epherical.croptopia.items.GuideBookItem;
-import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.loot.AdditionalTableModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
@@ -39,9 +39,9 @@ import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -75,15 +75,11 @@ import static com.epherical.croptopia.CroptopiaMod.createGroup;
 public class CroptopiaForge {
     private static final Logger LOGGER = LogManager.getLogger();
 
-    // todo: there might be a different way i'm supposed to do this in forge.
-    private static final SpawnChestModifier.Serializer SPAWN_CHEST_MODIFIER = new SpawnChestModifier.Serializer();
-    private static final EntityModifier.Serializer ENTITY_MODIFIER = new EntityModifier.Serializer();
-    private static final AdditionalTableModifier.Serializer ADDTIONAL_TABLE_MODIFIER = new AdditionalTableModifier.Serializer();
-
     public static final DeferredRegister<Codec<? extends BiomeModifier>> BIOME_SERIALIZER =
             DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
     public static final DeferredRegister<BiomeModifier> BIOME_MODIFIER =
             DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIERS, MiscNames.MOD_ID);
+    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> GLM = DeferredRegister.create(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
 
     public static Config config;
 
@@ -104,6 +100,14 @@ public class CroptopiaForge {
         BIOME_SERIALIZER.register("trees", TreeModifier::makeCodec);
         BIOME_SERIALIZER.register("crops", CropModifier::makeCodec);
         BIOME_SERIALIZER.register("salt", SaltModifier::makeCodec);
+        GLM.register(bus);
+       /* GLM.register("spawn_loot", SpawnChestModifier.CODEC);
+        GLM.register("entity_modifier", EntityModifier.CODEC);
+        GLM.register("table_adder", AdditionalTableModifier.CODEC);*/
+        // todo: forge bug >>> will probably need to change this back later
+        GLM.register("spawn_loot", SpawnChestModifier.CODEC);
+        GLM.register("entity_modifier", EntityModifier.CODEC);
+        GLM.register("fish_table_modifier", AdditionalTableModifier.CODEC);
 
         bus.addListener(data::getData);
 
@@ -209,22 +213,6 @@ public class CroptopiaForge {
                     return object;
                 });
             }
-
-            onLootRegister(event);
-        }
-
-        public static void onLootRegister(RegisterEvent register) {
-            // lazy
-            // todo: rewrite this so it's cleaner, only passing in resourcelocation and the GLM
-            register.register(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, helper -> {
-                helper.register(createIdentifier("spawn_loot"), SPAWN_CHEST_MODIFIER);
-            });
-            register.register(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, helper -> {
-                helper.register(createIdentifier("entity_modifier"), ENTITY_MODIFIER);
-            });
-            register.register(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, helper -> {
-                helper.register(createIdentifier("table_adder"), ADDTIONAL_TABLE_MODIFIER);
-            });
         }
     }
 

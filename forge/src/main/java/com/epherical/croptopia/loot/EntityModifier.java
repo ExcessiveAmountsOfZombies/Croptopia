@@ -1,6 +1,9 @@
 package com.epherical.croptopia.loot;
 
+import com.google.common.base.Suppliers;
 import com.google.gson.JsonObject;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -13,14 +16,24 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import java.util.function.Supplier;
 
 public class EntityModifier extends LootModifier {
+    public static final Supplier<Codec<EntityModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(instance -> {
+        return codecStart(instance).and(
+                instance.group(
+                        ForgeRegistries.ITEMS.getCodec().fieldOf("item").forGetter(o -> o.item),
+                        Codec.INT.fieldOf("weight").forGetter(o -> o.weight),
+                        Codec.INT.fieldOf("min").forGetter(o -> o.min),
+                        Codec.INT.fieldOf("max").forGetter(o -> o.max)
+                )
+        ).apply(instance, EntityModifier::new);
+    }));
 
     private final LootPool pool;
     private final Item item;
@@ -54,20 +67,8 @@ public class EntityModifier extends LootModifier {
         return generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<EntityModifier> {
-
-        @Override
-        public EntityModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
-            Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(GsonHelper.getAsString(object, "item", "minecraft:air")));
-            int weight = GsonHelper.getAsInt(object, "weight", 1);
-            int min = GsonHelper.getAsInt(object, "min", 0);
-            int max = GsonHelper.getAsInt(object, "max", 1);
-            return new EntityModifier(ailootcondition, item, weight, min, max);
-        }
-
-        @Override
-        public JsonObject write(EntityModifier instance) {
-            return makeConditions(instance.conditions);
-        }
+    @Override
+    public Codec<? extends IGlobalLootModifier> codec() {
+        return CODEC.get();
     }
 }
