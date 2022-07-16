@@ -15,14 +15,13 @@ public class EntitySpawn {
 
     @SubscribeEvent
     public void onEntitySpawn(LivingSpawnEvent.SpecialSpawn event) {
-        if (event.getEntityLiving() instanceof Mob mob) {
-            if (mob instanceof Pig) {
-                mob.goalSelector.addGoal(4, new TemptGoal((PathfinderMob) mob, 1.2D, Ingredient.of(Content.YAM, Content.SWEETPOTATO), false));
-            }
+        Mob mob = event.getEntity();
+        if (mob instanceof Pig) {
+            mob.goalSelector.addGoal(4, new TemptGoal((PathfinderMob) mob, 1.2D, Ingredient.of(Content.YAM, Content.SWEETPOTATO), false));
+        }
 
-            if (mob instanceof Cow) {
-                mob.goalSelector.addGoal(3, new TemptGoal((PathfinderMob) mob, 1.25D, Ingredient.of(Content.BARLEY, Content.CORN), false));
-            }
+        if (mob instanceof Cow) {
+            mob.goalSelector.addGoal(3, new TemptGoal((PathfinderMob) mob, 1.25D, Ingredient.of(Content.BARLEY, Content.CORN), false));
         }
     }
 }

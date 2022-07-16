@@ -23,18 +23,18 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (Config.canRightClickHarvest && !event.getPlayer().isSpectator()) {
-            if (!(event.getPlayer().getMainHandItem().getItem() instanceof BoneMealItem)) {
-                if (!event.getWorld().isClientSide) {
-                    Level world = event.getWorld();
+        if (Config.canRightClickHarvest && !event.getEntity().isSpectator()) {
+            if (!(event.getEntity().getMainHandItem().getItem() instanceof BoneMealItem)) {
+                if (!event.getLevel().isClientSide) {
+                    Level world = event.getLevel();
                     BlockPos pos = event.getPos();
-                    BlockState blockClicked = event.getWorld().getBlockState(pos);
+                    BlockState blockClicked = event.getLevel().getBlockState(pos);
                     if (blockClicked.getBlock() instanceof CropBlock) {
                         CropBlock block = (CropBlock) blockClicked.getBlock();
                         IntegerProperty property = block.getAgeProperty();
                         int age = blockClicked.getValue(block.getAgeProperty());
                         if (age == block.getMaxAge()) {
-                            HarvestEvent harvestedCropEvent = new HarvestEvent(event.getPlayer(), blockClicked, withAge(blockClicked, property, 0));
+                            HarvestEvent harvestedCropEvent = new HarvestEvent(event.getEntity(), blockClicked, withAge(blockClicked, property, 0));
                             MinecraftForge.EVENT_BUS.post(harvestedCropEvent);
                             world.setBlock(pos, harvestedCropEvent.getTurnedState(), 2);
                             if (blockClicked.getBlock() instanceof LeafCropBlock) {

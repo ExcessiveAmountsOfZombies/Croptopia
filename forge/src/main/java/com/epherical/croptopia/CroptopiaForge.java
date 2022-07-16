@@ -38,11 +38,12 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.world.WorldEvent;
+import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -79,7 +80,7 @@ public class CroptopiaForge {
             DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
     public static final DeferredRegister<BiomeModifier> BIOME_MODIFIER =
             DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIERS, MiscNames.MOD_ID);
-    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> GLM = DeferredRegister.create(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
+    public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> GLM = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
 
     public static Config config;
 
@@ -107,7 +108,7 @@ public class CroptopiaForge {
         // todo: forge bug >>> will probably need to change this back later
         GLM.register("spawn_loot", SpawnChestModifier.CODEC);
         GLM.register("entity_modifier", EntityModifier.CODEC);
-        GLM.register("fish_table_modifier", AdditionalTableModifier.CODEC);
+        GLM.register("table_adder", AdditionalTableModifier.CODEC);
 
         bus.addListener(data::getData);
 
@@ -238,7 +239,7 @@ public class CroptopiaForge {
 
     private static boolean hasRun;
 
-    public static void onWorldLoad(WorldEvent.Load event) {
+    public static void onWorldLoad(LevelEvent.Load event) {
         if (!hasRun) {
             modifyVillagerFoodItems();
             modifyVillagerGatherables();
