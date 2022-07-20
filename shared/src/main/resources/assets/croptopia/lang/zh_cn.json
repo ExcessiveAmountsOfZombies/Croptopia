@@ -139,8 +139,6 @@
   "item.croptopia.ginger": "姜",
   "item.croptopia.basil": "罗勒",
   "item.croptopia.chile_pepper": "辣椒",
-
-
   "item.croptopia.apple_sapling": "苹果树苗",
   "item.croptopia.banana_sapling": "香蕉树苗",
   "item.croptopia.orange_sapling": "橙子树苗",
@@ -167,7 +165,6 @@
   "item.croptopia.cashew_sapling": "腰果树苗",
   "item.croptopia.pecan_sapling": "碧根果树苗",
   "item.croptopia.walnut_sapling": "核桃树苗",
-
   "item.croptopia.olive_oil": "橄榄油",
   "item.croptopia.cheese": "芝士",
   "item.croptopia.flour": "面粉",
@@ -288,7 +285,6 @@
   "item.croptopia.raisin_oatmeal_cookie": "葡萄干燕麦曲奇饼干",
   "item.croptopia.roasted_nuts": "烤坚果",
   "item.croptopia.trail_mix": "什锦果仁",
-
   "item.croptopia.burrito": "墨西哥卷饼",
   "item.croptopia.tostada": "托斯它达玉米饼",
   "item.croptopia.horchata": "奥查塔",
@@ -304,18 +300,15 @@
   "item.croptopia.refried_beans": "炸豆泥",
   "item.croptopia.chimichanga": "墨西哥油煎面卷饼",
   "item.croptopia.quesadilla": "墨西哥起司薄饼",
-
   "item.croptopia.cinnamon": "桂皮",
   "item.croptopia.corn_husk": "玉米皮",
   "item.croptopia.whipping_cream": "打发的奶油",
   "item.croptopia.vanilla_seeds": "香草籽",
-
   "item.croptopia.cinnamon_sapling": "桂皮树苗",
   "item.croptopia.cinnamon_log": "桂皮原木",
   "item.croptopia.stripped_cinnamon_log": "去皮桂皮原木",
   "item.croptopia.cinnamon_wood": "桂皮木",
   "item.croptopia.stripped_cinnamon_wood": "去皮桂皮木",
-
   "item.croptopia.shepherds_pie": "牧羊人派",
   "item.croptopia.beef_wellington": "惠灵顿牛排",
   "item.croptopia.fish_and_chips": "炸鱼薯条",
@@ -331,7 +324,6 @@
   "item.croptopia.milk_bottle": "牛奶瓶",
   "item.croptopia.tea_leaves": "茶叶",
   "item.croptopia.tea_seed": "茶种子",
-
   "item.croptopia.ajvar": "辣椒酱",
   "item.croptopia.ajvar_toast": "辣椒酱吐司",
   "item.croptopia.avocado_toast": "鳄梨酱吐司",
@@ -355,7 +347,8 @@
   "item.croptopia.potato_soup": "土豆汤",
   "item.croptopia.ratatouille": "蔬菜杂烩",
   "item.croptopia.bacon": "培根",
-  "item.croptopia.rhubarb_crisp": "Rhubarb Crisp",
+  "item.croptopia.rhubarb_crisp": "大黄酥",
+  "item.croptopia.rhubarb_pie": "大黄派",
   "item.croptopia.roasted_asparagus": "烤芦笋",
   "item.croptopia.roasted_radishes": "烤小萝卜",
   "item.croptopia.roasted_squash": "烤倭瓜",
@@ -365,15 +358,46 @@
   "item.croptopia.stir_fry": "干煸蔬菜",
   "item.croptopia.stuffed_artichoke": "填洋蓟",
   "item.croptopia.toast_sandwich": "吐司三明治",
-
+  "item.croptopia.roasted_pumpkin_seeds": "烤南瓜种子",
+  "item.croptopia.roasted_sunflower_seeds": "烤葵花种子",
+  "item.croptopia.pumpkin_bars": "南瓜小蛋糕",
+  "item.croptopia.corn_bread": "玉米面包",
+  "item.croptopia.pumpkin_soup": "南瓜汤",
+  "item.croptopia.meringue": "蛋白酥皮",
+  "item.croptopia.cabbage_roll": "包菜卷",
+  "item.croptopia.borscht": "罗宋汤",
+  "item.croptopia.goulash": "菜炖牛肉",
+  "item.croptopia.beetroot_salad": "甜菜根沙拉",
+  "item.croptopia.candied_kumquats": "金桔膏",
+  "item.croptopia.shrimp": "虾",
+  "item.croptopia.tuna": "金枪鱼",
+  "item.croptopia.calamari": "鱿鱼肉",
+  "item.croptopia.crab": "螃蟹",
+  "item.croptopia.roe": "鱼子",
+  "item.croptopia.clam": "蛤蜊",
+  "item.croptopia.oyster": "牡蛎",
+  "item.croptopia.cooked_shrimp": "熟虾",
+  "item.croptopia.cooked_tuna": "熟金枪鱼",
+  "item.croptopia.cooked_calamari": "熟鱿鱼肉",
+  "item.croptopia.steamed_crab": "蒸蟹",
+  "item.croptopia.glowing_calamari": "发光鱿鱼肉",
+  "item.croptopia.sea_lettuce": "海白菜",
+  "item.croptopia.deep_fried_shrimp": "酥炸虾",
+  "item.croptopia.tuna_roll": "金枪鱼卷",
+  "item.croptopia.fried_calamari": "炸鱿鱼",
+  "item.croptopia.crab_legs": "螃蟹腿",
+  "item.croptopia.steamed_clams": "蒸蛤蜊",
+  "item.croptopia.grilled_oysters": "烤牡蛎",
+  "item.croptopia.anchovy": "鳀鱼",
+  "item.croptopia.cooked_anchovy": "熟鳀鱼",
+  "item.croptopia.anchovy_pizza": "鳀鱼比萨",
+  "item.croptopia.mashed_potatoes": "土豆泥",
   "item.croptopia.food_press": "多功能食品压榨机",
   "item.croptopia.frying_pan": "平底锅",
   "item.croptopia.cooking_pot": "烹饪锅",
   "item.croptopia.mortar_and_pestle": "研钵",
   "item.croptopia.guide": "Croptopia",
-
   "item.croptopia.salt_ore": "盐矿石",
-
   "block.croptopia.salt_ore": "盐矿石",
   "block.croptopia.apple_crop": "苹果作物",
   "block.croptopia.banana_crop": "香蕉作物",
@@ -486,12 +510,10 @@
   "block.croptopia.pecan_sapling": "碧根果树苗",
   "block.croptopia.walnut_sapling": "核桃树苗",
   "block.croptopia.cinnamon_sapling": "桂皮树苗",
-
   "block.croptopia.cinnamon_log": "桂皮原木",
   "block.croptopia.stripped_cinnamon_log": "去皮桂皮原木",
   "block.croptopia.cinnamon_wood": "桂皮木",
   "block.croptopia.stripped_cinnamon_wood": "去皮桂皮木",
-
   "advancements.croptopia.root.description": " '不开始锄地你啥都别想吃' ",
   "advancements.croptopia.getseed.description": "破坏一个野生植物来获得种子！",
   "advancements.croptopia.getseed.title": "额外的种子",
@@ -551,8 +573,5 @@
 
   "itemGroup.croptopia.croptopia": "Croptopia",
   "itemGroup.croptopia": "Croptopia",
-
   "info.croptopia.seed": "这个种子将会在以下类别的群系中掉落:"
-
 }
-
