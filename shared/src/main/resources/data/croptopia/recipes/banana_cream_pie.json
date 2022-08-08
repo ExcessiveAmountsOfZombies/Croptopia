@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:blasting",
   "ingredients": [
     {
       "tag": "${dependent}:bananas"
