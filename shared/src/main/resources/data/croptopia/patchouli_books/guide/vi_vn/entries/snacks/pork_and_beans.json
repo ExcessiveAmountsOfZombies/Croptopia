@@ -1,0 +1,12 @@
+{
+  "name": "Đậu nấu thịt",
+  "icon": "croptopia:pork_and_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pork_and_beans",
+      "text": "Công thức làm đậu nấu thịt."
+    }
+  ]
+}

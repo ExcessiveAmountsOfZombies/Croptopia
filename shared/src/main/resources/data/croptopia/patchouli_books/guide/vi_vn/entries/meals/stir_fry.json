@@ -1,0 +1,12 @@
+{
+  "name": "Món xào",
+  "icon": "croptopia:stir_fry",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_stir_fry",
+      "text": "Công thức"
+    }
+  ]
+}

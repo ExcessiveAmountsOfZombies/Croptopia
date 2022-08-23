@@ -1,0 +1,12 @@
+{
+  "name": "Cục bột",
+  "icon": "croptopia:dough",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:dough",
+      "text": "Công thức làm cục bột."
+    }
+  ]
+}

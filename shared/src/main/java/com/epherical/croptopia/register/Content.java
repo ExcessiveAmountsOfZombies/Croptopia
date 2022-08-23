@@ -4,6 +4,7 @@ import com.epherical.croptopia.common.BlockNames;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.Tags;
 import com.epherical.croptopia.items.Drink;
+import com.epherical.croptopia.items.ReferenceItem;
 import com.epherical.croptopia.items.Soup;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.Furnace;
@@ -19,11 +20,13 @@ import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.register.helpers.VanillaCrops;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.RegisterFunction;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
@@ -147,8 +150,8 @@ public class Content {
     public static final Seafood TUNA = new Seafood(ItemNamesV2.TUNA, false, REG_3);
 
     public static final Furnace BAKED_BEANS = new Furnace(ItemNamesV2.BAKED_BEANS, false, REG_5);
-    public static final Furnace BAKED_SWEET_POTATO = new Furnace(ItemNamesV2.BAKED_SWEET_POTATO, true, REG_7);
-    public static final Furnace BAKED_YAM = new Furnace(ItemNamesV2.BAKED_YAM, true, REG_7);
+    public static final Furnace BAKED_SWEET_POTATO = new Furnace(ItemNamesV2.BAKED_SWEET_POTATO, true, REG_5);
+    public static final Furnace BAKED_YAM = new Furnace(ItemNamesV2.BAKED_YAM, true, REG_5);
     public static final Furnace CARAMEL = new Furnace(ItemNamesV2.CARAMEL, false, null);
     public static final Furnace COOKED_ANCHOVY = new Furnace(ItemNamesV2.COOKED_ANCHOVY, true, REG_4);
     public static final Furnace COOKED_BACON = new Furnace(ItemNamesV2.COOKED_BACON, false, REG_7);
@@ -374,7 +377,7 @@ public class Content {
     public static final Item ROASTED_TURNIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item STEAMED_BROCCOLI = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item STEAMED_GREEN_BEANS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
-    public static final Item STIR_FRY = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
+    public static final Item STIR_FRY = new Item(createGroup().food(FoodConstructor.createFood(REG_12)));
     public static final Item STUFFED_ARTICHOKE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
     public static final Item TOAST_SANDWICH = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
 
@@ -400,6 +403,23 @@ public class Content {
     public static final Item GRILLED_OYSTERS = new Item(createGroup().food(FoodConstructor.createFood(REG_11)));
     public static final Item ANCHOVY_PIZZA = new Item(createGroup().food(FoodConstructor.createFood(REG_15)));
     public static final Item MASHED_POTATOES = new Item(createGroup().food(FoodConstructor.createFood(REG_9)));
+
+    // 2.1.0
+    public static final Item BAKED_CREPES = new Item(createGroup().food(FoodConstructor.createFood(REG_12)));
+    public static final Item CINNAMON_ROLL = new Item(createGroup().food(FoodConstructor.createFood(REG_8))); // 3
+    public static final Item CROQUE_MADAME = new Item(createGroup().food(FoodConstructor.createFood(REG_14)));
+    public static final Item CROQUE_MONSIEUR = new Item(createGroup().food(FoodConstructor.createFood(REG_13)));
+    public static final Item DAUPHINE_POTATOES = new Item(createGroup().food(FoodConstructor.createFood(REG_12)));
+    public static final Item FRIED_FROG_LEGS = new Item(createGroup().food(FoodConstructor.createFood(REG_6)));
+    public static final Item FROG_LEGS = new Item(createGroup().food(FoodConstructor.createFood(REG_3)));
+    public static final Item GROUND_PORK = new Item(createGroup().food(FoodConstructor.createFood(REG_1)));
+    public static final Item HASHED_BROWN = new Item(createGroup().food(FoodConstructor.createFood(REG_2)));
+    public static final Item MACARON = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item QUICHE = new Item(createGroup().food(FoodConstructor.createFood(REG_12)));
+    public static final Item SAUSAGE = new Item(createGroup().food(FoodConstructor.createFood(REG_3)));
+    public static final Item SUNNY_SIDE_EGGS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item SWEET_CREPES = new Item(createGroup().food(FoodConstructor.createFood(REG_8)));
+    public static final Item THE_BIG_BREAKFAST = new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_20)), new TextComponent("Patricia! Daddy want the Big Breakfast").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));
 
     public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
     public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
@@ -595,6 +615,23 @@ public class Content {
         register.register(createIdentifier(ItemNamesV2.GRILLED_OYSTERS), GRILLED_OYSTERS);
         register.register(createIdentifier(ItemNamesV2.ANCHOVY_PIZZA), ANCHOVY_PIZZA);
         register.register(createIdentifier(ItemNamesV2.MASHED_POTATOES), MASHED_POTATOES);
+
+        register.register(createIdentifier(ItemNamesV2.BAKED_CREPES), BAKED_CREPES);
+        register.register(createIdentifier(ItemNamesV2.CINNAMON_ROLL), CINNAMON_ROLL);
+        register.register(createIdentifier(ItemNamesV2.CROQUE_MADAME), CROQUE_MADAME);
+        register.register(createIdentifier(ItemNamesV2.CROQUE_MONSIEUR), CROQUE_MONSIEUR);
+        register.register(createIdentifier(ItemNamesV2.DAUPHINE_POTATOES), DAUPHINE_POTATOES);
+        register.register(createIdentifier(ItemNamesV2.FRIED_FROG_LEGS), FRIED_FROG_LEGS);
+        register.register(createIdentifier(ItemNamesV2.FROG_LEGS), FROG_LEGS);
+        register.register(createIdentifier(ItemNamesV2.GROUND_PORK), GROUND_PORK);
+        register.register(createIdentifier(ItemNamesV2.HASHED_BROWN), HASHED_BROWN);
+        register.register(createIdentifier(ItemNamesV2.MACARON), MACARON);
+        register.register(createIdentifier(ItemNamesV2.QUICHE), QUICHE);
+        register.register(createIdentifier(ItemNamesV2.SAUSAGE), SAUSAGE);
+        register.register(createIdentifier(ItemNamesV2.SUNNY_SIDE_EGGS), SUNNY_SIDE_EGGS);
+        register.register(createIdentifier(ItemNamesV2.SWEET_CREPES), SWEET_CREPES);
+        register.register(createIdentifier(ItemNamesV2.THE_BIG_BREAKFAST), THE_BIG_BREAKFAST);
+
         register.register(createIdentifier(ItemNamesV2.SALT_ORE), SALT_ORE);
     }
 

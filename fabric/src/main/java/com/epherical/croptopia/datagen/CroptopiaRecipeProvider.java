@@ -29,6 +29,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Consumer;
@@ -235,6 +236,16 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .requires(independentTag("vanilla"))
                 .requires(Items.HONEY_BOTTLE)
                 .unlockedBy("has_kumquat", RecipeProvider.has(Content.KUMQUAT))
+                .save(exporter);
+        TagKey<Item> turmericTag = independentTag(Content.TURMERIC.getPlural());
+        ShapelessRecipeBuilder.shapeless(Items.ORANGE_DYE, 1)
+                .requires(turmericTag)
+                .unlockedBy("has_turmeric", RecipeProvider.has(Content.TURMERIC))
+                .save(exporter);
+        TagKey<Item> grapeTag = independentTag(Content.GRAPE.getPlural());
+        ShapelessRecipeBuilder.shapeless(Items.PURPLE_DYE, 1)
+                .requires(grapeTag)
+                .unlockedBy("has_grape", RecipeProvider.has(Content.GRAPE))
                 .save(exporter);
     }
 
@@ -450,13 +461,156 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy("took_flour", RecipeProvider.has(independentTag("flour")))
                 .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
                 .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.SWEET_CREPES, 1)
+                .pattern("123")
+                .pattern("4 5")
+                .pattern(" 6 ")
+                .define('1', independentTag("flour"))
+                .define('2', Items.EGG)
+                .define('3', independentTag("milks"))
+                .define('4', independentTag("jams"))
+                .define('5', Items.SUGAR)
+                .define('6', Content.FRYING_PAN)
+                .unlockedBy("took_flour", RecipeProvider.has(independentTag("flour")))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.BAKED_CREPES, 1)
+                .pattern("121")
+                .pattern("356")
+                .pattern(" 7 ")
+                .define('1', Items.EGG)
+                .define('2', independentTag("flour"))
+                .define('3', independentTag("milks"))
+                .define('7', Content.FRYING_PAN)
+                .define('6', independentTag("cheeses"))
+                .define('5', independentTag("spinach"))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.QUICHE, 1)
+                .pattern(" 1 ")
+                .pattern("234")
+                .pattern("5 6")
+                .define('1', Content.FRYING_PAN)
+                .define('5', independentTag("flour"))
+                .define('6', independentTag("onions"))
+                .define('2', independentTag("milks"))
+                .define('3', Items.EGG)
+                .define('4', independentTag("spinach"))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.DAUPHINE_POTATOES, 1)
+                .pattern("213")
+                .pattern("456")
+                .define('1', Content.FRYING_PAN)
+                .define('2', independentTag("water_bottles"))
+                .define('3', independentTag("milks"))
+                .define('4', independentTag("butters"))
+                .define('5', independentTag("flour"))
+                .define('6', independentTag("olive_oils"))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.CROQUE_MONSIEUR, 1)
+                .pattern(" 1 ")
+                .pattern(" 26")
+                .pattern("435")
+                .define('1', Content.FRYING_PAN)
+                .define('2', Items.BREAD)
+                .define('3', independentTag("cheese"))
+                .define('4', croptopia("pork_replacements"))
+                .define('5', independentTag("butters"))
+                .define('6', independentTag("flour"))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.CROQUE_MADAME, 1)
+                .pattern(" 1 ")
+                .pattern("726")
+                .pattern("435")
+                .define('1', Content.FRYING_PAN)
+                .define('2', Items.BREAD)
+                .define('3', independentTag("cheese"))
+                .define('4', croptopia("pork_replacements"))
+                .define('5', independentTag("butters"))
+                .define('6', independentTag("flour"))
+                .define('7', Items.EGG)
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.SUNNY_SIDE_EGGS, 2)
+                .pattern("121")
+                .define('2', Content.FRYING_PAN)
+                .define('1', Items.EGG)
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.MACARON, 2)
+                .pattern("122")
+                .pattern("565")
+                .define('1', Items.EGG)
+                .define('2', Items.SUGAR)
+                .define('5', independentTag("almonds"))
+                .define('6', Content.FOOD_PRESS)
+                .unlockedBy("has_food_press", RecipeProvider.has(Content.FOOD_PRESS))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.THE_BIG_BREAKFAST, 1)
+                .pattern("123")
+                .pattern("736")
+                .pattern(" 45")
+                .define('7', Content.FRYING_PAN)
+                .define('1', Items.EGG)
+                .define('2', Content.RAW_BACON)
+                .define('3', Content.HASHED_BROWN)
+                .define('4', Content.BAKED_BEANS)
+                .define('5', independentTag("sausages"))
+                .define('6', Content.TOAST)
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.GROUND_PORK, 2)
+                .pattern("1")
+                .pattern("2")
+                .define('1', croptopia("pork_replacements"))
+                .define('2', Content.FOOD_PRESS)
+                .unlockedBy("has_food_press", RecipeProvider.has(Content.FOOD_PRESS))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.SAUSAGE, 1)
+                .pattern("1")
+                .pattern("2")
+                .pattern("3")
+                .define('1', independentTag("ground_pork"))
+                .define('2', independentTag("salts"))
+                .define('3', independentTag("paprika"))
+                .unlockedBy("has_ground_pork", RecipeProvider.has(Content.GROUND_PORK))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.CINNAMON_ROLL, 3)
+                .pattern("123")
+                .pattern("456")
+                .pattern("798")
+                .define('1', independentTag("milks"))
+                .define('2', independentTag("doughs"))
+                .define('3', Items.EGG)
+                .define('4', independentTag("butters"))
+                .define('5', independentTag("salts"))
+                .define('6', Items.SUGAR)
+                .define('7', independentTag("cinnamon"))
+                .define('8', Content.WHIPPING_CREAM)
+                .define('9', Content.FRYING_PAN)
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(Content.HASHED_BROWN, 4)
+                .pattern("123")
+                .pattern(" 4 ")
+                .define('4', Content.KNIFE)
+                .define('1', independentTag("potatoes"))
+                .define('2', Content.FRYING_PAN)
+                .define('3', independentTag("olive_oils"))
+                .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        //cooked frog leg	furnace
+
     }
 
     private TagKey<Item> croptopia(String name) {
         return TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MiscNames.MOD_ID, name));
     }
 
-    private TagKey<Item> independentTag(String name) {
+    public static TagKey<Item> independentTag(String name) {
         IdentifierAccessor accessor = (IdentifierAccessor) Croptopia.createIdentifier(name);
         accessor.setNamespace("${dependent}"); // lmao
         return TagKey.create(Registry.ITEM_REGISTRY, (ResourceLocation) accessor);

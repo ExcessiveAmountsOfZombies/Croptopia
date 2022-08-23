@@ -1,0 +1,12 @@
+{
+  "name": "Bánh gato kem sữa",
+  "icon": "croptopia:tres_leche_cake",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tres_leche_cake",
+      "text": "Công thức làm Bánh gato kem sữa."
+    }
+  ]
+}

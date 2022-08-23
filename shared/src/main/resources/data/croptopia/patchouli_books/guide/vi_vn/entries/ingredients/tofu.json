@@ -1,0 +1,12 @@
+{
+  "name": "Đậu phụ",
+  "icon": "croptopia:tofu",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu",
+      "text": "Công thức làm đậu phụ."
+    }
+  ]
+}

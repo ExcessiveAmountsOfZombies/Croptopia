@@ -1,0 +1,12 @@
+{
+  "name": "Bánh pudding kẹo bơ cứng",
+  "icon": "croptopia:sticky_toffee_pudding",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_sticky_toffee_pudding",
+      "text": "Công thức làm bánh pudding kẹo bơ cứng."
+    }
+  ]
+}

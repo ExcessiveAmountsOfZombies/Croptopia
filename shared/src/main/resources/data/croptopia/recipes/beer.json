@@ -8,6 +8,9 @@
       "tag": "${dependent}:hops"
     },
     {
+      "tag": "${dependent}:barley"
+    },
+    {
       "item": "croptopia:food_press"
     }
   ],

@@ -1,0 +1,12 @@
+{
+  "name": "Ớt xanh nhồi thịt băm phủ trứng",
+  "icon": "croptopia:chili_relleno",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chili_relleno",
+      "text": "Công thức."
+    }
+  ]
+}

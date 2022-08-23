@@ -1,0 +1,12 @@
+{
+  "name": "Bánh brownie sô cô la",
+  "icon": "croptopia:brownies",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:brownies",
+      "text": "Công thức làm bánh brownie sô cô la."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Kẹo bơ hạnh nhân",
+  "icon": "croptopia:almond_brittle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:almond_brittle",
+      "text": "Công thức kẹo bơ hạnh nhân."
+    }
+  ]
+}

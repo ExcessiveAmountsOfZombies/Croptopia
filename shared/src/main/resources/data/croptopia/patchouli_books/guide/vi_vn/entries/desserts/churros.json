@@ -1,0 +1,12 @@
+{
+  "name": "Bánh rán Tây Ban Nha",
+  "icon": "croptopia:churros",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:churros",
+      "text": "Công thức làm bánh rán Tây Ban Nha."
+    }
+  ]
+}
