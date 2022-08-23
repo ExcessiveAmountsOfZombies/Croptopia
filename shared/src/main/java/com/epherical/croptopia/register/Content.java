@@ -24,8 +24,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -419,7 +419,7 @@ public class Content {
     public static final Item SAUSAGE = new Item(createGroup().food(FoodConstructor.createFood(REG_3)));
     public static final Item SUNNY_SIDE_EGGS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item SWEET_CREPES = new Item(createGroup().food(FoodConstructor.createFood(REG_8)));
-    public static final Item THE_BIG_BREAKFAST = new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_20)), new TextComponent("Patricia! Daddy want the Big Breakfast").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));
+    public static final Item THE_BIG_BREAKFAST = new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_20)), Component.literal("Patricia! Daddy want the Big Breakfast").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));
 
     public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
     public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
