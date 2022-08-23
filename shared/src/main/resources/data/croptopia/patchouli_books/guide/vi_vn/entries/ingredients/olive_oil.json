@@ -1,0 +1,12 @@
+{
+  "name": "Dầu ô liu",
+  "icon": "croptopia:olive_oil",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:olive_oil",
+      "text": "Công thức làm dầu ô liu."
+    }
+  ]
+}

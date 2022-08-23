@@ -1,0 +1,12 @@
+{
+  "name": "Nồi nấu ăn",
+  "icon": "croptopia:cooking_pot",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cooking_pot",
+      "text": "Công thức chế nồi nấu ăn."
+    }
+  ]
+}

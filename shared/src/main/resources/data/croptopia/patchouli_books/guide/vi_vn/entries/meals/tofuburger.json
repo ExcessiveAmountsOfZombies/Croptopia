@@ -1,0 +1,12 @@
+{
+  "name": "Bánh burger chay",
+  "icon": "croptopia:tofuburger",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofuburger",
+      "text": "Công thức làm bánh burger chay."
+    }
+  ]
+}

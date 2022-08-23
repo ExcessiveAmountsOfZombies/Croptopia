@@ -1,0 +1,12 @@
+{
+  "name": "Pizza phô mai",
+  "icon": "croptopia:cheese_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheese_pizza",
+      "text": "Công thức làm pizza phô mai."
+    }
+  ]
+}

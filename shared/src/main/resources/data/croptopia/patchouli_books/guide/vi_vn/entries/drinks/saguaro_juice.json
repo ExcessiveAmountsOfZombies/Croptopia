@@ -1,0 +1,12 @@
+{
+  "name": "Nước ép Saguaro",
+  "icon": "croptopia:saguaro_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saguaro_juice",
+      "text": "Công thức pha nước ép Saguaro."
+    }
+  ]
+}

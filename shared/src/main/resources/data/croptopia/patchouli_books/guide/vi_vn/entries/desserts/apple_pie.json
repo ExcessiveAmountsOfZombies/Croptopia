@@ -1,0 +1,12 @@
+{
+  "name": "Bánh táo",
+  "icon": "croptopia:apple_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:apple_pie",
+      "text": "Công thức làm bánh táo."
+    }
+  ]
+}

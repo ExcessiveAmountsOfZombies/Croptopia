@@ -1,0 +1,12 @@
+{
+  "name": "Nước ép táo",
+  "icon": "croptopia:apple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:apple_juice",
+      "text": "Công thức pha nước ép táo."
+    }
+  ]
+}

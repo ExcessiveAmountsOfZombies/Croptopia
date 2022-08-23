@@ -1,0 +1,12 @@
+{
+  "name": "Súp tỏi tây",
+  "icon": "croptopia:leek_soup",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:leek_soup",
+      "text": "Công thức làm súp tỏi tây."
+    }
+  ]
+}

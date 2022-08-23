@@ -1,0 +1,12 @@
+{
+  "name": "Kẹo hạnh phúc",
+  "icon": "croptopia:nougat",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:nougat",
+      "text": "Công thức làm kẹo hạnh phúc."
+    }
+  ]
+}

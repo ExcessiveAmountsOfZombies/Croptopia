@@ -1,0 +1,12 @@
+{
+  "name": "Bánh mì chuối hạt óc chó",
+  "icon": "croptopia:banana_nut_bread",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_nut_bread",
+      "text": "Công thức làm bánh mì chuối hạt óc chó."
+    }
+  ]
+}

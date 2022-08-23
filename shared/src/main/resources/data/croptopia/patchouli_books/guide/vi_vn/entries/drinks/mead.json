@@ -1,0 +1,12 @@
+{
+  "name": "Rượu mật ong",
+  "icon": "croptopia:mead",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mead",
+      "text": "Công thức pha rượu mật ong."
+    }
+  ]
+}

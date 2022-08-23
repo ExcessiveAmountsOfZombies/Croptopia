@@ -1,0 +1,12 @@
+{
+  "name": "Trứng cuộn",
+  "icon": "croptopia:egg_roll",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:egg_roll",
+      "text": "Công thức làm trứng cuộn."
+    }
+  ]
+}
