@@ -55,5 +55,21 @@ public class CroptopiaModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(Content.COOKED_ANCHOVY.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.ANCHOVY_PIZZA, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.MASHED_POTATOES, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerator.generateFlatItem(Content.BAKED_CREPES, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CINNAMON_ROLL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CROQUE_MADAME, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.CROQUE_MONSIEUR, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.DAUPHINE_POTATOES, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.FRIED_FROG_LEGS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.FROG_LEGS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.GROUND_PORK, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.HASHED_BROWN, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.MACARON, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.QUICHE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.SAUSAGE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.SUNNY_SIDE_EGGS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.SWEET_CREPES, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.THE_BIG_BREAKFAST, ModelTemplates.FLAT_ITEM);
     }
 }

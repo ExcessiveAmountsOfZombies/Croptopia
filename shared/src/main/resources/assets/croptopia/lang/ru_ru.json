@@ -572,5 +572,21 @@
 
   "itemGroup.croptopia.croptopia": "Croptopia",
   "itemGroup.croptopia": "Croptopia",
-  "info.croptopia.seed": "Это семечко выпадает в биомах, учитываемые в категории:"
+  "info.croptopia.seed": "Это семечко выпадает в биомах, учитываемые в категории:",
+
+  "item.croptopia.baked_crepes": "Baked Crêpes",
+  "item.croptopia.cinnamon_roll": "Cinnamon Roll",
+  "item.croptopia.croque_madame": "Croque Madame",
+  "item.croptopia.croque_monsieur": "Croque Monsieur",
+  "item.croptopia.dauphine_potatoes": "Dauphine Potatoes",
+  "item.croptopia.fried_frog_legs": "Fried Frog Legs",
+  "item.croptopia.frog_legs": "Frog Legs",
+  "item.croptopia.ground_pork": "Ground Pork",
+  "item.croptopia.hashed_brown": "Hashed Browns",
+  "item.croptopia.macaron": "Macaron",
+  "item.croptopia.quiche": "Quiche",
+  "item.croptopia.sausage": "Sausage",
+  "item.croptopia.sunny_side_eggs": "Sunny Side Up Eggs",
+  "item.croptopia.sweet_crepes": "Sweet Crêpes",
+  "item.croptopia.the_big_breakfast": "The Big Breakfast"
 }
