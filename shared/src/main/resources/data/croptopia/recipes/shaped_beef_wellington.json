@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 4 ",
+    "94 ",
     "2F3",
     "516"
   ],
@@ -26,6 +26,9 @@
     },
     "6": {
       "item": "minecraft:brown_mushroom"
+    },
+    "9": {
+      "tag": "${dependent}:flour"
     }
   },
   "result": {
