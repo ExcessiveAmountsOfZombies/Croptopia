@@ -1,0 +1,11 @@
+{
+  "name": "Thực vật",
+  "icon": "croptopia:eggplant_seed",
+  "category": "croptopia:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cây trồng có thể được tìm thấy trên khắp thế giới. Chúng sẽ mọc ở các quần xã sinh vật cụ thể. Ở phiên bản 2.0.0 sự sinh sản của cây trồng hiện được xác định bằng các gói dữ liệu chứ không phải là 'danh mục' của quần xã sinh vật, nó hiện được xác định bằng tên quần xã sinh vật. Nếu bạn muốn một số loại cây trồng nhất định được thêm vào quần xã sinh vật đã sửa đổi, hãy đặt vấn đề trên trang github của tôi."
+    }
+  ]
+}

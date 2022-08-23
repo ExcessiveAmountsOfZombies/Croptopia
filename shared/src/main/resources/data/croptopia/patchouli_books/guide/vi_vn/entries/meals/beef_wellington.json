@@ -1,0 +1,12 @@
+{
+  "name": "Bánh bít tết phi lê phủ patê nướng",
+  "icon": "croptopia:beef_wellington",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_wellington",
+      "text": "Công thức làm bánh bít tết phi lê phủ patê nướng."
+    }
+  ]
+}

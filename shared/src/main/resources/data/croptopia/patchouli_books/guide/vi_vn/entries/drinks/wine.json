@@ -1,0 +1,12 @@
+{
+  "name": "Rượu vang",
+  "icon": "croptopia:wine",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:wine",
+      "text": "Công thức pha rượu vang."
+    }
+  ]
+}

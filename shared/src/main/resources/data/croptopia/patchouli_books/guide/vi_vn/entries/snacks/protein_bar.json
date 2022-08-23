@@ -1,0 +1,12 @@
+{
+  "name": "Thanh protein",
+  "icon": "croptopia:protein_bar",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:protein_bar",
+      "text": "Công thức làm thanh protein."
+    }
+  ]
+}

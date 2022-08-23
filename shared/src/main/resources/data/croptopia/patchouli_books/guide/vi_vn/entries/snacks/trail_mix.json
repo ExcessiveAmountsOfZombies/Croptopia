@@ -1,0 +1,12 @@
+{
+  "name": "Hỗn hợp hạt và trái cây khô",
+  "icon": "croptopia:trail_mix",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:trail_mix",
+      "text": "Công thức làm hỗn hợp hạt và trái cây khô."
+    }
+  ]
+}

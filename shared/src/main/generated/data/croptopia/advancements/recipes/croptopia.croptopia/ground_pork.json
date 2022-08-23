@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:ground_pork"
+    ]
+  },
+  "criteria": {
+    "has_food_press": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:food_press"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:ground_pork"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_food_press",
+      "has_the_recipe"
+    ]
+  ]
+}

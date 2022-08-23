@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#${dependent}:salt",
+    "croptopia:salt"
+  ]
+}

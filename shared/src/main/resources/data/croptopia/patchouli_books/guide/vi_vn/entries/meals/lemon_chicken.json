@@ -1,0 +1,12 @@
+{
+  "name": "Gà sốt chanh",
+  "icon": "croptopia:lemon_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:lemon_chicken",
+      "text": "Công thức làm gà sốt chanh."
+    }
+  ]
+}

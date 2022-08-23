@@ -1,0 +1,12 @@
+{
+  "name": "Bánh mì nướng phủ sốt rau quả",
+  "icon": "croptopia:ajvar_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ajvar_toast",
+      "text": "Công thức làm bánh mì nướng phủ sốt rau quả."
+    }
+  ]
+}

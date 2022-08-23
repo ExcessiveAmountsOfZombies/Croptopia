@@ -31,7 +31,7 @@ public class CropLootTableModifier {
                         builder.add(LootItem.lootTableItem(Content.ROE));
                         tableBuilder.withPool(builder);
                     }
-                    case "gameplay/fishing/fish" -> {
+                    case "gameplay/fishing" -> {
                         List<LootPool> pools = ((LootTableBuilderAccessor) tableBuilder).getPools();
                         if (pools.isEmpty()) {
                             LOGGER.warn("Can not inject into gameplay/fishing/fish as it is empty");

@@ -1,0 +1,12 @@
+{
+  "name": "Bỏng ngô",
+  "icon": "croptopia:popcorn",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:popcorn_from_corn",
+      "text": "Công thức làm bỏng ngô."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Bánh mì nướng",
+  "icon": "croptopia:toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:toast_from_bread",
+      "text": "Công thức làm bánh mì nướng."
+    }
+  ]
+}

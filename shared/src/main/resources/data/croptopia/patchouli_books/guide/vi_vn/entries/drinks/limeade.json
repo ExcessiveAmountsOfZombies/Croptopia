@@ -1,0 +1,12 @@
+{
+  "name": "Nước chanh",
+  "icon": "croptopia:limeade",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:limeade",
+      "text": "Công thức pha nước chanh."
+    }
+  ]
+}

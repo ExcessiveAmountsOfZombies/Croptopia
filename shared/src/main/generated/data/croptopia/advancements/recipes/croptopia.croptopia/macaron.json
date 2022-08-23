@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:macaron"
+    ]
+  },
+  "criteria": {
+    "has_food_press": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:food_press"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:macaron"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_food_press",
+      "has_the_recipe"
+    ]
+  ]
+}

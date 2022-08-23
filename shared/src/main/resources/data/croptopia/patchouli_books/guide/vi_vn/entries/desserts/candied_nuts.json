@@ -1,0 +1,12 @@
+{
+  "name": "Kẹo hạt",
+  "icon": "croptopia:candied_nuts",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:candied_nuts",
+      "text": "Công thức làm kẹo hạt."
+    }
+  ]
+}

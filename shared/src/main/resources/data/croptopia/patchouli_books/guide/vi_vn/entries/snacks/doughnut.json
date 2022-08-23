@@ -1,0 +1,12 @@
+{
+  "name": "Bánh vòng",
+  "icon": "croptopia:doughnut",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:doughnut",
+      "text": "Vật đầu tiên bạn sẽ làm khi học Blender. (Này ai học blender trên youtube rồi sẽ hiểu)"
+    }
+  ]
+}

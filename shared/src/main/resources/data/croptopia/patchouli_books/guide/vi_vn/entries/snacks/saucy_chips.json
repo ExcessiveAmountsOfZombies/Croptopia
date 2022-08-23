@@ -1,0 +1,12 @@
+{
+  "name": "Sốt khoai tây",
+  "icon": "croptopia:saucy_chips",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saucy_chips",
+      "text": "Công thức làm khoai tây nhúng sốt."
+    }
+  ]
+}

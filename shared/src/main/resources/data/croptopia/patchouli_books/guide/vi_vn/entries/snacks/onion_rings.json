@@ -1,0 +1,12 @@
+{
+  "name": "Hành tây chiên giòn",
+  "icon": "croptopia:onion_rings",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:onion_rings",
+      "text": "Công thức làm hành tây chiên giòn."
+    }
+  ]
+}

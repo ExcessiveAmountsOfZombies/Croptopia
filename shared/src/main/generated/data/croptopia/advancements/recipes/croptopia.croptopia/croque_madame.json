@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:croque_madame"
+    ]
+  },
+  "criteria": {
+    "has_frying_pan": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:frying_pan"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:croque_madame"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_frying_pan",
+      "has_the_recipe"
+    ]
+  ]
+}

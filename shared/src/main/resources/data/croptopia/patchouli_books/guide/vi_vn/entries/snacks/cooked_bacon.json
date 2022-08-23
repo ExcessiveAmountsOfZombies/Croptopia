@@ -1,0 +1,12 @@
+{
+  "name": "Thịt xông khói chín",
+  "icon": "croptopia:cooked_bacon",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:cooked_bacon_from_bacon",
+      "text": "Công thức"
+    }
+  ]
+}

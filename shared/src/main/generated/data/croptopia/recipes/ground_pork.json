@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "1",
+    "2"
+  ],
+  "key": {
+    "1": {
+      "tag": "croptopia:pork_replacements"
+    },
+    "2": {
+      "item": "croptopia:food_press"
+    }
+  },
+  "result": {
+    "item": "croptopia:ground_pork",
+    "count": 2
+  }
+}

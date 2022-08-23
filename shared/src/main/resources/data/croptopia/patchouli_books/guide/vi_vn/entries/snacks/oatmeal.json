@@ -1,0 +1,12 @@
+{
+  "name": "Bánh quy yến mạch nho khô",
+  "icon": "croptopia:oatmeal",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:oatmeal",
+      "text": "Công thức làm bánh quy yến mạch nho khô."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Pumpkin Spice Latte",
+  "icon": "croptopia:pumpkin_spice_latte",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pumpkin_spice_latte",
+      "text": "Công thức pha pumpkin spice latte."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Chai sữa",
+  "icon": "croptopia:milk_bottle",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_milk_bottle",
+      "text": "Công thức làm chai sữa."
+    }
+  ]
+}

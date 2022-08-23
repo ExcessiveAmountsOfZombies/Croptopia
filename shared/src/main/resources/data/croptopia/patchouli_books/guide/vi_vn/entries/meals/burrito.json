@@ -1,0 +1,12 @@
+{
+  "name": "Bánh burrito",
+  "icon": "croptopia:burrito",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:burrito",
+      "text": "Công thức làm bánh burrito."
+    }
+  ]
+}

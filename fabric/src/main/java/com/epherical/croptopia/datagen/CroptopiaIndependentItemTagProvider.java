@@ -21,7 +21,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.Registry;
 import net.minecraft.data.HashCache;
-import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.Tag;
@@ -191,7 +190,6 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("rums", Content.RUM);
         createGeneralTag("salsas", Content.SALSA);
         createGeneralTag("salt_ores", Content.SALT_ORE);
-        createGeneralTag("salts", Content.SALT);
         createGeneralTag("saucy_chips", Content.SAUCY_CHIPS);
         createGeneralTag("scones", Content.SCONES);
         createGeneralTag("scrambled_eggs", Content.SCRAMBLED_EGGS);
@@ -242,6 +240,22 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("grilled_oysters", Content.GRILLED_OYSTERS);
         createGeneralTag("anchovy_pizzas", Content.ANCHOVY_PIZZA);
         createGeneralTag("mashed_potatoes", Content.MASHED_POTATOES);
+
+        createGeneralTag("baked_crepes", Content.BAKED_CREPES);
+        createGeneralTag("cinnamon_rolls", Content.CINNAMON_ROLL);
+        createGeneralTag("croque_madame", Content.CROQUE_MADAME);
+        createGeneralTag("croque_monsieur", Content.CROQUE_MONSIEUR);
+        createGeneralTag("dauphine_potatoes", Content.DAUPHINE_POTATOES);
+        createGeneralTag("fried_frog_legs", Content.FRIED_FROG_LEGS);
+        createGeneralTag("frog_legs", Content.FROG_LEGS);
+        createGeneralTag("ground_pork", Content.GROUND_PORK);
+        createGeneralTag("hashed_brown", Content.HASHED_BROWN);
+        createGeneralTag("macaron", Content.MACARON);
+        createGeneralTag("quiche", Content.QUICHE);
+        createGeneralTag("sausages", Content.SAUSAGE);
+        createGeneralTag("sunny_side_eggs", Content.SUNNY_SIDE_EGGS);
+        createGeneralTag("sweet_crepes", Content.SWEET_CREPES);
+        createGeneralTag("the_big_breakfast", Content.THE_BIG_BREAKFAST);
 
         this.tag(register("water_bottles")).add(Content.WATER_BOTTLE).add(Items.WATER_BUCKET);
         this.tag(register("milks")).add(Content.MILK_BOTTLE).add(Content.SOY_MILK).add(Items.MILK_BUCKET);

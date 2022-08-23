@@ -1,0 +1,11 @@
+{
+  "name": "Cây",
+  "icon": "croptopia:apple_sapling",
+  "category": "croptopia:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trên thế giới, bạn có thể tìm thấy nhiều loại cây khác nhau với các loại cây trồng tùy chỉnh phát triển trên chúng. Để thu hoạch chúng, bạn có thể nhấp chuột phải vào chúng khi chúng đã chín."
+    }
+  ]
+}
