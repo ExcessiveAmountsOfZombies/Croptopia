@@ -1,0 +1,12 @@
+{
+  "name": "Máy ép thực phẩm đa năng",
+  "icon": "croptopia:food_press",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:food_press",
+      "text": "Công thức chế máy ép thực phẩm đa năng."
+    }
+  ]
+}

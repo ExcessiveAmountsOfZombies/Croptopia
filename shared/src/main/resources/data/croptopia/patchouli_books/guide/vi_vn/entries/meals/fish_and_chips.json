@@ -1,0 +1,12 @@
+{
+  "name": "Cá và khoai tây chiên",
+  "icon": "croptopia:fish_and_chips",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_fish_and_chips",
+      "text": "Công thức làm cá và khoai tây chiên."
+    }
+  ]
+}

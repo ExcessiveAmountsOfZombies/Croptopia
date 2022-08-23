@@ -1,0 +1,12 @@
+{
+  "name": "Sốt rau quả",
+  "icon": "croptopia:ajvar",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ajvar",
+      "text": "Công thức làm Sốt rau quả."
+    }
+  ]
+}

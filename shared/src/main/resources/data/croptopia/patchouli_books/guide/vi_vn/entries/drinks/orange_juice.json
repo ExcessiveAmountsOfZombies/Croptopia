@@ -1,0 +1,12 @@
+{
+  "name": "Nước cam",
+  "icon": "croptopia:orange_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:orange_juice",
+      "text": "Công thức pha nước cam."
+    }
+  ]
+}

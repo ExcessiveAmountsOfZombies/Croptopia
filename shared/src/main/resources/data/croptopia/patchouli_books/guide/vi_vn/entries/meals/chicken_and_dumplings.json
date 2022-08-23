@@ -1,0 +1,12 @@
+{
+  "name": "Gà cùng bánh bột nhân",
+  "icon": "croptopia:chicken_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_dumplings",
+      "text": "Công thức làm gà cùng bánh bột nhân."
+    }
+  ]
+}

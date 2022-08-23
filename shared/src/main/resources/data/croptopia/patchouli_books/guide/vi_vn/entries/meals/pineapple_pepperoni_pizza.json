@@ -1,0 +1,12 @@
+{
+  "name": "Pizza dướng lạp xửa",
+  "icon": "croptopia:pineapple_pepperoni_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_pepperoni_pizza",
+      "text": "Công thức làm Pizza dướng lạp xửa."
+    }
+  ]
+}

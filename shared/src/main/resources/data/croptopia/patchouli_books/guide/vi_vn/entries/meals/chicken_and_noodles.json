@@ -1,0 +1,12 @@
+{
+  "name": "Mì gà",
+  "icon": "croptopia:chicken_and_noodles",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_noodles",
+      "text": "Công thức làm mì gà."
+    }
+  ]
+}

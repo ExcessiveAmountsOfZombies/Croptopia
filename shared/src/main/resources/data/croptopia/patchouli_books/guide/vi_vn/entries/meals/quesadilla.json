@@ -1,0 +1,12 @@
+{
+  "name": "Bánh phô mai thịt gà",
+  "icon": "croptopia:quesadilla",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:quesadilla",
+      "text": "Công thức làm bánh phô mai thịt gà."
+    }
+  ]
+}

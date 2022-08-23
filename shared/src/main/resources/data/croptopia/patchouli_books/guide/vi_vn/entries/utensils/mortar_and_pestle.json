@@ -1,0 +1,12 @@
+{
+  "name": "Cối và chày",
+  "icon": "croptopia:mortar_and_pestle",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mortar_and_pestle",
+      "text": "Công thức làm một cái chày và một cái cối."
+    }
+  ]
+}

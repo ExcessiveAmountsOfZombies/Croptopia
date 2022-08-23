@@ -1,0 +1,12 @@
+{
+  "name": "Đậu hầm",
+  "icon": "croptopia:baked_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_beans_from_blackbean",
+      "text": "Công thức làm đậu hầm."
+    }
+  ]
+}

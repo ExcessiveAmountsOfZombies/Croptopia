@@ -1,0 +1,12 @@
+{
+  "name": "Bánh mì kẹp phô mai",
+  "icon": "croptopia:cheeseburger",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheeseburger",
+      "text": "Công thức làm a bánh mì kẹp phô mai."
+    }
+  ]
+}

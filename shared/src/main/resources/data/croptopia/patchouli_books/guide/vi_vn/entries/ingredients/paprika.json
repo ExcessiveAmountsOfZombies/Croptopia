@@ -1,0 +1,12 @@
+{
+  "name": "Ớt bột Paprika",
+  "icon": "croptopia:paprika",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:paprika",
+      "text": "Công thức làm ớt bột Paprika."
+    }
+  ]
+}
