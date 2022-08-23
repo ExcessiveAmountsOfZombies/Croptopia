@@ -2,7 +2,7 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:gameplay/fishing/fish"
+      "loot_table_id": "minecraft:gameplay/fishing"
     }
   ],
   "tableRef": "croptopia:gameplay/fishing/fish",
