@@ -2,6 +2,7 @@ package com.epherical.croptopia;
 
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.items.GuideBookItem;
+import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.google.common.collect.ImmutableMap.Builder;
@@ -30,6 +31,7 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -127,14 +129,16 @@ public class Croptopia implements ModInitializer {
 
     private void modifyChickenBreeds() {
         IntList stacks = ChickenAccess.getFoodItems().getStackingIds();
-        List<Item> baseItems = new ArrayList<>();
+        List<ItemStack> baseStacks = new ArrayList<>();
 
         for (Integer stack : stacks) {
-            baseItems.add(Item.byId(stack));
+            baseStacks.add(StackedContents.fromStackingIndex(stack));
         }
         // TODO iterate over farmland
-        baseItems.addAll(CroptopiaMod.seeds);
-        ChickenAccess.setFoodItems(Ingredient.of(baseItems.toArray(new Item[0])));
+        for (SeedItem seedItem : CroptopiaMod.seeds) {
+            baseStacks.add(new ItemStack(seedItem));
+        }
+        ChickenAccess.setFoodItems(Ingredient.of(baseStacks.toArray(new ItemStack[0])));
     }
 
     private void modifyParrotBreeds() {
