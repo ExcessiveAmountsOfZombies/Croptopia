@@ -179,6 +179,87 @@
     },
     {
       "output": "croptopia:tea_seed"
+    },
+    {
+      "output": "croptopia:almond_sapling"
+    },
+    {
+      "output": "croptopia:apple_sapling"
+    },
+    {
+      "output": "croptopia:apricot_sapling"
+    },
+    {
+      "output": "croptopia:avocado_sapling"
+    },
+    {
+      "output": "croptopia:banana_sapling"
+    },
+    {
+      "output": "croptopia:cashew_sapling"
+    },
+    {
+      "output": "croptopia:cherry_sapling"
+    },
+    {
+      "output": "croptopia:coconut_sapling"
+    },
+    {
+      "output": "croptopia:date_sapling"
+    },
+    {
+      "output": "croptopia:dragonfruit_sapling"
+    },
+    {
+      "output": "croptopia:fig_sapling"
+    },
+    {
+      "output": "croptopia:grapefruit_sapling"
+    },
+    {
+      "output": "croptopia:kumquat_sapling"
+    },
+    {
+      "output": "croptopia:lemon_sapling"
+    },
+    {
+      "output": "croptopia:lime_sapling"
+    },
+    {
+      "output": "croptopia:mango_sapling"
+    },
+    {
+      "output": "croptopia:nectarine_sapling"
+    },
+    {
+      "output": "croptopia:nutmeg_sapling"
+    },
+    {
+      "output": "croptopia:orange_sapling"
+    },
+    {
+      "output": "croptopia:peach_sapling"
+    },
+    {
+      "output": "croptopia:pear_sapling"
+    },
+    {
+      "output": "croptopia:pecan_sapling"
+    },
+    {
+      "output": "croptopia:persimmon_sapling"
+    },
+    {
+      "output": "croptopia:plum_sapling"
+    },
+    {
+      "output": "croptopia:starfruit_sapling"
+    },
+    {
+      "output": "croptopia:walnut_sapling"
+    },
+    {
+      "output": "croptopia:cinnamon_sapling"
     }
   ]
 }

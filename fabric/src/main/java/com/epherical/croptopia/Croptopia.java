@@ -1,15 +1,6 @@
 package com.epherical.croptopia;
 
 import com.epherical.croptopia.common.ItemNamesV2;
-import com.epherical.croptopia.items.GuideBookItem;
-import com.epherical.croptopia.items.SeedItem;
-import com.epherical.croptopia.register.Content;
-import com.epherical.croptopia.register.helpers.Tree;
-import com.google.common.collect.ImmutableMap.Builder;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-import it.unimi.dsi.fastutil.ints.IntList;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.config.IdentifierSerializer;
@@ -17,12 +8,21 @@ import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.dependencies.Patchouli;
 import com.epherical.croptopia.generator.BiomeModifiers;
 import com.epherical.croptopia.items.CropLootTableModifier;
+import com.epherical.croptopia.items.GuideBookItem;
+import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.mixin.AxeAccess;
 import com.epherical.croptopia.mixin.ChickenAccess;
 import com.epherical.croptopia.mixin.FarmerWorkTaskAccessor;
 import com.epherical.croptopia.mixin.ParrotAccess;
 import com.epherical.croptopia.mixin.VillagerAccess;
-import com.epherical.croptopia.registry.*;
+import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.registry.Composter;
+import com.google.common.collect.ImmutableMap.Builder;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
+import it.unimi.dsi.fastutil.ints.IntList;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
@@ -37,7 +37,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import org.spongepowered.configurate.serialize.SerializationException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +62,7 @@ public class Croptopia implements ModInitializer {
     @Override
     public void onInitialize() {
         FabricLoader.getInstance().getModContainer(TECH_REBORN_MOD_ID)
-                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("croptopia", "treborn"),  modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
+                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("croptopia", "treborn"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
                 .filter(success -> !success);
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
         Content.registerBlocks((id, object) -> Registry.register(Registry.BLOCK, id, object));
