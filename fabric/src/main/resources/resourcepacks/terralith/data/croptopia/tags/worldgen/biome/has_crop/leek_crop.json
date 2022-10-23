@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "terralith:arid_highlands",
+      "required": false
+    },
+    {
+      "id": "terralith:brushland",
+      "required": false
+    },
+    {
+      "id": "terralith:fractured_savanna",
+      "required": false
+    },
+    {
+      "id": "terralith:savanna_badlands",
+      "required": false
+    },
+    {
+      "id": "terralith:savanna_slopes",
+      "required": false
+    }
+  ]
+}
