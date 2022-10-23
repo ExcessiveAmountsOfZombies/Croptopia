@@ -73,6 +73,9 @@ public class Croptopia implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        FabricLoader.getInstance().getModContainer("seedfix")
+                .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("croptopia", "terralith"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
+                .filter(success -> !success);
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
         Content.registerBlocks((id, object) -> Registry.register(Registry.BLOCK, id, object));
         Content.GUIDE = new GuideBookItem(createGroup());
