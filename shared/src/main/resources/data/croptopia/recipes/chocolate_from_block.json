@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:chocolate_block"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chocolate",
+    "count": 9
+  }
+}

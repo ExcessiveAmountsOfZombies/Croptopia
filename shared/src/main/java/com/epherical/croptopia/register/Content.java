@@ -423,6 +423,9 @@ public class Content {
     public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
     public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
 
+    public static Block CHOCOLATE_BLOCK_BLOCK = new Block(BlockBehaviour.Properties.of(Material.CAKE).strength(1F).sound(SoundType.STONE));
+    public static final Item CHOCOLATE_BLOCK = new ItemNameBlockItem(CHOCOLATE_BLOCK_BLOCK, createGroup());
+
     public static Item GUIDE;
 
     public static void registerBlocks(RegisterFunction<Block> register) {
@@ -632,6 +635,7 @@ public class Content {
         register.register(createIdentifier(ItemNamesV2.THE_BIG_BREAKFAST), THE_BIG_BREAKFAST);
 
         register.register(createIdentifier(ItemNamesV2.SALT_ORE), SALT_ORE);
+        register.register(createIdentifier(ItemNamesV2.CHOCOLATE_BLOCK), CHOCOLATE_BLOCK);
     }
 
     public static Stream<Item> createCropStream() {
