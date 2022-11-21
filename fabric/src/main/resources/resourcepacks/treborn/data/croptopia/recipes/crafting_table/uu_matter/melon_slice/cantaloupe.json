@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    " U ",
+    "UV ",
+    "   "
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:melon_slice"
+    }
+  },
+  "result": {
+    "item": "croptopia:cantaloupe"
+  }
+}
