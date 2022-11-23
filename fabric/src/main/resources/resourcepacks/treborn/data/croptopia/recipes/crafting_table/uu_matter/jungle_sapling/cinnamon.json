@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    "U U",
+    " V ",
+    "U U"
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:jungle_sapling"
+    }
+  },
+  "result": {
+    "item": "croptopia:cinnamon"
+  }
+}
