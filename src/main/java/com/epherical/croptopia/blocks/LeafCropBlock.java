@@ -4,6 +4,7 @@ import com.epherical.croptopia.CroptopiaMod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
@@ -74,7 +75,9 @@ public class LeafCropBlock extends CroptopiaCropBlock {
             return super.use(state, world, pos, player, hand, hit);
         }
         if (getAge(state) == getMaxAge()) {
-            CroptopiaMod.getInstance().platform().afterBlockBroken(world, player, pos, state, null);
+            if (player instanceof ServerPlayer) {
+                CroptopiaMod.getInstance().platform().afterBlockBroken(world, player, pos, state, null);
+            }
             player.awardStat(Stats.BLOCK_MINED.get(this));
             player.causeFoodExhaustion(0.005f);
             world.setBlock(pos, this.getStateForAge(0), 2);
