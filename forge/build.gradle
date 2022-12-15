@@ -155,7 +155,7 @@ jar {
 tasks.withType(JavaCompile) {
     doLast {
         copy {
-            from "src/main/resources/dependents/platform"
+            from "${buildDir}/resources/main/dependents/platform"
             include "**/**/*.json"
             expand "dependent": "forge"
             into "${buildDir}/resources/main/data/forge/"
