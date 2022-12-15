@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " 1 ",
-    "726",
-    "435"
-  ],
   "key": {
     "1": {
       "item": "croptopia:frying_pan"
@@ -13,7 +8,7 @@
       "item": "minecraft:bread"
     },
     "3": {
-      "tag": "${dependent}:cheese"
+      "tag": "${dependent}:cheeses"
     },
     "4": {
       "tag": "croptopia:pork_replacements"
@@ -28,6 +23,11 @@
       "item": "minecraft:egg"
     }
   },
+  "pattern": [
+    " 1 ",
+    "726",
+    "435"
+  ],
   "result": {
     "item": "croptopia:croque_madame"
   }

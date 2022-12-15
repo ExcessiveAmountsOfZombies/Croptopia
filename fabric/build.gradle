@@ -81,8 +81,9 @@ loom {
             server()
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
-            //vmArg "-Dfabric-api.datagen.output-dir=${rootProject.file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.output-dir=${getRootProject().file("src/main/generated")}"
             runDir "build/datagen"
+            ideConfigGenerated = true
         }
     }
 }
