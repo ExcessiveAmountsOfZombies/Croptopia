@@ -5,8 +5,6 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "Croptopia-refmap.json",
   "mixins": [
-    "AxeAccess",
-    "AxeMixin",
     "ChickenAccess",
     "FarmerVillagerTaskMixin",
     "FarmerWorkTaskAccessor",
