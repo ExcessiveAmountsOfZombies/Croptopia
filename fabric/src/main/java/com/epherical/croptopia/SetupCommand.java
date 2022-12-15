@@ -8,6 +8,7 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.commands.CommandBuildContext;
+import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.commands.CommandSourceStack;
@@ -17,10 +18,9 @@ import net.minecraft.commands.arguments.blocks.BlockInput;
 import net.minecraft.commands.arguments.blocks.BlockStateArgument;
 import net.minecraft.commands.arguments.coordinates.BlockPosArgument;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.commands.SetBlockCommand;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.Tag;
-import net.minecraft.world.entity.animal.Cat;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.pattern.BlockInWorld;
@@ -37,8 +37,6 @@ import java.util.function.Predicate;
 
 public class SetupCommand {
 
-    private static Map<FarmlandCrop, Tag.Builder> builderMap = new HashMap<>();
-
     private static final SimpleCommandExceptionType FAILED_EXCEPTION = new SimpleCommandExceptionType(Component.translatable("commands.setblock.failed"));
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext commandBuildContext) {
@@ -53,49 +51,6 @@ public class SetupCommand {
         }))).then(Commands.literal("replace").executes((commandContext) -> {
             return execute(commandContext.getSource(), BlockPosArgument.getLoadedBlockPos(commandContext, "pos"), BlockStateArgument.getBlock(commandContext, "block"), SetBlockCommand.Mode.REPLACE, null);
         })))));
-
-        dispatcher.register(Commands.literal("croptopia")
-                .requires(stack -> stack.hasPermission(4))
-                .then(Commands.literal("addcrop")
-                        .then(Commands.argument("location", StringArgumentType.string())
-                                .suggests((context, builder) -> {
-                                    for (Category value : Category.values()) {
-                                        builder.suggest(value.name().toLowerCase(Locale.ROOT));
-                                    }
-                                    return builder.buildFuture();
-                                })
-                                .then(Commands.argument("biome", ResourceOrTagLocationArgument.resourceOrTag(Registry.BIOME_REGISTRY))
-                                        .executes(context -> {
-                                            Category location = Category.valueOf(StringArgumentType.getString(context, "location").toUpperCase(Locale.ROOT));
-                                            ResourceOrTagLocationArgument.Result<Biome> biome = ResourceOrTagLocationArgument.getBiome(context, "biome");
-                                            for (FarmlandCrop crop : location.crops) {
-                                                if (builderMap.containsKey(crop)) {
-                                                    Tag.Builder builder = builderMap.get(crop);
-                                                    builder.addOptionalElement(new ResourceLocation(biome.asPrintable()), "croptopia");
-                                                } else {
-                                                    Tag.Builder builder = new Tag.Builder();
-                                                    builder.addOptionalElement(new ResourceLocation(biome.asPrintable()), "croptopia");
-                                                    builderMap.put(crop, builder);
-                                                }
-                                            }
-                                            return 1;
-                                        }))))
-                .then(Commands.literal("export")
-                        .executes(context -> {
-                            Path croptopia = FabricLoader.getInstance().getConfigDir().resolve("croptopia");
-                            for (Map.Entry<FarmlandCrop, Tag.Builder> entry : builderMap.entrySet()) {
-                                Block block = entry.getKey().asBlock();
-
-                                Path crop = croptopia.resolve(Registry.BLOCK.getKey(block).getPath() + ".json");
-                                try {
-                                    Files.writeString(crop, entry.getValue().serializeToJson().toString());
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            builderMap.clear();
-                            return 1;
-                        })));
     }
 
     private static int execute(CommandSourceStack source, BlockPos pos, BlockInput block, SetBlockCommand.Mode mode, @Nullable Predicate<BlockInWorld> condition) throws CommandSyntaxException {

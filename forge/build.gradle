@@ -23,7 +23,6 @@ repositories {
 }
 
 archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
-buildDir = rootProject.buildDir
 
 configurations {
     shade
@@ -37,6 +36,17 @@ mixin {
     config "croptopia.mixins.json"
 }
 
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    "src/main/generated",
+                    rootProject.sourceSets.main.resources
+            ]
+        }
+    }
+}
+
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     mappings channel: 'official', version: "${mc_ver}"
@@ -48,10 +58,10 @@ minecraft {
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             // Recommended logging level for the console //property 'forge.logging.console.level', 'debug'
-            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
+            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', rootProject.file('src/main/resources/')
             mods {
                 croptopia {
-                    sources(sourceSets.main, project(":shared").sourceSets.main)
+                    sources(sourceSets.main, rootProject.sourceSets.main)
                 }
             }
         }
@@ -64,7 +74,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             mods {
                 croptopia {
-                    sources(sourceSets.main, project(":shared").sourceSets.main)
+                    sources(sourceSets.main, rootProject.sourceSets.main)
                 }
             }
         }
@@ -77,10 +87,10 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', project(":shared").file('src/main/resources/')
+            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', rootProject.file('src/main/resources/')
             mods {
                 croptopia {
-                    sources(sourceSets.main, project(":shared").sourceSets.main)
+                    sources(sourceSets.main, rootProject.sourceSets.main)
                 }
             }
         }
@@ -89,19 +99,24 @@ minecraft {
 
 processResources {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    //from(sourceSets.main.resources.srcDirs) {
+    //    include('**/data/croptopia/recipes/**')
+    //    expand "dependent": "forge"
+    //}
+
     from(sourceSets.main.resources.srcDirs) {
-        include('**/data/croptopia/recipes/**')
+        include('**/data/**')
+        include('**/dependents/**')
         expand "dependent": "forge"
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }
 }
-
-tasks.processResources.dependsOn(project(":shared").tasks.processResources)
 
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_ver}-${forge_ver}"
-    implementation project(":shared")
-    shade project(":shared")
+    implementation(rootProject)
+    shade(rootProject)
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19-74-SNAPSHOT")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
@@ -134,6 +149,17 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs": "croptopia.mixins.json"
         ])
+    }
+}
+
+tasks.withType(JavaCompile) {
+    doLast {
+        copy {
+            from "src/main/resources/dependents/platform"
+            include "**/**/*.json"
+            expand "dependent": "forge"
+            into "${buildDir}/resources/main/data/forge/"
+        }
     }
 }
 
