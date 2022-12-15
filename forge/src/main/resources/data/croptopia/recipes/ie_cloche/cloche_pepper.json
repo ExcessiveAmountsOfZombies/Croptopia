@@ -1,0 +1,29 @@
+{
+  "type": "immersiveengineering:cloche",
+  "input": {
+    "item": "croptopia:pepper_seed"
+  },
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "results": [
+    {
+      "item": "croptopia:pepper",
+      "count": 2
+    },
+    {
+      "item": "croptopia:pepper_seed"
+    }
+  ],
+  "time": 640,
+  "render": {
+    "type": "crop",
+    "block": "croptopia:pepper_crop"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
+}

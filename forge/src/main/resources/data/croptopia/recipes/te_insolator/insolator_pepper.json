@@ -1,0 +1,23 @@
+{
+  "type": "thermal:insolator",
+  "ingredient": {
+    "item": "croptopia:pepper_seed"
+  },
+  "result": [
+    {
+      "item": "croptopia:pepper",
+      "chance": 2.0
+    },
+    {
+      "item": "croptopia:pepper_seed",
+      "chance": 1.1
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_expansion"
+    }
+  ],
+  "water_mod": 0.5
+}
