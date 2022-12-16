@@ -227,14 +227,14 @@ public class Content {
     public static final Item LIMEADE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
     public static final Item SOY_MILK = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
 
-    public static final Item KALE_SMOOTHIE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_14).alwaysEat().build()));
-    public static final Item FRUIT_SMOOTHIE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()));
+    public static final Item KALE_SMOOTHIE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_14).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item FRUIT_SMOOTHIE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
 
-    public static final Item CHOCOLATE_MILKSHAKE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()));
+    public static final Item CHOCOLATE_MILKSHAKE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
 
-    public static final Item BEER = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()));
-    public static final Item WINE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()));
-    public static final Item MEAD = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()));
+    public static final Item BEER = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item WINE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+    public static final Item MEAD = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
     public static final Item RUM = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_7).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
     public static final Item PUMPKIN_SPICE_LATTE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_14).alwaysEat().build()));
 

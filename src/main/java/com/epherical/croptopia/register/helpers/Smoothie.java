@@ -7,6 +7,7 @@ import com.epherical.croptopia.util.RegisterFunction;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Smoothie implements ItemLike {
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
         this.crop = cropItemName;
-        item = new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()));
+        item = new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
         INSTANCES.add(this);
     }
 
