@@ -21,6 +21,7 @@
     "elderberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:elderberry_seed"] } ] } },
     "grape_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:grape_seed"] } ] } },
     "raspberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:raspberry_seed"] } ] } },
+    "radish_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:radish_seed"] } ] } },
     "spinach_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:spinach_seed"] } ] } },
     "strawberry_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:strawberry_seed"] } ] } },
     "tomatillo_seed": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:tomatillo_seed"] } ] } },
