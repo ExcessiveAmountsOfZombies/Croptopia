@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.REG_10;
-import static com.epherical.croptopia.util.FoodConstructor.createFood;
+import static com.epherical.croptopia.util.FoodConstructor.*;
 
 public class IceCream implements ItemLike {
     private static final List<IceCream> INSTANCES = new ArrayList<>();
@@ -23,7 +22,7 @@ public class IceCream implements ItemLike {
     public IceCream(String name, ItemConvertibleWithPlural crop) {
         this.name = name;
         this.crop = crop;
-        this.item = new Item(createGroup().food(createFood(REG_10)));
+        this.item = new Item(createGroup().food(createFood(ICE_CREAM_7)));
         INSTANCES.add(this);
     }
 

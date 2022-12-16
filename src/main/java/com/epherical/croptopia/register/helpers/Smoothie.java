@@ -29,7 +29,7 @@ public class Smoothie implements ItemLike {
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
         this.crop = cropItemName;
-        item = new Drink(createGroup().food(createBuilder(REG_7).alwaysEat().build()));
+        item = new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()));
         INSTANCES.add(this);
     }
 

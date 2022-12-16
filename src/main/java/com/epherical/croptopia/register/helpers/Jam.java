@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.REG_3;
-import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
+import static com.epherical.croptopia.util.FoodConstructor.*;
 
 public class Jam implements ItemLike {
     private static final List<Jam> INSTANCES = new ArrayList<>();
@@ -24,7 +23,7 @@ public class Jam implements ItemLike {
     public Jam(String name, ItemConvertibleWithPlural crop) {
         this.name = name;
         this.crop = crop;
-        item = new Drink(createGroup().food(createBuilder(REG_3).alwaysEat().build()));
+        item = new Drink(createGroup().food(createBuilder(JAM_3).alwaysEat().build()));
         INSTANCES.add(this);
     }
 

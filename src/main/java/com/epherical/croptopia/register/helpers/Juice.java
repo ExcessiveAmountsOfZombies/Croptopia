@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.REG_5;
-import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
+import static com.epherical.croptopia.util.FoodConstructor.*;
 
 public class Juice implements ItemLike {
     private static final List<Juice> INSTANCES = new ArrayList<>();
@@ -27,7 +26,7 @@ public class Juice implements ItemLike {
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
         this.crop = crop;
-        item = new Drink(createGroup().food(createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+        item = new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
         INSTANCES.add(this);
     }
 
