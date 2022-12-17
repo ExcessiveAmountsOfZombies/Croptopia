@@ -7,11 +7,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
@@ -19,23 +16,25 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import static com.epherical.croptopia.CroptopiaForge.createIdentifier;
 
-public record TreeModifier(ResourceLocation biomes, GenerationStep.Decoration step, HolderSet<PlacedFeature> features) implements BiomeModifier {
+public record TreeModifier(GenerationStep.Decoration step) implements BiomeModifier {
 
     public static final RegistryObject<Codec<? extends BiomeModifier>> SERIALIZER =
             RegistryObject.create(createIdentifier("trees"), ForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
 
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
-        if (phase == Phase.ADD && biome.is(biomes)) {
-            BiomeGenerationSettingsBuilder generation = builder.getGenerationSettings();
-            for (Holder<PlacedFeature> feature : this.features) {
-                generation.addFeature(step, feature);
-            }
+        if (phase == Phase.ADD) {
+            biome.unwrapKey().ifPresent(biomeResourceKey -> {
+                BiomeGenerationSettingsBuilder generation = builder.getGenerationSettings();
+                Collection<String> strings = CroptopiaForge.config.getFeatures().get(biomeResourceKey.location());
+                for (String string : strings) {
+                    generation.addFeature(step, GeneratorRegistry.getFeatureKey(string));
+                }
+            });
         }
     }
 
@@ -46,10 +45,8 @@ public record TreeModifier(ResourceLocation biomes, GenerationStep.Decoration st
 
     public static Codec<TreeModifier> makeCodec() {
         return RecordCodecBuilder.create(builder -> builder.group(
-                ResourceLocation.CODEC.fieldOf("biomes").forGetter(TreeModifier::biomes),
                 Codec.STRING.comapFlatMap(TreeModifier::generationStageFromString,
-                        GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(TreeModifier::step),
-                PlacedFeature.LIST_CODEC.fieldOf("feature").forGetter(TreeModifier::features)
+                        GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(TreeModifier::step)
         ).apply(builder, TreeModifier::new));
     }
 
@@ -62,19 +59,7 @@ public record TreeModifier(ResourceLocation biomes, GenerationStep.Decoration st
     }
 
     public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
-        CroptopiaForge.config.getFeatures().asMap().forEach((location, strings) -> {
-            List<Holder<PlacedFeature>> features = new ArrayList<>();
-            if (!strings.isEmpty()) {
-                for (String string : strings) {
-                    features.add(GeneratorRegistry.getFeatureKey(string));
-                }
-            }
-            BiomeModifier modifier = new TreeModifier(
-                    location,
-                    GenerationStep.Decoration.VEGETAL_DECORATION,
-                    HolderSet.direct(features));
-            biomeSerializer.register(location.getNamespace() + "_" + location.getPath(), () -> modifier);
-        });
-
+        BiomeModifier modifier = new TreeModifier(GenerationStep.Decoration.VEGETAL_DECORATION);
+        biomeSerializer.register("tree_modifiers", () -> modifier);
     }
 }
