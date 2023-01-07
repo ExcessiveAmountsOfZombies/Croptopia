@@ -291,6 +291,7 @@ public class ItemNames {
     public static final String COOKING_POT = "cooking_pot";
     public static final String MORTAR_AND_PESTLE = "mortar_and_pestle";
     public static final String SALT_ORE = "salt_ore";
+    public static final String CHOCOLATE_BLOCK = "chocolate_block";
 
     public static final String BURRITO = "burrito";
     public static final String TOSTADA = "tostada";

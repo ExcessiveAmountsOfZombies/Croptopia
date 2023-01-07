@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    },
+    {
+      "item": "croptopia:chocolate"
+    }
+  ],
+  "result": {
+    "item": "croptopia:chocolate_block",
+    "count": 1
+  }
+}
