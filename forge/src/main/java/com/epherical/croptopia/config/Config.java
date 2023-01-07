@@ -1,10 +1,10 @@
 package com.epherical.croptopia.config;
 
 
+import com.epherical.croptopia.common.FeatureNames;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SetMultimap;
-import com.epherical.croptopia.common.FeatureNames;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -57,6 +57,7 @@ public class Config {
         if (configEvent.getConfig().getSpec() == config) {
             canRightClickHarvest = rightClickHarvest.get();
             isSaltDisabled = disableSaltGeneration.get();
+            features.clear();
             for (Map.Entry<TreeConfiguration, TreeBuilder> entry : builderMap.entrySet()) {
                 for (String s : entry.getValue().acceptableBiomes.get()) {
                     features.put(new ResourceLocation(s), entry.getKey().featureKey);
@@ -95,6 +96,14 @@ public class Config {
 
         public static void init() {
 
+        }
+    }
+
+    public static void setFeatures(Config config) {
+        for (TreeConfiguration treeConfiguration : TreeConfiguration.init()) {
+            for (String key : treeConfiguration.keys) {
+                config.features.put(new ResourceLocation(key), treeConfiguration.featureKey);
+            }
         }
     }
 
@@ -162,7 +171,6 @@ public class Config {
                     "cashew_tree_configured",
                     "pecan_tree_configured",
                     "walnut_tree_configured");
-
 
 
             //RegistryKey<Biome> alliumFields = RegistryKey.of(Registry.BIOME_KEY, bygID("allium_fields"));

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "1": {
+      "tag": "${dependent}:tomatoes"
+    },
+    "2": {
+      "tag": "${dependent}:anchovies"
+    },
+    "3": {
+      "tag": "${dependent}:cheeses"
+    },
+    "4": {
+      "tag": "${dependent}:doughs"
+    },
+    "7": {
+      "item": "croptopia:frying_pan"
+    }
+  },
+  "pattern": [
+    "123",
+    " 4 ",
+    " 7 "
+  ],
+  "result": {
+    "item": "croptopia:anchovy_pizza"
+  }
+}

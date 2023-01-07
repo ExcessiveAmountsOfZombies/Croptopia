@@ -5,20 +5,16 @@
   "compatibilityLevel": "JAVA_16",
   "refmap": "Croptopia-refmap.json",
   "mixins": [
-    "AxeAccess",
-    "AxeMixin",
     "ChickenAccess",
-    "FarmerVillagerTaskMixin",
-    "FarmerWorkTaskAccessor",
     "FarmerWorkTaskMixin",
     "ItemMixin",
     "LootTableBuilderAccessor",
     "ParrotAccess",
     "StructurePoolsMixin",
-    "VillagerAccess",
-    "VillagerMixin",
     "datagen.IdentifierAccessor",
-    "datagen.ObjectBuilderAccessor"
+    "datagen.ObjectBuilderAccessor",
+    "datagen.PathProviderAccessor",
+    "datagen.TagProviderAccessor"
   ],
   "client": [
   ],

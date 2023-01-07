@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:walnut_sapling"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_walnut": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:walnut"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_walnut",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:walnut_sapling"
+    ]
+  }
+}

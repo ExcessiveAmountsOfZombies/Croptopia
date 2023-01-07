@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " #",
+    "i "
+  ],
+  "result": {
+    "item": "croptopia:knife"
+  }
+}

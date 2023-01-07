@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "croptopia:milk_bottle",
+    "croptopia:soy_milk",
+    "minecraft:milk_bucket",
+    {
+      "id": "#${dependent}:milk_buckets",
+      "required": false
+    }
+  ]
+}

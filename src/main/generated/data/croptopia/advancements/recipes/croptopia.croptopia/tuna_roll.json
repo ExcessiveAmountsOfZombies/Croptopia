@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:tuna_roll"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tuna": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:tuna"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tuna",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:tuna_roll"
+    ]
+  }
+}

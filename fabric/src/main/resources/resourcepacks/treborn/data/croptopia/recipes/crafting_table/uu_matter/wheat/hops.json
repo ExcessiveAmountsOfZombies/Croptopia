@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    " U ",
+    "UV ",
+    "U  "
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "croptopia:hops"
+  }
+}

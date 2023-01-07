@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    " UU",
+    " V ",
+    "   "
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:sweet_berries"
+    }
+  },
+  "result": {
+    "item": "croptopia:tomatillo"
+  }
+}

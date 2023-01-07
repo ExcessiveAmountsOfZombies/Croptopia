@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "minecraft:sugar_cane"
-  },
-  "result": "croptopia:molasses",
-  "experience": 0.2,
-  "cookingtime": 200
-}

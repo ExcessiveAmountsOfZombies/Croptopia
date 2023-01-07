@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:turmeric_seed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turmeric": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:turmeric"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_turmeric",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:turmeric_seed"
+    ]
+  }
+}

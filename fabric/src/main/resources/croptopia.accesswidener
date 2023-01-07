@@ -1,2 +1,3 @@
 accessWidener	v1	named
 accessible class net/minecraft/data/tags/TagsProvider$TagAppender
+extendable method net/minecraft/data/DataGenerator$PathProvider <init> (Lnet/minecraft/data/DataGenerator;Lnet/minecraft/data/DataGenerator$Target;Ljava/lang/String;)V

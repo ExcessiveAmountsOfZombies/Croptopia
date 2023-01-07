@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:vanilla_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vanilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:vanilla"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vanilla",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:vanilla_seeds"
+    ]
+  }
+}

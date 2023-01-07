@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "croptopia:grape"
-  },
-  "result": "croptopia:raisins",
-  "experience": 0.2,
-  "cookingtime": 200
-}

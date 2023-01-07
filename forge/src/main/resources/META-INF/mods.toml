@@ -21,15 +21,15 @@ Crop mod for forge
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.croptopia]] #optional
-   modId="forge" #mandatory
-   mandatory=true #mandatory
-   versionRange="[37,)" #mandatory
-   ordering="NONE"
-   side="BOTH"
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[41.0.84,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
 # Here's another dependency
 [[dependencies.croptopia]]
-   modId="minecraft"
-   mandatory=true
-   versionRange="[1.17.1,)"
-   ordering="NONE"
-   side="BOTH"
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19,)"
+    ordering="NONE"
+    side="BOTH"

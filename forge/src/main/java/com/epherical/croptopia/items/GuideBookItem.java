@@ -30,7 +30,7 @@ public class GuideBookItem extends Item {
         ItemStack stack = user.getItemInHand(hand);
 
         if (user instanceof ServerPlayer player && ModList.get().isLoaded("patchouli")) {
-            PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
+           PatchouliAPI.get().openBookGUI(player, ForgeRegistries.ITEMS.getKey(this));
         }
 
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);
@@ -40,8 +40,8 @@ public class GuideBookItem extends Item {
     public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> tooltip, TooltipFlag p_41424_) {
         if (!ModList.get().isLoaded("patchouli")) {
             tooltip.add(Component.nullToEmpty("Patchouli is not installed."));
-        } /*else {
+        } else {
             tooltip.add(Component.nullToEmpty("let me know patchouli is updated either in my discord or in a Github Issue!"));
-        }*/
+        }
     }
 }

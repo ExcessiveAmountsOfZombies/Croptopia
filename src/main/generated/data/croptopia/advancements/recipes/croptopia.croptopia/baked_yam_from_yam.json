@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:baked_yam_from_yam"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yam": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:yam"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_yam",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:baked_yam_from_yam"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    "U U",
+    " VU",
+    "U U"
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:apple"
+    }
+  },
+  "result": {
+    "item": "croptopia:banana"
+  }
+}

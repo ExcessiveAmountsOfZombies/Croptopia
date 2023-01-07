@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "croptopia:blackbean"
-  },
-  "result": "croptopia:baked_beans",
-  "experience": 0.2,
-  "cookingtime": 100
-}

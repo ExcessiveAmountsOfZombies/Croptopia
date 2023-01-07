@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:bowl"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "i",
+    "#"
+  ],
+  "result": {
+    "item": "croptopia:mortar_and_pestle"
+  }
+}

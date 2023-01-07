@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:vanilla_ice_cream"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vanilla": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "${dependent}:vanilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vanilla",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:vanilla_ice_cream"
+    ]
+  }
+}

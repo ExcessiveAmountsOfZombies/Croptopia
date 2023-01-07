@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:zucchini_seed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zucchini": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:zucchini"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_zucchini",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:zucchini_seed"
+    ]
+  }
+}

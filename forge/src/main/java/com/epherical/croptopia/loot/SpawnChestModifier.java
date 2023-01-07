@@ -2,9 +2,10 @@ package com.epherical.croptopia.loot;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.SeedItem;
-import com.google.gson.JsonObject;
-import com.epherical.croptopia.CroptopiaForge;
-import net.minecraft.resources.ResourceLocation;
+import com.google.common.base.Suppliers;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -13,13 +14,19 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
-import java.util.List;
+import java.util.function.Supplier;
+
 
 public class SpawnChestModifier extends LootModifier {
+    public static final Supplier<Codec<SpawnChestModifier>> CODEC = Suppliers.memoize(() -> {
+        return RecordCodecBuilder.create(instance -> {
+            return codecStart(instance).apply(instance, SpawnChestModifier::new);
+        });
+    });
 
 
     private final LootPool table;
@@ -43,23 +50,14 @@ public class SpawnChestModifier extends LootModifier {
         table = builder.build();
     }
 
-    @Nonnull
     @Override
-    protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
+    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         table.addRandomItems(generatedLoot::add, context);
         return generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<SpawnChestModifier> {
-
-        @Override
-        public SpawnChestModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
-            return new SpawnChestModifier(ailootcondition);
-        }
-
-        @Override
-        public JsonObject write(SpawnChestModifier instance) {
-            return makeConditions(instance.conditions);
-        }
+    @Override
+    public Codec<? extends IGlobalLootModifier> codec() {
+        return CODEC.get();
     }
 }

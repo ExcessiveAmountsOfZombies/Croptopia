@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cooked_tuna_from_smoking_tuna"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tuna": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:tuna"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tuna",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cooked_tuna_from_smoking_tuna"
+    ]
+  }
+}

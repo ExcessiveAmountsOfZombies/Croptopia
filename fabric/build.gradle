@@ -1,9 +1,8 @@
 import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
-    id 'fabric-loom' version '0.10-SNAPSHOT'
+    id 'fabric-loom' version '0.12-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
-    id 'maven-publish'
 }
 
 repositories {
@@ -20,11 +19,21 @@ repositories {
 }
 
 archivesBaseName = archives_base_name
-buildDir = rootProject.buildDir
 
 configurations {
     shade
     compile.extendsFrom shade
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += [
+                    "src/main/generated",
+                    rootProject.sourceSets.main.resources
+            ]
+        }
+    }
 }
 
 dependencies {
@@ -35,7 +44,7 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    modImplementation "vazkii.patchouli:Patchouli:1.18.2-67-FABRIC-SNAPSHOT"
+    modImplementation "vazkii.patchouli:Patchouli:1.19-74-FABRIC-SNAPSHOT"
 
     modImplementation(include("org.spongepowered:configurate-hocon:4.1.2"))
     modImplementation(include("org.spongepowered:configurate-core:4.1.2"))
@@ -47,20 +56,34 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-    shade project(":shared")
-    implementation(project(":shared"))
+    shade(rootProject)
+    compileOnly(rootProject)
+    implementation(rootProject)
 }
 
 loom {
     accessWidenerPath = file("src/main/resources/croptopia.accesswidener")
 
     runs {
+        client {
+            client()
+            name "Fabric Client"
+            ideConfigGenerated = true
+        }
+
+        server {
+            server()
+            name "Fabric Server"
+            ideConfigGenerated = true
+        }
+
         datagen {
             server()
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${project(":shared").file("src/main/generated")}"
+            vmArg "-Dfabric-api.datagen.output-dir=${getRootProject().file("src/main/generated")}"
             runDir "build/datagen"
+            ideConfigGenerated = true
         }
     }
 }
@@ -73,16 +96,31 @@ processResources {
         expand "mod_version": rootProject.version
     }
 
+    //from(sourceSets.main.resources.srcDirs) {
+    //    include('**/data/croptopia/recipes/**')
+    //    expand "dependent": "c"
+    //}
+
     from(sourceSets.main.resources.srcDirs) {
-        include('**/data/croptopia/recipes/**')
+        include('**/data/**')
+        include('**/dependents/**')
         expand "dependent": "c"
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }
 }
-tasks.processResources.dependsOn(project(":shared").tasks.processResources)
+tasks.processResources.dependsOn(rootProject.tasks.processResources)
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
-    source(project(":shared").sourceSets.main.allSource)
+    source(rootProject.sourceSets.main.allSource)
+    doLast {
+        copy {
+            from "${buildDir}/resources/main/dependents/platform"
+            include "**/**/*.json"
+            expand "dependent": "c"
+            into "${buildDir}/resources/main/data/c/"
+        }
+    }
 }
 
 shadowJar {
@@ -94,9 +132,6 @@ shadowJar {
 task remappedShadowJar(type: RemapJarTask) {
     dependsOn tasks.shadowJar
     input = tasks.shadowJar.archiveFile
-    remapAccessWidener = true
-    addNestedDependencies = true
-    //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
     archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
 }
 
@@ -105,4 +140,15 @@ tasks.assemble.dependsOn tasks.remappedShadowJar
 artifacts {
     archives remappedShadowJar
     shadow shadowJar
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            // add all the jars that should be included when publishing to maven
+            artifact(remapJar) {
+                builtBy remapJar
+            }
+        }
+    }
 }

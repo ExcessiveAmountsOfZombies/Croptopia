@@ -29,7 +29,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.function.Consumer;
@@ -238,12 +237,16 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .unlockedBy("has_kumquat", RecipeProvider.has(Content.KUMQUAT))
                 .save(exporter);
         TagKey<Item> turmericTag = independentTag(Content.TURMERIC.getPlural());
-        ShapelessRecipeBuilder.shapeless(Items.ORANGE_DYE, 1)
+        ShapelessRecipeBuilder.shapeless(Items.ORANGE_DYE, 2)
+                .requires(turmericTag)
+                .requires(turmericTag)
                 .requires(turmericTag)
                 .unlockedBy("has_turmeric", RecipeProvider.has(Content.TURMERIC))
                 .save(exporter);
         TagKey<Item> grapeTag = independentTag(Content.GRAPE.getPlural());
-        ShapelessRecipeBuilder.shapeless(Items.PURPLE_DYE, 1)
+        ShapelessRecipeBuilder.shapeless(Items.PURPLE_DYE, 2)
+                .requires(grapeTag)
+                .requires(grapeTag)
                 .requires(grapeTag)
                 .unlockedBy("has_grape", RecipeProvider.has(Content.GRAPE))
                 .save(exporter);
@@ -515,7 +518,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("435")
                 .define('1', Content.FRYING_PAN)
                 .define('2', Items.BREAD)
-                .define('3', independentTag("cheese"))
+                .define('3', independentTag("cheeses"))
                 .define('4', croptopia("pork_replacements"))
                 .define('5', independentTag("butters"))
                 .define('6', independentTag("flour"))
@@ -527,7 +530,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .pattern("435")
                 .define('1', Content.FRYING_PAN)
                 .define('2', Items.BREAD)
-                .define('3', independentTag("cheese"))
+                .define('3', independentTag("cheeses"))
                 .define('4', croptopia("pork_replacements"))
                 .define('5', independentTag("butters"))
                 .define('6', independentTag("flour"))

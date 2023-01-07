@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:salt_from_water_bottle"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_water_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "croptopia:water_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_water_bottle",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:salt_from_water_bottle"
+    ]
+  }
+}
