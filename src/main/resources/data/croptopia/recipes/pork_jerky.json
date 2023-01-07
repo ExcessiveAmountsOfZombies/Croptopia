@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:raw_pork"
+      "item": "minecraft:porkchop"
     },
     {
       "tag": "${dependent}:salts"
@@ -13,6 +13,6 @@
   ],
   "result": {
     "item": "croptopia:pork_jerky",
-    "count": 1
+    "count": 2
   }
 }

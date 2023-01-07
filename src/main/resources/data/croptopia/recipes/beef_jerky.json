@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:raw_beef"
+      "item": "minecraft:beef"
     },
     {
       "tag": "${dependent}:salts"
@@ -13,6 +13,6 @@
   ],
   "result": {
     "item": "croptopia:beef_jerky",
-    "count": 1
+    "count": 2
   }
 }
