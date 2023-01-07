@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    "   ",
+    "UVU",
+    " U "
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:cactus"
+    }
+  },
+  "result": {
+    "item": "croptopia:saguaro"
+  }
+}

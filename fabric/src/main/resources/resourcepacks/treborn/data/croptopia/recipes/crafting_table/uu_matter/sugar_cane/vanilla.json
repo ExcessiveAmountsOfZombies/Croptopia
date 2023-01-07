@@ -1,0 +1,19 @@
+{
+  "type": "reborncore:padded",
+  "pattern": [
+    "UU ",
+    " VU",
+    "U U"
+  ],
+  "key": {
+    "U": {
+      "item": "techreborn:uu_matter"
+    },
+    "V": {
+      "item": "minecraft:sugar_cane"
+    }
+  },
+  "result": {
+    "item": "croptopia:vanilla"
+  }
+}
