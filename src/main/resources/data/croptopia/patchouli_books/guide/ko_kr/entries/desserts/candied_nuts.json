@@ -1,0 +1,12 @@
+{
+  "name": "설탕바른 견과류",
+  "icon": "croptopia:candied_nuts",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:candied_nuts",
+      "text": "설탕바른 견과류 레시피"
+    }
+  ]
+}

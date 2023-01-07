@@ -1,0 +1,12 @@
+{
+  "name": "피칸 파이",
+  "icon": "croptopia:pecan_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pecan_pie",
+      "text": "피칸 파이 레시피"
+    }
+  ]
+}

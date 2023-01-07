@@ -1,0 +1,12 @@
+{
+  "name": "파마산 치즈와 가지",
+  "icon": "croptopia:eggplant_parmesan",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_eggplant_parmesan",
+      "text": "파마산 치즈와 가지 레시피"
+    }
+  ]
+}

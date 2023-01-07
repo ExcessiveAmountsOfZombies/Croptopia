@@ -1,0 +1,12 @@
+{
+  "name": "구운 마",
+  "icon": "croptopia:baked_yam",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_yam_from_yam",
+      "text": "구운 마 레시피"
+    }
+  ]
+}

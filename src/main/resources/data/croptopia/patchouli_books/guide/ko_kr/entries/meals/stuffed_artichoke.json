@@ -1,0 +1,12 @@
+{
+  "name": "속이 채워진 아티초크",
+  "icon": "croptopia:stuffed_artichoke",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_stuffed_artichoke",
+      "text": "속이 채워진 아티초크 레시피"
+    }
+  ]
+}

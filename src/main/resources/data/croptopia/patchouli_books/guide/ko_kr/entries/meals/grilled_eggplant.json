@@ -1,0 +1,12 @@
+{
+  "name": "구운 가지",
+  "icon": "croptopia:grilled_eggplant",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_grilled_eggplant",
+      "text": "구운 가지 레시피"
+    }
+  ]
+}

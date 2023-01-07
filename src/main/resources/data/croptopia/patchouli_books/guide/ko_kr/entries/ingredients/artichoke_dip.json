@@ -1,0 +1,12 @@
+{
+  "name": "아티초크 디핑소스",
+  "icon": "croptopia:artichoke_dip",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:artichoke_dip",
+      "text": "아티초크 디핑소스 레시피"
+    }
+  ]
+}

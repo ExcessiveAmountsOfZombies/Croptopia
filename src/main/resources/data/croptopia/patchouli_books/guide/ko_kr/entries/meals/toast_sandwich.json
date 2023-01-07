@@ -1,0 +1,12 @@
+{
+  "name": "토스트 샌드위치",
+  "icon": "croptopia:toast_sandwich",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_toast_sandwich",
+      "text": "토스트 샌드위치"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "버터",
+  "icon": "croptopia:butter",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:butter",
+      "text": "버터 레시피"
+    }
+  ]
+}

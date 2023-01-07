@@ -1,0 +1,12 @@
+{
+  "name": "계란말이",
+  "icon": "croptopia:egg_roll",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:egg_roll",
+      "text": "계란말이 레시피"
+    }
+  ]
+}

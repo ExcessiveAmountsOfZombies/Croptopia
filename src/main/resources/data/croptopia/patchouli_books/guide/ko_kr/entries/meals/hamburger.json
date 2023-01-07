@@ -1,0 +1,12 @@
+{
+  "name": "햄버거",
+  "icon": "croptopia:hamburger",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:hamburger",
+      "text": "햄버거 레시피"
+    }
+  ]
+}

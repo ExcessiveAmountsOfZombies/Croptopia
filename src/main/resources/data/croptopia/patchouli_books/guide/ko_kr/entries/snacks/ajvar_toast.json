@@ -1,0 +1,12 @@
+{
+  "name": "아이바르 토스트",
+  "icon": "croptopia:ajvar_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ajvar_toast",
+      "text": "아이바르 토스트 레시피"
+    }
+  ]
+}

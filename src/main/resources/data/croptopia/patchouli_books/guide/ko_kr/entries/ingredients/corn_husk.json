@@ -1,0 +1,12 @@
+{
+  "name": "옥수수 껍질",
+  "icon": "croptopia:corn_husk",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:corn_husk",
+      "text": "옥수수 껍질 레시피"
+    }
+  ]
+}

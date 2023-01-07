@@ -1,0 +1,12 @@
+{
+  "name": "과일 스무디",
+  "icon": "croptopia:fruit_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fruit_smoothie",
+      "text": "과일 스무디 레시피"
+    }
+  ]
+}

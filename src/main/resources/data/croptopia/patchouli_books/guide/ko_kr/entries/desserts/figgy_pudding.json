@@ -1,0 +1,12 @@
+{
+  "name": "무화과 푸딩",
+  "icon": "croptopia:figgy_pudding",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_figgy_pudding",
+      "text": "무화과 푸딩 레시피"
+    }
+  ]
+}

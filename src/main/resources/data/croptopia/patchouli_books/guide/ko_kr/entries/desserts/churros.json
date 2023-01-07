@@ -1,0 +1,12 @@
+{
+  "name": "츄러스",
+  "icon": "croptopia:churros",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:churros",
+      "text": "츄러스 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "초코 아이스크림",
+  "icon": "croptopia:chocolate_ice_cream",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_chocolate_ice_cream",
+      "text": "초코 아이스크림 레시피"
+    }
+  ]
+}

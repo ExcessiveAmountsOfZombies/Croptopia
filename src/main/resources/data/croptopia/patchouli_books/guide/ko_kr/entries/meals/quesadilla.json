@@ -1,0 +1,12 @@
+{
+  "name": "케사디야",
+  "icon": "croptopia:quesadilla",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:quesadilla",
+      "text": "케사디야 레시피"
+    }
+  ]
+}

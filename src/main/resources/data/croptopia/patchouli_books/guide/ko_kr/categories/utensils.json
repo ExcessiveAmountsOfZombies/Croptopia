@@ -1,0 +1,6 @@
+{
+  "name": "조리도구",
+  "description": "크롭토피아의 음식을 만들기 위한 모든 조리도구!",
+  "icon": "croptopia:frying_pan",
+  "sortnum": -90
+}

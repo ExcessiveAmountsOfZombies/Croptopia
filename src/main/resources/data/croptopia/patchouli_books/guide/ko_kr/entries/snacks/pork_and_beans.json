@@ -1,0 +1,12 @@
+{
+  "name": "돼지고기 콩조림",
+  "icon": "croptopia:pork_and_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pork_and_beans",
+      "text": "돼지고기 콩조림 레시피"
+    }
+  ]
+}

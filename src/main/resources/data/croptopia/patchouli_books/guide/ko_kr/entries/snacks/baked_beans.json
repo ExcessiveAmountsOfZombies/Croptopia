@@ -1,0 +1,12 @@
+{
+  "name": "베이크드 빈즈",
+  "icon": "croptopia:baked_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_beans_from_blackbean",
+      "text": "베이크드 빈즈 레시피"
+    }
+  ]
+}

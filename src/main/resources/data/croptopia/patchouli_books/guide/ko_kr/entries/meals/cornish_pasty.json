@@ -1,0 +1,12 @@
+{
+  "name": "옥수수 파스티",
+  "icon": "croptopia:cornish_pasty",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_cornish_pasty",
+      "text": "옥수수 파스티 레시피"
+    }
+  ]
+}

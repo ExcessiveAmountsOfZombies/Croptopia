@@ -1,0 +1,12 @@
+{
+  "name": "사과 파이",
+  "icon": "croptopia:apple_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:apple_pie",
+      "text": "사과 파이 레시피"
+    }
+  ]
+}

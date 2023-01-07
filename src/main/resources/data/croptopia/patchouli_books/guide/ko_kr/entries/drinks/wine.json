@@ -1,0 +1,12 @@
+{
+  "name": "와인",
+  "icon": "croptopia:wine",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:wine",
+      "text": "와인 레시피"
+    }
+  ]
+}

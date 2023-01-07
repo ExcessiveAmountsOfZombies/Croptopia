@@ -1,0 +1,16 @@
+{
+  "name": "칩",
+  "icon": "croptopia:potato_chips",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_chips",
+      "recipe2": "croptopia:potato_chips"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "다양한 칩 레시피들"
+    }
+  ]
+}

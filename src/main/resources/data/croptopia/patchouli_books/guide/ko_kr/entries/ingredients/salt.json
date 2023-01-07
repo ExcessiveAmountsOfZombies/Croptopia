@@ -1,0 +1,11 @@
+{
+  "name": "소금",
+  "icon": "croptopia:salt",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "소금은 강 바이옴들에 가끔 자연적으로 생성되는 소금덩이에서 얻을 수 있습니다. 소금덩이는 조금 더 하얀 모래처럼 생겼습니다."
+    }
+  ]
+}

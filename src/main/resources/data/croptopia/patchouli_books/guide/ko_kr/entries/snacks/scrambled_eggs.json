@@ -1,0 +1,12 @@
+{
+  "name": "스크램블 에그",
+  "icon": "croptopia:scrambled_eggs",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:scrambled_eggs",
+      "text": "스크램블 에그 레시피"
+    }
+  ]
+}

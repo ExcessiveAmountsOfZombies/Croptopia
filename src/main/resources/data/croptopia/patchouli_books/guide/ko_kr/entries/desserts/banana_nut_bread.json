@@ -1,0 +1,12 @@
+{
+  "name": "바나나 견과류 빵",
+  "icon": "croptopia:banana_nut_bread",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_nut_bread",
+      "text": "바나나 견과류 빵 레시피 (WIP)."
+    }
+  ]
+}

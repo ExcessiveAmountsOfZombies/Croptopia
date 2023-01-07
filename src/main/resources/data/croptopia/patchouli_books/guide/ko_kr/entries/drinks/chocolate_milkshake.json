@@ -1,0 +1,12 @@
+{
+  "name": "초콜릿 밀크쉐이크",
+  "icon": "croptopia:chocolate_milkshake",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chocolate_milkshake",
+      "text": "초콜릿 밀크쉐이크 레시피"
+    }
+  ]
+}

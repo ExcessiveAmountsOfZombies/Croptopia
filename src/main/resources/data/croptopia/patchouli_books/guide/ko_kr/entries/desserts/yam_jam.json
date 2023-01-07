@@ -1,0 +1,12 @@
+{
+  "name": "마 잼",
+  "icon": "croptopia:yam_jam",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:yam_jam",
+      "text": "마 잼 레시피"
+    }
+  ]
+}

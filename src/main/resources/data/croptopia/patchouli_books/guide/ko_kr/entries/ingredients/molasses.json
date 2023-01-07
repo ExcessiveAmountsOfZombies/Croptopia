@@ -1,0 +1,12 @@
+{
+  "name": "당밀",
+  "icon": "croptopia:molasses",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:molasses_from_sugar_cane",
+      "text": "당밀 레시피"
+    }
+  ]
+}

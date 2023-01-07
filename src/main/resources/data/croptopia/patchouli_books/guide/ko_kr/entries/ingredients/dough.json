@@ -1,0 +1,12 @@
+{
+  "name": "반죽",
+  "icon": "croptopia:dough",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:dough",
+      "text": "반죽 레시피"
+    }
+  ]
+}

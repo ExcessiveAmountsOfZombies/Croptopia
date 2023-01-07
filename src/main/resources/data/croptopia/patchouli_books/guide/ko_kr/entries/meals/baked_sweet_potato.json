@@ -1,0 +1,12 @@
+{
+  "name": "군고구마",
+  "icon": "croptopia:baked_sweet_potato",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:baked_sweet_potato_from_sweetpotato",
+      "text": "군고구마 레시피"
+    }
+  ]
+}

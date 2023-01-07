@@ -1,0 +1,12 @@
+{
+  "name": "차",
+  "icon": "croptopia:tea",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_tea",
+      "text": "차 레시피"
+    }
+  ]
+}

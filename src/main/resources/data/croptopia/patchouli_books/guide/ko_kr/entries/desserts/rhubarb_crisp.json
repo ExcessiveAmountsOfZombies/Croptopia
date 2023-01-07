@@ -1,0 +1,12 @@
+{
+  "name": "루바브 크리스프",
+  "icon": "croptopia:rhubarb_crisp",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_rhubarb_crisp",
+      "text": "루바브 크리스프 레시피"
+    }
+  ]
+}

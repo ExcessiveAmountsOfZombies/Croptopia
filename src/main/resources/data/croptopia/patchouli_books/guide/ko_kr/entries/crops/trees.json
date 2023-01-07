@@ -1,0 +1,11 @@
+{
+  "name": "나무",
+  "icon": "croptopia:apple_sapling",
+  "category": "croptopia:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "세계 전반에 걸쳐 다양한 열매가 열린 나무가 발견됩니다. 수확하려면, 과일을 우클릭하세요."
+    }
+  ]
+}

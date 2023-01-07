@@ -1,0 +1,12 @@
+{
+  "name": "초콜릿",
+  "icon": "croptopia:chocolate",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chocolate",
+      "text": "초콜릿 레시피"
+    }
+  ]
+}

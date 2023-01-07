@@ -1,0 +1,12 @@
+{
+  "name": "오렌지 주스",
+  "icon": "croptopia:orange_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:orange_juice",
+      "text": "오렌지 주스 레시피"
+    }
+  ]
+}

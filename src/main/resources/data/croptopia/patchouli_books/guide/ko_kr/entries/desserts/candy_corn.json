@@ -1,0 +1,12 @@
+{
+  "name": "옥수수 사탕",
+  "icon": "croptopia:candy_corn",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:candy_corn",
+      "text": "옥수수 사탕 레시피"
+    }
+  ]
+}

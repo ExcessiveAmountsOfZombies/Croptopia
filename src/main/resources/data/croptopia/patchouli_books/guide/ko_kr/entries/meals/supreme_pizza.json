@@ -1,0 +1,12 @@
+{
+  "name": "수프림 피자",
+  "icon": "croptopia:supreme_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:supreme_pizza",
+      "text": "수프림 피자 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "간장",
+  "icon": "croptopia:soy_sauce",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:soy_sauce",
+      "text": "간장 레시피"
+    }
+  ]
+}

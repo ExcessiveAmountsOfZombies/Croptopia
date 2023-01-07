@@ -1,0 +1,12 @@
+{
+  "name": "두유",
+  "icon": "croptopia:soy_milk",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:soy_milk",
+      "text": "두유 레시피"
+    }
+  ]
+}

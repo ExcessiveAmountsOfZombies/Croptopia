@@ -1,0 +1,12 @@
+{
+  "name": "후라이드 치킨",
+  "icon": "croptopia:fried_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fried_chicken",
+      "text": "후라이드 치킨 레시피"
+    }
+  ]
+}

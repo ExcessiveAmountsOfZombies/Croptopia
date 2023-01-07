@@ -1,0 +1,12 @@
+{
+  "name": "파인애플 주스",
+  "icon": "croptopia:pineapple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_juice",
+      "text": "파인애플 주스 레시피"
+    }
+  ]
+}

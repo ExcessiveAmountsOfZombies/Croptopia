@@ -1,0 +1,12 @@
+{
+  "name": "엔칠라다",
+  "icon": "croptopia:enchilada",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:enchilada",
+      "text": "엔칠라다 레시피"
+    }
+  ]
+}

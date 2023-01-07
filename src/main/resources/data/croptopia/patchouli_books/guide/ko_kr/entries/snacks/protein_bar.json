@@ -1,0 +1,12 @@
+{
+  "name": "프로틴 바",
+  "icon": "croptopia:protein_bar",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:protein_bar",
+      "text": "프로틴 바 레시피"
+    }
+  ]
+}

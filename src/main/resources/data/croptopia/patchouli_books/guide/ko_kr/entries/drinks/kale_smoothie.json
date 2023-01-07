@@ -1,0 +1,12 @@
+{
+  "name": "케일 스무디",
+  "icon": "croptopia:kale_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_smoothie",
+      "text": "케일 스무디 레시피"
+    }
+  ]
+}

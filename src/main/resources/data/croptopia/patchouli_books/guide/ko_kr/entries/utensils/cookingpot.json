@@ -1,0 +1,12 @@
+{
+  "name": "프라이팬",
+  "icon": "croptopia:frying_pan",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:frying_pan",
+      "text": "프라이팬 제작법"
+    }
+  ]
+}

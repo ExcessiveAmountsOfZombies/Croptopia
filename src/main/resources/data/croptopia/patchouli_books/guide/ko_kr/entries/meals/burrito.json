@@ -1,0 +1,12 @@
+{
+  "name": "부리토",
+  "icon": "croptopia:burrito",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:burrito",
+      "text": "부리토 레시피"
+    }
+  ]
+}

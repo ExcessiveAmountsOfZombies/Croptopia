@@ -1,0 +1,12 @@
+{
+  "name": "식칼",
+  "icon": "croptopia:knife",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:knife",
+      "text": "식칼 제작법"
+    }
+  ]
+}

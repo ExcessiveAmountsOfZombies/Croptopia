@@ -1,0 +1,12 @@
+{
+  "name": "속을 채운 포블라노스",
+  "icon": "croptopia:stuffed_poblanos",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:stuffed_poblanos",
+      "text": "속을 채운 포블라노스 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "치즈 피자",
+  "icon": "croptopia:cheese_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheese_pizza",
+      "text": "치즈 피자 레시피"
+    }
+  ]
+}

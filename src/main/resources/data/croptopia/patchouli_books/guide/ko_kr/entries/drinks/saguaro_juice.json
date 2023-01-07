@@ -1,0 +1,12 @@
+{
+  "name": "선인장 열매 주스",
+  "icon": "croptopia:saguaro_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saguaro_juice",
+      "text": "선인장 열매 주스 레시피"
+    }
+  ]
+}

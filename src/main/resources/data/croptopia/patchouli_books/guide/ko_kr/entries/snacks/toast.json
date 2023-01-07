@@ -1,0 +1,12 @@
+{
+  "name": "토스트",
+  "icon": "croptopia:toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:toast_from_bread",
+      "text": "토스트 레시피"
+    }
+  ]
+}

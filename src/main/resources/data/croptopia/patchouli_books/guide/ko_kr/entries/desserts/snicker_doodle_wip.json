@@ -1,0 +1,12 @@
+{
+  "name": "스니커 쿠키",
+  "icon": "croptopia:snicker_doodle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:snicker_doodle",
+      "text": "스니커 쿠키 레시피 (WIP)"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "구운 스쿼시 호박",
+  "icon": "croptopia:roasted_squash",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_roasted_squash",
+      "text": "구운 스쿼시 호박 레시피"
+    }
+  ]
+}

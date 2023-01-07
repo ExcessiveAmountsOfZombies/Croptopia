@@ -1,0 +1,12 @@
+{
+  "name": "물에 담긴 병",
+  "icon": "croptopia:water_bottle",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_water_bottle",
+      "text": "물에 담긴 병 레시피. 바닐라의 물병과는 다르게 요리용 물병이랍니다."
+    }
+  ]
+}

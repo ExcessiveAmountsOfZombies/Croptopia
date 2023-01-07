@@ -1,0 +1,12 @@
+{
+  "name": "크랜베리 주스",
+  "icon": "croptopia:cranberry_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cranberry_juice",
+      "text": "크랜베리 주스 레시피"
+    }
+  ]
+}

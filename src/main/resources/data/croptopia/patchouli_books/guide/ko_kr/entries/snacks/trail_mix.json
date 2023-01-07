@@ -1,0 +1,12 @@
+{
+  "name": "견과류 믹스",
+  "icon": "croptopia:trail_mix",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:trail_mix",
+      "text": "견과류 믹스 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "손절구",
+  "icon": "croptopia:mortar_and_pestle",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mortar_and_pestle",
+      "text": "손절구 제작법"
+    }
+  ]
+}

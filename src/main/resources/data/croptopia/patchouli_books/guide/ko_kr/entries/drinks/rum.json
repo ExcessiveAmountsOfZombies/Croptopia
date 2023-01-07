@@ -1,0 +1,12 @@
+{
+  "name": "럼주",
+  "icon": "croptopia:rum",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:rum",
+      "text": "럼주 레시피"
+    }
+  ]
+}

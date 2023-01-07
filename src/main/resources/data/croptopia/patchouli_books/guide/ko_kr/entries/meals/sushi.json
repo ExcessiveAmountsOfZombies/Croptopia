@@ -1,0 +1,12 @@
+{
+  "name": "초밥",
+  "icon": "croptopia:sushi",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:sushi",
+      "text": "초밥 레시피"
+    }
+  ]
+}

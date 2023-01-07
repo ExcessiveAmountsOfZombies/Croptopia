@@ -1,0 +1,12 @@
+{
+  "name": "두부 만두",
+  "icon": "croptopia:tofu_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu_and_dumplings",
+      "text": "두부 만두 레시피"
+    }
+  ]
+}

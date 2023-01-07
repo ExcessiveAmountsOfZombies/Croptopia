@@ -1,0 +1,12 @@
+{
+  "name": "캐러멜",
+  "icon": "croptopia:caramel",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:caramel_from_sugar",
+      "text": "캐러멜 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "치즈",
+  "icon": "croptopia:cheese",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheese",
+      "text": "치즈 레시피"
+    }
+  ]
+}

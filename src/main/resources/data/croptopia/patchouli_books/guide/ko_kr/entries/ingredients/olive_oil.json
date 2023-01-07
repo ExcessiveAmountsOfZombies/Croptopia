@@ -1,0 +1,12 @@
+{
+  "name": "올리브 오일",
+  "icon": "croptopia:olive_oil",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:olive_oil",
+      "text": "올리브 오일 레시피"
+    }
+  ]
+}

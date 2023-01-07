@@ -1,0 +1,12 @@
+{
+  "name": "아이바르",
+  "icon": "croptopia:ajvar",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ajvar",
+      "text": "아이바르 레시피"
+    }
+  ]
+}

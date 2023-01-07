@@ -1,0 +1,12 @@
+{
+  "name": "피쉬 앤 칩스",
+  "icon": "croptopia:fish_and_chips",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_fish_and_chips",
+      "text": "피쉬 앤 칩스 레시피"
+    }
+  ]
+}

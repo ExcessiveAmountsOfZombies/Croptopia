@@ -1,0 +1,12 @@
+{
+  "name": "도넛",
+  "icon": "croptopia:doughnut",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:doughnut",
+      "text": "블렌더에서 만들 첫 3D 모델"
+    }
+  ]
+}

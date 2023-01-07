@@ -1,0 +1,12 @@
+{
+  "name": "치즈버거",
+  "icon": "croptopia:cheeseburger",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheeseburger",
+      "text": "치즈버거 레시피"
+    }
+  ]
+}

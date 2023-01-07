@@ -1,0 +1,12 @@
+{
+  "name": "땅콩버터",
+  "icon": "croptopia:peanut_butter",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_peanut_butter",
+      "text": "땅콩버터 레시피"
+    }
+  ]
+}

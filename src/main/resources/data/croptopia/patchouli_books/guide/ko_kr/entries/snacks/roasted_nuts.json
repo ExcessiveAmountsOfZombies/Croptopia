@@ -1,0 +1,12 @@
+{
+  "name": "구운 견과류",
+  "icon": "croptopia:roasted_nuts",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:roasted_nuts",
+      "text": "구운 견과류 레시피"
+    }
+  ]
+}

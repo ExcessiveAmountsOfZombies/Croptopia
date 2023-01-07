@@ -1,0 +1,12 @@
+{
+  "name": "살사소스",
+  "icon": "croptopia:salsa",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:salsa",
+      "text": "살사소스 레시피"
+    }
+  ]
+}

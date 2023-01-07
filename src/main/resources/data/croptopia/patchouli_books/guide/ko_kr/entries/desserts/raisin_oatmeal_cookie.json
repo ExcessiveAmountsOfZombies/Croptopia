@@ -1,0 +1,12 @@
+{
+  "name": "건포도 귀리 쿠키",
+  "icon": "croptopia:raisin_oatmeal_cookie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:raisin_oatmeal_cookie",
+      "text": "건포도 귀리 쿠키 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "치미창가",
+  "icon": "croptopia:chimichanga",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chimichanga",
+      "text": "치미창가 레시피"
+    }
+  ]
+}

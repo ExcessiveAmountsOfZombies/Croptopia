@@ -1,0 +1,12 @@
+{
+  "name": "하와이안 피자",
+  "icon": "croptopia:pineapple_pepperoni_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_pepperoni_pizza",
+      "text": "하와이안 피자 레시피"
+    }
+  ]
+}

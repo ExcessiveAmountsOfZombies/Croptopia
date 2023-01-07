@@ -1,0 +1,12 @@
+{
+  "name": "바나나 스무디",
+  "icon": "croptopia:banana_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_smoothie",
+      "text": "바나나 스무디"
+    }
+  ]
+}

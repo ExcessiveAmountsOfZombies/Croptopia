@@ -1,0 +1,12 @@
+{
+  "name": "치킨 라이스",
+  "icon": "croptopia:chicken_and_rice",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_rice",
+      "text": "치킨 라이스 레시피"
+    }
+  ]
+}

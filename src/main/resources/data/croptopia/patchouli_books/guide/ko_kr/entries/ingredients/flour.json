@@ -1,0 +1,12 @@
+{
+  "name": "밀가루",
+  "icon": "croptopia:flour",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:flour",
+      "text": "밀가루 레시피"
+    }
+  ]
+}

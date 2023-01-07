@@ -1,0 +1,12 @@
+{
+  "name": "트러플",
+  "icon": "croptopia:trifle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_trifle",
+      "text": "트러플 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "냄비",
+  "icon": "croptopia:cooking_pot",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cooking_pot",
+      "text": "냄비 레시피"
+    }
+  ]
+}

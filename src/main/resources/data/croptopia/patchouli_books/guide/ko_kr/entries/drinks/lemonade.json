@@ -1,0 +1,12 @@
+{
+  "name": "레모네이드",
+  "icon": "croptopia:lemonade",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:lemonade",
+      "text": "레모네이드 레시피"
+    }
+  ]
+}

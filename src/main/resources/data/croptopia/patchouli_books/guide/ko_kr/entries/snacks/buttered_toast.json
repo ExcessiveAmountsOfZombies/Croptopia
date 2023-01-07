@@ -1,0 +1,12 @@
+{
+  "name": "버터 토스트",
+  "icon": "croptopia:buttered_toast",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:buttered_toast",
+      "text": "버터 토스트 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "키위 소르벳",
+  "icon": "croptopia:kiwi_sorbet",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_kiwi_sorbet",
+      "text": "키위 소르벳 레시피"
+    }
+  ]
+}

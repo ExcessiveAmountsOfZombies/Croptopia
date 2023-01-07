@@ -1,0 +1,12 @@
+{
+  "name": "땅콩버터와 잼",
+  "icon": "croptopia:peanut_butter_and_jam",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:peanut_butter_and_jam",
+      "text": "땅콩버터와 잼 레시피"
+    }
+  ]
+}

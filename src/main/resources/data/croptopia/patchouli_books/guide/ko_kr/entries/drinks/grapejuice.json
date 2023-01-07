@@ -1,0 +1,12 @@
+{
+  "name": "포도 주스",
+  "icon": "croptopia:grape_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:grape_juice",
+      "text": "포도 주스 레시피"
+    }
+  ]
+}

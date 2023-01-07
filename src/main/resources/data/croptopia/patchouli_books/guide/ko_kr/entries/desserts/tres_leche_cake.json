@@ -1,0 +1,12 @@
+{
+  "name": "트레스 레체스 케이크",
+  "icon": "croptopia:tres_leche_cake",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tres_leche_cake",
+      "text": "트레스 레체스 케이크 레시피"
+    }
+  ]
+}

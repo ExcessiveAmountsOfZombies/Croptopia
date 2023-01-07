@@ -1,0 +1,12 @@
+{
+  "name": "구운 베이컨",
+  "icon": "croptopia:cooked_bacon",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:cooked_bacon_from_bacon",
+      "text": "구운 베이컨 레시피"
+    }
+  ]
+}

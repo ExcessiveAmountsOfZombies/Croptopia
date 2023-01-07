@@ -1,0 +1,12 @@
+{
+  "name": "구운 치즈",
+  "icon": "croptopia:grilled_cheese",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:grilled_cheese",
+      "text": "구운 치즈 레시피"
+    }
+  ]
+}

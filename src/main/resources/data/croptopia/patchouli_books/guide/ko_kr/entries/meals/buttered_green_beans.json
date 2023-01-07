@@ -1,0 +1,12 @@
+{
+  "name": "버터 완두콩",
+  "icon": "croptopia:buttered_green_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_buttered_green_beans",
+      "text": "버터 완두콩 레시피"
+    }
+  ]
+}

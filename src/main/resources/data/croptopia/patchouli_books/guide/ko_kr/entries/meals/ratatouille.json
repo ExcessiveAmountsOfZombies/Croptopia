@@ -1,0 +1,12 @@
+{
+  "name": "라따뚜이",
+  "icon": "croptopia:ratatouille",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ratatouille",
+      "text": "\"라따뚜이, 오늘은 뭐 만들지?\""
+    }
+  ]
+}

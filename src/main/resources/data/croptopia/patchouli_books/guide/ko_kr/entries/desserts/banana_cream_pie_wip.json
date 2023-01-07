@@ -1,0 +1,12 @@
+{
+  "name": "바나나 크림파이",
+  "icon": "croptopia:banana_cream_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_cream_pie",
+      "text": "바나나 크림파이 레시피"
+    }
+  ]
+}

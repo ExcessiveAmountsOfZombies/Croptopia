@@ -1,0 +1,12 @@
+{
+  "name": "착즙기",
+  "icon": "croptopia:food_press",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:food_press",
+      "text": "착즙기 제작법"
+    }
+  ]
+}

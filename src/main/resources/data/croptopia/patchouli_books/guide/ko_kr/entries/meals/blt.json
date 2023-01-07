@@ -1,0 +1,12 @@
+{
+  "name": "BLT 샌드위치",
+  "icon": "croptopia:blt",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:blt",
+      "text": "BLT 샌드위치 레시피"
+    }
+  ]
+}

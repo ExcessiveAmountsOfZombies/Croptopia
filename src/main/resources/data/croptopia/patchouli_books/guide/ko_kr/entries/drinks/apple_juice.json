@@ -1,0 +1,12 @@
+{
+  "name": "사과 주스",
+  "icon": "croptopia:apple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:apple_juice",
+      "text": "사과 주스 레시피"
+    }
+  ]
+}

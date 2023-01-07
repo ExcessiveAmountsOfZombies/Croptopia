@@ -1,0 +1,12 @@
+{
+  "name": "소고기 볶음",
+  "icon": "croptopia:beef_stir_fry",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_stir_fry",
+      "text": "소고기 볶음 레시피"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "튀김류",
+  "icon": "croptopia:french_fries",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:french_fries",
+      "recipe2": "croptopia:sweet_potato_fries"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "다양한 튀김 레시피들"
+    }
+  ]
+}

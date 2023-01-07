@@ -1,0 +1,12 @@
+{
+  "name": "스쿼시 스파게티",
+  "icon": "croptopia:spaghetti_squash",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:spaghetti_squash",
+      "text": "스쿼시 스파게티 레시피"
+    }
+  ]
+}

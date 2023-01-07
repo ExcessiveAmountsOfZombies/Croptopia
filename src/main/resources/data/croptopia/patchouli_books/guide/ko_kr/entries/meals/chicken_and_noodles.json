@@ -1,0 +1,12 @@
+{
+  "name": "닭고기 국수",
+  "icon": "croptopia:chicken_and_noodles",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_noodles",
+      "text": "닭고기 국수 레시피"
+    }
+  ]
+}

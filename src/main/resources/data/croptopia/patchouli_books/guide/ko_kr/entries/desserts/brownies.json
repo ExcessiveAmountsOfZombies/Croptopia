@@ -1,0 +1,12 @@
+{
+  "name": "브라우니",
+  "icon": "croptopia:brownies",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:brownies",
+      "text": "브라우니 레시피"
+    }
+  ]
+}

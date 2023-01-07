@@ -1,0 +1,12 @@
+{
+  "name": "소고기 스튜",
+  "icon": "croptopia:beef_stew",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_stew",
+      "text": "소고기 스튜 레시피"
+    }
+  ]
+}

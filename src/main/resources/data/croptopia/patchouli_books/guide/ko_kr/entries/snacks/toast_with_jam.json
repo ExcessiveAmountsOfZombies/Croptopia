@@ -1,0 +1,12 @@
+{
+  "name": "잼을 바른 토스트",
+  "icon": "croptopia:toast_with_jam",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:toast_with_jam",
+      "text": "잼을 바른 토스트 레시피"
+    }
+  ]
+}

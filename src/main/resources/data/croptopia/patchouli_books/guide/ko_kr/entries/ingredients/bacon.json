@@ -1,0 +1,12 @@
+{
+  "name": "베이컨",
+  "icon": "croptopia:bacon",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_bacon",
+      "text": "베이컨 레시피"
+    }
+  ]
+}

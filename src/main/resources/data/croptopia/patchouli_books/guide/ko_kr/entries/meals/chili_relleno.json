@@ -1,0 +1,12 @@
+{
+  "name": "칠리 레예노",
+  "icon": "croptopia:chili_relleno",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chili_relleno",
+      "text": "칠리 레예노 레시피"
+    }
+  ]
+}

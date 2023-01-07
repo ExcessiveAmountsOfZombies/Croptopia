@@ -1,0 +1,12 @@
+{
+  "name": "요거트",
+  "icon": "croptopia:yoghurt",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:yoghurt",
+      "text": "요거트 레시피"
+    }
+  ]
+}

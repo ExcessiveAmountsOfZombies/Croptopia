@@ -1,0 +1,12 @@
+{
+  "name": "맥주",
+  "icon": "croptopia:beer",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:beer",
+      "text": "맥주 레시피"
+    }
+  ]
+}

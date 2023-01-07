@@ -1,0 +1,12 @@
+{
+  "name": "레몬 치킨",
+  "icon": "croptopia:lemon_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:lemon_chicken",
+      "text": "레몬 치킨 레시피"
+    }
+  ]
+}

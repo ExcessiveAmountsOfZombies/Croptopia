@@ -1,0 +1,12 @@
+{
+  "name": "비프 웰링턴",
+  "icon": "croptopia:beef_wellington",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_wellington",
+      "text": "비프 웰링턴 레시피"
+    }
+  ]
+}

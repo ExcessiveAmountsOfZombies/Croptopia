@@ -1,0 +1,12 @@
+{
+  "name": "멜론 주스",
+  "icon": "croptopia:melon_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:melon_juice",
+      "text": "멜론 주스 레시피"
+    }
+  ]
+}

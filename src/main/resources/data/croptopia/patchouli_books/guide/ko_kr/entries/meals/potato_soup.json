@@ -1,0 +1,12 @@
+{
+  "name": "감자 수프",
+  "icon": "croptopia:potato_soup",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_potato_soup",
+      "text": "감자 수프 레시피"
+    }
+  ]
+}

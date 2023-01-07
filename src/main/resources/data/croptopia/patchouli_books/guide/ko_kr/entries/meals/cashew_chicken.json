@@ -1,0 +1,12 @@
+{
+  "name": "캐슈넛 치킨",
+  "icon": "croptopia:cashew_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cashew_chicken",
+      "text": "캐슈넛 치킨 레시피"
+    }
+  ]
+}

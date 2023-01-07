@@ -1,0 +1,12 @@
+{
+  "name": "찐 브로콜리",
+  "icon": "croptopia:steamed_broccoli",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_steamed_broccoli",
+      "text": "찐 브로콜리 레시피"
+    }
+  ]
+}

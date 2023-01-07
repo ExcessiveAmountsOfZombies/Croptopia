@@ -1,0 +1,12 @@
+{
+  "name": "오르차타",
+  "icon": "croptopia:horchata",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:horchata",
+      "text": "오르차타 레시피"
+    }
+  ]
+}

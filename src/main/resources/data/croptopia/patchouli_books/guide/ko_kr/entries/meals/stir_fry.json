@@ -1,0 +1,12 @@
+{
+  "name": "채소볶음",
+  "icon": "croptopia:stir_fry",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_stir_fry",
+      "text": "채소볶음 레시피"
+    }
+  ]
+}

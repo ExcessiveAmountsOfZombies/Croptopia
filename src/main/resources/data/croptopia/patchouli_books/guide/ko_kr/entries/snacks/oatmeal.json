@@ -1,0 +1,12 @@
+{
+  "name": "오트밀",
+  "icon": "croptopia:oatmeal",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:oatmeal",
+      "text": "오트밀 레시피"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "코타지 파이",
+  "icon": "croptopia:shepherds_pie",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_shepherds_pie",
+      "text": "코타지 파이 레시피"
+    }
+  ]
+}

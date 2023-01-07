@@ -1,0 +1,12 @@
+{
+  "name": "벌꿀주",
+  "icon": "croptopia:mead",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mead",
+      "text": "벌꿀주 레시피"
+    }
+  ]
+}

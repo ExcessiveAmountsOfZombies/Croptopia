@@ -1,0 +1,12 @@
+{
+  "name": "찐 완두콩",
+  "icon": "croptopia:steamed_green_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_steamed_green_beans",
+      "text": "찐 완두콩 레시피"
+    }
+  ]
+}

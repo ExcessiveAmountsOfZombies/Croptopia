@@ -1,0 +1,12 @@
+{
+  "name": "건포도",
+  "icon": "croptopia:raisins",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:raisins_from_grape",
+      "text": "건포도 레시피"
+    }
+  ]
+}
