@@ -150,7 +150,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             cropBlocks.add(treeCrop.asBlock());
             cropBlocks.add(treeCrop.saplingBlock);
             leafBlocks.add(treeCrop.asBlock());
-            treeCrop.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(treeCrop.name() + "_tree"));
+            treeCrop.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation("croptopia", treeCrop.name() + "_tree"));
             register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingBlock());
         }
     }
