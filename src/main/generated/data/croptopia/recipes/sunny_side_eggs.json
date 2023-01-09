@@ -1,18 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:egg"
+    },
+    "2": {
+      "item": "croptopia:frying_pan"
+    }
+  },
   "pattern": [
     "121"
   ],
-  "key": {
-    "2": {
-      "item": "croptopia:frying_pan"
-    },
-    "1": {
-      "item": "minecraft:egg"
-    }
-  },
   "result": {
-    "item": "croptopia:sunny_side_eggs",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:sunny_side_eggs"
   }
 }

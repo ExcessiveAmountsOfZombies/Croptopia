@@ -1,6 +1,7 @@
 package com.epherical.croptopia.config;
 
 import com.google.common.collect.SetMultimap;
+import net.minecraft.core.registries.Registries;
 import org.spongepowered.configurate.ConfigurationNode;
 import org.spongepowered.configurate.serialize.SerializationException;
 import org.spongepowered.configurate.serialize.TypeSerializer;
@@ -52,7 +53,7 @@ public class TreeConfiguration {
             List<ResourceKey<Biome>> biomeKeys = new ArrayList<>();
             if (ids != null) {
                 for (ResourceLocation id : ids) {
-                    biomeKeys.add(ResourceKey.create(Registry.BIOME_REGISTRY, id));
+                    biomeKeys.add(ResourceKey.create(Registries.BIOME, id));
                 }
             }
 

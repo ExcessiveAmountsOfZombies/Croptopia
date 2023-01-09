@@ -1,14 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    "736",
-    " 45"
-  ],
+  "category": "misc",
   "key": {
-    "7": {
-      "item": "croptopia:frying_pan"
-    },
     "1": {
       "item": "minecraft:egg"
     },
@@ -26,8 +19,16 @@
     },
     "6": {
       "item": "croptopia:toast"
+    },
+    "7": {
+      "item": "croptopia:frying_pan"
     }
   },
+  "pattern": [
+    "123",
+    "736",
+    " 45"
+  ],
   "result": {
     "item": "croptopia:the_big_breakfast"
   }

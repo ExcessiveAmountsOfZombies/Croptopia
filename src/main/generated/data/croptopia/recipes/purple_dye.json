@@ -1,11 +1,19 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
+    {
+      "tag": "${dependent}:grapes"
+    },
+    {
+      "tag": "${dependent}:grapes"
+    },
     {
       "tag": "${dependent}:grapes"
     }
   ],
   "result": {
+    "count": 2,
     "item": "minecraft:purple_dye"
   }
 }

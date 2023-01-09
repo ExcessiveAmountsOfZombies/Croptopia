@@ -11,6 +11,8 @@ import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
@@ -56,7 +58,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagKey<Block> logBlockTag;
     private Block leaves;
     private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
-    private Holder<ConfiguredFeature<TreeConfiguration, ?>> tree;
+    private ResourceKey<ConfiguredFeature<?, ?>> tree;
     private final Item sapling;
     private Block saplingBlock;
 
@@ -73,8 +75,8 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         strippedWood = new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
         // create the tags (will be filled by datagen)
         String tagName = name + "_logs";
-        logItemTag = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(MiscNames.MOD_ID, tagName));
-        logBlockTag = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(MiscNames.MOD_ID, tagName));
+        logItemTag = TagKey.create(Registries.ITEM, new ResourceLocation(MiscNames.MOD_ID, tagName));
+        logBlockTag = TagKey.create(Registries.BLOCK, new ResourceLocation(MiscNames.MOD_ID, tagName));
         // left is leaves and saplings
         leaves = createRegularLeavesBlock();
         treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
@@ -142,11 +144,11 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return treeGen;
     }
 
-    public Holder<ConfiguredFeature<TreeConfiguration, ?>> getTree() {
+    public ResourceKey<ConfiguredFeature<?, ?>> getTree() {
         return tree;
     }
 
-    public void setTree(Holder<ConfiguredFeature<TreeConfiguration, ?>> tree) {
+    public void setTree(ResourceKey<ConfiguredFeature<?, ?>> tree) {
         this.tree = tree;
     }
 
@@ -169,7 +171,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             leafBlocks.add(tree.leaves);
             tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
             cropBlocks.add(tree.saplingBlock);
-            tree.tree = Content.register(createIdentifier(tree.name + "_tree"), tree.getTreeGen());
+            tree.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(tree.name() + "_tree"));
         }
     }
 

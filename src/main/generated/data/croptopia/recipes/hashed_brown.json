@@ -1,13 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "123",
-    " 4 "
-  ],
+  "category": "misc",
   "key": {
-    "4": {
-      "item": "croptopia:knife"
-    },
     "1": {
       "tag": "${dependent}:potatoes"
     },
@@ -16,10 +10,17 @@
     },
     "3": {
       "tag": "${dependent}:olive_oils"
+    },
+    "4": {
+      "item": "croptopia:knife"
     }
   },
+  "pattern": [
+    "123",
+    " 4 "
+  ],
   "result": {
-    "item": "croptopia:hashed_brown",
-    "count": 4
+    "count": 4,
+    "item": "croptopia:hashed_brown"
   }
 }

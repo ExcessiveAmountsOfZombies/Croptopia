@@ -23,7 +23,6 @@ import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
@@ -643,11 +642,6 @@ public class Content {
     }
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> Holder<ConfiguredFeature<FC, ?>> register(ResourceLocation id, ConfiguredFeature<FC, F> feature) {
-        return badRegister(BuiltinRegistries.CONFIGURED_FEATURE, id, feature);
-    }
-
-    public static <V extends T, T> Holder<V> badRegister(Registry<T> registry, ResourceLocation id, V value) {
-        //noinspection unchecked
-        return BuiltinRegistries.register((Registry<V>) registry, id, value);
+        return Holder.direct(feature);
     }
 }

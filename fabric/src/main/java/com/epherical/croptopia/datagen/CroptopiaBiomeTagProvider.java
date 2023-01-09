@@ -1,19 +1,22 @@
 package com.epherical.croptopia.datagen;
 
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.world.level.biome.Biome;
+
+import java.util.concurrent.CompletableFuture;
 
 
 public class CroptopiaBiomeTagProvider extends TagsProvider<Biome> {
 
-    protected CroptopiaBiomeTagProvider(DataGenerator dataGenerator) {
-        super(dataGenerator, BuiltinRegistries.BIOME);
+    protected CroptopiaBiomeTagProvider(PackOutput dataGenerator, CompletableFuture<HolderLookup.Provider> completableFuture) {
+        super(dataGenerator, Registries.BIOME, completableFuture);
     }
 
     @Override
-    protected void addTags() {
+    protected void addTags(HolderLookup.Provider provider) {
         /*Set<BiomeTagHolding> holdingArrayList = new HashSet<>();
         holdingArrayList.add(new BiomeTagHolding(Tags.HAS_ARTICHOKE, SWAMP));
         holdingArrayList.add(new BiomeTagHolding(Tags.HAS_ASPARAGUS, SWAMP));

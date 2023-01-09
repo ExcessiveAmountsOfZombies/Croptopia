@@ -20,11 +20,17 @@ import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.util.PluralInfo;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.impl.datagen.ForcedTagEntry;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.data.tags.VanillaItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagEntry;
 import net.minecraft.tags.TagKey;
@@ -32,20 +38,27 @@ import net.minecraft.tags.TagManager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
+import java.util.concurrent.CompletableFuture;
 
 public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
 
-    public CroptopiaIndependentItemTagProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+
+    public CroptopiaIndependentItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+        super(output, completableFuture, null);
         ((TagProviderAccessor) this).setPathProvider(
-                new DependentPathProvider(dataGenerator,
-                        DataGenerator.Target.DATA_PACK,
-                        TagManager.getTagDir(this.registry.key())));
+                new DependentPathProvider(output,
+                        PackOutput.Target.DATA_PACK,
+                        TagManager.getTagDir(Registries.ITEM)));
     }
 
     @Override
-    protected void generateTags() {
+    public String getName() {
+        return "Croptopia Independent Tags";
+    }
+
+    @Override
+    protected void addTags(HolderLookup.Provider arg) {
         generateCrops();
         generateSeedsSaplings();
         generateOtherEnums();
@@ -263,21 +276,21 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("sweet_crepes", Content.SWEET_CREPES);
         createGeneralTag("the_big_breakfast", Content.THE_BIG_BREAKFAST);
 
-        this.tag(register("water_bottles")).add(Content.WATER_BOTTLE).add(Items.WATER_BUCKET).addOptional(new ResourceLocation("early_buckets:wooden_water_bucket"));
-        this.tag(register("milks")).add(Content.MILK_BOTTLE).add(Content.SOY_MILK).add(Items.MILK_BUCKET).addOptionalTag(independentTag("milk_buckets"));
-        this.tag(register("potatoes")).add(Items.POTATO).add(Content.SWEETPOTATO.asItem());
+        this.tag(register("water_bottles")).add(reverseLookup(Content.WATER_BOTTLE)).add(reverseLookup(Items.WATER_BUCKET)).addOptional(new ResourceLocation("early_buckets:wooden_water_bucket"));
+        this.tag(register("milks")).add(reverseLookup(Content.MILK_BOTTLE)).add(reverseLookup(Content.SOY_MILK)).add(reverseLookup(Items.MILK_BUCKET)).addOptionalTag(independentTag("milk_buckets"));
+        this.tag(register("potatoes")).add(reverseLookup(Items.POTATO)).add(reverseLookup(Content.SWEETPOTATO.asItem()));
     }
 
     private static TagKey<Item> register(String id) {
-        return TagKey.create(Registry.ITEM_REGISTRY, Croptopia.createIdentifier(id));
+        return TagKey.create(Registries.ITEM, Croptopia.createIdentifier(id));
     }
 
     private void createCategoryTag(String category, String name, Item item) {
-        String path = Registry.ITEM.getKey(item).getPath();
+        String path = reverseLookup(item).location().getPath();
         TagKey<Item> forgeFriendlyTag = register(category + "/" + path);
         ResourceLocation independentEntry = independentTag(category + "/" + path);
-        this.tag(forgeFriendlyTag).add(item);
-        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) this.tag(register(name)).add(item);
+        this.tag(forgeFriendlyTag).add(reverseLookup(item));
+        ObjectBuilderAccessor fabricGeneralTag = (ObjectBuilderAccessor) this.tag(register(name)).add(reverseLookup(item));
         fabricGeneralTag.getBuilder().add(new ForcedTagEntry(TagEntry.tag(independentEntry)));
 
         // this is the group i.e vegetables.json encompassing all the vegetables in the mod. it should pull from zucchini.json and not vegetables/zucchini.json
@@ -304,20 +317,20 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
     private void createSeedSaplingTag(String category, String name, Item item) {
         String pluralSeedName;
         if (item == Content.VANILLA.getSeedItem()) {
-            pluralSeedName = Registry.ITEM.getKey(item).getPath();
+            pluralSeedName = reverseLookup(item).location().getPath();
         } else {
-            pluralSeedName = Registry.ITEM.getKey(item).getPath() + "s";
+            pluralSeedName = reverseLookup(item).location().getPath() + "s";
         }
 
         // Forge tags use seed/cropname, but not including seed name. artichoke good artichoke_seed bad.
         TagKey<Item> forgeFriendlyTag = register(category + "/" + name);
         ResourceLocation independentEntry = independentTag(category + "/" + name);
 
-        this.tag(forgeFriendlyTag).add(item);
-        ObjectBuilderAccessor<?> group = (ObjectBuilderAccessor<?>) (Object) this.tag(register(category));
+        this.tag(forgeFriendlyTag).add(reverseLookup(item));
+        ObjectBuilderAccessor<?> group = (ObjectBuilderAccessor<?>) this.tag(register(category));
         group.getBuilder().add(new ForcedTagEntry(TagEntry.tag(independentEntry)));
 
-        ObjectBuilderAccessor<?> fabricGeneralTag = (ObjectBuilderAccessor<?>) (Object) this.tag(register(pluralSeedName)).add(item);
+        ObjectBuilderAccessor<?> fabricGeneralTag = (ObjectBuilderAccessor<?>) this.tag(register(pluralSeedName)).add(reverseLookup(item));
         fabricGeneralTag.getBuilder().add(new ForcedTagEntry(TagEntry.tag(independentEntry)));
     }
 
@@ -326,5 +339,4 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         accessor.setNamespace("${dependent}"); // lmao
         return (ResourceLocation) accessor;
     }
-
 }

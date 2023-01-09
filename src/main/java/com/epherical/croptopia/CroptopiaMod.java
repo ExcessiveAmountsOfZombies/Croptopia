@@ -36,7 +36,7 @@ public record CroptopiaMod(PlatformAdapter<?> platform) {
     }
 
     public static Item.Properties createGroup() {
-        return new Item.Properties().tab(mod.platform.getTab());
+        return new Item.Properties();
     }
 
     public static ResourceLocation createIdentifier(String name) {

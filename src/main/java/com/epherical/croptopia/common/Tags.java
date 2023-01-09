@@ -3,6 +3,7 @@ package com.epherical.croptopia.common;
 import com.epherical.croptopia.CroptopiaMod;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
@@ -74,7 +75,7 @@ public class Tags {
     public static final TagKey<Biome> HAS_ZUCCHINI = create("has_crop/" + ItemNamesV2.ZUCCHINI);
 
     private static TagKey<Biome> create(String key) {
-        TagKey<Biome> biomeKey = TagKey.create(Registry.BIOME_REGISTRY, CroptopiaMod.createIdentifier(key));
+        TagKey<Biome> biomeKey = TagKey.create(Registries.BIOME, CroptopiaMod.createIdentifier(key));
         CROPTOPIA_BIOME_TAGS.add(biomeKey);
         return biomeKey;
     }

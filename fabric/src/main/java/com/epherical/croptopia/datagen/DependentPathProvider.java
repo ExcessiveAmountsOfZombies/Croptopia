@@ -1,15 +1,17 @@
 package com.epherical.croptopia.datagen;
 
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 
 import java.nio.file.Path;
 
-public class DependentPathProvider extends DataGenerator.PathProvider {
+public class DependentPathProvider extends PackOutput.PathProvider {
     private final Path root;
     private final String kindCopy;
 
-    public DependentPathProvider(DataGenerator dataGenerator, DataGenerator.Target target, String string) {
+    public DependentPathProvider(FabricDataOutput dataGenerator, PackOutput.Target target, String string) {
         super(dataGenerator, target, string);
         this.root = dataGenerator.getOutputFolder().resolve("dependents/platform/");
         this.kindCopy = string;

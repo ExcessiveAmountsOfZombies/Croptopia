@@ -1,19 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " 1 ",
-    "234",
-    "5 6"
-  ],
+  "category": "misc",
   "key": {
     "1": {
       "item": "croptopia:frying_pan"
-    },
-    "5": {
-      "tag": "${dependent}:flour"
-    },
-    "6": {
-      "tag": "${dependent}:onions"
     },
     "2": {
       "tag": "${dependent}:milks"
@@ -23,8 +13,19 @@
     },
     "4": {
       "tag": "${dependent}:spinach"
+    },
+    "5": {
+      "tag": "${dependent}:flour"
+    },
+    "6": {
+      "tag": "${dependent}:onions"
     }
   },
+  "pattern": [
+    " 1 ",
+    "234",
+    "5 6"
+  ],
   "result": {
     "item": "croptopia:quiche"
   }

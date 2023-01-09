@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "121",
-    "356",
-    " 7 "
-  ],
+  "category": "misc",
   "key": {
     "1": {
       "item": "minecraft:egg"
@@ -15,16 +11,21 @@
     "3": {
       "tag": "${dependent}:milks"
     },
-    "7": {
-      "item": "croptopia:frying_pan"
+    "5": {
+      "tag": "${dependent}:spinach"
     },
     "6": {
       "tag": "${dependent}:cheeses"
     },
-    "5": {
-      "tag": "${dependent}:spinach"
+    "7": {
+      "item": "croptopia:frying_pan"
     }
   },
+  "pattern": [
+    "121",
+    "356",
+    " 7 "
+  ],
   "result": {
     "item": "croptopia:baked_crepes"
   }

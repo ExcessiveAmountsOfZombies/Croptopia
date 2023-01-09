@@ -1,7 +1,7 @@
 package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.Croptopia;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -40,7 +40,7 @@ public class GuideBookItem extends Item {
 
         if (user instanceof ServerPlayer && Croptopia.patchouli.isLoaded()) {
             ServerPlayer player = (ServerPlayer) user;
-            PatchouliAPI.get().openBookGUI(player, Registry.ITEM.getKey(this));
+            PatchouliAPI.get().openBookGUI(player, BuiltInRegistries.ITEM.getKey(this));
         }
 
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, stack);

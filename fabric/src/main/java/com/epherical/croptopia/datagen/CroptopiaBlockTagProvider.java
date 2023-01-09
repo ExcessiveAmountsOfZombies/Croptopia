@@ -5,18 +5,31 @@ import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 
-public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 
-    public CroptopiaBlockTagProvider(FabricDataGenerator dataGenerator) {
-        super(dataGenerator);
+public class CroptopiaBlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
+
+
+    public CroptopiaBlockTagProvider(PackOutput packOutput,
+                                     CompletableFuture<HolderLookup.Provider> completableFuture) {
+        super(packOutput, Registries.BLOCK, completableFuture, block -> block.builtInRegistryHolder().key());
     }
 
     @Override
-    protected void generateTags() {
+    protected void addTags(HolderLookup.Provider arg) {
         generateSaplings();
         generateBarkLogs();
         generateLeaves();
@@ -26,7 +39,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateSaplings() {
-        FabricTagBuilder<Block> saplings = getOrCreateTagBuilder(BlockTags.SAPLINGS);
+        IntrinsicTagAppender<Block> saplings = this.tag(BlockTags.SAPLINGS);
         for (TreeCrop crop : TreeCrop.copy()) {
             saplings.add(crop.getSaplingBlock());
         }
@@ -36,7 +49,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateBarkLogs() {
-        FabricTagBuilder<Block> burnableLog = getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN);
+        IntrinsicTagAppender<Block> burnableLog = this.tag(BlockTags.LOGS_THAT_BURN);
         for (Tree crop : Tree.copy()) {
             // add different log types to log tag of this crop
             tag(crop.getLogBlockTag())
@@ -50,8 +63,8 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateLeaves() {
-        FabricTagBuilder<Block> leaves = getOrCreateTagBuilder(BlockTags.LEAVES);
-        FabricTagBuilder<Block> hoe = getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_HOE);
+        IntrinsicTagAppender<Block> leaves = this.tag(BlockTags.LEAVES);
+        IntrinsicTagAppender<Block> hoe = this.tag(BlockTags.MINEABLE_WITH_HOE);
         for (TreeCrop crop : TreeCrop.copy()) {
             leaves.add(crop.getLeaves());
             hoe.add(crop.getLeaves());
@@ -63,7 +76,7 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
     }
 
     protected void generateCrops() {
-        FabricTagBuilder<Block> crops = getOrCreateTagBuilder(BlockTags.CROPS);
+        IntrinsicTagAppender<Block> crops = this.tag(BlockTags.CROPS);
         for (FarmlandCrop crop : FarmlandCrop.copy()) {
             crops.add(crop.asBlock());
         }
@@ -78,5 +91,4 @@ public class CroptopiaBlockTagProvider extends FabricTagProvider.BlockTagProvide
         tag(BlockTags.DRIPSTONE_REPLACEABLE).add(Content.SALT_ORE_BLOCK);
         tag(BlockTags.ENDERMAN_HOLDABLE).add(Content.SALT_ORE_BLOCK);
     }
-
 }

@@ -1,10 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "1",
-    "2",
-    "3"
-  ],
+  "category": "misc",
   "key": {
     "1": {
       "tag": "${dependent}:ground_pork"
@@ -16,6 +12,11 @@
       "tag": "${dependent}:paprika"
     }
   },
+  "pattern": [
+    "1",
+    "2",
+    "3"
+  ],
   "result": {
     "item": "croptopia:sausage"
   }

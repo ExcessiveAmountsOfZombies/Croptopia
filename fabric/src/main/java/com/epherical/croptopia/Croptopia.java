@@ -19,8 +19,8 @@ import com.google.common.collect.Sets;
 import com.mojang.logging.LogUtils;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.fabric.api.registry.VillagerInteractionRegistries;
 import net.fabricmc.fabric.api.registry.VillagerPlantableRegistry;
@@ -28,11 +28,16 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
@@ -51,7 +56,9 @@ public class Croptopia implements ModInitializer {
 
     public CroptopiaConfig config;
 
-    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroupBuilder.create(new ResourceLocation(MiscNames.MOD_ID, "croptopia"))
+
+    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder(new ResourceLocation(MiscNames.MOD_ID, "croptopia"))
+            .title(Component.nullToEmpty("Croptopia"))
             .icon(() -> new ItemStack(Content.COFFEE))
             .build();
     public static Patchouli patchouli;
@@ -62,10 +69,10 @@ public class Croptopia implements ModInitializer {
                 .map(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(new ResourceLocation("croptopia", "terralith"), modContainer, ResourcePackActivationType.DEFAULT_ENABLED))
                 .filter(success -> !success);
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
-        Content.registerBlocks((id, object) -> Registry.register(Registry.BLOCK, id, object));
+        Content.registerBlocks((id, object) -> Registry.register(BuiltInRegistries.BLOCK, id, object));
         Content.GUIDE = new GuideBookItem(createGroup());
-        Registry.register(Registry.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
-        Content.registerItems((id, object) -> Registry.register(Registry.ITEM, id, object));
+        Registry.register(BuiltInRegistries.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
+        Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object));
 
 
         patchouli = new Patchouli();

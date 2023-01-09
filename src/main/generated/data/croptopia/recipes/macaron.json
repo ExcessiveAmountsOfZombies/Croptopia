@@ -1,9 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "122",
-    "565"
-  ],
+  "category": "misc",
   "key": {
     "1": {
       "item": "minecraft:egg"
@@ -18,8 +15,12 @@
       "item": "croptopia:food_press"
     }
   },
+  "pattern": [
+    "122",
+    "565"
+  ],
   "result": {
-    "item": "croptopia:macaron",
-    "count": 2
+    "count": 2,
+    "item": "croptopia:macaron"
   }
 }
