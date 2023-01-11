@@ -18,6 +18,9 @@ import com.epherical.croptopia.loot.AdditionalTableModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
 import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
+import com.epherical.croptopia.register.helpers.TreeCrop;
+import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.registry.GeneratorRegistry;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
@@ -26,22 +29,26 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.world.BiomeModifier;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
@@ -65,10 +72,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
+import static com.epherical.croptopia.common.MiscNames.MOD_ID;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -84,7 +93,8 @@ public class CroptopiaForge {
 
     public static Config config;
 
-    public static CreativeModeTab CROPTOPIA_ITEM_GROUP;
+    public static CreativeModeTab CROPTOPIA_ITEM_GROUP = null;
+
 
     public static CroptopiaMod mod;
 
@@ -124,12 +134,6 @@ public class CroptopiaForge {
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
-        CROPTOPIA_ITEM_GROUP = new CreativeModeTab("croptopia") {
-            @Override
-            public ItemStack makeIcon() {
-                return new ItemStack(Content.COFFEE);
-            }
-        };
         mod = new CroptopiaMod(new ForgeAdapter());
     }
 
@@ -174,6 +178,39 @@ public class CroptopiaForge {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
+        public static void registerTab(CreativeModeTabEvent.Register event) {
+            event.registerCreativeModeTab(new ResourceLocation("croptopia", "tab"), builder -> {
+                builder.title(Component.translatable("itemGroup.croptopia"))
+                        .displayItems((featureFlagSet, output, bl) ->
+                                BuiltInRegistries.ITEM.entrySet().stream()
+                                        .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
+                                        .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
+                                        .forEach(entry -> output.accept(entry.getValue())))
+                        .icon(() -> new ItemStack(Content.COFFEE));
+            });
+        }
+
+        @SubscribeEvent
+        public static void modifyTabs(CreativeModeTabEvent.BuildContents event) {
+            // not a fan of forges event compared to fabrics.
+            if (event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
+                event.getEntries().putAfter(new ItemStack(Items.MANGROVE_PROPAGULE), new ItemStack(Content.CINNAMON.getSapling()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                TreeCrop.copy().stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).forEachOrdered(stack -> {
+                    event.getEntries().putAfter(new ItemStack(Items.FLOWERING_AZALEA), stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                });
+                FarmlandCrop.copy().stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).forEachOrdered(stack -> {
+                    event.getEntries().putAfter(new ItemStack(Items.NETHER_WART), stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                });
+                event.getEntries().putBefore(new ItemStack(Items.COAL_ORE), new ItemStack(Content.SALT_ORE), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            } else if (event.getTab().equals(CreativeModeTabs.TOOLS_AND_UTILITIES)) {
+                Utensil.copy().stream().map(ItemStack::new).forEachOrdered(stack -> {
+                    event.getEntries().putAfter(new ItemStack(Items.FLINT_AND_STEEL), stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                });
+            }
+        }
+
+
+        @SubscribeEvent
         public static void onRegister(RegisterEvent event) {
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.ITEMS)) {
                 Content.GUIDE = new GuideBookItem(createGroup());
@@ -204,9 +241,6 @@ public class CroptopiaForge {
 
                 GeneratorRegistry.init();
                 Config.setFeatures(config);
-                TreeModifier.register(BIOME_MODIFIER);
-                SaltModifier.register(BIOME_MODIFIER);
-                CropModifier.register(BIOME_MODIFIER);
             }
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.BLOCKS)) {
                 Content.registerBlocks((id, object) -> {

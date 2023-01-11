@@ -17,6 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Collection;
+import java.util.Locale;
 
 import static com.epherical.croptopia.CroptopiaForge.createIdentifier;
 
@@ -32,7 +33,7 @@ public record TreeModifier(GenerationStep.Decoration step) implements BiomeModif
                 BiomeGenerationSettingsBuilder generation = builder.getGenerationSettings();
                 Collection<String> strings = CroptopiaForge.config.getFeatures().get(biomeResourceKey.location());
                 for (String string : strings) {
-                    generation.addFeature(step, GeneratorRegistry.getFeatureKey(string));
+                    generation.addFeature(step, GeneratorRegistry.getPlacedFeature(GeneratorRegistry.getFeatureKey(string)));
                 }
             });
         }
@@ -46,13 +47,13 @@ public record TreeModifier(GenerationStep.Decoration step) implements BiomeModif
     public static Codec<TreeModifier> makeCodec() {
         return RecordCodecBuilder.create(builder -> builder.group(
                 Codec.STRING.comapFlatMap(TreeModifier::generationStageFromString,
-                        GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(TreeModifier::step)
+                        GenerationStep.Decoration::getName).fieldOf("generation_stage").forGetter(TreeModifier::step)
         ).apply(builder, TreeModifier::new));
     }
 
     private static DataResult<GenerationStep.Decoration> generationStageFromString(String name) {
         try {
-            return DataResult.success(GenerationStep.Decoration.valueOf(name));
+            return DataResult.success(GenerationStep.Decoration.valueOf(name.toUpperCase(Locale.ROOT)));
         } catch (Exception e) {
             return DataResult.error("Not a decoration stage: " + name);
         }

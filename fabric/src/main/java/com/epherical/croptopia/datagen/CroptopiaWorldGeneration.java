@@ -1,5 +1,6 @@
 package com.epherical.croptopia.datagen;
 
+import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.registry.GeneratorRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -23,11 +24,18 @@ public class CroptopiaWorldGeneration extends FabricDynamicRegistryProvider {
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
         HolderLookup.RegistryLookup<ConfiguredFeature<?, ?>> lookup = registries.lookupOrThrow(Registries.CONFIGURED_FEATURE);
-        HolderLookup.RegistryLookup<PlacedFeature> look = registries.lookupOrThrow(Registries.PLACED_FEATURE);
         for (TreeCrop treeCrop : TreeCrop.copy()) {
-            addTreeConfiguredFeature(treeCrop, entries);
+            addTreeConfiguredFeature(treeCrop.getTree(), treeCrop.getTreeConfig(), entries);
         }
 
+        for (Tree tree : Tree.copy()) {
+            addTreeConfiguredFeature(tree.getTree(), tree.getTreeGen(), entries);
+        }
+
+        // TODO: not sure how to fix this, but the ConfiguredFeature json gets generated above, but then the PlacedFeature also generates whats
+        //  in the ConfiguredFeature json instead of just being a reference. It's probably because of the Holder.direct, but how do you turn it into
+        //  a reference?
+        //Holder.Reference.createStandAlone(lookup, ).
         GeneratorRegistry.datagenPlacedFeatures.forEach((key, value) -> {
             entries.add(key, value.value());
         });
@@ -39,8 +47,8 @@ public class CroptopiaWorldGeneration extends FabricDynamicRegistryProvider {
     }
 
 
-    private Holder<ConfiguredFeature<?, ?>> addTreeConfiguredFeature(TreeCrop crop, Entries entries) {
-        return entries.add(crop.getTree(), crop.getTreeConfig());
+    private Holder<ConfiguredFeature<?, ?>> addTreeConfiguredFeature(ResourceKey<ConfiguredFeature<?, ?>> key, ConfiguredFeature<?, ?> config, Entries entries) {
+        return entries.add(key, config);
     }
 
 }

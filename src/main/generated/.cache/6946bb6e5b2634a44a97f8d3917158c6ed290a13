@@ -1,4 +1,4 @@
-// 1.19.3	2023-01-09T16:08:55.9021722	Croptopia/Recipes
+// 1.19.3	2023-01-09T17:37:14.3593775	Croptopia/Recipes
 cd8f50fe2f11486191628b0fc11711a9ffc97dd5 data\croptopia\recipes\baked_yam_from_smoking_yam.json
 50e8b9adb1946e26ec8fcb65e18fdac7da666934 data\croptopia\advancements\recipes\misc\cooking_pot.json
 ec1eb53145a94bc82b79ce8f6651dbb04b622443 data\croptopia\advancements\recipes\food\baked_sweet_potato_from_sweetpotato.json
@@ -225,9 +225,9 @@ ca93c037fceaac436a6ee71647acdf7e9f5f7af0 data\croptopia\advancements\recipes\mis
 caf1109e77f7b4349eef0b15c289113000a5fa48 data\croptopia\advancements\recipes\misc\crab_legs.json
 2e48a79ca8605f12c17d41aa69aed532b62b6c7e data\croptopia\advancements\recipes\misc\corn_seed.json
 8e65e8dfc13cd2106023835b2fe61c2abdba304c data\croptopia\recipes\turnip_seed.json
-0e69724393c9c2a03c7f47d71432973d4576472a data\croptopia\recipes\apple_juice.json
-08f944afdc54ea57f3ef4550f2884d82908b1cd5 data\croptopia\recipes\plum_sapling.json
 ef3e3d4ae86682f690b10f3e9b16f94c644ba7ce data\croptopia\advancements\recipes\misc\pineapple_seed.json
+08f944afdc54ea57f3ef4550f2884d82908b1cd5 data\croptopia\recipes\plum_sapling.json
+0e69724393c9c2a03c7f47d71432973d4576472a data\croptopia\recipes\apple_juice.json
 4bfb6948d92d9700ac97ee83aa41f9d015f71fa8 data\croptopia\recipes\cashew_sapling.json
 ba5cb72382767714911fd34b98d60665fef2c1fe data\croptopia\recipes\vanilla_ice_cream.json
 7b739a8d55703dd2110767b5c769e35ec9d040da data\croptopia\recipes\cantaloupe_seed.json

@@ -21,6 +21,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 
+import java.util.Locale;
+
 import static com.epherical.croptopia.CroptopiaForge.createIdentifier;
 
 public record SaltModifier(GenerationStep.Decoration step, Holder<PlacedFeature> features) implements BiomeModifier {
@@ -44,23 +46,20 @@ public record SaltModifier(GenerationStep.Decoration step, Holder<PlacedFeature>
     public static Codec<SaltModifier> makeCodec() {
         return RecordCodecBuilder.create(builder -> builder.group(
                 Codec.STRING.comapFlatMap(SaltModifier::generationStageFromString,
-                        GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(SaltModifier::step),
+                        GenerationStep.Decoration::getName).fieldOf("generation_stage").forGetter(SaltModifier::step),
                 PlacedFeature.CODEC.fieldOf("feature").forGetter(SaltModifier::features)
         ).apply(builder, SaltModifier::new));
     }
 
     private static DataResult<GenerationStep.Decoration> generationStageFromString(String name) {
         try {
-            return DataResult.success(GenerationStep.Decoration.valueOf(name));
+            return DataResult.success(GenerationStep.Decoration.valueOf(name.toUpperCase(Locale.ROOT)));
         } catch (Exception e) {
             return DataResult.error("Not a decoration stage: " + name);
         }
     }
 
     public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
-        BiomeModifier modifier = new SaltModifier(
-                GenerationStep.Decoration.UNDERGROUND_ORES,
-                GeneratorRegistry.DISK_SALT_CONFIGURED);
-        biomeSerializer.register("salt_disk", () -> modifier);
+        biomeSerializer.register("salt_disk", () -> new SaltModifier(GenerationStep.Decoration.UNDERGROUND_ORES, GeneratorRegistry.DISK_SALT_CONFIGURED));
     }
 }

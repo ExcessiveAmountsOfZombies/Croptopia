@@ -171,7 +171,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             leafBlocks.add(tree.leaves);
             tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
             cropBlocks.add(tree.saplingBlock);
-            tree.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(tree.name() + "_tree"));
+            tree.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation("croptopia", tree.name() + "_tree"));
         }
     }
 

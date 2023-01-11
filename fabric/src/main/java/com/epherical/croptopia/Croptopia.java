@@ -1,7 +1,6 @@
 package com.epherical.croptopia;
 
 import com.epherical.croptopia.common.ItemNamesV2;
-import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.config.IdentifierSerializer;
 import com.epherical.croptopia.config.TreeConfiguration;
@@ -13,7 +12,10 @@ import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.mixin.ChickenAccess;
 import com.epherical.croptopia.mixin.ParrotAccess;
 import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.Tree;
+import com.epherical.croptopia.register.helpers.TreeCrop;
+import com.epherical.croptopia.register.helpers.Utensil;
 import com.epherical.croptopia.registry.Composter;
 import com.google.common.collect.Sets;
 import com.mojang.logging.LogUtils;
@@ -21,15 +23,16 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.fabric.api.registry.VillagerInteractionRegistries;
 import net.fabricmc.fabric.api.registry.VillagerPlantableRegistry;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
+import net.fabricmc.fabric.impl.itemgroup.MinecraftItemGroups;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,14 +40,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
+import static com.epherical.croptopia.common.MiscNames.MOD_ID;
 
 
 public class Croptopia implements ModInitializer {
@@ -52,13 +56,18 @@ public class Croptopia implements ModInitializer {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    private final boolean devEnvironment = Boolean.getBoolean(MiscNames.MOD_ID + ".dev");
+    private final boolean devEnvironment = Boolean.getBoolean(MOD_ID + ".dev");
 
     public CroptopiaConfig config;
 
 
-    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder(new ResourceLocation(MiscNames.MOD_ID, "croptopia"))
-            .title(Component.nullToEmpty("Croptopia"))
+    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder(new ResourceLocation(MOD_ID, "croptopia"))
+            .title(Component.translatable("itemGroup.croptopia"))
+            .displayItems((featureFlagSet, output, bl) ->
+                    BuiltInRegistries.ITEM.entrySet().stream()
+                            .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
+                            .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
+                            .forEach(entry -> output.accept(entry.getValue())))
             .icon(() -> new ItemStack(Content.COFFEE))
             .build();
     public static Patchouli patchouli;
@@ -73,6 +82,20 @@ public class Croptopia implements ModInitializer {
         Content.GUIDE = new GuideBookItem(createGroup());
         Registry.register(BuiltInRegistries.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
         Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object));
+
+        ItemGroupEvents.modifyEntriesEvent(MinecraftItemGroups.NATURAL_ID).register(entries -> {
+            entries.addAfter(Items.MANGROVE_PROPAGULE, Content.CINNAMON.getSapling());
+            List<ItemStack> collect = TreeCrop.copy().stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).toList();
+            entries.addAfter(Items.FLOWERING_AZALEA, collect);
+            entries.addAfter(Items.NETHER_WART, FarmlandCrop.copy().stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).toList());
+            entries.addBefore(Items.COAL_ORE, Content.SALT_ORE);
+        });
+        ItemGroupEvents.modifyEntriesEvent(MinecraftItemGroups.TOOLS_ID).register(entries -> {
+            entries.addAfter(Items.FLINT_AND_STEEL, Utensil.copy().toArray(new Utensil[0]));
+            if (FabricLoader.getInstance().isModLoaded("patchouli")) {
+                entries.addAfter(Items.WRITABLE_BOOK, Content.GUIDE);
+            }
+        });
 
 
         patchouli = new Patchouli();
@@ -116,7 +139,7 @@ public class Croptopia implements ModInitializer {
     }
 
     public static ResourceLocation createIdentifier(String name) {
-        return new ResourceLocation(MiscNames.MOD_ID, name);
+        return new ResourceLocation(MOD_ID, name);
     }
 
     private void modifyAxeBlockStripping() {

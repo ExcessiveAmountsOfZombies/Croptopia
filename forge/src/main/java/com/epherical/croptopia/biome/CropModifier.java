@@ -18,6 +18,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Locale;
+
 import static com.epherical.croptopia.CroptopiaForge.createIdentifier;
 
 public record CropModifier(GenerationStep.Decoration step, Holder<PlacedFeature> feature) implements BiomeModifier {
@@ -41,23 +43,20 @@ public record CropModifier(GenerationStep.Decoration step, Holder<PlacedFeature>
     public static Codec<CropModifier> makeCodec() {
         return RecordCodecBuilder.create(builder -> builder.group(
                 Codec.STRING.comapFlatMap(CropModifier::generationStageFromString,
-                        GenerationStep.Decoration::toString).fieldOf("generation_stage").forGetter(CropModifier::step),
+                        GenerationStep.Decoration::getName).fieldOf("generation_stage").forGetter(CropModifier::step),
                 PlacedFeature.CODEC.fieldOf("feature").forGetter(CropModifier::feature)
         ).apply(builder, CropModifier::new));
     }
 
     private static DataResult<GenerationStep.Decoration> generationStageFromString(String name) {
         try {
-            return DataResult.success(GenerationStep.Decoration.valueOf(name));
+            return DataResult.success(GenerationStep.Decoration.valueOf(name.toUpperCase(Locale.ROOT)));
         } catch (Exception e) {
             return DataResult.error("Not a decoration stage: " + name);
         }
     }
 
     public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
-        BiomeModifier modifier = new CropModifier(
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                GeneratorRegistry.RANDOM_CROP_PLACED);
-        biomeSerializer.register("random_crops", () -> modifier);
+        biomeSerializer.register("random_crops", () -> new CropModifier(GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.RANDOM_CROP_PLACED));
     }
 }
