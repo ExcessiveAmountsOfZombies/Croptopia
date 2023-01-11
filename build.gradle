@@ -33,7 +33,7 @@ minecraft {
 
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
-    api('org.jetbrains:annotations:23.0.0')
+    compileOnlyApi('org.jetbrains:annotations:23.0.0')
 }
 
 sourceSets {
