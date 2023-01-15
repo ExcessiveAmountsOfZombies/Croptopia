@@ -19,6 +19,18 @@
     {
       "id": "byg:tropical_rainforest",
       "required": false
+    },
+    {
+      "id": "terralith:jungle_mountains",
+      "required": false
+    },
+    {
+      "id": "terralith:rocky_jungle",
+      "required": false
+    },
+    {
+      "id": "terralith:tropical_jungle",
+      "required": false
     }
   ]
 }
