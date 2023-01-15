@@ -6,6 +6,34 @@
     "minecraft:birch_forest",
     "minecraft:dark_forest",
     "minecraft:old_growth_birch_forest",
-    "minecraft:grove"
+    "minecraft:grove",
+    {
+      "id": "terralith:birch_taiga",
+      "required": false
+    },
+    {
+      "id": "terralith:cloud_forest",
+      "required": false
+    },
+    {
+      "id": "terralith:lavender_forest",
+      "required": false
+    },
+    {
+      "id": "terralith:lavender_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:moonlight_grove",
+      "required": false
+    },
+    {
+      "id": "terralith:moonlight_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:temperate_highlands",
+      "required": false
+    }
   ]
 }

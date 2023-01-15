@@ -13,6 +13,14 @@
     {
       "id": "byg:white_mangrove_marshes",
       "required": false
+    },
+    {
+      "id": "terralith:mirage_isles",
+      "required": false
+    },
+    {
+      "id": "terralith:orchid_swamp",
+      "required": false
     }
   ]
 }

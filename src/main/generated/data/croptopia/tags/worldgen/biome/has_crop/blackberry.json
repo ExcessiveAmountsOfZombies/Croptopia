@@ -90,6 +90,70 @@
     {
       "id": "byg:zelkova_forest",
       "required": false
+    },
+    {
+      "id": "terralith:alpine_grove",
+      "required": false
+    },
+    {
+      "id": "terralith:alpine_highlands",
+      "required": false
+    },
+    {
+      "id": "terralith:birch_taiga",
+      "required": false
+    },
+    {
+      "id": "terralith:cloud_forest",
+      "required": false
+    },
+    {
+      "id": "terralith:forested_highlands",
+      "required": false
+    },
+    {
+      "id": "terralith:lavender_forest",
+      "required": false
+    },
+    {
+      "id": "terralith:lavender_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:lush_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:moonlight_grove",
+      "required": false
+    },
+    {
+      "id": "terralith:moonlight_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:siberian_grove",
+      "required": false
+    },
+    {
+      "id": "terralith:siberian_taiga",
+      "required": false
+    },
+    {
+      "id": "terralith:snowy_maple_forest",
+      "required": false
+    },
+    {
+      "id": "terralith:snowy_shield",
+      "required": false
+    },
+    {
+      "id": "terralith:temperate_highlands",
+      "required": false
+    },
+    {
+      "id": "terralith:yosemite_lowlands",
+      "required": false
     }
   ]
 }

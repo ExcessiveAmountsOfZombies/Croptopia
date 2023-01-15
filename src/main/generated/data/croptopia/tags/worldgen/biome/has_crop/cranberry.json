@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
-    "minecraft:swamp"
+    "minecraft:swamp",
+    {
+      "id": "terralith:mirage_isles",
+      "required": false
+    },
+    {
+      "id": "terralith:orchid_swamp",
+      "required": false
+    }
   ]
 }

@@ -2,6 +2,42 @@
   "replace": false,
   "values": [
     "minecraft:plains",
-    "minecraft:sunflower_plains"
+    "minecraft:sunflower_plains",
+    {
+      "id": "terralith:cold_shrubland",
+      "required": false
+    },
+    {
+      "id": "terralith:rocky_mountains",
+      "required": false
+    },
+    {
+      "id": "terralith:sakura_grove",
+      "required": false
+    },
+    {
+      "id": "terralith:sakura_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:scarlet_mountains",
+      "required": false
+    },
+    {
+      "id": "terralith:shield",
+      "required": false
+    },
+    {
+      "id": "terralith:shrubland",
+      "required": false
+    },
+    {
+      "id": "terralith:wintry_forest",
+      "required": false
+    },
+    {
+      "id": "terralith:wintry_lowlands",
+      "required": false
+    }
   ]
 }

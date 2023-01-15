@@ -6,6 +6,26 @@
     "minecraft:old_growth_pine_taiga",
     "minecraft:old_growth_spruce_taiga",
     "minecraft:taiga",
-    "minecraft:snowy_taiga"
+    "minecraft:snowy_taiga",
+    {
+      "id": "terralith:blooming_plateau",
+      "required": false
+    },
+    {
+      "id": "terralith:blooming_valley",
+      "required": false
+    },
+    {
+      "id": "terralith:highlands",
+      "required": false
+    },
+    {
+      "id": "terralith:steppe",
+      "required": false
+    },
+    {
+      "id": "terralith:valley_clearing",
+      "required": false
+    }
   ]
 }
