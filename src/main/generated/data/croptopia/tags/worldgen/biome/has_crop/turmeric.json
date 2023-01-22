@@ -31,6 +31,22 @@
     {
       "id": "terralith:savanna_slopes",
       "required": false
+    },
+    {
+      "id": "biomesoplenty:dryland",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:lush_savanna",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:scrubland",
+      "required": false
+    },
+    {
+      "id": "biomesoplenty:wooded_scrubland",
+      "required": false
     }
   ]
 }
