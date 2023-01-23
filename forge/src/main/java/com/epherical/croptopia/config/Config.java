@@ -2,6 +2,7 @@ package com.epherical.croptopia.config;
 
 
 import com.epherical.croptopia.common.FeatureNames;
+import com.epherical.croptopia.register.helpers.Tree;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SetMultimap;
@@ -277,20 +278,64 @@ public class Config {
             ResourceKey<Biome> spiderNest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("spider_nest"));
             ResourceKey<Biome> tropics = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("tropics"));
             ResourceKey<Biome> tundra = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("tundra"));
-            ResourceKey<Biome> volcanicPlains = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("volcanic_plains"));
-            ResourceKey<Biome> volcano = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("volcano"));
-            ResourceKey<Biome> wasteland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wasteland"));
+            //ResourceKey<Biome> wasteland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wasteland"));
             ResourceKey<Biome> wetland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wetland"));
             ResourceKey<Biome> woodedScrubland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wooded_scrubland"));
             ResourceKey<Biome> woodedWasteland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wooded_wasteland"));
             ResourceKey<Biome> woodland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("woodland"));
 
             Collection<ResourceKey<Biome>> bygWoods = Arrays.asList(aspenForest, orchard, redOakForest);
-            Collection<ResourceKey<Biome>> cherry = Arrays.asList(cherryBlossomForest);
-
+            Collection<ResourceKey<Biome>> cherry = Arrays.asList(cherryBlossomForest, cherryBlossomGrove);
             Collection<ResourceKey<Biome>> nutty = Arrays.asList(weepingWitchForest, daciteRidges, ebonyWoods,
                     mapleTaiga, twilightMeadow);
             Collection<ResourceKey<Biome>> jungleByg = Arrays.asList(cragGardens, tropicalIsland, tropicalRainforest);
+
+            //Biomes'O'Plenty biome collections
+            Collection<ResourceKey<Biome>> bopForest = Arrays.asList(bambooGrove, mediterraneanForest, mysticGrove, orchard, pumpkinPatch, redwoodForest, seasonalForest, seasonalOrchard, woodland);
+            Collection<ResourceKey<Biome>> bopJungle = Arrays.asList(bopFloodplain, fungalJungle, rainforest, rockyRainforest);
+            //Collection<ResourceKey<Biome>> bopMountain = Arrays.asList(crag, jadeCliffs);
+            //Collection<ResourceKey<Biome>> bopSavanna = Arrays.asList(dryland, lushSavanna, scrubland, woodedScrubland);
+            Collection<ResourceKey<Biome>> bopHills = Arrays.asList(highland);
+            Collection<ResourceKey<Biome>> bopSwamp = Arrays.asList(marsh, bopBayou, bog);
+            Collection<ResourceKey<Biome>> bopTaiga = Arrays.asList(bog, coniferousForest, field, firClearing, mapleWoods, tundra);
+
+            //Biomes'O'Plenty tree configurations
+            TreeConfiguration.createSameTreeConfigs(biomes, bopHills,
+                    "almond_tree_configured",
+                    "cashew_tree_configured",
+                    "pecan_tree_configured",
+                    "walnut_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, bopSwamp,
+                    "cinnamon_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, bopTaiga,
+                    "apple_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, bopForest,
+                    "lime_tree_configured",
+                    "pear_tree_configured",
+                    "apricot_tree_configured",
+                    "avocado_tree_configured",
+                    "star_fruit_tree_configured",
+                    "lemon_tree_configured",
+                    "cherry_tree_configured",
+                    "plum_tree_configured",
+                    "persimmon_tree_configured",
+                    "orange_tree_configured",
+                    "nectarine_tree_configured");
+
+            TreeConfiguration.createSameTreeConfigs(biomes, bopJungle,
+                    "date_tree_configured",
+                    "dragon_fruit_tree_configured",
+                    "mango_tree_configured",
+                    "nutmeg_tree_configured",
+                    "coconut_tree_configured",
+                    "kumquat_tree_configured",
+                    "grapefruit_tree_configured",
+                    "banana_tree_configured",
+                    "fig_tree_configured",
+                    "cinnamon_tree_configured");
 
             TreeConfiguration.createSameTreeConfigs(biomes, Collections.singleton(prairie),
                     FeatureNames.APPLE_TREE_CONFIGURED);
