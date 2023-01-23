@@ -222,6 +222,68 @@ public class Config {
             ResourceKey<Biome> whiteMangroveMarshes = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("white_mangrove_marshes"));
             ResourceKey<Biome> temperateRainforest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("temperate_rainforest"));
             ResourceKey<Biome> zelkovaForest = ResourceKey.create(Registry.BIOME_REGISTRY, bygID("zelkova_forest"));
+            //Biomes'O'Plenty biomes
+            ResourceKey<Biome> auroralGarden = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("auroral_garden"));
+            ResourceKey<Biome> bambooGrove = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("bamboo_grove"));
+            ResourceKey<Biome> bopBayou = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("bayou"));
+            ResourceKey<Biome> bog = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("bog"));
+            ResourceKey<Biome> cherryBlossomGrove = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("cherry_blossom_grove"));
+            ResourceKey<Biome> cloverPatch = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("cloverPatch"));
+            ResourceKey<Biome> coldDesert = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("cold_desert"));
+            ResourceKey<Biome> bopConiferousForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("coniferous_forest"));
+            ResourceKey<Biome> crag = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("crag"));
+            ResourceKey<Biome> deadForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("dead_forest"));
+            ResourceKey<Biome> dryland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("dryland"));
+            ResourceKey<Biome> duneBeach = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("duneBeach"));
+            ResourceKey<Biome> field = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("field"));
+            ResourceKey<Biome> firClearing = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("fir_clearing"));
+            ResourceKey<Biome> floodplain = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("floodplain"));
+            ResourceKey<Biome> foresetedField = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("forested_field"));
+            ResourceKey<Biome> bopFloodplain = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("floodplain"));
+            ResourceKey<Biome> fungalJungle = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("fungal_jungle"));
+            ResourceKey<Biome> glowingGrotto = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("glowing_grotto"));
+            ResourceKey<Biome> grassland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("grassland"));
+            ResourceKey<Biome> highland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("highland"));
+            ResourceKey<Biome> highlandMoor = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("highland_moor"));
+            ResourceKey<Biome> jadeCliffs = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("jade_cliffs"));
+            ResourceKey<Biome> lavenderField = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("lavender_field"));
+            ResourceKey<Biome> lavenderForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("lavender_forest"));
+            ResourceKey<Biome> lushDesert = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("lush_desert"));
+            ResourceKey<Biome> lushSavanna = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("lush_savanna"));
+            ResourceKey<Biome> mapleWoods = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("maples_woods"));
+            ResourceKey<Biome> marsh = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("marsh"));
+            ResourceKey<Biome> mediterraneanForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("mediterranean_forest"));
+            ResourceKey<Biome> muskeg = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("muskeg"));
+            ResourceKey<Biome> mysticGrove = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("mystic_grove"));
+            ResourceKey<Biome> oldGrowthDeadForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("old_growth_dead_forest"));
+            ResourceKey<Biome> oldGrowthWoodland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("old_growth_woodland"));
+            ResourceKey<Biome> ominousWoods = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("ominous_woods"));
+            ResourceKey<Biome> bopOrchard = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("orchard"));
+            ResourceKey<Biome> originValley = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("origin_valley"));
+            ResourceKey<Biome> pasture = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("pasture"));
+            ResourceKey<Biome> bopPrairie = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("prairie"));
+            ResourceKey<Biome> pumpkinPatch = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("pumpkin_patch"));
+            ResourceKey<Biome> rainforest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("rainforest"));
+            ResourceKey<Biome> redwoodForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("redwood_forest"));
+            ResourceKey<Biome> rockyRainforest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("rocky_rainforest"));
+            ResourceKey<Biome> rockyShrubland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("rocky_shrubland"));
+            ResourceKey<Biome> scrubland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("scrubland"));
+            ResourceKey<Biome> seasonalForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("seasonal_forest"));
+            ResourceKey<Biome> seasonalOrchard = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("seasonal_orchard"));
+            ResourceKey<Biome> shrubland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("shrubland"));
+            ResourceKey<Biome> snowyConiferousForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("snowy_coniferous_forest"));
+            ResourceKey<Biome> snowyFirClearing = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("snowy_fir_clearing"));
+            ResourceKey<Biome> snowyMapleWoods = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("snowy_maple_woods"));
+            ResourceKey<Biome> spiderNest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("spider_nest"));
+            ResourceKey<Biome> tropics = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("tropics"));
+            ResourceKey<Biome> tundra = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("tundra"));
+            ResourceKey<Biome> volcanicPlains = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("volcanic_plains"));
+            ResourceKey<Biome> volcano = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("volcano"));
+            ResourceKey<Biome> wasteland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wasteland"));
+            ResourceKey<Biome> wetland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wetland"));
+            ResourceKey<Biome> woodedScrubland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wooded_scrubland"));
+            ResourceKey<Biome> woodedWasteland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("wooded_wasteland"));
+            ResourceKey<Biome> woodland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("woodland"));
 
             Collection<ResourceKey<Biome>> bygWoods = Arrays.asList(aspenForest, orchard, redOakForest);
             Collection<ResourceKey<Biome>> cherry = Arrays.asList(cherryBlossomForest);
@@ -286,6 +348,8 @@ public class Config {
     private static ResourceLocation bygID(String name) {
         return new ResourceLocation("byg", name);
     }
+
+    private static ResourceLocation bopID(String name) { return new ResourceLocation("biomesoplenty", name); }
 
     public Map<TreeConfiguration, TreeBuilder> getBuilderMap() {
         return builderMap;
