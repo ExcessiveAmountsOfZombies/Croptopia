@@ -228,7 +228,7 @@ public class Config {
             ResourceKey<Biome> bopBayou = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("bayou"));
             ResourceKey<Biome> bog = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("bog"));
             ResourceKey<Biome> cherryBlossomGrove = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("cherry_blossom_grove"));
-            ResourceKey<Biome> cloverPatch = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("cloverPatch"));
+            ResourceKey<Biome> cloverPatch = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("clover_patch"));
             ResourceKey<Biome> coldDesert = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("cold_desert"));
             ResourceKey<Biome> bopConiferousForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("coniferous_forest"));
             ResourceKey<Biome> crag = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("crag"));
