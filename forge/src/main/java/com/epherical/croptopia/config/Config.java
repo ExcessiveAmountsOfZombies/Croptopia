@@ -234,7 +234,7 @@ public class Config {
             ResourceKey<Biome> crag = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("crag"));
             ResourceKey<Biome> deadForest = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("dead_forest"));
             ResourceKey<Biome> dryland = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("dryland"));
-            ResourceKey<Biome> duneBeach = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("duneBeach"));
+            ResourceKey<Biome> duneBeach = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("dune_beach"));
             ResourceKey<Biome> field = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("field"));
             ResourceKey<Biome> firClearing = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("fir_clearing"));
             ResourceKey<Biome> floodplain = ResourceKey.create(Registry.BIOME_REGISTRY, bopID("floodplain"));
