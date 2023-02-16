@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥小肉",
+  "icon": "croptopia:carnitas",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:carnitas",
+      "text": "墨西哥小肉的配方。"
+    }
+  ]
+}

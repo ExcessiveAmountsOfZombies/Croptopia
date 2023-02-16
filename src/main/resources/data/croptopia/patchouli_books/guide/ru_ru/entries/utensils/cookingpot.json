@@ -1,12 +1,12 @@
 {
-  "name": "Сковорода",
-  "icon": "croptopia:frying_pan",
+  "name": "Кастрюля",
+  "icon": "croptopia:cooking_pot",
   "category": "croptopia:utensils",
   "pages": [
     {
       "type": "patchouli:crafting",
-      "recipe": "croptopia:frying_pan",
-      "text": "Рецепт Сковороды."
+      "recipe": "croptopia:cooking_pot",
+      "text": "Рецепт Кастрюли."
     }
   ]
 }

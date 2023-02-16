@@ -1,0 +1,12 @@
+{
+  "name": "蜜饯",
+  "icon": "croptopia:candied_nuts",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:candied_nuts",
+      "text": "密饯的配方。"
+    }
+  ]
+}

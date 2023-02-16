@@ -1,0 +1,12 @@
+{
+  "name": "调味薯片",
+  "icon": "croptopia:saucy_chips",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saucy_chips",
+      "text": "调味薯片的配方。"
+    }
+  ]
+}

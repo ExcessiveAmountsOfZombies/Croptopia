@@ -1,0 +1,12 @@
+{
+  "name": "芦笋芝士",
+  "icon": "croptopia:cheesy_asparagus",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_cheesy_asparagus",
+      "text": "芦笋芝士的配方。"
+    }
+  ]
+}

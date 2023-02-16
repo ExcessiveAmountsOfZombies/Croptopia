@@ -1,0 +1,12 @@
+{
+  "name": "芝士",
+  "icon": "croptopia:cheese",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheese",
+      "text": "芝士的配方。"
+    }
+  ]
+}

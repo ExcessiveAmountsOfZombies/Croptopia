@@ -1,0 +1,12 @@
+{
+  "name": "倭瓜意面",
+  "icon": "croptopia:spaghetti_squash",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:spaghetti_squash",
+      "text": "倭瓜意面的配方。"
+    }
+  ]
+}

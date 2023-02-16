@@ -1,0 +1,12 @@
+{
+  "name": "打发的奶油",
+  "icon": "croptopia:whipping_cream",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:whipping_cream",
+      "text": "打发奶油的配方。"
+    }
+  ]
+}

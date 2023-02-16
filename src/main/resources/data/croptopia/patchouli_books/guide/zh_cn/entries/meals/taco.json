@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥卷饼",
+  "icon": "croptopia:taco",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:taco",
+      "text": "墨西哥卷饼的配方。"
+    }
+  ]
+}

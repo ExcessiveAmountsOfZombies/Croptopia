@@ -1,0 +1,12 @@
+{
+  "name": "红辣椒",
+  "icon": "croptopia:paprika",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:paprika",
+      "text": "红辣椒的配方。"
+    }
+  ]
+}

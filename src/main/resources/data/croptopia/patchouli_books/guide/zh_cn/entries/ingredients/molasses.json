@@ -1,0 +1,12 @@
+{
+  "name": "糖蜜",
+  "icon": "croptopia:molasses",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:molasses_from_sugar_cane",
+      "text": "糖蜜的配方。"
+    }
+  ]
+}

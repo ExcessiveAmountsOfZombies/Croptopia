@@ -1,0 +1,12 @@
+{
+  "name": "烤培根",
+  "icon": "croptopia:cooked_bacon",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:smelting",
+      "recipe": "croptopia:cooked_bacon_from_bacon",
+      "text": "烤培根的配方。"
+    }
+  ]
+}

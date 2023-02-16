@@ -1,0 +1,12 @@
+{
+  "name": "糖浆挞",
+  "icon": "croptopia:treacle_tart",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_treacle_tart",
+      "text": "糖浆挞的配方。"
+    }
+  ]
+}

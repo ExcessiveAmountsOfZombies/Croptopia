@@ -1,0 +1,12 @@
+{
+  "name": "猪肉炖豆",
+  "icon": "croptopia:pork_and_beans",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pork_and_beans",
+      "text": "猪肉炖豆的配方。"
+    }
+  ]
+}

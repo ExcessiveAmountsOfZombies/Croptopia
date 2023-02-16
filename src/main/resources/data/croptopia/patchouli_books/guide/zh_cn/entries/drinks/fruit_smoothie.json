@@ -1,0 +1,12 @@
+{
+  "name": "水果奶昔",
+  "icon": "croptopia:fruit_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fruit_smoothie",
+      "text": "水果奶昔的配方。"
+    }
+  ]
+}

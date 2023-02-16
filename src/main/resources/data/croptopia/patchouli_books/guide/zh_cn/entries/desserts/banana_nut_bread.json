@@ -1,0 +1,12 @@
+{
+  "name": "香蕉果仁面包",
+  "icon": "croptopia:banana_nut_bread",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_nut_bread",
+      "text": "香蕉果仁面包的配方。"
+    }
+  ]
+}

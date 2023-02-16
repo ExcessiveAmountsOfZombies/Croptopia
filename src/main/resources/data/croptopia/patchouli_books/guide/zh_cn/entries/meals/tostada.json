@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥配菜玉米饼",
+  "icon": "croptopia:tostada",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tostada",
+      "text": "墨西哥配菜玉米饼的配方。"
+    }
+  ]
+}

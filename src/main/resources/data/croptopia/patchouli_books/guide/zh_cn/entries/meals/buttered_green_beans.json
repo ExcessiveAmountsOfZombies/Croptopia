@@ -1,0 +1,12 @@
+{
+  "name": "黄油炒绿豆",
+  "icon": "croptopia:buttered_green_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_buttered_green_beans",
+      "text": "黄油炒绿豆的配方。"
+    }
+  ]
+}

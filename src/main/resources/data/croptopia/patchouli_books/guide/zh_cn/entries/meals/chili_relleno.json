@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥爆浆芝士辣椒",
+  "icon": "croptopia:chili_relleno",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chili_relleno",
+      "text": "墨西哥爆浆芝士辣椒的配方。"
+    }
+  ]
+}

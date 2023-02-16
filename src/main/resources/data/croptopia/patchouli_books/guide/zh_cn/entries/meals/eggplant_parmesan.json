@@ -1,0 +1,12 @@
+{
+  "name": "茄子帕尔玛干酪",
+  "icon": "croptopia:eggplant_parmesan",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_eggplant_parmesan",
+      "text": "茄子帕尔玛干酪的配方。"
+    }
+  ]
+}

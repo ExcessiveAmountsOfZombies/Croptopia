@@ -1,0 +1,12 @@
+{
+  "name": "生面团",
+  "icon": "croptopia:dough",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:dough",
+      "text": "生面团的配方。"
+    }
+  ]
+}

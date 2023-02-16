@@ -1,0 +1,12 @@
+{
+  "name": "刀",
+  "icon": "croptopia:knife",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:knife",
+      "text": "刀的配方。"
+    }
+  ]
+}

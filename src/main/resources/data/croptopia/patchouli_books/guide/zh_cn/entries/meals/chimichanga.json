@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥油煎面卷饼",
+  "icon": "croptopia:chimichanga",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chimichanga",
+      "text": "墨西哥油煎面卷饼的配方。"
+    }
+  ]
+}

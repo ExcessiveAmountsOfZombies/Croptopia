@@ -1,0 +1,12 @@
+{
+  "name": "豆腐",
+  "icon": "croptopia:tofu",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu",
+      "text": "豆腐的配方。"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "巧克力",
+  "icon": "croptopia:chocolate",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chocolate",
+      "text": "巧克力的配方。"
+    }
+  ]
+}
