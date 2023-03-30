@@ -67,6 +67,8 @@ public class Croptopia implements ModInitializer {
         Registry.register(Registry.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
         Content.registerItems((id, object) -> Registry.register(Registry.ITEM, id, object));
 
+        // custom XP code
+        FabricHarvest.register();
 
         patchouli = new Patchouli();
 
