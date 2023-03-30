@@ -12,3 +12,9 @@ All datagen files are placed in the root module `src/main/generated` and are gen
 
 Discord
 https://discord.gg/GZjtAn3F6W
+
+---
+
+Build the forge version with `forge > Tasks > build > build`
+
+Test in the fabric version (it won't work in the forge version - see dev's comments on Discord).
