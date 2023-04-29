@@ -7,14 +7,14 @@ import net.minecraft.world.entity.ai.goal.TemptGoal;
 import net.minecraft.world.entity.animal.Cow;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class EntitySpawn {
 
 
     @SubscribeEvent
-    public void onEntitySpawn(LivingSpawnEvent.SpecialSpawn event) {
+    public void onEntitySpawn(MobSpawnEvent.FinalizeSpawn event) {
         Mob mob = event.getEntity();
         if (mob instanceof Pig) {
             mob.goalSelector.addGoal(4, new TemptGoal((PathfinderMob) mob, 1.2D, Ingredient.of(Content.YAM, Content.SWEETPOTATO), false));

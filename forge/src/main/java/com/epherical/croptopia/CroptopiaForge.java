@@ -181,7 +181,7 @@ public class CroptopiaForge {
         public static void registerTab(CreativeModeTabEvent.Register event) {
             event.registerCreativeModeTab(new ResourceLocation("croptopia", "tab"), builder -> {
                 builder.title(Component.translatable("itemGroup.croptopia"))
-                        .displayItems((featureFlagSet, output, bl) ->
+                        .displayItems((featureFlagSet, output) ->
                                 BuiltInRegistries.ITEM.entrySet().stream()
                                         .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
                                         .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))

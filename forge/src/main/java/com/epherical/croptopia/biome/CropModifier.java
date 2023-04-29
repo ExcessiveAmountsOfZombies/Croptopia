@@ -52,7 +52,7 @@ public record CropModifier(GenerationStep.Decoration step, Holder<PlacedFeature>
         try {
             return DataResult.success(GenerationStep.Decoration.valueOf(name.toUpperCase(Locale.ROOT)));
         } catch (Exception e) {
-            return DataResult.error("Not a decoration stage: " + name);
+            return DataResult.error( () ->  "Not a decoration stage: " + name);
         }
     }
 

@@ -47,7 +47,7 @@
     "fabricloader": ">=0.14.12",
     "fabric": ">=0.55.1",
     "fabric-biome-api-v1": ">=3.0.0",
-    "minecraft": ">=1.19.3"
+    "minecraft": ">=1.19.4"
   },
   "suggests": {
     "patchouli": "*",

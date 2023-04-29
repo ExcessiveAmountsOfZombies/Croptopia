@@ -63,7 +63,7 @@ public class Croptopia implements ModInitializer {
 
     public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder(new ResourceLocation(MOD_ID, "croptopia"))
             .title(Component.translatable("itemGroup.croptopia"))
-            .displayItems((featureFlagSet, output, bl) ->
+            .displayItems((featureFlagSet, output) ->
                     BuiltInRegistries.ITEM.entrySet().stream()
                             .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
                             .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
