@@ -1,0 +1,11 @@
+{
+  "name": "树",
+  "icon": "croptopia:apple_sapling",
+  "category": "croptopia:crops",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "你可以在世界上找到各种各样的长者特定作物的树。你可以在其完全成熟的时候右键它们采摘产品。"
+    }
+  ]
+}

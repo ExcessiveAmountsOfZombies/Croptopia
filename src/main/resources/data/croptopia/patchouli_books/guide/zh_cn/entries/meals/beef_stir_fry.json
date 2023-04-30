@@ -1,0 +1,12 @@
+{
+  "name": "干煸牛肉",
+  "icon": "croptopia:beef_stir_fry",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_beef_stir_fry",
+      "text": "干煸牛肉的配方。"
+    }
+  ]
+}

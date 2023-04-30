@@ -1,0 +1,12 @@
+{
+  "name": "玉米糖",
+  "icon": "croptopia:candy_corn",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:candy_corn",
+      "text": "玉米糖的配方。"
+    }
+  ]
+}

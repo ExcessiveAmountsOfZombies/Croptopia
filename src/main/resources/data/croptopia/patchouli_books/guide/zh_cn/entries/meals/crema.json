@@ -1,0 +1,12 @@
+{
+  "name": "咖啡油脂",
+  "icon": "croptopia:crema",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:crema",
+      "text": "咖啡油脂的配方。"
+    }
+  ]
+}

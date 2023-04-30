@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥辣肉馅玉米卷",
+  "icon": "croptopia:enchilada",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:enchilada",
+      "text": "墨西哥辣肉馅玉米卷配方。"
+    }
+  ]
+}

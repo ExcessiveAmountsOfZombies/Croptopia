@@ -1,0 +1,12 @@
+{
+  "name": "夏威夷菠萝红肠披萨",
+  "icon": "croptopia:pineapple_pepperoni_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_pepperoni_pizza",
+      "text": "夏威夷菠萝红肠披萨的配方。菠萝属于披萨！"
+    }
+  ]
+}

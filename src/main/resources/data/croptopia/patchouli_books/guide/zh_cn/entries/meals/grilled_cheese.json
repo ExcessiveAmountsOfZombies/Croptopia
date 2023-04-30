@@ -1,0 +1,12 @@
+{
+  "name": "烤芝士",
+  "icon": "croptopia:grilled_cheese",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:grilled_cheese",
+      "text": "烤芝士的配方。"
+    }
+  ]
+}

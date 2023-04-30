@@ -1,0 +1,12 @@
+{
+  "name": "牛轧糖",
+  "icon": "croptopia:nougat",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:nougat",
+      "text": "牛轧糖的配方。"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "巧克力奶昔",
+  "icon": "croptopia:chocolate_milkshake",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chocolate_milkshake",
+      "text": "巧克力奶昔的配方。"
+    }
+  ]
+}

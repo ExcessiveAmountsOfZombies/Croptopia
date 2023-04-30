@@ -1,12 +1,12 @@
 {
-  "name": "Chảo chiên",
-  "icon": "croptopia:frying_pan",
+  "name": "Nồi nấu ăn",
+  "icon": "croptopia:cooking_pot",
   "category": "croptopia:utensils",
   "pages": [
     {
       "type": "patchouli:crafting",
-      "recipe": "croptopia:frying_pan",
-      "text": "Công thức chế chảo chiên."
+      "recipe": "croptopia:cooking_pot",
+      "text": "Công thức chế nồi nấu ăn."
     }
   ]
 }

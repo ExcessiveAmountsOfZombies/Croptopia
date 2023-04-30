@@ -1,0 +1,12 @@
+{
+  "name": "奥查塔",
+  "icon": "croptopia:horchata",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:horchata",
+      "text":"奥查塔的配方。"
+    }
+  ]
+}

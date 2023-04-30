@@ -1,0 +1,12 @@
+{
+  "name": "苹果汁",
+  "icon": "croptopia:apple_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:apple_juice",
+      "text": "苹果汁的配方。"
+    }
+  ]
+}

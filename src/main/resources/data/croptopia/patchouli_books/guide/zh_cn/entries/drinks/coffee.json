@@ -1,0 +1,12 @@
+{
+  "name": "咖啡",
+  "icon": "croptopia:coffee",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:coffee",
+      "text": "咖啡的配方。"
+    }
+  ]
+}

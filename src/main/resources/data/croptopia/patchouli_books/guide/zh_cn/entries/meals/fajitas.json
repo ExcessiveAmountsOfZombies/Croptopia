@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥肉菜卷饼",
+  "icon": "croptopia:fajitas",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fajitas",
+      "text": "墨西哥肉菜卷饼的配方。"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "意大利红肠",
+  "icon": "croptopia:pepperoni",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pepperoni",
+      "text": "意大利红肠的配方。"
+    }
+  ]
+}

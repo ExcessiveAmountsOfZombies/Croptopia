@@ -1,0 +1,12 @@
+{
+  "name": "寿司",
+  "icon": "croptopia:sushi",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:sushi",
+      "text": "寿司的配方"
+    }
+  ]
+}

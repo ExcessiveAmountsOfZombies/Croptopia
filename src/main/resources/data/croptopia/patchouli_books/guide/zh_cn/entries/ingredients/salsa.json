@@ -1,0 +1,12 @@
+{
+  "name": "萨尔萨酱",
+  "icon": "croptopia:salsa",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:salsa",
+      "text": "萨尔萨酱的配方。"
+    }
+  ]
+}

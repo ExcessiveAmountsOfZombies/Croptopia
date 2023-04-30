@@ -1,0 +1,12 @@
+{
+  "name":"羽衣甘蓝冰沙",
+  "icon": "croptopia:kale_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_smoothie",
+      "text": "羽衣甘蓝冰沙的配方。"
+    }
+  ]
+}

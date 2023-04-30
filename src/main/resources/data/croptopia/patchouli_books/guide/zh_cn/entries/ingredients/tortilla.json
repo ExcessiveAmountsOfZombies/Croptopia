@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥薄饼",
+  "icon": "croptopia:tortilla",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tortilla",
+      "text": "墨西哥薄饼的配方。"
+    }
+  ]
+}

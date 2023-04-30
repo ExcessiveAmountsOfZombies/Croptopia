@@ -1,0 +1,12 @@
+{
+  "name": "水瓶",
+  "icon": "croptopia:water_bottle",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_water_bottle",
+      "text": "水瓶的配方。它们与普通水瓶不同，那些实际上是没煮沸的药水。"
+    }
+  ]
+}

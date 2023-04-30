@@ -1,0 +1,6 @@
+{
+  "name": "作物",
+  "description": "这里有所有你能在Croptopia中找到的作物的信息。",
+  "icon": "croptopia:kiwi",
+  "sortnum": -100
+}

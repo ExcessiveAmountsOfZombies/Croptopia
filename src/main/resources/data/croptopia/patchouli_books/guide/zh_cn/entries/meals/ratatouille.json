@@ -1,0 +1,12 @@
+{
+  "name": "蔬菜杂烩",
+  "icon": "croptopia:ratatouille",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_ratatouille",
+      "text": "“蔬菜杂烩？我们在做什么？”"
+    }
+  ]
+}

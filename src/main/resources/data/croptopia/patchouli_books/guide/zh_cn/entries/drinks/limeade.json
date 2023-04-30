@@ -1,0 +1,12 @@
+{
+  "name": "青柠汁",
+  "icon": "croptopia:limeade",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:limeade",
+      "text": "青柠汁的配方。"
+    }
+  ]
+}

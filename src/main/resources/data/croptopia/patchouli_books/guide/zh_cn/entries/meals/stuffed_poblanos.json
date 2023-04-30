@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥填馅辣椒",
+  "icon": "croptopia:stuffed_poblanos",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:stuffed_poblanos",
+      "text": "Recipe guide."
+    }
+  ]
+}

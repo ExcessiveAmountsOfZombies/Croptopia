@@ -1,0 +1,12 @@
+{
+  "name": "墨西哥起司薄饼",
+  "icon": "croptopia:quesadilla",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:quesadilla",
+      "text": "墨西哥起司薄饼的配方。"
+    }
+  ]
+}
