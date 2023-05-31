@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:toast_from_smoking_bread"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -38,5 +38,6 @@
   "result": {
     "count": 3,
     "item": "croptopia:cinnamon_roll"
-  }
+  },
+  "show_notification": true
 }

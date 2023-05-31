@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:ground_pork"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

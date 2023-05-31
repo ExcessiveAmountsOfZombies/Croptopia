@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:mortar_and_pestle"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

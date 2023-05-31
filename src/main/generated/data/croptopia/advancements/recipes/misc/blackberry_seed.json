@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:blackberry_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -21,5 +21,6 @@
   ],
   "result": {
     "item": "croptopia:roasted_sunflower_seeds"
-  }
+  },
+  "show_notification": true
 }

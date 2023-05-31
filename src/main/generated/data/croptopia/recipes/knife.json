@@ -15,5 +15,6 @@
   ],
   "result": {
     "item": "croptopia:knife"
-  }
+  },
+  "show_notification": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:popcorn_from_corn"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

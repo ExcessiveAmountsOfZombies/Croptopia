@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:rhubarb_pie"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:mashed_potatoes"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

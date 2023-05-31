@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "croptopia:baked_crepes"
-  }
+  },
+  "show_notification": true
 }

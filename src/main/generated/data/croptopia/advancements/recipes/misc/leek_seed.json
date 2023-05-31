@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:leek_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

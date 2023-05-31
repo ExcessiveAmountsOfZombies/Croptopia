@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:avocado_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

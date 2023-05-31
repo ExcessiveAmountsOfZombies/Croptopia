@@ -27,5 +27,6 @@
   ],
   "result": {
     "item": "croptopia:dauphine_potatoes"
-  }
+  },
+  "show_notification": true
 }

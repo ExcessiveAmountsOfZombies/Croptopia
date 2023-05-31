@@ -16,5 +16,6 @@
   ],
   "result": {
     "item": "croptopia:food_press"
-  }
+  },
+  "show_notification": true
 }

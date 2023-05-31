@@ -22,5 +22,6 @@
   ],
   "result": {
     "item": "croptopia:mashed_potatoes"
-  }
+  },
+  "show_notification": true
 }

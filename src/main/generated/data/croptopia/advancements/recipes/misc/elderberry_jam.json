@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:elderberry_jam"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

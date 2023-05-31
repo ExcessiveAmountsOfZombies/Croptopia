@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:molasses_from_smoking_sugar_cane"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

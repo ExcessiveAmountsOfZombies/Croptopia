@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:tomato_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

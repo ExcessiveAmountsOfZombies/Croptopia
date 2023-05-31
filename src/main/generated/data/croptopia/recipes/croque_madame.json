@@ -31,5 +31,6 @@
   ],
   "result": {
     "item": "croptopia:croque_madame"
-  }
+  },
+  "show_notification": true
 }

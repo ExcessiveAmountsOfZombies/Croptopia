@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:chile_pepper_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

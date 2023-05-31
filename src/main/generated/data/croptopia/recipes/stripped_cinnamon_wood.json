@@ -12,5 +12,6 @@
   ],
   "result": {
     "item": "croptopia:stripped_cinnamon_wood"
-  }
+  },
+  "show_notification": true
 }

@@ -25,5 +25,6 @@
   ],
   "result": {
     "item": "croptopia:beetroot_salad"
-  }
+  },
+  "show_notification": true
 }

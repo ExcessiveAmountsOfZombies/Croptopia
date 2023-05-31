@@ -171,4 +171,31 @@ reobf {
 
 jar.finalizedBy('reobfJar')
 
+task sourceJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
 //tasks.getByName("addRefMapToShadowJar").mustRunAfter(task("shadowJar"))
+
+// configure the maven publication
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = "${archives_base_name}_" + artifactId
+            version = version + "-${mc_ver}"
+            // add all the jars that should be included when publishing to maven
+            from (components.java)
+
+            artifact sourceJar
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+        // Notice: This block does NOT have the same function as the block in the top level.
+        // The repositories here will be used for publishing your artifact, not for
+        // retrieving dependencies.
+    }
+}

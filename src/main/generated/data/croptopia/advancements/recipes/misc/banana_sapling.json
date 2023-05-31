@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:banana_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

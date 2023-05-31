@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cooked_bacon_from_smoking_bacon"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

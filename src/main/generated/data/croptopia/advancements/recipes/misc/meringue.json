@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:meringue"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:pecan_pie"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

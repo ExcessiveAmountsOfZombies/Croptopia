@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:apricot_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

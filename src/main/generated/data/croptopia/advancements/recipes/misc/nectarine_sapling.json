@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:nectarine_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

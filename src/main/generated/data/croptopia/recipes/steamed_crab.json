@@ -19,5 +19,6 @@
   ],
   "result": {
     "item": "croptopia:steamed_crab"
-  }
+  },
+  "show_notification": true
 }

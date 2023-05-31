@@ -41,5 +41,6 @@
     "recipes": [
       "croptopia:tortilla"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

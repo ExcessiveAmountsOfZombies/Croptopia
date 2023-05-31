@@ -28,5 +28,6 @@
   "result": {
     "count": 2,
     "item": "croptopia:fried_calamari"
-  }
+  },
+  "show_notification": true
 }

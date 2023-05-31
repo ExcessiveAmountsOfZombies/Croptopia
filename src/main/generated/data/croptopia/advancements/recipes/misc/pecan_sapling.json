@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:pecan_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

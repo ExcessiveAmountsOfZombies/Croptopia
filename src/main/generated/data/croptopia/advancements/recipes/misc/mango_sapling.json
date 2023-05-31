@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:mango_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

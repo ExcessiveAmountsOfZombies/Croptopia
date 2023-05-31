@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:tuna_roll"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

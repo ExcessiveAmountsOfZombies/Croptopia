@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:raspberry_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

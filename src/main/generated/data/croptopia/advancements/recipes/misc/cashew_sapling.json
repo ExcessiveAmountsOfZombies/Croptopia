@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:cashew_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

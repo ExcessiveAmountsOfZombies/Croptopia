@@ -1,5 +1,7 @@
 package com.epherical.croptopia.datagen;
 
+import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
@@ -71,6 +73,10 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
     }
 
     protected void generateMisc() {
+        FabricTagBuilder crops = getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS);
+        for (SeedItem seed : CroptopiaMod.seeds) {
+            crops.add(seed);
+        }
         // explicitly used as dolphin food in vanilla
         FabricTagBuilder fishes = getOrCreateTagBuilder(ItemTags.FISHES);
         fishes.add(Content.ANCHOVY.asItem());

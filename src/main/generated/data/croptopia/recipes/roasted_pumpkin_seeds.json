@@ -21,5 +21,6 @@
   ],
   "result": {
     "item": "croptopia:roasted_pumpkin_seeds"
-  }
+  },
+  "show_notification": true
 }

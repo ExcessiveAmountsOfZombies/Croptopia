@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:baked_sweet_potato_from_sweetpotato"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

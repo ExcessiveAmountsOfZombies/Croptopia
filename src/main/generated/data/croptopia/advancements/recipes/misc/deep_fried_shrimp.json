@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:deep_fried_shrimp"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

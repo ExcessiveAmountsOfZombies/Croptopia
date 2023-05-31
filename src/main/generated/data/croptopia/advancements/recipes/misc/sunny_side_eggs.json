@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:sunny_side_eggs"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

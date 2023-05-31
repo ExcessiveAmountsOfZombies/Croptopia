@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:barley_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

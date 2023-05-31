@@ -19,5 +19,6 @@
   ],
   "result": {
     "item": "croptopia:sausage"
-  }
+  },
+  "show_notification": true
 }

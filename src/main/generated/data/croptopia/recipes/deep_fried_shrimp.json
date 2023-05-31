@@ -22,5 +22,6 @@
   "result": {
     "count": 2,
     "item": "croptopia:deep_fried_shrimp"
-  }
+  },
+  "show_notification": true
 }

@@ -22,5 +22,6 @@
   "result": {
     "count": 4,
     "item": "croptopia:hashed_brown"
-  }
+  },
+  "show_notification": true
 }

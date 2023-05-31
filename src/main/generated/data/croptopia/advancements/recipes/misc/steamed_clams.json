@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:steamed_clams"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

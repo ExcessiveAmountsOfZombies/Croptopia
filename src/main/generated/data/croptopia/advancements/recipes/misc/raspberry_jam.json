@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:raspberry_jam"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

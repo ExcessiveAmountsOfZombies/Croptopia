@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "croptopia:croque_monsieur"
-  }
+  },
+  "show_notification": true
 }

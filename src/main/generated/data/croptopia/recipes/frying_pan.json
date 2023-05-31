@@ -13,5 +13,6 @@
   ],
   "result": {
     "item": "croptopia:frying_pan"
-  }
+  },
+  "show_notification": true
 }

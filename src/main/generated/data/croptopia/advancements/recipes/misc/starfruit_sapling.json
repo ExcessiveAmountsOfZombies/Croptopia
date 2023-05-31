@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:starfruit_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

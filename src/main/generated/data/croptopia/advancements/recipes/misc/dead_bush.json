@@ -28,5 +28,6 @@
     "recipes": [
       "minecraft:dead_bush"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

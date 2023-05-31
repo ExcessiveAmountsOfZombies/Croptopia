@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "croptopia:sweet_crepes"
-  }
+  },
+  "show_notification": true
 }

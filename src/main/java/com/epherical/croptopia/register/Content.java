@@ -37,7 +37,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.Arrays;
 import java.util.function.Supplier;
@@ -420,7 +420,7 @@ public class Content {
     public static final Item SWEET_CREPES = new Item(createGroup().food(FoodConstructor.createFood(REG_8)));
     public static final Item THE_BIG_BREAKFAST = new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_20)), Component.literal("Patricia! Daddy want the Big Breakfast").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));
 
-    public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of(Material.SAND).strength(0.5F).sound(SoundType.SAND));
+    public static Block SALT_ORE_BLOCK = new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(SoundType.SAND));
     public static final Item SALT_ORE = new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup());
 
     public static Item GUIDE;

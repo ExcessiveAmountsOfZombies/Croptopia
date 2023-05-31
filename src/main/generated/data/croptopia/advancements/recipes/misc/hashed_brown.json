@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:hashed_brown"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

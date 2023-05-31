@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cooked_tuna_from_tuna"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

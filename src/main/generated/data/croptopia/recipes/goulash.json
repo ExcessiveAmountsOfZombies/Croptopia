@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "croptopia:goulash"
-  }
+  },
+  "show_notification": true
 }

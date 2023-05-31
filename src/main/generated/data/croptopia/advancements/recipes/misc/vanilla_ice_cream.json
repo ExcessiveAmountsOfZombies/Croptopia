@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:vanilla_ice_cream"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

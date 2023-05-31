@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:cooked_calamari_from_smoking_calamari"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

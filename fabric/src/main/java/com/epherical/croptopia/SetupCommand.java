@@ -52,7 +52,7 @@ public class SetupCommand {
             world.setBlock(pos.offset(3, 0, 0), block.getState().setValue(BlockStateProperties.AGE_7, 7), 2);
 
             serverWorld.blockUpdated(pos, block.getState().getBlock());
-            source.sendSuccess(Component.translatable("commands.setblock.success", pos.getX(), pos.getY(), pos.getZ()), true);
+            source.sendSuccess(() ->  Component.translatable("commands.setblock.success", pos.getX(), pos.getY(), pos.getZ()), true);
             return 1;
         }
     }

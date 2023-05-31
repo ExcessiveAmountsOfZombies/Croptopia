@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:radish_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -28,5 +28,6 @@
   ],
   "result": {
     "item": "croptopia:quiche"
-  }
+  },
+  "show_notification": true
 }

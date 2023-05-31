@@ -11,5 +11,6 @@
   ],
   "result": {
     "item": "croptopia:corn_bread"
-  }
+  },
+  "show_notification": true
 }

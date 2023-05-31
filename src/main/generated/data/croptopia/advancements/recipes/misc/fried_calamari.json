@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:fried_calamari"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:frying_pan"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

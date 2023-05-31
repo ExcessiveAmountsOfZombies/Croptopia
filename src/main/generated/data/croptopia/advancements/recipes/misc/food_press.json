@@ -43,5 +43,6 @@
     "recipes": [
       "croptopia:food_press"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

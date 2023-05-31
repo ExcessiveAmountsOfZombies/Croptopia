@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:roasted_pumpkin_seeds"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

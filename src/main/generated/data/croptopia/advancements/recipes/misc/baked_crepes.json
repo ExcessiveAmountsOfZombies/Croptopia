@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:baked_crepes"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:basil_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

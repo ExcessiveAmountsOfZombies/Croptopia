@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:coconut_sapling"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

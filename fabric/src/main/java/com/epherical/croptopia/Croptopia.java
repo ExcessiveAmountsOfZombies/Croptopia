@@ -26,16 +26,13 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.fabricmc.fabric.api.registry.VillagerInteractionRegistries;
-import net.fabricmc.fabric.api.registry.VillagerPlantableRegistry;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
-import net.fabricmc.fabric.impl.itemgroup.MinecraftItemGroups;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -61,7 +58,7 @@ public class Croptopia implements ModInitializer {
     public CroptopiaConfig config;
 
 
-    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder(new ResourceLocation(MOD_ID, "croptopia"))
+    public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder()
             .title(Component.translatable("itemGroup.croptopia"))
             .displayItems((featureFlagSet, output) ->
                     BuiltInRegistries.ITEM.entrySet().stream()
@@ -75,19 +72,22 @@ public class Croptopia implements ModInitializer {
     @Override
     public void onInitialize() {
         CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
+
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "croptopia"), CROPTOPIA_ITEM_GROUP);
+
         Content.registerBlocks((id, object) -> Registry.register(BuiltInRegistries.BLOCK, id, object));
         Content.GUIDE = new GuideBookItem(createGroup());
         Registry.register(BuiltInRegistries.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
         Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object));
 
-        ItemGroupEvents.modifyEntriesEvent(MinecraftItemGroups.NATURAL_ID).register(entries -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
             entries.addAfter(Items.MANGROVE_PROPAGULE, Content.CINNAMON.getSapling());
             List<ItemStack> collect = TreeCrop.copy().stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).toList();
             entries.addAfter(Items.FLOWERING_AZALEA, collect);
             entries.addAfter(Items.NETHER_WART, FarmlandCrop.copy().stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).toList());
             entries.addBefore(Items.COAL_ORE, Content.SALT_ORE);
         });
-        ItemGroupEvents.modifyEntriesEvent(MinecraftItemGroups.TOOLS_ID).register(entries -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
             entries.addAfter(Items.FLINT_AND_STEEL, Utensil.copy().toArray(new Utensil[0]));
             if (FabricLoader.getInstance().isModLoaded("patchouli")) {
                 entries.addAfter(Items.WRITABLE_BOOK, Content.GUIDE);
@@ -166,10 +166,6 @@ public class Croptopia implements ModInitializer {
     }
 
     private void modifyVillagers() {
-        // Allow villagers to plant croptopia seeds
-        for (SeedItem seed : CroptopiaMod.seeds) {
-            VillagerPlantableRegistry.register(seed);
-        }
         // Allow villagers to compost croptopia seeds.
         for (SeedItem seed : CroptopiaMod.seeds) {
             VillagerInteractionRegistries.registerCompostable(seed);

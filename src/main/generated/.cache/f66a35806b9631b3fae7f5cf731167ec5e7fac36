@@ -1,6 +1,7 @@
-// 1.19.3	2023-01-09T17:37:14.3613776	Croptopia/Tags for minecraft:item
-37bdd2151b7cce490cf5b90c29c7b4d02073d004 data\minecraft\tags\items\fox_food.json
+// 1.20 Pre-release 7	2023-05-30T20:54:55.2936781	Croptopia/Tags for minecraft:item
+65a9803b169f69aa13466290bdc861b237562fbe data\minecraft\tags\items\villager_plantable_seeds.json
 ebb23d1f1eca2c5bfdeb6305b4e5fb5bedb59279 data\minecraft\tags\items\piglin_food.json
+37bdd2151b7cce490cf5b90c29c7b4d02073d004 data\minecraft\tags\items\fox_food.json
 9f2cd9aafd1a469fb7003fdb7e6883521e3ea563 data\croptopia\tags\items\cinnamon_logs.json
 a67072282db45d31c7a9c2af9075f322e16b2d27 data\minecraft\tags\items\fishes.json
 b0d67759d995b4f2fc21c2834735035ad01b6453 data\minecraft\tags\items\logs_that_burn.json

@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:macaron"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

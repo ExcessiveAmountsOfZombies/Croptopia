@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:cherry_pie"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

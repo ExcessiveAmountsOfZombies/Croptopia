@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:coffee_seed"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

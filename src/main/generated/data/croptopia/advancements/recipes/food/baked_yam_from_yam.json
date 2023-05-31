@@ -30,5 +30,6 @@
     "recipes": [
       "minecraft:baked_yam_from_yam"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

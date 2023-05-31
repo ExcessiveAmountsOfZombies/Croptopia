@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:croque_monsieur"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

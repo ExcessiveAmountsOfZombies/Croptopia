@@ -28,5 +28,6 @@
     "recipes": [
       "croptopia:cranberry_juice"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

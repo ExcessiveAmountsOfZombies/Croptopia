@@ -13,5 +13,6 @@
   ],
   "result": {
     "item": "croptopia:cooking_pot"
-  }
+  },
+  "show_notification": true
 }

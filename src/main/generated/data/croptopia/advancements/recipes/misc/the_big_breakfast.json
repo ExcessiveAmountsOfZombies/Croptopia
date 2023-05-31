@@ -30,5 +30,6 @@
     "recipes": [
       "croptopia:the_big_breakfast"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
