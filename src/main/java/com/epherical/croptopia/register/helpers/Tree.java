@@ -68,10 +68,10 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         this.name = name;
         item = new Item(createGroup());
         // in the following we use registerItem because of AliasedBlockItem
-        log = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
-        strippedLog = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
-        wood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
-        strippedWood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).sound(SoundType.WOOD).strength(2.0F));
+        log = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        strippedLog = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        wood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        strippedWood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
         // create the tags (will be filled by datagen)
         String tagName = name + "_logs";
         logItemTag = TagKey.create(Registries.ITEM, new ResourceLocation(MiscNames.MOD_ID, tagName));
@@ -79,7 +79,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         // left is leaves and saplings
         leaves = createRegularLeavesBlock();
         treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings());
+        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings().ignitedByLava());
         sapling = new ItemNameBlockItem(saplingBlock, createGroup());
         TREES.add(this);
     }

@@ -76,6 +76,7 @@ public class Croptopia implements ModInitializer {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "croptopia"), CROPTOPIA_ITEM_GROUP);
 
         Content.registerBlocks((id, object) -> Registry.register(BuiltInRegistries.BLOCK, id, object));
+        mod.platform().registerFlammableBlocks();
         Content.GUIDE = new GuideBookItem(createGroup());
         Registry.register(BuiltInRegistries.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
         Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object));

@@ -245,6 +245,7 @@ public class CroptopiaForge {
                     event.register(ForgeRegistries.Keys.BLOCKS, blockRegisterHelper -> blockRegisterHelper.register(id, object));
                     return object;
                 });
+                mod.platform().registerFlammableBlocks();
             }
         }
     }
