@@ -33,6 +33,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryType;
 
 import java.util.function.Consumer;
 
@@ -607,6 +608,23 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .define('2', Content.FRYING_PAN)
                 .define('3', independentTag("olive_oils"))
                 .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, Content.BEEF_JERKY, 14)
+                .pattern("111")
+                .pattern("121")
+                .pattern("111")
+                .define('1', Items.BEEF)
+                .define('2', independentTag("salts"))
+                .unlockedBy("has_salt", RecipeProvider.has(Content.SALT))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, Content.PORK_JERKY, 14)
+                .pattern("111")
+                .pattern("121")
+                .pattern("111")
+                .define('1', Items.PORKCHOP)
+                .define('2', independentTag("salts"))
+                .unlockedBy("has_salt", RecipeProvider.has(Content.SALT))
                 .save(exporter);
         //cooked frog leg	furnace
 

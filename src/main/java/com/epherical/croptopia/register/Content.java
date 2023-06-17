@@ -22,7 +22,6 @@ import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
@@ -40,7 +39,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.Arrays;
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
@@ -218,7 +216,7 @@ public class Content {
     public static final Item RAVIOLI = new Item(createGroup());
     public static final Item SALSA = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item ARTICHOKE_DIP = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
-    public static final Item PEPPERONI = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item PEPPERONI = new Item(createGroup().food(FoodConstructor.createBuilder(REG_5).meat().build()));
 
     // drinks
     public static final Item COFFEE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
@@ -238,8 +236,8 @@ public class Content {
     public static final Item PUMPKIN_SPICE_LATTE = new Drink(createGroup().food(FoodConstructor.createBuilder(REG_14).alwaysEat().build()));
 
     // snacks?
-    public static final Item BEEF_JERKY = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
-    public static final Item PORK_JERKY = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
+    public static final Item BEEF_JERKY = new Item(createGroup().food(FoodConstructor.createBuilder(REG_5).meat().build()));
+    public static final Item PORK_JERKY = new Item(createGroup().food(FoodConstructor.createBuilder(REG_5).meat().build()));
     public static final Item KALE_CHIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item POTATO_CHIPS = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
     public static final Item STEAMED_RICE = new Item(createGroup().food(FoodConstructor.createFood(REG_5)));
@@ -368,7 +366,7 @@ public class Content {
     public static final Item PEANUT_BUTTER_W_CELERY = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item POTATO_SOUP = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
     public static final Item RATATOUILLE = new Item(createGroup().food(FoodConstructor.createFood(REG_18)));
-    public static final Item RAW_BACON = new Item(createGroup().food(FoodConstructor.createFood(REG_1)));
+    public static final Item RAW_BACON = new Item(createGroup().food(FoodConstructor.createBuilder(REG_1).meat().build()));
     public static final Item RHUBARB_CRISP = new Item(createGroup().food(FoodConstructor.createFood(REG_10)));
     public static final Item ROASTED_ASPARAGUS = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));
     public static final Item ROASTED_RADISHES = new Item(createGroup().food(FoodConstructor.createFood(REG_7)));

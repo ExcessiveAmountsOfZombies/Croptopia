@@ -29,6 +29,7 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +49,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.world.BiomeModifier;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
@@ -177,21 +178,9 @@ public class CroptopiaForge {
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
-        @SubscribeEvent
-        public static void registerTab(CreativeModeTabEvent.Register event) {
-            event.registerCreativeModeTab(new ResourceLocation("croptopia", "tab"), builder -> {
-                builder.title(Component.translatable("itemGroup.croptopia"))
-                        .displayItems((featureFlagSet, output) ->
-                                BuiltInRegistries.ITEM.entrySet().stream()
-                                        .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
-                                        .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
-                                        .forEach(entry -> output.accept(entry.getValue())))
-                        .icon(() -> new ItemStack(Content.COFFEE));
-            });
-        }
 
         @SubscribeEvent
-        public static void modifyTabs(CreativeModeTabEvent.BuildContents event) {
+        public static void registerTag(BuildCreativeModeTabContentsEvent event) {
             // not a fan of forges event compared to fabrics.
             if (event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
                 event.getEntries().putAfter(new ItemStack(Items.MANGROVE_PROPAGULE), new ItemStack(Content.CINNAMON.getSapling()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -213,6 +202,15 @@ public class CroptopiaForge {
         @SubscribeEvent
         public static void onRegister(RegisterEvent event) {
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.ITEMS)) {
+                CROPTOPIA_ITEM_GROUP = CreativeModeTab.builder()
+                        .title(Component.translatable("itemGroup.croptopia"))
+                        .displayItems((featureFlagSet, output) ->
+                                BuiltInRegistries.ITEM.entrySet().stream()
+                                        .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
+                                        .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
+                                        .forEach(entry -> output.accept(entry.getValue())))
+                        .icon(() -> new ItemStack(Content.COFFEE)).build();
+                Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "croptopia"), CROPTOPIA_ITEM_GROUP);
                 Content.GUIDE = new GuideBookItem(createGroup());
                 event.register(ForgeRegistries.Keys.ITEMS, createIdentifier(ItemNamesV2.GUIDE), () -> Content.GUIDE);
                 Content.registerItems((id, item) -> {

@@ -17,7 +17,7 @@ public class BlockBreakEvent {
             BlockState state = event.getState();
             if (state.is(Content.CINNAMON.getLog()) || state.is(Content.CINNAMON.getWood())) {
                 if (player != null && !player.isCreative()) {
-                    Block.popResource(player.level, event.getPos(), new ItemStack(Content.CINNAMON));
+                    Block.popResource(player.level(), event.getPos(), new ItemStack(Content.CINNAMON));
                 }
                 if (state.is((Content.CINNAMON.getLog()))) {
                     event.setFinalState(Content.CINNAMON.getStrippedLog().withPropertiesOf(state));

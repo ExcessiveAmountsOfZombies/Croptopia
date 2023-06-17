@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "patchouli:items/book_blue"
+    "layer0": "croptopia:item/croptopia_guidebook"
   }
 }

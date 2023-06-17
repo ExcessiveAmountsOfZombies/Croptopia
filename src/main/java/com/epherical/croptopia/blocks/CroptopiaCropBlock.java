@@ -19,6 +19,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.chunk.ChunkStatus;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -94,5 +95,10 @@ public class CroptopiaCropBlock extends CropBlock {
     @Override
     protected ItemLike getBaseSeedId() {
         return seed;
+    }
+
+    @Override
+    public IntegerProperty getAgeProperty() {
+        return super.getAgeProperty();
     }
 }

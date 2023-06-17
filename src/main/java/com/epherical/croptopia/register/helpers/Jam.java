@@ -5,6 +5,7 @@ import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Jam implements ItemLike {
     public Jam(String name, ItemConvertibleWithPlural crop) {
         this.name = name;
         this.crop = crop;
-        item = new Drink(createGroup().food(createBuilder(JAM_3).alwaysEat().build()));
+        item = new Drink(createGroup().craftRemainder(Items.GLASS_BOTTLE).food(createBuilder(JAM_3).alwaysEat().build()));
         INSTANCES.add(this);
     }
 
