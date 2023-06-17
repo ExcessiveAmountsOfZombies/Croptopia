@@ -81,6 +81,7 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
         FabricTagBuilder fishes = getOrCreateTagBuilder(ItemTags.FISHES);
         fishes.add(Content.ANCHOVY.asItem());
         fishes.add(Content.CALAMARI.asItem());
+        fishes.add(Content.GLOWING_CALAMARI.asItem());
         fishes.add(Content.CLAM.asItem());
         fishes.add(Content.CRAB.asItem());
         fishes.add(Content.OYSTER.asItem());

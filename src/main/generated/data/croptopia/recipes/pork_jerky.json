@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:porkchop"
+    },
+    "2": {
+      "tag": "${dependent}:salts"
+    }
+  },
+  "pattern": [
+    "111",
+    "121",
+    "111"
+  ],
+  "result": {
+    "count": 14,
+    "item": "croptopia:pork_jerky"
+  },
+  "show_notification": true
+}
