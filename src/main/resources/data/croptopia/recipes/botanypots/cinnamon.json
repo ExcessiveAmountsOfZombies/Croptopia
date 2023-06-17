@@ -3,26 +3,26 @@
     {
       "type": "bookshelf:item_exists",
       "values": [
-        "croptopia:cherry_sapling"
+        "croptopia:cinnamon_sapling"
       ]
     }
   ],
   "type": "botanypots:crop",
   "seed": {
-    "item": "croptopia:cherry_sapling"
+    "item": "croptopia:cinnamon_sapling"
   },
   "categories": [
     "dirt"
   ],
   "growthTicks": 1600,
   "display": {
-    "block": "croptopia:cherry_sapling"
+    "block": "croptopia:cinnamon_sapling"
   },
   "drops": [
     {
       "chance": 1.00,
       "output": {
-        "item": "croptopia:cherry"
+        "item": "croptopia:cinnamon"
       },
       "minRolls": 2,
       "maxRolls": 3
@@ -30,7 +30,7 @@
     {
       "chance": 0.05,
       "output": {
-        "item": "croptopia:cherry_sapling"
+        "item": "croptopia:cinnamon_sapling"
       }
     }
   ],
