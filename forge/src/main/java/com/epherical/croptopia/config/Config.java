@@ -5,6 +5,7 @@ import com.epherical.croptopia.common.FeatureNames;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.SetMultimap;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -14,6 +15,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
+import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,9 +24,12 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.LogManager;
 
 @Mod.EventBusSubscriber(modid = "croptopia", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
+
+    private static Logger LOGGER = LogUtils.getLogger();
     private final ForgeConfigSpec.Builder CONFIG_BUILDER = new ForgeConfigSpec.Builder();
     public ForgeConfigSpec config;
 
@@ -55,12 +60,14 @@ public class Config {
     @SubscribeEvent
     public void initConfig(ModConfigEvent configEvent) {
         if (configEvent.getConfig().getSpec() == config) {
-            canRightClickHarvest = rightClickHarvest.get();
-            isSaltDisabled = disableSaltGeneration.get();
-            features.clear();
-            for (Map.Entry<TreeConfiguration, TreeBuilder> entry : builderMap.entrySet()) {
-                for (String s : entry.getValue().acceptableBiomes.get()) {
-                    features.put(new ResourceLocation(s), entry.getKey().featureKey);
+            synchronized (this) { // this'll probably cause other problems
+                canRightClickHarvest = rightClickHarvest.get();
+                isSaltDisabled = disableSaltGeneration.get();
+                features.clear();
+                for (Map.Entry<TreeConfiguration, TreeBuilder> entry : builderMap.entrySet()) {
+                    for (String s : entry.getValue().acceptableBiomes.get()) {
+                        features.put(new ResourceLocation(s), entry.getKey().featureKey);
+                    }
                 }
             }
         }
