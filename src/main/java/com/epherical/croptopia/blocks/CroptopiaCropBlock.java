@@ -31,10 +31,10 @@ public class CroptopiaCropBlock extends CropBlock {
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 3.0D, 16.0D),
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 5.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D),
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 9.0D, 16.0D)};
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 
     private SeedItem seed;
 

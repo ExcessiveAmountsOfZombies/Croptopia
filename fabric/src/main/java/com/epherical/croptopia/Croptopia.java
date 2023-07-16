@@ -38,6 +38,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.slf4j.Logger;
+import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -49,13 +50,10 @@ import static com.epherical.croptopia.common.MiscNames.MOD_ID;
 
 
 public class Croptopia implements ModInitializer {
-
-
     private static final Logger LOGGER = LogUtils.getLogger();
-
     private final boolean devEnvironment = Boolean.getBoolean(MOD_ID + ".dev");
 
-    public CroptopiaConfig config;
+    public static CroptopiaMod mod;
 
 
     public static final CreativeModeTab CROPTOPIA_ITEM_GROUP = FabricItemGroup.builder()
@@ -71,7 +69,7 @@ public class Croptopia implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        CroptopiaMod mod = new CroptopiaMod(new FabricAdapter());
+        mod = new CroptopiaMod(new FabricAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia.conf"));
 
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "croptopia"), CROPTOPIA_ITEM_GROUP);
 
@@ -99,11 +97,6 @@ public class Croptopia implements ModInitializer {
         patchouli = new Patchouli();
 
         Composter.init();
-
-        this.config = new CroptopiaConfig(devEnvironment, "croptopia.conf");
-        config.addSerializer(TreeConfiguration.class, TreeConfiguration.Serializer.INSTANCE);
-        config.addSerializer(ResourceLocation.class, IdentifierSerializer.INSTANCE);
-        config.loadConfig();
 
         BiomeModifiers.init(this);
         CropLootTableModifier.init();

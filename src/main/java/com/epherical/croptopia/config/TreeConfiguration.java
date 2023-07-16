@@ -10,6 +10,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -17,12 +19,12 @@ import net.minecraft.world.level.biome.Biome;
 
 public class TreeConfiguration {
 
-    private Collection<ResourceKey<Biome>> treesAllowedInBiome;
+    private Set<ResourceKey<Biome>> treesAllowedInBiome;
     private String featureKey;
 
     public TreeConfiguration(String featureKey, Collection<ResourceKey<Biome>> treesAllowedInBiome) {
         this.featureKey = featureKey;
-        this.treesAllowedInBiome = treesAllowedInBiome;
+        this.treesAllowedInBiome = Set.copyOf(treesAllowedInBiome);
     }
 
 
@@ -36,7 +38,7 @@ public class TreeConfiguration {
         return featureKey;
     }
 
-    public Collection<ResourceKey<Biome>> getTreesAllowedInBiome() {
+    public Set<ResourceKey<Biome>> getTreesAllowedInBiome() {
         return treesAllowedInBiome;
     }
 

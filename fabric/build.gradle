@@ -27,6 +27,11 @@ configurations {
 
 sourceSets {
     main {
+        java {
+            srcDirs += [
+                    rootProject.sourceSets.main.java
+            ]
+        }
         resources {
             srcDirs += [
                     "src/main/generated",
@@ -38,20 +43,14 @@ sourceSets {
 
 dependencies {
     minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
-    mappings loom.officialMojangMappings()
-    /*mappings loom.layered() {
+    mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.18.1:2021.12.19")
-    }*/
+        parchment("org.parchmentmc.data:parchment-1.20.1:2023.07.09")
+    }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
+    modImplementation('com.epherical.epherolib:EpheroLib-fabric:1.0.0-1.20')
     modCompileOnly "vazkii.patchouli:Patchouli:1.19-74-FABRIC-SNAPSHOT"
-
-    modImplementation(include("org.spongepowered:configurate-hocon:4.1.2"))
-    modImplementation(include("org.spongepowered:configurate-core:4.1.2"))
-    include("com.typesafe:config:1.4.1")
-    include("io.leangen.geantyref:geantyref:1.3.11")
-    //modImplementation(include("ca.stellardrift:confabricate:2.2.0-SNAPSHOT"))
 
     modCompileOnly "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")

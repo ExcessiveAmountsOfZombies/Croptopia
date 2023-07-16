@@ -25,19 +25,15 @@ public class BiomeModifiers {
         BiomeModifications.addFeature(context -> true,
                 GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
 
-        try {
-            List<TreeConfiguration> trees = croptopia.config.getRootNode().node("treeConfig").getList(TreeConfiguration.class);
-            for (TreeConfiguration tree : trees) {
-                BiomeModifications.addFeature(BiomeSelectors.includeByKey(tree.getTreesAllowedInBiome()),
-                        GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(tree.getFeatureKey()));
-            }
-        } catch (SerializationException e) {
-            e.printStackTrace();
+        List<TreeConfiguration> trees = Croptopia.mod.config().treeConfigurations;
+        for (TreeConfiguration tree : trees) {
+            BiomeModifications.addFeature(BiomeSelectors.includeByKey(tree.getTreesAllowedInBiome()),
+                    GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(tree.getFeatureKey()));
         }
 
         Collection<ResourceKey<Biome>> exclusion = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP);
 
-        if (croptopia.config.generateSaltInWorld()) {
+        if (Croptopia.mod.config().generateSaltInWorld) {
             BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
                     GenerationStep.Decoration.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
         }

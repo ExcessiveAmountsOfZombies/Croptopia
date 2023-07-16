@@ -3,6 +3,9 @@ package com.epherical.croptopia;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.common.PlatformAdapter;
+import com.epherical.croptopia.config.CroptopiaConfig;
+import com.epherical.croptopia.config.IdentifierSerializer;
+import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.items.SeedItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -15,10 +18,11 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 
 import java.util.ArrayList;
 
-public record CroptopiaMod(PlatformAdapter<?> platform) {
+public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) {
     public static ArrayList<Item> cropItems = new ArrayList<>();
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
@@ -26,8 +30,13 @@ public record CroptopiaMod(PlatformAdapter<?> platform) {
 
     private static CroptopiaMod mod;
 
-    public CroptopiaMod(PlatformAdapter<?> platform) {
+
+    public CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) {
         this.platform = platform;
+        this.config = config;
+        config.addSerializer(TreeConfiguration.class, TreeConfiguration.Serializer.INSTANCE);
+        config.addSerializer(ResourceLocation.class, IdentifierSerializer.INSTANCE);
+        config.loadConfig(MiscNames.MOD_ID);
         mod = this;
     }
 

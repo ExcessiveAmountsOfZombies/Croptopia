@@ -10,6 +10,10 @@ allprojects {
     version = mod_version
     group = maven_group
 
+    repositories {
+        mavenLocal()
+    }
+
 }
 
 subprojects {
@@ -34,6 +38,7 @@ minecraft {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     compileOnlyApi('org.jetbrains:annotations:23.0.0')
+    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.0.0-1.20')
 }
 
 sourceSets {

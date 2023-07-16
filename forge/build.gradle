@@ -17,6 +17,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 repositories {
+    mavenLocal()
     maven {
         url = 'https://maven.blamejared.com'
     }
@@ -38,6 +39,11 @@ mixin {
 
 sourceSets {
     main {
+        java {
+            srcDirs += [
+                    rootProject.sourceSets.main.java
+            ]
+        }
         resources {
             srcDirs += [
                     "src/main/generated",
@@ -50,6 +56,7 @@ sourceSets {
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     mappings channel: 'official', version: "${mc_ver}"
+    //mappings channel: 'parchment', version: "${project.parchmentVersion}-${project.mc_ver}"
     runs {
         client {
             workingDirectory project.file('run')
@@ -117,7 +124,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_ver}-${forge_ver}"
     implementation(rootProject)
     shade(rootProject)
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.19-74-SNAPSHOT")
+    implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
+    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20'))
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 

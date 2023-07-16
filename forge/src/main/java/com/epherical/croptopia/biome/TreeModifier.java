@@ -1,7 +1,7 @@
 package com.epherical.croptopia.biome;
 
-import com.epherical.croptopia.CroptopiaForge;
 import com.epherical.croptopia.common.MiscNames;
+import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.registry.GeneratorRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
@@ -20,6 +20,7 @@ import java.util.Collection;
 import java.util.Locale;
 
 import static com.epherical.croptopia.CroptopiaForge.createIdentifier;
+import static com.epherical.croptopia.CroptopiaForge.mod;
 
 public record TreeModifier(GenerationStep.Decoration step) implements BiomeModifier {
 
@@ -31,9 +32,9 @@ public record TreeModifier(GenerationStep.Decoration step) implements BiomeModif
         if (phase == Phase.ADD) {
             biome.unwrapKey().ifPresent(biomeResourceKey -> {
                 BiomeGenerationSettingsBuilder generation = builder.getGenerationSettings();
-                Collection<String> strings = CroptopiaForge.config.getFeatures().get(biomeResourceKey.location());
-                for (String string : strings) {
-                    generation.addFeature(step, GeneratorRegistry.getPlacedFeature(GeneratorRegistry.getFeatureKey(string)));
+                Collection<TreeConfiguration> strings = mod.config().treeMap.get(biomeResourceKey);
+                for (TreeConfiguration config : strings) {
+                    generation.addFeature(step, GeneratorRegistry.getPlacedFeature(GeneratorRegistry.getFeatureKey(config.getFeatureKey())));
                 }
             });
         }
@@ -55,7 +56,7 @@ public record TreeModifier(GenerationStep.Decoration step) implements BiomeModif
         try {
             return DataResult.success(GenerationStep.Decoration.valueOf(name.toUpperCase(Locale.ROOT)));
         } catch (Exception e) {
-            return DataResult.error(() ->  "Not a decoration stage: " + name);
+            return DataResult.error(() -> "Not a decoration stage: " + name);
         }
     }
 

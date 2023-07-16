@@ -6,7 +6,7 @@ import com.epherical.croptopia.biome.TreeModifier;
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.config.Config;
+import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.datagen.CroptopiaBiomeData;
 import com.epherical.croptopia.items.GuideBookItem;
 import com.epherical.croptopia.items.SeedItem;
@@ -70,6 +70,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,15 +93,12 @@ public class CroptopiaForge {
             DeferredRegister.create(ForgeRegistries.Keys.BIOME_MODIFIERS, MiscNames.MOD_ID);
     public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> GLM = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
 
-    public static Config config;
-
     public static CreativeModeTab CROPTOPIA_ITEM_GROUP = null;
 
 
     public static CroptopiaMod mod;
 
     public CroptopiaForge() {
-        config = new Config();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
         bus.addListener(this::enqueueIMC);
@@ -123,19 +121,17 @@ public class CroptopiaForge {
 
         bus.addListener(data::getData);
 
-        bus.addListener(config::initConfig);
-
         MinecraftForge.EVENT_BUS.addListener(CroptopiaForge::onWorldLoad);
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
         MinecraftForge.EVENT_BUS.register(new Harvest());
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
         //MinecraftForge.EVENT_BUS.register(new CroptopiaVillagerTrades());
         MinecraftForge.EVENT_BUS.register(new EntitySpawn());
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
+        //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
-        mod = new CroptopiaMod(new ForgeAdapter());
+        mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia.conf"));
     }
 
     private void setup(final FMLCommonSetupEvent event) {
@@ -238,7 +234,6 @@ public class CroptopiaForge {
                 Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
 
                 GeneratorRegistry.init();
-                Config.setFeatures(config);
             }
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.BLOCKS)) {
                 Content.registerBlocks((id, object) -> {

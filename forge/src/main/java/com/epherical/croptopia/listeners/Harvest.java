@@ -1,26 +1,23 @@
 package com.epherical.croptopia.listeners;
 
 import com.epherical.croptopia.blocks.LeafCropBlock;
-import com.epherical.croptopia.config.Config;
 import com.epherical.croptopia.events.HarvestEvent;
 import com.epherical.croptopia.mixin.AgeInvokerMixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.BoneMealItem;
-import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditions;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+
+import static com.epherical.croptopia.CroptopiaForge.mod;
 
 
 public class Harvest {
@@ -28,7 +25,7 @@ public class Harvest {
 
     @SubscribeEvent
     public void onHarvest(PlayerInteractEvent.RightClickBlock event) {
-        if (Config.canRightClickHarvest && !event.getEntity().isSpectator()) {
+        if (mod.config().rightClickHarvest && !event.getEntity().isSpectator()) {
             if (!(event.getEntity().getMainHandItem().getItem() instanceof BoneMealItem)) {
                 if (!event.getLevel().isClientSide) {
                     Level world = event.getLevel();
