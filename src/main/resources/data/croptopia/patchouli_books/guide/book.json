@@ -7,5 +7,6 @@
   "model": "patchouli:book_blue",
   "use_blocky_font": true,
   "version": 3,
-  "show_progress": false
+  "show_progress": false,
+  "use_resource_pack": true
 }
