@@ -1,20 +1,8 @@
-buildscript {
-    repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url= 'https://repo.spongepowered.org/repository/maven-public/' }
-        mavenCentral()
-        gradlePluginPortal()
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
-        classpath 'gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0'
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
-    }
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
-
-apply plugin: 'com.github.johnrengelman.shadow'
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
 
 repositories {
     mavenLocal()
@@ -39,11 +27,6 @@ mixin {
 
 sourceSets {
     main {
-        java {
-            srcDirs += [
-                    rootProject.sourceSets.main.java
-            ]
-        }
         resources {
             srcDirs += [
                     "src/main/generated",
@@ -125,7 +108,9 @@ dependencies {
     implementation(rootProject)
     shade(rootProject)
     implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
-    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20'))
+    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20')) {
+        transitive = false
+    }
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -180,7 +165,7 @@ reobf {
 jar.finalizedBy('reobfJar')
 
 task sourceJar(type: Jar) {
-    classifier = 'sources'
+    /*classifier = 'sources'*/
     from sourceSets.main.allSource
 }
 

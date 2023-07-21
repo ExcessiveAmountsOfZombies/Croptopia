@@ -21,7 +21,7 @@ import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.register.helpers.Utensil;
-import com.epherical.croptopia.registry.GeneratorRegistry;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.client.Minecraft;
@@ -52,13 +52,12 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.LevelEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
@@ -70,7 +69,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -196,6 +194,11 @@ public class CroptopiaForge {
 
 
         @SubscribeEvent
+        public static void onDatapackRegister(ServerStartingEvent event) {
+            event.getServer().registryAccess().asGetterLookup();
+        }
+
+        @SubscribeEvent
         public static void onRegister(RegisterEvent event) {
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.ITEMS)) {
                 CROPTOPIA_ITEM_GROUP = CreativeModeTab.builder()
@@ -233,7 +236,6 @@ public class CroptopiaForge {
                 pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
                 Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
 
-                GeneratorRegistry.init();
             }
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.BLOCKS)) {
                 Content.registerBlocks((id, object) -> {

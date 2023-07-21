@@ -8,6 +8,7 @@ pluginManagement {
             name = 'Sponge Snapshots'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
+        maven { url = 'https://maven.parchmentmc.org' }
         gradlePluginPortal()
     }
 }
