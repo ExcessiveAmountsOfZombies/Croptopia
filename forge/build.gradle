@@ -1,6 +1,7 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '8.0.0'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
 
@@ -11,6 +12,8 @@ repositories {
     }
 }
 
+version = project.mod_version
+group = project.maven_group
 archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
 
 configurations {
@@ -111,7 +114,7 @@ dependencies {
     implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20')) {
         transitive = false
     }
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5-SNAPSHOT:processor'
 }
 
 shadowJar {
@@ -145,16 +148,6 @@ jar {
     }
 }
 
-tasks.withType(JavaCompile) {
-    doLast {
-        copy {
-            from "${buildDir}/resources/main/dependents/platform"
-            include "**/**/*.json"
-            expand "dependent": "forge"
-            into "${buildDir}/resources/main/data/forge/"
-        }
-    }
-}
 
 tasks.build.dependsOn(tasks.shadowJar)
 
@@ -163,9 +156,10 @@ reobf {
 }
 
 jar.finalizedBy('reobfJar')
+shadowJar.dependsOn('reobfJar')
 
 task sourceJar(type: Jar) {
-    /*classifier = 'sources'*/
+    archiveClassifier = 'sources'
     from sourceSets.main.allSource
 }
 
@@ -178,17 +172,13 @@ publishing {
             artifactId = "${archives_base_name}_" + artifactId
             version = version + "-${mc_ver}"
             // add all the jars that should be included when publishing to maven
-            from (components.java)
+            artifact shadowJar
 
             artifact sourceJar
         }
     }
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
+
     }
 }
