@@ -61,6 +61,9 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final Item sapling;
     private Block saplingBlock;
 
+    private static final boolean datagen = true;
+    private ResourceLocation placedFeatureName;
+
     public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen) {
         Objects.requireNonNull(category);
         this.hasPlural = hasPlural;
@@ -82,6 +85,9 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings().ignitedByLava());
         sapling = new ItemNameBlockItem(saplingBlock, createGroup());
         TREES.add(this);
+        if (datagen) {
+            placedFeatureName = new ResourceLocation("croptopia", name() + "_tree_configured");
+        }
     }
 
     @Override
@@ -149,6 +155,10 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
 
     public void setTree(ResourceKey<ConfiguredFeature<?, ?>> tree) {
         this.tree = tree;
+    }
+
+    public ResourceLocation getPlacedFeatureName() {
+        return placedFeatureName;
     }
 
     @Override

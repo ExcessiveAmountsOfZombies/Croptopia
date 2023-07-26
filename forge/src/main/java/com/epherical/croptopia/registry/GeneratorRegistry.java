@@ -1,7 +1,6 @@
 package com.epherical.croptopia.registry;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
-import com.epherical.croptopia.common.FeatureNames;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.minecraft.core.BlockPos;

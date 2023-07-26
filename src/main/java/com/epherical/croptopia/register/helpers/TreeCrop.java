@@ -54,7 +54,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private final CroptopiaSaplingItem saplingItem;
     private final CroptopiaSaplingBlock saplingBlock;
 
-    private static final boolean datagen = Boolean.getBoolean("fabric-api.datagen");
+    private static final boolean datagen = true;
     private ResourceLocation placedFeatureName;
 
     public TreeCrop(String name, boolean plural, Block logType, Block leafType, TagCategory category, FoodConstructor constructor, int base, int randA, int randB) {
@@ -75,8 +75,6 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         saplingItem = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
         TREE_CROPS.add(this);
         if (datagen) {
-            // lazy sout
-            System.out.println("Generating Data for TreeCrops");
             placedFeatureName = new ResourceLocation("croptopia", name() + "_tree_configured");
         }
     }

@@ -1,7 +1,6 @@
 package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.Croptopia;
-import com.epherical.croptopia.common.ItemNames;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.mixin.datagen.IdentifierAccessor;
 import com.epherical.croptopia.register.Content;
@@ -15,10 +14,8 @@ import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.google.common.collect.ImmutableMap;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -33,7 +30,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryType;
 
 import java.util.function.Consumer;
 

@@ -2,15 +2,13 @@ package com.epherical.croptopia.generator;
 
 import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.config.TreeConfiguration;
-import com.epherical.croptopia.registry.GeneratorRegistry;
+import com.epherical.croptopia.datagen.WorldGenFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import org.spongepowered.configurate.serialize.SerializationException;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -23,19 +21,19 @@ public class BiomeModifiers {
 
         // generate in ALL biomes
         BiomeModifications.addFeature(context -> true,
-                GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey("random_crop"));
+                GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenFeatures.getFeatureKey("random_crop"));
 
         List<TreeConfiguration> trees = Croptopia.mod.config().treeConfigurations;
         for (TreeConfiguration tree : trees) {
             BiomeModifications.addFeature(BiomeSelectors.includeByKey(tree.getTreesAllowedInBiome()),
-                    GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.getFeatureKey(tree.getFeatureKey()));
+                    GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenFeatures.getFeatureKey(tree.getFeatureKey()));
         }
 
         Collection<ResourceKey<Biome>> exclusion = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP);
 
         if (Croptopia.mod.config().generateSaltInWorld) {
             BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
-                    GenerationStep.Decoration.UNDERGROUND_ORES, GeneratorRegistry.getFeatureKey("disk_salt_configured"));
+                    GenerationStep.Decoration.UNDERGROUND_ORES, WorldGenFeatures.getFeatureKey("disk_salt_configured"));
         }
     }
 }

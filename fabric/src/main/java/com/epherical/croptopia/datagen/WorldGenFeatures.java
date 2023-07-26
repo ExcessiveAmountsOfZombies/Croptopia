@@ -1,7 +1,6 @@
-package com.epherical.croptopia.registry;
+package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
-import com.epherical.croptopia.common.FeatureNames;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.minecraft.core.BlockPos;
@@ -9,7 +8,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.SimpleWeightedRandomList;
@@ -41,10 +39,11 @@ import java.util.Map;
 
 import static com.epherical.croptopia.Croptopia.createIdentifier;
 
-public class GeneratorRegistry {
+public class WorldGenFeatures {
 
     private static final Map<String, ResourceKey<PlacedFeature>> keyMap = new HashMap<>();
     public static final Map<ResourceKey<PlacedFeature>, Holder<PlacedFeature>> datagenPlacedFeatures = new HashMap<>();
+    public static final Map<ResourceLocation, List<PlacementModifier>> datagenModifierLists = new HashMap<>();
 
     public static final SimpleBlockConfiguration config = (new SimpleBlockConfiguration(
             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -215,6 +214,7 @@ public class GeneratorRegistry {
         keyMap.put(id.getPath(), key);
         Holder<PlacedFeature> direct = Holder.direct(new PlacedFeature(Holder.direct(holder), modifiers));
         datagenPlacedFeatures.put(key, direct);
+        datagenModifierLists.put(id, modifiers);
         return direct;
     }
 
