@@ -1,5 +1,6 @@
 package com.epherical.croptopia.client;
 
+import com.epherical.croptopia.ClientFunctions;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import net.fabricmc.api.ClientModInitializer;
@@ -15,24 +16,15 @@ import net.minecraft.world.level.block.Block;
 
 @Environment(EnvType.CLIENT)
 public class CroptopiaClient implements ClientModInitializer {
+
     @Override
     public void onInitializeClient() {
-        CroptopiaMod.cropBlocks.forEach(this::registerCropBlockLayer);
-        registerColorProvider();
+        ClientFunctions functions = new ClientFunctions();
+        ColorProviderRegistry.BLOCK.register(functions.registerLeafColors(), functions.leaves());
+        functions.registerBlockLayers(this::registerCropBlockLayer);
     }
 
     public void registerCropBlockLayer(Block block) {
-        if (block instanceof LeafCropBlock) {
-            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutoutMipped());
-            return;
-        }
         BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutoutMipped());
-    }
-
-    public void registerColorProvider() {
-        ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) ->
-                world != null && pos != null
-                        ? BiomeColors.getAverageFoliageColor(world, pos)
-                        : FoliageColor.getDefaultColor(), CroptopiaMod.leafBlocks.toArray(Block[]::new));
     }
 }

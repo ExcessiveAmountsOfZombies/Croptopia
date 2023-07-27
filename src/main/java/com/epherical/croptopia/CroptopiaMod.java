@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
-import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 
 import java.util.ArrayList;
 
@@ -57,7 +56,7 @@ public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) 
     }
 
     public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating((a,b,c) -> false).isViewBlocking((a,b,c) -> false));
+        return new LeafCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating((a, b, c) -> false).isViewBlocking((a, b, c) -> false));
     }
 
     public static LeavesBlock createRegularLeavesBlock() {

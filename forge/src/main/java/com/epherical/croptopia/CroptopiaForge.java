@@ -26,7 +26,6 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
@@ -43,9 +42,7 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.world.BiomeModifier;
@@ -138,16 +135,10 @@ public class CroptopiaForge {
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-
-        CroptopiaMod.cropBlocks.forEach(block -> {
-            ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped());
-        });
-
+        ClientFunctions functions = new ClientFunctions();
+        functions.registerBlockLayers(block -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped()));
         BlockColors colors = Minecraft.getInstance().getBlockColors();
-        colors.register((state, world, pos, tintIndex) ->
-                world != null && pos != null
-                        ? BiomeColors.getAverageFoliageColor(world, pos)
-                        : FoliageColor.getDefaultColor(), CroptopiaMod.leafBlocks.toArray(new Block[]{}));
+        colors.register(functions.registerLeafColors(), functions.leaves());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
