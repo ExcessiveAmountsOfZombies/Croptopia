@@ -32,6 +32,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.animal.Parrot;
 import net.minecraft.world.entity.animal.Pig;
@@ -49,6 +50,7 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.LevelEvent;
+import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -91,7 +93,11 @@ public class CroptopiaForge {
     public static CreativeModeTab CROPTOPIA_ITEM_GROUP = null;
 
 
+
+
     public static CroptopiaMod mod;
+
+    public static MinecraftServer server;
 
     public CroptopiaForge() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -120,6 +126,7 @@ public class CroptopiaForge {
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
         MinecraftForge.EVENT_BUS.register(new Harvest());
         MinecraftForge.EVENT_BUS.register(new BlockBreakEvent());
+        //MinecraftForge.EVENT_BUS.addListener(this::onDatapackRegister);
         //MinecraftForge.EVENT_BUS.register(new CroptopiaVillagerTrades());
         MinecraftForge.EVENT_BUS.register(new EntitySpawn());
         //ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.config);
@@ -151,12 +158,17 @@ public class CroptopiaForge {
         InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(Content.MILK_BOTTLE));
     }
 
+    /*public void onDatapackRegister(ServerAboutToStartEvent event) {
+        server = event.getServer();
+    }*/
+
     private void processIMC(final InterModProcessEvent event) {
     }
 
 
     @SubscribeEvent // You can use SubscribeEvent and let the Event Bus discover methods to call
     public void onServerStarting(FMLDedicatedServerSetupEvent event) {
+
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -181,12 +193,6 @@ public class CroptopiaForge {
                     event.getEntries().putAfter(new ItemStack(Items.FLINT_AND_STEEL), stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 });
             }
-        }
-
-
-        @SubscribeEvent
-        public static void onDatapackRegister(ServerStartingEvent event) {
-            event.getServer().registryAccess().asGetterLookup();
         }
 
         @SubscribeEvent
@@ -266,5 +272,13 @@ public class CroptopiaForge {
             modifyVillagerGatherables();
             hasRun = true;
         }
+    }
+
+    public MinecraftServer getServer() {
+        return server;
+    }
+
+    public void setServer(MinecraftServer server) {
+        this.server = server;
     }
 }

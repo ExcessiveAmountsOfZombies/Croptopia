@@ -40,7 +40,7 @@ minecraft {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     compileOnlyApi('org.jetbrains:annotations:23.0.0')
-    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.0.0-1.20')
+    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.0.0-1.20.1')
 }
 
 sourceSets {

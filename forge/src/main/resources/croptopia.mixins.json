@@ -7,7 +7,8 @@
     "AgeInvokerMixin",
     "LootPoolAccessor",
     "LootPoolBuilderAccessor",
-    "LootTableAccessor"
+    "LootTableAccessor",
+    "ServerLifecycleHookAccessor"
   ],
   "minVersion": "0.8"
 }

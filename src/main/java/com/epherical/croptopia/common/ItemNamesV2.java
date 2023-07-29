@@ -30,7 +30,6 @@ public class ItemNamesV2 {
     public static final String PLUM = "plum";
     public static final String STARFRUIT = "starfruit";
     public static final String WALNUT = "walnut";
-
     public static final String CINNAMON = "cinnamon";
 
     public static final String ARTICHOKE = "artichoke";

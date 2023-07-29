@@ -29,6 +29,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlac
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -49,18 +50,20 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagCategory category;
     private final Item item;
     private final Block leaves;
-    private ResourceKey<ConfiguredFeature<?, ?>> tree;
     private final ConfiguredFeature<TreeConfiguration, ?> treeConfig;
     private final CroptopiaSaplingItem saplingItem;
     private final CroptopiaSaplingBlock saplingBlock;
 
-    private static final boolean datagen = true;
-    private ResourceLocation placedFeatureName;
+    private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
+    private final ResourceKey<PlacedFeature> placedFeatureKey;
 
-    public TreeCrop(String name, boolean plural, Block logType, Block leafType, TagCategory category, FoodConstructor constructor, int base, int randA, int randB) {
+    public TreeCrop(String name, boolean plural, Block logType, Block leafType, TagCategory category, FoodConstructor constructor, int base, int randA, int randB,
+                    ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
         Objects.requireNonNull(leafType);
         Objects.requireNonNull(category);
         Objects.requireNonNull(logType);
+        this.configuredFeatureKey = configuredFeatureKey;
+        this.placedFeatureKey = placedFeatureKey;
         this.name = name;
         this.isPlural = plural;
         this.category = category;
@@ -71,12 +74,9 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         }
         leaves = createLeavesBlock();
         treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings());
+        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings());
         saplingItem = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
         TREE_CROPS.add(this);
-        if (datagen) {
-            placedFeatureName = new ResourceLocation("croptopia", name() + "_tree_configured");
-        }
     }
 
     /**
@@ -105,16 +105,8 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return item;
     }
 
-    public void setTree(ResourceKey<ConfiguredFeature<?, ?>> tree) {
-        this.tree = tree;
-    }
-
     public ConfiguredFeature<TreeConfiguration, ?> getTreeConfig() {
         return treeConfig;
-    }
-
-    public ResourceKey<ConfiguredFeature<?, ?>> getTree() {
-        return tree;
     }
 
     public CroptopiaSaplingBlock getSaplingBlock() {
@@ -133,9 +125,12 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return category;
     }
 
-    @Nullable
-    public ResourceLocation getPlacedFeatureName() {
-        return placedFeatureName;
+    public ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeatureKey() {
+        return configuredFeatureKey;
+    }
+
+    public ResourceKey<PlacedFeature> getPlacedFeatureKey() {
+        return placedFeatureKey;
     }
 
     public static List<TreeCrop> copy() {
@@ -148,7 +143,6 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             cropBlocks.add(treeCrop.asBlock());
             cropBlocks.add(treeCrop.saplingBlock);
             leafBlocks.add(treeCrop.asBlock());
-            treeCrop.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation("croptopia", treeCrop.name() + "_tree"));
             register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingBlock());
         }
     }

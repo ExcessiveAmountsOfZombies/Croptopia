@@ -1,10 +1,10 @@
 package com.epherical.croptopia.config;
 
+import com.epherical.epherolib.libs.org.spongepowered.configurate.ConfigurationNode;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.TypeSerializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.spongepowered.configurate.ConfigurationNode;
-import org.spongepowered.configurate.serialize.SerializationException;
-import org.spongepowered.configurate.serialize.TypeSerializer;
 
 import java.lang.reflect.Type;
 import java.util.List;

@@ -1,7 +1,10 @@
 package com.epherical.croptopia.config;
 
-import com.epherical.croptopia.common.FeatureNames;
 import com.epherical.epherolib.config.CommonConfig;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.CommentedConfigurationNode;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.ConfigurationNode;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.loader.AbstractConfigurationLoader;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.core.registries.Registries;
@@ -9,10 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
-import org.spongepowered.configurate.CommentedConfigurationNode;
-import org.spongepowered.configurate.ConfigurationNode;
-import org.spongepowered.configurate.loader.AbstractConfigurationLoader;
-import org.spongepowered.configurate.serialize.SerializationException;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +20,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.*;
 
 public class CroptopiaConfig extends CommonConfig {
 
@@ -33,7 +35,7 @@ public class CroptopiaConfig extends CommonConfig {
         super(loaderBuilder, configName);
     }
 
-    @Override
+    /*@Override*/
     public void parseConfig(CommentedConfigurationNode node) {
         configVersion = node.node("version").getInt(configVersion);
         generateSaltInWorld = node.node("generateSaltInWorld").getBoolean(generateSaltInWorld);
@@ -52,7 +54,7 @@ public class CroptopiaConfig extends CommonConfig {
 
     }
 
-    @Override
+    /*@Override*/
     public CommentedConfigurationNode generateConfig(CommentedConfigurationNode node) {
         try {
             node.node("version").set(configVersion).comment("Config Version, don't edit");
@@ -71,43 +73,43 @@ public class CroptopiaConfig extends CommonConfig {
         Collection<ResourceKey<Biome>> plainsKeys = Arrays.asList(Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS);
         Collection<ResourceKey<Biome>> darkForestKeys = Arrays.asList(Biomes.DARK_FOREST);
 
-        HashMultimap<String, ResourceKey<Biome>> biomes = HashMultimap.create();
+        HashMultimap<ResourceKey<PlacedFeature>, ResourceKey<Biome>> biomes = HashMultimap.create();
 
         TreeConfiguration.createSameTreeConfigs(biomes, forestBiomes,
-                "lime_tree_configured",
-                "pear_tree_configured",
-                "apricot_tree_configured",
-                "avocado_tree_configured",
-                "star_fruit_tree_configured",
-                "lemon_tree_configured",
-                "cherry_tree_configured",
-                "plum_tree_configured",
-                "persimmon_tree_configured",
-                "orange_tree_configured",
-                "nectarine_tree_configured");
+                LIME_TREE_PLACED_KEY,
+                PEAR_TREE_PLACED_KEY,
+                APRICOT_TREE_PLACED_KEY,
+                AVOCADO_TREE_PLACED_KEY,
+                STARFRUIT_TREE_PLACED_KEY,
+                LEMON_TREE_PLACED_KEY,
+                CHERRY_TREE_PLACED_KEY,
+                PLUM_TREE_PLACED_KEY,
+                PERSIMMON_TREE_PLACED_KEY,
+                ORANGE_TREE_PLACED_KEY,
+                NECTARINE_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, jungleBiomes,
-                "date_tree_configured",
-                "dragon_fruit_tree_configured",
-                "mango_tree_configured",
-                "nutmeg_tree_configured",
-                "coconut_tree_configured",
-                "kumquat_tree_configured",
-                "grapefruit_tree_configured",
-                "banana_tree_configured",
-                "fig_tree_configured",
-                FeatureNames.CINNAMON_TREE_CONFIGURED);
+                DATE_TREE_PLACED_KEY,
+                DRAGONFRUIT_TREE_PLACED_KEY,
+                MANGO_TREE_PLACED_KEY,
+                NUTMEG_TREE_PLACED_KEY,
+                COCONUT_TREE_PLACED_KEY,
+                KUMQUAT_TREE_PLACED_KEY,
+                GRAPEFRUIT_TREE_PLACED_KEY,
+                BANANA_TREE_PLACED_KEY,
+                FIG_TREE_PLACED_KEY,
+                CINNAMON_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, plainsKeys,
-                "apple_tree_configured",
-                "orange_tree_configured",
-                "peach_tree_configured");
+                APPLE_TREE_PLACED_KEY,
+                ORANGE_TREE_PLACED_KEY,
+                PEACH_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, darkForestKeys,
-                "almond_tree_configured",
-                "cashew_tree_configured",
-                "pecan_tree_configured",
-                "walnut_tree_configured");
+                ALMOND_TREE_PLACED_KEY,
+                CASHEW_TREE_PLACED_KEY,
+                PECAN_TREE_PLACED_KEY,
+                WALNUT_TREE_PLACED_KEY);
 
         ResourceKey<Biome> woodlands = ResourceKey.create(Registries.BIOME, travID("woodlands"));
         ResourceKey<Biome> wooded_plateau = ResourceKey.create(Registries.BIOME, travID("wooded_plateau"));
@@ -123,29 +125,29 @@ public class CroptopiaConfig extends CommonConfig {
         Collection<ResourceKey<Biome>> lush = Arrays.asList(lush_swamp);
 
         TreeConfiguration.createSameTreeConfigs(biomes, wooded,
-                "apple_tree_configured",
-                "cherry_tree_configured",
-                "plum_tree_configured");
+                APPLE_TREE_PLACED_KEY,
+                CHERRY_TREE_PLACED_KEY,
+                PLUM_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, autumnal,
-                "pear_tree_configured",
-                "persimmon_tree_configured",
-                "plum_tree_configured");
+                PEAR_TREE_PLACED_KEY,
+                PERSIMMON_TREE_PLACED_KEY,
+                PLUM_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, jungle,
-                "date_tree_configured",
-                "dragon_fruit_tree_configured",
-                "mango_tree_configured",
-                "nutmeg_tree_configured",
-                "coconut_tree_configured",
-                "kumquat_tree_configured",
-                "grapefruit_tree_configured",
-                "banana_tree_configured",
-                "fig_tree_configured",
-                FeatureNames.CINNAMON_TREE_CONFIGURED);
+                DATE_TREE_PLACED_KEY,
+                DRAGONFRUIT_TREE_PLACED_KEY,
+                MANGO_TREE_PLACED_KEY,
+                NUTMEG_TREE_PLACED_KEY,
+                COCONUT_TREE_PLACED_KEY,
+                KUMQUAT_TREE_PLACED_KEY,
+                GRAPEFRUIT_TREE_PLACED_KEY,
+                BANANA_TREE_PLACED_KEY,
+                FIG_TREE_PLACED_KEY,
+                CINNAMON_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, lush,
-                FeatureNames.CINNAMON_TREE_CONFIGURED);
+                CINNAMON_TREE_PLACED_KEY);
 
         //RegistryKey<Biome> alliumFields = RegistryKey.of(Registries.BIOME_KEY, bygID("allium_fields"));
         //RegistryKey<Biome> amaranthFields = RegistryKey.of(Registries.BIOME_KEY, bygID("amaranth_fields"));
@@ -205,52 +207,52 @@ public class CroptopiaConfig extends CommonConfig {
         Collection<ResourceKey<Biome>> jungleByg = Arrays.asList(cragGardens, tropicalIsland, tropicalRainforest);
 
         TreeConfiguration.createSameTreeConfigs(biomes, Collections.singleton(prairie),
-                FeatureNames.APPLE_TREE_CONFIGURED);
+                APPLE_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, Arrays.asList(jacarandaForest, autumnalForest, autumnalTaiga),
-                "pear_tree_configured",
-                "persimmon_tree_configured",
-                "plum_tree_configured");
+                PEAR_TREE_PLACED_KEY,
+                PERSIMMON_TREE_PLACED_KEY,
+                PLUM_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, Arrays.asList(cypressSwamplands, whiteMangroveMarshes, temperateRainforest),
-                FeatureNames.CINNAMON_TREE_CONFIGURED);
+                CINNAMON_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, jungleByg,
-                "date_tree_configured",
-                "dragon_fruit_tree_configured",
-                "mango_tree_configured",
-                "nutmeg_tree_configured",
-                "coconut_tree_configured",
-                "kumquat_tree_configured",
-                "grapefruit_tree_configured",
-                "banana_tree_configured",
-                "fig_tree_configured",
-                FeatureNames.CINNAMON_TREE_CONFIGURED);
+                DATE_TREE_PLACED_KEY,
+                DRAGONFRUIT_TREE_PLACED_KEY,
+                MANGO_TREE_PLACED_KEY,
+                NUTMEG_TREE_PLACED_KEY,
+                COCONUT_TREE_PLACED_KEY,
+                KUMQUAT_TREE_PLACED_KEY,
+                GRAPEFRUIT_TREE_PLACED_KEY,
+                BANANA_TREE_PLACED_KEY,
+                FIG_TREE_PLACED_KEY,
+                CINNAMON_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, nutty,
-                "almond_tree_configured",
-                "cashew_tree_configured",
-                "pecan_tree_configured",
-                "walnut_tree_configured");
+                ALMOND_TREE_PLACED_KEY,
+                CASHEW_TREE_PLACED_KEY,
+                PECAN_TREE_PLACED_KEY,
+                WALNUT_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, cherry,
-                "cherry_tree_configured");
+                CHERRY_TREE_PLACED_KEY);
 
         TreeConfiguration.createSameTreeConfigs(biomes, bygWoods,
-                "lime_tree_configured",
-                "pear_tree_configured",
-                "apricot_tree_configured",
-                "avocado_tree_configured",
-                "star_fruit_tree_configured",
-                "lemon_tree_configured",
-                "cherry_tree_configured",
-                "plum_tree_configured",
-                "persimmon_tree_configured",
-                "orange_tree_configured",
-                "nectarine_tree_configured");
+                LIME_TREE_PLACED_KEY,
+                PEAR_TREE_PLACED_KEY,
+                APRICOT_TREE_PLACED_KEY,
+                AVOCADO_TREE_PLACED_KEY,
+                STARFRUIT_TREE_PLACED_KEY,
+                LEMON_TREE_PLACED_KEY,
+                CHERRY_TREE_PLACED_KEY,
+                PLUM_TREE_PLACED_KEY,
+                PERSIMMON_TREE_PLACED_KEY,
+                ORANGE_TREE_PLACED_KEY,
+                NECTARINE_TREE_PLACED_KEY);
 
         List<TreeConfiguration> allTreeConfigs = new ArrayList<>();
-        for (Map.Entry<String, Collection<ResourceKey<Biome>>> entry : biomes.asMap().entrySet()) {
+        for (Map.Entry<ResourceKey<PlacedFeature>, Collection<ResourceKey<Biome>>> entry : biomes.asMap().entrySet()) {
             allTreeConfigs.add(new TreeConfiguration(entry.getKey(), entry.getValue()));
         }
 

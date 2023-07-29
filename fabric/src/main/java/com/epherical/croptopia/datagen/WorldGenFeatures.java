@@ -1,7 +1,9 @@
 package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
+import com.epherical.croptopia.common.generator.PlacedFeatureKeys;
 import com.epherical.croptopia.register.Content;
+import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -37,13 +39,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.epherical.croptopia.Croptopia.createIdentifier;
-
 public class WorldGenFeatures {
 
     private static final Map<String, ResourceKey<PlacedFeature>> keyMap = new HashMap<>();
-    public static final Map<ResourceKey<PlacedFeature>, Holder<PlacedFeature>> datagenPlacedFeatures = new HashMap<>();
-    public static final Map<ResourceLocation, List<PlacementModifier>> datagenModifierLists = new HashMap<>();
+    public static final Map<ResourceKey<PlacedFeature>, List<PlacementModifier>> datagenModifierLists = new HashMap<>();
 
     public static final SimpleBlockConfiguration config = (new SimpleBlockConfiguration(
             new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
@@ -107,119 +106,134 @@ public class WorldGenFeatures {
                     .add(Content.TEA_LEAVES.asBlock().defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .build())));
 
-    public static final ConfiguredFeature<RandomPatchConfiguration, ?> RANDOM_CROP = register(createIdentifier("random_crop"), Feature.RANDOM_PATCH,
+    public static final ConfiguredFeature<RandomPatchConfiguration, ?> RANDOM_CROP = register(Feature.RANDOM_PATCH,
             FeatureUtils.simpleRandomPatchConfiguration(6, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, config)));
 
-    public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(createIdentifier("random_crop"), RANDOM_CROP,
+    public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(PlacedFeatureKeys.RANDOM_CROP_KEY, RANDOM_CROP,
             CountPlacement.of(3), PlacementUtils.HEIGHTMAP_WORLD_SURFACE);
 
-    public static final Holder<PlacedFeature> APPLE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.APPLE_TREE_CONFIGURED), Content.APPLE,
+    public static final Holder<PlacedFeature> APPLE_TREE_CONFIGURED = register(PlacedFeatureKeys.APPLE_TREE_PLACED_KEY, Content.APPLE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> BANANA_TREE_CONFIGURED = register(createIdentifier(FeatureNames.BANANA_TREE_CONFIGURED), Content.BANANA,
+    public static final Holder<PlacedFeature> BANANA_TREE_CONFIGURED = register(PlacedFeatureKeys.BANANA_TREE_PLACED_KEY, Content.BANANA,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> ORANGE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.ORANGE_TREE_CONFIGURED), Content.ORANGE,
+    public static final Holder<PlacedFeature> ORANGE_TREE_CONFIGURED = register(PlacedFeatureKeys.ORANGE_TREE_PLACED_KEY, Content.ORANGE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> PERSIMMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.PERSIMMON_TREE_CONFIGURED), Content.PERSIMMON,
+    public static final Holder<PlacedFeature> PERSIMMON_TREE_CONFIGURED = register(PlacedFeatureKeys.PERSIMMON_TREE_PLACED_KEY, Content.PERSIMMON,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> PLUM_TREE_CONFIGURED = register(createIdentifier(FeatureNames.PLUM_TREE_CONFIGURED), Content.PLUM,
+    public static final Holder<PlacedFeature> PLUM_TREE_CONFIGURED = register(PlacedFeatureKeys.PLUM_TREE_PLACED_KEY, Content.PLUM,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> CHERRY_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CHERRY_TREE_CONFIGURED), Content.CHERRY,
+    public static final Holder<PlacedFeature> CHERRY_TREE_CONFIGURED = register(PlacedFeatureKeys.CHERRY_TREE_PLACED_KEY, Content.CHERRY,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> LEMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.LEMON_TREE_CONFIGURED), Content.LEMON,
+    public static final Holder<PlacedFeature> LEMON_TREE_CONFIGURED = register(PlacedFeatureKeys.LEMON_TREE_PLACED_KEY, Content.LEMON,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> GRAPEFRUIT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.GRAPEFRUIT_TREE_CONFIGURED), Content.GRAPEFRUIT,
+    public static final Holder<PlacedFeature> GRAPEFRUIT_TREE_CONFIGURED = register(PlacedFeatureKeys.GRAPEFRUIT_TREE_PLACED_KEY, Content.GRAPEFRUIT,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> KUMQUAT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.KUMQUAT_TREE_CONFIGURED), Content.KUMQUAT,
+    public static final Holder<PlacedFeature> KUMQUAT_TREE_CONFIGURED = register(PlacedFeatureKeys.KUMQUAT_TREE_PLACED_KEY, Content.KUMQUAT,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> PEACH_TREE_CONFIGURED = register(createIdentifier(FeatureNames.PEACH_TREE_CONFIGURED), Content.PEACH,
+    public static final Holder<PlacedFeature> PEACH_TREE_CONFIGURED = register(PlacedFeatureKeys.PEACH_TREE_PLACED_KEY, Content.PEACH,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> COCONUT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.COCONUT_TREE_CONFIGURED), Content.COCONUT,
+    public static final Holder<PlacedFeature> COCONUT_TREE_CONFIGURED = register(PlacedFeatureKeys.COCONUT_TREE_PLACED_KEY, Content.COCONUT,
             PlacementUtils.countExtra(0, 0.2F, 5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> NUTMEG_TREE_CONFIGURED = register(createIdentifier(FeatureNames.NUTMEG_TREE_CONFIGURED), Content.NUTMEG,
+    public static final Holder<PlacedFeature> NUTMEG_TREE_CONFIGURED = register(PlacedFeatureKeys.NUTMEG_TREE_PLACED_KEY, Content.NUTMEG,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> FIG_TREE_CONFIGURED = register(createIdentifier(FeatureNames.FIG_TREE_CONFIGURED), Content.FIG,
+    public static final Holder<PlacedFeature> FIG_TREE_CONFIGURED = register(PlacedFeatureKeys.FIG_TREE_PLACED_KEY, Content.FIG,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> NECTARINE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.NECTARINE_TREE_CONFIGURED), Content.NECTARINE,
+    public static final Holder<PlacedFeature> NECTARINE_TREE_CONFIGURED = register(PlacedFeatureKeys.NECTARINE_TREE_PLACED_KEY, Content.NECTARINE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> MANGO_TREE_CONFIGURED = register(createIdentifier(FeatureNames.MANGO_TREE_CONFIGURED), Content.MANGO,
+    public static final Holder<PlacedFeature> MANGO_TREE_CONFIGURED = register(PlacedFeatureKeys.MANGO_TREE_PLACED_KEY, Content.MANGO,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> DRAGON_FRUIT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.DRAGON_FRUIT_TREE_CONFIGURED), Content.DRAGONFRUIT,
+    public static final Holder<PlacedFeature> DRAGONFRUIT_TREE_CONFIGURED = register(PlacedFeatureKeys.DRAGONFRUIT_TREE_PLACED_KEY, Content.DRAGONFRUIT,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> STAR_FRUIT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.STAR_FRUIT_TREE_CONFIGURED), Content.STARFRUIT,
+    public static final Holder<PlacedFeature> STARFRUIT_TREE_CONFIGURED = register(PlacedFeatureKeys.STARFRUIT_TREE_PLACED_KEY, Content.STARFRUIT,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> AVOCADO_TREE_CONFIGURED = register(createIdentifier(FeatureNames.AVOCADO_TREE_CONFIGURED), Content.AVOCADO,
+    public static final Holder<PlacedFeature> AVOCADO_TREE_CONFIGURED = register(PlacedFeatureKeys.AVOCADO_TREE_PLACED_KEY, Content.AVOCADO,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> APRICOT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.APRICOT_TREE_CONFIGURED), Content.APRICOT,
+    public static final Holder<PlacedFeature> APRICOT_TREE_CONFIGURED = register(PlacedFeatureKeys.APRICOT_TREE_PLACED_KEY, Content.APRICOT,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> PEAR_TREE_CONFIGURED = register(createIdentifier(FeatureNames.PEAR_TREE_CONFIGURED), Content.PEAR,
+    public static final Holder<PlacedFeature> PEAR_TREE_CONFIGURED = register(PlacedFeatureKeys.PEAR_TREE_PLACED_KEY, Content.PEAR,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> LIME_TREE_CONFIGURED = register(createIdentifier(FeatureNames.LIME_TREE_CONFIGURED), Content.LIME,
+    public static final Holder<PlacedFeature> LIME_TREE_CONFIGURED = register(PlacedFeatureKeys.LIME_TREE_PLACED_KEY, Content.LIME,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> DATE_TREE_CONFIGURED = register(createIdentifier(FeatureNames.DATE_TREE_CONFIGURED), Content.DATE,
+    public static final Holder<PlacedFeature> DATE_TREE_CONFIGURED = register(PlacedFeatureKeys.DATE_TREE_PLACED_KEY, Content.DATE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> ALMOND_TREE_CONFIGURED = register(createIdentifier(FeatureNames.ALMOND_TREE_CONFIGURED), Content.ALMOND,
+    public static final Holder<PlacedFeature> ALMOND_TREE_CONFIGURED = register(PlacedFeatureKeys.ALMOND_TREE_PLACED_KEY, Content.ALMOND,
             PlacementUtils.countExtra(0, 0.25F, 5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> CASHEW_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CASHEW_TREE_CONFIGURED), Content.CASHEW,
+    public static final Holder<PlacedFeature> CASHEW_TREE_CONFIGURED = register(PlacedFeatureKeys.CASHEW_TREE_PLACED_KEY, Content.CASHEW,
             PlacementUtils.countExtra(0, 0.25F, 5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> PECAN_TREE_CONFIGURED = register(createIdentifier(FeatureNames.PECAN_TREE_CONFIGURED), Content.PECAN,
+    public static final Holder<PlacedFeature> PECAN_TREE_CONFIGURED = register(PlacedFeatureKeys.PECAN_TREE_PLACED_KEY, Content.PECAN,
             PlacementUtils.countExtra(0, 0.25F, 5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> WALNUT_TREE_CONFIGURED = register(createIdentifier(FeatureNames.WALNUT_TREE_CONFIGURED), Content.WALNUT,
+    public static final Holder<PlacedFeature> WALNUT_TREE_CONFIGURED = register(PlacedFeatureKeys.WALNUT_TREE_PLACED_KEY, Content.WALNUT,
             PlacementUtils.countExtra(0, 0.25F, 5), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> CINNAMON_TREE_CONFIGURED = register(createIdentifier(FeatureNames.CINNAMON_TREE_CONFIGURED), Content.CINNAMON.getTreeGen(),
+    public static final Holder<PlacedFeature> CINNAMON_TREE_CONFIGURED = register(PlacedFeatureKeys.CINNAMON_TREE_PLACED_KEY, Content.CINNAMON,
             PlacementUtils.countExtra(1, 0.1F, 6), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
 
-    public static final ConfiguredFeature<DiskConfiguration, ?> DISK_SALT = register(createIdentifier(FeatureNames.DISK_SALT),
-            Feature.DISK, ((new DiskConfiguration(RuleBasedBlockStateProvider.simple(Content.SALT_ORE_BLOCK),
+    public static final ConfiguredFeature<DiskConfiguration, ?> DISK_SALT = register(Feature.DISK,
+            ((new DiskConfiguration(RuleBasedBlockStateProvider.simple(Content.SALT_ORE_BLOCK),
                     BlockPredicate.matchesBlocks(List.of(Blocks.DIRT, Blocks.GRASS_BLOCK)),
                     UniformInt.of(2, 4), 2))));
 
-    public static final Holder<PlacedFeature> DISK_SALT_CONFIGURED = register(createIdentifier(FeatureNames.DISK_SALT_CONFIGURED),
+    public static final Holder<PlacedFeature> DISK_SALT_CONFIGURED = register(PlacedFeatureKeys.DISK_SALT_PLACED_KEY,
             DISK_SALT,
             PlacementUtils.HEIGHTMAP_TOP_SOLID,
             BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)));
 
 
-    public static <FC extends FeatureConfiguration, F extends Feature<FC>> ConfiguredFeature<FC, ?> register(ResourceLocation id, F feature, FC config) {
+    public static <FC extends FeatureConfiguration, F extends Feature<FC>> ConfiguredFeature<FC, ?> register(F feature, FC config) {
         return new ConfiguredFeature<>(feature, config);
     }
 
     public static Holder<PlacedFeature> register(ResourceLocation id, ConfiguredFeature<?, ?> holder, List<PlacementModifier> modifiers) {
         ResourceKey<PlacedFeature> key = ResourceKey.create(Registries.PLACED_FEATURE, id);
-        keyMap.put(id.getPath(), key);
+        return register(key, holder, modifiers);
+    }
+
+    public static Holder<PlacedFeature> register(ResourceKey<PlacedFeature> key, ConfiguredFeature<?, ?> holder, List<PlacementModifier> modifiers) {
+        keyMap.put(key.location().getPath(), key);
         Holder<PlacedFeature> direct = Holder.direct(new PlacedFeature(Holder.direct(holder), modifiers));
-        datagenPlacedFeatures.put(key, direct);
-        datagenModifierLists.put(id, modifiers);
+        datagenModifierLists.put(key, modifiers);
         return direct;
     }
 
     public static Holder<PlacedFeature> register(ResourceLocation id, ConfiguredFeature<?, ?> feature, PlacementModifier... modifiers) {
         return register(id, feature, List.of(modifiers));
+    }
+
+    public static Holder<PlacedFeature> register(ResourceKey<PlacedFeature> key, ConfiguredFeature<?, ?> feature, PlacementModifier... modifiers) {
+        return register(key, feature, List.of(modifiers));
+    }
+
+    public static Holder<PlacedFeature> register(ResourceKey<PlacedFeature> key, TreeCrop crop, PlacementModifier... modifiers) {
+        return register(key, crop.getTreeConfig(), List.of(modifiers));
+    }
+
+    public static Holder<PlacedFeature> register(ResourceKey<PlacedFeature> key, Tree tree, PlacementModifier... modifiers) {
+        return register(key, tree.getTreeGen(), List.of(modifiers));
     }
 
     public static Holder<PlacedFeature> register(ResourceLocation id, TreeCrop crop, PlacementModifier... modifiers) {

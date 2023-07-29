@@ -1,4 +1,33 @@
 {
   "type": "croptopia:trees",
-  "generation_stage": "vegetal_decoration"
+  "generation_stage": "vegetal_decoration",
+  "features": [
+    "croptopia:almond_tree_placed",
+    "croptopia:apple_tree_placed",
+    "croptopia:apricot_tree_placed",
+    "croptopia:avocado_tree_placed",
+    "croptopia:banana_tree_placed",
+    "croptopia:cashew_tree_placed",
+    "croptopia:cherry_tree_placed",
+    "croptopia:coconut_tree_placed",
+    "croptopia:date_tree_placed",
+    "croptopia:dragonfruit_tree_placed",
+    "croptopia:fig_tree_placed",
+    "croptopia:grapefruit_tree_placed",
+    "croptopia:kumquat_tree_placed",
+    "croptopia:lemon_tree_placed",
+    "croptopia:lime_tree_placed",
+    "croptopia:mango_tree_placed",
+    "croptopia:nectarine_tree_placed",
+    "croptopia:nutmeg_tree_placed",
+    "croptopia:orange_tree_placed",
+    "croptopia:peach_tree_placed",
+    "croptopia:pear_tree_placed",
+    "croptopia:pecan_tree_placed",
+    "croptopia:persimmon_tree_placed",
+    "croptopia:plum_tree_placed",
+    "croptopia:starfruit_tree_placed",
+    "croptopia:walnut_tree_placed",
+    "croptopia:cinnamon_tree_placed"
+  ]
 }

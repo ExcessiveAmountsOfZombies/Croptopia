@@ -34,6 +34,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlac
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.ArrayList;
@@ -57,15 +58,16 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagKey<Block> logBlockTag;
     private Block leaves;
     private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
-    private ResourceKey<ConfiguredFeature<?, ?>> tree;
     private final Item sapling;
     private Block saplingBlock;
+    private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
+    private final ResourceKey<PlacedFeature> placedFeatureKey;
 
-    private static final boolean datagen = true;
-    private ResourceLocation placedFeatureName;
-
-    public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen) {
+    public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen,
+                ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
         Objects.requireNonNull(category);
+        this.configuredFeatureKey = configuredFeatureKey;
+        this.placedFeatureKey = placedFeatureKey;
         this.hasPlural = hasPlural;
         this.tagCategory = category;
         this.name = name;
@@ -82,12 +84,9 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         // left is leaves and saplings
         leaves = createRegularLeavesBlock();
         treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> tree), createSaplingSettings().ignitedByLava());
+        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings().ignitedByLava());
         sapling = new ItemNameBlockItem(saplingBlock, createGroup());
         TREES.add(this);
-        if (datagen) {
-            placedFeatureName = new ResourceLocation("croptopia", name() + "_tree_configured");
-        }
     }
 
     @Override
@@ -149,16 +148,12 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return treeGen;
     }
 
-    public ResourceKey<ConfiguredFeature<?, ?>> getTree() {
-        return tree;
+    public ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeatureKey() {
+        return configuredFeatureKey;
     }
 
-    public void setTree(ResourceKey<ConfiguredFeature<?, ?>> tree) {
-        this.tree = tree;
-    }
-
-    public ResourceLocation getPlacedFeatureName() {
-        return placedFeatureName;
+    public ResourceKey<PlacedFeature> getPlacedFeatureKey() {
+        return placedFeatureKey;
     }
 
     @Override
@@ -180,7 +175,6 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             leafBlocks.add(tree.leaves);
             tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
             cropBlocks.add(tree.saplingBlock);
-            tree.tree = ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation("croptopia", tree.name() + "_tree"));
         }
     }
 

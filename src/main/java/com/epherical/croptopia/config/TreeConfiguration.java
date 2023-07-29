@@ -1,10 +1,10 @@
 package com.epherical.croptopia.config;
 
+import com.epherical.epherolib.libs.org.spongepowered.configurate.ConfigurationNode;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
+import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.TypeSerializer;
 import com.google.common.collect.SetMultimap;
 import net.minecraft.core.registries.Registries;
-import org.spongepowered.configurate.ConfigurationNode;
-import org.spongepowered.configurate.serialize.SerializationException;
-import org.spongepowered.configurate.serialize.TypeSerializer;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -16,25 +16,28 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+
+import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
 
 public class TreeConfiguration {
 
     private Set<ResourceKey<Biome>> treesAllowedInBiome;
-    private String featureKey;
+    private ResourceKey<PlacedFeature> featureKey;
 
-    public TreeConfiguration(String featureKey, Collection<ResourceKey<Biome>> treesAllowedInBiome) {
+    public TreeConfiguration(ResourceKey<PlacedFeature> featureKey, Collection<ResourceKey<Biome>> treesAllowedInBiome) {
         this.featureKey = featureKey;
         this.treesAllowedInBiome = Set.copyOf(treesAllowedInBiome);
     }
 
 
-    public static void createSameTreeConfigs(SetMultimap<String, ResourceKey<Biome>> map, Collection<ResourceKey<Biome>> biomes, String... keys) {
-        for (String key : keys) {
+    public static void createSameTreeConfigs(SetMultimap<ResourceKey<PlacedFeature>, ResourceKey<Biome>> map, Collection<ResourceKey<Biome>> biomes, ResourceKey<PlacedFeature>... keys) {
+        for (ResourceKey<PlacedFeature> key : keys) {
             map.putAll(key, biomes);
         }
     }
 
-    public String getFeatureKey() {
+    public ResourceKey<PlacedFeature> getFeatureKey() {
         return featureKey;
     }
 
@@ -50,7 +53,7 @@ public class TreeConfiguration {
 
         @Override
         public TreeConfiguration deserialize(Type type, ConfigurationNode node) throws SerializationException {
-            String key = node.node(KEY_FEATURE_NAME).getString();
+            ResourceKey<PlacedFeature> key = ResourceKey.create(Registries.PLACED_FEATURE, createIdentifier(node.node(KEY_FEATURE_NAME).getString()));
             List<ResourceLocation> ids = node.node(KEY_ACCEPTABLE_BIOMES).getList(ResourceLocation.class);
             List<ResourceKey<Biome>> biomeKeys = new ArrayList<>();
             if (ids != null) {

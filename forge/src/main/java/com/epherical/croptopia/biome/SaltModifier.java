@@ -1,7 +1,6 @@
 package com.epherical.croptopia.biome;
 
 import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.registry.GeneratorRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -30,7 +29,7 @@ public record SaltModifier(GenerationStep.Decoration step, Holder<PlacedFeature>
 
     @Override
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
-        if (phase == Phase.ADD && !mod.config().generateSaltInWorld && !biome.is(Tags.Biomes.IS_SWAMP)) {
+        if (phase == Phase.ADD && mod.config().generateSaltInWorld && !biome.is(Tags.Biomes.IS_SWAMP)) {
             BiomeGenerationSettingsBuilder generation = builder.getGenerationSettings();
             generation.addFeature(step, features);
         }
@@ -57,7 +56,7 @@ public record SaltModifier(GenerationStep.Decoration step, Holder<PlacedFeature>
         }
     }
 
-    public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
+    /*public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
         biomeSerializer.register("salt_disk", () -> new SaltModifier(GenerationStep.Decoration.UNDERGROUND_ORES, GeneratorRegistry.DISK_SALT_CONFIGURED));
-    }
+    }*/
 }

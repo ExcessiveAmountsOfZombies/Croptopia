@@ -1,4 +1,4 @@
-package com.epherical.croptopia.mixin;
+package com.epherical.croptopia.mixin.accessor;
 
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;

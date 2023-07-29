@@ -3,6 +3,8 @@ package com.epherical.croptopia.register;
 import com.epherical.croptopia.common.BlockNames;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.Tags;
+import com.epherical.croptopia.common.generator.ConfiguredFeatureKeys;
+import com.epherical.croptopia.common.generator.PlacedFeatureKeys;
 import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.items.ReferenceItem;
 import com.epherical.croptopia.items.Soup;
@@ -107,34 +109,60 @@ public class Content {
     public static final FarmlandCrop YAM = new FarmlandCrop(ItemNamesV2.YAM, true, TagCategory.VEGETABLES, RAW_CROP_1, Tags.HAS_YAM);
     public static final FarmlandCrop ZUCCHINI = new FarmlandCrop(ItemNamesV2.ZUCCHINI, false, TagCategory.VEGETABLES, RAW_CROP_1, Tags.HAS_ZUCCHINI);
 
-    public static final TreeCrop ALMOND = new TreeCrop(ItemNamesV2.ALMOND, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, RAW_CROP_2, 4, 3, 0);
-    public static final TreeCrop APPLE = new TreeCrop(ItemNamesV2.APPLE, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0);
-    public static final TreeCrop APRICOT = new TreeCrop(ItemNamesV2.APRICOT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 0);
-    public static final TreeCrop AVOCADO = new TreeCrop(ItemNamesV2.AVOCADO, true, Blocks.SPRUCE_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop BANANA = new TreeCrop(ItemNamesV2.BANANA, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0);
-    public static final TreeCrop CASHEW = new TreeCrop(ItemNamesV2.CASHEW, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.CROPS, RAW_CROP_2, 4, 3, 0);
-    public static final TreeCrop CHERRY = new TreeCrop(ItemNamesV2.CHERRY, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop COCONUT = new TreeCrop(ItemNamesV2.COCONUT, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 3);
-    public static final TreeCrop DATE = new TreeCrop(ItemNamesV2.DATE, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 8, 0);
-    public static final TreeCrop DRAGONFRUIT = new TreeCrop(ItemNamesV2.DRAGONFRUIT, true, Blocks.JUNGLE_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 7, 0);
-    public static final TreeCrop FIG = new TreeCrop(ItemNamesV2.FIG, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0);
-    public static final TreeCrop GRAPEFRUIT = new TreeCrop(ItemNamesV2.GRAPEFRUIT, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0);
-    public static final TreeCrop KUMQUAT = new TreeCrop(ItemNamesV2.KUMQUAT, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0);
-    public static final TreeCrop LEMON = new TreeCrop(ItemNamesV2.LEMON, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop LIME = new TreeCrop(ItemNamesV2.LIME, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 0);
-    public static final TreeCrop MANGO = new TreeCrop(ItemNamesV2.MANGO, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 8, 0);
-    public static final TreeCrop NECTARINE = new TreeCrop(ItemNamesV2.NECTARINE, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 4, 0);
-    public static final TreeCrop NUTMEG = new TreeCrop(ItemNamesV2.NUTMEG, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.CROPS, RAW_CROP_2, 4, 8, 0);
-    public static final TreeCrop ORANGE = new TreeCrop(ItemNamesV2.ORANGE, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 4, 0);
-    public static final TreeCrop PEACH = new TreeCrop(ItemNamesV2.PEACH, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop PEAR = new TreeCrop(ItemNamesV2.PEAR, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 0);
-    public static final TreeCrop PECAN = new TreeCrop(ItemNamesV2.PECAN, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, RAW_CROP_2, 4, 3, 0);
-    public static final TreeCrop PERSIMMON = new TreeCrop(ItemNamesV2.PERSIMMON, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop PLUM = new TreeCrop(ItemNamesV2.PLUM, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop STARFRUIT = new TreeCrop(ItemNamesV2.STARFRUIT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0);
-    public static final TreeCrop WALNUT = new TreeCrop(ItemNamesV2.WALNUT, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, RAW_CROP_2, 4, 3, 0);
+    public static final TreeCrop ALMOND = new TreeCrop(ItemNamesV2.ALMOND, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, RAW_CROP_2, 4, 3, 0,
+            ConfiguredFeatureKeys.ALMOND_TREE_KEY, PlacedFeatureKeys.ALMOND_TREE_PLACED_KEY);
+    public static final TreeCrop APPLE = new TreeCrop(ItemNamesV2.APPLE, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, null, 5, 3, 0,
+            ConfiguredFeatureKeys.APPLE_TREE_KEY, PlacedFeatureKeys.APPLE_TREE_PLACED_KEY);
+    public static final TreeCrop APRICOT = new TreeCrop(ItemNamesV2.APRICOT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 0,
+            ConfiguredFeatureKeys.APRICOT_TREE_KEY, PlacedFeatureKeys.APRICOT_TREE_PLACED_KEY);
+    public static final TreeCrop AVOCADO = new TreeCrop(ItemNamesV2.AVOCADO, true, Blocks.SPRUCE_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.AVOCADO_TREE_KEY, PlacedFeatureKeys.AVOCADO_TREE_PLACED_KEY);
+    public static final TreeCrop BANANA = new TreeCrop(ItemNamesV2.BANANA, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0,
+            ConfiguredFeatureKeys.BANANA_TREE_KEY, PlacedFeatureKeys.BANANA_TREE_PLACED_KEY);
+    public static final TreeCrop CASHEW = new TreeCrop(ItemNamesV2.CASHEW, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.CROPS, RAW_CROP_2, 4, 3, 0,
+            ConfiguredFeatureKeys.CASHEW_TREE_KEY, PlacedFeatureKeys.CASHEW_TREE_PLACED_KEY);
+    public static final TreeCrop CHERRY = new TreeCrop(ItemNamesV2.CHERRY, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.CHERRY_TREE_KEY, PlacedFeatureKeys.CHERRY_TREE_PLACED_KEY);
+    public static final TreeCrop COCONUT = new TreeCrop(ItemNamesV2.COCONUT, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 3,
+            ConfiguredFeatureKeys.COCONUT_TREE_KEY, PlacedFeatureKeys.COCONUT_TREE_PLACED_KEY);
+    public static final TreeCrop DATE = new TreeCrop(ItemNamesV2.DATE, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 8, 0,
+            ConfiguredFeatureKeys.DATE_TREE_KEY, PlacedFeatureKeys.DATE_TREE_PLACED_KEY);
+    public static final TreeCrop DRAGONFRUIT = new TreeCrop(ItemNamesV2.DRAGONFRUIT, true, Blocks.JUNGLE_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 7, 0,
+            ConfiguredFeatureKeys.DRAGON_FRUIT_TREE_KEY, PlacedFeatureKeys.DRAGONFRUIT_TREE_PLACED_KEY);
+    public static final TreeCrop FIG = new TreeCrop(ItemNamesV2.FIG, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0,
+            ConfiguredFeatureKeys.FIG_TREE_KEY, PlacedFeatureKeys.FIG_TREE_PLACED_KEY);
+    public static final TreeCrop GRAPEFRUIT = new TreeCrop(ItemNamesV2.GRAPEFRUIT, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0,
+            ConfiguredFeatureKeys.GRAPEFRUIT_TREE_KEY, PlacedFeatureKeys.GRAPEFRUIT_TREE_PLACED_KEY);
+    public static final TreeCrop KUMQUAT = new TreeCrop(ItemNamesV2.KUMQUAT, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 8, 0,
+            ConfiguredFeatureKeys.KUMQUAT_TREE_KEY, PlacedFeatureKeys.KUMQUAT_TREE_PLACED_KEY);
+    public static final TreeCrop LEMON = new TreeCrop(ItemNamesV2.LEMON, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.LEMON_TREE_KEY, PlacedFeatureKeys.LEMON_TREE_PLACED_KEY);
+    public static final TreeCrop LIME = new TreeCrop(ItemNamesV2.LIME, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 0,
+            ConfiguredFeatureKeys.LIME_TREE_KEY, PlacedFeatureKeys.LIME_TREE_PLACED_KEY);
+    public static final TreeCrop MANGO = new TreeCrop(ItemNamesV2.MANGO, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 8, 0,
+            ConfiguredFeatureKeys.MANGO_TREE_KEY, PlacedFeatureKeys.MANGO_TREE_PLACED_KEY);
+    public static final TreeCrop NECTARINE = new TreeCrop(ItemNamesV2.NECTARINE, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 4, 0,
+            ConfiguredFeatureKeys.NECTARINE_TREE_KEY, PlacedFeatureKeys.NECTARINE_TREE_PLACED_KEY);
+    public static final TreeCrop NUTMEG = new TreeCrop(ItemNamesV2.NUTMEG, true, Blocks.JUNGLE_LOG, Blocks.JUNGLE_LEAVES, TagCategory.CROPS, RAW_CROP_2, 4, 8, 0,
+            ConfiguredFeatureKeys.NUTMEG_TREE_KEY, PlacedFeatureKeys.NUTMEG_TREE_PLACED_KEY);
+    public static final TreeCrop ORANGE = new TreeCrop(ItemNamesV2.ORANGE, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 4, 4, 0,
+            ConfiguredFeatureKeys.ORANGE_TREE_KEY, PlacedFeatureKeys.ORANGE_TREE_PLACED_KEY);
+    public static final TreeCrop PEACH = new TreeCrop(ItemNamesV2.PEACH, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.PEACH_TREE_KEY, PlacedFeatureKeys.PEACH_TREE_PLACED_KEY);
+    public static final TreeCrop PEAR = new TreeCrop(ItemNamesV2.PEAR, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 2, 0,
+            ConfiguredFeatureKeys.PEAR_TREE_KEY, PlacedFeatureKeys.PEAR_TREE_PLACED_KEY);
+    public static final TreeCrop PECAN = new TreeCrop(ItemNamesV2.PECAN, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, RAW_CROP_2, 4, 3, 0,
+            ConfiguredFeatureKeys.PECAN_TREE_KEY, PlacedFeatureKeys.PECAN_TREE_PLACED_KEY);
+    public static final TreeCrop PERSIMMON = new TreeCrop(ItemNamesV2.PERSIMMON, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.PERSIMMON_TREE_KEY, PlacedFeatureKeys.PERSIMMON_TREE_PLACED_KEY);
+    public static final TreeCrop PLUM = new TreeCrop(ItemNamesV2.PLUM, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.PLUM_TREE_KEY, PlacedFeatureKeys.PLUM_TREE_PLACED_KEY);
+    public static final TreeCrop STARFRUIT = new TreeCrop(ItemNamesV2.STARFRUIT, true, Blocks.OAK_LOG, Blocks.OAK_LEAVES, TagCategory.FRUITS, RAW_CROP_2, 5, 3, 0,
+            ConfiguredFeatureKeys.STAR_FRUIT_TREE_KEY, PlacedFeatureKeys.STARFRUIT_TREE_PLACED_KEY);
+    public static final TreeCrop WALNUT = new TreeCrop(ItemNamesV2.WALNUT, true, Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_LEAVES, TagCategory.NUTS, RAW_CROP_2, 4, 3, 0,
+            ConfiguredFeatureKeys.WALNUT_TREE_KEY, PlacedFeatureKeys.WALNUT_TREE_PLACED_KEY);
 
-    public static final Tree CINNAMON = new Tree(ItemNamesV2.CINNAMON, false, TagCategory.CROPS, 4, 3, 0);
+    public static final Tree CINNAMON = new Tree(ItemNamesV2.CINNAMON, false, TagCategory.CROPS, 4, 3, 0, ConfiguredFeatureKeys.CINNAMON_TREE_KEY, PlacedFeatureKeys.CINNAMON_TREE_PLACED_KEY);
 
     public static final Seafood ANCHOVY = new Seafood(ItemNamesV2.ANCHOVY, true, RAW_MEAT_1);
     public static final Seafood CALAMARI = new Seafood(ItemNamesV2.CALAMARI, false, RAW_MEAT_1);

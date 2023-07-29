@@ -120,7 +120,7 @@ dependencies {
     implementation(rootProject)
     shade(rootProject)
     implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
-    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20')) {
+    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20.1')) {
         transitive = false
     }
     annotationProcessor 'org.spongepowered:mixin:0.8.5-SNAPSHOT:processor'

@@ -1,4 +1,4 @@
-package com.epherical.croptopia.mixin;
+package com.epherical.croptopia.mixin.accessor;
 
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.crafting.Ingredient;

@@ -1,6 +1,7 @@
 package com.epherical.croptopia.generator;
 
 import com.epherical.croptopia.Croptopia;
+import com.epherical.croptopia.common.generator.PlacedFeatureKeys;
 import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.datagen.WorldGenFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -21,19 +22,19 @@ public class BiomeModifiers {
 
         // generate in ALL biomes
         BiomeModifications.addFeature(context -> true,
-                GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenFeatures.getFeatureKey("random_crop"));
+                GenerationStep.Decoration.VEGETAL_DECORATION, PlacedFeatureKeys.RANDOM_CROP_KEY);
 
         List<TreeConfiguration> trees = Croptopia.mod.config().treeConfigurations;
         for (TreeConfiguration tree : trees) {
             BiomeModifications.addFeature(BiomeSelectors.includeByKey(tree.getTreesAllowedInBiome()),
-                    GenerationStep.Decoration.VEGETAL_DECORATION, WorldGenFeatures.getFeatureKey(tree.getFeatureKey()));
+                    GenerationStep.Decoration.VEGETAL_DECORATION, tree.getFeatureKey());
         }
 
         Collection<ResourceKey<Biome>> exclusion = Arrays.asList(Biomes.SWAMP, Biomes.SWAMP);
 
         if (Croptopia.mod.config().generateSaltInWorld) {
             BiomeModifications.addFeature(BiomeSelectors.excludeByKey(exclusion),
-                    GenerationStep.Decoration.UNDERGROUND_ORES, WorldGenFeatures.getFeatureKey("disk_salt_configured"));
+                    GenerationStep.Decoration.UNDERGROUND_ORES, PlacedFeatureKeys.DISK_SALT_PLACED_KEY);
         }
     }
 }

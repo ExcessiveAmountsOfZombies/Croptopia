@@ -1,7 +1,6 @@
 package com.epherical.croptopia.biome;
 
 import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.registry.GeneratorRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -56,7 +55,7 @@ public record CropModifier(GenerationStep.Decoration step, Holder<PlacedFeature>
         }
     }
 
-    public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
+    /*public static void register(DeferredRegister<BiomeModifier> biomeSerializer) {
         biomeSerializer.register("random_crops", () -> new CropModifier(GenerationStep.Decoration.VEGETAL_DECORATION, GeneratorRegistry.RANDOM_CROP_PLACED));
-    }
+    }*/
 }

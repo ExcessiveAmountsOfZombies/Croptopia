@@ -1,6 +1,7 @@
 package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.Croptopia;
+import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.mixin.datagen.IdentifierAccessor;
 import com.epherical.croptopia.register.Content;
@@ -171,13 +172,13 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .build();
         cookingList.forEach((input, output) -> offerFoodCookingRecipe(exporter, input, input.getLowercaseName(), output, time, exp, true));
         // raw bacon is not yet moved
-        offerFoodCookingRecipe(exporter, Content.RAW_BACON, ItemNames.RAW_BACON, Content.COOKED_BACON, time, exp, true);
+        offerFoodCookingRecipe(exporter, Content.RAW_BACON, ItemNamesV2.RAW_BACON, Content.COOKED_BACON, time, exp, true);
         // now the vanilla ingredients
         offerFoodCookingRecipe(exporter, Items.SUGAR, "sugar", Content.CARAMEL, time, exp, true);
         offerFoodCookingRecipe(exporter, Items.SUGAR_CANE, "sugar_cane", Content.MOLASSES, time, exp, false);
         offerFoodCookingRecipe(exporter, Items.BREAD, "bread", Content.TOAST, time, exp, false);
         // only salt missing
-        offerFoodCookingRecipe(exporter, Content.WATER_BOTTLE, ItemNames.WATER_BOTTLE, Content.SALT, 800, 0.1f, false);
+        offerFoodCookingRecipe(exporter, Content.WATER_BOTTLE, ItemNamesV2.WATER_BOTTLE, Content.SALT, 800, 0.1f, false);
     }
 
     protected void generateUtensil(Consumer<FinishedRecipe> exporter) {

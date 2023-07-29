@@ -1,5 +1,5 @@
 {
   "type": "croptopia:crops",
   "generation_stage": "vegetal_decoration",
-  "feature": "croptopia:random_crop"
+  "feature": "croptopia:random_crop_placed"
 }

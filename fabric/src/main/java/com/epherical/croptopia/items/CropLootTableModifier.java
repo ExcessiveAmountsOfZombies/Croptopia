@@ -1,7 +1,7 @@
 package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.CroptopiaMod;
-import com.epherical.croptopia.mixin.LootTableBuilderAccessor;
+import com.epherical.croptopia.mixin.accessor.LootTableBuilderAccessor;
 import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
