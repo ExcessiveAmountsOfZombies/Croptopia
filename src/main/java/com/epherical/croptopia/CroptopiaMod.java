@@ -7,12 +7,14 @@ import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.config.IdentifierSerializer;
 import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.items.SeedItem;
+import com.epherical.croptopia.register.Composter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -37,6 +39,10 @@ public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) 
         config.addSerializer(ResourceLocation.class, IdentifierSerializer.INSTANCE);
         config.loadConfig(MiscNames.MOD_ID);
         mod = this;
+    }
+
+    public void registerCompost() {
+        Composter.init();
     }
 
     public static CroptopiaMod getInstance() {

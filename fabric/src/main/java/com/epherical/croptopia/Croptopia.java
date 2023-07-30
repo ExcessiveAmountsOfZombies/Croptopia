@@ -14,7 +14,7 @@ import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.register.helpers.Utensil;
-import com.epherical.croptopia.registry.Composter;
+import com.epherical.croptopia.register.Composter;
 import com.epherical.epherolib.libs.org.spongepowered.configurate.hocon.HoconConfigurationLoader;
 import com.google.common.collect.Sets;
 import com.mojang.logging.LogUtils;
@@ -93,8 +93,7 @@ public class Croptopia implements ModInitializer {
 
 
         patchouli = new Patchouli();
-
-        Composter.init();
+        mod.registerCompost();
 
         BiomeModifiers.init(this);
         CropLootTableModifier.init();

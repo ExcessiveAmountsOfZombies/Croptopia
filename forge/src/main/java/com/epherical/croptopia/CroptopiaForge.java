@@ -7,7 +7,6 @@ import com.epherical.croptopia.blocks.CroptopiaCropBlock;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.CroptopiaConfig;
-import com.epherical.croptopia.datagen.CroptopiaBiomeData;
 import com.epherical.croptopia.items.GuideBookItem;
 import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.listeners.BlockBreakEvent;
@@ -17,6 +16,7 @@ import com.epherical.croptopia.listeners.LootTableModification;
 import com.epherical.croptopia.loot.AdditionalTableModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
+import com.epherical.croptopia.register.Composter;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.TreeCrop;
@@ -50,8 +50,6 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.LevelEvent;
-import net.minecraftforge.event.server.ServerAboutToStartEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.EventListenerHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -105,7 +103,6 @@ public class CroptopiaForge {
         bus.addListener(this::enqueueIMC);
         bus.addListener(this::processIMC);
         bus.addListener(this::doClientStuff);
-        CroptopiaBiomeData data = new CroptopiaBiomeData(bus);
         BIOME_MODIFIER.register(bus);
         BIOME_SERIALIZER.register(bus);
         BIOME_SERIALIZER.register("trees", TreeModifier::makeCodec);
@@ -120,7 +117,6 @@ public class CroptopiaForge {
         GLM.register("entity_modifier", EntityModifier.CODEC);
         GLM.register("table_adder", AdditionalTableModifier.CODEC);
 
-        bus.addListener(data::getData);
 
         MinecraftForge.EVENT_BUS.addListener(CroptopiaForge::onWorldLoad);
         MinecraftForge.EVENT_BUS.register(new LootTableModification());
@@ -134,6 +130,7 @@ public class CroptopiaForge {
 
         // Register ourselves for server and other game events we are interested in
         mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia.conf"));
+        mod.registerCompost();
     }
 
     private void setup(final FMLCommonSetupEvent event) {

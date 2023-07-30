@@ -1,4 +1,4 @@
-package com.epherical.croptopia;
+package com.epherical.croptopia.register;
 
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.Tree;
