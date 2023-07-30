@@ -29,6 +29,7 @@ import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
+import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
@@ -110,7 +111,11 @@ public class WorldGenFeatures {
             FeatureUtils.simpleRandomPatchConfiguration(6, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, config)));
 
     public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(PlacedFeatureKeys.RANDOM_CROP_KEY, RANDOM_CROP,
-            CountPlacement.of(3), PlacementUtils.HEIGHTMAP_WORLD_SURFACE);
+            CountPlacement.of(3),
+            InSquarePlacement.spread(),
+            BiomeFilter.biome(),
+            NoiseThresholdCountPlacement.of(-0.8, 5, 10),
+            PlacementUtils.HEIGHTMAP_WORLD_SURFACE);
 
     public static final Holder<PlacedFeature> APPLE_TREE_CONFIGURED = register(PlacedFeatureKeys.APPLE_TREE_PLACED_KEY, Content.APPLE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());

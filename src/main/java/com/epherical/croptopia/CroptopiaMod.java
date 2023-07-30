@@ -42,7 +42,8 @@ public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) 
     }
 
     public void registerCompost() {
-        Composter.init();
+        Composter composter = new Composter();
+        composter.init();
     }
 
     public static CroptopiaMod getInstance() {

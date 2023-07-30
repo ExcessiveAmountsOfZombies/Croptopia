@@ -99,7 +99,6 @@ public class CroptopiaForge {
 
     public CroptopiaForge() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.addListener(this::setup);
         bus.addListener(this::enqueueIMC);
         bus.addListener(this::processIMC);
         bus.addListener(this::doClientStuff);
@@ -131,10 +130,6 @@ public class CroptopiaForge {
         // Register ourselves for server and other game events we are interested in
         mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia.conf"));
         mod.registerCompost();
-    }
-
-    private void setup(final FMLCommonSetupEvent event) {
-        Composter.init();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
