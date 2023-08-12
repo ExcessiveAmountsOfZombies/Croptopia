@@ -40,7 +40,7 @@ minecraft {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     compileOnlyApi('org.jetbrains:annotations:23.0.0')
-    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.0.0-1.20.1')
+    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.1.0-1.20.1')
 }
 
 sourceSets {
@@ -70,11 +70,14 @@ publishing {
         }
     }
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
+        maven {
+            name = "EphericalMaven"
+            url = "https://maven.epherical.com/releases"
+            credentials {
+                username = m_user
+                password = m_pass
+            }
+        }
     }
 }

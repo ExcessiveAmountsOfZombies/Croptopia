@@ -2,6 +2,7 @@ package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.Drink;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import com.google.common.collect.ImmutableList;
@@ -24,13 +25,14 @@ public class Smoothie implements ItemLike {
     private final String name;
     private final ItemConvertibleWithPlural crop;
     private final boolean sweet;
-    private final Item item;
+    private Item item;
 
     public Smoothie(String name, ItemConvertibleWithPlural cropItemName, boolean sweet) {
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
         this.crop = cropItemName;
-        item = new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
+        Content.ITEM_REGISTER.reg(this::registerItems);
+
         INSTANCES.add(this);
     }
 
@@ -51,10 +53,8 @@ public class Smoothie implements ItemLike {
         return item;
     }
 
-    public static void registerItems(RegisterFunction<Item> register) {
-        for (Smoothie item : INSTANCES) {
-            register.register(CroptopiaMod.createIdentifier(item.name), item.item);
-        }
+    public void registerItems(RegisterFunction<Item> register) {
+        register.register(CroptopiaMod.createIdentifier(name),  () -> new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
     }
 
     public static List<Smoothie> copy() {

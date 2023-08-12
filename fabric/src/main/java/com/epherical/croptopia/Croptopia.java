@@ -41,7 +41,9 @@ import org.slf4j.Logger;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 import static com.epherical.croptopia.common.MiscNames.MOD_ID;
@@ -67,21 +69,25 @@ public class Croptopia implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        mod = new CroptopiaMod(new FabricAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia.conf"));
+        mod = new CroptopiaMod(new FabricAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia_v3.conf"));
 
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "croptopia"), CROPTOPIA_ITEM_GROUP);
 
-        Content.registerBlocks((id, object) -> Registry.register(BuiltInRegistries.BLOCK, id, object));
+
+
+        Content.registerBlocks((id, object) -> Registry.register(BuiltInRegistries.BLOCK, id, object.get()));
         mod.platform().registerFlammableBlocks();
         Content.GUIDE = new GuideBookItem(createGroup());
         Registry.register(BuiltInRegistries.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
-        Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object));
+
+        Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object.get()));
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
             entries.addAfter(Items.MANGROVE_PROPAGULE, Content.CINNAMON.getSapling());
-            List<ItemStack> collect = TreeCrop.copy().stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).toList();
+            // TODO; refactor out the TREE_CROPS/FARMLAND_CROPS
+            List<ItemStack> collect = TreeCrop.TREE_CROPS.stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).toList();
             entries.addAfter(Items.FLOWERING_AZALEA, collect);
-            entries.addAfter(Items.NETHER_WART, FarmlandCrop.copy().stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).toList());
+            entries.addAfter(Items.NETHER_WART, FarmlandCrop.FARMLAND_CROPS.stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).toList());
             entries.addBefore(Items.COAL_ORE, Content.SALT_ORE);
         });
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
@@ -158,7 +164,7 @@ public class Croptopia implements ModInitializer {
 
     private void modifyVillagers() {
         // Allow villagers to compost croptopia seeds.
-        for (SeedItem seed : CroptopiaMod.seeds) {
+        for (Item seed : CroptopiaMod.seeds) {
             VillagerInteractionRegistries.registerCompostable(seed);
         }
         // Allow villagers to consume(?) harvested croptopia foods.

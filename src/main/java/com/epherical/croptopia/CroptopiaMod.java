@@ -27,7 +27,7 @@ public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) 
     public static ArrayList<Item> cropItems = new ArrayList<>();
     public static ArrayList<Block> cropBlocks = new ArrayList<>();
     public static ArrayList<Block> leafBlocks = new ArrayList<>();
-    public static ArrayList<SeedItem> seeds = new ArrayList<>();
+    public static ArrayList<Item> seeds = new ArrayList<>();
 
     private static CroptopiaMod mod;
 

@@ -4,12 +4,14 @@ import com.epherical.croptopia.Croptopia;
 import com.epherical.croptopia.common.generator.PlacedFeatureKeys;
 import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.datagen.WorldGenFeatures;
+import com.mojang.logging.LogUtils;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import org.slf4j.Logger;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -17,6 +19,7 @@ import java.util.List;
 
 public class BiomeModifiers {
 
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     public static void init(Croptopia croptopia) {
 

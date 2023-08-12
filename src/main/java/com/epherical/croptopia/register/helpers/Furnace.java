@@ -1,6 +1,7 @@
 package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
@@ -17,18 +18,14 @@ public class Furnace implements ItemConvertibleWithPlural {
 
     private final String name;
     private final boolean plural;
-    private final Item item;
+    private Item item;
 
 
     public Furnace(String name, boolean plural, FoodConstructor foodConstructor) {
-        super();
+        Content.ITEM_REGISTER.reg(registerFunction -> registerItem(registerFunction, foodConstructor));
         this.name = name;
         this.plural = plural;
-        if (foodConstructor == null) {
-            this.item = new Item(createGroup());
-        } else {
-            this.item = new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
-        }
+
         INSTANCES.add(this);
     }
 
@@ -51,9 +48,13 @@ public class Furnace implements ItemConvertibleWithPlural {
         return INSTANCES;
     }
 
-    public static void registerItems(RegisterFunction<Item> register) {
-        for (Furnace item : INSTANCES) {
-            register.register(CroptopiaMod.createIdentifier(item.name), item.item);
-        }
+    public void registerItem(RegisterFunction<Item> register, FoodConstructor foodConstructor) {
+        this.item = register.register(CroptopiaMod.createIdentifier(name), () -> {
+            if (foodConstructor == null) {
+                return new Item(createGroup());
+            } else {
+                return new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
+            }
+        });
     }
 }

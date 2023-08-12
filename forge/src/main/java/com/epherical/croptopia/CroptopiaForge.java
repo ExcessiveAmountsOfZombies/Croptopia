@@ -16,7 +16,6 @@ import com.epherical.croptopia.listeners.LootTableModification;
 import com.epherical.croptopia.loot.AdditionalTableModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
-import com.epherical.croptopia.register.Composter;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.TreeCrop;
@@ -44,6 +43,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.world.BiomeModifier;
@@ -56,7 +56,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -128,7 +127,7 @@ public class CroptopiaForge {
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
-        mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia.conf"));
+        mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia_v3.conf"));
         mod.registerCompost();
     }
 
@@ -141,10 +140,10 @@ public class CroptopiaForge {
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.COOKING_POT));
+        /*InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.COOKING_POT));
         InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.FOOD_PRESS));
         InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.FRYING_PAN));
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.MORTAR_AND_PESTLE));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.MORTAR_AND_PESTLE));*/
 
         InterModComms.sendTo("cookingforblockheads", "RegisterWaterItem", () -> new ItemStack(Content.WATER_BOTTLE));
         InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(Content.MILK_BOTTLE));
@@ -173,10 +172,10 @@ public class CroptopiaForge {
             // not a fan of forges event compared to fabrics.
             if (event.getTab().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
                 event.getEntries().putAfter(new ItemStack(Items.MANGROVE_PROPAGULE), new ItemStack(Content.CINNAMON.getSapling()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-                TreeCrop.copy().stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).forEachOrdered(stack -> {
+                TreeCrop.TREE_CROPS.stream().map(TreeCrop::getSaplingItem).map(ItemStack::new).forEachOrdered(stack -> {
                     event.getEntries().putAfter(new ItemStack(Items.FLOWERING_AZALEA), stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 });
-                FarmlandCrop.copy().stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).forEachOrdered(stack -> {
+                FarmlandCrop.FARMLAND_CROPS.stream().map(FarmlandCrop::getSeedItem).map(ItemStack::new).forEachOrdered(stack -> {
                     event.getEntries().putAfter(new ItemStack(Items.NETHER_WART), stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
                 });
                 event.getEntries().putBefore(new ItemStack(Items.COAL_ORE), new ItemStack(Content.SALT_ORE), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
@@ -201,7 +200,10 @@ public class CroptopiaForge {
                 Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID, "croptopia"), CROPTOPIA_ITEM_GROUP);
                 Content.GUIDE = new GuideBookItem(createGroup());
                 event.register(ForgeRegistries.Keys.ITEMS, createIdentifier(ItemNamesV2.GUIDE), () -> Content.GUIDE);
-                Content.registerItems((id, item) -> {
+
+
+                Content.registerItems((id, itemSupplier) -> {
+                    Item item = itemSupplier.get();
                     event.register(ForgeRegistries.Keys.ITEMS, id, () -> item);
                     if (item instanceof ItemNameBlockItem) {
                         ((ItemNameBlockItem) item).registerBlocks(Item.BY_BLOCK, item);
@@ -228,8 +230,9 @@ public class CroptopiaForge {
             }
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.BLOCKS)) {
                 Content.registerBlocks((id, object) -> {
-                    event.register(ForgeRegistries.Keys.BLOCKS, blockRegisterHelper -> blockRegisterHelper.register(id, object));
-                    return object;
+                    Block block = object.get();
+                    event.register(ForgeRegistries.Keys.BLOCKS, blockRegisterHelper -> blockRegisterHelper.register(id, block));
+                    return block;
                 });
                 mod.platform().registerFlammableBlocks();
             }

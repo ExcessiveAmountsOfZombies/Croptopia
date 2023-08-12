@@ -2,6 +2,7 @@ package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.CookingUtensil;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
@@ -17,13 +18,13 @@ public class Utensil implements ItemConvertibleWithPlural {
 
     private final String name;
     private final boolean plural;
-    private final Item utensil;
+    private Item utensil;
 
 
     public Utensil(String name, boolean plural) {
+        Content.ITEM_REGISTER.reg(this::registerItems);
         this.name = name;
         this.plural = plural;
-        this.utensil = new CookingUtensil(createGroup().stacksTo(1));
         UTENSILS.add(this);
     }
 
@@ -46,9 +47,7 @@ public class Utensil implements ItemConvertibleWithPlural {
         return UTENSILS;
     }
 
-    public static void registerItems(RegisterFunction<Item> register) {
-        for (Utensil utensil : UTENSILS) {
-            register.register(CroptopiaMod.createIdentifier(utensil.name), utensil.utensil);
-        }
+    public void registerItems(RegisterFunction<Item> register) {
+        this.utensil = register.register(CroptopiaMod.createIdentifier(name), () -> new CookingUtensil(createGroup().stacksTo(1)));
     }
 }

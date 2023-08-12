@@ -7,6 +7,7 @@ import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
 import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.CroptopiaSaplingItem;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
@@ -20,6 +21,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -43,16 +45,21 @@ import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
-    private static final List<TreeCrop> TREE_CROPS = new ArrayList<>();
+    public static final List<TreeCrop> TREE_CROPS = new ArrayList<>();
 
     private final String name;
     private final boolean isPlural;
     private final TagCategory category;
-    private final Item item;
-    private final Block leaves;
+    private Item item;
+    private Block leaves;
+
+    private Block leafType;
+
     private final ConfiguredFeature<TreeConfiguration, ?> treeConfig;
-    private final CroptopiaSaplingItem saplingItem;
-    private final CroptopiaSaplingBlock saplingBlock;
+    private Item saplingItem;
+    private Block saplingBlock;
+
+    private final FoodConstructor constructor;
 
     private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
     private final ResourceKey<PlacedFeature> placedFeatureKey;
@@ -62,20 +69,18 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         Objects.requireNonNull(leafType);
         Objects.requireNonNull(category);
         Objects.requireNonNull(logType);
+        // TERRIBLE CODE DESIGN
+        Content.BLOCK_REGISTER.reg(this::registerBlock);
+        Content.ITEM_REGISTER.reg(this::registerItem);
+        // TERRIBLE CODE DESIGN
         this.configuredFeatureKey = configuredFeatureKey;
         this.placedFeatureKey = placedFeatureKey;
         this.name = name;
         this.isPlural = plural;
         this.category = category;
-        if (constructor == null) {
-            item = Items.APPLE;
-        } else {
-            item = new CropItem(createGroup().food(createFood(constructor)));
-        }
-        leaves = createLeavesBlock();
+        this.constructor = constructor;
+        this.leafType = leafType;
         treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings());
-        saplingItem = new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup());
         TREE_CROPS.add(this);
     }
 
@@ -109,11 +114,11 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return treeConfig;
     }
 
-    public CroptopiaSaplingBlock getSaplingBlock() {
+    public Block getSaplingBlock() {
         return saplingBlock;
     }
 
-    public CroptopiaSaplingItem getSaplingItem() {
+    public Item getSaplingItem() {
         return saplingItem;
     }
 
@@ -133,11 +138,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return placedFeatureKey;
     }
 
-    public static List<TreeCrop> copy() {
-        return TREE_CROPS;
-    }
-
-    public static void registerBlocks(RegisterFunction<Block> register) {
+    /*public static void registerBlocks(RegisterFunction<Block> register) {
         for (TreeCrop treeCrop : TREE_CROPS) {
             register.register(createIdentifier(treeCrop.name() + "_crop"), treeCrop.asBlock());
             cropBlocks.add(treeCrop.asBlock());
@@ -155,6 +156,25 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             }
             register.register(createIdentifier(treeCrop.name() + "_sapling"), treeCrop.getSaplingItem());
         }
+    }*/
+
+    public void registerItem(RegisterFunction<Item> register) {
+        if (!Objects.equals(name(), ItemNamesV2.APPLE)) {
+            item = register.register(createIdentifier(name()), () -> new CropItem(createGroup().food(createFood(constructor))));
+            CroptopiaMod.cropItems.add(asItem());
+        } else {
+            item = Items.APPLE;
+        }
+        saplingItem = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup()));
+    }
+
+    public void registerBlock(RegisterFunction<Block> register) {
+        saplingBlock = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings()));
+        leaves = register.register(createIdentifier(name() + "_crop"), CroptopiaMod::createLeavesBlock);
+
+        cropBlocks.add(asBlock());
+        cropBlocks.add(saplingBlock);
+        leafBlocks.add(asBlock());
     }
 
     public static ConfiguredFeature<TreeConfiguration, ?> createTreeGen(int i, int j, int k, Block logType, Block leafType, Block leafCrop) {

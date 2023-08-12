@@ -6,6 +6,7 @@ import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -41,7 +42,7 @@ public class SpawnChestModifier extends LootModifier {
         LootPool.Builder builder = new LootPool.Builder();
         builder.setRolls(ConstantValue.exactly(1));
         builder.setBonusRolls(ConstantValue.exactly(0));
-        for (SeedItem seed : CroptopiaMod.seeds) {
+        for (Item seed : CroptopiaMod.seeds) {
             builder.add(LootItem.lootTableItem(seed)
                     .setWeight(2)
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false))

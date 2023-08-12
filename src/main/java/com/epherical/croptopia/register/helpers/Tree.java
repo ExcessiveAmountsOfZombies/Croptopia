@@ -1,8 +1,12 @@
 package com.epherical.croptopia.register.helpers;
 
+import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
+import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
+import com.epherical.croptopia.items.CropItem;
+import com.epherical.croptopia.items.CroptopiaSaplingItem;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.util.BlockConvertible;
@@ -20,6 +24,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -42,6 +47,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static com.epherical.croptopia.CroptopiaMod.*;
+import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private static final List<Tree> TREES = new ArrayList<>();
@@ -49,7 +55,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final String name;
     private final boolean hasPlural;
     private final TagCategory tagCategory;
-    private final Item item;
+    private Item item;
     private Block log;
     private Block strippedLog;
     private Block wood;
@@ -58,7 +64,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagKey<Block> logBlockTag;
     private Block leaves;
     private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
-    private final Item sapling;
+    private Item sapling;
     private Block saplingBlock;
     private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
     private final ResourceKey<PlacedFeature> placedFeatureKey;
@@ -66,26 +72,30 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen,
                 ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
         Objects.requireNonNull(category);
+        // TERRIBLE CODE DESIGN
+        Content.BLOCK_REGISTER.reg(this::registerBlock);
+        Content.ITEM_REGISTER.reg(this::registerItem);
+        // TERRIBLE CODE DESIGN
         this.configuredFeatureKey = configuredFeatureKey;
         this.placedFeatureKey = placedFeatureKey;
         this.hasPlural = hasPlural;
         this.tagCategory = category;
         this.name = name;
-        item = new Item(createGroup());
+
         // in the following we use registerItem because of AliasedBlockItem
-        log = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
-        strippedLog = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
-        wood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
-        strippedWood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        //log = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        //strippedLog = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        //wood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
+        //strippedWood = new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F));
         // create the tags (will be filled by datagen)
         String tagName = name + "_logs";
         logItemTag = TagKey.create(Registries.ITEM, new ResourceLocation(MiscNames.MOD_ID, tagName));
         logBlockTag = TagKey.create(Registries.BLOCK, new ResourceLocation(MiscNames.MOD_ID, tagName));
         // left is leaves and saplings
-        leaves = createRegularLeavesBlock();
+        //leaves = createRegularLeavesBlock();
         treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
-        saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings().ignitedByLava());
-        sapling = new ItemNameBlockItem(saplingBlock, createGroup());
+        //saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings().ignitedByLava());
+        //sapling = new ItemNameBlockItem(saplingBlock, createGroup());
         TREES.add(this);
     }
 
@@ -165,7 +175,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return TREES;
     }
 
-    public static void registerBlocks(RegisterFunction<Block> register) {
+    /*public static void registerBlocks(RegisterFunction<Block> register) {
         for (Tree tree : TREES) {
             tree.log = register.register(createIdentifier(tree.name + "_log"), tree.log);
             tree.strippedLog = register.register(createIdentifier("stripped_" + tree.name + "_log"), tree.strippedLog);
@@ -176,9 +186,9 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             tree.saplingBlock = register.register(createIdentifier(tree.name + "_sapling"), tree.saplingBlock);
             cropBlocks.add(tree.saplingBlock);
         }
-    }
+    }*/
 
-    public static void registerItems(RegisterFunction<Item> register) {
+    /*public static void registerItems(RegisterFunction<Item> register) {
         for (Tree tree : TREES) {
             register.register(createIdentifier(tree.name), tree.item);
             register.register(createIdentifier(tree.name + "_log"), new ItemNameBlockItem(tree.log, createGroup()));
@@ -187,6 +197,26 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
             register.register(createIdentifier("stripped_" + tree.name + "_wood"), new ItemNameBlockItem(tree.strippedWood, createGroup()));
             register.register(createIdentifier(tree.name + "_sapling"), tree.sapling);
         }
+    }*/
+
+    public void registerItem(RegisterFunction<Item> register) {
+        item = register.register(createIdentifier(name), () -> new Item(createGroup()));
+        register.register(createIdentifier(name + "_log"), () -> new ItemNameBlockItem(log, createGroup()));
+        register.register(createIdentifier("stripped_" + name + "_log"), () -> new ItemNameBlockItem(strippedLog, createGroup()));
+        register.register(createIdentifier(name + "_wood"), () -> new ItemNameBlockItem(wood, createGroup()));
+        register.register(createIdentifier("stripped_" + name + "_wood"), () -> new ItemNameBlockItem(strippedWood, createGroup()));
+        sapling = register.register(createIdentifier(name + "_sapling"), () -> new ItemNameBlockItem(saplingBlock, createGroup()));
+    }
+
+    public void registerBlock(RegisterFunction<Block> register) {
+        log = register.register(createIdentifier(name + "_log"), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F)));
+        strippedLog = register.register(createIdentifier("stripped_" + name + "_log"), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F)));
+        wood = register.register(createIdentifier(name + "_wood"), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F)));
+        strippedWood = register.register(createIdentifier("stripped_" + name + "_wood"), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F)));
+        leaves = register.register(createIdentifier(name + "_leaves"), CroptopiaMod::createRegularLeavesBlock);
+        saplingBlock = register.register(createIdentifier(name + "_sapling"), () -> new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings().ignitedByLava()));
+        leafBlocks.add(leaves);
+        cropBlocks.add(saplingBlock);
     }
 
     public static ConfiguredFeature<TreeConfiguration, ?> createBarkGen(int i, int j, int k, Block log, Block leaves) {

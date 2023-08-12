@@ -1,6 +1,7 @@
 package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
@@ -17,12 +18,12 @@ public class Pie implements ItemLike {
 
     private final String name;
     private final ItemConvertibleWithPlural crop;
-    private final Item item;
+    private Item item;
 
     public Pie(String name, ItemConvertibleWithPlural crop) {
+        Content.ITEM_REGISTER.reg(this::registerItem);
         this.name = name;
         this.crop = crop;
-        this.item = new Item(createGroup().food(createFood(PIE_10)));
         INSTANCES.add(this);
     }
 
@@ -39,10 +40,8 @@ public class Pie implements ItemLike {
         return name;
     }
 
-    public static void registerItems(RegisterFunction<Item> register) {
-        for (Pie pie : INSTANCES) {
-            register.register(CroptopiaMod.createIdentifier(pie.name), pie.item);
-        }
+    public void registerItem(RegisterFunction<Item> register) {
+        this.item = register.register(CroptopiaMod.createIdentifier(name), () -> new Item(createGroup().food(createFood(PIE_10))));
     }
 
     public static List<Pie> copy() {

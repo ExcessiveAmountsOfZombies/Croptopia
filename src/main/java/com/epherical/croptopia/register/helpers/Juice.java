@@ -2,6 +2,7 @@ package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.Drink;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
@@ -20,13 +21,13 @@ public class Juice implements ItemLike {
     private final String name;
     private final ItemConvertibleWithPlural crop;
     private final boolean sweet;
-    private final Item item;
+    private Item item;
 
     public Juice(String name, ItemConvertibleWithPlural crop, boolean sweet) {
+        Content.ITEM_REGISTER.reg(this::registerItem);
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
         this.crop = crop;
-        item = new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE));
         INSTANCES.add(this);
     }
 
@@ -47,10 +48,9 @@ public class Juice implements ItemLike {
         return item;
     }
 
-    public static void registerItems(RegisterFunction<Item> register) {
-        for (Juice item : INSTANCES) {
-            register.register(CroptopiaMod.createIdentifier(item.name), item.item);
-        }
+    public void registerItem(RegisterFunction<Item> register) {
+        this.item = register.register(CroptopiaMod.createIdentifier(name), () ->
+                new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
     }
 
     public static List<Juice> copy() {

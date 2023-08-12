@@ -120,9 +120,7 @@ dependencies {
     implementation(rootProject)
     shade(rootProject)
     implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
-    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20.1')) {
-        transitive = false
-    }
+    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20.1'))
     annotationProcessor 'org.spongepowered:mixin:0.8.5-SNAPSHOT:processor'
 }
 
@@ -178,7 +176,7 @@ task sourceJar(type: Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = "${archives_base_name}_" + artifactId
+            artifactId = "${archives_base_name}-" + artifactId
             version = version + "-${mc_ver}"
             // add all the jars that should be included when publishing to maven
             artifact shadowJar
@@ -188,6 +186,13 @@ publishing {
     }
 
     repositories {
-
+        maven {
+            name = "EphericalMaven"
+            url = "https://maven.epherical.com/releases"
+            credentials {
+                username = m_user
+                password = m_pass
+            }
+        }
     }
 }

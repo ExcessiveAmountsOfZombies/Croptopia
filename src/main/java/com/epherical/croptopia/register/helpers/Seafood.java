@@ -1,6 +1,7 @@
 package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
@@ -18,17 +19,12 @@ public class Seafood implements ItemConvertibleWithPlural {
 
     private final String name;
     private final boolean plural;
-    private final Item item;
+    private Item item;
 
     public Seafood(String name, boolean plural, FoodConstructor foodConstructor) {
+        Content.ITEM_REGISTER.reg(registerFunction -> this.registerItem(registerFunction, foodConstructor));
         this.name = name;
         this.plural = plural;
-        if (name.contains("GLOWING")) {
-            item = new Item(createGroup().food(FoodConstructor.createBuilder(foodConstructor)
-                    .effect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1), 1.0F).build()));
-        } else {
-            item = new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
-        }
         INSTANCES.add(this);
     }
 
@@ -51,9 +47,14 @@ public class Seafood implements ItemConvertibleWithPlural {
         return INSTANCES;
     }
 
-    public static void registerItems(RegisterFunction<Item> register) {
-        for (Seafood item : INSTANCES) {
-            register.register(CroptopiaMod.createIdentifier(item.name), item.item);
-        }
+    public void registerItem(RegisterFunction<Item> register, FoodConstructor foodConstructor) {
+        item = register.register(CroptopiaMod.createIdentifier(name), () -> {
+            if (name.contains("GLOWING")) {
+                return new Item(createGroup().food(FoodConstructor.createBuilder(foodConstructor)
+                        .effect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1), 1.0F).build()));
+            } else {
+                return new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
+            }
+        });
     }
 }
