@@ -1,0 +1,12 @@
+{
+  "name": "Лимонна курятина",
+  "icon": "croptopia:lemon_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:lemon_chicken",
+      "text": "Рецепт лимонної курятини."
+    }
+  ]
+}

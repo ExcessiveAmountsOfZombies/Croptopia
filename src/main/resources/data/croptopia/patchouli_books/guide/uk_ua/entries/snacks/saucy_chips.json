@@ -1,0 +1,12 @@
+{
+  "name": "Чипси із соусом",
+  "icon": "croptopia:saucy_chips",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saucy_chips",
+      "text": "Рецепт приготування чипсів з дипом або соусом."
+    }
+  ]
+}

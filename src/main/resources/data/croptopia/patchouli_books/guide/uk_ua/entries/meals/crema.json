@@ -1,0 +1,12 @@
+{
+  "name": "Вершки",
+  "icon": "croptopia:crema",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:crema",
+      "text": "Рецепт вершків."
+    }
+  ]
+}

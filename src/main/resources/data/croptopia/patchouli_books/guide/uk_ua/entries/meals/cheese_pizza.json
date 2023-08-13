@@ -1,0 +1,12 @@
+{
+  "name": "Сирна піца",
+  "icon": "croptopia:cheese_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:cheese_pizza",
+      "text": "Рецепт сирної піци."
+    }
+  ]
+}

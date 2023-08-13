@@ -1,0 +1,12 @@
+{
+  "name": "Піца",
+  "icon": "croptopia:pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pizza",
+      "text": "Рецепт піци."
+    }
+  ]
+}

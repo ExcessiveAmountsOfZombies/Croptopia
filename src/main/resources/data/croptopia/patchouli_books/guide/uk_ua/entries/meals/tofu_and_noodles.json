@@ -1,0 +1,12 @@
+{
+  "name": "Тофу з дамплінґами",
+  "icon": "croptopia:tofu_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:tofu_and_dumplings",
+      "text": "Рецепт тофу з дамплінґами."
+    }
+  ]
+}
