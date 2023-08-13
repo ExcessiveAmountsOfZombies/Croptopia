@@ -1,0 +1,12 @@
+{
+  "name": "Бананове смузі",
+  "icon": "croptopia:banana_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_smoothie",
+      "text": "Рецепт бананового смузі."
+    }
+  ]
+}

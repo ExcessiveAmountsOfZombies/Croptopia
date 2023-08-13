@@ -1,0 +1,12 @@
+{
+  "name": "Трифл",
+  "icon": "croptopia:trifle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_trifle",
+      "text": "Рецепт трифлу."
+    }
+  ]
+}

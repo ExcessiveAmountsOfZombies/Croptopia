@@ -1,0 +1,12 @@
+{
+  "name": "Банано-горіх. хліб",
+  "icon": "croptopia:banana_nut_bread",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_nut_bread",
+      "text": "Рецепт банано-горіхового хліба (У розробці)."
+    }
+  ]
+}

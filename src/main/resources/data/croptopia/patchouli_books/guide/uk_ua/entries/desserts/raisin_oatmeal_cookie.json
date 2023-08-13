@@ -1,0 +1,13 @@
+{
+  "name": "Вівсяне печиво",
+  "icon": "croptopia:raisin_oatmeal_cookie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "title": "Вівсяне печиво з родз.",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:raisin_oatmeal_cookie",
+      "text": "Рецепт вівсяного печива з родзинками."
+    }
+  ]
+}
