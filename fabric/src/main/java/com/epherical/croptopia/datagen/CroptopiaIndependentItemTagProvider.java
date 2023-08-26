@@ -276,7 +276,7 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("sweet_crepes", Content.SWEET_CREPES);
         createGeneralTag("the_big_breakfast", Content.THE_BIG_BREAKFAST);
 
-        this.tag(register("water_bottles")).add(reverseLookup(Content.WATER_BOTTLE)).add(reverseLookup(Items.WATER_BUCKET)).addOptional(new ResourceLocation("early_buckets:wooden_water_bucket"));
+        this.tag(register("water_bottles")).add(reverseLookup(Content.WATER_BOTTLE)).add(reverseLookup(Items.WATER_BUCKET)).add(reverseLookup(Items.WATER_BOTTLE)).addOptional(new ResourceLocation("early_buckets:wooden_water_bucket"));
         this.tag(register("milks")).add(reverseLookup(Content.MILK_BOTTLE)).add(reverseLookup(Content.SOY_MILK)).add(reverseLookup(Items.MILK_BUCKET)).addOptionalTag(independentTag("milk_buckets"));
         this.tag(register("potatoes")).add(reverseLookup(Items.POTATO)).add(reverseLookup(Content.SWEETPOTATO.asItem()));
     }
