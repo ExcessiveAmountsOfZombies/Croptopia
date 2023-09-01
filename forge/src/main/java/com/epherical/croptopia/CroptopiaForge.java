@@ -140,6 +140,17 @@ public class CroptopiaForge {
 
     private void setup(final FMLCommonSetupEvent event) {
         Composter.init();
+    
+        List<ItemLike> chickenItems = new ArrayList<>(CroptopiaMod.seeds);
+        chickenItems.addAll(Arrays.stream(Chicken.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
+        Chicken.FOOD_ITEMS = Ingredient.of(chickenItems.toArray(new ItemLike[0]));
+        List<Item> parrotItems = new ArrayList<>(Parrot.TAME_FOOD);
+        parrotItems.addAll(CroptopiaMod.seeds);
+        Parrot.TAME_FOOD = Sets.newHashSet(parrotItems);
+    
+        List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
+        pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
+        Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -225,17 +236,6 @@ public class CroptopiaForge {
                     }
                     return item;
                 });
-
-                List<ItemLike> chickenItems = new ArrayList<>(CroptopiaMod.seeds);
-                chickenItems.addAll(Arrays.stream(Chicken.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
-                Chicken.FOOD_ITEMS = Ingredient.of(chickenItems.toArray(new ItemLike[0]));
-                List<Item> parrotItems = new ArrayList<>(Parrot.TAME_FOOD);
-                parrotItems.addAll(CroptopiaMod.seeds);
-                Parrot.TAME_FOOD = Sets.newHashSet(parrotItems);
-
-                List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
-                pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
-                Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
 
                 GeneratorRegistry.init();
                 Config.setFeatures(config);

@@ -6,7 +6,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0,6.2)', changing: true
         classpath 'gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0'
         classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
@@ -50,6 +50,11 @@ sourceSets {
 minecraft {
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
     mappings channel: 'official', version: "${mc_ver}"
+
+    enableIdeaPrepareRuns = true
+    copyIdeResources = true
+    generateRunFolders = true
+
     runs {
         client {
             workingDirectory project.file('run')
@@ -122,7 +127,7 @@ dependencies {
 }
 
 shadowJar {
-    archiveClassifier = ""
+    archiveClassifier.set('')
     enabled = true
     configurations = [project.configurations.shade]
     //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
@@ -165,14 +170,16 @@ tasks.withType(JavaCompile) {
 
 tasks.build.dependsOn(tasks.shadowJar)
 
-reobf {
-    shadowJar {}
-}
-
 jar.finalizedBy('reobfJar')
 
+reobf {
+    shadowJar {
+
+    }
+}
+
 task sourceJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier.set('sources')
     from sourceSets.main.allSource
 }
 

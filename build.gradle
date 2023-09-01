@@ -1,9 +1,9 @@
 plugins {
+    id 'java'
     id 'org.spongepowered.gradle.vanilla' version '0.2.1-SNAPSHOT'
 }
 
 allprojects {
-    apply plugin: 'java'
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
     apply plugin: 'idea'
@@ -13,7 +13,6 @@ allprojects {
 }
 
 subprojects {
-
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 
@@ -47,7 +46,7 @@ sourceSets {
 }
 
 task sourceJar(type: Jar) {
-    classifier = 'sources'
+    archiveClassifier.set('sources')
     from sourceSets.main.allSource
 }
 
