@@ -6,6 +6,7 @@ import com.epherical.croptopia.register.Content;
 import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
@@ -56,7 +57,7 @@ public class CropLootTableModifier {
                         LootPool.Builder builder = LootPool.lootPool();
                         builder.setRolls(ConstantValue.exactly(1));
                         builder.setBonusRolls(ConstantValue.exactly(0));
-                        for (SeedItem seed : CroptopiaMod.seeds) {
+                        for (Item seed : CroptopiaMod.seeds) {
                             builder.add(
                                     LootItem.lootTableItem(seed)
                                             .setWeight(5)

@@ -11,7 +11,6 @@ import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.epherical.epherolib.registry.RegistryHolder;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
@@ -90,11 +89,11 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
         return seedItem;
     }
 
-    /*public static List<FarmlandCrop> copy() {
+    public static List<FarmlandCrop> copy() {
         return FARMLAND_CROPS;
     }
 
-    public static void registerBlocks(RegisterFunction<Block> register) {
+    /*public static void registerBlocks(RegisterFunction<Block> register) {
         for (FarmlandCrop farmlandCrop : FARMLAND_CROPS) {
             register.register(createIdentifier(farmlandCrop.name + "_crop"), farmlandCrop.asBlock());
             CroptopiaMod.cropBlocks.add(farmlandCrop.asBlock());
@@ -120,14 +119,6 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
     }*/
 
     public void registerItem(RegisterFunction<Item> register) {
-        if (registry == null) {
-            this.cropItem = new CropItem(createGroup());
-        } else {
-            this.cropItem = new CropItem(createGroup().food(createFood(registry)));
-        }
-        cropBlock = new CroptopiaCropBlock(createCropSettings());
-        seedItem = new SeedItem(cropBlock, createGroup(), biomes);
-
         this.cropItem = register.register(createIdentifier(this.dropName), () -> {
             if (registry == null) {
                 return new CropItem(createGroup());

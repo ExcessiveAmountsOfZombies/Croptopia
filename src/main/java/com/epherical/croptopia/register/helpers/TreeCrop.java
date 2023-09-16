@@ -55,7 +55,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     private Block leafType;
 
-    private final ConfiguredFeature<TreeConfiguration, ?> treeConfig;
+    private ConfiguredFeature<TreeConfiguration, ?> treeConfig;
     private Item saplingItem;
     private Block saplingBlock;
 
@@ -70,7 +70,10 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         Objects.requireNonNull(category);
         Objects.requireNonNull(logType);
         // TERRIBLE CODE DESIGN
-        Content.BLOCK_REGISTER.reg(this::registerBlock);
+        Content.BLOCK_REGISTER.reg(register -> {
+            registerBlock(register);
+            treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
+        });
         Content.ITEM_REGISTER.reg(this::registerItem);
         // TERRIBLE CODE DESIGN
         this.configuredFeatureKey = configuredFeatureKey;
@@ -80,7 +83,6 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         this.category = category;
         this.constructor = constructor;
         this.leafType = leafType;
-        treeConfig = createTreeGen(base, randA, randB, logType, leafType, leaves);
         TREE_CROPS.add(this);
     }
 
@@ -175,6 +177,10 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         cropBlocks.add(asBlock());
         cropBlocks.add(saplingBlock);
         leafBlocks.add(asBlock());
+    }
+
+    public static List<TreeCrop> copy() {
+        return TREE_CROPS;
     }
 
     public static ConfiguredFeature<TreeConfiguration, ?> createTreeGen(int i, int j, int k, Block logType, Block leafType, Block leafCrop) {

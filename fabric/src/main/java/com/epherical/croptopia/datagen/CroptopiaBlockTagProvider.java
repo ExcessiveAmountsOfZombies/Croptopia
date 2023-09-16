@@ -65,7 +65,7 @@ public class CroptopiaBlockTagProvider extends IntrinsicHolderTagsProvider<Block
     protected void generateLeaves() {
         IntrinsicTagAppender<Block> leaves = this.tag(BlockTags.LEAVES);
         IntrinsicTagAppender<Block> hoe = this.tag(BlockTags.MINEABLE_WITH_HOE);
-        for (TreeCrop crop : TreeCrop.copy()) {
+        for (TreeCrop crop : TreeCrop.TREE_CROPS) {
             leaves.add(crop.getLeaves());
             hoe.add(crop.getLeaves());
         }

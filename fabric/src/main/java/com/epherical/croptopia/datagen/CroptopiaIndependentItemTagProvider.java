@@ -66,13 +66,13 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
     }
 
     protected void generateCrops() {
-        for (FarmlandCrop crop : FarmlandCrop.copy()) {
+        for (FarmlandCrop crop : FarmlandCrop.FARMLAND_CROPS) {
             createCategoryTag(crop.getTagCategory().getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
             if (crop.getTagCategory() != TagCategory.CROPS) { // don't double only-crops
                 createCategoryTag(TagCategory.CROPS.getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
             }
         }
-        for (TreeCrop crop : TreeCrop.copy()) {
+        for (TreeCrop crop : TreeCrop.TREE_CROPS) {
             createCategoryTag(crop.getTagCategory().getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
             if (crop.getTagCategory() != TagCategory.CROPS) { // don't double only-crops
                 createCategoryTag(TagCategory.CROPS.getLowerCaseName(), PluralInfo.plural(crop.getLowercaseName(), crop.hasPlural()), crop.asItem());
@@ -93,14 +93,14 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
 
     protected void generateSeedsSaplings() {
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
-        for (FarmlandCrop crop : FarmlandCrop.copy()) {
+        for (FarmlandCrop crop : FarmlandCrop.FARMLAND_CROPS) {
             if (crop == Content.CHILE_PEPPER) {
                 createSeedSaplingTag("seeds", "chilepepper", crop.getSeedItem());
             } else {
                 createSeedSaplingTag("seeds", crop.getLowercaseName(), crop.getSeedItem());
             }
         }
-        for (TreeCrop crop : TreeCrop.copy()) {
+        for (TreeCrop crop : TreeCrop.TREE_CROPS) {
             createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSaplingItem());
         }
         for (Tree crop : Tree.copy()) {

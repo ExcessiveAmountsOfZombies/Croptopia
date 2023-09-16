@@ -146,8 +146,9 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             artifactId = "${archives_base_name}-" + artifactId
-            version = version + "-${mc_ver}"
+            //version = version + "-${mc_ver}"
             // add all the jars that should be included when publishing to maven
+            //artifact remappedShadowJar
             artifact(remapJar) {
                 builtBy remapJar
             }

@@ -128,7 +128,6 @@ public class CroptopiaForge {
 
         // Register ourselves for server and other game events we are interested in
         mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia_v3.conf"));
-        mod.registerCompost();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -140,10 +139,10 @@ public class CroptopiaForge {
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        /*InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.COOKING_POT));
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.COOKING_POT));
         InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.FOOD_PRESS));
         InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.FRYING_PAN));
-        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.MORTAR_AND_PESTLE));*/
+        InterModComms.sendTo("cookingforblockheads", "RegisterTool", () -> new ItemStack(Content.MORTAR_AND_PESTLE));
 
         InterModComms.sendTo("cookingforblockheads", "RegisterWaterItem", () -> new ItemStack(Content.WATER_BOTTLE));
         InterModComms.sendTo("cookingforblockheads", "RegisterMilkItem", () -> new ItemStack(Content.MILK_BOTTLE));
@@ -203,6 +202,9 @@ public class CroptopiaForge {
 
 
                 Content.registerItems((id, itemSupplier) -> {
+                    if (Content.ITEM_REGISTER.getManipulations().containsKey(id)) {
+                        itemSupplier = Content.ITEM_REGISTER.getManipulations().get(id);
+                    }
                     Item item = itemSupplier.get();
                     event.register(ForgeRegistries.Keys.ITEMS, id, () -> item);
                     if (item instanceof ItemNameBlockItem) {
@@ -226,12 +228,15 @@ public class CroptopiaForge {
                 List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
                 pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
                 Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
-
+                mod.registerCompost();
             }
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.BLOCKS)) {
-                Content.registerBlocks((id, object) -> {
-                    Block block = object.get();
-                    event.register(ForgeRegistries.Keys.BLOCKS, blockRegisterHelper -> blockRegisterHelper.register(id, block));
+                Content.registerBlocks((id, supplier) -> {
+                    if (Content.BLOCK_REGISTER.getManipulations().containsKey(id)) {
+                        supplier = Content.BLOCK_REGISTER.getManipulations().get(id);
+                    }
+                    Block block = supplier.get();
+                    event.register(ForgeRegistries.Keys.BLOCKS, id, () -> block);
                     return block;
                 });
                 mod.platform().registerFlammableBlocks();

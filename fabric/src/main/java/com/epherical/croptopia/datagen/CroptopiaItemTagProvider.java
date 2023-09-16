@@ -74,7 +74,7 @@ public class CroptopiaItemTagProvider extends FabricTagProvider.ItemTagProvider 
 
     protected void generateMisc() {
         FabricTagBuilder crops = getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS);
-        for (SeedItem seed : CroptopiaMod.seeds) {
+        for (Item seed : CroptopiaMod.seeds) {
             crops.add(seed);
         }
         // explicitly used as dolphin food in vanilla

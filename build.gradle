@@ -10,7 +10,7 @@ plugins {
 allprojects {
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
-    version = mod_version
+    version = mod_version + "-" + mc_ver
     group = maven_group
 
     repositories {
@@ -62,7 +62,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             artifactId = "${archives_base_name}"
-            version = version + "-${mc_ver}"
+            //version = version + "-${mc_ver}"
             // add all the jars that should be included when publishing to maven
             from (rootProject.components.java)
 

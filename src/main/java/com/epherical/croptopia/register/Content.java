@@ -501,6 +501,10 @@ public class Content {
     public static Item GUIDE;
 
     public static void registerBlocks(RegisterFunction<Block> register) {
+        for (Consumer<RegisterFunction<Block>> entry : BLOCK_REGISTER.getEntries()) {
+            entry.accept(register);
+        }
+
         SALT_ORE_BLOCK = register.register(createIdentifier(BlockNames.SALT_ORE), () ->new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).strength(0.5F).sound(SoundType.SAND)));
     }
 
@@ -509,15 +513,6 @@ public class Content {
         for (Consumer<RegisterFunction<Item>> entry : ITEM_REGISTER.getEntries()) {
             entry.accept(register);
         }
-        /*Seafood.registerItems(register);
-        Furnace.registerItems(register);
-        Juice.registerItems(register);
-        Jam.registerItems(register);
-        Smoothie.registerItems(register);
-        IceCream.registerItems(register);
-        Pie.registerItems(register);
-        Utensil.registerItems(register);
-        Tree.registerItems(register);*/
 
         PAPRIKA = register.register(createIdentifier(ItemNamesV2.PAPRIKA), () -> new Item(createGroup()));
         SALT = register.register(createIdentifier(ItemNamesV2.SALT), () -> new Item(createGroup()));

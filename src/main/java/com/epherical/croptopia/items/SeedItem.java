@@ -28,7 +28,9 @@ public class SeedItem extends ItemNameBlockItem {
 
     public SeedItem(Block block, Properties settings, TagKey<Biome> category) {
         super(block, settings);
-        ((CroptopiaCropBlock) block).setSeed(this);
+        if (block instanceof CroptopiaCropBlock crop) {
+            crop.setSeed(this);
+        }
         this.category = category;
     }
 

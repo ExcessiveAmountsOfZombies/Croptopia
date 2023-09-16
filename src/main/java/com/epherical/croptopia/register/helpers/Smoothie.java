@@ -54,7 +54,7 @@ public class Smoothie implements ItemLike {
     }
 
     public void registerItems(RegisterFunction<Item> register) {
-        register.register(CroptopiaMod.createIdentifier(name),  () -> new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        item = register.register(CroptopiaMod.createIdentifier(name),  () -> new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
     }
 
     public static List<Smoothie> copy() {

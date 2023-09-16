@@ -11,6 +11,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
@@ -55,7 +57,7 @@ public class CroptopiaCropBlock extends CropBlock {
     public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         if (world.getChunk(pos).getStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
-            if (world.getBiome(pos).is(seed.getCategory())) {
+            if (seed.getCategory() != null && world.getBiome(pos).is(seed.getCategory())) {
                 return super.canSurvive(state, world, pos);
             }
         } else if (world.getChunk(pos).getStatus().getIndex() == ChunkStatus.FULL.getIndex()) {
@@ -94,7 +96,7 @@ public class CroptopiaCropBlock extends CropBlock {
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return seed;
+        return seed != null ? seed : Items.AIR;
     }
 
     @Override

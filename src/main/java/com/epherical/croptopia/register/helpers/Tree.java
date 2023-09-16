@@ -63,7 +63,7 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagKey<Item> logItemTag;
     private final TagKey<Block> logBlockTag;
     private Block leaves;
-    private final ConfiguredFeature<TreeConfiguration, ?> treeGen;
+    private ConfiguredFeature<TreeConfiguration, ?> treeGen;
     private Item sapling;
     private Block saplingBlock;
     private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
@@ -73,7 +73,10 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
                 ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
         Objects.requireNonNull(category);
         // TERRIBLE CODE DESIGN
-        Content.BLOCK_REGISTER.reg(this::registerBlock);
+        Content.BLOCK_REGISTER.reg(register -> {
+            registerBlock(register);
+            treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
+        });
         Content.ITEM_REGISTER.reg(this::registerItem);
         // TERRIBLE CODE DESIGN
         this.configuredFeatureKey = configuredFeatureKey;
@@ -93,7 +96,6 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         logBlockTag = TagKey.create(Registries.BLOCK, new ResourceLocation(MiscNames.MOD_ID, tagName));
         // left is leaves and saplings
         //leaves = createRegularLeavesBlock();
-        treeGen = createBarkGen(iTreeGen, jTreeGen, kTreeGen, log, leaves);
         //saplingBlock = new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings().ignitedByLava());
         //sapling = new ItemNameBlockItem(saplingBlock, createGroup());
         TREES.add(this);
