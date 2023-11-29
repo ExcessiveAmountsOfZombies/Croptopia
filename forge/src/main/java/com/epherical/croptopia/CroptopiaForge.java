@@ -56,6 +56,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -98,6 +99,7 @@ public class CroptopiaForge {
 
     public CroptopiaForge() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addListener(this::setup);
         bus.addListener(this::enqueueIMC);
         bus.addListener(this::processIMC);
         bus.addListener(this::doClientStuff);
@@ -127,11 +129,11 @@ public class CroptopiaForge {
         EventListenerHelper.getListenerList(PlayerInteractEvent.RightClickBlock.class);
 
         // Register ourselves for server and other game events we are interested in
-        mod = new CroptopiaMod(new ForgeAdapter());
+        mod = new CroptopiaMod(new ForgeAdapter(), new CroptopiaConfig(HoconConfigurationLoader.builder(), "croptopia_v3.conf"));
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        Composter.init();
+        mod.registerCompost();
 
         List<ItemLike> chickenItems = new ArrayList<>(CroptopiaMod.seeds);
         chickenItems.addAll(Arrays.stream(Chicken.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
@@ -143,7 +145,6 @@ public class CroptopiaForge {
         List<ItemLike> pigItems = new ArrayList<>(Arrays.asList(Content.YAM, Content.SWEETPOTATO));
         pigItems.addAll(Arrays.stream(Pig.FOOD_ITEMS.getItems()).map(ItemStack::getItem).collect(Collectors.toList()));
         Pig.FOOD_ITEMS = Ingredient.of(pigItems.toArray(new ItemLike[0]));
-        mod.registerCompost();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
