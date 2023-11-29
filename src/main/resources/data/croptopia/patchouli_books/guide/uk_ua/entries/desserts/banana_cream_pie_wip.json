@@ -1,0 +1,12 @@
+{
+  "name": "Банан. крем-пиріг",
+  "icon": "croptopia:banana_cream_pie",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:banana_cream_pie",
+      "text": "Рецепт бананового крем-пирога."
+    }
+  ]
+}

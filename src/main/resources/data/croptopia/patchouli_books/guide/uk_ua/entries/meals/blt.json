@@ -1,0 +1,13 @@
+{
+  "name": "Сендвіч БСП",
+  "icon": "croptopia:blt",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "title": "Сендвіч БСП",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:blt",
+      "text": "Рецепт сендвіча з беконом, салатом і помідором."
+    }
+  ]
+}

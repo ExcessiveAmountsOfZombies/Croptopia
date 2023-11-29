@@ -1,0 +1,12 @@
+{
+  "name": "Печиво з корицею",
+  "icon": "croptopia:snicker_doodle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:snicker_doodle",
+      "text": "Рецепт печива з корицею. (У розробці)"
+    }
+  ]
+}

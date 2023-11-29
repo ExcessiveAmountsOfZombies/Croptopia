@@ -1,0 +1,12 @@
+{
+  "name": "Тост із джемом",
+  "icon": "croptopia:toast_with_jam",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:toast_with_jam",
+      "text": "Рецепт приготування тосту з джемом на ньому."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Шоколадне морозиво",
+  "icon": "croptopia:chocolate_ice_cream",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_chocolate_ice_cream",
+      "text": "Рецепт шоколадного морозива."
+    }
+  ]
+}

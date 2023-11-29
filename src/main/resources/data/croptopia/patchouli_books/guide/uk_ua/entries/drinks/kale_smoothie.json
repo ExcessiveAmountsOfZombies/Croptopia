@@ -1,0 +1,12 @@
+{
+  "name": "Смузі з чорної к.",
+  "icon": "croptopia:kale_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:kale_smoothie",
+      "text": "Рецепт смузі з чорної капусти."
+    }
+  ]
+}

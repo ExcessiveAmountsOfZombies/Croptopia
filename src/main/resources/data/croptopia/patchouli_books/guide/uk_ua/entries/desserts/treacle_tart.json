@@ -1,0 +1,12 @@
+{
+  "name": "Тарт із патокою",
+  "icon": "croptopia:treacle_tart",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_treacle_tart",
+      "text": "Рецепт тарта з патокою."
+    }
+  ]
+}

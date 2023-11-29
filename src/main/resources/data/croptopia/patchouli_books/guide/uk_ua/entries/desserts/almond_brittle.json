@@ -1,0 +1,12 @@
+{
+  "name": "Крихкий мигдаль",
+  "icon": "croptopia:almond_brittle",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:almond_brittle",
+      "text": "Рецепт крихкого мигдалю."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Арахіс. з джемом",
+  "icon": "croptopia:peanut_butter_and_jam",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "title": "Арахіс. масло з джемом",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:peanut_butter_and_jam",
+      "text": "Рецепту сендвічу з арахісовим маслом і джемом."
+    }
+  ]
+}
