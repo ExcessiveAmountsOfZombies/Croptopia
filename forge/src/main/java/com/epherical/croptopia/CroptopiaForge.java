@@ -234,9 +234,6 @@ public class CroptopiaForge {
                     }
                     return item;
                 });
-
-                GeneratorRegistry.init();
-                Config.setFeatures(config);
             }
             if (event.getRegistryKey().equals(ForgeRegistries.Keys.BLOCKS)) {
                 Content.registerBlocks((id, supplier) -> {
