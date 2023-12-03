@@ -139,6 +139,8 @@
   "item.croptopia.ginger": "Имбирь",
   "item.croptopia.basil": "Базилик",
   "item.croptopia.chile_pepper": "Перец-чили",
+
+
   "item.croptopia.apple_sapling": "Саженец яблони",
   "item.croptopia.banana_sapling": "Саженец банана",
   "item.croptopia.orange_sapling": "Саженец апельсина",
@@ -165,6 +167,7 @@
   "item.croptopia.cashew_sapling": "Саженец кешью",
   "item.croptopia.pecan_sapling": "Саженец ореха-пекан",
   "item.croptopia.walnut_sapling": "Саженец ореха",
+  
   "item.croptopia.olive_oil": "Оливковое масло",
   "item.croptopia.cheese": "Сыр",
   "item.croptopia.flour": "Мука",
@@ -285,6 +288,7 @@
   "item.croptopia.raisin_oatmeal_cookie": "Овсяное печенье с изюмом",
   "item.croptopia.roasted_nuts": "Калёные орехи",
   "item.croptopia.trail_mix": "Смесь сухофруктов и орехов",
+  
   "item.croptopia.burrito": "Буррито",
   "item.croptopia.tostada": "Тостада",
   "item.croptopia.horchata": "Орчата",
@@ -300,15 +304,18 @@
   "item.croptopia.refried_beans": "Фасолевая икра",
   "item.croptopia.chimichanga": "Чимичанга",
   "item.croptopia.quesadilla": "Кесадилья",
+  
   "item.croptopia.cinnamon": "Корица",
   "item.croptopia.corn_husk": "Кукурузная шелуха",
   "item.croptopia.whipping_cream": "Взбитые сливки",
   "item.croptopia.vanilla_seeds": "Семена ванили",
+  
   "item.croptopia.cinnamon_sapling": "Саженец корицы",
   "item.croptopia.cinnamon_log": "Бревно корицы",
   "item.croptopia.stripped_cinnamon_log": "Обтёсанное бревно корицы",
   "item.croptopia.cinnamon_wood": "Коричник",
   "item.croptopia.stripped_cinnamon_wood": "Обтёсанный коричник",
+  
   "item.croptopia.shepherds_pie": "Пастуший пирог",
   "item.croptopia.beef_wellington": "Говядина Веллингтон",
   "item.croptopia.fish_and_chips": "Рыба с картошкой фри",
@@ -324,6 +331,7 @@
   "item.croptopia.milk_bottle": "Бутылка молока",
   "item.croptopia.tea_leaves": "Чайные листья",
   "item.croptopia.tea_seed": "Семена чая",
+  
   "item.croptopia.ajvar": "Айвар",
   "item.croptopia.ajvar_toast": "Тост с айваром",
   "item.croptopia.avocado_toast": "Тост с авокадо",
@@ -358,6 +366,7 @@
   "item.croptopia.stir_fry": "Стир-фрай",
   "item.croptopia.stuffed_artichoke": "Фаршированный артишок",
   "item.croptopia.toast_sandwich": "Сэндвич с тостом",
+  
   "item.croptopia.roasted_pumpkin_seeds": "Жареные таквенные семечки",
   "item.croptopia.roasted_sunflower_seeds": "Жареные подсолнечные семечки",
   "item.croptopia.pumpkin_bars": "Тыквенный батончик",
@@ -392,12 +401,31 @@
   "item.croptopia.cooked_anchovy": "Жареный анчоус",
   "item.croptopia.anchovy_pizza": "Пицца с анчоусами",
   "item.croptopia.mashed_potatoes": "Картофельное пюре",
+  
+  "item.croptopia.baked_crepes": "Свежеиспечённые блины",
+  "item.croptopia.cinnamon_roll": "Булочка с корицей",
+  "item.croptopia.croque_madame": "Крок-мадам",
+  "item.croptopia.croque_monsieur": "Крок-месье",
+  "item.croptopia.dauphine_potatoes": "Картофель по-дофински",
+  "item.croptopia.fried_frog_legs": "Обжаренные лягушачьи лапки",
+  "item.croptopia.frog_legs": "Лягушачьи лапки",
+  "item.croptopia.ground_pork": "Свиной фарш",
+  "item.croptopia.hashed_brown": "Мелконарезанное кофе",
+  "item.croptopia.macaron": "Макарон",
+  "item.croptopia.quiche": "Лоранский пирог",
+  "item.croptopia.sausage": "Сосиска",
+  "item.croptopia.sunny_side_eggs": "Яичница",
+  "item.croptopia.sweet_crepes": "Сладостные блины",
+  "item.croptopia.the_big_breakfast": "Обильный завтрак"
+
   "item.croptopia.food_press": "Универсальный пищевой пресс",
   "item.croptopia.frying_pan": "Сковорода",
   "item.croptopia.cooking_pot": "Кастрюля",
   "item.croptopia.mortar_and_pestle": "Ступка и пестик",
   "item.croptopia.guide": "Croptopia",
+
   "item.croptopia.salt_ore": "Солевая руда",
+
   "block.croptopia.salt_ore": "Солевая руда",
   "block.croptopia.apple_crop": "Яблочный урожай",
   "block.croptopia.banana_crop": "Банановый урожай",
@@ -510,10 +538,12 @@
   "block.croptopia.pecan_sapling": "Саженец ореха-пекан",
   "block.croptopia.walnut_sapling": "Саженец грецкого ореха",
   "block.croptopia.cinnamon_sapling": "Саженец корицы",
+  
   "block.croptopia.cinnamon_log": "Бревно корицы",
   "block.croptopia.stripped_cinnamon_log": "Обтёсанное бревно корицы",
   "block.croptopia.cinnamon_wood": "Коричник",
   "block.croptopia.stripped_cinnamon_wood": "Обтёсанный коричник",
+  
   "advancements.croptopia.root.description": "'Такой прополкой ты ничего не добьёшься.'",
   "advancements.croptopia.getseed.description": "Вырви дикое растение для получения семян!",
   "advancements.croptopia.getseed.title": "Крайне убогое место",
@@ -570,23 +600,32 @@
   "advancements.croptopia.gather_tree_dark_forest.title": "Тёмная сторона деревьев",
   "advancements.croptopia.gather_tree_dark_forest.description": "Собери каждый саженец из тёмного леса или разновидностей",
 
+
   "itemGroup.croptopia.croptopia": "Croptopia",
   "itemGroup.croptopia": "Croptopia",
+  
   "info.croptopia.seed": "Это семечко выпадает в биомах, учитываемые в категории:",
-
-  "item.croptopia.baked_crepes": "Свежеиспечённые блины",
-  "item.croptopia.cinnamon_roll": "Булочка с корицей",
-  "item.croptopia.croque_madame": "Крок-мадам",
-  "item.croptopia.croque_monsieur": "Крок-месье",
-  "item.croptopia.dauphine_potatoes": "Картофель по-дофински",
-  "item.croptopia.fried_frog_legs": "Обжаренные лягушачьи лапки",
-  "item.croptopia.frog_legs": "Лягушачьи лапки",
-  "item.croptopia.ground_pork": "Свиной фарш",
-  "item.croptopia.hashed_brown": "Мелконарезанное кофе",
-  "item.croptopia.macaron": "Макарон",
-  "item.croptopia.quiche": "Лоранский пирог",
-  "item.croptopia.sausage": "Сосиска",
-  "item.croptopia.sunny_side_eggs": "Яичница",
-  "item.croptopia.sweet_crepes": "Сладостные блины",
-  "item.croptopia.the_big_breakfast": "Обильный завтрак"
+  
+  "tag.c.crops" : "Ростки",
+  "tag.c.saplings" : "Саженцы",
+  "tag.c.vegetables" : "Овощи",
+  "tag.c.nuts" : "Орехи",
+  "tag.c.fruits" : "Фрукты",
+  "tag.c.grain" : "Зерно",
+  "tag.c.seeds" : "Семена",
+  "tag.c.jams" : "Джемы",
+  "tag.c.juices" : "Соки",
+  "tag.c.tools.knives" : "Ножи",
+  "tag.croptopia.beef_mutton" : "Говядина Баранина",
+  "tag.croptopia.meat_replacements" : "Заменители мяса",
+  "tag.croptopia.nuts" : "Орехи",
+  "tag.croptopia.chicken_replacements" : "Заменители курицы",
+  "tag.croptopia.pork_replacements" : "Заменители свинины",
+  "tag.croptopia.fishes" : "Рыбы",
+  "tag.croptopia.peppers" : "Перцы",
+  "tag.croptopia.sauces" : "Соусы",
+  "tag.croptopia.melons" : "Арбузы",
+  "tag.croptopia.beef_replacements" : "Заменители говядины",
+  "tag.croptopia.flourable" : "Мучное",
+  "tag.croptopia.cinnamon_logs" : "Брёвна корицы"
 }
