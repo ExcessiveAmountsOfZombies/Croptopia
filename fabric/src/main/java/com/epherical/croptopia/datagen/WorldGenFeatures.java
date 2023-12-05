@@ -206,7 +206,9 @@ public class WorldGenFeatures {
     public static final Holder<PlacedFeature> DISK_SALT_CONFIGURED = register(PlacedFeatureKeys.DISK_SALT_PLACED_KEY,
             DISK_SALT,
             PlacementUtils.HEIGHTMAP_TOP_SOLID,
-            BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)));
+            InSquarePlacement.spread(),
+            BlockPredicateFilter.forPredicate(BlockPredicate.matchesFluids(Fluids.WATER)),
+            BiomeFilter.biome());
 
 
     public static <FC extends FeatureConfiguration, F extends Feature<FC>> ConfiguredFeature<FC, ?> register(F feature, FC config) {

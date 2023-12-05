@@ -13,7 +13,7 @@ repositories {
     mavenLocal()
     maven {
         name = "Forge"
-        url = "https://maven.neoforged.net/releases"
+        url = "https://files.minecraftforge.net/maven"
     }
     maven {
         url = 'https://maven.blamejared.com'
@@ -119,7 +119,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_ver}-${forge_ver}"
     implementation(rootProject)
     shade(rootProject)
-    implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
+    //implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
     implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.0.0-1.20.1'))
     annotationProcessor 'org.spongepowered:mixin:0.8.5-SNAPSHOT:processor'
 }
