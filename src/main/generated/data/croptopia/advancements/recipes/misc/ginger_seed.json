@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_ginger",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_ginger"
     ]
   ],
   "rewards": {

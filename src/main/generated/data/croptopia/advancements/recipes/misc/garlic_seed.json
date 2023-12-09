@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_garlic",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_garlic"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_tuna",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_tuna"
     ]
   ],
   "rewards": {

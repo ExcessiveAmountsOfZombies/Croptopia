@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_broccoli",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_broccoli"
     ]
   ],
   "rewards": {

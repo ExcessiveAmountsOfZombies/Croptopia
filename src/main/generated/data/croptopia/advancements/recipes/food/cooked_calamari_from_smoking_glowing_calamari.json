@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_glowing_calamari",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_glowing_calamari"
     ]
   ],
   "rewards": {

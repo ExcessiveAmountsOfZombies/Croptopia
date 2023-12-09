@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_squash",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_squash"
     ]
   ],
   "rewards": {

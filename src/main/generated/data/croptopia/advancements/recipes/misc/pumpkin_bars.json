@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_pumpkin",
-      "has_cinnamon",
-      "has_the_recipe"
+      "has_cinnamon"
     ]
   ],
   "rewards": {

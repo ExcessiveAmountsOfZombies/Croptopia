@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_sweetpotato",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sweetpotato"
     ]
   ],
   "rewards": {

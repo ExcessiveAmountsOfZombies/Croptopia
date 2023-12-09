@@ -20,6 +20,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
@@ -42,7 +43,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+    public void buildRecipes(RecipeOutput exporter) {
         generateSeeds(exporter);
         generateSaplings(exporter);
         generateBarkWood(exporter);
@@ -57,7 +58,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         generateMiscShaped(exporter);
     }
 
-    protected void generateSeeds(Consumer<FinishedRecipe> exporter) {
+    protected void generateSeeds(RecipeOutput exporter) {
         for (FarmlandCrop crop : FarmlandCrop.copy()) {
             TagKey<Item> tag = independentTag(crop.getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, crop.getSeedItem())
@@ -67,7 +68,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void generateSaplings(Consumer<FinishedRecipe> exporter) {
+    protected void generateSaplings(RecipeOutput exporter) {
         for (TreeCrop crop : TreeCrop.copy()) {
             TagKey<Item> tag = independentTag(crop.getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, crop.getSaplingItem())
@@ -78,7 +79,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         // Bark saplings come from the leaves, not the crop
     }
 
-    protected void generateBarkWood(Consumer<FinishedRecipe> exporter) {
+    protected void generateBarkWood(RecipeOutput exporter) {
         for (Tree crop : Tree.copy()) {
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, crop.getWood())
                     .pattern("##")
@@ -95,7 +96,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void generateJams(Consumer<FinishedRecipe> exporter) {
+    protected void generateJams(RecipeOutput exporter) {
         for (Jam jam : Jam.copy()) {
             TagKey<Item> tag = independentTag(jam.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, jam)
@@ -105,7 +106,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void generateJuices(Consumer<FinishedRecipe> exporter) {
+    protected void generateJuices(RecipeOutput exporter) {
         for (Juice juice : Juice.copy()) {
             TagKey<Item> tag = independentTag(juice.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, juice)
@@ -115,7 +116,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void generateSmoothies(Consumer<FinishedRecipe> exporter) {
+    protected void generateSmoothies(RecipeOutput exporter) {
         for (Smoothie smoothie : Smoothie.copy()) {
             TagKey<Item> tag = independentTag(smoothie.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, smoothie)
@@ -125,7 +126,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void generateIceCream(Consumer<FinishedRecipe> exporter) {
+    protected void generateIceCream(RecipeOutput exporter) {
         for (IceCream iceCream : IceCream.copy()) {
             TagKey<Item> tag = independentTag(iceCream.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, iceCream)
@@ -135,7 +136,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void generatePie(Consumer<FinishedRecipe> exporter) {
+    protected void generatePie(RecipeOutput exporter) {
         for (Pie pie : Pie.copy()) {
             TagKey<Item> tag = independentTag(pie.getCrop().getPlural());
             ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, pie)
@@ -145,7 +146,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         }
     }
 
-    protected void offerFoodCookingRecipe(Consumer<FinishedRecipe> exporter, ItemLike input, String inputName, ItemLike output, int time, float exp, boolean campFire) {
+    protected void offerFoodCookingRecipe(RecipeOutput exporter, ItemLike input, String inputName, ItemLike output, int time, float exp, boolean campFire) {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.FOOD, output, exp, time)
                 .unlockedBy("has_" + inputName, RecipeProvider.has(input))
                 .save(exporter, RecipeProvider.getItemName(output) + "_from_" + inputName);
@@ -155,7 +156,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         // TODO campfire
     }
 
-    protected void generateFurnace(Consumer<FinishedRecipe> exporter) {
+    protected void generateFurnace(RecipeOutput exporter) {
         final int time = 200; // default vanilla time
         final float exp = 0.2f; // default vanilla experience
         var cookingList = new ImmutableMap.Builder<ItemConvertibleWithPlural, ItemLike>()
@@ -181,7 +182,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         offerFoodCookingRecipe(exporter, Content.WATER_BOTTLE, ItemNamesV2.WATER_BOTTLE, Content.SALT, 800, 0.1f, false);
     }
 
-    protected void generateUtensil(Consumer<FinishedRecipe> exporter) {
+    protected void generateUtensil(RecipeOutput exporter) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Content.COOKING_POT)
                 .pattern("# #")
                 .pattern("# #")
@@ -218,7 +219,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
     }
 
-    protected void generateMiscShapeless(Consumer<FinishedRecipe> exporter) {
+    protected void generateMiscShapeless(RecipeOutput exporter) {
         TagKey<Item> saltTag = independentTag("salts");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.DEAD_BUSH)
                 .requires(saltTag).requires(ItemTags.SAPLINGS)
@@ -253,7 +254,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .save(exporter);
     }
 
-    protected void generateMiscShaped(Consumer<FinishedRecipe> exporter) {
+    protected void generateMiscShaped(RecipeOutput exporter) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Content.ROASTED_PUMPKIN_SEEDS)
                 .pattern("123")
                 .pattern(" 4 ")

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_plum",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_plum"
     ]
   ],
   "rewards": {

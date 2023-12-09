@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_greenonion",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_greenonion"
     ]
   ],
   "rewards": {

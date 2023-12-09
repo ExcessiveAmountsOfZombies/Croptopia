@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_currant",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_currant"
     ]
   ],
   "rewards": {

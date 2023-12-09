@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_kiwi",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_kiwi"
     ]
   ],
   "rewards": {

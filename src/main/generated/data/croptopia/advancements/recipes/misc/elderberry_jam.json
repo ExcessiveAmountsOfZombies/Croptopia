@@ -20,8 +20,8 @@
   },
   "requirements": [
     [
-      "has_elderberry",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_elderberry"
     ]
   ],
   "rewards": {

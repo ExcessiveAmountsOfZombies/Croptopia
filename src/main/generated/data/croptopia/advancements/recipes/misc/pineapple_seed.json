@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_pineapple",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_pineapple"
     ]
   ],
   "rewards": {

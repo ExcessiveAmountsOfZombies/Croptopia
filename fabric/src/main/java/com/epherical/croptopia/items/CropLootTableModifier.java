@@ -3,6 +3,7 @@ package com.epherical.croptopia.items;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.mixin.accessor.LootTableBuilderAccessor;
 import com.epherical.croptopia.register.Content;
+import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceLocation;
@@ -33,14 +34,15 @@ public class CropLootTableModifier {
                         tableBuilder.withPool(builder);
                     }
                     case "gameplay/fishing" -> {
-                        List<LootPool> pools = ((LootTableBuilderAccessor) tableBuilder).getPools();
+                        ImmutableList.Builder<LootPool> pools1 = ((LootTableBuilderAccessor) tableBuilder).getPools();
+                        List<LootPool> pools = ((LootTableBuilderAccessor) tableBuilder).getPools().build();
                         if (pools.isEmpty()) {
                             LOGGER.warn("Can not inject into gameplay/fishing/fish as it is empty");
                         } else {
                             LootPool.Builder builder = FabricLootPoolBuilder.copyOf(pools.get(0));
                             builder.add(LootTableReference.lootTableReference(new ResourceLocation("croptopia", "gameplay/fishing/fish"))
                                     .setWeight(30));
-                            pools.set(0, builder.build());
+                            pools1.add(builder.build());
                         }
                     }
                     case "entities/squid" -> {

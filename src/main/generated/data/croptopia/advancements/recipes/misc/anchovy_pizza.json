@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_anchovies",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_anchovies"
     ]
   ],
   "rewards": {

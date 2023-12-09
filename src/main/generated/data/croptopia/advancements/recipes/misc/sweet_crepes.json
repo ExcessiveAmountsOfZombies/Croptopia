@@ -32,9 +32,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "took_flour",
-      "has_frying_pan",
-      "has_the_recipe"
+      "has_frying_pan"
     ]
   ],
   "rewards": {

@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_sugar",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_sugar"
     ]
   ],
   "rewards": {

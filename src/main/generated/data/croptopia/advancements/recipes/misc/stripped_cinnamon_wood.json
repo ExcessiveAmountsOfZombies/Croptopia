@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_strippedcinnamon_log",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_strippedcinnamon_log"
     ]
   ],
   "rewards": {

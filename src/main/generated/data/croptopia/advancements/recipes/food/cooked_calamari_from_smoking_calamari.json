@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_calamari",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_calamari"
     ]
   ],
   "rewards": {
