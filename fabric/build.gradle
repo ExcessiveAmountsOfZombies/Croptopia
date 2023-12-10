@@ -132,7 +132,7 @@ shadowJar {
 task remappedShadowJar(type: RemapJarTask) {
     dependsOn tasks.shadowJar
     input = tasks.shadowJar.archiveFile
-    archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
+    archiveFileName = rootProject.archives_base_name + "-FABRIC-${rootProject.version}.jar"
 }
 
 tasks.assemble.dependsOn tasks.remappedShadowJar
