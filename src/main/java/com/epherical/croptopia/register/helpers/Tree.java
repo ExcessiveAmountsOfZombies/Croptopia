@@ -2,19 +2,13 @@ package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
-import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
-import com.epherical.croptopia.items.CropItem;
-import com.epherical.croptopia.items.CroptopiaSaplingItem;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.TagCategory;
 import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -24,11 +18,11 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -45,9 +39,9 @@ import net.minecraft.world.level.material.MapColor;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import static com.epherical.croptopia.CroptopiaMod.*;
-import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private static final List<Tree> TREES = new ArrayList<>();
@@ -216,7 +210,8 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         wood = register.register(createIdentifier(name + "_wood"), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F)));
         strippedWood = register.register(createIdentifier("stripped_" + name + "_wood"), () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BROWN).ignitedByLava().sound(SoundType.WOOD).strength(2.0F)));
         leaves = register.register(createIdentifier(name + "_leaves"), CroptopiaMod::createRegularLeavesBlock);
-        saplingBlock = register.register(createIdentifier(name + "_sapling"), () -> new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings().ignitedByLava()));
+        TreeGrower grower = new TreeGrower("croptopia_" + name, 0.1f, Optional.empty(), Optional.empty(), Optional.of(configuredFeatureKey), Optional.empty(), Optional.empty(), Optional.empty());
+        saplingBlock = register.register(createIdentifier(name + "_sapling"), () -> new CroptopiaSaplingBlock(grower, createSaplingSettings().ignitedByLava()));
         leafBlocks.add(leaves);
         cropBlocks.add(saplingBlock);
     }

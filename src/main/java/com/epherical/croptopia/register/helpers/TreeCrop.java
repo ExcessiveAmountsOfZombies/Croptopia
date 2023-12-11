@@ -4,7 +4,6 @@ import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.blocks.CroptopiaSaplingBlock;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.common.ItemNamesV2;
-import com.epherical.croptopia.generator.CroptopiaSaplingGenerator;
 import com.epherical.croptopia.items.CropItem;
 import com.epherical.croptopia.items.CroptopiaSaplingItem;
 import com.epherical.croptopia.register.Content;
@@ -13,15 +12,13 @@ import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -32,15 +29,14 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProv
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import static com.epherical.croptopia.CroptopiaMod.*;
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.CroptopiaMod.createLeavesBlock;
 import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
@@ -171,7 +167,8 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     }
 
     public void registerBlock(RegisterFunction<Block> register) {
-        saplingBlock = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingBlock(new CroptopiaSaplingGenerator(() -> configuredFeatureKey), createSaplingSettings()));
+        TreeGrower grower = new TreeGrower("croptopia_" + name, 0.1f, Optional.empty(), Optional.empty(), Optional.of(configuredFeatureKey), Optional.empty(), Optional.empty(), Optional.empty());
+        saplingBlock = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingBlock(grower, createSaplingSettings()));
         leaves = register.register(createIdentifier(name() + "_crop"), CroptopiaMod::createLeavesBlock);
 
         cropBlocks.add(asBlock());

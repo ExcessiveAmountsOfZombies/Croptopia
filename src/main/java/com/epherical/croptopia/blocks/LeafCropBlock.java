@@ -44,7 +44,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state) {
         return new ItemStack(this);
     }
 
