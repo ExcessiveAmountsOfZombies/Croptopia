@@ -10,7 +10,7 @@ plugins {
 allprojects {
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
-    version = mod_version + "-" + mc_ver
+    version = mod_version
     group = maven_group
 
     repositories {
@@ -39,7 +39,7 @@ minecraft {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     compileOnlyApi('org.jetbrains:annotations:23.0.0')
-    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.2.0-1.20.2')
+    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.2.0-1.20.1')
 }
 
 sourceSets {

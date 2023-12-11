@@ -470,13 +470,9 @@ public class Content {
     public static final Item TTEOKBOKKI;
     public static final Item BIBIM_NENGMYUM;
 
-    public static final Item EGG_FRIED_RICE;
-    public static final Item CHICKEN_FRIED_RICE;
-    public static final Item BEEF_FRIED_RICE;
-    public static final Item PORK_FRIED_RICE;
-    public static final Item SHRIMP_FRIED_RICE;
-    public static final Item VEGGIE_FRIED_RICE;
-    public static final Item TOFU_FRIED_RICE;
+    public static final Item EGG_FRIED_RICE; // rice, egg, soy sauce, salt,
+    public static final Item FRIED_RICE; // rice, soy sauce, <MIXED INGREDIENT (beef, pork, shrimp, tofu)>, salt,
+    public static final Item VEGGIE_FRIED_RICE; // rice, soy sauce, green onion, carrot, green beans, salt
 
     public static final Item SESAME_CHICKEN;
     public static final Item ORANGE_CHICKEN;
@@ -485,13 +481,8 @@ public class Content {
     public static final Item EGG_FU_YUNG;
     public static final Item TERYAKI_CHICKEN;
 
-    public static final Item PEANUT_OIL;
-    public static final Item CORN_OIL;
-    public static final Item COCONUT_OIL;
-    public static final Item AVOCADO_OIL;
-    public static final Item PUMPKIN_SEED_OIL;
-    public static final Item WALNUT_OIL;
-    public static final Item GRAPE_SEED_OIL;*/
+    public static final Item COOKING_OIL; // crafted by using (avocado/walnut/almond/corn/vegetables/w/e else for oils)
+    public static final FarmlandCrop FLAX;*/
 
 
 

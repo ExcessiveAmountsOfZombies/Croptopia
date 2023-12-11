@@ -34,15 +34,14 @@ public class CropLootTableModifier {
                         tableBuilder.withPool(builder);
                     }
                     case "gameplay/fishing" -> {
-                        ImmutableList.Builder<LootPool> pools1 = ((LootTableBuilderAccessor) tableBuilder).getPools();
-                        List<LootPool> pools = ((LootTableBuilderAccessor) tableBuilder).getPools().build();
+                        List<LootPool> pools = ((LootTableBuilderAccessor) tableBuilder).getPools();
                         if (pools.isEmpty()) {
                             LOGGER.warn("Can not inject into gameplay/fishing/fish as it is empty");
                         } else {
                             LootPool.Builder builder = FabricLootPoolBuilder.copyOf(pools.get(0));
                             builder.add(LootTableReference.lootTableReference(new ResourceLocation("croptopia", "gameplay/fishing/fish"))
                                     .setWeight(30));
-                            pools1.add(builder.build());
+                            pools.set(0, builder.build());
                         }
                     }
                     case "entities/squid" -> {
