@@ -20,8 +20,10 @@
     "type": "crop",
     "block": "croptopia:cucumber_crop"
   },
-  "forge:condition": {
-    "type": "forge:mod_loaded",
-    "modid": "immersiveengineering"
-  }
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "immersiveengineering"
+    }
+  ]
 }

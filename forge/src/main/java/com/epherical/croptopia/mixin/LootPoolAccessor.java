@@ -12,5 +12,5 @@ import java.util.List;
 public interface LootPoolAccessor {
 
     @Accessor(value = "entries") @Mutable
-    List<LootPoolEntryContainer> getEntries();
+    LootPoolEntryContainer[] getEntries();
 }
