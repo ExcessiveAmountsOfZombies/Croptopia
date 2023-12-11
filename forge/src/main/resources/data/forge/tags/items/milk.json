@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#forge:milks"
+    "croptopia:milk_bottle",
+    "croptopia:soy_milk"
   ]
 }

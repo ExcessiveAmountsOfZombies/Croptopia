@@ -54,7 +54,9 @@ public class Drink extends Item {
             }
 
             if (playerEntity != null && getCraftingRemainingItem() != null) {
-                playerEntity.getInventory().add(new ItemStack(getCraftingRemainingItem()));
+                if (!playerEntity.getInventory().add(new ItemStack(getCraftingRemainingItem()))) {
+                    playerEntity.drop(new ItemStack(getCraftingRemainingItem()), true);
+                }
             }
         }
 

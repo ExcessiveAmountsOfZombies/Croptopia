@@ -20,10 +20,8 @@
     "type": "crop",
     "block": "croptopia:oat_crop"
   },
-  "conditions": [
-    {
-      "type": "forge:mod_loaded",
-      "modid": "immersiveengineering"
-    }
-  ]
+  "forge:condition": {
+    "type": "forge:mod_loaded",
+    "modid": "immersiveengineering"
+  }
 }

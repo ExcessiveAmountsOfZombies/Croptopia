@@ -42,10 +42,8 @@
       ]
     }
   ],
-  "conditions": [
-    {
+  "forge:condition": {
       "type": "forge:mod_loaded",
       "modid": "botanypots"
     }
-  ]
 }
