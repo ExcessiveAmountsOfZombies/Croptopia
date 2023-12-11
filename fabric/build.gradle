@@ -49,7 +49,7 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    modImplementation('com.epherical.epherolib:EpheroLib-fabric:1.2.0-1.20.2')
+    modImplementation('com.epherical.epherolib:EpheroLib-fabric:1.2.0-1.20.4')
     modCompileOnly "vazkii.patchouli:Patchouli:1.19-74-FABRIC-SNAPSHOT"
 
     modCompileOnly "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
