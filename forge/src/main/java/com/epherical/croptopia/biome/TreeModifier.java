@@ -1,19 +1,14 @@
 package com.epherical.croptopia.biome;
 
-import com.epherical.croptopia.CroptopiaForge;
 import com.epherical.croptopia.common.MiscNames;
-import com.epherical.croptopia.common.generator.PlacedFeatureKeys;
 import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.mixin.ServerLifecycleHookAccessor;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.biome.Biome;
@@ -22,14 +17,10 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
-import net.minecraftforge.registries.DataPackRegistryEvent;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Locale;
 
 import static com.epherical.croptopia.CroptopiaForge.createIdentifier;

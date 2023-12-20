@@ -5,6 +5,7 @@
   "refmap": "croptopia.refmap.json",
   "mixins": [
     "AgeInvokerMixin",
+    "ItemMixin",
     "LootPoolAccessor",
     "LootPoolBuilderAccessor",
     "LootTableAccessor",
