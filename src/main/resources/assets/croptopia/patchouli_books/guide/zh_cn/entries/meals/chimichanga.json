@@ -1,0 +1,12 @@
+{
+	"name": "墨西哥炸卷饼",
+	"icon": "croptopia:chimichanga",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:chimichanga",
+			"text": "墨西哥炸卷饼 的合成配方"
+		}
+	]
+}

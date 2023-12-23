@@ -1,0 +1,12 @@
+{
+	"name": "甜甜圈",
+	"icon": "croptopia:doughnut",
+	"category": "croptopia:snacks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:doughnut",
+			"text": "甜甜圈 的合成配方."
+		}
+	]
+}

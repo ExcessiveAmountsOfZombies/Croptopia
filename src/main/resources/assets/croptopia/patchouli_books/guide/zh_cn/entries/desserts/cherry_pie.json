@@ -1,0 +1,12 @@
+{
+	"name": "樱桃派",
+	"icon": "croptopia:cherry_pie",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:cherry_pie",
+			"text": "樱桃派 的合成配方."
+		}
+	]
+}

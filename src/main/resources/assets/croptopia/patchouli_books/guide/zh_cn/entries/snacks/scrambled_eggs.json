@@ -1,0 +1,12 @@
+{
+	"name": "炒蛋",
+	"icon": "croptopia:scrambled_eggs",
+	"category": "croptopia:snacks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:scrambled_eggs",
+			"text": "炒蛋 的合成配方."
+		}
+	]
+}

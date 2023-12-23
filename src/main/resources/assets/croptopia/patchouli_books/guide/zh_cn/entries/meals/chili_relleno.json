@@ -1,0 +1,12 @@
+{
+	"name": "墨西哥塞蛋辣椒",
+	"icon": "croptopia:chili_relleno",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:chili_relleno",
+			"text": "墨西哥塞蛋辣椒 的合成配方"
+		}
+	]
+}

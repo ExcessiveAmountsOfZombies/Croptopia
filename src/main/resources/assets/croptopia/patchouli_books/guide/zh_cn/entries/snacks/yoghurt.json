@@ -1,0 +1,12 @@
+{
+	"name": "酸奶",
+	"icon": "croptopia:yoghurt",
+	"category": "croptopia:snacks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:yoghurt",
+			"text": "酸奶 的合成配方."
+		}
+	]
+}

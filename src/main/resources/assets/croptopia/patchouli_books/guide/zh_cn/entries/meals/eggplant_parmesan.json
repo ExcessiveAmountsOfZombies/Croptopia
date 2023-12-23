@@ -1,0 +1,12 @@
+{
+	"name": "帕玛森茄子",
+	"icon": "croptopia:eggplant_parmesan",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_eggplant_parmesan",
+			"text": "帕玛森茄子 的合成配方"
+		}
+	]
+}

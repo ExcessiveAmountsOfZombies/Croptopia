@@ -1,0 +1,12 @@
+{
+	"name": "奶酪披萨",
+	"icon": "croptopia:cheese_pizza",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:cheese_pizza",
+			"text": "奶酪披萨 的合成配方"
+		}
+	]
+}

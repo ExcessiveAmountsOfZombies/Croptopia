@@ -1,0 +1,12 @@
+{
+	"name": "墨西哥玉米粽",
+	"icon": "croptopia:tamales",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:tamales",
+			"text": "墨西哥玉米粽 的合成配方"
+		}
+	]
+}

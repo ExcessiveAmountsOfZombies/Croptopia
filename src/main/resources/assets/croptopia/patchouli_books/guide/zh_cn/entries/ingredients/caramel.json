@@ -1,0 +1,12 @@
+{
+	"name": "焦糖",
+	"icon": "croptopia:caramel",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:smelting",
+			"recipe": "croptopia:caramel_from_sugar",
+			"text": "焦糖 的合成配方."
+		}
+	]
+}

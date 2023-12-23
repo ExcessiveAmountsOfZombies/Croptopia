@@ -1,0 +1,12 @@
+{
+	"name": "至尊披萨",
+	"icon": "croptopia:supreme_pizza",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:supreme_pizza",
+			"text": "至尊披萨 的合成配方"
+		}
+	]
+}

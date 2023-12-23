@@ -1,0 +1,12 @@
+{
+	"name": "蒸绿豆",
+	"icon": "croptopia:steamed_green_beans",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_steamed_green_beans",
+			"text": "蒸绿豆 的合成配方"
+		}
+	]
+}

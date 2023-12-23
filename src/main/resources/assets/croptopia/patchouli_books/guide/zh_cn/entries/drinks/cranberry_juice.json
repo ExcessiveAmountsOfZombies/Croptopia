@@ -1,0 +1,12 @@
+{
+	"name": "蔓越莓汁",
+	"icon": "croptopia:cranberry_juice",
+	"category": "croptopia:drinks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:cranberry_juice",
+			"text": "蔓越莓汁 的合成配方."
+		}
+	]
+}

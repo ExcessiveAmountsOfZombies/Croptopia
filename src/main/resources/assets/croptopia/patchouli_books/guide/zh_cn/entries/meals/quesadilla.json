@@ -1,0 +1,12 @@
+{
+	"name": "墨西哥奶酪薄饼",
+	"icon": "croptopia:quesadilla",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:quesadilla",
+			"text": "墨西哥奶酪薄饼 的合成配方"
+		}
+	]
+}

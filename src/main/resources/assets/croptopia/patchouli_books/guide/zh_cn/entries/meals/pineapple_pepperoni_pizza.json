@@ -1,0 +1,12 @@
+{
+	"name": "菠萝红肠披萨",
+	"icon": "croptopia:pineapple_pepperoni_pizza",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:pineapple_pepperoni_pizza",
+			"text": "菠萝红肠披萨 的合成配方. $(br)$(o)披萨上应该放菠萝."
+		}
+	]
+}

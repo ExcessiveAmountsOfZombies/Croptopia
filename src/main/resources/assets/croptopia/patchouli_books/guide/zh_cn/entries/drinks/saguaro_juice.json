@@ -1,0 +1,12 @@
+{
+	"name": "巨人柱汁",
+	"icon": "croptopia:saguaro_juice",
+	"category": "croptopia:drinks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:saguaro_juice",
+			"text": "巨人柱汁 的合成配方."
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "三奶蛋糕",
+	"icon": "croptopia:tres_leche_cake",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:tres_leche_cake",
+			"text": "三奶蛋糕 的合成配方."
+		}
+	]
+}

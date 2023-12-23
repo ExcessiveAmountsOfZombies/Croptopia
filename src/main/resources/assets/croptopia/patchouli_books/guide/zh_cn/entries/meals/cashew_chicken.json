@@ -1,0 +1,12 @@
+{
+	"name": "腰果鸡丁",
+	"icon": "croptopia:cashew_chicken",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:cashew_chicken",
+			"text": "腰果鸡丁 的合成配方"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"name": "盐",
+	"icon": "croptopia:salt",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "盐稀少的生成在河流和冰河生物群落中. 它们看起来像更白的沙子. "
+		}
+	]
+}

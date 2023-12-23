@@ -1,0 +1,12 @@
+{
+	"name": "意大利饺子",
+	"icon": "croptopia:ravioli",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:ravioli",
+			"text": "意大利饺子 的合成配方."
+		}
+	]
+}

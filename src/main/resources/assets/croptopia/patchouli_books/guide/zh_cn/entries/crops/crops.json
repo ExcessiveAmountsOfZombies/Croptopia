@@ -1,0 +1,11 @@
+{
+	"name": "植物",
+	"icon": "croptopia:eggplant_seed",
+	"category": "croptopia:crops",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "农作物遍布世界各地。它们会在特定的生物群落中生成。在2.0.0中，作物的生成现在由数据包决定，而不是由生物群落的'类别'决定，现在是由生物群落名称决定。$(br)$(br)如果您希望将某些作物添加到修改后的生物群落中，请在我的 github 页面上提交 Issue。"
+		}
+	]
+}

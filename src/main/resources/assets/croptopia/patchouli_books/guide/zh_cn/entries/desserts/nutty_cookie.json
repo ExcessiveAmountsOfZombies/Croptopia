@@ -1,0 +1,12 @@
+{
+	"name": "坚果曲奇",
+	"icon": "croptopia:nutty_cookie",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:nutty_cookie",
+			"text": "坚果曲奇 的合成配方."
+		}
+	]
+}
