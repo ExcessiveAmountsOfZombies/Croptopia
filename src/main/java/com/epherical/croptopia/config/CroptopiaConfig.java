@@ -7,6 +7,7 @@ import com.epherical.epherolib.libs.org.spongepowered.configurate.loader.Abstrac
 import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.google.common.collect.TreeMultimap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +29,9 @@ public class CroptopiaConfig extends CommonConfig {
 
     public boolean generateSaltInWorld = true;
     public List<TreeConfiguration> treeConfigurations = new ArrayList<>();
-    public Multimap<ResourceKey<Biome>, TreeConfiguration> treeMap = HashMultimap.create();
+    public TreeMultimap<ResourceKey<Biome>, TreeConfiguration> treeMap = TreeMultimap.create(
+            Comparator.comparing(ResourceKey::toString),
+            Comparator.comparing(o -> o.getFeatureKey().toString()));
     public boolean rightClickHarvest = true;
 
 
