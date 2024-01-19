@@ -1,0 +1,12 @@
+{
+	"name": "葡萄干燕麦曲奇",
+	"icon": "croptopia:raisin_oatmeal_cookie",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:raisin_oatmeal_cookie",
+			"text": "葡萄干燕麦曲奇 的合成配方."
+		}
+	]
+}

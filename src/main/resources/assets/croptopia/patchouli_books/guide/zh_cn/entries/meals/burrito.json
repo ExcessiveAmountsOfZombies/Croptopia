@@ -1,0 +1,12 @@
+{
+	"name": "墨西哥卷饼",
+	"icon": "croptopia:burrito",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:burrito",
+			"text": "墨西哥卷饼 的合成配方"
+		}
+	]
+}

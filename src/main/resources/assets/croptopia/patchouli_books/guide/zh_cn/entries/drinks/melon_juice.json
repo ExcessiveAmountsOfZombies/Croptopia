@@ -1,0 +1,12 @@
+{
+	"name": "西瓜汁",
+	"icon": "croptopia:melon_juice",
+	"category": "croptopia:drinks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:melon_juice",
+			"text": "西瓜汁 的合成配方."
+		}
+	]
+}

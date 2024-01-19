@@ -1,0 +1,12 @@
+{
+	"name": "芝士汉堡",
+	"icon": "croptopia:cheeseburger",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:cheeseburger",
+			"text": "芝士汉堡 的合成配方"
+		}
+	]
+}

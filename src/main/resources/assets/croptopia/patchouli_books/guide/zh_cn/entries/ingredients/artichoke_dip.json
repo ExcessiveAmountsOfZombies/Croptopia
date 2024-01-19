@@ -1,0 +1,12 @@
+{
+	"name": "洋蓟蘸酱",
+	"icon": "croptopia:artichoke_dip",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:artichoke_dip",
+			"text": "洋蓟蘸酱 的合成配方."
+		}
+	]
+}

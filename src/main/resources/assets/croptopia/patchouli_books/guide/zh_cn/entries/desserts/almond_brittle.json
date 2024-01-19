@@ -1,0 +1,12 @@
+{
+	"name": "扁桃仁脆饼",
+	"icon": "croptopia:almond_brittle",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:almond_brittle",
+			"text": "扁桃仁脆饼 的合成配方."
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "香蕉冰沙",
+	"icon": "croptopia:banana_smoothie",
+	"category": "croptopia:drinks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:banana_smoothie",
+			"text": "香蕉冰沙 的合成配方."
+		}
+	]
+}

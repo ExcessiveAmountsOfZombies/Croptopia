@@ -1,0 +1,12 @@
+{
+	"name": "大黄酥",
+	"icon": "croptopia:rhubarb_crisp",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_rhubarb_crisp",
+			"text": "大黄酥 的合成配方"
+		}
+	]
+}

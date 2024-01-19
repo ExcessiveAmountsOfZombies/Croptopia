@@ -1,0 +1,12 @@
+{
+	"name": "马铃薯汤",
+	"icon": "croptopia:potato_soup",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_potato_soup",
+			"text": "马铃薯汤 的合成配方"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "烤芜菁",
+	"icon": "croptopia:roasted_turnips",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_roasted_turnips",
+			"text": "烤芜菁 的合成配方"
+		}
+	]
+}

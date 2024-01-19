@@ -1,0 +1,12 @@
+{
+	"name": "意大利香肠",
+	"icon": "croptopia:pepperoni",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:pepperoni",
+			"text": "意大利香肠 的合成配方."
+		}
+	]
+}

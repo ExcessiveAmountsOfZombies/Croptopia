@@ -1,0 +1,11 @@
+{
+	"name": "树木",
+	"icon": "croptopia:apple_sapling",
+	"category": "croptopia:crops",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "在世界中，你可以找到各种树木上长着各种 Croptopia 的果物（作物）。要收获它们，可以在它们完全长成后点击右键。"
+		}
+	]
+}

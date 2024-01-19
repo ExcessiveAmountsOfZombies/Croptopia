@@ -1,0 +1,12 @@
+{
+	"name": "康沃尔馅饼",
+	"icon": "croptopia:cornish_pasty",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_cornish_pasty",
+			"text": "康沃尔馅饼 的合成配方"
+		}
+	]
+}

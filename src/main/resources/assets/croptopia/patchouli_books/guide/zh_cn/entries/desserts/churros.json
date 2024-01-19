@@ -1,0 +1,12 @@
+{
+	"name": "墨西哥油条",
+	"icon": "croptopia:churros",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:churros",
+			"text": "墨西哥油条 的合成配方."
+		}
+	]
+}

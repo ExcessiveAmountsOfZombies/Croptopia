@@ -1,0 +1,12 @@
+{
+	"name": "奶酪",
+	"icon": "croptopia:cheese",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:cheese",
+			"text": "奶酪 的合成配方."
+		}
+	]
+}

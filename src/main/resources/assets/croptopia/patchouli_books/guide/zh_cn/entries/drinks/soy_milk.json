@@ -1,0 +1,12 @@
+{
+	"name": "豆奶",
+	"icon": "croptopia:soy_milk",
+	"category": "croptopia:drinks",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:soy_milk",
+			"text": "豆奶 的合成配方."
+		}
+	]
+}

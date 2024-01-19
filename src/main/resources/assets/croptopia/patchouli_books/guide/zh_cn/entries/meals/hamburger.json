@@ -1,0 +1,12 @@
+{
+	"name": "汉堡",
+	"icon": "croptopia:hamburger",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:hamburger",
+			"text": "汉堡 的合成配方"
+		}
+	]
+}

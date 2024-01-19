@@ -1,0 +1,12 @@
+{
+	"name": "茄子甜椒酱",
+	"icon": "croptopia:ajvar",
+	"category": "croptopia:ingredients",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_ajvar",
+			"text": "茄子甜椒酱 的合成配方."
+		}
+	]
+}

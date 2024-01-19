@@ -1,0 +1,12 @@
+{
+	"name": "香蕉坚果面包",
+	"icon": "croptopia:banana_nut_bread",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:banana_nut_bread",
+			"text": "香蕉坚果面包(WIP) 的合成配方."
+		}
+	]
+}

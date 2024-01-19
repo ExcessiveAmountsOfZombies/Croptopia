@@ -1,0 +1,12 @@
+{
+	"name": "伊顿麦斯",
+	"icon": "croptopia:eton_mess",
+	"category": "croptopia:desserts",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:shaped_eton_mess",
+			"text": "伊顿麦斯 的合成配方."
+		}
+	]
+}

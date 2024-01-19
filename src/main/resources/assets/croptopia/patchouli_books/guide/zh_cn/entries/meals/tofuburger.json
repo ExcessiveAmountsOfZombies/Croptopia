@@ -1,0 +1,12 @@
+{
+	"name": "豆腐汉堡",
+	"icon": "croptopia:tofuburger",
+	"category": "croptopia:meals",
+	"pages": [
+		{
+			"type": "patchouli:crafting",
+			"recipe": "croptopia:tofuburger",
+			"text": "豆腐汉堡 的合成配方"
+		}
+	]
+}
