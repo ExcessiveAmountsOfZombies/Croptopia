@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecreaft:bread"
+    },
+    {
+      "tag": "${dependent}:tuna"
+    },
+    {
+      "tag": "${dependent}:olive_oil"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "tag": "${dependent}:celery"
+    }
+  ]
+  "result": {
+    "item": "croptopia:tuna_sandwich",
+    "count": 1
+  }
+}
