@@ -21,7 +21,7 @@
     "orange_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:orange_sapling"] } ] } },
     "persimmon_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:persimmon_sapling"] } ] } },
     "plum_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:plum_sapling"] } ] } },
-    "starfruit_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:plum_sapling"] } ] } },
+    "starfruit_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:starfruit_sapling"] } ] } },
     "pear_sapling": { "trigger": "minecraft:inventory_changed","conditions": { "items": [ { "items": ["croptopia:pear_sapling"] } ] } }
   }
 }
