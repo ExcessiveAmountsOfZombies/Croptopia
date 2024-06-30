@@ -310,11 +310,11 @@
   "item.croptopia.whipping_cream": "휘핑크림",
   "item.croptopia.vanilla_seeds": "바닐라 씨앗",
 
-  "item.croptopia.cinnamon_sapling": "시나몬나무 묘목",
-  "item.croptopia.cinnamon_log": "시나몬나무 원목",
-  "item.croptopia.stripped_cinnamon_log": "껍질 벗긴 시나몬나무 원목",
-  "item.croptopia.cinnamon_wood": "시나몬 나무",
-  "item.croptopia.stripped_cinnamon_wood": "껍질 벗긴 시나몬나무",
+  "item.croptopia.cinnamon_sapling": "계피나무 묘목",
+  "item.croptopia.cinnamon_log": "계피나무 원목",
+  "item.croptopia.stripped_cinnamon_log": "껍질 벗긴 계피나무 원목",
+  "item.croptopia.cinnamon_wood": "계피나무",
+  "item.croptopia.stripped_cinnamon_wood": "껍질 벗긴 계피나무",
 
   "item.croptopia.shepherds_pie": "코타지 파이",
   "item.croptopia.beef_wellington": "비프 웰링턴",
@@ -487,10 +487,10 @@
   "block.croptopia.walnut_sapling": "호두나무 묘목",
   "block.croptopia.cinnamon_sapling": "계피나무 묘목",
 
-  "block.croptopia.cinnamon_log": "시나몬나무 원목",
-  "block.croptopia.stripped_cinnamon_log": "껍질 벗긴 시나몬나무 원목",
-  "block.croptopia.cinnamon_wood": "시나몬나무",
-  "block.croptopia.stripped_cinnamon_wood": "껍질 벗긴 시나몬나무",
+  "block.croptopia.cinnamon_log": "계피나무 원목",
+  "block.croptopia.stripped_cinnamon_log": "껍질 벗긴 계피나무 원목",
+  "block.croptopia.cinnamon_wood": "계피나무",
+  "block.croptopia.stripped_cinnamon_wood": "껍질 벗긴 계피나무",
   "block.croptopia.cinnamon_leaves": "계피 잎",
 
   "advancements.croptopia.root.description": "호미질이 참 시원찮아!",
@@ -552,7 +552,7 @@
   "itemGroup.croptopia.croptopia": "크롭토피아",
   "itemGroup.croptopia": "크롭토피아",
 
-  "info.croptopia.seed": "이씨앗은 다음과 같이 분류된 바이옴에 드롭됩니다",
+  "info.croptopia.seed": "이 씨앗은 다음과 같이 분류된 바이옴에 드롭됩니다.",
 
   "item.croptopia.rhubarb_pie": "루바브 파이",
   "item.croptopia.roasted_pumpkin_seeds": "볶은 호박씨",
