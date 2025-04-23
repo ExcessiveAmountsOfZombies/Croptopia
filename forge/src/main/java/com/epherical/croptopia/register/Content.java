@@ -48,7 +48,6 @@ import java.util.stream.Stream;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
 import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
-import static com.epherical.croptopia.common.ItemNamesV2.*;
 import static com.epherical.croptopia.util.FoodConstructor.*;
 
 public class Content {

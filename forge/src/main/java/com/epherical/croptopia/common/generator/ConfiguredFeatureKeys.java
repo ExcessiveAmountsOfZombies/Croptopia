@@ -5,8 +5,8 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 
 import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
 import static com.epherical.croptopia.common.ItemNamesV2.*;
-import static net.minecraft.core.registries.Registries.*;
-import static net.minecraft.resources.ResourceKey.*;
+import static net.minecraft.core.registries.Registries.CONFIGURED_FEATURE;
+import static net.minecraft.resources.ResourceKey.create;
 
 public class ConfiguredFeatureKeys {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALMOND_TREE_KEY = create(CONFIGURED_FEATURE, (createIdentifier(ALMOND + "_tree")));

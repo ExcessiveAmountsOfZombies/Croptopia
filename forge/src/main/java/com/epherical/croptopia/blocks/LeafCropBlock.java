@@ -28,8 +28,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import java.util.Random;
-
 public class LeafCropBlock extends CroptopiaCropBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
     public static final IntegerProperty DISTANCE = BlockStateProperties.DISTANCE;

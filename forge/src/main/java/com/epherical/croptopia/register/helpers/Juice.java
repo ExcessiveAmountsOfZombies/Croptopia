@@ -5,39 +5,35 @@ import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.*;
+import static com.epherical.croptopia.util.FoodConstructor.JUICE_5;
+import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
 
-public class Smoothie implements ItemLike {
-    private static final List<Smoothie> INSTANCES = new ArrayList<>();
+public class Juice implements ItemLike {
+    private static final List<Juice> INSTANCES = new ArrayList<>();
 
     private final String name;
     private final ItemConvertibleWithPlural crop;
     private final boolean sweet;
     private Item item;
 
-    public Smoothie(String name, ItemConvertibleWithPlural cropItemName, boolean sweet) {
+    public Juice(String name, ItemConvertibleWithPlural crop, boolean sweet) {
+        Content.ITEM_REGISTER.reg(this::registerItem);
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
-        this.crop = cropItemName;
-        Content.ITEM_REGISTER.reg(this::registerItems);
-
+        this.crop = crop;
         INSTANCES.add(this);
     }
 
-    public Smoothie(String name, ItemConvertibleWithPlural cropItemName) {
-        this(name, cropItemName, true);
+    public Juice(String name, ItemConvertibleWithPlural crop) {
+        this(name, crop, true);
     }
 
     public ItemConvertibleWithPlural getCrop() {
@@ -53,11 +49,12 @@ public class Smoothie implements ItemLike {
         return item;
     }
 
-    public void registerItems(RegisterFunction<Item> register) {
-        item = register.register(CroptopiaMod.createIdentifier(name),  () -> new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+    public void registerItem(RegisterFunction<Item> register) {
+        this.item = register.register(CroptopiaMod.createIdentifier(name), () ->
+                new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
     }
 
-    public static List<Smoothie> copy() {
+    public static List<Juice> copy() {
         return INSTANCES;
     }
 }

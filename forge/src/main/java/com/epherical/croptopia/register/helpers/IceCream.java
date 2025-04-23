@@ -1,28 +1,27 @@
 package com.epherical.croptopia.register.helpers;
 
 import com.epherical.croptopia.CroptopiaMod;
-import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.*;
+import static com.epherical.croptopia.util.FoodConstructor.ICE_CREAM_7;
+import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
-public class Jam implements ItemLike {
-    private static final List<Jam> INSTANCES = new ArrayList<>();
+public class IceCream implements ItemLike {
+    private static final List<IceCream> INSTANCES = new ArrayList<>();
 
     private final String name;
     private final ItemConvertibleWithPlural crop;
     private Item item;
 
-    public Jam(String name, ItemConvertibleWithPlural crop) {
+    public IceCream(String name, ItemConvertibleWithPlural crop) {
         Content.ITEM_REGISTER.reg(this::registerItem);
         this.name = name;
         this.crop = crop;
@@ -43,11 +42,11 @@ public class Jam implements ItemLike {
     }
 
     public void registerItem(RegisterFunction<Item> register) {
-        item = register.register(CroptopiaMod.createIdentifier(name), () ->
-                new Drink(createGroup().craftRemainder(Items.GLASS_BOTTLE).food(createBuilder(JAM_3).alwaysEat().build())));
+        this.item = register.register(CroptopiaMod.createIdentifier(name), () -> new Item(createGroup().food(createFood(ICE_CREAM_7))));
     }
 
-    public static List<Jam> copy() {
+    public static List<IceCream> copy() {
         return INSTANCES;
     }
+
 }

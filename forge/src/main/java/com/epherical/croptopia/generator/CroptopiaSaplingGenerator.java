@@ -1,13 +1,12 @@
 package com.epherical.croptopia.generator;
 
 
-import java.util.function.Supplier;
-import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+
+import java.util.function.Supplier;
 
 public class CroptopiaSaplingGenerator extends AbstractTreeGrower {
 

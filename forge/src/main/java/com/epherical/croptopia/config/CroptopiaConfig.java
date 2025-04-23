@@ -6,7 +6,6 @@ import com.epherical.epherolib.libs.org.spongepowered.configurate.ConfigurationN
 import com.epherical.epherolib.libs.org.spongepowered.configurate.loader.AbstractConfigurationLoader;
 import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
 import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import com.google.common.collect.TreeMultimap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;

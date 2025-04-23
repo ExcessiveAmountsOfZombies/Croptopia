@@ -13,26 +13,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.*;
+import static com.epherical.croptopia.util.FoodConstructor.JUICE_5;
+import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
 
-public class Juice implements ItemLike {
-    private static final List<Juice> INSTANCES = new ArrayList<>();
+public class Smoothie implements ItemLike {
+    private static final List<Smoothie> INSTANCES = new ArrayList<>();
 
     private final String name;
     private final ItemConvertibleWithPlural crop;
     private final boolean sweet;
     private Item item;
 
-    public Juice(String name, ItemConvertibleWithPlural crop, boolean sweet) {
-        Content.ITEM_REGISTER.reg(this::registerItem);
+    public Smoothie(String name, ItemConvertibleWithPlural cropItemName, boolean sweet) {
         this.sweet = sweet; // property not yet used, will be used in upcoming saturation overhaul
         this.name = name;
-        this.crop = crop;
+        this.crop = cropItemName;
+        Content.ITEM_REGISTER.reg(this::registerItems);
+
         INSTANCES.add(this);
     }
 
-    public Juice(String name, ItemConvertibleWithPlural crop) {
-        this(name, crop, true);
+    public Smoothie(String name, ItemConvertibleWithPlural cropItemName) {
+        this(name, cropItemName, true);
     }
 
     public ItemConvertibleWithPlural getCrop() {
@@ -48,12 +50,11 @@ public class Juice implements ItemLike {
         return item;
     }
 
-    public void registerItem(RegisterFunction<Item> register) {
-        this.item = register.register(CroptopiaMod.createIdentifier(name), () ->
-                new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
+    public void registerItems(RegisterFunction<Item> register) {
+        item = register.register(CroptopiaMod.createIdentifier(name),  () -> new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEat().build()).craftRemainder(Items.GLASS_BOTTLE)));
     }
 
-    public static List<Juice> copy() {
+    public static List<Smoothie> copy() {
         return INSTANCES;
     }
 }

@@ -20,6 +20,6 @@ plugins {
 rootProject.name = 'croptopia3'
 
 //include 'shared'
-include 'fabric'
+//include 'fabric'
 include 'forge'
 
