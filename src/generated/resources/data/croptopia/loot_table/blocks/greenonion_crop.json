@@ -8,16 +8,6 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "croptopia:greenonion"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
       "conditions": [
         {
           "block": "croptopia:greenonion_crop",

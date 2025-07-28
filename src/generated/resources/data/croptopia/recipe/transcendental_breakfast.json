@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "croptopia:mountain_salt"
+    },
+    "2": {
+      "item": "croptopia:nether_star_cake"
+    },
+    "3": {
+      "item": "croptopia:tuna_sandwich"
+    },
+    "4": {
+      "item": "croptopia:dragon_egg_omelette"
+    },
+    "5": {
+      "item": "croptopia:cooked_ravager_meat"
+    },
+    "6": {
+      "item": "croptopia:the_big_breakfast"
+    }
+  },
+  "pattern": [
+    "616",
+    "234",
+    "656"
+  ],
+  "result": {
+    "count": 1,
+    "id": "croptopia:transcendental_breakfast"
+  }
+}

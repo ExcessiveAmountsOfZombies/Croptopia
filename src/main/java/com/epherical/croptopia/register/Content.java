@@ -4,6 +4,7 @@ import com.epherical.croptopia.common.BlockNames;
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.items.Drink;
+import com.epherical.croptopia.items.ReferenceInfiniteItem;
 import com.epherical.croptopia.items.ReferenceItem;
 import com.epherical.croptopia.items.Soup;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
@@ -23,12 +24,16 @@ import com.epherical.croptopia.util.RegisterFunction;
 import com.epherical.croptopia.util.RegistryDelay;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -483,6 +488,13 @@ public class Content {
     public static final Item COOKING_OIL; // crafted by using (avocado/walnut/almond/corn/vegetables/w/e else for oils)
     public static final FarmlandCrop FLAX;*/
 
+    public static Furnace COOKED_RAVAGER_MEAT = new Furnace(ItemNamesV2.COOKED_RAVAGER_MEAT, false, REG_10);
+    public static Item DRAGON_EGG_OMELETTE;
+    public static Item MOUNTAIN_SALT;
+    public static Item NETHER_STAR_CAKE;
+    public static Item RAW_RAVAGER_MEAT;
+    public static Item TRANSCENDENTAL_BREAKFAST;
+
 
     public static Block SALT_ORE_BLOCK;
     public static Item SALT_ORE;
@@ -694,6 +706,36 @@ public class Content {
         SWEET_CREPES = register.register(createIdentifier(ItemNamesV2.SWEET_CREPES), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_8))));
         THE_BIG_BREAKFAST = register.register(createIdentifier(ItemNamesV2.THE_BIG_BREAKFAST), () -> new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_20)),
                 Component.literal("Patricia! Daddy want the Big Breakfast").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY))));
+
+        DRAGON_EGG_OMELETTE = register.register(createIdentifier(ItemNamesV2.DRAGON_EGG_OMELETTE), () ->
+                new ReferenceItem(createGroup().food(FoodConstructor.createBuilder(REG_20)
+                                .alwaysEdible()
+                                .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000), 1.0F)
+                                .build())
+                        .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true),
+                        Component.literal("A tier 3 food, requiring chef level 30")));
+        MOUNTAIN_SALT = register.register(createIdentifier(ItemNamesV2.MOUNTAIN_SALT), () ->
+                new Item(createGroup().component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
+        NETHER_STAR_CAKE = register.register(createIdentifier(ItemNamesV2.NETHER_STAR_CAKE), () ->
+                new Item(createGroup().food(FoodConstructor.createBuilder(REG_20)
+                                .alwaysEdible()
+                                .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000), 1.0F)
+                                .build())
+                        .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)));
+        RAW_RAVAGER_MEAT = register.register(createIdentifier(ItemNamesV2.RAW_RAVAGER_MEAT), () ->
+                new Item(createGroup().food(FoodConstructor.createBuilder(REG_3)
+                        .effect(() -> new MobEffectInstance(MobEffects.POISON, 200), 0.25F)
+                        .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 400), 0.15F)
+                        .build())));
+        TRANSCENDENTAL_BREAKFAST = register.register(createIdentifier(ItemNamesV2.TRANSCENDENTAL_BREAKFAST), () ->
+                new ReferenceInfiniteItem(createGroup().food(FoodConstructor.createBuilder(REG_20)
+                                .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 100), 0.1F)
+                                .build())
+                        .stacksTo(1)
+                        .fireResistant()
+                        .rarity(Rarity.EPIC)
+                        .component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true),
+                        Component.literal("Some say there are 7 billion bellinis in here...")));
 
         SALT_ORE = register.register(createIdentifier(ItemNamesV2.SALT_ORE), () -> new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup()));
     }

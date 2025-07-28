@@ -13,6 +13,15 @@
           "type": "minecraft:item",
           "conditions": [
             {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "items": "minecraft:shears"
+                }
+              }
+            },
+            {
               "block": "croptopia:apple_crop",
               "condition": "minecraft:block_state_property",
               "properties": {
@@ -36,6 +45,33 @@
         {
           "type": "minecraft:empty",
           "weight": 95
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "items": "minecraft:shears"
+              }
+            }
+          ],
+          "functions": [
+            {
+              "block": "croptopia:apple_crop",
+              "function": "minecraft:copy_state",
+              "properties": [
+                "age"
+              ]
+            }
+          ],
+          "name": "croptopia:apple_crop"
         }
       ],
       "rolls": 1.0

@@ -101,7 +101,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
 
-    implementation ('com.epherical.epherolib:EpheroLib-forge:1.2.0-1.21.1')
+    implementation ('com.epherical.epherolib:EpheroLib-neoforge:1.2.0-1.21.1')
     implementation ("vazkii.patchouli:Patchouli:1.21-87-NEOFORGE")
 }
 

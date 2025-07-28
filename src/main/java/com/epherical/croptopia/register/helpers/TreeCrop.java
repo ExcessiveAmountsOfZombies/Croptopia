@@ -15,6 +15,7 @@ import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -47,6 +48,8 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagCategory category;
     private Item item;
     private Block leaves;
+
+    private Item leavesItem;
 
     private Block leafType;
 
@@ -135,6 +138,10 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return placedFeatureKey;
     }
 
+    public Item getLeavesItem() {
+        return leavesItem;
+    }
+
     /*public static void registerBlocks(RegisterFunction<Block> register) {
         for (TreeCrop treeCrop : TREE_CROPS) {
             register.register(createIdentifier(treeCrop.name() + "_crop"), treeCrop.asBlock());
@@ -163,6 +170,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
             item = Items.APPLE;
         }
         saplingItem = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup()));
+        leavesItem = register.register(createIdentifier(name() + "_crop"), () -> new BlockItem(leaves, createGroup()));
     }
 
     public void registerBlock(RegisterFunction<Block> register) {
@@ -186,7 +194,8 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 SimpleStateProvider.simple(logType.defaultBlockState()),
                 new StraightTrunkPlacer(i, j, k),
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leafType.defaultBlockState(), 90).add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20).build()),
+                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leafType.defaultBlockState()
+                        .setValue(LeafCropBlock.PERSISTENT, false), 90).add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20).build()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
     }

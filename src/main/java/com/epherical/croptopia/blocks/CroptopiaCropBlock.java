@@ -1,9 +1,8 @@
 package com.epherical.croptopia.blocks;
 
-import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.items.SeedItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.core.Direction;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
@@ -22,6 +21,8 @@ import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.util.TriState;
 
 public class CroptopiaCropBlock extends CropBlock {
     protected static final VoxelShape[] AGE_TO_SHAPE = new VoxelShape[]{
@@ -50,21 +51,31 @@ public class CroptopiaCropBlock extends CropBlock {
     }
 
     @Override // JANK
-    public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-        if (world.getChunk(pos).getHighestGeneratedStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        if (level.getChunk(pos).getHighestGeneratedStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
-            if (seed.getCategory() != null && world.getBiome(pos).is(seed.getCategory())) {
-                return super.canSurvive(state, world, pos);
+            if (seed.getCategory() != null && level.getBiome(pos).is(seed.getCategory())) {
+                TriState soilDecision = level.getBlockState(pos.below()).canSustainPlant(level, pos.below(), Direction.UP, state);
+                if (!soilDecision.isDefault()) {
+                    return soilDecision.isTrue();
+                } else {
+                    return super.canSurvive(state, level, pos);
+                }
             }
-        } else if (world.getChunk(pos).getHighestGeneratedStatus().getIndex() == ChunkStatus.FULL.getIndex()) {
+        } else if (level.getChunk(pos).getHighestGeneratedStatus().getIndex() == ChunkStatus.FULL.getIndex()) {
             // ON PLAYER PLACEMENT
-            return super.canSurvive(state, world, pos);
+            return super.canSurvive(state, level, pos);
         }
         return false;
     }
 
     protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
-        return super.mayPlaceOn(floor, world, pos) || floor.is(BlockTags.DIRT) || floor.is(BlockTags.SAND);
+        return super.mayPlaceOn(floor, world, pos)
+                || floor.is(BlockTags.DIRT)
+                || floor.is(BlockTags.SAND)
+                || floor.is(Tags.Blocks.VILLAGER_FARMLANDS)
+                || floor.is(com.epherical.croptopia.common.Tags.FARMLAND)
+                || floor.is(com.epherical.croptopia.common.Tags.FARMLANDS);
     }
 
 

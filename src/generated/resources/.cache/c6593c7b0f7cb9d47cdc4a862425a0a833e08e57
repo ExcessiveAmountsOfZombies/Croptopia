@@ -1,4 +1,4 @@
-// 1.21.1	2024-11-03T13:52:58.4696535	Croptopia Independent Tags
+// 1.21.1	2025-01-15T21:02:37.5374318	Croptopia Independent Tags
 d5d511b3d7d6049c372d47ab52aac9e52d48d0d8 data/c/tags/item/almond.json
 f454e50d496ac4bf6c316fc997c1472ee59e0110 data/c/tags/item/almonds.json
 ded9bb7cd733eb505b138baa2746638bb8c5d0b9 data/c/tags/item/almond_brittles.json
@@ -112,6 +112,7 @@ c79eb16144e50f7358c9cea3f386e395f9f84fa4 data/c/tags/item/coffee_beans.json
 2a692785c0390148654d8d582a971c2f42b9c52e data/c/tags/item/cooked_anchovies.json
 d63568beb3f36a46ba23c248a83255d8e9a84687 data/c/tags/item/cooked_bacon.json
 9bd2c01f6f5eff9b09ed5311ced17fe9a7e6dfea data/c/tags/item/cooked_calamari.json
+6cfddc72f42273552b84504640d753c380d39f8a data/c/tags/item/cooked_ravager_meat.json
 2414c33914c07f88d86f23a1d409f63f25cafbc5 data/c/tags/item/cooked_shrimp.json
 12a507432af48449e259ea557be4e64684abfa11 data/c/tags/item/cooked_tuna.json
 a5f1aa44b645281048dff358981ec2570b8828e9 data/c/tags/item/cooking_pots.json
@@ -245,7 +246,7 @@ f6e603134e7eb993eebe689fc3e2e69d51a08ba5 data/c/tags/item/egg_rolls.json
 797b6694923de4b6d771bcd6fbd5adc776b8f39e data/c/tags/item/fig_saplings.json
 6cd3e8ef967ac3c121cebae7abcdbfa7c41c4818 data/c/tags/item/fish_and_chips.json
 fd734af59d946f606ce95869c1bc32705933fb59 data/c/tags/item/flour.json
-95054e42ba85aee4935c64689ea1b59e5ff19fa7 data/c/tags/item/foods.json
+506f996e8587deb59eed6e1daeed1a6c035b1a77 data/c/tags/item/foods.json
 91e0e45a45820e23ae1cdbe610ba5d0a14de5d3a data/c/tags/item/food_press.json
 9919ad751fec357d3ddebb6da3b0c9db1c513cf3 data/c/tags/item/french_fries.json
 3411473a1144bc0883d78c87c739d764f49e6443 data/c/tags/item/fried_calamari.json

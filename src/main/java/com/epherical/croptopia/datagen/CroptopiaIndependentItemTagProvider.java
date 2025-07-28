@@ -89,16 +89,16 @@ public class CroptopiaIndependentItemTagProvider extends ItemTagsProvider {
         // these should be singular, they are pluralized in the method, this is because forge seed tags don't include the "seed" portion.
         for (FarmlandCrop crop : FarmlandCrop.FARMLAND_CROPS) {
             if (crop == Content.CHILE_PEPPER) {
-                createSeedSaplingTag("seeds", "chilepepper", crop.getSeedItem());
+                createSeedSaplingTag("seeds", "chilepepper", crop.getSeedItem(), false);
             } else {
-                createSeedSaplingTag("seeds", crop.getLowercaseName(), crop.getSeedItem());
+                createSeedSaplingTag("seeds", crop.getLowercaseName(), crop.getSeedItem(), false);
             }
         }
         for (TreeCrop crop : TreeCrop.TREE_CROPS) {
-            createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSaplingItem());
+            createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSaplingItem(), true);
         }
         for (Tree crop : Tree.copy()) {
-            createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSapling());
+            createSeedSaplingTag("saplings", crop.getLowercaseName(), crop.getSapling(), true);
         }
     }
 
@@ -309,7 +309,7 @@ public class CroptopiaIndependentItemTagProvider extends ItemTagsProvider {
      * Fabric: c:apple_saplings
      * Saplings.json -> references Fabric -> references forge
      */
-    private void createSeedSaplingTag(String category, String name, Item item) {
+    private void createSeedSaplingTag(String category, String name, Item item, boolean tree) {
         String pluralSeedName;
         if (item == Content.VANILLA.getSeedItem()) {
             pluralSeedName = (item).builtInRegistryHolder().key().location().getPath();

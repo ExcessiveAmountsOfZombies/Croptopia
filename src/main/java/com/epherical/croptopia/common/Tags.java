@@ -3,8 +3,10 @@ package com.epherical.croptopia.common;
 import com.epherical.croptopia.CroptopiaMod;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,6 +104,13 @@ public class Tags {
 
     public static final TagKey<Biome> HAS_SALT = create("has_salt/" + ItemNamesV2.SALT);
 
+
+    public static final TagKey<Block> FARMLAND = create("c", "farmland");
+    public static final TagKey<Block> FARMLANDS = create("c", "farmlands");
+
+    private static TagKey<Block> create(String nm, String key) {
+        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(nm, key));
+    }
 
     private static TagKey<Biome> create(String key) {
         TagKey<Biome> biomeKey = TagKey.create(Registries.BIOME, CroptopiaMod.createIdentifier(key));

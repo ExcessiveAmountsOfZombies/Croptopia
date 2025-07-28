@@ -29,6 +29,7 @@ import com.mojang.logging.LogUtils;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
@@ -39,7 +40,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.data.loot.packs.VanillaLootTableProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -110,13 +110,13 @@ public class CroptopiaMod {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = CREATIVE_MODE_TABS.register("croptopia", () ->
             CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.croptopia"))
-            .displayItems((featureFlagSet, output) ->
-                    BuiltInRegistries.ITEM.entrySet().stream()
-                            .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
-                            .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
-                            .forEach(entry -> output.accept(entry.getValue())))
-            .icon(() -> new ItemStack(Content.COFFEE)).build());
+                    .title(Component.translatable("itemGroup.croptopia"))
+                    .displayItems((featureFlagSet, output) ->
+                            BuiltInRegistries.ITEM.entrySet().stream()
+                                    .filter(entry -> entry.getKey().location().getNamespace().equals(MOD_ID))
+                                    .sorted(Comparator.comparing(entry -> BuiltInRegistries.ITEM.getId(entry.getValue())))
+                                    .forEach(entry -> output.accept(entry.getValue())))
+                    .icon(() -> new ItemStack(Content.COFFEE)).build());
 
     public static final DeferredRegister<MapCodec<? extends BiomeModifier>> BIOME_SERIALIZER =
             DeferredRegister.create(NeoForgeRegistries.Keys.BIOME_MODIFIER_SERIALIZERS, MiscNames.MOD_ID);
@@ -182,7 +182,9 @@ public class CroptopiaMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
             functions.registerBlockLayers(block -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped()));
             BlockColors colors = Minecraft.getInstance().getBlockColors();
+            ItemColors itemColors = Minecraft.getInstance().getItemColors();
             colors.register(functions.registerLeafColors(), functions.leaves());
+            itemColors.register(functions.registerItemColors(colors), functions.items());
         }
 
         @SubscribeEvent

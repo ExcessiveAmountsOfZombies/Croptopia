@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nether_star_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:nether_star_cake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "croptopia:transcendental_breakfast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nether_star_cake"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "croptopia:transcendental_breakfast"
+    ]
+  }
+}

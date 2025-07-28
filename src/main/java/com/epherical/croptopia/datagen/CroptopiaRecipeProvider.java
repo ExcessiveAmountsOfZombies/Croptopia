@@ -2,6 +2,7 @@ package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.IceCream;
 import com.epherical.croptopia.register.helpers.Jam;
@@ -183,6 +184,7 @@ public class CroptopiaRecipeProvider extends RecipeProvider {
         offerFoodCookingRecipe(exporter, Items.BREAD, "bread", TOAST, time, exp, false);
         // only salt missing
         offerFoodCookingRecipe(exporter, WATER_BOTTLE, ItemNamesV2.WATER_BOTTLE, SALT, 800, 0.1f, false);
+        offerFoodCookingRecipe(exporter, RAW_RAVAGER_MEAT, ItemNamesV2.RAW_RAVAGER_MEAT, COOKED_RAVAGER_MEAT, 800, 0.1f, false);
 
         SimpleCookingRecipeBuilder.blasting(Ingredient.of(WATER_BOTTLE), MISC, SALT, 0.1f, 400);
     }
@@ -706,6 +708,37 @@ public class CroptopiaRecipeProvider extends RecipeProvider {
                 .define('1', Items.PORKCHOP)
                 .define('2', independentTag("salts"))
                 .unlockedBy("has_salt", has(SALT))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(FOOD, DRAGON_EGG_OMELETTE, 1)
+                .pattern(" 1 ")
+                .pattern(" 2 ")
+                .pattern("3 4")
+                .define('1', Items.DRAGON_EGG)
+                .define('2', independentTag("cheeses"))
+                .define('3', independentTag("salts"))
+                .define('4', PEPPER)
+                .unlockedBy("has_dragon_egg", has(Items.DRAGON_EGG))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(FOOD, NETHER_STAR_CAKE, 1)
+                .pattern(" 1 ")
+                .pattern("222")
+                .pattern("444")
+                .define('1', Items.NETHER_STAR)
+                .define('2', DOUGH)
+                .define('4', Items.SUGAR)
+                .unlockedBy("has_nether_star", has(Items.NETHER_STAR))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(FOOD, TRANSCENDENTAL_BREAKFAST, 1)
+                .pattern("616")
+                .pattern("234")
+                .pattern("656")
+                .define('1', MOUNTAIN_SALT)
+                .define('2', NETHER_STAR_CAKE)
+                .define('3', TUNA_SANDWICH)
+                .define('4', DRAGON_EGG_OMELETTE)
+                .define('5', COOKED_RAVAGER_MEAT)
+                .define('6', THE_BIG_BREAKFAST)
+                .unlockedBy("has_nether_star_cake", has(NETHER_STAR_CAKE))
                 .save(exporter);
         //cooked frog leg	furnace
 

@@ -1,9 +1,14 @@
 package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.register.Content;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static com.epherical.croptopia.CroptopiaMod.MODID;
@@ -441,7 +446,53 @@ public class CroptopiaItemModelProvider extends BlockStateProvider {
         provider.basicItem(Content.SUNNY_SIDE_EGGS);
         provider.basicItem(Content.SWEET_CREPES);
         provider.basicItem(Content.THE_BIG_BREAKFAST);
+
+        provider.basicItem(Content.COOKED_RAVAGER_MEAT.asItem());
+        provider.basicItem(Content.DRAGON_EGG_OMELETTE);
+        provider.basicItem(Content.MOUNTAIN_SALT);
+        provider.basicItem(Content.NETHER_STAR_CAKE);
+        provider.basicItem(Content.RAW_RAVAGER_MEAT);
+        provider.basicItem(Content.TRANSCENDENTAL_BREAKFAST);
+
+        simpleBlockStage1Item(provider, Content.ALMOND.asBlock());
+        simpleBlockStage1Item(provider, Content.APPLE.asBlock());
+        simpleBlockStage1Item(provider, Content.APRICOT.asBlock());
+        simpleBlockStage1Item(provider, Content.AVOCADO.asBlock());
+        simpleBlockStage1Item(provider, Content.BANANA.asBlock());
+        simpleBlockStage1Item(provider, Content.CASHEW.asBlock());
+        simpleBlockStage1Item(provider, Content.CHERRY.asBlock());
+        simpleBlockStage1Item(provider, Content.COCONUT.asBlock());
+        simpleBlockStage1Item(provider, Content.DATE.asBlock());
+        simpleBlockStage1Item(provider, Content.DRAGONFRUIT.asBlock());
+        simpleBlockStage1Item(provider, Content.FIG.asBlock());
+        simpleBlockStage1Item(provider, Content.GRAPEFRUIT.asBlock());
+        simpleBlockStage1Item(provider, Content.KUMQUAT.asBlock());
+        simpleBlockStage1Item(provider, Content.LEMON.asBlock());
+        simpleBlockStage1Item(provider, Content.LIME.asBlock());
+        simpleBlockStage1Item(provider, Content.MANGO.asBlock());
+        simpleBlockStage1Item(provider, Content.NECTARINE.asBlock());
+        simpleBlockStage1Item(provider, Content.NUTMEG.asBlock());
+        simpleBlockStage1Item(provider, Content.ORANGE.asBlock());
+        simpleBlockStage1Item(provider, Content.PEACH.asBlock());
+        simpleBlockStage1Item(provider, Content.PEAR.asBlock());
+        simpleBlockStage1Item(provider, Content.PECAN.asBlock());
+        simpleBlockStage1Item(provider, Content.PERSIMMON.asBlock());
+        simpleBlockStage1Item(provider, Content.PLUM.asBlock());
+        simpleBlockStage1Item(provider, Content.STARFRUIT.asBlock());
+        simpleBlockStage1Item(provider, Content.WALNUT.asBlock());
     }
+
+    protected void simpleBlockStage1Item(ItemModelProvider provider, Block block) {
+        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(block);
+        if (id == null) {
+            throw new IllegalStateException("Unregistered block passed to simpleBlockStage1Item: " + block);
+        }
+
+        // item model file name is the block’s path; parent points to block/<path>_stage1
+        provider.withExistingParent(id.getPath(),
+                modLoc(ModelProvider.BLOCK_FOLDER + "/" + id.getPath() + "_stage1"));
+    }
+
 
     @Override
     protected void registerStatesAndModels() {

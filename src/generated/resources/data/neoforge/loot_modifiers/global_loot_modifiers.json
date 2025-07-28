@@ -6,8 +6,10 @@
     "croptopia:add_calamari_to_squid",
     "croptopia:add_croptopia_fish_to_minecraft",
     "croptopia:add_croptopia_fish_to_aquaculture",
+    "croptopia:add_ravager_meat_to_ravager",
     "croptopia:add_glowing_calamari_to_glowing_squid",
-    "croptopia:add_roe_to_salmon"
+    "croptopia:add_roe_to_salmon",
+    "croptopia:add_mountain_salt_to_shipwreck"
   ],
   "replace": false
 }
