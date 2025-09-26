@@ -1,7 +1,6 @@
 package com.epherical.croptopia.mixin;
 
 import com.epherical.croptopia.CroptopiaMod;
-import com.epherical.croptopia.register.Content;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.world.SimpleContainer;
@@ -13,8 +12,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-
-import java.util.List;
 
 @Mixin(value = WorkAtComposter.class, priority = 999)
 public class FarmerWorkTaskMixin {

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:radishes"
-    }
+    "#${dependent}:radishes"
   ],
   "result": {
     "count": 1,

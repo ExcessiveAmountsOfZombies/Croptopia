@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:glass_bottle"
-    },
-    {
-      "tag": "${dependent}:molasses"
-    },
-    {
-      "tag": "${dependent}:water_bottles"
-    }
+    "minecraft:glass_bottle",
+    "#${dependent}:molasses",
+    "#${dependent}:water_bottles"
   ],
   "result": {
     "id": "croptopia:rum",

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "croptopia:stripped_cinnamon_log"
-    }
+    "#": "croptopia:stripped_cinnamon_log"
   },
   "pattern": [
     "##",

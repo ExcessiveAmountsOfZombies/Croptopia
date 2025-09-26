@@ -1,8 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
-  "ingredient": {
-    "tag": "${dependent}:corn"
-  },
+  "ingredient": "#${dependent}:corn",
   "result": {
     "id": "croptopia:popcorn"
   },

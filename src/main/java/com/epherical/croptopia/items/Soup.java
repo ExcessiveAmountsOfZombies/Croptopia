@@ -1,25 +1,21 @@
 package com.epherical.croptopia.items;
 
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.Level;
 
 public class Soup extends Item {
 
-
     public Soup(Properties settings) {
-        super(settings);
+        super(settings.usingConvertsTo(Items.BOWL));
     }
 
+    // REVIEW 1.21.3 - with the new Consumable component, I don't think any of this is necessary any more.
+    /**
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
         Player playerEntity = user instanceof Player ? (Player)user : null;
         if (playerEntity != null) {
             if (!playerEntity.getAbilities().instabuild) {
-                if (stack.has(DataComponents.FOOD)) {
+                if (isEdible()) {
                     user.eat(world, stack);
                 }
             }
@@ -37,4 +33,5 @@ public class Soup extends Item {
 
         return stack;
     }
+     **/
 }

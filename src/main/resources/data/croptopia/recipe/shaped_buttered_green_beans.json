@@ -5,21 +5,11 @@
     "123"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:butters"
-    },
-    "2": {
-      "tag": "${dependent}:greenbeans"
-    },
-    "3": {
-      "tag": "${dependent}:gingers"
-    },
-    "4": {
-      "tag": "${dependent}:salts"
-    },
-    "5": {
-      "item": "croptopia:pepper"
-    }
+    "1": "#${dependent}:butters",
+    "2": "#${dependent}:greenbeans",
+    "3": "#${dependent}:gingers",
+    "4": "#${dependent}:salts",
+    "5": "croptopia:pepper"
   },
   "result": {
     "id": "croptopia:buttered_green_beans",

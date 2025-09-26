@@ -19,6 +19,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.grower.TreeGrower;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -35,7 +36,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import static com.epherical.croptopia.CroptopiaMod.*;
+import static com.epherical.croptopia.CroptopiaMod.createGroup;
+import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
+import static com.epherical.croptopia.CroptopiaMod.createSaplingSettings;
+import static com.epherical.croptopia.CroptopiaMod.cropBlocks;
+import static com.epherical.croptopia.CroptopiaMod.leafBlocks;
 import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
@@ -157,16 +162,16 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     public void registerItem(RegisterFunction<Item> register) {
         if (!Objects.equals(name(), ItemNamesV2.APPLE)) {
-            item = register.register(createIdentifier(name()), () -> new CropItem(createGroup().food(createFood(constructor))));
+            item = register.register(createIdentifier(name()), id -> new CropItem(createGroup(id).food(createFood(constructor))));
             CroptopiaMod.cropItems.add(asItem());
         } else {
             item = Items.APPLE;
         }
-        saplingItem = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup()));
+        saplingItem = register.register(createIdentifier(name() + "_sapling"), id -> new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup(id)));
     }
 
     public void registerBlock(RegisterFunction<Block> register) {
-        saplingBlock = register.register(createIdentifier(name() + "_sapling"), () -> new CroptopiaSaplingBlock(createTree(configuredFeatureKey), createSaplingSettings()));
+        saplingBlock = register.register(createIdentifier(name() + "_sapling"), id -> new CroptopiaSaplingBlock(createTree(configuredFeatureKey), createSaplingSettings(id)));
         leaves = register.register(createIdentifier(name() + "_crop"), CroptopiaMod::createLeavesBlock);
 
         cropBlocks.add(asBlock());

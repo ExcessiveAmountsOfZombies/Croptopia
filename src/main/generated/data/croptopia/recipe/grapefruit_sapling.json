@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:grapefruits"
-    },
-    {
-      "tag": "${dependent}:grapefruits"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:grapefruits",
+    "#${dependent}:grapefruits",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

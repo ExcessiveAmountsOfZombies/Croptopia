@@ -5,12 +5,8 @@
     "2"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:avocados"
-    },
-    "2": {
-      "item": "croptopia:toast"
-    }
+    "1": "#${dependent}:avocados",
+    "2": "croptopia:toast"
   },
   "result": {
     "id": "croptopia:avocado_toast",

@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "${dependent}:blackbeans"
-    },
-    {
-      "item": "minecraft:porkchop"
-    }
+    "minecraft:bowl",
+    "#${dependent}:blackbeans",
+    "minecraft:porkchop"
   ],
   "result": {
     "id": "croptopia:pork_and_beans",

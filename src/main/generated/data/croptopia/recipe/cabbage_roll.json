@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "croptopia:beef_replacements"
-    },
-    "2": {
-      "tag": "${dependent}:onions"
-    },
-    "4": {
-      "tag": "${dependent}:salts"
-    },
-    "5": {
-      "tag": "${dependent}:cabbage"
-    },
-    "6": {
-      "tag": "${dependent}:rice"
-    },
-    "8": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "#croptopia:beef_replacements",
+    "2": "#${dependent}:onions",
+    "4": "#${dependent}:salts",
+    "5": "#${dependent}:cabbage",
+    "6": "#${dependent}:rice",
+    "8": "croptopia:frying_pan"
   },
   "pattern": [
     "121",

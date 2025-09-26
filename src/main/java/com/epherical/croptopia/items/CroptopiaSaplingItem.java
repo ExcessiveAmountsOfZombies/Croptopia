@@ -1,12 +1,12 @@
 package com.epherical.croptopia.items;
 
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class CroptopiaSaplingItem extends ItemNameBlockItem {
+public class CroptopiaSaplingItem extends BlockItem {
 
     private final Block saplingFruitLeafBlock;
     private final Block vanillaLeafBlock;

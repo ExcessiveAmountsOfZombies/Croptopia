@@ -6,12 +6,8 @@
     " 2 "
   ],
   "key": {
-    "1": {
-      "item": "minecraft:milk_bucket"
-    },
-    "2": {
-      "item": "minecraft:glass"
-    }
+    "1": "minecraft:milk_bucket",
+    "2": "minecraft:glass"
   },
   "result": {
     "id": "croptopia:milk_bottle",

@@ -23,7 +23,9 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -65,12 +67,13 @@ public class Croptopia implements ModInitializer {
 
 
 
-        Content.registerBlocks((id, object) -> Registry.register(BuiltInRegistries.BLOCK, id, object.get()));
+        Content.registerBlocks((id, fn) -> Registry.register(BuiltInRegistries.BLOCK, id, fn.apply(id)));
         mod.platform().registerFlammableBlocks();
-        Content.GUIDE = new GuideBookItem(createGroup());
-        Registry.register(BuiltInRegistries.ITEM, CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE), Content.GUIDE);
+        final ResourceLocation guideBookId = CroptopiaMod.createIdentifier(ItemNamesV2.GUIDE);
+        Content.GUIDE = new GuideBookItem(createGroup(guideBookId));
+        Registry.register(BuiltInRegistries.ITEM, guideBookId, Content.GUIDE);
 
-        Content.registerItems((id, object) -> Registry.register(BuiltInRegistries.ITEM, id, object.get()));
+        Content.registerItems((id, fn) -> Registry.register(BuiltInRegistries.ITEM, id, fn.apply(id)));
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
             entries.addAfter(Items.MANGROVE_PROPAGULE, Content.CINNAMON.getSapling());

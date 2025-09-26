@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:cashews"
-    },
-    {
-      "tag": "${dependent}:cashews"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:cashews",
+    "#${dependent}:cashews",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:corn"
-    }
+    "1": "#${dependent}:corn"
   },
   "pattern": [
     "111"

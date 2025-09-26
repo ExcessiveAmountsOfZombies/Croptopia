@@ -6,7 +6,6 @@ import com.epherical.epherolib.libs.org.spongepowered.configurate.ConfigurationN
 import com.epherical.epherolib.libs.org.spongepowered.configurate.loader.AbstractConfigurationLoader;
 import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
 import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import com.google.common.collect.TreeMultimap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -23,7 +22,33 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.*;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.ALMOND_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.APPLE_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.APRICOT_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.AVOCADO_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.BANANA_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.CASHEW_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.CHERRY_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.CINNAMON_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.COCONUT_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.DATE_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.DRAGONFRUIT_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.FIG_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.GRAPEFRUIT_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.KUMQUAT_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.LEMON_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.LIME_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.MANGO_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.NECTARINE_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.NUTMEG_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.ORANGE_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.PEACH_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.PEAR_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.PECAN_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.PERSIMMON_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.PLUM_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.STARFRUIT_TREE_PLACED_KEY;
+import static com.epherical.croptopia.common.generator.PlacedFeatureKeys.WALNUT_TREE_PLACED_KEY;
 
 public class CroptopiaConfig extends CommonConfig {
 

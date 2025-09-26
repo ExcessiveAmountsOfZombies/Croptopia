@@ -6,21 +6,11 @@
     " 5 "
   ],
   "key": {
-    "1": {
-      "item": "minecraft:potato"
-    },
-    "2": {
-      "tag": "${dependent}:flour"
-    },
-    "3": {
-      "tag": "${dependent}:greenonions"
-    },
-    "4": {
-      "item": "croptopia:bacon"
-    },
-    "5": {
-      "tag": "${dependent}:water_bottles"
-    }
+    "1": "minecraft:potato",
+    "2": "#${dependent}:flour",
+    "3": "#${dependent}:greenonions",
+    "4": "croptopia:bacon",
+    "5": "#${dependent}:water_bottles"
   },
   "result": {
     "id": "croptopia:potato_soup",

@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 100,
   "experience": 0.2,
-  "ingredient": {
-    "item": "croptopia:blackbean"
-  },
+  "ingredient": "croptopia:blackbean",
   "result": {
     "id": "croptopia:baked_beans"
   }

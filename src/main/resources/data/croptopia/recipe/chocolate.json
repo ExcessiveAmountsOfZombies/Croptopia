@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:cocoa_beans"
-    },
-    {
-      "tag": "${dependent}:butters"
-    },
-    {
-      "item": "croptopia:cooking_pot"
-    }
+    "minecraft:cocoa_beans",
+    "#${dependent}:butters",
+    "croptopia:cooking_pot"
   ],
   "result": {
     "id": "croptopia:chocolate",

@@ -1,21 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "tag": "${dependent}:paprika"
-    },
-    {
-      "tag": "${dependent}:milks"
-    },
-    {
-      "item": "minecraft:pumpkin"
-    },
-    {
-      "item": "croptopia:coffee"
-    }
+    "minecraft:sugar",
+    "#${dependent}:paprika",
+    "#${dependent}:milks",
+    "minecraft:pumpkin",
+    "croptopia:coffee"
   ],
   "result": {
     "id": "croptopia:pumpkin_spice_latte",

@@ -1,21 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "${dependent}:flour"
-    },
-    {
-      "tag": "${dependent}:chile_peppers"
-    },
-    {
-      "tag": "${dependent}:olive_oils"
-    },
-    {
-      "tag": "croptopia:chicken_replacements"
-    },
-    {
-      "item": "croptopia:frying_pan"
-    }
+    "#${dependent}:flour",
+    "#${dependent}:chile_peppers",
+    "#${dependent}:olive_oils",
+    "#croptopia:chicken_replacements",
+    "croptopia:frying_pan"
   ],
   "result": {
     "id": "croptopia:fried_chicken",

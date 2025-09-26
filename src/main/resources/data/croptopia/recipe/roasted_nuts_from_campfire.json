@@ -1,8 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
-  "ingredient": {
-    "tag": "${dependent}:nuts"
-  },
+  "ingredient": "#${dependent}:nuts",
   "result": {
     "id": "croptopia:roasted_nuts"
   },

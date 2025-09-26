@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:apples"
-    },
-    {
-      "item": "croptopia:food_press"
-    },
-    {
-      "item": "minecraft:glass_bottle"
-    }
+    "#${dependent}:apples",
+    "croptopia:food_press",
+    "minecraft:glass_bottle"
   ],
   "result": {
     "count": 1,

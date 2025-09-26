@@ -6,30 +6,14 @@
     "516"
   ],
   "key": {
-    "F": {
-      "item": "croptopia:frying_pan"
-    },
-    "1": {
-      "item": "minecraft:beef"
-    },
-    "2": {
-      "tag": "${dependent}:mustard"
-    },
-    "3": {
-      "item": "croptopia:pepper"
-    },
-    "4": {
-      "tag": "${dependent}:onions"
-    },
-    "5": {
-      "item": "minecraft:egg"
-    },
-    "6": {
-      "item": "minecraft:brown_mushroom"
-    },
-    "9": {
-      "tag": "${dependent}:flour"
-    }
+    "F": "croptopia:frying_pan",
+    "1": "minecraft:beef",
+    "2": "#${dependent}:mustard",
+    "3": "croptopia:pepper",
+    "4": "#${dependent}:onions",
+    "5": "minecraft:egg",
+    "6": "minecraft:brown_mushroom",
+    "9": "#${dependent}:flour"
   },
   "result": {
     "id": "croptopia:beef_wellington",

@@ -6,7 +6,6 @@ import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,11 +48,11 @@ public class Furnace implements ItemConvertibleWithPlural {
     }
 
     public void registerItem(RegisterFunction<Item> register, FoodConstructor foodConstructor) {
-        this.item = register.register(CroptopiaMod.createIdentifier(name), () -> {
+        this.item = register.register(CroptopiaMod.createIdentifier(name), id -> {
             if (foodConstructor == null) {
-                return new Item(createGroup());
+                return new Item(createGroup(id));
             } else {
-                return new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
+                return new Item(createGroup(id).food(FoodConstructor.createFood(foodConstructor)));
             }
         });
     }

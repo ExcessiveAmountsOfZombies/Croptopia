@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:flour"
-    },
-    "2": {
-      "item": "minecraft:egg"
-    },
-    "3": {
-      "tag": "${dependent}:milks"
-    },
-    "4": {
-      "tag": "${dependent}:jams"
-    },
-    "5": {
-      "item": "minecraft:sugar"
-    },
-    "6": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "#${dependent}:flour",
+    "2": "minecraft:egg",
+    "3": "#${dependent}:milks",
+    "4": "#${dependent}:jams",
+    "5": "minecraft:sugar",
+    "6": "croptopia:frying_pan"
   },
   "pattern": [
     "123",

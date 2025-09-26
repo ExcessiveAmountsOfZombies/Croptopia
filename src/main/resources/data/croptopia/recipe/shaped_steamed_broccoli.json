@@ -4,12 +4,8 @@
     "121"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:broccoli"
-    },
-    "2": {
-      "tag": "${dependent}:water_bottles"
-    }
+    "1": "#${dependent}:broccoli",
+    "2": "#${dependent}:water_bottles"
   },
   "result": {
     "id": "croptopia:steamed_broccoli",

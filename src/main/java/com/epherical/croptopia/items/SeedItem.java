@@ -1,14 +1,12 @@
 package com.epherical.croptopia.items;
 
 import com.epherical.croptopia.blocks.CroptopiaCropBlock;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
@@ -18,11 +16,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.awt.*;
 import java.util.List;
-import java.util.Locale;
 
-public class SeedItem extends ItemNameBlockItem {
+public class SeedItem extends BlockItem {
 
     private TagKey<Biome> category;
 

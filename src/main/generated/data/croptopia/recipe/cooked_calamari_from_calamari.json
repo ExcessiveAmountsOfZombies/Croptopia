@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.2,
-  "ingredient": {
-    "item": "croptopia:calamari"
-  },
+  "ingredient": "croptopia:calamari",
   "result": {
     "id": "croptopia:cooked_calamari"
   }

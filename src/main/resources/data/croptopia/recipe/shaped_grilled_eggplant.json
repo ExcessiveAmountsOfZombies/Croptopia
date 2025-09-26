@@ -5,24 +5,12 @@
     "314"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:eggplants"
-    },
-    "2": {
-      "tag": "${dependent}:salts"
-    },
-    "3": {
-      "tag": "${dependent}:olive_oils"
-    },
-    "4": {
-      "tag": "${dependent}:garlic"
-    },
-    "5": {
-      "item": "croptopia:pepper"
-    },
-    "6": {
-      "tag": "${dependent}:paprika"
-    }
+    "1": "#${dependent}:eggplants",
+    "2": "#${dependent}:salts",
+    "3": "#${dependent}:olive_oils",
+    "4": "#${dependent}:garlic",
+    "5": "croptopia:pepper",
+    "6": "#${dependent}:paprika"
   },
   "result": {
     "id": "croptopia:grilled_eggplant",

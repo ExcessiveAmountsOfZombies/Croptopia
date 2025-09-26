@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:dates"
-    },
-    {
-      "tag": "${dependent}:dates"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:dates",
+    "#${dependent}:dates",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:crabs"
-    },
-    "2": {
-      "tag": "${dependent}:water_bottles"
-    },
-    "3": {
-      "item": "croptopia:cooking_pot"
-    }
+    "1": "#${dependent}:crabs",
+    "2": "#${dependent}:water_bottles",
+    "3": "croptopia:cooking_pot"
   },
   "pattern": [
     "1",

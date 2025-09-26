@@ -7,13 +7,15 @@ import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.*;
+import static com.epherical.croptopia.util.FoodConstructor.JAM_3;
+import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
 
 public class Jam implements ItemLike {
     private static final List<Jam> INSTANCES = new ArrayList<>();
@@ -43,8 +45,8 @@ public class Jam implements ItemLike {
     }
 
     public void registerItem(RegisterFunction<Item> register) {
-        item = register.register(CroptopiaMod.createIdentifier(name), () ->
-                new Drink(createGroup().craftRemainder(Items.GLASS_BOTTLE).food(createBuilder(JAM_3).alwaysEdible().build())));
+        item = register.register(CroptopiaMod.createIdentifier(name), id ->
+                new Drink(createGroup(id).craftRemainder(Items.GLASS_BOTTLE).food(createBuilder(JAM_3).alwaysEdible().build(), Consumables.DEFAULT_DRINK)));
     }
 
     public static List<Jam> copy() {

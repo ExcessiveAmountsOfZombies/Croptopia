@@ -26,7 +26,7 @@ public class TallCropBlock extends CroptopiaCropBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        Vec3 offset = state.getOffset(world, pos);
+        Vec3 offset = state.getOffset(pos);
         return AGE_TO_SHAPE[state.getValue(this.getAgeProperty())].move(offset.x, offset.y, offset.z);
     }
 }

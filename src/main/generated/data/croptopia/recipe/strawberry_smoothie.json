@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:strawberries"
-    },
-    {
-      "item": "minecraft:ice"
-    },
-    {
-      "tag": "${dependent}:milks"
-    },
-    {
-      "item": "minecraft:glass_bottle"
-    }
+    "#${dependent}:strawberries",
+    "minecraft:ice",
+    "#${dependent}:milks",
+    "minecraft:glass_bottle"
   ],
   "result": {
     "count": 1,

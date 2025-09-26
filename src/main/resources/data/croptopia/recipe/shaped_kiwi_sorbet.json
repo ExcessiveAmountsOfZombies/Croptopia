@@ -5,12 +5,8 @@
     "2"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:kiwis"
-    },
-    "2": {
-      "item": "minecraft:honey_bottle"
-    }
+    "1": "#${dependent}:kiwis",
+    "2": "minecraft:honey_bottle"
   },
   "result": {
     "id": "croptopia:kiwi_sorbet",
