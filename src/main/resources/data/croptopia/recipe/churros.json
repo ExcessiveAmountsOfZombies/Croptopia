@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "${dependent}:milks"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "tag": "${dependent}:flour"
-    },
-    {
-      "item": "croptopia:cinnamon"
-    }
+    "#${dependent}:milks",
+    "minecraft:sugar",
+    "#${dependent}:flour",
+    "croptopia:cinnamon"
   ],
   "result": {
     "id": "croptopia:churros",

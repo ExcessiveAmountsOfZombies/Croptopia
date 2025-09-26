@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:tuna"
-    },
-    "2": {
-      "item": "minecraft:dried_kelp"
-    },
-    "3": {
-      "tag": "${dependent}:rice"
-    },
-    "4": {
-      "tag": "${dependent}:onions"
-    }
+    "1": "#${dependent}:tuna",
+    "2": "minecraft:dried_kelp",
+    "3": "#${dependent}:rice",
+    "4": "#${dependent}:onions"
   },
   "pattern": [
     "234",

@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "tag": "${dependent}:corn"
-    },
-    {
-      "item": "minecraft:sugar"
-    }
+    "minecraft:sugar",
+    "#${dependent}:corn",
+    "minecraft:sugar"
   ],
   "result": {
     "id": "croptopia:candy_corn",

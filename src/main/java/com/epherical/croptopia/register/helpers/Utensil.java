@@ -48,6 +48,6 @@ public class Utensil implements ItemConvertibleWithPlural {
     }
 
     public void registerItems(RegisterFunction<Item> register) {
-        this.utensil = register.register(CroptopiaMod.createIdentifier(name), () -> new CookingUtensil(createGroup().stacksTo(1)));
+        this.utensil = register.register(CroptopiaMod.createIdentifier(name), id -> new CookingUtensil(createGroup(id).stacksTo(1)));
     }
 }

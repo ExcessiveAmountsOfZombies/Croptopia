@@ -1,21 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "tag": "${dependent}:cucumbers"
-    },
-    {
-      "item": "minecraft:carrot"
-    },
-    {
-      "tag": "${dependent}:corn"
-    },
-    {
-      "tag": "${dependent}:lettuce"
-    }
+    "minecraft:bowl",
+    "#${dependent}:cucumbers",
+    "minecraft:carrot",
+    "#${dependent}:corn",
+    "#${dependent}:lettuce"
   ],
   "result": {
     "id": "croptopia:veggie_salad",

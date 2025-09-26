@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:vanilla"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:egg"
-    },
-    {
-      "tag": "${dependent}:milks"
-    },
-    {
-      "item": "croptopia:cooking_pot"
-    }
+    "#${dependent}:vanilla",
+    "minecraft:sugar",
+    "minecraft:egg",
+    "#${dependent}:milks",
+    "croptopia:cooking_pot"
   ],
   "result": {
     "count": 1,

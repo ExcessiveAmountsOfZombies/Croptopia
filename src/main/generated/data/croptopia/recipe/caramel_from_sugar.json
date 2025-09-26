@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 200,
   "experience": 0.2,
-  "ingredient": {
-    "item": "minecraft:sugar"
-  },
+  "ingredient": "minecraft:sugar",
   "result": {
     "id": "croptopia:caramel"
   }

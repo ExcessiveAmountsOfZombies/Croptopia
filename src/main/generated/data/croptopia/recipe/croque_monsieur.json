@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "croptopia:frying_pan"
-    },
-    "2": {
-      "item": "minecraft:bread"
-    },
-    "3": {
-      "tag": "${dependent}:cheeses"
-    },
-    "4": {
-      "tag": "croptopia:pork_replacements"
-    },
-    "5": {
-      "tag": "${dependent}:butters"
-    },
-    "6": {
-      "tag": "${dependent}:flour"
-    }
+    "1": "croptopia:frying_pan",
+    "2": "minecraft:bread",
+    "3": "#${dependent}:cheeses",
+    "4": "#croptopia:pork_replacements",
+    "5": "#${dependent}:butters",
+    "6": "#${dependent}:flour"
   },
   "pattern": [
     " 1 ",

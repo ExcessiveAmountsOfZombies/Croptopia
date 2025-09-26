@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:cranberries"
-    }
+    "#${dependent}:cranberries"
   ],
   "result": {
     "count": 1,

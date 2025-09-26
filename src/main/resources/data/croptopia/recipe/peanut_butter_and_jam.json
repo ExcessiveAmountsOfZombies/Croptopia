@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:bread"
-    },
-    {
-      "item": "croptopia:peanut_butter"
-    },
-    {
-      "tag": "${dependent}:jams"
-    }
+    "minecraft:bread",
+    "croptopia:peanut_butter",
+    "#${dependent}:jams"
   ],
   "result": {
     "id": "croptopia:peanut_butter_and_jam",

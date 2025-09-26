@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:avocados"
-    },
-    {
-      "tag": "${dependent}:avocados"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:avocados",
+    "#${dependent}:avocados",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

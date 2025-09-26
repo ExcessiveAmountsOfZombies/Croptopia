@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "minecraft:bowl"
-    },
-    "i": {
-      "item": "minecraft:stick"
-    }
+    "#": "minecraft:bowl",
+    "i": "minecraft:stick"
   },
   "pattern": [
     "i",

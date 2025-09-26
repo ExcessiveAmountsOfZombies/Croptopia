@@ -6,24 +6,12 @@
     "465"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:asparagus"
-    },
-    "2": {
-      "tag": "${dependent}:olive_oils"
-    },
-    "3": {
-      "tag": "${dependent}:garlic"
-    },
-    "4": {
-      "tag": "${dependent}:salts"
-    },
-    "5": {
-      "item": "croptopia:pepper"
-    },
-    "6": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "#${dependent}:asparagus",
+    "2": "#${dependent}:olive_oils",
+    "3": "#${dependent}:garlic",
+    "4": "#${dependent}:salts",
+    "5": "croptopia:pepper",
+    "6": "croptopia:frying_pan"
   },
   "result": {
     "id": "croptopia:roasted_asparagus",

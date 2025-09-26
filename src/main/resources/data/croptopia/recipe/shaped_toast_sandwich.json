@@ -4,12 +4,8 @@
     "121"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:bread"
-    },
-    "2": {
-      "item": "croptopia:buttered_toast"
-    }
+    "1": "minecraft:bread",
+    "2": "croptopia:buttered_toast"
   },
   "result": {
     "id": "croptopia:toast_sandwich",

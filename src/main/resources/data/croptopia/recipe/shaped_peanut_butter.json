@@ -6,12 +6,8 @@
     " 2 "
   ],
   "key": {
-    "1": {
-      "item": "croptopia:food_press"
-    },
-    "2": {
-      "tag": "${dependent}:peanuts"
-    }
+    "1": "croptopia:food_press",
+    "2": "#${dependent}:peanuts"
   },
   "result": {
     "id": "croptopia:peanut_butter",

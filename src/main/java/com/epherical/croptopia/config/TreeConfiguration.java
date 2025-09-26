@@ -5,18 +5,16 @@ import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.Seri
 import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.TypeSerializer;
 import com.google.common.collect.SetMultimap;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import static com.epherical.croptopia.CroptopiaMod.createIdentifier;
 

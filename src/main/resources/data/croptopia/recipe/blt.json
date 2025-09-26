@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:bread"
-    },
-    {
-      "item": "croptopia:cooked_bacon"
-    },
-    {
-      "tag": "${dependent}:lettuce"
-    },
-    {
-      "tag": "${dependent}:tomatoes"
-    }
+    "minecraft:bread",
+    "croptopia:cooked_bacon",
+    "#${dependent}:lettuce",
+    "#${dependent}:tomatoes"
   ],
   "result": {
     "id": "croptopia:blt",

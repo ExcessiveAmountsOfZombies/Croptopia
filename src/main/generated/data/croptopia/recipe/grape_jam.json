@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:grapes"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "croptopia:cooking_pot"
-    }
+    "#${dependent}:grapes",
+    "minecraft:sugar",
+    "croptopia:cooking_pot"
   ],
   "result": {
     "count": 1,

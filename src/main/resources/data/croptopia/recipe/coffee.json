@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:glass_bottle"
-    },
-    {
-      "tag": "${dependent}:coffee_beans"
-    },
-    {
-      "item": "croptopia:food_press"
-    }
+    "minecraft:glass_bottle",
+    "#${dependent}:coffee_beans",
+    "croptopia:food_press"
   ],
   "result": {
     "id": "croptopia:coffee",

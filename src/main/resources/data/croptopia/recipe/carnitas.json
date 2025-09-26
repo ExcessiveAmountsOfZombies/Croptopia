@@ -1,21 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:porkchop"
-    },
-    {
-      "tag": "${dependent}:tortillas"
-    },
-    {
-      "tag": "${dependent}:cabbage"
-    },
-    {
-      "tag": "${dependent}:onions"
-    },
-    {
-      "item": "croptopia:frying_pan"
-    }
+    "minecraft:porkchop",
+    "#${dependent}:tortillas",
+    "#${dependent}:cabbage",
+    "#${dependent}:onions",
+    "croptopia:frying_pan"
   ],
   "result": {
     "id": "croptopia:carnitas",

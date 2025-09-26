@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:kiwis"
-    }
+    "#${dependent}:kiwis"
   ],
   "result": {
     "count": 1,

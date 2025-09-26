@@ -5,21 +5,11 @@
     "253"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:carrot"
-    },
-    "2": {
-      "item": "minecraft:beef"
-    },
-    "3": {
-      "item": "minecraft:potato"
-    },
-    "4": {
-      "item": "minecraft:carrot"
-    },
-    "5": {
-      "tag": "${dependent}:flour"
-    }
+    "1": "minecraft:carrot",
+    "2": "minecraft:beef",
+    "3": "minecraft:potato",
+    "4": "minecraft:carrot",
+    "5": "#${dependent}:flour"
   },
   "result": {
     "id": "croptopia:beef_stew",

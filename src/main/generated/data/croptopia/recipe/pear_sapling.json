@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:pears"
-    },
-    {
-      "tag": "${dependent}:pears"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:pears",
+    "#${dependent}:pears",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

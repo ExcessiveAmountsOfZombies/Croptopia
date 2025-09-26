@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:potatoes"
-    },
-    "2": {
-      "item": "croptopia:frying_pan"
-    },
-    "3": {
-      "tag": "${dependent}:olive_oils"
-    },
-    "4": {
-      "item": "croptopia:knife"
-    }
+    "1": "#${dependent}:potatoes",
+    "2": "croptopia:frying_pan",
+    "3": "#${dependent}:olive_oils",
+    "4": "croptopia:knife"
   },
   "pattern": [
     "123",

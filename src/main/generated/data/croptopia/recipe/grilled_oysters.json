@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:oysters"
-    },
-    "2": {
-      "tag": "${dependent}:cheeses"
-    },
-    "4": {
-      "tag": "${dependent}:lemons"
-    },
-    "5": {
-      "tag": "${dependent}:garlic"
-    },
-    "6": {
-      "tag": "${dependent}:salts"
-    },
-    "7": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "#${dependent}:oysters",
+    "2": "#${dependent}:cheeses",
+    "4": "#${dependent}:lemons",
+    "5": "#${dependent}:garlic",
+    "6": "#${dependent}:salts",
+    "7": "croptopia:frying_pan"
   },
   "pattern": [
     "121",

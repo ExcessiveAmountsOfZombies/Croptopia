@@ -6,24 +6,12 @@
     "51 "
   ],
   "key": {
-    "F": {
-      "item": "croptopia:frying_pan"
-    },
-    "1": {
-      "item": "minecraft:potato"
-    },
-    "2": {
-      "tag": "${dependent}:salts"
-    },
-    "3": {
-      "item": "croptopia:pepper"
-    },
-    "4": {
-      "tag": "${dependent}:flour"
-    },
-    "5": {
-      "tag": "minecraft:fishes"
-    }
+    "F": "croptopia:frying_pan",
+    "1": "minecraft:potato",
+    "2": "#${dependent}:salts",
+    "3": "croptopia:pepper",
+    "4": "#${dependent}:flour",
+    "5": "#minecraft:fishes"
   },
   "result": {
     "id": "croptopia:fish_and_chips",

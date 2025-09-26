@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:pecans"
-    },
-    {
-      "tag": "${dependent}:pecans"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:pecans",
+    "#${dependent}:pecans",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

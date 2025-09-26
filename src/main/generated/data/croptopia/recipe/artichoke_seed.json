@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:artichokes"
-    }
+    "#${dependent}:artichokes"
   ],
   "result": {
     "count": 1,

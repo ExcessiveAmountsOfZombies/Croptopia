@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:olives"
-    }
+    "#${dependent}:olives"
   ],
   "result": {
     "count": 1,

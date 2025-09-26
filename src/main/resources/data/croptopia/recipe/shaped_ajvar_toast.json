@@ -5,12 +5,8 @@
     "2"
   ],
   "key": {
-    "1": {
-      "item": "croptopia:ajvar"
-    },
-    "2": {
-      "item": "croptopia:toast"
-    }
+    "1": "croptopia:ajvar",
+    "2": "croptopia:toast"
   },
   "result": {
     "id": "croptopia:ajvar_toast",

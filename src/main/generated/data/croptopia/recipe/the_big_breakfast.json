@@ -2,27 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "item": "croptopia:bacon"
-    },
-    "3": {
-      "item": "croptopia:hashed_brown"
-    },
-    "4": {
-      "item": "croptopia:baked_beans"
-    },
-    "5": {
-      "tag": "${dependent}:sausages"
-    },
-    "6": {
-      "item": "croptopia:toast"
-    },
-    "7": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "minecraft:egg",
+    "2": "croptopia:bacon",
+    "3": "croptopia:hashed_brown",
+    "4": "croptopia:baked_beans",
+    "5": "#${dependent}:sausages",
+    "6": "croptopia:toast",
+    "7": "croptopia:frying_pan"
   },
   "pattern": [
     "123",

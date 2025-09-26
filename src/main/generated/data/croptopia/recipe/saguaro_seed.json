@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:saguaros"
-    }
+    "#${dependent}:saguaros"
   ],
   "result": {
     "count": 1,

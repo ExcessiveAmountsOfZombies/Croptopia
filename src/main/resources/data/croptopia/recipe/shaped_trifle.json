@@ -6,27 +6,13 @@
     "123"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "tag": "${dependent}:milks"
-    },
-    "3": {
-      "tag": "${dependent}:vanilla"
-    },
-    "4": {
-      "tag": "${dependent}:wines"
-    },
-    "5": {
-      "tag": "${dependent}:strawberries"
-    },
-    "6": {
-      "item": "minecraft:bread"
-    },
-    "7": {
-      "tag": "${dependent}:butters"
-    }
+    "1": "minecraft:egg",
+    "2": "#${dependent}:milks",
+    "3": "#${dependent}:vanilla",
+    "4": "#${dependent}:wines",
+    "5": "#${dependent}:strawberries",
+    "6": "minecraft:bread",
+    "7": "#${dependent}:butters"
   },
   "result": {
     "id": "croptopia:trifle",

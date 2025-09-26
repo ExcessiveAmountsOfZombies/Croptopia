@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:nectarines"
-    },
-    {
-      "tag": "${dependent}:nectarines"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:nectarines",
+    "#${dependent}:nectarines",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

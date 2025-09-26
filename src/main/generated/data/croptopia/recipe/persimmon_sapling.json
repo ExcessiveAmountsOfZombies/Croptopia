@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:persimmons"
-    },
-    {
-      "tag": "${dependent}:persimmons"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:persimmons",
+    "#${dependent}:persimmons",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

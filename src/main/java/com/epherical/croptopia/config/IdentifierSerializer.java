@@ -3,13 +3,13 @@ package com.epherical.croptopia.config;
 import com.epherical.epherolib.libs.org.spongepowered.configurate.ConfigurationNode;
 import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.SerializationException;
 import com.epherical.epherolib.libs.org.spongepowered.configurate.serialize.TypeSerializer;
+import net.minecraft.ResourceLocationException;
+import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Type;
 import java.util.List;
-import net.minecraft.ResourceLocationException;
-import net.minecraft.resources.ResourceLocation;
 
 /**
  * Serializes an {@link ResourceLocation} to a configuration object.

@@ -1,15 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "croptopia:cooking_pot"
-    },
-    {
-      "tag": "${dependent}:milks"
-    },
-    {
-      "tag": "${dependent}:salts"
-    }
+    "croptopia:cooking_pot",
+    "#${dependent}:milks",
+    "#${dependent}:salts"
   ],
   "result": {
     "id": "croptopia:cheese",

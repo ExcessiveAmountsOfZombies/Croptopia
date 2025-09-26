@@ -6,27 +6,13 @@
     " 1 "
   ],
   "key": {
-    "1": {
-      "item": "croptopia:frying_pan"
-    },
-    "2": {
-      "tag": "${dependent}:flour"
-    },
-    "3": {
-      "item": "minecraft:beef"
-    },
-    "4": {
-      "item": "minecraft:potato"
-    },
-    "5": {
-      "tag": "${dependent}:onions"
-    },
-    "6": {
-      "tag": "${dependent}:rutabagas"
-    },
-    "7": {
-      "item": "croptopia:pepper"
-    }
+    "1": "croptopia:frying_pan",
+    "2": "#${dependent}:flour",
+    "3": "minecraft:beef",
+    "4": "minecraft:potato",
+    "5": "#${dependent}:onions",
+    "6": "#${dependent}:rutabagas",
+    "7": "croptopia:pepper"
   },
   "result": {
     "id": "croptopia:cornish_pasty",

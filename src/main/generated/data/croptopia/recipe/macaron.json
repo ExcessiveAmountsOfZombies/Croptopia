@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "item": "minecraft:sugar"
-    },
-    "5": {
-      "tag": "${dependent}:almonds"
-    },
-    "6": {
-      "item": "croptopia:food_press"
-    }
+    "1": "minecraft:egg",
+    "2": "minecraft:sugar",
+    "5": "#${dependent}:almonds",
+    "6": "croptopia:food_press"
   },
   "pattern": [
     "122",

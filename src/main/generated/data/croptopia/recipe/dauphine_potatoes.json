@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "croptopia:frying_pan"
-    },
-    "2": {
-      "tag": "${dependent}:water_bottles"
-    },
-    "3": {
-      "tag": "${dependent}:milks"
-    },
-    "4": {
-      "tag": "${dependent}:butters"
-    },
-    "5": {
-      "tag": "${dependent}:flour"
-    },
-    "6": {
-      "tag": "${dependent}:olive_oils"
-    }
+    "1": "croptopia:frying_pan",
+    "2": "#${dependent}:water_bottles",
+    "3": "#${dependent}:milks",
+    "4": "#${dependent}:butters",
+    "5": "#${dependent}:flour",
+    "6": "#${dependent}:olive_oils"
   },
   "pattern": [
     "213",

@@ -3,9 +3,7 @@
   "category": "misc",
   "cookingtime": 800,
   "experience": 0.1,
-  "ingredient": {
-    "item": "croptopia:water_bottle"
-  },
+  "ingredient": "croptopia:water_bottle",
   "result": {
     "id": "croptopia:salt"
   }

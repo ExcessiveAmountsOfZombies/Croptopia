@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:ground_pork"
-    },
-    "2": {
-      "tag": "${dependent}:salts"
-    },
-    "3": {
-      "tag": "${dependent}:paprika"
-    }
+    "1": "#${dependent}:ground_pork",
+    "2": "#${dependent}:salts",
+    "3": "#${dependent}:paprika"
   },
   "pattern": [
     "1",

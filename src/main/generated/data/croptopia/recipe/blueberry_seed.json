@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:blueberries"
-    }
+    "#${dependent}:blueberries"
   ],
   "result": {
     "count": 1,

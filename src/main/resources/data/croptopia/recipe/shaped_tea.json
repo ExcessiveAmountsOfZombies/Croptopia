@@ -6,12 +6,8 @@
     " 1 "
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:water_bottles"
-    },
-    "2": {
-      "tag": "${dependent}:tea_leaves"
-    }
+    "1": "#${dependent}:water_bottles",
+    "2": "#${dependent}:tea_leaves"
   },
   "result": {
     "id": "croptopia:tea",

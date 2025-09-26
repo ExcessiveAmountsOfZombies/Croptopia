@@ -1,8 +1,6 @@
 {
   "type": "minecraft:smoking",
-  "ingredient": {
-    "tag": "${dependent}:nuts"
-  },
+  "ingredient": "#${dependent}:nuts",
   "result": {
     "id": "croptopia:roasted_nuts"
   },

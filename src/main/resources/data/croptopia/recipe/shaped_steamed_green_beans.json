@@ -4,12 +4,8 @@
     "121"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:greenbeans"
-    },
-    "2": {
-      "tag": "${dependent}:water_bottles"
-    }
+    "1": "#${dependent}:greenbeans",
+    "2": "#${dependent}:water_bottles"
   },
   "result": {
     "id": "croptopia:steamed_green_beans",

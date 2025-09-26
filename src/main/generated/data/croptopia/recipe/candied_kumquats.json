@@ -2,33 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:vanilla"
-    },
-    {
-      "item": "minecraft:honey_bottle"
-    }
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#${dependent}:vanilla",
+    "minecraft:honey_bottle"
   ],
   "result": {
     "count": 7,

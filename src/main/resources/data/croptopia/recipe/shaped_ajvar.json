@@ -5,24 +5,12 @@
     "123"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:bellpeppers"
-    },
-    "2": {
-      "tag": "${dependent}:eggplants"
-    },
-    "3": {
-      "tag": "${dependent}:garlic"
-    },
-    "4": {
-      "tag": "${dependent}:chile_peppers"
-    },
-    "5": {
-      "tag": "${dependent}:olive_oils"
-    },
-    "6": {
-      "tag": "${dependent}:salts"
-    }
+    "1": "#${dependent}:bellpeppers",
+    "2": "#${dependent}:eggplants",
+    "3": "#${dependent}:garlic",
+    "4": "#${dependent}:chile_peppers",
+    "5": "#${dependent}:olive_oils",
+    "6": "#${dependent}:salts"
   },
   "result": {
     "id": "croptopia:ajvar",

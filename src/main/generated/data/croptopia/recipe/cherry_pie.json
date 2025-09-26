@@ -2,24 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:cherries"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:egg"
-    },
-    {
-      "tag": "${dependent}:flour"
-    },
-    {
-      "tag": "${dependent}:doughs"
-    },
-    {
-      "item": "croptopia:frying_pan"
-    }
+    "#${dependent}:cherries",
+    "minecraft:sugar",
+    "minecraft:egg",
+    "#${dependent}:flour",
+    "#${dependent}:doughs",
+    "croptopia:frying_pan"
   ],
   "result": {
     "count": 1,

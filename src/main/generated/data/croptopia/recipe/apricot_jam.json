@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:apricots"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "croptopia:cooking_pot"
-    }
+    "#${dependent}:apricots",
+    "minecraft:sugar",
+    "croptopia:cooking_pot"
   ],
   "result": {
     "count": 1,

@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:shrimp"
-    },
-    "4": {
-      "item": "minecraft:egg"
-    },
-    "5": {
-      "item": "croptopia:frying_pan"
-    },
-    "6": {
-      "item": "minecraft:bread"
-    }
+    "1": "#${dependent}:shrimp",
+    "4": "minecraft:egg",
+    "5": "croptopia:frying_pan",
+    "6": "minecraft:bread"
   },
   "pattern": [
     "111",

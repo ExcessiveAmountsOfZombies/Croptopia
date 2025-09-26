@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.*;
+import static com.epherical.croptopia.util.FoodConstructor.PIE_10;
+import static com.epherical.croptopia.util.FoodConstructor.createFood;
 
 public class Pie implements ItemLike {
     private static final List<Pie> INSTANCES = new ArrayList<>();
@@ -41,7 +42,7 @@ public class Pie implements ItemLike {
     }
 
     public void registerItem(RegisterFunction<Item> register) {
-        this.item = register.register(CroptopiaMod.createIdentifier(name), () -> new Item(createGroup().food(createFood(PIE_10))));
+        this.item = register.register(CroptopiaMod.createIdentifier(name), id -> new Item(createGroup(id).food(createFood(PIE_10))));
     }
 
     public static List<Pie> copy() {

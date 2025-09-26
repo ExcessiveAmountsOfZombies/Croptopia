@@ -1,8 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
-  "ingredient": {
-    "tag": "${dependent}:sweetpotatos"
-  },
+  "ingredient": "#${dependent}:sweetpotatos",
   "result": {
     "id": "croptopia:baked_sweet_potato"
   },
