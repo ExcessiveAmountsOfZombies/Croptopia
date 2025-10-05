@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:tea_leaves"
-    }
+    "#${dependent}:tea_leaves"
   ],
   "result": {
     "count": 1,

@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 100,
   "experience": 0.2,
-  "ingredient": {
-    "item": "croptopia:sweetpotato"
-  },
+  "ingredient": "croptopia:sweetpotato",
   "result": {
     "id": "croptopia:baked_sweet_potato"
   }

@@ -6,27 +6,13 @@
     " 57"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "tag": "${dependent}:eggplants"
-    },
-    "3": {
-      "tag": "${dependent}:olive_oils"
-    },
-    "4": {
-      "item": "croptopia:pepper"
-    },
-    "5": {
-      "tag": "${dependent}:cheeses"
-    },
-    "6": {
-      "tag": "${dependent}:basil"
-    },
-    "7": {
-      "item": "minecraft:bread"
-    }
+    "1": "minecraft:egg",
+    "2": "#${dependent}:eggplants",
+    "3": "#${dependent}:olive_oils",
+    "4": "croptopia:pepper",
+    "5": "#${dependent}:cheeses",
+    "6": "#${dependent}:basil",
+    "7": "minecraft:bread"
   },
   "result": {
     "id": "croptopia:eggplant_parmesan",

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:lemons"
-    },
-    {
-      "tag": "${dependent}:lemons"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:lemons",
+    "#${dependent}:lemons",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

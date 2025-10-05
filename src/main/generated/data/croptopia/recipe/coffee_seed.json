@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:coffee_beans"
-    }
+    "#${dependent}:coffee_beans"
   ],
   "result": {
     "count": 1,

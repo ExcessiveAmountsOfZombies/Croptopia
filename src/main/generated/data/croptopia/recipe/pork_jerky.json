@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:porkchop"
-    },
-    "2": {
-      "tag": "${dependent}:salts"
-    }
+    "1": "minecraft:porkchop",
+    "2": "#${dependent}:salts"
   },
   "pattern": [
     "111",

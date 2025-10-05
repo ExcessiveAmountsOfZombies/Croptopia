@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:popcorn_from_corn"
+        "recipe": "croptopia:popcorn_from_corn"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:popcorn_from_corn"
+      "croptopia:popcorn_from_corn"
     ]
   }
 }

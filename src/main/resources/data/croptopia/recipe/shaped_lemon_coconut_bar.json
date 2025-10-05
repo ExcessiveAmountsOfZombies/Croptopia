@@ -5,24 +5,12 @@
     "526"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:lemons"
-    },
-    "2": {
-      "tag": "${dependent}:coconuts"
-    },
-    "3": {
-      "item": "minecraft:sugar"
-    },
-    "4": {
-      "item": "minecraft:egg"
-    },
-    "5": {
-      "tag": "${dependent}:butters"
-    },
-    "6": {
-      "tag": "${dependent}:flour"
-    }
+    "1": "#${dependent}:lemons",
+    "2": "#${dependent}:coconuts",
+    "3": "minecraft:sugar",
+    "4": "minecraft:egg",
+    "5": "#${dependent}:butters",
+    "6": "#${dependent}:flour"
   },
   "result": {
     "id": "croptopia:lemon_coconut_bar",

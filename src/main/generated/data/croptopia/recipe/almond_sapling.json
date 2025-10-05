@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:almonds"
-    },
-    {
-      "tag": "${dependent}:almonds"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:almonds",
+    "#${dependent}:almonds",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

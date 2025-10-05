@@ -6,27 +6,13 @@
     " 1 "
   ],
   "key": {
-    "1": {
-      "item": "croptopia:frying_pan"
-    },
-    "2": {
-      "tag": "${dependent}:flour"
-    },
-    "3": {
-      "tag": "${dependent}:salts"
-    },
-    "4": {
-      "item": "minecraft:sugar"
-    },
-    "5": {
-      "item": "minecraft:egg"
-    },
-    "6": {
-      "tag": "${dependent}:vanilla"
-    },
-    "7": {
-      "tag": "${dependent}:blueberries"
-    }
+    "1": "croptopia:frying_pan",
+    "2": "#${dependent}:flour",
+    "3": "#${dependent}:salts",
+    "4": "minecraft:sugar",
+    "5": "minecraft:egg",
+    "6": "#${dependent}:vanilla",
+    "7": "#${dependent}:blueberries"
   },
   "result": {
     "id": "croptopia:scones",

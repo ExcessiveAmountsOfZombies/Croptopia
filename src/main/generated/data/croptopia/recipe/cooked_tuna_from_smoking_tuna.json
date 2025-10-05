@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 100,
   "experience": 0.2,
-  "ingredient": {
-    "item": "croptopia:tuna"
-  },
+  "ingredient": "croptopia:tuna",
   "result": {
     "id": "croptopia:cooked_tuna"
   }

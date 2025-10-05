@@ -1,8 +1,6 @@
 {
   "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "croptopia:water_bottle"
-  },
+  "ingredient": "croptopia:water_bottle",
   "result": {
     "id": "croptopia:salt"
   },

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:flour"
-    },
-    {
-      "item": "croptopia:frying_pan"
-    },
-    {
-      "tag": "${dependent}:water_bottles"
-    }
+    "#${dependent}:flour",
+    "croptopia:frying_pan",
+    "#${dependent}:water_bottles"
   ],
   "result": {
     "count": 2,

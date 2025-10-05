@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:tomatoes"
-    },
-    "2": {
-      "tag": "${dependent}:anchovies"
-    },
-    "3": {
-      "tag": "${dependent}:cheeses"
-    },
-    "4": {
-      "tag": "${dependent}:doughs"
-    },
-    "7": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "#${dependent}:tomatoes",
+    "2": "#${dependent}:anchovies",
+    "3": "#${dependent}:cheeses",
+    "4": "#${dependent}:doughs",
+    "7": "croptopia:frying_pan"
   },
   "pattern": [
     "123",

@@ -1,7 +1,7 @@
 import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.11-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
@@ -45,12 +45,15 @@ dependencies {
     minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
     mappings loom.layered() {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.20.1:2023.07.09")
+        parchment("org.parchmentmc.data:parchment-${parchment_version}")
     }
     modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
-    modImplementation('com.epherical.epherolib:EpheroLib-fabric:1.2.0-1.20.6')
-    modCompileOnly "vazkii.patchouli:Patchouli:1.20.1-84-FABRIC-SNAPSHOT"
+    //modImplementation('com.epherical.epherolib:EpheroLib-fabric:1.2.0-1.20.6')
+    modImplementation files("../jars/EpheroLib-FABRIC-1.2.0-1.21.5.jar")
+    modCompileOnly "vazkii.patchouli:Patchouli:1.21-88-FABRIC",{
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 
     modCompileOnly "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
@@ -78,7 +81,7 @@ loom {
         }
 
         datagen {
-            server()
+            inherit client
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${getRootProject().file("src/main/generated")}"
@@ -94,6 +97,7 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         include "fabric.mod.json"
         expand "mod_version": rootProject.version
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }
 
     //from(sourceSets.main.resources.srcDirs) {

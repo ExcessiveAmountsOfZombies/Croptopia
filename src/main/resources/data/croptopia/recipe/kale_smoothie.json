@@ -1,27 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:glass_bottle"
-    },
-    {
-      "tag": "${dependent}:kale"
-    },
-    {
-      "item": "minecraft:ice"
-    },
-    {
-      "tag": "${dependent}:milks"
-    },
-    {
-      "tag": "${dependent}:mangos"
-    },
-    {
-      "tag": "${dependent}:yoghurts"
-    },
-    {
-      "tag": "${dependent}:tomatoes"
-    }
+    "minecraft:glass_bottle",
+    "#${dependent}:kale",
+    "minecraft:ice",
+    "#${dependent}:milks",
+    "#${dependent}:mangos",
+    "#${dependent}:yoghurts",
+    "#${dependent}:tomatoes"
   ],
   "result": {
     "id": "croptopia:kale_smoothie",

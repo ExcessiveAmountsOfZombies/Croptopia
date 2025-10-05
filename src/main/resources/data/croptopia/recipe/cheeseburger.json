@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:bread"
-    },
-    {
-      "tag": "${dependent}:cheeses"
-    },
-    {
-      "item": "croptopia:frying_pan"
-    },
-    {
-      "tag": "croptopia:beef_replacements"
-    }
+    "minecraft:bread",
+    "#${dependent}:cheeses",
+    "croptopia:frying_pan",
+    "#croptopia:beef_replacements"
   ],
   "result": {
     "id": "croptopia:cheeseburger",

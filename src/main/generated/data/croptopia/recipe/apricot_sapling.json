@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:apricots"
-    },
-    {
-      "tag": "${dependent}:apricots"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:apricots",
+    "#${dependent}:apricots",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

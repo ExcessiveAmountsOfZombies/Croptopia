@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:pineapples"
-    }
+    "#${dependent}:pineapples"
   ],
   "result": {
     "count": 1,

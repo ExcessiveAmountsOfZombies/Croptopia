@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:peaches"
-    },
-    {
-      "tag": "${dependent}:peaches"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:peaches",
+    "#${dependent}:peaches",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

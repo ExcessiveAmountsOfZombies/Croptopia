@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:chile_peppers"
-    }
+    "#${dependent}:chile_peppers"
   ],
   "result": {
     "count": 1,

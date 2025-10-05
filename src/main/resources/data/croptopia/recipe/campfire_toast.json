@@ -1,8 +1,6 @@
 {
   "type": "minecraft:campfire_cooking",
-  "ingredient": {
-    "item": "minecraft:bread"
-  },
+  "ingredient": "minecraft:bread",
   "result": {
     "id": "croptopia:toast"
   },

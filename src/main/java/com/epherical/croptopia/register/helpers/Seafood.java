@@ -8,6 +8,9 @@ import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,13 +50,15 @@ public class Seafood implements ItemConvertibleWithPlural {
         return INSTANCES;
     }
 
+    private static final Consumable GLOWING = Consumables.defaultFood()
+            .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1))).build();
+
     public void registerItem(RegisterFunction<Item> register, FoodConstructor foodConstructor) {
-        item = register.register(CroptopiaMod.createIdentifier(name), () -> {
-            if (name.contains("GLOWING")) {
-                return new Item(createGroup().food(FoodConstructor.createBuilder(foodConstructor)
-                        .effect(new MobEffectInstance(MobEffects.GLOWING, 4000, 1), 1.0F).build()));
+        item = register.register(CroptopiaMod.createIdentifier(name), id -> {
+            if (name.contains("glowing")) {  // REVIEW 1.21.3 - this was 'GLOWING' before but I think that's wrong
+                return new Item(createGroup(id).food(FoodConstructor.createBuilder(foodConstructor).build(), GLOWING));
             } else {
-                return new Item(createGroup().food(FoodConstructor.createFood(foodConstructor)));
+                return new Item(createGroup(id).food(FoodConstructor.createFood(foodConstructor)));
             }
         });
     }

@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "${dependent}:kumquats"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:kumquats",
+    "#${dependent}:kumquats",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

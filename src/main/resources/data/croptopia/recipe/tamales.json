@@ -1,27 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:chicken"
-    },
-    {
-      "tag": "${dependent}:onions"
-    },
-    {
-      "item": "croptopia:corn_husk"
-    },
-    {
-      "tag": "${dependent}:flour"
-    },
-    {
-      "tag": "${dependent}:salts"
-    },
-    {
-      "tag": "${dependent}:chile_peppers"
-    },
-    {
-      "item": "croptopia:cooking_pot"
-    }
+    "minecraft:chicken",
+    "#${dependent}:onions",
+    "croptopia:corn_husk",
+    "#${dependent}:flour",
+    "#${dependent}:salts",
+    "#${dependent}:chile_peppers",
+    "croptopia:cooking_pot"
   ],
   "result": {
     "id": "croptopia:tamales",

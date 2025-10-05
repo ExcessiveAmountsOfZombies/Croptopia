@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:raisins_from_smoking_grape"
+        "recipe": "croptopia:raisins_from_smoking_grape"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:raisins_from_smoking_grape"
+      "croptopia:raisins_from_smoking_grape"
     ]
   }
 }

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:cabbage"
-    }
+    "#${dependent}:cabbage"
   ],
   "result": {
     "count": 1,

@@ -1,12 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "croptopia:flourable"
-    },
-    {
-      "tag": "croptopia:flourable"
-    }
+    "#croptopia:flourable",
+    "#croptopia:flourable"
   ],
   "result": {
     "id": "croptopia:flour",

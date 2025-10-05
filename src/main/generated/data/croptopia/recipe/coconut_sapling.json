@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:coconuts"
-    },
-    {
-      "tag": "${dependent}:coconuts"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:coconuts",
+    "#${dependent}:coconuts",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

@@ -5,18 +5,10 @@
     "324"
   ],
   "key": {
-    "1": {
-      "tag": "${dependent}:asparagus"
-    },
-    "2": {
-      "tag": "${dependent}:olive_oils"
-    },
-    "3": {
-      "tag": "${dependent}:cheeses"
-    },
-    "4": {
-      "item": "croptopia:pepper"
-    }
+    "1": "#${dependent}:asparagus",
+    "2": "#${dependent}:olive_oils",
+    "3": "#${dependent}:cheeses",
+    "4": "croptopia:pepper"
   },
   "result": {
     "id": "croptopia:cheesy_asparagus",

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "H": {
-      "item": "minecraft:hopper"
-    },
-    "I": {
-      "item": "minecraft:piston"
-    }
+    "H": "minecraft:hopper",
+    "I": "minecraft:piston"
   },
   "pattern": [
     "I",

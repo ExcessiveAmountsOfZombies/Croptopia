@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 100,
   "experience": 0.2,
-  "ingredient": {
-    "item": "minecraft:bread"
-  },
+  "ingredient": "minecraft:bread",
   "result": {
     "id": "croptopia:toast"
   }

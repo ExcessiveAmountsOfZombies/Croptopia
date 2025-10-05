@@ -39,7 +39,8 @@ minecraft {
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     compileOnlyApi('org.jetbrains:annotations:23.0.0')
-    compileOnlyApi('com.epherical.epherolib:EpheroLib:1.2.0-1.20.6')
+    // compileOnlyApi('com.epherical.epherolib:EpheroLib:1.2.0-1.20.6')
+    compileOnlyApi files("jars/EpheroLib-FABRIC-1.2.0-1.21.5.jar")
 }
 
 sourceSets {

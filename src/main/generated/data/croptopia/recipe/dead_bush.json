@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:salts"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:salts",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

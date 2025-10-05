@@ -6,22 +6,27 @@ import com.epherical.croptopia.common.PlatformAdapter;
 import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.config.IdentifierSerializer;
 import com.epherical.croptopia.config.TreeConfiguration;
-import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.register.Composter;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.effects.SpawnParticlesEffect;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.UntintedParticleLeavesBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 
 import java.util.ArrayList;
+
+import static java.util.Objects.requireNonNull;
 
 public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) {
     public static ArrayList<Item> cropItems = new ArrayList<>();
@@ -50,28 +55,35 @@ public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) 
         return mod;
     }
 
-    public static Item.Properties createGroup() {
-        return new Item.Properties();
+    public static Item.Properties createGroup(ResourceLocation id) {
+        return new Item.Properties().setId(ResourceKey.create(Registries.ITEM, requireNonNull(id)));
     }
 
     public static ResourceLocation createIdentifier(String name) {
         return ResourceLocation.fromNamespaceAndPath(MiscNames.MOD_ID, name);
     }
 
-    public static BlockBehaviour.Properties createCropSettings() {
-        return BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP);
+    public static BlockBehaviour.Properties createCropSettings(ResourceLocation id) {
+        return BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, requireNonNull(id))).
+                mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP);
     }
 
-    public static LeafCropBlock createLeavesBlock() {
-        return new LeafCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating((a, b, c) -> false).isViewBlocking((a, b, c) -> false));
+    public static LeafCropBlock createLeavesBlock(ResourceLocation id) {
+        return new LeafCropBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, requireNonNull(id))).
+                mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating((a, b, c) -> false).isViewBlocking((a, b, c) -> false));
     }
 
-    public static LeavesBlock createRegularLeavesBlock() {
-        return new LeavesBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating(CroptopiaMod::never).isViewBlocking(CroptopiaMod::never));
+    public static LeavesBlock createRegularLeavesBlock(ResourceLocation id) {
+        return new UntintedParticleLeavesBlock(
+                0.1f, // REVIEW 1.21.5
+                ParticleTypes.PALE_OAK_LEAVES, // REVIEW 1.21.5
+                BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, requireNonNull(id))).
+                mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating(CroptopiaMod::never).isViewBlocking(CroptopiaMod::never));
     }
 
-    public static BlockBehaviour.Properties createSaplingSettings() {
-        return BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS);
+    public static BlockBehaviour.Properties createSaplingSettings(ResourceLocation id) {
+        return BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, requireNonNull(id))).
+                mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS);
     }
 
     private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {

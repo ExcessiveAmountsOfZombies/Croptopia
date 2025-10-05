@@ -1,10 +1,10 @@
-// 1.21	2024-06-17T18:40:20.1945891	Croptopia/Tags for minecraft:item
-b6dca38e55a491ee52c75f670baeada8462a65f8 data\minecraft\tags\item\chicken_food.json
-b6dca38e55a491ee52c75f670baeada8462a65f8 data\minecraft\tags\item\parrot_food.json
-e1869b0a6def5b71118a163d67616deb2661391d data\croptopia\tags\item\cinnamon_logs.json
-f9138aa662f6baccc40a83f06b20b87e90424c2e data\minecraft\tags\item\piglin_food.json
-b6dca38e55a491ee52c75f670baeada8462a65f8 data\minecraft\tags\item\villager_plantable_seeds.json
-c94d6f79ce59608453ea70f72ef154084a5b9b13 data\minecraft\tags\item\logs_that_burn.json
-c9c457d7127a94df94f45ae2591496e3cb9ad793 data\minecraft\tags\item\saplings.json
-f0db1a43071e1118cf33024f08ae8a067eef7f2a data\minecraft\tags\item\fox_food.json
-f1c33af3c16b3b7b711b966d20533ed9b30d4516 data\minecraft\tags\item\fishes.json
+// 1.21.5	-999999999-01-01T00:00:00	Croptopia/Tags for minecraft:item
+e1869b0a6def5b71118a163d67616deb2661391d data/croptopia/tags/item/cinnamon_logs.json
+b6dca38e55a491ee52c75f670baeada8462a65f8 data/minecraft/tags/item/chicken_food.json
+f1c33af3c16b3b7b711b966d20533ed9b30d4516 data/minecraft/tags/item/fishes.json
+f0db1a43071e1118cf33024f08ae8a067eef7f2a data/minecraft/tags/item/fox_food.json
+c94d6f79ce59608453ea70f72ef154084a5b9b13 data/minecraft/tags/item/logs_that_burn.json
+b6dca38e55a491ee52c75f670baeada8462a65f8 data/minecraft/tags/item/parrot_food.json
+f9138aa662f6baccc40a83f06b20b87e90424c2e data/minecraft/tags/item/piglin_food.json
+c9c457d7127a94df94f45ae2591496e3cb9ad793 data/minecraft/tags/item/saplings.json
+b6dca38e55a491ee52c75f670baeada8462a65f8 data/minecraft/tags/item/villager_plantable_seeds.json

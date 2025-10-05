@@ -5,24 +5,12 @@
     "123"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "tag": "${dependent}:water_bottles"
-    },
-    "3": {
-      "item": "croptopia:whipping_cream"
-    },
-    "4": {
-      "tag": "${dependent}:dates"
-    },
-    "5": {
-      "tag": "${dependent}:figs"
-    },
-    "6": {
-      "item": "minecraft:sugar"
-    }
+    "1": "minecraft:egg",
+    "2": "#${dependent}:water_bottles",
+    "3": "croptopia:whipping_cream",
+    "4": "#${dependent}:dates",
+    "5": "#${dependent}:figs",
+    "6": "minecraft:sugar"
   },
   "result": {
     "id": "croptopia:figgy_pudding",

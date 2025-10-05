@@ -1,24 +1,12 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "${dependent}:rice"
-    },
-    {
-      "tag": "${dependent}:almonds"
-    },
-    {
-      "tag": "${dependent}:limes"
-    },
-    {
-      "tag": "${dependent}:water_bottles"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "croptopia:cinnamon"
-    }
+    "#${dependent}:rice",
+    "#${dependent}:almonds",
+    "#${dependent}:limes",
+    "#${dependent}:water_bottles",
+    "minecraft:sugar",
+    "croptopia:cinnamon"
   ],
   "result": {
     "id": "croptopia:horchata",

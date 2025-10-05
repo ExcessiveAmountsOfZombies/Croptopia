@@ -2,30 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "item": "minecraft:sugar"
-    },
-    "3": {
-      "item": "minecraft:pumpkin"
-    },
-    "4": {
-      "tag": "${dependent}:flour"
-    },
-    "5": {
-      "item": "croptopia:cinnamon"
-    },
-    "6": {
-      "tag": "${dependent}:salts"
-    },
-    "7": {
-      "tag": "${dependent}:butters"
-    },
-    "8": {
-      "tag": "${dependent}:vanilla"
-    }
+    "1": "minecraft:egg",
+    "2": "minecraft:sugar",
+    "3": "minecraft:pumpkin",
+    "4": "#${dependent}:flour",
+    "5": "croptopia:cinnamon",
+    "6": "#${dependent}:salts",
+    "7": "#${dependent}:butters",
+    "8": "#${dependent}:vanilla"
   },
   "pattern": [
     "586",

@@ -4,9 +4,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.component.TooltipDisplay;
 
-import java.util.List;
+import java.util.function.Consumer;
 
 public class ReferenceItem extends Item {
 
@@ -18,8 +18,8 @@ public class ReferenceItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack item, TooltipContext level, List<Component> tooltip, TooltipFlag flag) {
-        super.appendHoverText(item, level, tooltip, flag);
-        tooltip.add(component);
+    public void appendHoverText(ItemStack item, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
+        super.appendHoverText(item, context, display, list, flag);
+        list.accept(component);
     }
 }

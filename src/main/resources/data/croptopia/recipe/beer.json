@@ -1,18 +1,10 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "item": "minecraft:glass_bottle"
-    },
-    {
-      "tag": "${dependent}:hops"
-    },
-    {
-      "tag": "${dependent}:barley"
-    },
-    {
-      "item": "croptopia:food_press"
-    }
+    "minecraft:glass_bottle",
+    "#${dependent}:hops",
+    "#${dependent}:barley",
+    "croptopia:food_press"
   ],
   "result": {
     "id": "croptopia:beer",

@@ -5,19 +5,17 @@ import com.epherical.croptopia.items.Drink;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.level.ItemLike;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static com.epherical.croptopia.CroptopiaMod.createGroup;
-import static com.epherical.croptopia.util.FoodConstructor.*;
+import static com.epherical.croptopia.util.FoodConstructor.JUICE_5;
+import static com.epherical.croptopia.util.FoodConstructor.createBuilder;
 
 public class Smoothie implements ItemLike {
     private static final List<Smoothie> INSTANCES = new ArrayList<>();
@@ -54,7 +52,7 @@ public class Smoothie implements ItemLike {
     }
 
     public void registerItems(RegisterFunction<Item> register) {
-        item = register.register(CroptopiaMod.createIdentifier(name),  () -> new Drink(createGroup().food(createBuilder(JUICE_5).alwaysEdible().build()).craftRemainder(Items.GLASS_BOTTLE)));
+        item = register.register(CroptopiaMod.createIdentifier(name),  id -> new Drink(createGroup(id).food(createBuilder(JUICE_5).alwaysEdible().build(), Consumables.DEFAULT_DRINK).craftRemainder(Items.GLASS_BOTTLE)));
     }
 
     public static List<Smoothie> copy() {

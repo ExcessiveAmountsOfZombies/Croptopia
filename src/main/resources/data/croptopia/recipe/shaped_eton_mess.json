@@ -5,18 +5,10 @@
     "121"
   ],
   "key": {
-    "1": {
-      "item": "minecraft:egg"
-    },
-    "2": {
-      "item": "minecraft:sugar"
-    },
-    "3": {
-      "tag": "${dependent}:strawberries"
-    },
-    "4": {
-      "item": "croptopia:whipping_cream"
-    }
+    "1": "minecraft:egg",
+    "2": "minecraft:sugar",
+    "3": "#${dependent}:strawberries",
+    "4": "croptopia:whipping_cream"
   },
   "result": {
     "id": "croptopia:eton_mess",

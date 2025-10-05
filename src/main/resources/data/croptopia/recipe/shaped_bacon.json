@@ -5,12 +5,8 @@
     "1 "
   ],
   "key": {
-    "1": {
-      "item": "croptopia:knife"
-    },
-    "2": {
-      "item": "minecraft:porkchop"
-    }
+    "1": "croptopia:knife",
+    "2": "minecraft:porkchop"
   },
   "result": {
     "id": "croptopia:bacon",

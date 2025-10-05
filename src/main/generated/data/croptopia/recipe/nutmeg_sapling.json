@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "${dependent}:nutmegs"
-    },
-    {
-      "tag": "${dependent}:nutmegs"
-    },
-    {
-      "tag": "minecraft:saplings"
-    }
+    "#${dependent}:nutmegs",
+    "#${dependent}:nutmegs",
+    "#minecraft:saplings"
   ],
   "result": {
     "count": 1,

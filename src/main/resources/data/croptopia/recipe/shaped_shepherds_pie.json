@@ -6,33 +6,15 @@
     "678"
   ],
   "key": {
-    "F": {
-      "item": "croptopia:frying_pan"
-    },
-    "1": {
-      "tag": "croptopia:beef_mutton"
-    },
-    "2": {
-      "tag": "${dependent}:salts"
-    },
-    "3": {
-      "item": "croptopia:pepper"
-    },
-    "4": {
-      "item": "minecraft:potato"
-    },
-    "5": {
-      "tag": "${dependent}:tomatoes"
-    },
-    "6": {
-      "tag": "${dependent}:corn"
-    },
-    "7": {
-      "tag": "${dependent}:garlic"
-    },
-    "8": {
-      "tag": "${dependent}:onions"
-    }
+    "F": "croptopia:frying_pan",
+    "1": "#croptopia:beef_mutton",
+    "2": "#${dependent}:salts",
+    "3": "croptopia:pepper",
+    "4": "minecraft:potato",
+    "5": "#${dependent}:tomatoes",
+    "6": "#${dependent}:corn",
+    "7": "#${dependent}:garlic",
+    "8": "#${dependent}:onions"
   },
   "result": {
     "id": "croptopia:shepherds_pie",

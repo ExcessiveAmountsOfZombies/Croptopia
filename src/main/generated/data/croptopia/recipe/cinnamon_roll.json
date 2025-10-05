@@ -2,33 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "1": {
-      "tag": "${dependent}:milks"
-    },
-    "2": {
-      "tag": "${dependent}:doughs"
-    },
-    "3": {
-      "item": "minecraft:egg"
-    },
-    "4": {
-      "tag": "${dependent}:butters"
-    },
-    "5": {
-      "tag": "${dependent}:salts"
-    },
-    "6": {
-      "item": "minecraft:sugar"
-    },
-    "7": {
-      "tag": "${dependent}:cinnamon"
-    },
-    "8": {
-      "item": "croptopia:whipping_cream"
-    },
-    "9": {
-      "item": "croptopia:frying_pan"
-    }
+    "1": "#${dependent}:milks",
+    "2": "#${dependent}:doughs",
+    "3": "minecraft:egg",
+    "4": "#${dependent}:butters",
+    "5": "#${dependent}:salts",
+    "6": "minecraft:sugar",
+    "7": "#${dependent}:cinnamon",
+    "8": "croptopia:whipping_cream",
+    "9": "croptopia:frying_pan"
   },
   "pattern": [
     "123",
