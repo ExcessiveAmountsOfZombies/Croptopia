@@ -51,7 +51,7 @@ public class SetupCommand {
             world.setBlock(pos.offset(2, 0, 0), block.getState().setValue(BlockStateProperties.AGE_7, 5), 2);
             world.setBlock(pos.offset(3, 0, 0), block.getState().setValue(BlockStateProperties.AGE_7, 7), 2);
 
-            serverWorld.blockUpdated(pos, block.getState().getBlock());
+            serverWorld.sendBlockUpdated(pos, block.getState(), block.getState(), 0); // REVIEW 1.21.5
             source.sendSuccess(() ->  Component.translatable("commands.setblock.success", pos.getX(), pos.getY(), pos.getZ()), true);
             return 1;
         }

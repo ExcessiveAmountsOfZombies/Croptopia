@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:caramel_from_sugar"
+        "recipe": "croptopia:caramel_from_sugar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:caramel_from_sugar"
+      "croptopia:caramel_from_sugar"
     ]
   }
 }

@@ -8,15 +8,18 @@ import com.epherical.croptopia.config.IdentifierSerializer;
 import com.epherical.croptopia.config.TreeConfiguration;
 import com.epherical.croptopia.register.Composter;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.effects.SpawnParticlesEffect;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.UntintedParticleLeavesBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
@@ -71,7 +74,10 @@ public record CroptopiaMod(PlatformAdapter<?> platform, CroptopiaConfig config) 
     }
 
     public static LeavesBlock createRegularLeavesBlock(ResourceLocation id) {
-        return new LeavesBlock(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, requireNonNull(id))).
+        return new UntintedParticleLeavesBlock(
+                0.1f, // REVIEW 1.21.5
+                ParticleTypes.PALE_OAK_LEAVES, // REVIEW 1.21.5
+                BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, requireNonNull(id))).
                 mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaMod::canSpawnOnLeaves).isSuffocating(CroptopiaMod::never).isViewBlocking(CroptopiaMod::never));
     }
 

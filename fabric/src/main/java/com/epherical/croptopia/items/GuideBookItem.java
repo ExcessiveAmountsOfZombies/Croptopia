@@ -10,10 +10,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import vazkii.patchouli.api.PatchouliAPI;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class GuideBookItem extends Item {
 
@@ -24,9 +26,9 @@ public class GuideBookItem extends Item {
 
 
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, List<Component> list, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack item, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
         if (!Croptopia.patchouli.isLoaded()) {
-            list.add(Component.nullToEmpty("Patchouli is not installed."));
+            list.accept(Component.nullToEmpty("Patchouli is not installed."));
         }
     }
 

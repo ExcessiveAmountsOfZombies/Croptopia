@@ -13,7 +13,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -227,10 +227,15 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 SimpleStateProvider.simple(log.defaultBlockState()),
                 new StraightTrunkPlacer(i, j, k),
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leaves.defaultBlockState(), 90).build()),
+                new WeightedStateProvider(
+                        WeightedList.<BlockState>builder()
+                                .add(leaves.defaultBlockState(), 90)
+                                .build()
+                ),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
     }
+
 
     public static void attemptPop(BlockState state, UseOnContext context, BlockPos pos) {
         for (Tree crop : TREES) {

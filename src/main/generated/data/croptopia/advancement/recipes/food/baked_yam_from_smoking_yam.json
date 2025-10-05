@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:baked_yam_from_smoking_yam"
+        "recipe": "croptopia:baked_yam_from_smoking_yam"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:baked_yam_from_smoking_yam"
+      "croptopia:baked_yam_from_smoking_yam"
     ]
   }
 }

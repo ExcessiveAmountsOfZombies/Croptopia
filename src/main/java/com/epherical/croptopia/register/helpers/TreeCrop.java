@@ -13,13 +13,12 @@ import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.grower.TreeGrower;
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -50,10 +49,12 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private final String name;
     private final boolean isPlural;
     private final TagCategory category;
+
     private Item item;
-    private Block leaves;
+    private Block leaves; // REVIEW what is the difference between leaves and leafType?
 
     private Block leafType;
+    private final Block logType;
 
     private ConfiguredFeature<TreeConfiguration, ?> treeConfig;
     private Item saplingItem;
@@ -83,6 +84,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         this.category = category;
         this.constructor = constructor;
         this.leafType = leafType;
+        this.logType = logType;
         TREE_CROPS.add(this);
     }
 
@@ -126,6 +128,10 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     public Block getLeaves() {
         return leaves;
+    }
+
+    public Block getLogType() {
+        return logType;
     }
 
     public TagCategory getTagCategory() {
@@ -191,7 +197,12 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 SimpleStateProvider.simple(logType.defaultBlockState()),
                 new StraightTrunkPlacer(i, j, k),
-                new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(leafType.defaultBlockState(), 90).add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20).build()),
+                new WeightedStateProvider(
+                        WeightedList.<BlockState>builder()
+                                .add(leafType.defaultBlockState(), 90)
+                                .add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20)
+                                .build()
+                ),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).ignoreVines().build());
     }

@@ -13,7 +13,7 @@ public class ClientFunctions {
         return (state, world, pos, tintIndex) ->
                 world != null && pos != null
                         ? BiomeColors.getAverageFoliageColor(world, pos)
-                        : FoliageColor.getDefaultColor();
+                        : FoliageColor.FOLIAGE_DEFAULT;
     }
 
     public Block[] leaves() {

@@ -43,7 +43,7 @@ public class LeafCropBlock extends CroptopiaCropBlock {
 
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader $$0, BlockPos $$1, BlockState $$2) {
+    public ItemStack getCloneItemStack(LevelReader $$0, BlockPos $$1, BlockState $$2, boolean $$3) {
         return new ItemStack(this);
     }
 

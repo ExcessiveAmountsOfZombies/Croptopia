@@ -1,10 +1,13 @@
 package com.epherical.croptopia.datagen;
 
 import com.epherical.croptopia.common.generator.ConfiguredFeatureKeys;
+import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
+import net.fabricmc.api.EnvType;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 
@@ -18,7 +21,11 @@ public class CroptopiaDataGeneratorEntry implements DataGeneratorEntrypoint {
         resources.addProvider(CroptopiaBiomeTagProvider::new);
         resources.addProvider(CroptopiaIndependentItemTagProvider::new);
         // tags always first
-        resources.addProvider(CroptopiaModelProvider::new);
+        if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
+            resources.addProvider(CroptopiaModelProvider::new);
+        } else {
+            Content.class.getName();
+        }
         resources.addProvider(CroptopiaRecipeProvider::new);
         resources.addProvider(CroptopiaWorldGeneration::new);
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:salt_from_smoking_water_bottle"
+        "recipe": "croptopia:salt_from_smoking_water_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:salt_from_smoking_water_bottle"
+      "croptopia:salt_from_smoking_water_bottle"
     ]
   }
 }

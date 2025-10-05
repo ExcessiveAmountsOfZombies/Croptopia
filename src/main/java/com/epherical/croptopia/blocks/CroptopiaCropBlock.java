@@ -87,11 +87,6 @@ public class CroptopiaCropBlock extends CropBlock {
     }
 
     @Override
-    public void fallOn(Level world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
-        super.fallOn(world, state, pos, entity, fallDistance);
-    }
-
-    @Override
     protected ItemLike getBaseSeedId() {
         return seed != null ? seed : Items.AIR;
     }

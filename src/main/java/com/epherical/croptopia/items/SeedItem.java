@@ -9,6 +9,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class SeedItem extends BlockItem {
 
@@ -42,7 +44,7 @@ public class SeedItem extends BlockItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+    public void appendHoverText(ItemStack item, TooltipContext context, TooltipDisplay display, Consumer<Component> list, TooltipFlag flag) {
         Component text = Component.translatable("info.croptopia.seed");
         String[] translated = text.getString().split("\n");
         /*if (translated.length >= 2) {

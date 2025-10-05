@@ -12,7 +12,7 @@ import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -46,7 +46,7 @@ public class WorldGenFeatures {
     public static final Map<ResourceKey<PlacedFeature>, List<PlacementModifier>> datagenModifierLists = new HashMap<>();
 
     public static final SimpleBlockConfiguration config = (new SimpleBlockConfiguration(
-            new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+            new WeightedStateProvider(WeightedList.<BlockState>builder()
                     .add(Content.ARTICHOKE.asBlock().defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(Content.ASPARAGUS.asBlock().defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
                     .add(Content.BARLEY.asBlock().defaultBlockState().setValue(CroptopiaCropBlock.AGE, 7), 10)
