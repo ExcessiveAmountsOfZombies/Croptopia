@@ -10,6 +10,8 @@ repositories {
     }
 }
 
+archivesBaseName = archives_base_name + "-" + minecraft_version + "-FORGE-" + mod_version
+
 mixin {
     add(sourceSets.main, "${mod_id}.refmap.json")
 

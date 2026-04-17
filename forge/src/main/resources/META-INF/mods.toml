@@ -33,3 +33,10 @@ Crop mod for forge
     versionRange="[1.19,)"
     ordering="NONE"
     side="BOTH"
+# Here's another dependency
+[[dependencies.croptopia]]
+modId="epherolib"
+mandatory=true
+versionRange="*"
+ordering="AFTER"
+side="BOTH"

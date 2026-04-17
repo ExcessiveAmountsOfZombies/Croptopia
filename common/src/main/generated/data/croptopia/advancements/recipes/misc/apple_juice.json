@@ -20,8 +20,8 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_apple"
+      "has_apple",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
