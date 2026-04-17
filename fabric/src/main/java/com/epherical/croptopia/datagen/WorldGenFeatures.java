@@ -13,6 +13,8 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,6 +34,7 @@ import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.levelgen.placement.SurfaceWaterDepthFilter;
 import net.minecraft.world.level.material.Fluids;
@@ -111,11 +114,14 @@ public class WorldGenFeatures {
             FeatureUtils.simpleRandomPatchConfiguration(6, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, config)));
 
     public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(PlacedFeatureKeys.RANDOM_CROP_KEY, RANDOM_CROP,
-            CountPlacement.of(3),
+            NoiseThresholdCountPlacement.of(-0.8, 15, 4),
+            RarityFilter.onAverageOnceEvery(16),
             InSquarePlacement.spread(),
+            PlacementUtils.HEIGHTMAP,
             BiomeFilter.biome(),
-            NoiseThresholdCountPlacement.of(-0.8, 5, 10),
-            PlacementUtils.HEIGHTMAP_WORLD_SURFACE);
+            CountPlacement.of(32),
+            RandomOffsetPlacement.of(ConstantInt.of(6), ConstantInt.of(2)),
+            BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
 
     public static final Holder<PlacedFeature> APPLE_TREE_CONFIGURED = register(PlacedFeatureKeys.APPLE_TREE_PLACED_KEY, Content.APPLE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
