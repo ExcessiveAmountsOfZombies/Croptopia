@@ -1,15 +1,10 @@
-import net.fabricmc.loom.task.RemapJarTask
-
 plugins {
-    id 'fabric-loom' version '1.2-SNAPSHOT'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'multiloader-loader'
+    id 'fabric-loom'
 }
 
 repositories {
-    mavenCentral()
-    maven {
-        url = "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+    mavenLocal()
     maven {
         url = 'https://maven.blamejared.com'
     }
@@ -18,150 +13,70 @@ repositories {
     }
 }
 
-archivesBaseName = archives_base_name
-
-configurations {
-    shade
-    compile.extendsFrom shade
-}
-
-sourceSets {
-    main {
-        java {
-            srcDirs += [
-                    rootProject.sourceSets.main.java
-            ]
-        }
-        resources {
-            srcDirs += [
-                    "src/main/generated",
-                    rootProject.sourceSets.main.resources
-            ]
-        }
-    }
-}
-
 dependencies {
-    minecraft "com.mojang:minecraft:${rootProject.mc_ver}"
-    mappings loom.layered() {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    mappings loom.layered {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.20.1:2023.07.09")
+        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchmentVersion}@zip")
     }
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_version}"
+    modImplementation "net.fabricmc:fabric-loader:${loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    implementation project(":common")
+
     modImplementation('com.epherical.epherolib:EpheroLib-fabric:1.2.0-1.20.1')
-    modCompileOnly "vazkii.patchouli:Patchouli:1.20.1-84-FABRIC-SNAPSHOT"
+    modImplementation "vazkii.patchouli:Patchouli:1.20.1-84-FABRIC-SNAPSHOT"
 
     modCompileOnly "com.terraformersmc:modmenu:${rootProject.modmenu_version}",{
         exclude(group: "net.fabricmc.fabric-api")
     }
-
-    shade(rootProject)
-    compileOnly(rootProject)
-    implementation(rootProject)
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/croptopia.accesswidener")
-
+    accessWidenerPath.set(file("src/main/resources/croptopia.accesswidener"))
+    mixin {
+        defaultRefmapName.set("${mod_id}.refmap.json")
+    }
     runs {
         client {
             client()
-            name "Fabric Client"
-            ideConfigGenerated = true
+            setConfigName("Fabric Client")
+            ideConfigGenerated(true)
+            runDir("run")
         }
-
         server {
             server()
-            name "Fabric Server"
-            ideConfigGenerated = true
-        }
-
-        datagen {
-            server()
-            name "Data Generation"
-            vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${getRootProject().file("src/main/generated")}"
-            runDir "build/datagen"
-            ideConfigGenerated = true
+            setConfigName("Fabric Server")
+            ideConfigGenerated(true)
+            runDir("run")
         }
     }
 }
 
-processResources {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+import org.gradle.api.file.RelativePath
 
-    from(sourceSets.main.resources.srcDirs) {
-        include "fabric.mod.json"
-        expand "mod_version": rootProject.version
+tasks.named('processResources', ProcessResources) {
+    includeEmptyDirs = false
+
+    filesMatching(['**/data/**', '**/dependents/**']) {
+        expand dependent: 'c'
     }
 
-    //from(sourceSets.main.resources.srcDirs) {
-    //    include('**/data/croptopia/recipes/**')
-    //    expand "dependent": "c"
-    //}
+    eachFile { details ->
+        def segments = details.relativePath.segments as List
 
-    from(sourceSets.main.resources.srcDirs) {
-        include('**/data/**')
-        include('**/dependents/**')
-        expand "dependent": "c"
-        duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    }
-}
-tasks.processResources.dependsOn(rootProject.tasks.processResources)
+        for (int i = 0; i < segments.size() - 1; i++) {
+            if (segments[i] == 'dependents' && segments[i + 1] == 'platform') {
+                def rewritten = []
+                rewritten.addAll(segments.subList(0, i))
+                rewritten.add('data')
+                rewritten.add('c')
+                if (i + 2 < segments.size()) {
+                    rewritten.addAll(segments.subList(i + 2, segments.size()))
+                }
 
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-    source(rootProject.sourceSets.main.allSource)
-    doLast {
-        copy {
-            from "${buildDir}/resources/main/dependents/platform"
-            include "**/**/*.json"
-            expand "dependent": "c"
-            into "${buildDir}/resources/main/data/c/"
-        }
-    }
-}
-
-shadowJar {
-    archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-dev.jar"
-    configurations = [project.configurations.shade]
-    relocate 'dependents/platform', 'data/c'
-}
-
-task remappedShadowJar(type: RemapJarTask) {
-    dependsOn tasks.shadowJar
-    input = tasks.shadowJar.archiveFile
-    archiveFileName = rootProject.archives_base_name + "-${rootProject.mc_ver}-FABRIC-${rootProject.version}.jar"
-}
-
-tasks.assemble.dependsOn tasks.remappedShadowJar
-
-artifacts {
-    archives remappedShadowJar
-    shadow shadowJar
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifactId = "${archives_base_name}-" + artifactId
-            //version = version + "-${mc_ver}"
-            // add all the jars that should be included when publishing to maven
-            //artifact remappedShadowJar
-            artifact(remapJar) {
-                builtBy remapJar
-            }
-        }
-    }
-
-    repositories {
-        maven {
-            name = "EphericalMaven"
-            url = "https://maven.epherical.com/releases"
-            credentials {
-                username = m_user
-                password = m_pass
+                details.relativePath = new RelativePath(details.relativePath.isFile(), *rewritten)
+                break
             }
         }
     }

@@ -1,0 +1,12 @@
+{
+  "name": "Ступка з товкачиком",
+  "icon": "croptopia:mortar_and_pestle",
+  "category": "croptopia:utensils",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:mortar_and_pestle",
+      "text": "Рецепт ступки з товкачикаом."
+    }
+  ]
+}

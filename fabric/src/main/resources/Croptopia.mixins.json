@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "com.epherical.croptopia.mixin",
   "compatibilityLevel": "JAVA_16",
-  "refmap": "Croptopia-refmap.json",
+  "refmap": "croptopia.refmap.json",
   "mixins": [
     "AxeMixin",
     "accessor.ChickenAccess",

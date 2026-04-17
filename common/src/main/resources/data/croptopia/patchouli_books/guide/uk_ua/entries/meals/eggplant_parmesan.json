@@ -1,0 +1,12 @@
+{
+  "name": "Баклажан з парм.",
+  "icon": "croptopia:eggplant_parmesan",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_eggplant_parmesan",
+      "text": "Рецепт баклажана з пармезаном."
+    }
+  ]
+}

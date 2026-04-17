@@ -1,0 +1,12 @@
+{
+  "name": "Ямсовий джем",
+  "icon": "croptopia:yam_jam",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:yam_jam",
+      "text": "Рецепт ямсового джему."
+    }
+  ]
+}

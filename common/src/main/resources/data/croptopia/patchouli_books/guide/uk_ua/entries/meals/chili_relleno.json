@@ -1,0 +1,13 @@
+{
+  "name": "Фарш. перець чилі",
+  "icon": "croptopia:chili_relleno",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "title": "Фарш. перець чилі",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chili_relleno",
+      "text": "Рецепт фаршированого перцю чилі."
+    }
+  ]
+}

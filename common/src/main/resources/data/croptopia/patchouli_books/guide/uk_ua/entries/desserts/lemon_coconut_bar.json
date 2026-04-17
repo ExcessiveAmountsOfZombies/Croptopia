@@ -1,0 +1,13 @@
+{
+  "name": "Лим-кокос. батончик",
+  "icon": "croptopia:lemon_coconut_bar",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "title": "Лимон-кокос. батончик",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_lemon_coconut_bar",
+      "text": "Рецепт лимонно-кокосового батончика."
+    }
+  ]
+}

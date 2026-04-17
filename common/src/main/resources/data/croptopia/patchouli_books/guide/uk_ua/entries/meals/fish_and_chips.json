@@ -1,0 +1,12 @@
+{
+  "name": "Риба з картоплею фрі",
+  "icon": "croptopia:fish_and_chips",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_fish_and_chips",
+      "text": "Рецепт приготування риби з картоплею фрі."
+    }
+  ]
+}

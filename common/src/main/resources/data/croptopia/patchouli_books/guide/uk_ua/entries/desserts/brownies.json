@@ -1,0 +1,12 @@
+{
+  "name": "Брауні",
+  "icon": "croptopia:brownies",
+  "category": "croptopia:desserts",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:brownies",
+      "text": "Рецепт брауні."
+    }
+  ]
+}

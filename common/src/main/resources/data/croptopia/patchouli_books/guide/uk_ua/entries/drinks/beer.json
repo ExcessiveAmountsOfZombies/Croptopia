@@ -1,0 +1,12 @@
+{
+  "name": "Пиво",
+  "icon": "croptopia:beer",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:beer",
+      "text": "Рецепт пива."
+    }
+  ]
+}

@@ -1,198 +1,96 @@
 plugins {
-    id 'idea'
-    id 'maven-publish'
-    id 'net.minecraftforge.gradle'
-    id 'org.spongepowered.mixin'
-    id 'com.github.johnrengelman.shadow' version '8.0.0'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev.legacyforge'
 }
-
-apply plugin: 'org.spongepowered.mixin'
 
 repositories {
     mavenLocal()
-    maven {
-        name = "Forge"
-        url = "https://files.minecraftforge.net/maven"
-    }
     maven {
         url = 'https://maven.blamejared.com'
     }
 }
 
-version = project.mod_version
-group = project.maven_group
-archivesBaseName = archives_base_name + "-" + mc_ver + "-FORGE"
-
-configurations {
-    shade
-    compileOnly.extendsFrom shade
-    compileOnly.extendsFrom shadeSource
-}
-
-
 mixin {
-    add sourceSets.main, "croptopia.refmap.json"
-    config "croptopia.mixins.json"
+    add(sourceSets.main, "${mod_id}.refmap.json")
+
+    //config("${mod_id}.mixins.json")
+    config("${mod_id}.forge.mixins.json")
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDirs += [
-                    "src/main/generated",
-                    rootProject.sourceSets.main.resources
-            ]
-        }
+legacyForge {
+    version = "${minecraft_version}-${forge_version}"
+
+    validateAccessTransformers = true
+
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers = ["src/main/resources/META-INF/accesstransformer.cfg"]
     }
-}
-
-minecraft {
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-    mappings channel: 'official', version: "${mc_ver}"
-    copyIdeResources = true
-    //mappings channel: 'parchment', version: "${project.parchmentVersion}-${project.mc_ver}"
+    parchment {
+        minecraftVersion = minecraft_version
+        mappingsVersion = parchmentVersion
+    }
     runs {
         client {
-            workingDirectory project.file('run')
-            property 'legacyClassPath', '{minecraft_classpath}'
-            arg "-mixin.config=croptopia.mixins.json"
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            // Recommended logging level for the console //property 'forge.logging.console.level', 'debug'
-            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', rootProject.file('src/main/resources/')
-            mods {
-                croptopia {
-                    sources(sourceSets.main, rootProject.sourceSets.main)
-                }
-            }
+            client()
         }
-
-        server {
-            workingDirectory project.file('run')
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                croptopia {
-                    sources(sourceSets.main, rootProject.sourceSets.main)
-                }
-            }
-        }
-
         data {
-            workingDirectory project.file('run')
-            property 'legacyClassPath', '{minecraft_classpath}'
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'croptopia', '--all', '--output', file('src/generated/resources/'), '--existing', rootProject.file('src/main/resources/')
-            mods {
-                croptopia {
-                    sources(sourceSets.main, rootProject.sourceSets.main)
-                }
-            }
+            data()
+            programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
         }
     }
 }
 
-processResources {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    //from(sourceSets.main.resources.srcDirs) {
-    //    include('**/data/croptopia/recipes/**')
-    //    expand "dependent": "forge"
-    //}
-
-    from(sourceSets.main.resources.srcDirs) {
-        include('**/data/**')
-        include('**/dependents/**')
-        expand "dependent": "forge"
-        duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    }
-}
-
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${mc_ver}-${forge_ver}"
-    implementation(rootProject)
-    shade(rootProject)
-    implementation fg.deobf("vazkii.patchouli:Patchouli:1.20.1-80-FORGE")
-    implementation (fg.deobf('com.epherical.epherolib:EpheroLib-forge:1.2.0-1.20.1'))
-    annotationProcessor 'org.spongepowered:mixin:0.8.5-SNAPSHOT:processor'
+    compileOnly project(":common")
+    annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
+    modImplementation ("vazkii.patchouli:Patchouli:1.20.1-85-FORGE")
+    modImplementation ('com.epherical.epherolib:EpheroLib-forge:1.2.0-1.20.1')
 }
 
-shadowJar {
-    archiveClassifier = ""
-    enabled = true
-    configurations = [project.configurations.shade]
-    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
-    //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
-    relocate 'dependents/platform', 'data/forge'
-}
+import org.gradle.api.file.RelativePath
 
-artifacts {
-    archives shadowJar
-    shadow shadowJar
+tasks.named('processResources', ProcessResources) {
+    includeEmptyDirs = false
+
+    filesMatching(['**/data/**', '**/dependents/**']) {
+        expand dependent: 'forge'
+    }
+
+    eachFile { details ->
+        def segments = details.relativePath.segments as List
+
+        for (int i = 0; i < segments.size() - 1; i++) {
+            if (segments[i] == 'dependents' && segments[i + 1] == 'platform') {
+                def rewritten = []
+                rewritten.addAll(segments.subList(0, i))
+                rewritten.add('data')
+                rewritten.add('forge')
+                if (i + 2 < segments.size()) {
+                    rewritten.addAll(segments.subList(i + 2, segments.size()))
+                }
+
+                details.relativePath = new RelativePath(details.relativePath.isFile(), *rewritten)
+                break
+            }
+        }
+    }
 }
 
 jar {
-    //archiveFileName = rootProject.archives_base_name + "-${project.mc_ver}-FORGE-${rootProject.version}.jar"
-    //destinationDirectory = new File("${rootProject.projectDir}/build/jars")
-    manifest {
-        attributes([
-                "Specification-Title": "croptopia",
-                "Specification-Vendor": "thonk",
-                "Specification-Version": "1",
-                "Implementation-Title": "${archives_base_name}",
-                "Implementation-Version": "${mod_version}",
-                "Implementation-Vendor" :"me thonk",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "croptopia.mixins.json"
-        ])
-    }
-}
-
-
-tasks.build.dependsOn(tasks.shadowJar)
-
-reobf {
-    shadowJar {}
-}
-
-jar.finalizedBy('reobfJar')
-shadowJar.dependsOn('reobfJar')
-
-task sourceJar(type: Jar) {
-    archiveClassifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-//tasks.getByName("addRefMapToShadowJar").mustRunAfter(task("shadowJar"))
-
-// configure the maven publication
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            artifactId = "${archives_base_name}-" + artifactId
-            version = version + "-${mc_ver}"
-            // add all the jars that should be included when publishing to maven
-            artifact shadowJar
-
-            artifact sourceJar
-        }
-    }
-
-    repositories {
-        maven {
-            name = "EphericalMaven"
-            url = "https://maven.epherical.com/releases"
-            credentials {
-                username = m_user
-                password = m_pass
-            }
-        }
-    }
+    finalizedBy('reobfJar')
+    manifest.attributes([
+            "MixinConfigs": "${mod_id}.forge.mixins.json"
+    ])
 }

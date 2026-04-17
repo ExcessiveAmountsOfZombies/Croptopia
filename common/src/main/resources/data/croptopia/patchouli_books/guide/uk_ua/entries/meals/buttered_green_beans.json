@@ -1,0 +1,13 @@
+{
+  "name": "Масляна с. квасоля",
+  "icon": "croptopia:buttered_green_beans",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "title": "Масляна с. квасоля",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_buttered_green_beans",
+      "text": "Рецепт масляної стручкової квасолі."
+    }
+  ]
+}

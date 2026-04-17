@@ -1,0 +1,12 @@
+{
+  "name": "Сік із сагуаро",
+  "icon": "croptopia:saguaro_juice",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:saguaro_juice",
+      "text": "Рецепт соку із сагуаро."
+    }
+  ]
+}

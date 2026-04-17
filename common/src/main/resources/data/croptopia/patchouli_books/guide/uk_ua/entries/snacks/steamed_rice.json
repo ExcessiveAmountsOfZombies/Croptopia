@@ -1,0 +1,12 @@
+{
+  "name": "Парований рис",
+  "icon": "croptopia:beef_jerky",
+  "category": "croptopia:snacks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:steamed_rice",
+      "text": "Рецепт приготування парованого рису."
+    }
+  ]
+}

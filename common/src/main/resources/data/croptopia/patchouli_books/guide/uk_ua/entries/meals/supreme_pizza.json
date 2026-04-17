@@ -1,0 +1,12 @@
+{
+  "name": "Велика піца",
+  "icon": "croptopia:supreme_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:supreme_pizza",
+      "text": "Рецепт великої піци."
+    }
+  ]
+}

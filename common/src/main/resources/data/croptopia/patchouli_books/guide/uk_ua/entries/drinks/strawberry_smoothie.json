@@ -1,0 +1,12 @@
+{
+  "name": "Полуничне смузі",
+  "icon": "croptopia:strawberry_smoothie",
+  "category": "croptopia:drinks",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:strawberry_smoothie",
+      "text": "Рецепт полуничного смузі."
+    }
+  ]
+}

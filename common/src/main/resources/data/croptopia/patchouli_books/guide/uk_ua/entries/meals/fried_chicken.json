@@ -1,0 +1,12 @@
+{
+  "name": "Смажена курятина",
+  "icon": "croptopia:fried_chicken",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:fried_chicken",
+      "text": "Рецепт смаженої курятини."
+    }
+  ]
+}

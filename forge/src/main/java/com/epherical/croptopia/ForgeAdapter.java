@@ -5,6 +5,7 @@ import com.epherical.croptopia.register.Content;
 import com.epherical.epherolib.ForgePlatform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -17,6 +18,7 @@ import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 public class ForgeAdapter extends ForgePlatform implements PlatformAdapter<ForgeAdapter> {
     @Override
     public void invokeDrinkEvent(ItemStack stack, Player player) {
+
 
     }
 

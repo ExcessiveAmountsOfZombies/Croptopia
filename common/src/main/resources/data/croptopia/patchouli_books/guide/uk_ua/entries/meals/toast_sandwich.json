@@ -1,0 +1,12 @@
+{
+  "name": "Сендвіч з тостом",
+  "icon": "croptopia:toast_sandwich",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:shaped_toast_sandwich",
+      "text": "Рецепт сендвіча з тостом. Ммм... хліб."
+    }
+  ]
+}

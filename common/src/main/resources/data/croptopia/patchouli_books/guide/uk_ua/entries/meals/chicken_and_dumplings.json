@@ -1,0 +1,12 @@
+{
+  "name": "Кур. з дамплінґами",
+  "icon": "croptopia:chicken_and_dumplings",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:chicken_and_dumplings",
+      "text": "Рецепт курятини з дамплінґами."
+    }
+  ]
+}

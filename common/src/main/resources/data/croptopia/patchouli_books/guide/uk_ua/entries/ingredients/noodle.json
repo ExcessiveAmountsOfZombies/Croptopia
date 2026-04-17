@@ -1,0 +1,12 @@
+{
+  "name": "Локшина",
+  "icon": "croptopia:noodle",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:noodle",
+      "text": "Рецепт локшини."
+    }
+  ]
+}

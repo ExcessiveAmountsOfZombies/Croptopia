@@ -1,0 +1,12 @@
+{
+  "name": "Кукурудз. лушпиння",
+  "icon": "croptopia:corn_husk",
+  "category": "croptopia:ingredients",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:corn_husk",
+      "text": "Рецепт кукурудзяного лушпиння."
+    }
+  ]
+}

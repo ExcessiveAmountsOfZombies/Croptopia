@@ -1,0 +1,13 @@
+{
+  "name": "Ананасова піца",
+  "icon": "croptopia:pineapple_pepperoni_pizza",
+  "category": "croptopia:meals",
+  "pages": [
+    {
+      "title": "Ананасова піца",
+      "type": "patchouli:crafting",
+      "recipe": "croptopia:pineapple_pepperoni_pizza",
+      "text": "Рецепт ананасової піци з пепероні. Ананасам місце на піці."
+    }
+  ]
+}

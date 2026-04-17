@@ -13,6 +13,6 @@ public class Dependency {
     }
 
     public boolean isLoaded() {
-        return loaded;
+        return FabricLoader.getInstance().isModLoaded("patchouli");
     }
 }
