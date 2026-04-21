@@ -1,0 +1,213 @@
+{
+  "parent": "croptopia:gather_desert",
+  "criteria": {
+    "blackbean_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:blackbean_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blackberry_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:blackberry_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blueberry_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:blueberry_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cantaloupe_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cantaloupe_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cauliflower_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cauliflower_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "celery_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:celery_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "elderberry_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:elderberry_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grape_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:grape_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "radish_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:radish_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "raspberry_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:raspberry_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "spinach_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:spinach_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "strawberry_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:strawberry_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tea_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tea_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tomatillo_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tomatillo_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tomato_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tomato_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.gather_forest.description"
+    },
+    "icon": {
+      "id": "croptopia:celery_seed"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_forest.title"
+    }
+  },
+  "requirements": [
+    [
+      "blackbean_seed"
+    ],
+    [
+      "blackberry_seed"
+    ],
+    [
+      "blueberry_seed"
+    ],
+    [
+      "cantaloupe_seed"
+    ],
+    [
+      "cauliflower_seed"
+    ],
+    [
+      "celery_seed"
+    ],
+    [
+      "elderberry_seed"
+    ],
+    [
+      "grape_seed"
+    ],
+    [
+      "raspberry_seed"
+    ],
+    [
+      "radish_seed"
+    ],
+    [
+      "spinach_seed"
+    ],
+    [
+      "strawberry_seed"
+    ],
+    [
+      "tomatillo_seed"
+    ],
+    [
+      "tomato_seed"
+    ],
+    [
+      "tea_seed"
+    ]
+  ]
+}

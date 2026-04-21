@@ -1,0 +1,2255 @@
+{
+  "parent": "croptopia:eatbig",
+  "criteria": {
+    "ajvar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:ajvar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "ajvar_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:ajvar_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "almond_brittle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:almond_brittle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "anchovy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:anchovy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "anchovy_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:anchovy_pizza"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "apple_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:apple_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "apricot_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:apricot_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "artichoke_dip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:artichoke_dip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "avocado_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:avocado_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:bacon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "baked_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:baked_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "baked_sweet_potato": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:baked_sweet_potato"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "baked_yam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:baked_yam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "banana_cream_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:banana_cream_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "banana_nut_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:banana_nut_bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "beef_jerky": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:beef_jerky"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "beef_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:beef_stew"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "beef_stir_fry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:beef_stir_fry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "beef_wellington": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:beef_wellington"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "beetroot_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:beetroot_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blackberry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:blackberry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:blt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blueberry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:blueberry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "borscht": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:borscht"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "brownies": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:brownies"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "burrito": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:burrito"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:butter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "buttered_green_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:buttered_green_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "buttered_toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:buttered_toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cabbage_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cabbage_roll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "caesar_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:caesar_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "calamari": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:calamari"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "candied_kumquats": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:candied_kumquats"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "candied_nuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:candied_nuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "candy_corn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:candy_corn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "carnitas": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:carnitas"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cashew_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cashew_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheese_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cheese_pizza"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheeseburger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cheeseburger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cheesy_asparagus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cheesy_asparagus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cherry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cherry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cherry_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cherry_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_and_dumplings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chicken_and_dumplings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_and_noodles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chicken_and_noodles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chicken_and_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chicken_and_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chili_relleno": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chili_relleno"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chimichanga": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chimichanga"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chocolate": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chocolate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "chocolate_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:chocolate_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "churros": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:churros"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "clam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:clam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooked_bacon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cooked_bacon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooked_calamari": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cooked_calamari"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooked_shrimp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cooked_shrimp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cooked_tuna": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cooked_tuna"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "corn_bread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:corn_bread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cornish_pasty": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cornish_pasty"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "crab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:crab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "crab_legs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:crab_legs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "crema": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:crema"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cucumber_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cucumber_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "deep_fried_shrimp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:deep_fried_shrimp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doughnut": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:doughnut"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "egg_roll": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:egg_roll"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "eggplant_parmesan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:eggplant_parmesan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "elderberry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:elderberry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "enchilada": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:enchilada"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "eton_mess": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:eton_mess"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fajitas": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fajitas"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "figgy_pudding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:figgy_pudding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fish_and_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fish_and_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "french_fries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:french_fries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fried_calamari": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fried_calamari"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fried_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fried_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fruit_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fruit_cake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fruit_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fruit_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "glowing_calamari": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:glowing_calamari"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "goulash": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:goulash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grape_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:grape_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grilled_cheese": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:grilled_cheese"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grilled_eggplant": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:grilled_eggplant"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grilled_oysters": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:grilled_oysters"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "ham_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:ham_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hamburger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:hamburger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "horchata": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:horchata"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kale_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:kale_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kiwi_sorbet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:kiwi_sorbet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "leafy_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:leafy_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "leek_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:leek_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lemon_chicken": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:lemon_chicken"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lemon_coconut_bar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:lemon_coconut_bar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mango_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:mango_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mashed_potatoes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:mashed_potatoes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "meringue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:meringue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "nether_wart_stew": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:nether_wart_stew"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "nougat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:nougat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "nutty_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:nutty_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "oatmeal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:oatmeal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "onion_rings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:onion_rings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "oyster": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:oyster"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peach_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:peach_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peanut_butter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:peanut_butter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peanut_butter_and_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:peanut_butter_and_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peanut_butter_with_celery": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:peanut_butter_with_celery"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pecan_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pecan_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pecan_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pecan_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pepperoni": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pepperoni"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pineapple_pepperoni_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pineapple_pepperoni_pizza"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pizza"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "popcorn": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:popcorn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pork_and_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pork_and_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pork_jerky": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pork_jerky"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:potato_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "potato_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:potato_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_bars": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pumpkin_bars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_soup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pumpkin_soup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "quesadilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:quesadilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "raisin_oatmeal_cookie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:raisin_oatmeal_cookie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "raisins": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:raisins"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "raspberry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:raspberry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "ratatouille": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:ratatouille"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "refried_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:refried_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rhubarb_crisp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:rhubarb_crisp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_asparagus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_asparagus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_nuts": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_nuts"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_pumpkin_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_pumpkin_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_radishes": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_radishes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_squash": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_squash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_sunflower_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_sunflower_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "roasted_turnips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:roasted_turnips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rum_raisin_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:rum_raisin_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "salsa": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:salsa"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "saucy_chips": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:saucy_chips"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scones": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:scones"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "scrambled_eggs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:scrambled_eggs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sea_lettuce": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:sea_lettuce"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "shepherds_pie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:shepherds_pie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "snicker_doodle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:snicker_doodle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "spaghetti_squash": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:spaghetti_squash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steamed_broccoli": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:steamed_broccoli"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steamed_clams": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:steamed_clams"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steamed_crab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:steamed_crab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steamed_green_beans": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:steamed_green_beans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "steamed_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:steamed_rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sticky_toffee_pudding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:sticky_toffee_pudding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "stir_fry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:stir_fry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "strawberry_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:strawberry_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "strawberry_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:strawberry_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "stuffed_artichoke": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:stuffed_artichoke"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "stuffed_poblanos": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:stuffed_poblanos"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "supreme_pizza": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:supreme_pizza"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "sweet_potato_fries": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:sweet_potato_fries"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "taco": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:taco"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tamales": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tamales"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "toast": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:toast"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "toast_sandwich": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:toast_sandwich"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "toast_with_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:toast_with_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tofu": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tofu"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tofu_and_dumplings": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tofu_and_dumplings"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tofuburger": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tofuburger"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tortilla": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tortilla"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tostada": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tostada"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "trail_mix": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:trail_mix"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "treacle_tart": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:treacle_tart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tres_leche_cake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tres_leche_cake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "trifle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:trifle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tuna": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tuna"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "vanilla_ice_cream": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:vanilla_ice_cream"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "veggie_salad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:veggie_salad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yam_jam": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:yam_jam"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yoghurt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:yoghurt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.gather_food.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "croptopia:supreme_pizza"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_food.title"
+    }
+  },
+  "requirements": [
+    [
+      "cheese"
+    ],
+    [
+      "butter"
+    ],
+    [
+      "tofu"
+    ],
+    [
+      "chocolate"
+    ],
+    [
+      "tortilla"
+    ],
+    [
+      "salsa"
+    ],
+    [
+      "artichoke_dip"
+    ],
+    [
+      "pepperoni"
+    ],
+    [
+      "grape_jam"
+    ],
+    [
+      "strawberry_jam"
+    ],
+    [
+      "peach_jam"
+    ],
+    [
+      "apricot_jam"
+    ],
+    [
+      "blackberry_jam"
+    ],
+    [
+      "blueberry_jam"
+    ],
+    [
+      "cherry_jam"
+    ],
+    [
+      "elderberry_jam"
+    ],
+    [
+      "raspberry_jam"
+    ],
+    [
+      "beef_jerky"
+    ],
+    [
+      "pork_jerky"
+    ],
+    [
+      "kale_chips"
+    ],
+    [
+      "potato_chips"
+    ],
+    [
+      "steamed_rice"
+    ],
+    [
+      "french_fries"
+    ],
+    [
+      "sweet_potato_fries"
+    ],
+    [
+      "onion_rings"
+    ],
+    [
+      "raisins"
+    ],
+    [
+      "popcorn"
+    ],
+    [
+      "doughnut"
+    ],
+    [
+      "baked_beans"
+    ],
+    [
+      "toast"
+    ],
+    [
+      "cucumber_salad"
+    ],
+    [
+      "caesar_salad"
+    ],
+    [
+      "leafy_salad"
+    ],
+    [
+      "fruit_salad"
+    ],
+    [
+      "veggie_salad"
+    ],
+    [
+      "pork_and_beans"
+    ],
+    [
+      "oatmeal"
+    ],
+    [
+      "leek_soup"
+    ],
+    [
+      "yoghurt"
+    ],
+    [
+      "saucy_chips"
+    ],
+    [
+      "roasted_nuts"
+    ],
+    [
+      "trail_mix"
+    ],
+    [
+      "nougat"
+    ],
+    [
+      "scrambled_eggs"
+    ],
+    [
+      "buttered_toast"
+    ],
+    [
+      "toast_with_jam"
+    ],
+    [
+      "ham_sandwich"
+    ],
+    [
+      "peanut_butter_and_jam"
+    ],
+    [
+      "blt"
+    ],
+    [
+      "grilled_cheese"
+    ],
+    [
+      "cheeseburger"
+    ],
+    [
+      "hamburger"
+    ],
+    [
+      "tofuburger"
+    ],
+    [
+      "pizza"
+    ],
+    [
+      "supreme_pizza"
+    ],
+    [
+      "cheese_pizza"
+    ],
+    [
+      "pineapple_pepperoni_pizza"
+    ],
+    [
+      "lemon_chicken"
+    ],
+    [
+      "fried_chicken"
+    ],
+    [
+      "chicken_and_noodles"
+    ],
+    [
+      "chicken_and_dumplings"
+    ],
+    [
+      "tofu_and_dumplings"
+    ],
+    [
+      "spaghetti_squash"
+    ],
+    [
+      "chicken_and_rice"
+    ],
+    [
+      "taco"
+    ],
+    [
+      "egg_roll"
+    ],
+    [
+      "cashew_chicken"
+    ],
+    [
+      "apple_pie"
+    ],
+    [
+      "yam_jam"
+    ],
+    [
+      "banana_cream_pie"
+    ],
+    [
+      "candy_corn"
+    ],
+    [
+      "vanilla_ice_cream"
+    ],
+    [
+      "strawberry_ice_cream"
+    ],
+    [
+      "mango_ice_cream"
+    ],
+    [
+      "rum_raisin_ice_cream"
+    ],
+    [
+      "pecan_ice_cream"
+    ],
+    [
+      "cherry_pie"
+    ],
+    [
+      "brownies"
+    ],
+    [
+      "snicker_doodle"
+    ],
+    [
+      "banana_nut_bread"
+    ],
+    [
+      "pecan_pie"
+    ],
+    [
+      "candied_nuts"
+    ],
+    [
+      "almond_brittle"
+    ],
+    [
+      "raisin_oatmeal_cookie"
+    ],
+    [
+      "nutty_cookie"
+    ],
+    [
+      "burrito"
+    ],
+    [
+      "tostada"
+    ],
+    [
+      "horchata"
+    ],
+    [
+      "carnitas"
+    ],
+    [
+      "fajitas"
+    ],
+    [
+      "enchilada"
+    ],
+    [
+      "churros"
+    ],
+    [
+      "tamales"
+    ],
+    [
+      "tres_leche_cake"
+    ],
+    [
+      "stuffed_poblanos"
+    ],
+    [
+      "chili_relleno"
+    ],
+    [
+      "crema"
+    ],
+    [
+      "refried_beans"
+    ],
+    [
+      "chimichanga"
+    ],
+    [
+      "quesadilla"
+    ],
+    [
+      "shepherds_pie"
+    ],
+    [
+      "beef_wellington"
+    ],
+    [
+      "fish_and_chips"
+    ],
+    [
+      "eton_mess"
+    ],
+    [
+      "cornish_pasty"
+    ],
+    [
+      "scones"
+    ],
+    [
+      "figgy_pudding"
+    ],
+    [
+      "treacle_tart"
+    ],
+    [
+      "sticky_toffee_pudding"
+    ],
+    [
+      "trifle"
+    ],
+    [
+      "ajvar"
+    ],
+    [
+      "ajvar_toast"
+    ],
+    [
+      "avocado_toast"
+    ],
+    [
+      "bacon"
+    ],
+    [
+      "baked_sweet_potato"
+    ],
+    [
+      "baked_yam"
+    ],
+    [
+      "beef_stew"
+    ],
+    [
+      "beef_stir_fry"
+    ],
+    [
+      "buttered_green_beans"
+    ],
+    [
+      "cheesy_asparagus"
+    ],
+    [
+      "chocolate_ice_cream"
+    ],
+    [
+      "cooked_bacon"
+    ],
+    [
+      "eggplant_parmesan"
+    ],
+    [
+      "fruit_cake"
+    ],
+    [
+      "grilled_eggplant"
+    ],
+    [
+      "kiwi_sorbet"
+    ],
+    [
+      "lemon_coconut_bar"
+    ],
+    [
+      "nether_wart_stew"
+    ],
+    [
+      "peanut_butter"
+    ],
+    [
+      "peanut_butter_with_celery"
+    ],
+    [
+      "potato_soup"
+    ],
+    [
+      "ratatouille"
+    ],
+    [
+      "rhubarb_crisp"
+    ],
+    [
+      "roasted_asparagus"
+    ],
+    [
+      "roasted_radishes"
+    ],
+    [
+      "roasted_squash"
+    ],
+    [
+      "roasted_turnips"
+    ],
+    [
+      "steamed_broccoli"
+    ],
+    [
+      "steamed_green_beans"
+    ],
+    [
+      "stir_fry"
+    ],
+    [
+      "stuffed_artichoke"
+    ],
+    [
+      "toast_sandwich"
+    ],
+    [
+      "roasted_pumpkin_seeds"
+    ],
+    [
+      "roasted_sunflower_seeds"
+    ],
+    [
+      "pumpkin_bars"
+    ],
+    [
+      "corn_bread"
+    ],
+    [
+      "pumpkin_soup"
+    ],
+    [
+      "meringue"
+    ],
+    [
+      "cabbage_roll"
+    ],
+    [
+      "borscht"
+    ],
+    [
+      "goulash"
+    ],
+    [
+      "beetroot_salad"
+    ],
+    [
+      "candied_kumquats"
+    ],
+    [
+      "tuna"
+    ],
+    [
+      "calamari"
+    ],
+    [
+      "crab"
+    ],
+    [
+      "clam"
+    ],
+    [
+      "oyster"
+    ],
+    [
+      "cooked_calamari"
+    ],
+    [
+      "steamed_crab"
+    ],
+    [
+      "glowing_calamari"
+    ],
+    [
+      "sea_lettuce"
+    ],
+    [
+      "deep_fried_shrimp"
+    ],
+    [
+      "fried_calamari"
+    ],
+    [
+      "crab_legs"
+    ],
+    [
+      "steamed_clams"
+    ],
+    [
+      "grilled_oysters"
+    ],
+    [
+      "anchovy"
+    ],
+    [
+      "anchovy_pizza"
+    ],
+    [
+      "mashed_potatoes"
+    ],
+    [
+      "cooked_shrimp"
+    ],
+    [
+      "cooked_tuna"
+    ]
+  ]
+}

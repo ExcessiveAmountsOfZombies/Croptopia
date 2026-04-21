@@ -1,0 +1,31 @@
+{
+  "criteria": {
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:hoes"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "croptopia:block/salt_ore",
+    "description": {
+      "translate": "advancements.croptopia.root.description"
+    },
+    "icon": {
+      "id": "croptopia:coffee"
+    },
+    "show_toast": false,
+    "title": "Croptopia"
+  },
+  "requirements": [
+    [
+      "root"
+    ]
+  ]
+}

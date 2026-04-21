@@ -1,0 +1,148 @@
+{
+  "parent": "croptopia:gather_forest",
+  "criteria": {
+    "ginger_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:ginger_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "hops_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:hops_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kiwi_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:kiwi_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "leek_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:leek_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "olive_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:olive_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rutabaga_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:rutabaga_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "squash_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:squash_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "turmeric_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:turmeric_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "yam_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:yam_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "zucchini_seed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:zucchini_seed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.gather_savanna.description"
+    },
+    "icon": {
+      "id": "croptopia:yam_seed"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_savanna.title"
+    }
+  },
+  "requirements": [
+    [
+      "hops_seed"
+    ],
+    [
+      "kiwi_seed"
+    ],
+    [
+      "leek_seed"
+    ],
+    [
+      "olive_seed"
+    ],
+    [
+      "rutabaga_seed"
+    ],
+    [
+      "squash_seed"
+    ],
+    [
+      "yam_seed"
+    ],
+    [
+      "zucchini_seed"
+    ],
+    [
+      "turmeric_seed"
+    ],
+    [
+      "ginger_seed"
+    ]
+  ]
+}

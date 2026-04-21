@@ -1,0 +1,31 @@
+{
+  "parent": "croptopia:root",
+  "criteria": {
+    "salt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.salt.description"
+    },
+    "icon": {
+      "id": "croptopia:salt"
+    },
+    "title": {
+      "translate": "advancements.croptopia.salt.title"
+    }
+  },
+  "requirements": [
+    [
+      "salt"
+    ]
+  ]
+}

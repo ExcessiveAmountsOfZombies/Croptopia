@@ -1,0 +1,31 @@
+{
+  "parent": "croptopia:pot",
+  "criteria": {
+    "frying_pan": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:frying_pan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.frying_pan.description"
+    },
+    "icon": {
+      "id": "croptopia:frying_pan"
+    },
+    "title": {
+      "translate": "advancements.croptopia.frying_pan.title"
+    }
+  },
+  "requirements": [
+    [
+      "frying_pan"
+    ]
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "croptopia:root",
+  "criteria": {
+    "eat_crafted": {
+      "conditions": {
+        "item": {
+          "items": "#croptopia:advancements_food_crafted"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.eatcrafted.description"
+    },
+    "icon": {
+      "id": "croptopia:tofuburger"
+    },
+    "title": {
+      "translate": "advancements.croptopia.eatcrafted.title"
+    }
+  },
+  "requirements": [
+    [
+      "eat_crafted"
+    ]
+  ]
+}

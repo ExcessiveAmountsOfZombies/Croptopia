@@ -1,0 +1,305 @@
+{
+  "parent": "croptopia:getdrinks",
+  "criteria": {
+    "apple_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:apple_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "banana_smoothie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:banana_smoothie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "beer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:beer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "coffee": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:coffee"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cranberry_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cranberry_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "fruit_smoothie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:fruit_smoothie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "grape_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:grape_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "kale_smoothie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:kale_smoothie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lemonade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:lemonade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "limeade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:limeade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "mead": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:mead"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "melon_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:melon_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "orange_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:orange_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pineapple_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pineapple_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pumpkin_spice_latte": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:pumpkin_spice_latte"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "rum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:rum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "saguaro_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:saguaro_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "soy_milk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:soy_milk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "strawberry_smoothie": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:strawberry_smoothie"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tea": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tea"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "tomato_juice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:tomato_juice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "wine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:wine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.gather_drinks.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "croptopia:beer"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_drinks.title"
+    }
+  },
+  "requirements": [
+    [
+      "grape_juice"
+    ],
+    [
+      "orange_juice"
+    ],
+    [
+      "apple_juice"
+    ],
+    [
+      "cranberry_juice"
+    ],
+    [
+      "saguaro_juice"
+    ],
+    [
+      "tomato_juice"
+    ],
+    [
+      "melon_juice"
+    ],
+    [
+      "pineapple_juice"
+    ],
+    [
+      "wine"
+    ],
+    [
+      "coffee"
+    ],
+    [
+      "lemonade"
+    ],
+    [
+      "limeade"
+    ],
+    [
+      "soy_milk"
+    ],
+    [
+      "strawberry_smoothie"
+    ],
+    [
+      "banana_smoothie"
+    ],
+    [
+      "kale_smoothie"
+    ],
+    [
+      "rum"
+    ],
+    [
+      "pumpkin_spice_latte"
+    ],
+    [
+      "tea"
+    ],
+    [
+      "fruit_smoothie"
+    ],
+    [
+      "mead"
+    ],
+    [
+      "beer"
+    ]
+  ]
+}

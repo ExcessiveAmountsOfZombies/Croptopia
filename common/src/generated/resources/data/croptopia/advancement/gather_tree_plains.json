@@ -1,0 +1,57 @@
+{
+  "parent": "croptopia:gather_tree_jungle",
+  "criteria": {
+    "apple_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:apple_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "orange_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:orange_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "peach_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:peach_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.gather_tree_plains.description"
+    },
+    "icon": {
+      "id": "croptopia:apple_sapling"
+    },
+    "title": {
+      "translate": "advancements.croptopia.gather_tree_plains.title"
+    }
+  },
+  "requirements": [
+    [
+      "apple_sapling"
+    ],
+    [
+      "orange_sapling"
+    ],
+    [
+      "peach_sapling"
+    ]
+  ]
+}

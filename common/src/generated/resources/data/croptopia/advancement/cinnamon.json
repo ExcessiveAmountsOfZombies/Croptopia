@@ -1,0 +1,31 @@
+{
+  "parent": "croptopia:salt",
+  "criteria": {
+    "cinnamon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "croptopia:cinnamon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.croptopia.cinnamon.description"
+    },
+    "icon": {
+      "id": "croptopia:cinnamon"
+    },
+    "title": {
+      "translate": "advancements.croptopia.cinnamon.title"
+    }
+  },
+  "requirements": [
+    [
+      "cinnamon"
+    ]
+  ]
+}
