@@ -7,9 +7,9 @@ import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.AdvancementRequirements;
-import net.minecraft.advancements.criterion.ConsumeItemTrigger;
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.advancements.critereon.ConsumeItemTrigger;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,7 +18,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
@@ -30,7 +30,7 @@ import java.util.function.Consumer;
 
 public final class CroptopiaAdvancementProvider {
     private static final String MODID = "croptopia";
-    private static final Identifier ROOT_BACKGROUND = Identifier.fromNamespaceAndPath(MODID, "block/salt_ore");
+    private static final ResourceLocation ROOT_BACKGROUND = ResourceLocation.fromNamespaceAndPath(MODID, "textures/block/salt_ore.png");
 
     private CroptopiaAdvancementProvider() {
     }
@@ -210,7 +210,7 @@ public final class CroptopiaAdvancementProvider {
             ItemLike icon,
             Component title,
             Component description,
-            Identifier background,
+            ResourceLocation background,
             AdvancementType frame,
             boolean showToast,
             boolean announceChat,
@@ -228,11 +228,11 @@ public final class CroptopiaAdvancementProvider {
     }
 
     private static String id(String path) {
-        return Identifier.fromNamespaceAndPath(MODID, path).toString();
+        return ResourceLocation.fromNamespaceAndPath(MODID, path).toString();
     }
 
     private static TagKey<Item> itemTag(String namespace, String path) {
-        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(namespace, path));
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(namespace, path));
     }
 
     private static Criterion<?> has(ItemLike item) {
@@ -240,11 +240,11 @@ public final class CroptopiaAdvancementProvider {
     }
 
     private static Criterion<?> hasTaggedItem(HolderGetter<Item> items, String namespace, String path) {
-        return InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(items, itemTag(namespace, path)));
+        return InventoryChangeTrigger.TriggerInstance.hasItems(ItemPredicate.Builder.item().of(itemTag(namespace, path)));
     }
 
     private static Criterion<?> consumeTaggedItem(HolderGetter<Item> items, String path) {
-        return ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(items, itemTag(MODID, path)));
+        return ConsumeItemTrigger.TriggerInstance.usedItem(ItemPredicate.Builder.item().of(itemTag(MODID, path)));
     }
 
     private static Advancement.Builder addHasCriteria(Advancement.Builder builder, ItemLike... items) {

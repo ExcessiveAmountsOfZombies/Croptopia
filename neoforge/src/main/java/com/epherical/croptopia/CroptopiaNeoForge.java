@@ -8,6 +8,7 @@ import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.config.IdentifierSerializer;
 import com.epherical.croptopia.config.TreeConfiguration;
+import com.epherical.croptopia.datagen.CroptopiaAdvancementProvider;
 import com.epherical.croptopia.datagen.CroptopiaBiomeTagProvider;
 import com.epherical.croptopia.datagen.CroptopiaBlockTagProvider;
 import com.epherical.croptopia.datagen.CroptopiaIndependentItemTagProvider;
@@ -208,6 +209,7 @@ public class CroptopiaNeoForge {
             ExistingFileHelper helper = event.getExistingFileHelper();
             CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+            generator.addProvider(true, CroptopiaAdvancementProvider.create(output, lookupProvider));
 
             generator.addProvider(event.includeClient(),
                     new CroptopiaItemModelProvider(output, helper));

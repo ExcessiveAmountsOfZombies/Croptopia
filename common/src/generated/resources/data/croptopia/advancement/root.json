@@ -13,11 +13,12 @@
   },
   "display": {
     "announce_to_chat": false,
-    "background": "croptopia:block/salt_ore",
+    "background": "croptopia:textures/block/salt_ore.png",
     "description": {
       "translate": "advancements.croptopia.root.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:coffee"
     },
     "show_toast": false,

@@ -17,6 +17,7 @@
       "translate": "advancements.croptopia.cinnamon.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:cinnamon"
     },
     "title": {

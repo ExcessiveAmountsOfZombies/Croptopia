@@ -157,6 +157,7 @@
       "translate": "advancements.croptopia.gather_forest.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:celery_seed"
     },
     "title": {

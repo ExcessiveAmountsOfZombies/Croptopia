@@ -12,6 +12,10 @@ import com.epherical.croptopia.register.helpers.Tree;
 import com.epherical.croptopia.register.helpers.TreeCrop;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.Criterion;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -27,6 +31,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 
+import java.util.Arrays;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 import static com.epherical.croptopia.register.Content.*;
@@ -737,7 +743,10 @@ public class CroptopiaRecipeProvider extends RecipeProvider {
                 .define('4', DRAGON_EGG_OMELETTE)
                 .define('5', COOKED_RAVAGER_MEAT)
                 .define('6', THE_BIG_BREAKFAST)
-                .unlockedBy("has_nether_star_cake", has(NETHER_STAR_CAKE))
+                .unlockedBy(
+                        "has_transcendental_breakfast_ingredients",
+                        hasAll(MOUNTAIN_SALT, NETHER_STAR_CAKE, TUNA_SANDWICH, DRAGON_EGG_OMELETTE, COOKED_RAVAGER_MEAT, THE_BIG_BREAKFAST)
+                )
                 .save(exporter);
         //cooked frog leg	furnace
 
@@ -750,6 +759,18 @@ public class CroptopiaRecipeProvider extends RecipeProvider {
     public static TagKey<Item> independentTag(String name) {
         ResourceLocation location = ResourceLocation.fromNamespaceAndPath("c", name);
         return TagKey.create(Registries.ITEM, location);
+    }
+
+    private Criterion<InventoryChangeTrigger.TriggerInstance> hasAll(ItemLike... items) {
+        return CriteriaTriggers.INVENTORY_CHANGED.createCriterion(
+                new InventoryChangeTrigger.TriggerInstance(
+                        Optional.empty(),
+                        InventoryChangeTrigger.TriggerInstance.Slots.ANY,
+                        Arrays.stream(items)
+                                .map(item -> ItemPredicate.Builder.item().of(item).build())
+                                .toList()
+                )
+        );
     }
 
 }

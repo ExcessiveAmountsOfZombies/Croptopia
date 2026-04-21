@@ -157,6 +157,7 @@
       "translate": "advancements.croptopia.gather_plains.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:broccoli_seed"
     },
     "title": {

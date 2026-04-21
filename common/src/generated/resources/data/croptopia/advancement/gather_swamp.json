@@ -47,6 +47,7 @@
       "translate": "advancements.croptopia.gather_swamp.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:cranberry_seed"
     },
     "title": {

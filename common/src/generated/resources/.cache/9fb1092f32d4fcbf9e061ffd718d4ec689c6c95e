@@ -1,4 +1,4 @@
-// 1.21.1	2026-04-09T19:12:53.4915463	Recipes
+// 1.21.1	2026-04-20T20:17:07.9196109	Recipes
 00503c28945633cd89fa2b3b8316b2a62f6173d6 data/croptopia/advancement/recipes/food/almond_brittle.json
 d95b094c31cfa9936a79b1c9b8fbbccfdc864c4f data/croptopia/advancement/recipes/food/artichoke_dip.json
 d7951ac3274d1887856d6535e23095cb106a6b36 data/croptopia/advancement/recipes/food/baked_beans_from_blackbean.json
@@ -43,7 +43,7 @@ b64819725586a180c056a999534ae812ee194d45 data/croptopia/advancement/recipes/food
 5a733c3a2ebc08066eb2da9eb43e164d55d4e530 data/croptopia/advancement/recipes/food/salt_from_water_bottle.json
 d8cd1d95779ecfb9407026b393e7cd1cb51c6d9a data/croptopia/advancement/recipes/food/toast_from_bread.json
 c7c060551752f9f515ec9ba201b2137c74743561 data/croptopia/advancement/recipes/food/toast_from_smoking_bread.json
-6afaf2204c460b69b010667d118360e0f553dfe5 data/croptopia/advancement/recipes/food/transcendental_breakfast.json
+5eecf7f2933bf3ae1799b64574f532d1c23dff53 data/croptopia/advancement/recipes/food/transcendental_breakfast.json
 0f03f7983774f606eef53c52175a8b95398d5f5d data/croptopia/advancement/recipes/misc/almond_sapling.json
 8487f0de970d95b1dc4635af5fc40350a11bd58b data/croptopia/advancement/recipes/misc/anchovy_pizza.json
 97bd42d85628d939a7f85526bd277e39b7ff0955 data/croptopia/advancement/recipes/misc/apple_juice.json

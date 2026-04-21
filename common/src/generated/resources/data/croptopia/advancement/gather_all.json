@@ -548,6 +548,7 @@
     },
     "frame": "goal",
     "icon": {
+      "count": 1,
       "id": "croptopia:turnip_seed"
     },
     "title": {

@@ -107,6 +107,7 @@
       "translate": "advancements.croptopia.gather_savanna.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:yam_seed"
     },
     "title": {

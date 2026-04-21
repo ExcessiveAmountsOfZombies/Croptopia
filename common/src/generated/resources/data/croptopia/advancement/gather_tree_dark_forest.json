@@ -47,6 +47,7 @@
       "translate": "advancements.croptopia.gather_tree_dark_forest.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:cashew_sapling"
     },
     "title": {

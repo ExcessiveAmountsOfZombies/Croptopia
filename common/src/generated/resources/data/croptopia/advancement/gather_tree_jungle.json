@@ -107,6 +107,7 @@
       "translate": "advancements.croptopia.gather_tree_jungle.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:banana_sapling"
     },
     "title": {

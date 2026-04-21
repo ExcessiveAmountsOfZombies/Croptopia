@@ -15,6 +15,7 @@
       "translate": "advancements.croptopia.eatcrafted.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:tofuburger"
     },
     "title": {

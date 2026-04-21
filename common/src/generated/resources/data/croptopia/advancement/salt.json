@@ -17,6 +17,7 @@
       "translate": "advancements.croptopia.salt.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:salt"
     },
     "title": {

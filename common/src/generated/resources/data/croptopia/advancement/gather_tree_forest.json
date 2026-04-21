@@ -117,6 +117,7 @@
       "translate": "advancements.croptopia.gather_tree_forest.description"
     },
     "icon": {
+      "count": 1,
       "id": "croptopia:cherry_sapling"
     },
     "title": {
