@@ -4,8 +4,32 @@ plugins {
     // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
     id 'net.neoforged.moddev' version '0.1.110' apply false
 }
+
+tasks.register("cleanUp") {
+    group = 'build'
+    description = "Cleans up fabric and forge"
+    dependsOn ':fabric:clean', ':neoforge:clean'
+    finalizedBy 'buildAllLoaders'
+}
+
 tasks.register('buildAllLoaders') {
     group = 'build'
     description = 'Builds both Fabric and NeoForge loader projects.'
     dependsOn ':fabric:build', ':neoforge:build'
+    finalizedBy 'publishBuiltJars'
+}
+
+tasks.register('publishBuiltJars', Copy) {
+    group = 'build'
+    description = 'Copies built Fabric and NeoForge jars into the root Publish directory.'
+    dependsOn ':fabric:build', ':neoforge:build'
+
+    from(project(':fabric').layout.buildDirectory.dir('libs')) {
+        include '*.jar'
+    }
+    from(project(':neoforge').layout.buildDirectory.dir('libs')) {
+        include '*.jar'
+    }
+
+    into layout.projectDirectory.dir('Publish')
 }
