@@ -4,8 +4,31 @@ plugins {
 }
 
 
+tasks.register("cleanUp") {
+    group = 'build'
+    description = "Cleans up fabric and forge"
+    dependsOn ':fabric:clean', ':forge:clean'
+    finalizedBy 'buildAllLoaders'
+}
+
 tasks.register('buildAllLoaders') {
     group = 'build'
     description = 'Builds both Fabric and Forge loader projects.'
-    dependsOn ':fabric:build', ':forge:build'
+    dependsOn ':fabric:build', ':fabric:build'
+    finalizedBy 'publishBuiltJars'
+}
+
+tasks.register('publishBuiltJars', Copy) {
+    group = 'build'
+    description = 'Copies built Fabric and Forge jars into the root Publish directory.'
+    dependsOn ':fabric:build', ':fabric:build'
+
+    from(project(':fabric').layout.buildDirectory.dir('libs')) {
+        include '*.jar'
+    }
+    from(project(':forge').layout.buildDirectory.dir('libs')) {
+        include '*.jar'
+    }
+
+    into layout.projectDirectory.dir('Publish')
 }
