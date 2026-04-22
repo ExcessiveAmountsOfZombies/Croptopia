@@ -14,14 +14,14 @@ tasks.register("cleanUp") {
 tasks.register('buildAllLoaders') {
     group = 'build'
     description = 'Builds both Fabric and Forge loader projects.'
-    dependsOn ':fabric:build', ':fabric:build'
+    dependsOn ':fabric:build', ':forge:build'
     finalizedBy 'publishBuiltJars'
 }
 
 tasks.register('publishBuiltJars', Copy) {
     group = 'build'
     description = 'Copies built Fabric and Forge jars into the root Publish directory.'
-    dependsOn ':fabric:build', ':fabric:build'
+    dependsOn ':fabric:build', ':forge:build'
 
     from(project(':fabric').layout.buildDirectory.dir('libs')) {
         include '*.jar'
