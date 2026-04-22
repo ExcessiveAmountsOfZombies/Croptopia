@@ -72,5 +72,11 @@ public class CroptopiaModelProvider extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(Content.SUNNY_SIDE_EGGS, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.SWEET_CREPES, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(Content.THE_BIG_BREAKFAST, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.COOKED_RAVAGER_MEAT.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.DRAGON_EGG_OMELETTE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.MOUNTAIN_SALT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.NETHER_STAR_CAKE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.RAW_RAVAGER_MEAT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerator.generateFlatItem(Content.TRANSCENDENTAL_BREAKFAST, ModelTemplates.FLAT_ITEM);
     }
 }

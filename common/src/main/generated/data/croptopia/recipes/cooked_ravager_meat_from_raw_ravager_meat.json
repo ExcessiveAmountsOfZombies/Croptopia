@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 800,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "croptopia:raw_ravager_meat"
+  },
+  "result": "croptopia:cooked_ravager_meat"
+}

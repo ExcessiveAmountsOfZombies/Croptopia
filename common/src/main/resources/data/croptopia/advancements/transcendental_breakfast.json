@@ -1,0 +1,31 @@
+{
+  "parent": "croptopia:gather_food",
+  "display": {
+    "icon": {
+      "item": "croptopia:transcendental_breakfast"
+    },
+    "title": {
+      "translate": "advancements.croptopia.transcendental_breakfast.title"
+    },
+    "description": {
+      "translate": "advancements.croptopia.transcendental_breakfast.description"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "mountain_salt": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:mountain_salt"] } ] } },
+    "nether_star_cake": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:nether_star_cake"] } ] } },
+    "tuna_sandwich": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:tuna_sandwich"] } ] } },
+    "dragon_egg_omelette": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:dragon_egg_omelette"] } ] } },
+    "cooked_ravager_meat": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:cooked_ravager_meat"] } ] } },
+    "the_big_breakfast": { "trigger": "minecraft:inventory_changed", "conditions": { "items": [ { "items": ["croptopia:the_big_breakfast"] } ] } }
+  },
+  "requirements": [
+    ["mountain_salt"],
+    ["nether_star_cake"],
+    ["tuna_sandwich"],
+    ["dragon_egg_omelette"],
+    ["cooked_ravager_meat"],
+    ["the_big_breakfast"]
+  ]
+}

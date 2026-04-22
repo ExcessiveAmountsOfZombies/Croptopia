@@ -339,6 +339,12 @@ public class ItemNamesV2 {
     public static final String SUNNY_SIDE_EGGS = "sunny_side_eggs";
     public static final String SWEET_CREPES = "sweet_crepes";
     public static final String THE_BIG_BREAKFAST = "the_big_breakfast";
+    public static final String COOKED_RAVAGER_MEAT = "cooked_ravager_meat";
+    public static final String DRAGON_EGG_OMELETTE = "dragon_egg_omelette";
+    public static final String MOUNTAIN_SALT = "mountain_salt";
+    public static final String NETHER_STAR_CAKE = "nether_star_cake";
+    public static final String RAW_RAVAGER_MEAT = "raw_ravager_meat";
+    public static final String TRANSCENDENTAL_BREAKFAST = "transcendental_breakfast";
 
 }
 

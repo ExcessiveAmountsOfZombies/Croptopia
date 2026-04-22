@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "croptopia:transcendental_breakfast"
+    ]
+  },
+  "criteria": {
+    "has_mountain_salt": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["croptopia:mountain_salt"]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "croptopia:transcendental_breakfast"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mountain_salt",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -7,6 +7,9 @@ import com.epherical.croptopia.common.Tags;
 import com.epherical.croptopia.common.generator.ConfiguredFeatureKeys;
 import com.epherical.croptopia.common.generator.PlacedFeatureKeys;
 import com.epherical.croptopia.items.Drink;
+import com.epherical.croptopia.items.GlintItem;
+import com.epherical.croptopia.items.GlintReferenceInfiniteItem;
+import com.epherical.croptopia.items.GlintReferenceItem;
 import com.epherical.croptopia.items.ReferenceItem;
 import com.epherical.croptopia.items.Soup;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
@@ -29,6 +32,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
@@ -452,6 +457,12 @@ public class Content {
     public static Item SUNNY_SIDE_EGGS;
     public static Item SWEET_CREPES;
     public static Item THE_BIG_BREAKFAST;
+    public static Furnace COOKED_RAVAGER_MEAT = new Furnace(ItemNamesV2.COOKED_RAVAGER_MEAT, false, REG_10);
+    public static Item DRAGON_EGG_OMELETTE;
+    public static Item MOUNTAIN_SALT;
+    public static Item NETHER_STAR_CAKE;
+    public static Item RAW_RAVAGER_MEAT;
+    public static Item TRANSCENDENTAL_BREAKFAST;
 
     // V-3.0.0
     /*public static final Item CARROT_CAKE;
@@ -563,7 +574,12 @@ public class Content {
         PEANUT_BUTTER_AND_JAM = register.register(createIdentifier(ItemNamesV2.PEANUT_BUTTER_AND_JAM), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_10))));
         BLT = register.register(createIdentifier(ItemNamesV2.BLT), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_10))));
         GRILLED_CHEESE = register.register(createIdentifier(ItemNamesV2.GRILLED_CHEESE), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_7))));
-        TUNA_SANDWICH = register.register(createIdentifier(ItemNamesV2.TUNA_SANDWICH), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_10))));
+        TUNA_SANDWICH = register.register(createIdentifier(ItemNamesV2.TUNA_SANDWICH), () -> new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_10)),
+                Component.literal("A lost cuisine of legends past.").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                Component.literal("\"I waited years, for this!?!\"").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                Component.literal("Finally! a moldy sandwich inside of a decrepit dungeon, if only I could craft it...").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                Component.literal("An ancient food, unknown to the world in how to make.").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)),
+                Component.literal("A lost cuisine of legends past.").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY))));
         CHEESEBURGER = register.register(createIdentifier(ItemNamesV2.CHEESEBURGER), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_10))));
         HAMBURGER = register.register(createIdentifier(ItemNamesV2.HAMBURGER), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_10))));
         TOFUBURGER = register.register(createIdentifier(ItemNamesV2.TOFUBURGER), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_10))));
@@ -691,6 +707,32 @@ public class Content {
         SWEET_CREPES = register.register(createIdentifier(ItemNamesV2.SWEET_CREPES), () -> new Item(createGroup().food(FoodConstructor.createFood(REG_8))));
         THE_BIG_BREAKFAST = register.register(createIdentifier(ItemNamesV2.THE_BIG_BREAKFAST), () -> new ReferenceItem(createGroup().food(FoodConstructor.createFood(REG_20)),
                 Component.literal("Patricia! Daddy want the Big Breakfast").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY))));
+        DRAGON_EGG_OMELETTE = register.register(createIdentifier(ItemNamesV2.DRAGON_EGG_OMELETTE), () ->
+                new GlintReferenceItem(createGroup().food(FoodConstructor.createBuilder(REG_20)
+                                .alwaysEat()
+                                .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000), 1.0F)
+                                .build()),
+                        Component.literal("A tier 3 food, requiring chef level 30").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY))));
+        MOUNTAIN_SALT = register.register(createIdentifier(ItemNamesV2.MOUNTAIN_SALT), () -> new GlintItem(createGroup()));
+        NETHER_STAR_CAKE = register.register(createIdentifier(ItemNamesV2.NETHER_STAR_CAKE), () ->
+                new GlintItem(createGroup().food(FoodConstructor.createBuilder(REG_20)
+                        .alwaysEat()
+                        .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000), 1.0F)
+                        .build())));
+        RAW_RAVAGER_MEAT = register.register(createIdentifier(ItemNamesV2.RAW_RAVAGER_MEAT), () ->
+                new Item(createGroup().food(FoodConstructor.createBuilder(REG_3)
+                        .meat()
+                        .effect(new MobEffectInstance(MobEffects.POISON, 200), 0.25F)
+                        .effect(new MobEffectInstance(MobEffects.HUNGER, 400), 0.15F)
+                        .build())));
+        TRANSCENDENTAL_BREAKFAST = register.register(createIdentifier(ItemNamesV2.TRANSCENDENTAL_BREAKFAST), () ->
+                new GlintReferenceInfiniteItem(createGroup().food(FoodConstructor.createBuilder(REG_20)
+                                .effect(new MobEffectInstance(MobEffects.CONFUSION, 100), 0.1F)
+                                .build())
+                        .stacksTo(1)
+                        .fireResistant()
+                        .rarity(net.minecraft.world.item.Rarity.EPIC),
+                        Component.literal("Some say there are 7 billion bellinis in here...").setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY))));
 
         SALT_ORE = register.register(createIdentifier(ItemNamesV2.SALT_ORE), () ->  new ItemNameBlockItem(SALT_ORE_BLOCK, createGroup()));
     }

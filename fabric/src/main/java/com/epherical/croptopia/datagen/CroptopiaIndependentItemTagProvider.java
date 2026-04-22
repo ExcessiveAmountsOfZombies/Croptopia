@@ -275,6 +275,12 @@ public class CroptopiaIndependentItemTagProvider extends FabricTagProvider.ItemT
         createGeneralTag("sunny_side_eggs", Content.SUNNY_SIDE_EGGS);
         createGeneralTag("sweet_crepes", Content.SWEET_CREPES);
         createGeneralTag("the_big_breakfast", Content.THE_BIG_BREAKFAST);
+        createGeneralTag("cooked_ravager_meat", Content.COOKED_RAVAGER_MEAT.asItem());
+        createGeneralTag("dragon_egg_omelette", Content.DRAGON_EGG_OMELETTE);
+        createGeneralTag("mountain_salt", Content.MOUNTAIN_SALT);
+        createGeneralTag("nether_star_cake", Content.NETHER_STAR_CAKE);
+        createGeneralTag("raw_ravager_meat", Content.RAW_RAVAGER_MEAT);
+        createGeneralTag("transcendental_breakfast", Content.TRANSCENDENTAL_BREAKFAST);
 
         this.tag(register("water_bottles")).add(reverseLookup(Content.WATER_BOTTLE)).add(reverseLookup(Items.WATER_BUCKET)).addOptional(new ResourceLocation("early_buckets:wooden_water_bucket"));
         this.tag(register("milks")).add(reverseLookup(Content.MILK_BOTTLE)).add(reverseLookup(Content.SOY_MILK)).add(reverseLookup(Items.MILK_BUCKET)).addOptionalTag(independentTag("milk_buckets"));

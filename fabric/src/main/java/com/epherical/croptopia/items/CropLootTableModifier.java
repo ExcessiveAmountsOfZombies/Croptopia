@@ -3,11 +3,11 @@ package com.epherical.croptopia.items;
 import com.epherical.croptopia.CroptopiaMod;
 import com.epherical.croptopia.mixin.accessor.LootTableBuilderAccessor;
 import com.epherical.croptopia.register.Content;
-import com.google.common.collect.ImmutableList;
 import net.fabricmc.fabric.api.loot.v2.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
@@ -52,6 +52,30 @@ public class CropLootTableModifier {
                     case "entities/glow_squid" -> {
                         LootPool.Builder builder = LootPool.lootPool();
                         builder.add(LootItem.lootTableItem(Content.GLOWING_CALAMARI));
+                        tableBuilder.withPool(builder);
+                    }
+                    case "entities/ravager" -> {
+                        LootPool.Builder builder = LootPool.lootPool();
+                        builder.setRolls(ConstantValue.exactly(1));
+                        builder.setBonusRolls(ConstantValue.exactly(0));
+                        builder.add(LootItem.lootTableItem(Content.RAW_RAVAGER_MEAT)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 1), false)));
+                        tableBuilder.withPool(builder);
+                    }
+                    case "chests/simple_dungeon" -> {
+                        LootPool.Builder builder = LootPool.lootPool();
+                        builder.setRolls(UniformGenerator.between(0, 2));
+                        builder.setBonusRolls(ConstantValue.exactly(0));
+                        builder.add(LootItem.lootTableItem(Content.TUNA_SANDWICH).setWeight(10));
+                        builder.add(LootItem.lootTableItem(Items.AIR).setWeight(90));
+                        tableBuilder.withPool(builder);
+                    }
+                    case "chests/shipwreck_treasure" -> {
+                        LootPool.Builder builder = LootPool.lootPool();
+                        builder.setRolls(UniformGenerator.between(0, 2));
+                        builder.setBonusRolls(ConstantValue.exactly(0));
+                        builder.add(LootItem.lootTableItem(Content.MOUNTAIN_SALT).setWeight(5));
+                        builder.add(LootItem.lootTableItem(Items.AIR).setWeight(95));
                         tableBuilder.withPool(builder);
                     }
                     case "chests/spawn_bonus_chest" -> {

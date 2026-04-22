@@ -173,6 +173,7 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
         cookingList.forEach((input, output) -> offerFoodCookingRecipe(exporter, input, input.getLowercaseName(), output, time, exp, true));
         // raw bacon is not yet moved
         offerFoodCookingRecipe(exporter, Content.RAW_BACON, ItemNamesV2.RAW_BACON, Content.COOKED_BACON, time, exp, true);
+        offerFoodCookingRecipe(exporter, Content.RAW_RAVAGER_MEAT, ItemNamesV2.RAW_RAVAGER_MEAT, Content.COOKED_RAVAGER_MEAT, 800, 0.1f, false);
         // now the vanilla ingredients
         offerFoodCookingRecipe(exporter, Items.SUGAR, "sugar", Content.CARAMEL, time, exp, true);
         offerFoodCookingRecipe(exporter, Items.SUGAR_CANE, "sugar_cane", Content.MOLASSES, time, exp, false);
@@ -565,6 +566,37 @@ public class CroptopiaRecipeProvider extends FabricRecipeProvider {
                 .define('5', independentTag("sausages"))
                 .define('6', Content.TOAST)
                 .unlockedBy("has_frying_pan", RecipeProvider.has(Content.FRYING_PAN))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Content.DRAGON_EGG_OMELETTE, 1)
+                .pattern(" 1 ")
+                .pattern(" 2 ")
+                .pattern("3 4")
+                .define('1', Items.DRAGON_EGG)
+                .define('2', independentTag("cheeses"))
+                .define('3', independentTag("salts"))
+                .define('4', Content.PEPPER)
+                .unlockedBy("has_dragon_egg", RecipeProvider.has(Items.DRAGON_EGG))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Content.NETHER_STAR_CAKE, 1)
+                .pattern(" 1 ")
+                .pattern("222")
+                .pattern("444")
+                .define('1', Items.NETHER_STAR)
+                .define('2', Content.DOUGH)
+                .define('4', Items.SUGAR)
+                .unlockedBy("has_nether_star", RecipeProvider.has(Items.NETHER_STAR))
+                .save(exporter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Content.TRANSCENDENTAL_BREAKFAST, 1)
+                .pattern("616")
+                .pattern("234")
+                .pattern("656")
+                .define('1', Content.MOUNTAIN_SALT)
+                .define('2', Content.NETHER_STAR_CAKE)
+                .define('3', Content.TUNA_SANDWICH)
+                .define('4', Content.DRAGON_EGG_OMELETTE)
+                .define('5', Content.COOKED_RAVAGER_MEAT)
+                .define('6', Content.THE_BIG_BREAKFAST)
+                .unlockedBy("has_transcendental_breakfast_ingredients", RecipeProvider.has(Content.MOUNTAIN_SALT))
                 .save(exporter);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Content.GROUND_PORK, 2)
                 .pattern("1")

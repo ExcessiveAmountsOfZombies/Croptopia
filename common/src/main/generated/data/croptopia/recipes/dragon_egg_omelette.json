@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "1": {
+      "item": "minecraft:dragon_egg"
+    },
+    "2": {
+      "tag": "${dependent}:cheeses"
+    },
+    "3": {
+      "tag": "${dependent}:salts"
+    },
+    "4": {
+      "item": "croptopia:pepper"
+    }
+  },
+  "pattern": [
+    " 1 ",
+    " 2 ",
+    "3 4"
+  ],
+  "result": {
+    "item": "croptopia:dragon_egg_omelette"
+  },
+  "show_notification": true
+}
