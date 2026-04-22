@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-17T15:21:12.4282943	Croptopia/Croptopia Independent Tags
+// 1.20.1	2026-04-21T20:16:26.644643	Croptopia/Croptopia Independent Tags
 8f938479bc38a60c5f7b119bf8e97a932c51d8d2 dependents\platform\tags\items\seeds\broccoli.json
 5775bc7e4d4270fded4e89f809ed547e5e533a58 dependents\platform\tags\items\seeds\vanilla.json
 4ae45a20fe3ecaba3d5189248993d181a7e0722b dependents\platform\tags\items\crops\pecan.json
@@ -80,6 +80,7 @@ fd2fee053be8f37064f239cfdb76756423c04473 dependents\platform\tags\items\saplings
 a23903679845ad3faa40706470e0bc19117801e0 dependents\platform\tags\items\juices\melon_juice.json
 4ab1dbb79adfa97c508dae1e5d6f97afca1bc5c1 dependents\platform\tags\items\cucumber_salads.json
 e60735b2f12c012388bdc6d74e2950be02b9862b dependents\platform\tags\items\crops\soybean.json
+2ddd3ed2544a14780a6afe1a7060d6d31b94b98a dependents\platform\tags\items\cooked_ravager_meat.json
 03a5f166cb0c830b2120c0d650a07e9cbf5e4f39 dependents\platform\tags\items\ham_sandwiches.json
 345a3b7078281eb87d1430776bcd10bb2de8c557 dependents\platform\tags\items\fruits\strawberry.json
 a552ca6c129d66563ff0ff81592456592ccf19f7 dependents\platform\tags\items\raspberry_seeds.json
@@ -309,6 +310,7 @@ c1dcd2387001b33445f563c2960ddb034824ad24 dependents\platform\tags\items\onion_se
 d82c65d52bd7391db44bdc1bed4a805ca8bbe4f9 dependents\platform\tags\items\fruits\starfruit.json
 0aadbe54ad03ec073ee3c28f8fe68f371a0b3f62 dependents\platform\tags\items\crops\kumquat.json
 efe874d46af1ef6faba8dc1b437444f3fdc970a9 dependents\platform\tags\items\olives.json
+885371adef84fcfb413defe75862bc3f647e45ab dependents\platform\tags\items\transcendental_breakfast.json
 0ab2391349783f4b27fc21cb709045ba37ed6169 dependents\platform\tags\items\pineapples.json
 8d86167c12256401fd71eee805035827c88de63f dependents\platform\tags\items\crops\peanut.json
 a723aba918706773020d1a3281c489a0ccdfce50 dependents\platform\tags\items\artichokes.json
@@ -316,6 +318,7 @@ a723aba918706773020d1a3281c489a0ccdfce50 dependents\platform\tags\items\artichok
 e3c89af4d0b43992e88d3f0eba75dd8bb87c0ebc dependents\platform\tags\items\turnip_seeds.json
 1cdcc0021dc9535b97c3c3cb8c9795e53a2cec45 dependents\platform\tags\items\baked_beans.json
 f7d229c6d69604c74254e4ad947f2aefbf948705 dependents\platform\tags\items\cashew_saplings.json
+f54ef71f77e906e2c8e029fd4740163983913680 dependents\platform\tags\items\dragon_egg_omelette.json
 72409b156be35787e27c1e788f7f03cfe6baa46c dependents\platform\tags\items\orange_saplings.json
 5f22f50839e1b0d76e3dc7cf516d23892733c2a6 dependents\platform\tags\items\seeds\saguaro.json
 051c0d8e6de73cf1808dd555fa090b4edde563fd dependents\platform\tags\items\blackberry_seeds.json
@@ -449,6 +452,7 @@ e94319a58ebad05458e05c1a1e9b102aa00efa9e dependents\platform\tags\items\cranberr
 f296cdbacf58323a903432ad98d900158d7d2c98 dependents\platform\tags\items\bellpeppers.json
 022b921df334c774f265b978157935c6288c79a7 dependents\platform\tags\items\fruits\persimmon.json
 b7b65a803dbae4448ba412a6eef3a6667c0340a9 dependents\platform\tags\items\crops\cherry.json
+ca4d8cf93e2b97928db769a50262b6de786265fd dependents\platform\tags\items\raw_ravager_meat.json
 d12aa1d7600d444f3339fc82c69890544366d777 dependents\platform\tags\items\steamed_clams.json
 9a98faa16057a4ca695f7a4d72434863d464bc4e dependents\platform\tags\items\crops\chile_pepper.json
 50cb0d38d6c63e58769db82ea7badab4fe9681d4 dependents\platform\tags\items\vegetables\eggplant.json
@@ -456,8 +460,8 @@ d56e0df4b469a930b4145d6132365d343e87541a dependents\platform\tags\items\crops\zu
 ed1227c0a8e0b517c784f8e11d62885e13caa311 dependents\platform\tags\items\beef_jerkies.json
 f9240ed3466479a4cd8bd2de436fe703f1136632 dependents\platform\tags\items\tea.json
 3354b2bfbe435a7f234ed0bbfbce8175513ce976 dependents\platform\tags\items\banana_nut_breads.json
-e5fa7cf910462b08aa663b1edeedffe90e4d6c58 dependents\platform\tags\items\leek_seeds.json
 b012d3edf62d5f1632b2e9738b92d24fb8eb9b69 dependents\platform\tags\items\crops\apple.json
+e5fa7cf910462b08aa663b1edeedffe90e4d6c58 dependents\platform\tags\items\leek_seeds.json
 7d380b6f95e6bd0a6b0d60ee6ff17f1d0f429f96 dependents\platform\tags\items\seeds\raspberry.json
 b437564ea5c63bb0c662fc841f483ceb6a2692f6 dependents\platform\tags\items\tomatoes.json
 fb1def1ef2d298c6fc375b5f8bcdabbbb193606c dependents\platform\tags\items\buttered_toasts.json
@@ -517,6 +521,7 @@ f06c52a07aff0eff1c78c19cbdacfd2e63e2bcaa dependents\platform\tags\items\seeds\le
 94649237b9144bb9c8f2373a58a6e77dd790045d dependents\platform\tags\items\saplings\lime.json
 d183d58612cd4b91eb421feef69c1e1b27e37da0 dependents\platform\tags\items\soy_sauces.json
 62696ec6dad8fbb8edaa00780c8d21cbc782b502 dependents\platform\tags\items\fruits\cantaloupe.json
+de4f0927cf0304bab72484b3b0530c9023f2fd66 dependents\platform\tags\items\mountain_salt.json
 26e833b4e8f77434dbb5eb7a012ed06a86c95c43 dependents\platform\tags\items\tomato_juices.json
 50cb0d38d6c63e58769db82ea7badab4fe9681d4 dependents\platform\tags\items\crops\eggplant.json
 b2c2c5f11387f239136f66bece4a023c5ea33fbe dependents\platform\tags\items\spinach_seeds.json
@@ -629,6 +634,7 @@ c14bcd7f86abb4c5b139313e89e8d841604da8c1 dependents\platform\tags\items\fruits\o
 6d74f19e203dafe9f75c754457eb0959a948d265 dependents\platform\tags\items\dates.json
 6c4c190ff0919568771a8d2eaaa5514c4ba834f4 dependents\platform\tags\items\apples.json
 9d2fcf1f752d9fe41fbe9dc85ad3351796bdfb7f dependents\platform\tags\items\fruits\orange.json
+4718d046984a6726d1cf3afe921a5da631a622d8 dependents\platform\tags\items\nether_star_cake.json
 8954cd36c1c8fb5eea099b0522cb7f49c328aa38 dependents\platform\tags\items\elderberry_jams.json
 dad34897fd80fceaa378fdba12eaed61357fd7d3 dependents\platform\tags\items\vegetables.json
 845de78364b7e3c8313e69baadcd3c819dae4045 dependents\platform\tags\items\crops\ginger.json

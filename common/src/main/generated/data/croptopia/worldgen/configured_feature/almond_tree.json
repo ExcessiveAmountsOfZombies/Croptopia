@@ -33,7 +33,8 @@
             "Name": "croptopia:almond_crop",
             "Properties": {
               "age": "3",
-              "distance": "1"
+              "distance": "1",
+              "persistent": "false"
             }
           },
           "weight": 20

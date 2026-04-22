@@ -22,6 +22,10 @@ public class CroptopiaClient implements ClientModInitializer {
         ClientFunctions functions = new ClientFunctions();
         ColorProviderRegistry.BLOCK.register(functions.registerLeafColors(), functions.leaves());
         functions.registerBlockLayers(this::registerCropBlockLayer);
+        ColorProviderRegistry.ITEM.register((itemStack, i) -> {
+            return FoliageColor.getDefaultColor();
+        }, functions.leavesItem());
+
     }
 
     public void registerCropBlockLayer(Block block) {

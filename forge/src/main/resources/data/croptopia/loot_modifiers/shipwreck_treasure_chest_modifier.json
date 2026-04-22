@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_treasure"
+    }
+  ],
+  "item": "croptopia:mountain_salt",
+  "weight": 5,
+  "emptyWeight": 95,
+  "minRolls": 0,
+  "maxRolls": 2,
+  "type": "croptopia:chest_modifier"
+}

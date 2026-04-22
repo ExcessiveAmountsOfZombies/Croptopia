@@ -14,6 +14,7 @@ public class CroptopiaDataGeneratorEntry implements DataGeneratorEntrypoint {
         resources.addProvider(CroptopiaIndependentItemTagProvider::new);
         // tags always first
         resources.addProvider(CroptopiaModelProvider::new);
+        resources.addProvider(CroptopiaLootTableProvider::new);
         resources.addProvider(CroptopiaRecipeProvider::new);
         resources.addProvider(CroptopiaWorldGeneration::new);
 

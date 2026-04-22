@@ -1,0 +1,14 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/simple_dungeon"
+    }
+  ],
+  "item": "croptopia:tuna_sandwich",
+  "weight": 10,
+  "emptyWeight": 90,
+  "minRolls": 0,
+  "maxRolls": 2,
+  "type": "croptopia:chest_modifier"
+}

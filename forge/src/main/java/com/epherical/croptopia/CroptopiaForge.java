@@ -14,6 +14,7 @@ import com.epherical.croptopia.listeners.EntitySpawn;
 import com.epherical.croptopia.listeners.Harvest;
 import com.epherical.croptopia.listeners.LootTableModification;
 import com.epherical.croptopia.loot.AdditionalTableModifier;
+import com.epherical.croptopia.loot.ChestModifier;
 import com.epherical.croptopia.loot.EntityModifier;
 import com.epherical.croptopia.loot.SpawnChestModifier;
 import com.epherical.croptopia.register.Content;
@@ -25,6 +26,8 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
@@ -42,6 +45,7 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
@@ -115,6 +119,7 @@ public class CroptopiaForge {
         // todo: forge bug >>> will probably need to change this back later
         GLM.register("spawn_loot", SpawnChestModifier.CODEC);
         GLM.register("entity_modifier", EntityModifier.CODEC);
+        GLM.register("chest_modifier", ChestModifier.CODEC);
         GLM.register("table_adder", AdditionalTableModifier.CODEC);
 
 
@@ -152,6 +157,10 @@ public class CroptopiaForge {
         ClientFunctions functions = new ClientFunctions();
         functions.registerBlockLayers(block -> ItemBlockRenderTypes.setRenderLayer(block, RenderType.cutoutMipped()));
         BlockColors colors = Minecraft.getInstance().getBlockColors();
+        ItemColors itemColors = Minecraft.getInstance().getItemColors();
+        itemColors.register((itemStack, i) -> {
+            return FoliageColor.getDefaultColor();
+        }, functions.leavesItem());
         colors.register(functions.registerLeafColors(), functions.leaves());
     }
 

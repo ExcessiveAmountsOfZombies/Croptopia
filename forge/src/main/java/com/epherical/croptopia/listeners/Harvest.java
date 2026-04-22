@@ -35,6 +35,9 @@ public class Harvest {
                         IntegerProperty property = mixin.doGetAgeProperty();
                         int age = blockClicked.getValue(property);
                         if (age == block.getMaxAge()) {
+                            if (blockClicked.getBlock() instanceof LeafCropBlock && blockClicked.getValue(LeafCropBlock.PERSISTENT)) {
+                                return;
+                            }
                             HarvestEvent harvestedCropEvent = new HarvestEvent(event.getEntity(), blockClicked, withAge(blockClicked, property, 0));
                             MinecraftForge.EVENT_BUS.post(harvestedCropEvent);
                             world.setBlock(pos, harvestedCropEvent.getTurnedState(), 2);
