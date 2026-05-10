@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-21T20:16:26.6506831	Croptopia/Recipes
+// 1.20.1	2026-05-09T22:45:55.7504051	Croptopia/Recipes
 5c20fde5adc7d1e208b4b4cd54f63629c67f75e3 data\croptopia\recipes\lemon_sapling.json
 a01e5def657570fb52dff6310fc31d3e8a1380a4 data\croptopia\recipes\molasses_from_smoking_sugar_cane.json
 f38c81b206902d24d2a1cd70891f79fea788aeb8 data\croptopia\recipes\steamed_crab.json
@@ -213,8 +213,8 @@ bc320182ed2167f46f8002b07a6cc6feeea93edb data\croptopia\advancements\recipes\foo
 a034e3e5661013840de85f55933c5d7471681277 data\croptopia\advancements\recipes\misc\squash_seed.json
 0e40caf1c340c2fa432c7c1b6a7af38df14fce7b data\croptopia\advancements\recipes\misc\pecan_pie.json
 7355ec09f514a55c9c5e0df1c77da1f64d137f07 data\croptopia\recipes\kiwi_seed.json
-2a4d76916995ff6c4ed5369376e37de5ee9bd29c data\croptopia\advancements\recipes\misc\honeydew_seed.json
 b211174a1f90c8123d8cdf39f24d905557713cf2 data\croptopia\recipes\asparagus_seed.json
+2a4d76916995ff6c4ed5369376e37de5ee9bd29c data\croptopia\advancements\recipes\misc\honeydew_seed.json
 8a1f11453a47813fea580088805c244946590722 data\croptopia\recipes\baked_beans_from_blackbean.json
 7cf816465ff1a8c74a5d866a706f5bf646cc82e6 data\croptopia\advancements\recipes\misc\lemon_sapling.json
 424714605235cb51028a62abc9289e11d8a6aabe data\croptopia\recipes\pumpkin_soup.json

@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-21T20:16:26.6496826	Croptopia/Block Loot Tables
+// 1.20.1	2026-05-09T22:45:55.7494068	Croptopia/Block Loot Tables
 c51d34da58f295a277d0597b886ae9bc9df225cc data\croptopia\loot_tables\blocks\persimmon_crop.json
 2c36312e498a42fbabd5fce1dd339a9762d19f2a data\croptopia\loot_tables\blocks\tomato_crop.json
 6ac292a77eee720c91b821dc13a80dc8d28805b2 data\croptopia\loot_tables\blocks\greenbean_crop.json
@@ -47,8 +47,8 @@ f0bbcb7cfb6af7e4b1ca78fd65a5996db1a04132 data\croptopia\loot_tables\blocks\black
 2edffc297568a4f2cb6a8e85f59b7e5a89da9621 data\croptopia\loot_tables\blocks\apple_sapling.json
 61db171a05f3d93af8d1a2419be2a29d4d301746 data\croptopia\loot_tables\blocks\apricot_sapling.json
 ef71566284f6d0bddb7df10f2dcbf9df72b60bc3 data\croptopia\loot_tables\blocks\cinnamon_sapling.json
-d7c21549642eaaddf2fc0df2dcaa548bc7da3af9 data\croptopia\loot_tables\blocks\banana_crop.json
 c25fe03ffcc4f4f7fdd78886ca3daf075ea19643 data\croptopia\loot_tables\blocks\peach_crop.json
+d7c21549642eaaddf2fc0df2dcaa548bc7da3af9 data\croptopia\loot_tables\blocks\banana_crop.json
 76da78430543df98465f6f322dbe68e07c6ede0e data\croptopia\loot_tables\blocks\cashew_sapling.json
 0536eeac4f0285ce2e436e4fe35dc385f003690c data\croptopia\loot_tables\blocks\cucumber_crop.json
 724760767234dc8f557b98365c362fc7a075128a data\croptopia\loot_tables\blocks\cashew_crop.json
