@@ -115,12 +115,13 @@ public class WorldGenFeatures {
 
     public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(PlacedFeatureKeys.RANDOM_CROP_KEY, RANDOM_CROP,
             NoiseThresholdCountPlacement.of(-0.8, 15, 4),
-            RarityFilter.onAverageOnceEvery(16),
+            RarityFilter.onAverageOnceEvery(12),
             InSquarePlacement.spread(),
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             BiomeFilter.biome(),
-            CountPlacement.of(32),
-            RandomOffsetPlacement.of(ConstantInt.of(6), ConstantInt.of(2)));
+            CountPlacement.of(64),
+            RandomOffsetPlacement.of(ConstantInt.of(6), ConstantInt.of(2)),
+            BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
 
     public static final Holder<PlacedFeature> APPLE_TREE_CONFIGURED = register(PlacedFeatureKeys.APPLE_TREE_PLACED_KEY, Content.APPLE,
             RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());

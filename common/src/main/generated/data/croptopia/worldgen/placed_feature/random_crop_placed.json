@@ -3,13 +3,13 @@
   "placement": [
     {
       "type": "minecraft:noise_threshold_count",
-      "above_noise": 4,
-      "below_noise": 15,
+      "above_noise": 10,
+      "below_noise": 10,
       "noise_level": -0.8
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 16
+      "chance": 12
     },
     {
       "type": "minecraft:in_square"
@@ -23,12 +23,19 @@
     },
     {
       "type": "minecraft:count",
-      "count": 32
+      "count": 64
     },
     {
       "type": "minecraft:random_offset",
       "xz_spread": 6,
-      "y_spread": 2
+      "y_spread": 1
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
+      }
     }
   ]
 }
