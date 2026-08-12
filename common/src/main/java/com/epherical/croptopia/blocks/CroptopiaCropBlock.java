@@ -52,7 +52,11 @@ public class CroptopiaCropBlock extends CropBlock {
         if (world.getChunk(pos).getHighestGeneratedStatus().getIndex() < ChunkStatus.FULL.getIndex()) {
             // ON WORLD GENERATION
             if (seed.getCategory() != null && world.getBiome(pos).is(seed.getCategory())) {
-                return super.canSurvive(state, world, pos);
+                // Deliberately not super.canSurvive: CropBlock additionally requires a light
+                // level, but lighting is not computed until the `light` chunk status, which
+                // runs after `features`. What a light lookup returns during decoration is up
+                // to the light engine implementation, so it cannot gate placement here.
+                return mayPlaceOn(world.getBlockState(pos.below()), world, pos.below());
             }
         } else if (world.getChunk(pos).getHighestGeneratedStatus().getIndex() == ChunkStatus.FULL.getIndex()) {
             // ON PLAYER PLACEMENT
