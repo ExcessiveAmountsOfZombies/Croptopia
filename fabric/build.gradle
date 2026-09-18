@@ -15,7 +15,7 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation ('com.epherical.epherolib:epherolib-fabric-26.1:1.3.0')
-    compileOnly ("vazkii.patchouli:Patchouli:1.21-87-FABRIC")
+    compileOnly ("vazkii.patchouli:patchouli-fabric:26.1-94-SNAPSHOT")
 
 }
 
