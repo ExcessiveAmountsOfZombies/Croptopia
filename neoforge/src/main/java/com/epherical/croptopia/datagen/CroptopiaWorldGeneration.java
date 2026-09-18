@@ -23,7 +23,6 @@ import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.BlockPredicateFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
@@ -65,14 +64,12 @@ public class CroptopiaWorldGeneration {
 
     private List<PlacementModifier> modifiers() {
         return List.of(
-                NoiseThresholdCountPlacement.of(-0.8, 15, 4),
-                RarityFilter.onAverageOnceEvery(16),
-
+                RarityFilter.onAverageOnceEvery(7),
                 InSquarePlacement.spread(),
+                CountPlacement.of(UniformInt.of(1, 3)),
+                RandomOffsetPlacement.horizontal(UniformInt.of(-3, 3)),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome(),
-                CountPlacement.of(32),
-                RandomOffsetPlacement.ofTriangle(6, 2),
                 BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
     }
 
