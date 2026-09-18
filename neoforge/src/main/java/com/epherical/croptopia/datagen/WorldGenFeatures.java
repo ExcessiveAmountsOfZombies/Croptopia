@@ -108,12 +108,13 @@ public class WorldGenFeatures {
 
     public static final ConfiguredFeature<SimpleBlockConfiguration, ?> RANDOM_CROP = register(Feature.SIMPLE_BLOCK, config);
 
-    public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(PlacedFeatureKeys.ARTICHOKE_CROP_PLACED_KEY, RANDOM_CROP,
-            CountPlacement.of(3),
+    public static final Holder<PlacedFeature> RANDOM_CROP_PLACED = register(
+            PlacedFeatureKeys.ARTICHOKE_CROP_PLACED_KEY,
+            RANDOM_CROP,
+            RarityFilter.onAverageOnceEvery(3),
             InSquarePlacement.spread(),
-            CountPlacement.of(6),
+            CountPlacement.of(UniformInt.of(1, 3)),
             RandomOffsetPlacement.horizontal(UniformInt.of(-3, 3)),
-            NoiseThresholdCountPlacement.of(-0.8, 5, 10),
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             PlacementUtils.isEmpty(),
             BiomeFilter.biome());
