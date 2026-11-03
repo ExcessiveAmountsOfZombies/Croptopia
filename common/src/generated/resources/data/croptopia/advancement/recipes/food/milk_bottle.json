@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:milk_bottle"
+        "recipes": "croptopia:milk_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

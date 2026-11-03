@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:beer"
+        "recipes": "croptopia:beer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

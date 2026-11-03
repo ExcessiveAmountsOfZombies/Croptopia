@@ -13,13 +13,15 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
+import java.util.Optional;
+import net.minecraft.core.Holder;
 
 public class EntityModifier extends LootModifier {
     public static final Supplier<MapCodec<EntityModifier>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.mapCodec(instance -> {
@@ -42,20 +44,20 @@ public class EntityModifier extends LootModifier {
     /**
      * Constructs a LootModifier.
      *
-     * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
+     * @param condition the ILootConditions that need to be matched before the loot is modified.
      */
-    protected EntityModifier(LootItemCondition[] conditionsIn, int prio, Item item, int weight, int min, int max) {
-        super(conditionsIn, prio);
+    protected EntityModifier(Optional<Holder<LootItemCondition>> condition, int prio, Item item, int weight, int min, int max) {
+        super(condition, prio);
         this.item = item;
         this.weight = weight;
         this.min = min;
         this.max = max;
         LootPool.Builder builder = LootPool.lootPool();
-        builder.setRolls(ConstantValue.exactly(1));
-        builder.setBonusRolls(ConstantValue.exactly(0));
+        builder.setRolls(ContextIntProviders.exactly(1));
+        builder.setBonusRolls(net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders.exactly(0));
         builder.add(LootItem.lootTableItem(item)
                 .setWeight(weight)
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max), false)));
+                .apply(SetItemCountFunction.setCount(ContextIntProviders.between(min, max), false)));
         pool = builder.build();
     }
 

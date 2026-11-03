@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:steamed_broccoli"
+        "recipes": "croptopia:steamed_broccoli"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

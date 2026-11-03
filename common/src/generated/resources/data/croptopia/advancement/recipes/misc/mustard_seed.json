@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:mustard_seed"
+        "recipes": "croptopia:mustard_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

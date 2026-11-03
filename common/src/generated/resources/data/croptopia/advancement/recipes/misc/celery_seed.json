@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:celery_seed"
+        "recipes": "croptopia:celery_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

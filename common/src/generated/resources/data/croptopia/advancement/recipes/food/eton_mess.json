@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:eton_mess"
+        "recipes": "croptopia:eton_mess"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cashew_chicken"
+        "recipes": "croptopia:cashew_chicken"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:roasted_squash"
+        "recipes": "croptopia:roasted_squash"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

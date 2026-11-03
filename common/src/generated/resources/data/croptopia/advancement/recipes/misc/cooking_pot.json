@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooking_pot"
+        "recipes": "croptopia:cooking_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

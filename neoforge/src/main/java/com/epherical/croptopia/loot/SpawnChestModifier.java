@@ -12,13 +12,15 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
+import java.util.Optional;
+import net.minecraft.core.Holder;
 
 import static com.epherical.croptopia.CroptopiaCommon.seeds;
 
@@ -36,17 +38,17 @@ public class SpawnChestModifier extends LootModifier {
     /**
      * Constructs a LootModifier.
      *
-     * @param conditionsIn the LootItemCondition that need to be matched before the loot is modified.
+     * @param condition the LootItemCondition that need to be matched before the loot is modified.
      */
-    protected SpawnChestModifier(LootItemCondition[] conditionsIn, int prio) {
-        super(conditionsIn, prio);
+    protected SpawnChestModifier(Optional<Holder<LootItemCondition>> condition, int prio) {
+        super(condition, prio);
         LootPool.Builder builder = new LootPool.Builder();
-        builder.setRolls(ConstantValue.exactly(1));
-        builder.setBonusRolls(ConstantValue.exactly(0));
+        builder.setRolls(ContextIntProviders.exactly(1));
+        builder.setBonusRolls(net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders.exactly(0));
         for (Item seed : seeds) {
             builder.add(LootItem.lootTableItem(seed)
                     .setWeight(2)
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 8), false))
+                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8), false))
             );
         }
         table = builder.build();

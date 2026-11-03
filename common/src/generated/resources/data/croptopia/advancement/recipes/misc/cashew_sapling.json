@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cashew_sapling"
+        "recipes": "croptopia:cashew_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

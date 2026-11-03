@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:sushi"
+        "recipes": "croptopia:sushi"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

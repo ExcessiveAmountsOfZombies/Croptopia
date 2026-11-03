@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:mashed_potatoes"
+        "recipes": "croptopia:mashed_potatoes"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

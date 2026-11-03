@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:beef_wellington"
+        "recipes": "croptopia:beef_wellington"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

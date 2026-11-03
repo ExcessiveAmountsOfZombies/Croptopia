@@ -1,37 +1,38 @@
 {
   "type": "minecraft:block",
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
-    }
-  ],
+  "modifier": {
+    "type": "minecraft:explosion_decay"
+  },
   "pools": [
     {
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "items": "minecraft:shears"
+          "condition": {
+            "type": "minecraft:all_of",
+            "terms": [
+              {
+                "type": "minecraft:inverted",
+                "term": {
+                  "type": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "minecraft:shears"
+                  }
+                }
+              },
+              {
+                "type": "minecraft:match_block",
+                "blocks": "croptopia:fig_crop",
+                "state": {
+                  "age": "3"
                 }
               }
-            },
-            {
-              "block": "croptopia:fig_crop",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "age": "3"
-              }
-            }
-          ],
+            ]
+          },
           "name": "croptopia:fig"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "entries": [
@@ -45,33 +46,29 @@
           "weight": 95
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "items": "minecraft:shears"
-              }
+          "condition": {
+            "type": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:shears"
             }
-          ],
-          "functions": [
-            {
-              "block": "croptopia:fig_crop",
-              "function": "minecraft:copy_state",
-              "properties": [
-                "age"
-              ]
-            }
-          ],
+          },
+          "modifier": {
+            "type": "minecraft:copy_state",
+            "block": "croptopia:fig_crop",
+            "properties": [
+              "age"
+            ]
+          },
           "name": "croptopia:fig_crop"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ],
   "random_sequence": "croptopia:blocks/fig_crop"

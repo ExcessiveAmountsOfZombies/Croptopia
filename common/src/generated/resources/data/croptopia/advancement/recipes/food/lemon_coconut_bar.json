@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:lemon_coconut_bar"
+        "recipes": "croptopia:lemon_coconut_bar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

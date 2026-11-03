@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:baked_beans"
+        "recipes": "croptopia:baked_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

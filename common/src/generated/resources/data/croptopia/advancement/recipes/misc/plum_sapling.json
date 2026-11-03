@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:plum_sapling"
+        "recipes": "croptopia:plum_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

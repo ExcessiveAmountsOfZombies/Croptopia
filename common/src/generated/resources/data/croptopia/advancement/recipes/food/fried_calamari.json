@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:fried_calamari"
+        "recipes": "croptopia:fried_calamari"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

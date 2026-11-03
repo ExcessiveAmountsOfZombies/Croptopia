@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:ham_sandwich"
+        "recipes": "croptopia:ham_sandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

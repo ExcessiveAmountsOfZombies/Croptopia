@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:nutmeg_sapling"
+        "recipes": "croptopia:nutmeg_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

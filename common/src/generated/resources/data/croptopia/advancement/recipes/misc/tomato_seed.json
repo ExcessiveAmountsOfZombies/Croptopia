@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:tomato_seed"
+        "recipes": "croptopia:tomato_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

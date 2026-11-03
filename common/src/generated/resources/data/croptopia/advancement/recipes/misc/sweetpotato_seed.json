@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:sweetpotato_seed"
+        "recipes": "croptopia:sweetpotato_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

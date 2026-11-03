@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:eggplant_parmesan"
+        "recipes": "croptopia:eggplant_parmesan"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

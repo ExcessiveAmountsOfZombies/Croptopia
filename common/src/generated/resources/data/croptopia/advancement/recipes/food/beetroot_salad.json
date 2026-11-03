@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:beetroot_salad"
+        "recipes": "croptopia:beetroot_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

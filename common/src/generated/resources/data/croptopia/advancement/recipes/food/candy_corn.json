@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:candy_corn"
+        "recipes": "croptopia:candy_corn"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

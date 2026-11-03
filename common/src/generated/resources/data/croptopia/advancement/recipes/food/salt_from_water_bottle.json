@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:salt_from_water_bottle"
+        "recipes": "croptopia:salt_from_water_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

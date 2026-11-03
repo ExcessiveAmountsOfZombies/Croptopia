@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cheesy_asparagus"
+        "recipes": "croptopia:cheesy_asparagus"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

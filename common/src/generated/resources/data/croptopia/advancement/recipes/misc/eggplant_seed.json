@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:eggplant_seed"
+        "recipes": "croptopia:eggplant_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

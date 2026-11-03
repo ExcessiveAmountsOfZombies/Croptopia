@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:frying_pan"
+        "recipes": "croptopia:frying_pan"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

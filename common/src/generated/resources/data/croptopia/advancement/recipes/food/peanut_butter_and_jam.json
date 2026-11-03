@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:peanut_butter_and_jam"
+        "recipes": "croptopia:peanut_butter_and_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

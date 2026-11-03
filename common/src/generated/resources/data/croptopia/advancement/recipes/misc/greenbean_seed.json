@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:greenbean_seed"
+        "recipes": "croptopia:greenbean_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

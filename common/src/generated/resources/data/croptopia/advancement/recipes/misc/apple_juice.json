@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:apple_juice"
+        "recipes": "croptopia:apple_juice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

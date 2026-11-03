@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:hops_seed"
+        "recipes": "croptopia:hops_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

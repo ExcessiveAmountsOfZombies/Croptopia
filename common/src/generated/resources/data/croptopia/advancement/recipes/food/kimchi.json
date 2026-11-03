@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:kimchi"
+        "recipes": "croptopia:kimchi"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

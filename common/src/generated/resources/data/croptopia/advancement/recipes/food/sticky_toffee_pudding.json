@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:sticky_toffee_pudding"
+        "recipes": "croptopia:sticky_toffee_pudding"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

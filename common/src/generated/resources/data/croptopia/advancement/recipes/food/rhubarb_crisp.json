@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:rhubarb_crisp"
+        "recipes": "croptopia:rhubarb_crisp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

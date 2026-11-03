@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:nectarine_sapling"
+        "recipes": "croptopia:nectarine_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

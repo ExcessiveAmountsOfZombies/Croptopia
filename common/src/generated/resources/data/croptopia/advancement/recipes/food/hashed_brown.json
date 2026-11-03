@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:hashed_brown"
+        "recipes": "croptopia:hashed_brown"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

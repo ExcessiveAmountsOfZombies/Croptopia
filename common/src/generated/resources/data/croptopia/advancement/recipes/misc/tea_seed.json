@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:tea_seed"
+        "recipes": "croptopia:tea_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

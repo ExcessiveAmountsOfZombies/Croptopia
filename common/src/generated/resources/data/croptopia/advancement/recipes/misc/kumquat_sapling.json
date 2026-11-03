@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:kumquat_sapling"
+        "recipes": "croptopia:kumquat_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

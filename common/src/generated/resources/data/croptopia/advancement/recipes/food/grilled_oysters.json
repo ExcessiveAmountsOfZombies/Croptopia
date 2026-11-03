@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:grilled_oysters"
+        "recipes": "croptopia:grilled_oysters"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

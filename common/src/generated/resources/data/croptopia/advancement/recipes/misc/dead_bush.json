@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:dead_bush"
+        "recipes": "croptopia:dead_bush"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

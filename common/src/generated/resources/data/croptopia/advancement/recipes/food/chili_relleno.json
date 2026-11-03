@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:chili_relleno"
+        "recipes": "croptopia:chili_relleno"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

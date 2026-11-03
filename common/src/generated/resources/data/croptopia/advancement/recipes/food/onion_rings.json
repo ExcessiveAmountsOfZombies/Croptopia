@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:onion_rings"
+        "recipes": "croptopia:onion_rings"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

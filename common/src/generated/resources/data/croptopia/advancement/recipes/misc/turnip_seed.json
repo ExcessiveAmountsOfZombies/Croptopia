@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:turnip_seed"
+        "recipes": "croptopia:turnip_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:candied_nuts"
+        "recipes": "croptopia:candied_nuts"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

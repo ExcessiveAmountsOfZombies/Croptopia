@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pumpkin_bars"
+        "recipes": "croptopia:pumpkin_bars"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

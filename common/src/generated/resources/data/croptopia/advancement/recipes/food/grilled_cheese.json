@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:grilled_cheese"
+        "recipes": "croptopia:grilled_cheese"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

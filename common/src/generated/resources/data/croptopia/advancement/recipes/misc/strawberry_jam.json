@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:strawberry_jam"
+        "recipes": "croptopia:strawberry_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

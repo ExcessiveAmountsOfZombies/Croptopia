@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:saucy_chips"
+        "recipes": "croptopia:saucy_chips"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

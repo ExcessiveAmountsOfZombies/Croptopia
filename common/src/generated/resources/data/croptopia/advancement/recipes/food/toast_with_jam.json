@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:toast_with_jam"
+        "recipes": "croptopia:toast_with_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

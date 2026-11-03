@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:kale_seed"
+        "recipes": "croptopia:kale_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

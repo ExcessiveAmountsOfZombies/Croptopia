@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cabbage_roll"
+        "recipes": "croptopia:cabbage_roll"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

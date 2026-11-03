@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:baked_crepes"
+        "recipes": "croptopia:baked_crepes"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

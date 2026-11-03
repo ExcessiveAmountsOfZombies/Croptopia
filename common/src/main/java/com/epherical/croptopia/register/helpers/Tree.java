@@ -11,7 +11,9 @@ import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -26,9 +28,9 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
@@ -37,11 +39,11 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStatePr
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 import static com.epherical.croptopia.CroptopiaCommon.*;
 
@@ -60,14 +62,14 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     private final TagKey<Block> logBlockTag;
     private Block leaves;
     private Item leavesItem;
-    private ConfiguredFeature<TreeConfiguration, ?> treeGen;
+    private TreeFeature treeGen;
     private Item sapling;
     private Block saplingBlock;
-    private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
+    private final ResourceKey<Feature> configuredFeatureKey;
     private final ResourceKey<PlacedFeature> placedFeatureKey;
 
     public Tree(String name, boolean hasPlural, TagCategory category, int iTreeGen, int jTreeGen, int kTreeGen,
-                ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
+                ResourceKey<Feature> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
         Objects.requireNonNull(category);
         // TERRIBLE CODE DESIGN
         Content.BLOCK_REGISTER.reg(register -> {
@@ -157,11 +159,11 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         return saplingBlock;
     }
 
-    public ConfiguredFeature<TreeConfiguration, ?> getTreeGen() {
+    public TreeFeature getTreeGen() {
         return treeGen;
     }
 
-    public ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeatureKey() {
+    public ResourceKey<Feature> getConfiguredFeatureKey() {
         return configuredFeatureKey;
     }
 
@@ -203,13 +205,13 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
     }*/
 
     public void registerItem(RegisterFunction<Item> register) {
-        item = register.register(createIdentifier(name), (id) -> new Item(createGroup(id)));
+        item = register.register(createIdentifier(name), (id) -> new Item(createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)));
         leavesItem = register.register(createIdentifier(name + "_leaves"), (id) -> new BlockItem(leaves, createGroup(id)));
         register.register(createIdentifier(name + "_log"), (id) -> new BlockItem(log, createGroup(id).useBlockDescriptionPrefix()));
         register.register(createIdentifier("stripped_" + name + "_log"), (id) -> new BlockItem(strippedLog, createGroup(id).useBlockDescriptionPrefix()));
         register.register(createIdentifier(name + "_wood"), (id) -> new BlockItem(wood, createGroup(id).useBlockDescriptionPrefix()));
         register.register(createIdentifier("stripped_" + name + "_wood"), (id) -> new BlockItem(strippedWood, createGroup(id).useBlockDescriptionPrefix()));
-        sapling = register.register(createIdentifier(name + "_sapling"), (id) -> new BlockItem(saplingBlock, createGroup(id).useBlockDescriptionPrefix()));
+        sapling = register.register(createIdentifier(name + "_sapling"), (id) -> new BlockItem(saplingBlock, createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_LOW_MEDIUM).useBlockDescriptionPrefix()));
     }
 
     public void registerBlock(RegisterFunction<Block> register) {
@@ -227,18 +229,20 @@ public class Tree implements ItemConvertibleWithPlural, BlockConvertible {
         cropBlocks.add(saplingBlock);
     }
 
-    private static TreeGrower createTree(ResourceKey<ConfiguredFeature<?, ?>> key) {
-        return new TreeGrower(key.identifier().toString(), Optional.empty(), Optional.of(key), Optional.empty());
+    private static TreeGrower createTree(ResourceKey<Feature> key) {
+        return new TreeGrower(key.identifier().toString(), WeightedList.of(key), WeightedList.of(), WeightedList.of(), key);
     }
 
-    public static ConfiguredFeature<TreeConfiguration, ?> createBarkGen(int i, int j, int k, Block log, Block leaves) {
-        return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                SimpleStateProvider.simple(log.defaultBlockState()),
+    public static TreeFeature createBarkGen(int i, int j, int k, Block log, Block leaves) {
+        return new TreeFeature.Builder(
+                new SimpleStateProvider(log.defaultBlockState()),
                 new StraightTrunkPlacer(i, j, k),
                 new WeightedStateProvider(WeightedList.<BlockState>builder().add(leaves.defaultBlockState(), 90).build()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2),
-                RuleBasedStateProvider.ifTrueThenProvide(TreeConfiguration.CAN_PLACE_BELOW_TREE_TRUNKS, Blocks.DIRT)).ignoreVines().build());
+                Holder.direct(RuleBasedStateProvider.ifTrueThenProvide(
+                        BlockPredicate.not(BlockPredicate.matchesTag(BlockTags.CANNOT_REPLACE_BELOW_TREE_TRUNK)),
+                        Blocks.DIRT))).ignoreVines().build();
     }
 
     public static void attemptPop(BlockState state, UseOnContext context, BlockPos pos) {

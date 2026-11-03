@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:nether_star_cake"
+        "recipes": "croptopia:nether_star_cake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

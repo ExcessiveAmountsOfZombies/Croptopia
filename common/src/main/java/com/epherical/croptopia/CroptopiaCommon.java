@@ -4,10 +4,8 @@ package com.epherical.croptopia;
 import com.epherical.croptopia.blocks.LeafCropBlock;
 import com.epherical.croptopia.common.MiscNames;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
@@ -69,14 +67,14 @@ public class CroptopiaCommon {
     public static LeafCropBlock createLeavesBlock(Identifier id) {
         return new LeafCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).ignitedByLava().randomTicks()
                 .sound(SoundType.GRASS).noOcclusion().isValidSpawn(CroptopiaCommon::canSpawnOnLeaves)
-                .isSuffocating((a, b, c) -> false).isViewBlocking((a, b, c) -> false)
+                .isSuffocating((a, b, c) -> false).isViewBlocking((state, level, pos, box) -> false)
                 .setId(ResourceKey.create(Registries.BLOCK, id)));
     }
 
     public static LeavesBlock createRegularLeavesBlock(Identifier id) {
         return new TintedParticleLeavesBlock(0.01F, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F)
                 .ignitedByLava().randomTicks().sound(SoundType.GRASS).noOcclusion()
-                .isValidSpawn(CroptopiaCommon::canSpawnOnLeaves).isSuffocating(CroptopiaCommon::never).isViewBlocking(CroptopiaCommon::never)
+                .isValidSpawn(CroptopiaCommon::canSpawnOnLeaves).isSuffocating(CroptopiaCommon::never).isViewBlocking((state, level, pos, box) -> false)
                 .setId(ResourceKey.create(Registries.BLOCK, id)));
     }
 

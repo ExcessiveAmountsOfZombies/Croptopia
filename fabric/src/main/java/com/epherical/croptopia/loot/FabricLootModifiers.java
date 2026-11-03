@@ -39,7 +39,7 @@ public class FabricLootModifiers {
         LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
             ResourceKey<LootTable> addition = ADDITIONS_BY_TARGET.get(key);
             if (addition != null) {
-                tableBuilder.withPool(LootPool.lootPool().add(NestedLootTable.lootTableReference(addition)));
+                tableBuilder.withPool(LootPool.lootPool().add(NestedLootTable.lootTableReference(registries.getOrThrow(addition))));
             }
         });
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:toast_sandwich"
+        "recipes": "croptopia:toast_sandwich"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

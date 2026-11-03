@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooked_anchovy_from_smoking_anchovy"
+        "recipes": "croptopia:cooked_anchovy_from_smoking_anchovy"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

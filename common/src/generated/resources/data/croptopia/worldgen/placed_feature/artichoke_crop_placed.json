@@ -17,13 +17,18 @@
       }
     },
     {
-      "type": "minecraft:random_offset",
-      "xz_spread": {
+      "type": "minecraft:offset",
+      "x": {
         "type": "minecraft:uniform",
         "max_inclusive": 3,
         "min_inclusive": -3
       },
-      "y_spread": 0
+      "y": 0,
+      "z": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 3,
+        "min_inclusive": -3
+      }
     },
     {
       "type": "minecraft:heightmap",

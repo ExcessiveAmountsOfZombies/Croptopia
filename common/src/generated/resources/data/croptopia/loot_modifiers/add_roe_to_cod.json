@@ -1,11 +1,9 @@
 {
   "type": "neoforge:add_table",
-  "conditions": [
-    {
-      "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:entities/cod"
-    }
-  ],
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "minecraft:entities/cod"
+  },
   "priority": 100,
   "table": "croptopia:entities/cod_roe_drop"
 }

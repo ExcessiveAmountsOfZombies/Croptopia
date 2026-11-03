@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:french_fries"
+        "recipes": "croptopia:french_fries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

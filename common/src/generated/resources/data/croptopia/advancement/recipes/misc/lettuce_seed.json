@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:lettuce_seed"
+        "recipes": "croptopia:lettuce_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

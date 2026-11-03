@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:ginger_seed"
+        "recipes": "croptopia:ginger_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

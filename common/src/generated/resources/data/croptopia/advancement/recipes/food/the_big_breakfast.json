@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:the_big_breakfast"
+        "recipes": "croptopia:the_big_breakfast"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

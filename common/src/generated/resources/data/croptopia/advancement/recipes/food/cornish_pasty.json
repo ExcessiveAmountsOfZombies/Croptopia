@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cornish_pasty"
+        "recipes": "croptopia:cornish_pasty"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:mango_sapling"
+        "recipes": "croptopia:mango_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -18,7 +18,6 @@ import com.epherical.croptopia.items.CookingUtensil;
 import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.listeners.BlockBreakEvent;
 import com.epherical.croptopia.mixin.CraftingRemainingItemBypassMixin;
-import com.epherical.croptopia.register.Composter;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.TreeCrop;
@@ -183,9 +182,9 @@ public class CroptopiaNeoForge {
             RegistrySetBuilder builder = new RegistrySetBuilder();
             builder.add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, CroptopiaWorldBiomeSelection::new);
             CroptopiaWorldGeneration generation = new CroptopiaWorldGeneration();
-            builder.add(Registries.CONFIGURED_FEATURE, generation::addConfiguredFeatures);
+            builder.add(Registries.FEATURE, generation::addConfiguredFeatures);
             builder.add(Registries.PLACED_FEATURE, generation::addPlacedFeatures);
-            CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+            CompletableFuture<HolderLookup.Provider> lookupProvider = event.getWorldLookupProvider();
 
             try {
                 IS_RUNNING_IN_IDE = false;
@@ -199,13 +198,11 @@ public class CroptopiaNeoForge {
                 throw new RuntimeException(e);
             }
 
-            generator.addProvider(true, CroptopiaAdvancementProvider.create(output, lookupProvider));
-
             generator.addProvider(true, new CroptopiaItemTagProvider(output, Registries.ITEM, lookupProvider));
-            generator.addProvider(true,
-                    new DatapackBuiltinEntriesProvider(output, lookupProvider, builder, Set.of(MODID)));
-            generator.addProvider(true,
-                    new CroptopiaRecipeProvider.Runner(output, lookupProvider));
+            DatapackBuiltinEntriesProvider worldProvider = DatapackBuiltinEntriesProvider.forWorldLayer(
+                    output, "Croptopia world generation", lookupProvider, builder, Set.of(MODID));
+            generator.addProvider(true, worldProvider);
+
             generator.addProvider(true,
                     new CroptopiaBiomeTagProvider(output, lookupProvider));
             generator.addProvider(true,
@@ -217,9 +214,13 @@ public class CroptopiaNeoForge {
             LootTableProvider.SubProviderEntry chests = new LootTableProvider.SubProviderEntry(CroptopiaLootTableProvider.ChestLoot::new, LootContextParamSets.CHEST);
             LootTableProvider.SubProviderEntry entity = new LootTableProvider.SubProviderEntry(CroptopiaLootTableProvider.EntityLoot::new, LootContextParamSets.ENTITY);
             LootTableProvider.SubProviderEntry fishing = new LootTableProvider.SubProviderEntry(CroptopiaLootTableProvider.FishingLoot::new, LootContextParamSets.FISHING);
-            LootTableProvider lootProvider = new LootTableProvider(output, Collections.emptySet(), List.of(blocks, chests, entity, fishing), lookupProvider);
-
-            generator.addProvider(true, lootProvider);
+            RegistrySetBuilder reloadableBuilder = new RegistrySetBuilder()
+                    .add(CroptopiaRecipeProvider.create())
+                    .add(Registries.ADVANCEMENT, CroptopiaAdvancementProvider.create())
+                    .add(Registries.LOOT_TABLE, new LootTableProvider(Collections.emptySet(), List.of(blocks, chests, entity, fishing)));
+            generator.addProvider(true, DatapackBuiltinEntriesProvider.forReloadableLayer(
+                    output, "Croptopia recipes, advancements and loot", worldProvider.getRegistryProvider(),
+                    event.getReloadableLookupProvider(), reloadableBuilder, Set.of(MODID)));
 
         }
     }
@@ -252,7 +253,6 @@ public class CroptopiaNeoForge {
                     }
                     return item;
                 });
-                //Composter.init(); lame lame lame lame lame
             } else if (event.getRegistryKey() == Registries.BLOCK) {
                 Content.registerBlocks((id, supplier) -> {
                     Block block = supplier.apply(id);

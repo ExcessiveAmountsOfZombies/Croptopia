@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:roasted_radishes"
+        "recipes": "croptopia:roasted_radishes"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:ratatouille"
+        "recipes": "croptopia:ratatouille"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pickled_beets"
+        "recipes": "croptopia:pickled_beets"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

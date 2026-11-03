@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:olive_oil"
+        "recipes": "croptopia:olive_oil"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

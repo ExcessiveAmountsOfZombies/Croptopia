@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:leek_soup"
+        "recipes": "croptopia:leek_soup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

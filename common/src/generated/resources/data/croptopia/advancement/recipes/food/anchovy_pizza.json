@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:anchovy_pizza"
+        "recipes": "croptopia:anchovy_pizza"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

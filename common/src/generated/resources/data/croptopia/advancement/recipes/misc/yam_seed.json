@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:yam_seed"
+        "recipes": "croptopia:yam_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

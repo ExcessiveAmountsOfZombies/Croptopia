@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:blackberry_jam"
+        "recipes": "croptopia:blackberry_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

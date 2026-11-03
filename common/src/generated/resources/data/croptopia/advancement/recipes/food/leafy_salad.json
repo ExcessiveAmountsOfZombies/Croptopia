@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:leafy_salad"
+        "recipes": "croptopia:leafy_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

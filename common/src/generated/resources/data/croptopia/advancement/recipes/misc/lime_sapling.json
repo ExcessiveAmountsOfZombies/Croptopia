@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:lime_sapling"
+        "recipes": "croptopia:lime_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

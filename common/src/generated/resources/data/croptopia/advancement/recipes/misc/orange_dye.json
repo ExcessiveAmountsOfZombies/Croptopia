@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:orange_dye"
+        "recipes": "croptopia:orange_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

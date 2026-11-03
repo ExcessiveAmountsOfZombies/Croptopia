@@ -16,9 +16,14 @@ import net.minecraft.advancements.predicates.ItemPredicate;
 import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.advancements.triggers.Criterion;
 import net.minecraft.advancements.triggers.InventoryChangeTrigger;
-import net.minecraft.core.HolderLookup;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.MultiRegistryBootstrap;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.crafting.Recipe;
+import java.util.Set;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
@@ -34,7 +39,6 @@ import net.minecraft.world.level.ItemLike;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 import static com.epherical.croptopia.register.Content.*;
 import static net.minecraft.data.recipes.RecipeCategory.FOOD;
@@ -42,8 +46,8 @@ import static net.minecraft.data.recipes.RecipeCategory.MISC;
 
 public class CroptopiaRecipeProvider extends RecipeProvider {
 
-    public CroptopiaRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-        super(registries, output);
+    public CroptopiaRecipeProvider(BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
+        super(recipes, advancements);
     }
 
 
@@ -2369,32 +2373,29 @@ public class CroptopiaRecipeProvider extends RecipeProvider {
     }
 
     private Criterion<InventoryChangeTrigger.TriggerInstance> hasAll(ItemLike... items) {
-        HolderLookup.Provider registries = this.registries;
+
         return CriteriaTriggers.INVENTORY_CHANGED.createCriterion(
                 new InventoryChangeTrigger.TriggerInstance(
                         Optional.empty(),
                         InventoryChangeTrigger.TriggerInstance.Slots.ANY,
                         Arrays.stream(items)
-                                .map(item -> ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM), item).build())
+                                .map(item -> ItemPredicate.Builder.item().of(output.lookup(Registries.ITEM), item).build())
                                 .toList()
                 )
         );
     }
 
-    public static class Runner extends RecipeProvider.Runner {
-        public Runner(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-            super(output, registries);
-        }
+    public static MultiRegistryBootstrap create() {
+        return new MultiRegistryBootstrap() {
+            @Override
+            public Set<ResourceKey<? extends Registry<?>>> requestedRegistries() {
+                return Set.of(Registries.RECIPE, Registries.ADVANCEMENT);
+            }
 
-        @Override
-        protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput output) {
-            return new CroptopiaRecipeProvider(registries, output);
-        }
-
-        @Override
-        public String getName() {
-            return "Croptopia Recipes";
-        }
+            @Override
+            public void run(MultiRegistryBootstrap.BootstrapGetter registries) {
+                new CroptopiaRecipeProvider(registries.get(Registries.RECIPE), registries.get(Registries.ADVANCEMENT)).buildRecipes();
+            }
+        };
     }
-
 }

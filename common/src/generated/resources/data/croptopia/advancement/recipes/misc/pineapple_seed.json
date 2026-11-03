@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pineapple_seed"
+        "recipes": "croptopia:pineapple_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

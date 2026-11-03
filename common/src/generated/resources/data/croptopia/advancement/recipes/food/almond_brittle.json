@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:almond_brittle"
+        "recipes": "croptopia:almond_brittle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

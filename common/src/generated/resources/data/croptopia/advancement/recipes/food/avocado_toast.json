@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:avocado_toast"
+        "recipes": "croptopia:avocado_toast"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

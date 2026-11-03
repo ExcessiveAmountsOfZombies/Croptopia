@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:banana_smoothie"
+        "recipes": "croptopia:banana_smoothie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:banana_cream_pie"
+        "recipes": "croptopia:banana_cream_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

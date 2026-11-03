@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:butter"
+        "recipes": "croptopia:butter"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

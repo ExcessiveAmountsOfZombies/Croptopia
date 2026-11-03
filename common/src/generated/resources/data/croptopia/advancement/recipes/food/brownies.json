@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:brownies"
+        "recipes": "croptopia:brownies"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

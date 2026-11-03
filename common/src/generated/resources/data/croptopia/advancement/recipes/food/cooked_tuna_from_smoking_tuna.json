@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooked_tuna_from_smoking_tuna"
+        "recipes": "croptopia:cooked_tuna_from_smoking_tuna"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

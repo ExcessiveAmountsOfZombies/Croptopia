@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:walnut_sapling"
+        "recipes": "croptopia:walnut_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

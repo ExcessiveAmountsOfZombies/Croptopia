@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:elderberry_seed"
+        "recipes": "croptopia:elderberry_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:stir_fry"
+        "recipes": "croptopia:stir_fry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

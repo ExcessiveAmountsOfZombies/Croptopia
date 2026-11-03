@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cantaloupe_seed"
+        "recipes": "croptopia:cantaloupe_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

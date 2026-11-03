@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:chimichanga"
+        "recipes": "croptopia:chimichanga"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

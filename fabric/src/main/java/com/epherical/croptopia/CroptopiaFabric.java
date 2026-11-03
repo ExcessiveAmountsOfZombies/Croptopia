@@ -6,7 +6,6 @@ import com.epherical.croptopia.items.CookingUtensil;
 import com.epherical.croptopia.listeners.BlockBreakEvent;
 import com.epherical.croptopia.loot.FabricLootModifiers;
 import com.epherical.croptopia.mixin.CraftingRemainingItemBypassMixin;
-import com.epherical.croptopia.register.Composter;
 import com.epherical.croptopia.register.Content;
 import com.epherical.croptopia.register.helpers.FarmlandCrop;
 import com.epherical.croptopia.register.helpers.TreeCrop;
@@ -96,7 +95,6 @@ public class CroptopiaFabric implements ModInitializer {
             }
             return item;
         });
-        Composter.init();
     }
 
     private static void registerCreativeTab() {

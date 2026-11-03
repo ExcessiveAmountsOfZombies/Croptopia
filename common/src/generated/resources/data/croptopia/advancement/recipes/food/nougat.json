@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:nougat"
+        "recipes": "croptopia:nougat"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

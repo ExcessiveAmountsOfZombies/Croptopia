@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:supreme_pizza"
+        "recipes": "croptopia:supreme_pizza"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:roasted_turnips"
+        "recipes": "croptopia:roasted_turnips"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pork_jerky"
+        "recipes": "croptopia:pork_jerky"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

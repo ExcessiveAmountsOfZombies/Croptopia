@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooked_bacon_from_bacon"
+        "recipes": "croptopia:cooked_bacon_from_bacon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

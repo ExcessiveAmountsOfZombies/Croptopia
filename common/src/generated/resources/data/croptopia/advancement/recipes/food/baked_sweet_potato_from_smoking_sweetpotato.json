@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:baked_sweet_potato_from_smoking_sweetpotato"
+        "recipes": "croptopia:baked_sweet_potato_from_smoking_sweetpotato"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

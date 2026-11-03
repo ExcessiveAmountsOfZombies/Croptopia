@@ -8,6 +8,8 @@ import com.epherical.croptopia.register.helpers.TreeCrop;
 import net.minecraft.advancements.predicates.ItemPredicate;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Holder;
+import java.util.Optional;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
@@ -30,11 +32,11 @@ import net.minecraft.world.level.storage.loot.functions.CopyBlockState;
 import net.minecraft.world.level.storage.loot.functions.EnchantedCountIncreaseFunction;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.AddTableLootModifier;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
@@ -42,7 +44,6 @@ import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.BiConsumer;
 
 import static com.epherical.croptopia.CroptopiaNeoForge.MODID;
 import static com.epherical.croptopia.CroptopiaNeoForge.createIdentifier;
@@ -63,8 +64,8 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
     public static final ResourceKey<LootTable> CROPTOPIA_FISHING_TABLE = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("gameplay/fishing/fish"));
 
 
-    public CroptopiaLootTableProvider(HolderLookup.Provider registries) {
-        super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(), registries);
+    public CroptopiaLootTableProvider(LootTableSubProvider.Context output) {
+        super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags(), output);
     }
 
 
@@ -80,23 +81,21 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         for (FarmlandCrop farmlandCrop : FarmlandCrop.FARMLAND_CROPS) {
-            LootItemCondition.Builder ageCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(farmlandCrop.asBlock())
-                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_7, 7));
+            LootItemCondition.Builder ageCondition = MatchBlock.blockMatches(blocks, farmlandCrop.asBlock(), StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_7, 7));
             this.add(farmlandCrop.asBlock(),
                     this.applyExplosionDecay(farmlandCrop.asBlock(),
                             LootTable.lootTable()
                                     .withPool(LootPool.lootPool().when(ageCondition)
                                             .add(LootItem.lootTableItem(farmlandCrop.asItem())
-                                                    .apply(ApplyBonusCount.addBonusBinomialDistributionCount(registries.holderOrThrow(Enchantments.FORTUNE), 0.5714286F, 3))))));
+                                                    .apply(ApplyBonusCount.addBonusBinomialDistributionCount(enchantments.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3))))));
         }
         for (TreeCrop treeCrop : TreeCrop.TREE_CROPS) {
             LootItemFunction.Builder copyState = CopyBlockState.copyState(treeCrop.asBlock())
                     .copy(LeafCropBlock.AGE);
-            LootItemCondition.Builder ageCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(treeCrop.asBlock())
-                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_3, 3));
+            LootItemCondition.Builder ageCondition = MatchBlock.blockMatches(blocks, treeCrop.asBlock(), StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_3, 3));
 
             LootItemCondition.Builder shearsCondition =
-                    MatchTool.toolMatches(ItemPredicate.Builder.item().of(registries.lookupOrThrow(Registries.ITEM), Items.SHEARS));
+                    MatchTool.toolMatches(ItemPredicate.Builder.item().of(items, Items.SHEARS));
 
             LootItemCondition.Builder notShearsCondition = shearsCondition.invert();
 
@@ -131,19 +130,19 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
                 block -> this.createSilkTouchDispatchTable(block,
                         this.applyExplosionCondition(block,
                                 LootItem.lootTableItem(Content.SALT)
-                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 5)))
-                                        .apply(ApplyBonusCount.addUniformBonusCount(registries.holderOrThrow(Enchantments.FORTUNE), 2)))));
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                        .apply(ApplyBonusCount.addUniformBonusCount(enchantments.getOrThrow(Enchantments.FORTUNE), 2)))));
     }
 
-    public record FishingLoot(HolderLookup.Provider reg) implements LootTableSubProvider {
+    public record FishingLoot(LootTableSubProvider.Context output) implements LootTableSubProvider {
 
         @Override
-        public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output) {
+        public void run() {
             output.accept(CROPTOPIA_FISHING_TABLE,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(EmptyLootItem.emptyItem().setWeight(65))
                                             .add(LootItem.lootTableItem(Content.TUNA).setWeight(5))
                                             .add(LootItem.lootTableItem(Content.ANCHOVY).setWeight(5))
@@ -156,71 +155,71 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
         }
     }
 
-    public record EntityLoot(HolderLookup.Provider reg) implements LootTableSubProvider {
+    public record EntityLoot(LootTableSubProvider.Context output) implements LootTableSubProvider {
 
         @Override
-        public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output) {
+        public void run() {
             output.accept(COD_ROE_DROP,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(LootItem.lootTableItem(Content.ROE)
-                                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2))))
                             ));
             output.accept(SALMON_ROE_DROP,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(LootItem.lootTableItem(Content.ROE)
-                                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2))))
                             ));
             output.accept(TROPICAL_ROE_DROP,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(LootItem.lootTableItem(Content.ROE)
-                                                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))))
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2))))
                             ));
             output.accept(GLOWING_SQUID_GLOW_CALAMARI,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(LootItem.lootTableItem(Content.GLOWING_CALAMARI)
-                                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(1))))
                             ));
             output.accept(SQUID_CALAMARI_DROP,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(LootItem.lootTableItem(Content.CALAMARI)
-                                                    .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(1))))
                             ));
             output.accept(RAVAGER_MEAT_DROP,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(ConstantValue.exactly(1))
+                                            .setRolls(ContextIntProviders.exactly(1))
                                             .add(LootItem.lootTableItem(Content.RAW_RAVAGER_MEAT)
-                                                    .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.reg, UniformGenerator.between(0.0F, 1.0F)))
+                                                    .apply(EnchantedCountIncreaseFunction.lootingMultiplier(output.lookup(Registries.ENCHANTMENT), net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders.between(0.0F, 1.0F)))
                                             )));
         }
     }
 
 
-    public record ChestLoot(HolderLookup.Provider reg) implements LootTableSubProvider {
+    public record ChestLoot(LootTableSubProvider.Context output) implements LootTableSubProvider {
 
         @Override
-        public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> output) {
+        public void run() {
             output.accept(TUNA_SANDWICH_LOOT,
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(UniformGenerator.between(0, 2))
+                                            .setRolls(ContextIntProviders.between(0, 2))
                                             .add(LootItem.lootTableItem(Content.TUNA_SANDWICH).setWeight(10))
                                             .add(EmptyLootItem.emptyItem().setWeight(90))
                             ));
@@ -228,7 +227,7 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
                     LootTable.lootTable()
                             .withPool(
                                     LootPool.lootPool()
-                                            .setRolls(UniformGenerator.between(0, 2))
+                                            .setRolls(ContextIntProviders.between(0, 2))
                                             .add(LootItem.lootTableItem(Content.MOUNTAIN_SALT).setWeight(5))
                                             .add(EmptyLootItem.emptyItem().setWeight(95))
                             ));
@@ -244,45 +243,25 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
         @Override
         protected void start() {
             add("add_tuna_to_dungeon", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(BuiltInLootTables.SIMPLE_DUNGEON.identifier()).build()
-                    }, 100, TUNA_SANDWICH_LOOT));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(BuiltInLootTables.SIMPLE_DUNGEON.identifier()).build())), 100, TUNA_SANDWICH_LOOT));
             add("add_mountain_salt_to_shipwreck", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(BuiltInLootTables.SHIPWRECK_TREASURE.identifier()).build()
-                    }, 100, MOUNTAIN_SALT_LOOT));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(BuiltInLootTables.SHIPWRECK_TREASURE.identifier()).build())), 100, MOUNTAIN_SALT_LOOT));
             add("add_roe_to_cod", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/cod")).build()
-                    }, 100, COD_ROE_DROP));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/cod")).build())), 100, COD_ROE_DROP));
             add("add_roe_to_salmon", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/salmon")).build()
-                    }, 100, SALMON_ROE_DROP));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/salmon")).build())), 100, SALMON_ROE_DROP));
             add("add_roe_to_tropical_fish", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/tropical_fish")).build()
-                    }, 100, TROPICAL_ROE_DROP));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/tropical_fish")).build())), 100, TROPICAL_ROE_DROP));
             add("add_calamari_to_squid", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/squid")).build()
-                    }, 100, SQUID_CALAMARI_DROP));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/squid")).build())), 100, SQUID_CALAMARI_DROP));
             add("add_ravager_meat_to_ravager", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/ravager")).build()
-                    }, 100, RAVAGER_MEAT_DROP));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/ravager")).build())), 100, RAVAGER_MEAT_DROP));
             add("add_glowing_calamari_to_glowing_squid", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/glow_squid")).build()
-                    }, 100, GLOWING_SQUID_GLOW_CALAMARI));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("minecraft", "entities/glow_squid")).build())), 100, GLOWING_SQUID_GLOW_CALAMARI));
             add("add_croptopia_fish_to_aquaculture", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("aquaculture", "gameplay/fishing/fish")).build()
-                    }, 100, CROPTOPIA_FISHING_TABLE));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(Identifier.fromNamespaceAndPath("aquaculture", "gameplay/fishing/fish")).build())), 100, CROPTOPIA_FISHING_TABLE));
             add("add_croptopia_fish_to_minecraft", new AddTableLootModifier(
-                    new LootItemCondition[]{
-                            LootTableIdCondition.builder(BuiltInLootTables.FISHING_FISH.identifier()).build()
-                    }, 100, CROPTOPIA_FISHING_TABLE));
+                    Optional.of(Holder.direct(LootTableIdCondition.builder(BuiltInLootTables.FISHING_FISH.identifier()).build())), 100, CROPTOPIA_FISHING_TABLE));
         }
     }
 }

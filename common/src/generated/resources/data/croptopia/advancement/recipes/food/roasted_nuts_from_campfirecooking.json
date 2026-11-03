@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:roasted_nuts_from_campfirecooking"
+        "recipes": "croptopia:roasted_nuts_from_campfirecooking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

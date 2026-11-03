@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:macaron"
+        "recipes": "croptopia:macaron"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:meringue"
+        "recipes": "croptopia:meringue"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

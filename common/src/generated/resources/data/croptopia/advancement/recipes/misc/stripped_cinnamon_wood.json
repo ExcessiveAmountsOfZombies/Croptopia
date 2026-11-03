@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:stripped_cinnamon_wood"
+        "recipes": "croptopia:stripped_cinnamon_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

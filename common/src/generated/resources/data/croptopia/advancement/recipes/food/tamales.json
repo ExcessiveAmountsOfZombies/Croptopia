@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:tamales"
+        "recipes": "croptopia:tamales"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

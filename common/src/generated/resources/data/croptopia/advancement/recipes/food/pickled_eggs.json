@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pickled_eggs"
+        "recipes": "croptopia:pickled_eggs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

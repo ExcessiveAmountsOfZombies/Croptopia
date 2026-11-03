@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:knife"
+        "recipes": "croptopia:knife"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

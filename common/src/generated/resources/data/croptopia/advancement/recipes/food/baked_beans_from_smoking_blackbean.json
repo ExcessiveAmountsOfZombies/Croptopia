@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:baked_beans_from_smoking_blackbean"
+        "recipes": "croptopia:baked_beans_from_smoking_blackbean"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

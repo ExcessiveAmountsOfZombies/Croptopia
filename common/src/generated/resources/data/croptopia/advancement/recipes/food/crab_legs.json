@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:crab_legs"
+        "recipes": "croptopia:crab_legs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:onion_seed"
+        "recipes": "croptopia:onion_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

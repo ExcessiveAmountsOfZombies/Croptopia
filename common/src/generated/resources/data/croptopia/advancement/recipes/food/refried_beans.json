@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:refried_beans"
+        "recipes": "croptopia:refried_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

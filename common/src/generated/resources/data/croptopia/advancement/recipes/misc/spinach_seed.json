@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:spinach_seed"
+        "recipes": "croptopia:spinach_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

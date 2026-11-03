@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cauliflower_seed"
+        "recipes": "croptopia:cauliflower_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

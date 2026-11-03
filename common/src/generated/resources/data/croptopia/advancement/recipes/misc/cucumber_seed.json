@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cucumber_seed"
+        "recipes": "croptopia:cucumber_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

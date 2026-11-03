@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:noise_threshold",
+    "default_state": {
+      "id": "croptopia:peanut_crop",
+      "properties": {
+        "age": "7"
+      }
+    },
+    "high_chance": 0.25,
+    "high_states": [
+      "minecraft:air"
+    ],
+    "low_states": [
+      "minecraft:air"
+    ],
+    "noise": {
+      "amplitude_modifiers": [
+        1.7082335165030593
+      ],
+      "base_amplitude": 0.955388882960065,
+      "base_octave": 0
+    },
+    "scale": 0.005,
+    "seed": 7714785,
+    "threshold": -0.8
+  }
+}

@@ -14,11 +14,12 @@ import com.epherical.croptopia.util.RegisterFunction;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.ArrayList;
@@ -47,14 +48,14 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
     private Item seedItem;
     private final TagKey<Biome> biomes; // todo implement
 
-    private final ResourceKey<ConfiguredFeature<?, ?>> configKey;
+    private final ResourceKey<Feature> configKey;
     private final ResourceKey<PlacedFeature> placedKey;
 
-    public FarmlandCrop(String cropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes, ResourceKey<ConfiguredFeature<?, ?>> configKey, ResourceKey<PlacedFeature> placedKey) {
+    public FarmlandCrop(String cropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes, ResourceKey<Feature> configKey, ResourceKey<PlacedFeature> placedKey) {
         this(cropName, cropName, isPlural, category, registry, biomes, configKey, placedKey);
     }
 
-    public FarmlandCrop(String cropName, String dropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes, ResourceKey<ConfiguredFeature<?, ?>> configKey, ResourceKey<PlacedFeature> placedKey) {
+    public FarmlandCrop(String cropName, String dropName, boolean isPlural, TagCategory category, FoodConstructor registry, TagKey<Biome> biomes, ResourceKey<Feature> configKey, ResourceKey<PlacedFeature> placedKey) {
         Objects.requireNonNull(category);
         // TERRIBLE CODE DESIGN
         Content.BLOCK_REGISTER.reg(this::registerBlock);
@@ -107,7 +108,7 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
         return placedKey;
     }
 
-    public ResourceKey<ConfiguredFeature<?, ?>> getConfigKey() {
+    public ResourceKey<Feature> getConfigKey() {
         return configKey;
     }
 
@@ -140,15 +141,15 @@ public class FarmlandCrop implements ItemConvertibleWithPlural, BlockConvertible
     public void registerItem(RegisterFunction<Item> register) {
         this.cropItem = register.register(createIdentifier(this.dropName), (id) -> {
             if (registry == null) {
-                return new CropItem(createGroup(id));
+                return new CropItem(createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM));
             } else {
-                return new CropItem(createGroup(id).food(createFood(registry)));
+                return new CropItem(createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM).food(createFood(registry)));
             }
         });
         if (this.name().equals(ItemNamesV2.VANILLA)) {
-            this.seedItem = register.register(createIdentifier(this.name + "_seeds"), (id) -> new SeedItem(cropBlock, createGroup(id).useItemDescriptionPrefix(), biomes));
+            this.seedItem = register.register(createIdentifier(this.name + "_seeds"), (id) -> new SeedItem(cropBlock, createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_LOW).useItemDescriptionPrefix(), biomes));
         } else {
-            this.seedItem = register.register(createIdentifier(this.name + "_seed"), (id) -> new SeedItem(cropBlock, createGroup(id).useItemDescriptionPrefix(), biomes));
+            this.seedItem = register.register(createIdentifier(this.name + "_seed"), (id) -> new SeedItem(cropBlock, createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_LOW).useItemDescriptionPrefix(), biomes));
         }
         cropItems.add(this.asItem());
         seeds.add(this.seedItem);

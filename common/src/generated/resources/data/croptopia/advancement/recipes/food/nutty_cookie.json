@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:nutty_cookie"
+        "recipes": "croptopia:nutty_cookie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

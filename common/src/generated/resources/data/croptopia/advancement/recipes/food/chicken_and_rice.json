@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:chicken_and_rice"
+        "recipes": "croptopia:chicken_and_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

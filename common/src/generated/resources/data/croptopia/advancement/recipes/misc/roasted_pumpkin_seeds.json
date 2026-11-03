@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:roasted_pumpkin_seeds"
+        "recipes": "croptopia:roasted_pumpkin_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

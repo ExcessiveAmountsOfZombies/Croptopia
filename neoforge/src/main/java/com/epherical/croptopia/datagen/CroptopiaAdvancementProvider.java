@@ -11,10 +11,9 @@ import net.minecraft.advancements.triggers.ConsumeItemTrigger;
 import net.minecraft.advancements.triggers.Criterion;
 import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
@@ -25,8 +24,6 @@ import net.minecraft.world.level.ItemLike;
 import java.util.Objects;
 
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 public final class CroptopiaAdvancementProvider {
     private static final String MODID = "croptopia";
@@ -35,14 +32,18 @@ public final class CroptopiaAdvancementProvider {
     private CroptopiaAdvancementProvider() {
     }
 
-    public static AdvancementProvider create(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-        return new AdvancementProvider(output, registries, List.of(new CroptopiaAdvancements()));
+    public static AdvancementProvider create() {
+        return new AdvancementProvider(List.of(CroptopiaAdvancements::new));
     }
 
-    private static final class CroptopiaAdvancements implements AdvancementSubProvider {
+    private static final class CroptopiaAdvancements extends AdvancementSubProvider {
+        private CroptopiaAdvancements(BootstrapContext<Advancement> output) {
+            super(output);
+        }
+
         @Override
-        public void generate(HolderLookup.Provider registries, Consumer<AdvancementHolder> output) {
-            HolderGetter<Item> items = registries.lookupOrThrow(Registries.ITEM);
+        public void generate() {
+            HolderGetter<Item> items = output.lookup(Registries.ITEM);
 
             AdvancementHolder root = advancement(
                     Content.COFFEE,
@@ -216,7 +217,10 @@ public final class CroptopiaAdvancementProvider {
             boolean announceChat,
             boolean hidden
     ) {
-        return Advancement.Builder.recipeAdvancement().display(icon, title, description, background, frame, showToast, announceChat, hidden);
+        Advancement.Builder builder = Advancement.Builder.recipeAdvancement();
+        return background == null
+                ? builder.display(icon.asItem(), title, description, frame, showToast, announceChat, hidden)
+                : builder.rootDisplay(icon.asItem(), title, description, background, frame, showToast, announceChat, hidden);
     }
 
     private static Component title(String advancement) {

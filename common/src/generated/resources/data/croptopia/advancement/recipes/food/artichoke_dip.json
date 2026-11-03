@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:artichoke_dip"
+        "recipes": "croptopia:artichoke_dip"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

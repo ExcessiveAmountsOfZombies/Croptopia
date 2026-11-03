@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:churros"
+        "recipes": "croptopia:churros"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

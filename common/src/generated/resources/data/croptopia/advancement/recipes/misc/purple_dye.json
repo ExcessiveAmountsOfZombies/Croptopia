@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:purple_dye"
+        "recipes": "croptopia:purple_dye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

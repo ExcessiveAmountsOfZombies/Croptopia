@@ -1,11 +1,9 @@
 {
   "type": "neoforge:add_table",
-  "conditions": [
-    {
-      "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:entities/squid"
-    }
-  ],
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "minecraft:entities/squid"
+  },
   "priority": 100,
   "table": "croptopia:entities/squid_calamari_drop"
 }

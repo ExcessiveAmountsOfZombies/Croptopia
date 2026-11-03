@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:crema"
+        "recipes": "croptopia:crema"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

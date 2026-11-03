@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:banana_nut_bread"
+        "recipes": "croptopia:banana_nut_bread"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

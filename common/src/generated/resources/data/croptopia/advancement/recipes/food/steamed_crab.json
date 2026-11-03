@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:steamed_crab"
+        "recipes": "croptopia:steamed_crab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

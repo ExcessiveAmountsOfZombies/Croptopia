@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:scrambled_eggs"
+        "recipes": "croptopia:scrambled_eggs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

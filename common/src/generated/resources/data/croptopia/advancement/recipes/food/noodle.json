@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:noodle"
+        "recipes": "croptopia:noodle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

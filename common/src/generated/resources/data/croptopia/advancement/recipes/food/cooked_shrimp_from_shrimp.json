@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooked_shrimp_from_shrimp"
+        "recipes": "croptopia:cooked_shrimp_from_shrimp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

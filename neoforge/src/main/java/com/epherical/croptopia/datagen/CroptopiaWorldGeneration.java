@@ -14,9 +14,8 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.SimpleBlockFeature;
 import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
@@ -25,7 +24,7 @@ import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
-import net.minecraft.world.level.levelgen.placement.RandomOffsetPlacement;
+import net.minecraft.world.level.levelgen.placement.OffsetPlacement;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
@@ -39,7 +38,7 @@ public class CroptopiaWorldGeneration {
     }
 
 
-    public void addConfiguredFeatures(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+    public void addConfiguredFeatures(BootstrapContext<Feature> context) {
         for (TreeCrop treeCrop : TreeCrop.TREE_CROPS)
             context.register(treeCrop.getConfiguredFeatureKey(), treeCrop.getTreeConfig());
         for (Tree tree : Tree.copy())
@@ -52,7 +51,7 @@ public class CroptopiaWorldGeneration {
     }
 
     public void addPlacedFeatures(BootstrapContext<PlacedFeature> context) {
-        HolderGetter<ConfiguredFeature<?, ?>> lookup = context.lookup(Registries.CONFIGURED_FEATURE);
+        HolderGetter<Feature> lookup = context.lookup(Registries.FEATURE);
         for (TreeCrop treeCrop : TreeCrop.TREE_CROPS)
             context.register(treeCrop.getPlacedFeatureKey(), new PlacedFeature(lookup.getOrThrow(treeCrop.getConfiguredFeatureKey()), WorldGenFeatures.datagenModifierLists.get(treeCrop.getPlacedFeatureKey())));
         for (Tree tree : Tree.copy())
@@ -67,18 +66,18 @@ public class CroptopiaWorldGeneration {
                 RarityFilter.onAverageOnceEvery(7),
                 InSquarePlacement.spread(),
                 CountPlacement.of(UniformInt.of(1, 3)),
-                RandomOffsetPlacement.horizontal(UniformInt.of(-3, 3)),
+                OffsetPlacement.horizontal(UniformInt.of(-3, 3)),
                 PlacementUtils.HEIGHTMAP,
                 BiomeFilter.biome(),
                 BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE));
     }
 
-    private SimpleBlockConfiguration createCropConfiguration(Block block) {
+    private SimpleBlockFeature createCropConfiguration(Block block) {
         Random random = new Random();
-        return new SimpleBlockConfiguration(
+        return new SimpleBlockFeature(
                 new NoiseThresholdProvider(
                         random.nextLong(100, 10000000L),
-                        new NormalNoise.NoiseParameters(0, random.nextDouble(1.0, 5.0)),
+                        NormalNoise.createParity(0, random.nextDouble(1.0, 5.0)),
                         0.005F,
                         -0.8F,
                         0.25F,
@@ -88,7 +87,7 @@ public class CroptopiaWorldGeneration {
         );
     }
 
-    private ConfiguredFeature<SimpleBlockConfiguration, ?> createCropPatch(Block block) {
-        return new ConfiguredFeature<>(Feature.SIMPLE_BLOCK, createCropConfiguration(block));
+    private SimpleBlockFeature createCropPatch(Block block) {
+        return createCropConfiguration(block);
     }
 }

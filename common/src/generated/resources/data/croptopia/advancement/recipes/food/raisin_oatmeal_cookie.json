@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:raisin_oatmeal_cookie"
+        "recipes": "croptopia:raisin_oatmeal_cookie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

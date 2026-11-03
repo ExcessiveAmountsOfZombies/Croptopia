@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:stuffed_artichoke"
+        "recipes": "croptopia:stuffed_artichoke"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:vanilla_seeds"
+        "recipes": "croptopia:vanilla_seeds"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

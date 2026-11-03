@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:sweet_potato_fries"
+        "recipes": "croptopia:sweet_potato_fries"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

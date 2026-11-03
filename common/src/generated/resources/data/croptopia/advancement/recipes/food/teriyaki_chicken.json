@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:teriyaki_chicken"
+        "recipes": "croptopia:teriyaki_chicken"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

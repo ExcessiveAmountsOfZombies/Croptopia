@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:croque_madame"
+        "recipes": "croptopia:croque_madame"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

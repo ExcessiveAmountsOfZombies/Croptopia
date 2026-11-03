@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cabbage_seed"
+        "recipes": "croptopia:cabbage_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

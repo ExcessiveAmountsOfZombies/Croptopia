@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:bellpepper_seed"
+        "recipes": "croptopia:bellpepper_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -18,6 +18,8 @@ import net.neoforged.neoforge.common.loot.LootModifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
+import java.util.Optional;
+import net.minecraft.core.Holder;
 
 /**
  * Add an additional LootTable as the modifier.
@@ -33,7 +35,7 @@ public class AdditionalTableModifier extends LootModifier {
     }));
 
     private String tableID;
-    private final NestedLootTable reference;
+    private final ResourceKey<LootTable> table;
 
 
     //NestedLootTable.lootTableReference
@@ -42,21 +44,21 @@ public class AdditionalTableModifier extends LootModifier {
     /**
      * Constructs a LootModifier.
      *
-     * @param conditionsIn the ILootConditions that need to be matched before the loot is modified.
+     * @param condition the ILootConditions that need to be matched before the loot is modified.
      */
-    protected AdditionalTableModifier(LootItemCondition[] conditionsIn, int prio, String tableID, float chanceToRefer) {
-        super(conditionsIn, 100);
+    protected AdditionalTableModifier(Optional<Holder<LootItemCondition>> condition, int prio, String tableID, float chanceToRefer) {
+        super(condition, 100);
         this.referChance = chanceToRefer;
         this.tableID = tableID;
-        ResourceKey<LootTable> croptopia = ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("croptopia", "gameplay/fishing/fish"));
-        this.reference = (NestedLootTable) NestedLootTable.lootTableReference(croptopia).build();
+        this.table = ResourceKey.create(Registries.LOOT_TABLE, Identifier.fromNamespaceAndPath("croptopia", "gameplay/fishing/fish"));
     }
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         if (context.getRandom().nextFloat() <= referChance) {
             ObjectArrayList<ItemStack> items = new ObjectArrayList<>();
-            reference.createItemStack(items::add, context);
+            context.getResolver().lookupOrThrow(Registries.LOOT_TABLE).get(table)
+                    .ifPresent(reference -> reference.value().getRandomItemsRaw(context, items::add));
             return items;
         }
 

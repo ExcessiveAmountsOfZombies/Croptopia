@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:burrito"
+        "recipes": "croptopia:burrito"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:veggie_salad"
+        "recipes": "croptopia:veggie_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

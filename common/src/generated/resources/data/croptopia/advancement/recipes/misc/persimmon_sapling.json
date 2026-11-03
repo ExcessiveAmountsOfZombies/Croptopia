@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:persimmon_sapling"
+        "recipes": "croptopia:persimmon_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

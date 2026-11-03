@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:mortar_and_pestle"
+        "recipes": "croptopia:mortar_and_pestle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

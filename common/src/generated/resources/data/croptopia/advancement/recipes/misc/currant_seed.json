@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:currant_seed"
+        "recipes": "croptopia:currant_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

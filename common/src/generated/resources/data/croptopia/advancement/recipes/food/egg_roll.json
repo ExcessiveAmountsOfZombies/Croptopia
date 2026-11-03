@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:egg_roll"
+        "recipes": "croptopia:egg_roll"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

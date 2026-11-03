@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:kale_smoothie"
+        "recipes": "croptopia:kale_smoothie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:trail_mix"
+        "recipes": "croptopia:trail_mix"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

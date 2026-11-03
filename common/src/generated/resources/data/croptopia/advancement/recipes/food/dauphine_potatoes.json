@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:dauphine_potatoes"
+        "recipes": "croptopia:dauphine_potatoes"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

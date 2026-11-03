@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:fish_and_chips"
+        "recipes": "croptopia:fish_and_chips"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

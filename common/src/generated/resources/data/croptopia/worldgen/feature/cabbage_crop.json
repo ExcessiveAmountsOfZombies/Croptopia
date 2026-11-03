@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:noise_threshold",
+    "default_state": {
+      "id": "croptopia:cabbage_crop",
+      "properties": {
+        "age": "7"
+      }
+    },
+    "high_chance": 0.25,
+    "high_states": [
+      "minecraft:air"
+    ],
+    "low_states": [
+      "minecraft:air"
+    ],
+    "noise": {
+      "amplitude_modifiers": [
+        2.587744422095761
+      ],
+      "base_amplitude": 0.9553888829600651,
+      "base_octave": 0
+    },
+    "scale": 0.005,
+    "seed": 9290898,
+    "threshold": -0.8
+  }
+}

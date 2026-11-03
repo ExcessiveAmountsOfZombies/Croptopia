@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:mango_ice_cream"
+        "recipes": "croptopia:mango_ice_cream"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

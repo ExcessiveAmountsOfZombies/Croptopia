@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pumpkin_soup"
+        "recipes": "croptopia:pumpkin_soup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

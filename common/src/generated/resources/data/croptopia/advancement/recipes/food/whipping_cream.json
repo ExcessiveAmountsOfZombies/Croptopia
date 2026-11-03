@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:whipping_cream"
+        "recipes": "croptopia:whipping_cream"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

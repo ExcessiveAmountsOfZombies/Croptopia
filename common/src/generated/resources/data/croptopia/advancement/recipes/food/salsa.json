@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:salsa"
+        "recipes": "croptopia:salsa"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

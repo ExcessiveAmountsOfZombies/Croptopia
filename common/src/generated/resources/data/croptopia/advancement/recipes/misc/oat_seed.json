@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:oat_seed"
+        "recipes": "croptopia:oat_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

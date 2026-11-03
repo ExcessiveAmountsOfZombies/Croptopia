@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:protein_bar"
+        "recipes": "croptopia:protein_bar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

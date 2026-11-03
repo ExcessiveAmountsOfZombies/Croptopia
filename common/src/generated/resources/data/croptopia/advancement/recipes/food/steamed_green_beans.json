@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:steamed_green_beans"
+        "recipes": "croptopia:steamed_green_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

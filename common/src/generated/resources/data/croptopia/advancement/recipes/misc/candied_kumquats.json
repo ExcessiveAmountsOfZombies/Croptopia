@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:candied_kumquats"
+        "recipes": "croptopia:candied_kumquats"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

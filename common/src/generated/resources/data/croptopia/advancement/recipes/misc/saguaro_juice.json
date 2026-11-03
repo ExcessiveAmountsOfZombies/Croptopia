@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:saguaro_juice"
+        "recipes": "croptopia:saguaro_juice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

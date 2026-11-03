@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:tofu_and_dumplings"
+        "recipes": "croptopia:tofu_and_dumplings"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

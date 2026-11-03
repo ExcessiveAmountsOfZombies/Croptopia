@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:tres_leche_cake"
+        "recipes": "croptopia:tres_leche_cake"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

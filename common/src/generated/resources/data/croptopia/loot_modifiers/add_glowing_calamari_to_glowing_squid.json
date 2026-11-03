@@ -1,11 +1,9 @@
 {
   "type": "neoforge:add_table",
-  "conditions": [
-    {
-      "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:entities/glow_squid"
-    }
-  ],
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "minecraft:entities/glow_squid"
+  },
   "priority": 100,
   "table": "croptopia:entities/glowing_squid_glowing_calamari_drop"
 }

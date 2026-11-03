@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:deep_fried_shrimp"
+        "recipes": "croptopia:deep_fried_shrimp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

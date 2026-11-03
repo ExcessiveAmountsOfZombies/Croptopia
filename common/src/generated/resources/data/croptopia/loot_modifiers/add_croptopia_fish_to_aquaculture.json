@@ -1,11 +1,9 @@
 {
   "type": "neoforge:add_table",
-  "conditions": [
-    {
-      "condition": "neoforge:loot_table_id",
-      "loot_table_id": "aquaculture:gameplay/fishing/fish"
-    }
-  ],
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "aquaculture:gameplay/fishing/fish"
+  },
   "priority": 100,
   "table": "croptopia:gameplay/fishing/fish"
 }

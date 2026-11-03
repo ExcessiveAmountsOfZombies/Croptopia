@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:shepherds_pie"
+        "recipes": "croptopia:shepherds_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

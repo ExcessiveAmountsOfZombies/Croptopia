@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:ground_pork"
+        "recipes": "croptopia:ground_pork"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

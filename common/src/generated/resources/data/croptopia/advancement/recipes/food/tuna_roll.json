@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:tuna_roll"
+        "recipes": "croptopia:tuna_roll"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

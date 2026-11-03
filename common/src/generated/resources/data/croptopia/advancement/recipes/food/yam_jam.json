@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:yam_jam"
+        "recipes": "croptopia:yam_jam"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

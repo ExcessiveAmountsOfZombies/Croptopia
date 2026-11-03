@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:stuffed_poblanos"
+        "recipes": "croptopia:stuffed_poblanos"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

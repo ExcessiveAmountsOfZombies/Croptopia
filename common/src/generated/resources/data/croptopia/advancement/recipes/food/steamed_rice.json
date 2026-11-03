@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:steamed_rice"
+        "recipes": "croptopia:steamed_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

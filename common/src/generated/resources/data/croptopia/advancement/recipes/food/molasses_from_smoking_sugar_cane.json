@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:molasses_from_smoking_sugar_cane"
+        "recipes": "croptopia:molasses_from_smoking_sugar_cane"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

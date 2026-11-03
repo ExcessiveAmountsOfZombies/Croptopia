@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:chocolate_milkshake"
+        "recipes": "croptopia:chocolate_milkshake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

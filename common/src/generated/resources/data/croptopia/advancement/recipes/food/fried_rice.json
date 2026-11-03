@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:fried_rice"
+        "recipes": "croptopia:fried_rice"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

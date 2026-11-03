@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:guide"
+        "recipes": "croptopia:guide"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

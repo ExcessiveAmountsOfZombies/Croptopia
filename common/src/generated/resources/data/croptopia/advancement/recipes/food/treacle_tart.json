@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:treacle_tart"
+        "recipes": "croptopia:treacle_tart"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooking_oil"
+        "recipes": "croptopia:cooking_oil"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

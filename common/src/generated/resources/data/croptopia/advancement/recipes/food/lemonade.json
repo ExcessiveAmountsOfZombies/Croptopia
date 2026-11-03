@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:lemonade"
+        "recipes": "croptopia:lemonade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:avocado_sapling"
+        "recipes": "croptopia:avocado_sapling"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

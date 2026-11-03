@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:artichoke_seed"
+        "recipes": "croptopia:artichoke_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

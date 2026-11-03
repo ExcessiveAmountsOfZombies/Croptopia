@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cucumber_salad"
+        "recipes": "croptopia:cucumber_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

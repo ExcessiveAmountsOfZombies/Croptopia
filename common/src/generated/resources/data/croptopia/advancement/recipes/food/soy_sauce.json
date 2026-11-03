@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:soy_sauce"
+        "recipes": "croptopia:soy_sauce"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

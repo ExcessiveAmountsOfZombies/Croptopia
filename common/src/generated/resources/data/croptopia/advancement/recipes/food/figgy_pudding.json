@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:figgy_pudding"
+        "recipes": "croptopia:figgy_pudding"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

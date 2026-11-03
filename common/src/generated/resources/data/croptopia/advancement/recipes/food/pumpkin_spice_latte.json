@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pumpkin_spice_latte"
+        "recipes": "croptopia:pumpkin_spice_latte"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

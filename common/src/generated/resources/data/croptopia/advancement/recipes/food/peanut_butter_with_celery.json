@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:peanut_butter_with_celery"
+        "recipes": "croptopia:peanut_butter_with_celery"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

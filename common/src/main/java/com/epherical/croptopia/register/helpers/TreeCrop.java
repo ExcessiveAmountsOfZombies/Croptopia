@@ -12,7 +12,9 @@ import com.epherical.croptopia.util.BlockConvertible;
 import com.epherical.croptopia.util.FoodConstructor;
 import com.epherical.croptopia.util.ItemConvertibleWithPlural;
 import com.epherical.croptopia.util.RegisterFunction;
+import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.BlockItem;
@@ -22,9 +24,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
@@ -32,11 +34,11 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProv
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 import static com.epherical.croptopia.CroptopiaCommon.*;
 import static com.epherical.croptopia.util.FoodConstructor.createFood;
@@ -55,17 +57,17 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
     private Item leavesItem;
     private Block leafType;
 
-    private ConfiguredFeature<TreeConfiguration, ?> treeConfig;
+    private TreeFeature treeConfig;
     private Item saplingItem;
     private Block saplingBlock;
 
     private final FoodConstructor constructor;
 
-    private final ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey;
+    private final ResourceKey<Feature> configuredFeatureKey;
     private final ResourceKey<PlacedFeature> placedFeatureKey;
 
     public TreeCrop(String name, boolean plural, Block logType, Block leafType, TagCategory category, FoodConstructor constructor, int base, int randA, int randB,
-                    ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
+                    ResourceKey<Feature> configuredFeatureKey, ResourceKey<PlacedFeature> placedFeatureKey) {
         Objects.requireNonNull(leafType);
         Objects.requireNonNull(category);
         Objects.requireNonNull(logType);
@@ -112,7 +114,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return item;
     }
 
-    public ConfiguredFeature<TreeConfiguration, ?> getTreeConfig() {
+    public TreeFeature getTreeConfig() {
         return treeConfig;
     }
 
@@ -132,7 +134,7 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         return category;
     }
 
-    public ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeatureKey() {
+    public ResourceKey<Feature> getConfiguredFeatureKey() {
         return configuredFeatureKey;
     }
 
@@ -166,12 +168,12 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
 
     public void registerItem(RegisterFunction<Item> register) {
         if (!Objects.equals(name(), ItemNamesV2.APPLE)) {
-            item = register.register(createIdentifier(name()), (id) -> new CropItem(createGroup(id).food(createFood(constructor))));
+            item = register.register(createIdentifier(name()), (id) -> new CropItem(createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_MEDIUM).food(createFood(constructor))));
             cropItems.add(asItem());
         } else {
             item = Items.APPLE;
         }
-        saplingItem = register.register(createIdentifier(name() + "_sapling"), (id) -> new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup(id).useItemDescriptionPrefix()));
+        saplingItem = register.register(createIdentifier(name() + "_sapling"), (id) -> new CroptopiaSaplingItem(saplingBlock, leaves, leafType, createGroup(id).compostable(ContextIntProviders.COMPOSTABLE_LOW_MEDIUM).useItemDescriptionPrefix()));
         leavesItem = register.register(createIdentifier(name() + "_crop"), (id) -> new BlockItem(leaves, createGroup(id).useBlockDescriptionPrefix()));
     }
 
@@ -184,21 +186,23 @@ public class TreeCrop implements ItemConvertibleWithPlural, BlockConvertible {
         leafBlocks.add(asBlock());
     }
 
-    private static TreeGrower createTree(ResourceKey<ConfiguredFeature<?, ?>> key) {
-        return new TreeGrower(key.identifier().toString(), Optional.empty(), Optional.of(key), Optional.empty());
+    private static TreeGrower createTree(ResourceKey<Feature> key) {
+        return new TreeGrower(key.identifier().toString(), WeightedList.of(key), WeightedList.of(), WeightedList.of(), key);
     }
 
     public static List<TreeCrop> copy() {
         return TREE_CROPS;
     }
 
-    public static ConfiguredFeature<TreeConfiguration, ?> createTreeGen(int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
-        return new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                SimpleStateProvider.simple(logType.defaultBlockState()),
+    public static TreeFeature createTreeGen(int i, int j, int k, Block logType, Block leafType, Block leafCrop) {
+        return new TreeFeature.Builder(
+                new SimpleStateProvider(logType.defaultBlockState()),
                 new StraightTrunkPlacer(i, j, k),
                 new WeightedStateProvider(WeightedList.<BlockState>builder().add(leafType.defaultBlockState(), 90).add(leafCrop.defaultBlockState().setValue(LeafCropBlock.AGE, 3), 20).build()),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 2),
-                RuleBasedStateProvider.ifTrueThenProvide(TreeConfiguration.CAN_PLACE_BELOW_TREE_TRUNKS, Blocks.DIRT)).ignoreVines().build());
+                Holder.direct(RuleBasedStateProvider.ifTrueThenProvide(
+                        BlockPredicate.not(BlockPredicate.matchesTag(BlockTags.CANNOT_REPLACE_BELOW_TREE_TRUNK)),
+                        Blocks.DIRT))).ignoreVines().build();
     }
 }

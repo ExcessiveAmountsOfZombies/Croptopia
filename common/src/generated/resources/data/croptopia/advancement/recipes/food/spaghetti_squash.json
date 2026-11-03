@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:spaghetti_squash"
+        "recipes": "croptopia:spaghetti_squash"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

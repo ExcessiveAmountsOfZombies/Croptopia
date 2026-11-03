@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cooked_ravager_meat_from_smoking_raw_ravager_meat"
+        "recipes": "croptopia:cooked_ravager_meat_from_smoking_raw_ravager_meat"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

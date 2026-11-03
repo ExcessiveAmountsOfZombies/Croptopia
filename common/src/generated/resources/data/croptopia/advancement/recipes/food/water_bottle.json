@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:water_bottle"
+        "recipes": "croptopia:water_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

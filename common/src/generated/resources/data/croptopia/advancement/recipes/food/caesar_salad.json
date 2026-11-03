@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:caesar_salad"
+        "recipes": "croptopia:caesar_salad"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

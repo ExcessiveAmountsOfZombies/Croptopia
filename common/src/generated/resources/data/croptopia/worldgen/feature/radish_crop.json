@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:noise_threshold",
+    "default_state": {
+      "id": "croptopia:radish_crop",
+      "properties": {
+        "age": "7"
+      }
+    },
+    "high_chance": 0.25,
+    "high_states": [
+      "minecraft:air"
+    ],
+    "low_states": [
+      "minecraft:air"
+    ],
+    "noise": {
+      "amplitude_modifiers": [
+        4.116803154719388
+      ],
+      "base_amplitude": 0.9553888829600649,
+      "base_octave": 0
+    },
+    "scale": 0.005,
+    "seed": 5301506,
+    "threshold": -0.8
+  }
+}

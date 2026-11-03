@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:snicker_doodle"
+        "recipes": "croptopia:snicker_doodle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:grilled_eggplant"
+        "recipes": "croptopia:grilled_eggplant"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

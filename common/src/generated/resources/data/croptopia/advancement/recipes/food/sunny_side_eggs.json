@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:sunny_side_eggs"
+        "recipes": "croptopia:sunny_side_eggs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

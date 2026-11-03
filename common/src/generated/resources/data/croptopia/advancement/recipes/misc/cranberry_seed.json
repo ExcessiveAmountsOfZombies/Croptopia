@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:cranberry_seed"
+        "recipes": "croptopia:cranberry_seed"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

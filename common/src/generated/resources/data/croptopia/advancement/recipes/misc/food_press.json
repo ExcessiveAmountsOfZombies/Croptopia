@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:food_press"
+        "recipes": "croptopia:food_press"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

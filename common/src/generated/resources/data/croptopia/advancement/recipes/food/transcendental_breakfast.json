@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:transcendental_breakfast"
+        "recipes": "croptopia:transcendental_breakfast"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

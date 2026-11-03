@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "croptopia:pecan_ice_cream"
+        "recipes": "croptopia:pecan_ice_cream"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
