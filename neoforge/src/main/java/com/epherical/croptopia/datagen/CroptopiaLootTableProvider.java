@@ -54,6 +54,8 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
     public static final ResourceKey<LootTable> TUNA_SANDWICH_LOOT = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("chests/tuna_sandwich_loot"));
     public static final ResourceKey<LootTable> MOUNTAIN_SALT_LOOT = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("chests/mountain_salt_loot"));
 
+    public static final ResourceKey<LootTable> CINNAMON_DROP = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("blocks/cinnamon_stick_drop"));
+
     public static final ResourceKey<LootTable> COD_ROE_DROP = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("entities/cod_roe_drop"));
     public static final ResourceKey<LootTable> SALMON_ROE_DROP = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("entities/salmon_roe_drop"));
     public static final ResourceKey<LootTable> TROPICAL_ROE_DROP = ResourceKey.create(Registries.LOOT_TABLE, createIdentifier("entities/tropical_roe_drop"));
@@ -80,6 +82,8 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+
+
         for (FarmlandCrop farmlandCrop : FarmlandCrop.FARMLAND_CROPS) {
             LootItemCondition.Builder ageCondition = MatchBlock.blockMatches(blocks, farmlandCrop.asBlock(), StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_7, 7));
             this.add(farmlandCrop.asBlock(),
@@ -159,6 +163,14 @@ public class CroptopiaLootTableProvider extends BlockLootSubProvider {
 
         @Override
         public void run() {
+            output.accept(CINNAMON_DROP,
+                    LootTable.lootTable()
+                            .withPool(
+                                    LootPool.lootPool()
+                                            .setRolls(ContextIntProviders.exactly(1))
+                                            .add(LootItem.lootTableItem(Content.CINNAMON.asItem())
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
+                            )));
             output.accept(COD_ROE_DROP,
                     LootTable.lootTable()
                             .withPool(

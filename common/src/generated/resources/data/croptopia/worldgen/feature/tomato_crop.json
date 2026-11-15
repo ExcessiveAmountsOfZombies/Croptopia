@@ -17,13 +17,13 @@
     ],
     "noise": {
       "amplitude_modifiers": [
-        4.079792752710284
+        3.3074747236334385
       ],
       "base_amplitude": 0.955388882960065,
       "base_octave": 0
     },
     "scale": 0.005,
-    "seed": 329598,
+    "seed": 973643,
     "threshold": -0.8
   }
 }

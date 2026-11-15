@@ -5,15 +5,7 @@ import com.epherical.croptopia.common.ItemNamesV2;
 import com.epherical.croptopia.common.MiscNames;
 import com.epherical.croptopia.config.CroptopiaConfig;
 import com.epherical.croptopia.config.TreeConfiguration;
-import com.epherical.croptopia.datagen.CroptopiaBiomeTagProvider;
-import com.epherical.croptopia.datagen.CroptopiaAdvancementProvider;
-import com.epherical.croptopia.datagen.CroptopiaBlockTagProvider;
-import com.epherical.croptopia.datagen.CroptopiaItemModelProvider;
-import com.epherical.croptopia.datagen.CroptopiaItemTagProvider;
-import com.epherical.croptopia.datagen.CroptopiaLootTableProvider;
-import com.epherical.croptopia.datagen.CroptopiaRecipeProvider;
-import com.epherical.croptopia.datagen.CroptopiaWorldBiomeSelection;
-import com.epherical.croptopia.datagen.CroptopiaWorldGeneration;
+import com.epherical.croptopia.datagen.*;
 import com.epherical.croptopia.items.CookingUtensil;
 import com.epherical.croptopia.items.SeedItem;
 import com.epherical.croptopia.listeners.BlockBreakEvent;
@@ -28,6 +20,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.component.BlockTransformer;
 import net.minecraft.core.component.DataComponentInitializers;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -45,6 +38,7 @@ import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -67,6 +61,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
+import net.neoforged.neoforge.registries.datamaps.builtin.Transformable;
 import org.slf4j.Logger;
 
 import java.util.Collections;
@@ -207,6 +202,9 @@ public class CroptopiaNeoForge {
                     new CroptopiaBiomeTagProvider(output, lookupProvider));
             generator.addProvider(true,
                     new CroptopiaBlockTagProvider(output, Registries.BLOCK, lookupProvider));
+
+            generator.addProvider(true,
+                    new CroptopiaDataMapProvider(output, lookupProvider));
 
             generator.addProvider(true, new CroptopiaLootTableProvider.GlobalLootProvider(output, lookupProvider));
 
