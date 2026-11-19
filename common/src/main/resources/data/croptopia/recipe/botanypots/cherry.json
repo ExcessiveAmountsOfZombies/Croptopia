@@ -7,31 +7,13 @@
       ]
     }
   ],
-  "type": "botanypots:crop",
-  "seed": {
-    "item": "croptopia:cherry_sapling"
-  },
-  "categories": [
-    "dirt"
-  ],
-  "growthTicks": 1600,
-  "display": {
-    "block": "croptopia:cherry_sapling"
-  },
+  "type": "botanypots:block_derived_crop",
+  "block": "croptopia:cherry_sapling",
+  "grow_time": 1600,
   "drops": [
     {
-      "chance": 1.00,
-      "output": {
-        "item": "croptopia:cherry"
-      },
-      "minRolls": 2,
-      "maxRolls": 3
-    },
-    {
-      "chance": 0.05,
-      "output": {
-        "item": "croptopia:cherry_sapling"
-      }
+      "type": "botanypots:loot_table",
+      "table_id": "croptopia:botanypots/cherry"
     }
   ],
   "fabric:load_conditions": [

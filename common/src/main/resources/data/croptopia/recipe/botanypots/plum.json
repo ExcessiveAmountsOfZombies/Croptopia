@@ -7,31 +7,13 @@
       ]
     }
   ],
-  "type": "botanypots:crop",
-  "seed": {
-    "item": "croptopia:plum_sapling"
-  },
-  "categories": [
-    "dirt"
-  ],
-  "growthTicks": 1400,
-  "display": {
-    "block": "croptopia:plum_sapling"
-  },
+  "type": "botanypots:block_derived_crop",
+  "block": "croptopia:plum_sapling",
+  "grow_time": 1400,
   "drops": [
     {
-      "chance": 1.00,
-      "output": {
-        "item": "croptopia:plum"
-      },
-      "minRolls": 1,
-      "maxRolls": 2
-    },
-    {
-      "chance": 0.05,
-      "output": {
-        "item": "croptopia:plum_sapling"
-      }
+      "type": "botanypots:loot_table",
+      "table_id": "croptopia:botanypots/plum"
     }
   ],
   "fabric:load_conditions": [
